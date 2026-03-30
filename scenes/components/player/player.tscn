@@ -11,15 +11,34 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_imdkq"]
 
-[node name="Player" type="CharacterBody3D" unique_id=2109264169]
+[sub_resource type="SphereMesh" id="SphereMesh_aes0s"]
+radius = 0.25
+height = 0.5
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tw4o5"]
+radius = 0.05
+
+[node name="Player" type="CharacterBody3D" unique_id=2109264169 node_paths=PackedStringArray("camera")]
 script = ExtResource("1_1xbud")
+camera = NodePath("Camera3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1087679022]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_1xbud")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=1912228836]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1912228836]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_imdkq")
+skeleton = NodePath("..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1497152542]
+transform = Transform3D(-0.0010122496, 0, -0.99999946, 0, 1, 0, 0.99999946, 0, -0.0010122496, 0, 1.4555948, 0)
+mesh = SubResource("SphereMesh_aes0s")
+skeleton = NodePath("..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D3" unique_id=7858155]
+transform = Transform3D(0.9999993, -0.0010121502, -0.0009980459, 0.0010121502, 0.014031981, 0.99990106, -0.0009980456, -0.9999013, 0.014032992, -0.00075840205, 0, -0.74922585)
+mesh = SubResource("CapsuleMesh_tw4o5")
 skeleton = NodePath("../..")
 
 [node name="FSM" type="Node3D" parent="." unique_id=537548944 node_paths=PackedStringArray("player")]
