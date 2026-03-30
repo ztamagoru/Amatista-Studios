@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://do3crd75ny4ra"]
+
+[ext_resource type="Script" uid="uid://ds4i83s26qvqm" path="res://scripts/player/player.gd" id="1_1xbud"]
+[ext_resource type="Script" uid="uid://cftjnbyt7gyop" path="res://scripts/player/fsm/fsm.gd" id="3_c8uok"]
+[ext_resource type="Script" uid="uid://mv8nikkecad4" path="res://scenes/components/player/states/idle.gd" id="4_tcka2"]
+[ext_resource type="Script" uid="uid://6sj3ia7fne8w" path="res://scenes/components/player/states/fall.gd" id="5_frspl"]
+[ext_resource type="Script" uid="uid://sxd7rl0nyqv7" path="res://scenes/components/player/states/jump.gd" id="6_aes0s"]
+[ext_resource type="Script" uid="uid://mv5gfj0t68y4" path="res://scenes/components/player/states/walk.gd" id="7_tw4o5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1xbud"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_imdkq"]
+
+[node name="Player" type="CharacterBody3D" unique_id=2109264169]
+script = ExtResource("1_1xbud")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1087679022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_1xbud")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=1912228836]
+mesh = SubResource("CapsuleMesh_imdkq")
+skeleton = NodePath("../..")
+
+[node name="FSM" type="Node3D" parent="." unique_id=537548944 node_paths=PackedStringArray("player")]
+script = ExtResource("3_c8uok")
+player = NodePath("..")
+
+[node name="Idle" type="Node3D" parent="FSM" unique_id=65642260]
+script = ExtResource("4_tcka2")
+
+[node name="Fall" type="Node3D" parent="FSM" unique_id=1690694628]
+script = ExtResource("5_frspl")
+
+[node name="Jump" type="Node3D" parent="FSM" unique_id=1420635754]
+script = ExtResource("6_aes0s")
+
+[node name="Walk" type="Node3D" parent="FSM" unique_id=606669197]
+script = ExtResource("7_tw4o5")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=857669184]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.8660253, 0.49999997, 0, -0.49999997, 0.8660253, 2, 5, 5)
