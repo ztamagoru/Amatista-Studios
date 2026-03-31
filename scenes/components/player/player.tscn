@@ -18,9 +18,10 @@ height = 0.5
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tw4o5"]
 radius = 0.05
 
-[node name="Player" type="CharacterBody3D" unique_id=2109264169 node_paths=PackedStringArray("camera")]
+[node name="Player" type="CharacterBody3D" unique_id=2109264169 node_paths=PackedStringArray("camera", "timer")]
 script = ExtResource("1_1xbud")
 camera = NodePath("Camera3D")
+timer = NodePath("Timer")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1087679022]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -59,3 +60,7 @@ script = ExtResource("7_tw4o5")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=857669184]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.8660253, 0.49999997, 0, -0.49999997, 0.8660253, 2, 5, 5)
+
+[node name="Timer" type="Timer" parent="." unique_id=1483389585]
+wait_time = 0.5
+one_shot = true

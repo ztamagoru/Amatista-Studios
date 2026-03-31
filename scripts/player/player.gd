@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @export var camera : Camera3D
+@export var timer : Timer
 
 const speed : float = 5.0
 const crouch_speed : float = 4.0
@@ -14,6 +15,10 @@ const gravity : float = 8.0
 var mouse_position
 var from
 var ray_lenght : float = 1000
+var cursor_position_on_plane
+
+var projectile_scene = preload("res://scenes/components/projectiles/grenade.tscn")
+const shoot_cd : float = 0.5
 
 func _process(_delta) -> void:
 	if Input.is_key_pressed(KEY_ESCAPE):
@@ -23,12 +28,23 @@ func _process(_delta) -> void:
 	mouse_position = get_viewport().get_mouse_position()
 	from = camera.project_ray_origin(mouse_position)
 	var to = from + camera.project_ray_normal(mouse_position) * ray_lenght
-	var cursor_position_on_plane = target_plane_mouse.intersects_ray(from, to)
+	cursor_position_on_plane = target_plane_mouse.intersects_ray(from, to)
 	
 	if cursor_position_on_plane:
 		var target = cursor_position_on_plane
 		target.y = $MeshInstance3D3.global_position.y
 		$MeshInstance3D3.look_at(target, Vector3.UP)
 
-#func _input(event: InputEvent) -> void:
-	#pass
+func _input(event: InputEvent):
+
+	if event is InputEventMouseButton and not timer.time_left > 0:
+		print("proyectil disparado")
+		var projectile = projectile_scene.instantiate()
+		
+		timer.start(shoot_cd)
+		
+		projectile.dir = cursor_position_on_plane
+		#projectile.global_position = global_position
+		
+		get_tree().current_scene.add_child(projectile)
+	else: print(timer.time_left)
