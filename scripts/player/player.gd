@@ -36,7 +36,6 @@ func _process(_delta) -> void:
 		$MeshInstance3D3.look_at(target, Vector3.UP)
 
 func _input(event: InputEvent):
-
 	if event is InputEventMouseButton and not timer.time_left > 0:
 		print("proyectil disparado")
 		var projectile = projectile_scene.instantiate()
@@ -44,7 +43,8 @@ func _input(event: InputEvent):
 		timer.start(shoot_cd)
 		
 		projectile.dir = cursor_position_on_plane
-		#projectile.global_position = global_position
-		
 		get_tree().current_scene.add_child(projectile)
-	else: print(timer.time_left)
+		projectile.global_position = global_position
+		projectile.global_position.y += 2
+		
+	#else: print(timer.time_left)

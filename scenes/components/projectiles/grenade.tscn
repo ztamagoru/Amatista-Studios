@@ -15,6 +15,7 @@ height = 0.25
 physics_material_override = SubResource("PhysicsMaterial_26fn7")
 can_sleep = false
 contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_p5bkk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1425371215]
@@ -24,7 +25,7 @@ shape = SubResource("SphereShape3D_8sfnu")
 mesh = SubResource("SphereMesh_26fn7")
 
 [node name="Timer" type="Timer" parent="." unique_id=1670406088]
-wait_time = 10.0
+wait_time = 5.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
