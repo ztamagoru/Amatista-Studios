@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://3dh1jucld5sj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ut0xt"]
+cull_mode = 1
+shading_mode = 0
+grow = true
+grow_amount = 0.05
+
+[resource]
+next_pass = SubResource("StandardMaterial3D_ut0xt")

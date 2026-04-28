@@ -1,7 +1,18 @@
 extends CharacterBody3D
 
+# --
+
 @export var camera : Camera3D
 @export var timer : Timer
+
+# --
+
+@export var raycast : RayCast3D
+@export var raycast_area : Area3D
+
+const raycast_max_distance : float = 3.0
+
+# --
 
 const speed : float = 5.0
 const crouch_speed : float = 4.0
@@ -12,6 +23,8 @@ const jump_force : float = 3.5
 const jump_velocity : float = 4.5
 const gravity : float = 8.0
 
+# --
+
 var mouse_position
 var from
 var ray_lenght : float = 1000
@@ -19,6 +32,8 @@ var cursor_position_on_plane
 
 var projectile_scene = preload("res://scenes/components/projectiles/grenade.tscn")
 const shoot_cd : float = 0.5
+
+# --
 
 func _process(_delta) -> void:
 	if Input.is_key_pressed(KEY_ESCAPE):
@@ -34,6 +49,26 @@ func _process(_delta) -> void:
 		var target = cursor_position_on_plane
 		target.y = $MeshInstance3D3.global_position.y
 		$MeshInstance3D3.look_at(target, Vector3.UP)
+		
+		if raycast.enabled: rotate_raycast($MeshInstance3D3.global_transform.basis.z)
+
+
+func rotate_raycast(mesh_transform : Vector3):
+	var dir : Vector3 = -mesh_transform
+	
+	dir.y = 0
+	dir = dir.normalized() * raycast_max_distance
+	
+	raycast.target_position = dir
+
+#func _physics_process(_delta: float):
+	#for body in raycast_area.get_overlapping_bodies():
+		#if body.is_in_group("interactable"):
+			#raycast.enabled = true
+			#return
+	#
+	#raycast.enabled = false
+
 
 func _input(event: InputEvent):
 	if event is InputEventMouseButton and not timer.time_left > 0:
