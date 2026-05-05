@@ -52,7 +52,6 @@ func _process(_delta) -> void:
 		
 		if raycast.enabled: rotate_raycast($MeshInstance3D3.global_transform.basis.z)
 
-
 func rotate_raycast(mesh_transform : Vector3):
 	var dir : Vector3 = -mesh_transform
 	
@@ -61,14 +60,18 @@ func rotate_raycast(mesh_transform : Vector3):
 	
 	raycast.target_position = dir
 
-#func _physics_process(_delta: float):
-	#for body in raycast_area.get_overlapping_bodies():
-		#if body.is_in_group("interactable"):
-			#raycast.enabled = true
-			#return
-	#
-	#raycast.enabled = false
-
+func _physics_process(_delta: float):
+	if raycast.enabled and raycast.is_colliding():
+		detect_interactable()
+	elif raycast.enabled and not raycast.is_colliding(): 
+		Globals.hide_interactable_outline.emit()
+	
+	for body in raycast_area.get_overlapping_bodies():
+		if body.is_in_group("interactable"):
+			raycast.enabled = true
+			return
+	
+	raycast.enabled = false
 
 func _input(event: InputEvent):
 	if event is InputEventMouseButton and not timer.time_left > 0:
@@ -83,3 +86,9 @@ func _input(event: InputEvent):
 		projectile.global_position.y += 2
 		
 	#else: print(timer.time_left)
+
+func detect_interactable():
+	var hit_object = raycast.get_collider()
+	
+	if hit_object.is_in_group("interactable"):
+		Globals.set_interactable_outline.emit(hit_object.get_instance_id())

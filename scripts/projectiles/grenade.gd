@@ -15,8 +15,10 @@ func _ready() -> void:
 
 func _process(_delta: float):
 	if get_contact_count() > 0:
-		for body in get_colliding_bodies():
+		for body in get_colliding_bodies(): 
 			if not body.is_in_group("player"):
+				if body.is_in_group("sick_environment"):
+					body.collision()
 				queue_free()
 		return
 

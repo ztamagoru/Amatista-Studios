@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_8uh7m"]
 [ext_resource type="PackedScene" uid="uid://do3crd75ny4ra" path="res://scenes/components/player/player.tscn" id="2_6uqi0"]
 [ext_resource type="Script" uid="uid://b1167sojl46n2" path="res://scripts/interactable/interactable.gd" id="3_6uqi0"]
-[ext_resource type="Resource" uid="uid://dy400g1vmtppv" path="res://dialogs/npc/test/test.dialogue" id="4_ykrsh"]
 [ext_resource type="Script" uid="uid://ruugex3xy8gw" path="res://scripts/interactable/enviroment/sick_environment.gd" id="5_ykrsh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ppyta"]
@@ -118,7 +117,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95466423, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0291753, 1.2968049, 0)
 script = ExtResource("3_6uqi0")
 object_mesh = NodePath("MeshInstance3D")
-dialogue_route = ExtResource("4_ykrsh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Object" unique_id=1441897176]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.3841858e-07, 0)
@@ -128,32 +126,19 @@ shape = SubResource("SphereShape3D_ppyta")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.013874769, 0)
 mesh = SubResource("SphereMesh_g14j6")
 
-[node name="Object2" type="CharacterBody3D" parent="." unique_id=934941537 node_paths=PackedStringArray("object_mesh") groups=["interactable"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4150014, 1.2968049, 0)
-script = ExtResource("3_6uqi0")
-object_mesh = NodePath("MeshInstance3D")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Object2" unique_id=1461366193]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.3841858e-07, 0)
-shape = SubResource("SphereShape3D_ppyta")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Object2" unique_id=1746849089]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.013874769, 0)
-mesh = SubResource("SphereMesh_g14j6")
-
-[node name="tree" type="StaticBody3D" parent="." unique_id=1141626556 node_paths=PackedStringArray("mesh") groups=["sick_environment"]]
+[node name="greenbox" type="StaticBody3D" parent="." unique_id=1141626556 node_paths=PackedStringArray("mesh") groups=["sick_environment"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1868491, 1.4382541, -4.547329)
 script = ExtResource("5_ykrsh")
 mesh = NodePath("Armature/Skeleton3D/Cube_001")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="tree" unique_id=1213937242]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="greenbox" unique_id=1213937242]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4248562, 0.49829102, -0.38938236)
 shape = SubResource("CylinderShape3D_ppyta")
 
-[node name="Armature" type="Node3D" parent="tree" unique_id=301701721]
+[node name="Armature" type="Node3D" parent="greenbox" unique_id=301701721]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4947492, -0.627671, -0.38473356)
 
-[node name="Skeleton3D" type="Skeleton3D" parent="tree/Armature" unique_id=1920827193]
+[node name="Skeleton3D" type="Skeleton3D" parent="greenbox/Armature" unique_id=1920827193]
 bones/0/name = "Bone"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -190,10 +175,10 @@ bones/4/position = Vector3(-5.9604645e-08, 0.9952345, 9.872019e-08)
 bones/4/rotation = Quaternion(0.31796864, 0.0122447945, -0.26290262, 0.9108393)
 bones/4/scale = Vector3(1, 1, 0.99999994)
 
-[node name="Cube_001" type="MeshInstance3D" parent="tree/Armature/Skeleton3D" unique_id=1687153574]
+[node name="Cube_001" type="MeshInstance3D" parent="greenbox/Armature/Skeleton3D" unique_id=1687153574]
 mesh = SubResource("ArrayMesh_85obs")
 skin = SubResource("Skin_t7wnc")
 skeleton = NodePath("..")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="tree" unique_id=1766324050]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="greenbox" unique_id=1766324050]
 libraries/ = SubResource("AnimationLibrary_b6m2f")

@@ -1,0 +1,8 @@
+~ start
+NPC: Para salvar al bosque tienes que darles con el tirachinas a las zonas [shake]infectadas[/shake].
+NPC: Prueba con ese árbol de ahí.
+NPC: Siempre puedes salir de esta prueba apretando [wave]ESC[/wave].
+- Entendido
+- ¿Podrías repetirlo?
+	=> start
+=> END
