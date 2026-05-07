@@ -35,6 +35,10 @@ const shoot_cd : float = 0.5
 
 # --
 
+func _ready() -> void:
+	DialogueManager.dialogue_started.connect(_dialog_started)
+	DialogueManager.dialogue_ended.connect(_dialog_ended)
+
 func _process(_delta) -> void:
 	if Input.is_key_pressed(KEY_ESCAPE):
 		get_tree().quit()
@@ -92,3 +96,13 @@ func detect_interactable():
 	
 	if hit_object.is_in_group("interactable"):
 		Globals.set_interactable_outline.emit(hit_object.get_instance_id())
+
+func _dialog_started(_resource: DialogueResource):
+	self.process_mode = Node.PROCESS_MODE_DISABLED
+	print("dialog started")
+	pass
+
+func _dialog_ended(_resource: DialogueResource):
+	self.process_mode = Node.PROCESS_MODE_INHERIT
+	print("dialog ended")
+	pass
