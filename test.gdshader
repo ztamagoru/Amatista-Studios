@@ -9,4 +9,5 @@ void fragment() {
 	vec4 col_b = texture(texture_b, UV);
 	
 	ALBEDO = mix(col_a.rgb, col_b.rgb, blend);
+	ALPHA = texture(texture_a,UV).a;
 }
