@@ -1,0 +1,4 @@
+~ start
+Agarraste {{str(item_quantity)}}x {{item_name}}.
+#% Recogiste {{str(item_quantity)}}x {{item_name}}.
+=> END
