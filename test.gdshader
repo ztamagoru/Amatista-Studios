@@ -2,7 +2,7 @@ shader_type spatial;
 
 uniform sampler2D texture_a;
 uniform sampler2D texture_b;
-uniform float blend : hint_range(0.0, 1.0);
+uniform float blend : hint_range(0.0, 1.25);
 
 void fragment() {
 	vec4 col_a = texture(texture_a, UV);
