@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://ruugex3xy8gw" path="res://scripts/interactable/enviroment/sick_environment.gd" id="5_ykrsh"]
 [ext_resource type="Resource" uid="uid://nkmjbpud0thh" path="res://dialogs/item_grabbed.dialogue" id="6_vbegm"]
 [ext_resource type="Shader" uid="uid://si1l01yy2t8a" path="res://test.gdshader" id="8_ehkex"]
+[ext_resource type="Texture2D" uid="uid://bync1ey10qpid" path="res://WhatsApp Image 2026-05-07 at 4.48.23 PM.jpeg" id="9_xersf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ppyta"]
 size = Vector3(15, 1, 15)
@@ -74,6 +75,13 @@ bind/4/name = &"Bone.004"
 bind/4/bone = -1
 bind/4/pose = Transform3D(0.96509546, -0.18131575, -0.18898547, 0.19866, 0.97702944, 0.07712283, 0.17066073, -0.11197467, 0.9789468, -0.019362684, -2.986481, 1.1980703)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_00tp4"]
+render_priority = 0
+shader = ExtResource("8_ehkex")
+shader_parameter/texture_a = ExtResource("1_8uh7m")
+shader_parameter/texture_b = ExtResource("9_xersf")
+shader_parameter/blend = 0.0
+
 [sub_resource type="Animation" id="Animation_mgjsi"]
 resource_name = "ArmatureAction"
 length = 2.375
@@ -104,9 +112,6 @@ _data = {
 &"ArmatureAction": SubResource("Animation_mgjsi")
 }
 
-[sub_resource type="Environment" id="Environment_vbegm"]
-background_mode = 1
-background_color = Color(0.37114546, 0.69889796, 0.7960552, 1)
 [node name="Node3D" type="Node3D" unique_id=2132977733]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=856830103]
@@ -203,6 +208,7 @@ bones/4/scale = Vector3(1, 1, 0.99999994)
 mesh = SubResource("ArrayMesh_85obs")
 skin = SubResource("Skin_t7wnc")
 skeleton = NodePath("..")
+surface_material_override/0 = SubResource("ShaderMaterial_00tp4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="tree" unique_id=1766324050]
 libraries/ = SubResource("AnimationLibrary_b6m2f")
