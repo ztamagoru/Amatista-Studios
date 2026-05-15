@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://ew5cdamg78vk"]
+
+[ext_resource type="Script" uid="uid://ckxfytt0ofxlt" path="res://scripts/puzzles/cups/cup_puzzle.gd" id="1_7pyt5"]
+[ext_resource type="Script" uid="uid://dpnm886vsmslr" path="res://scripts/puzzles/cups/path.gd" id="2_v3k2j"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vtlwb"]
+
+[sub_resource type="Curve3D" id="Curve3D_7ks35"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_7pyt5"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, -1, 0, 0, 0, 2, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="CupPuzzle" type="Node3D" unique_id=697723389]
+script = ExtResource("1_7pyt5")
+
+[node name="Markers" type="Node3D" parent="." unique_id=1360343941]
+
+[node name="Marker1" type="Marker3D" parent="Markers" unique_id=605288070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="Marker2" type="Marker3D" parent="Markers" unique_id=1505417076]
+
+[node name="Marker3" type="Marker3D" parent="Markers" unique_id=216304330]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Cups" type="Node3D" parent="." unique_id=485788488]
+
+[node name="Cup1" type="MeshInstance3D" parent="Cups" unique_id=464134794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+mesh = SubResource("BoxMesh_vtlwb")
+
+[node name="Cup2" type="MeshInstance3D" parent="Cups" unique_id=1920034582]
+mesh = SubResource("BoxMesh_vtlwb")
+
+[node name="Cup3" type="MeshInstance3D" parent="Cups" unique_id=1595992844]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+mesh = SubResource("BoxMesh_vtlwb")
+
+[node name="Paths" type="Node3D" parent="." unique_id=22536180]
+
+[node name="Path1" type="Path3D" parent="Paths" unique_id=1966068707]
+curve = SubResource("Curve3D_7ks35")
+script = ExtResource("2_v3k2j")
+
+[node name="CupPath" type="PathFollow3D" parent="Paths/Path1" unique_id=46060818]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="CupRemote" type="RemoteTransform3D" parent="Paths/Path1/CupPath" unique_id=2053709944]
+
+[node name="Path2" type="Path3D" parent="Paths" unique_id=1698535891]
+curve = SubResource("Curve3D_7pyt5")
+script = ExtResource("2_v3k2j")
+
+[node name="CupPath" type="PathFollow3D" parent="Paths/Path2" unique_id=829411312]
+
+[node name="CupRemote" type="RemoteTransform3D" parent="Paths/Path2/CupPath" unique_id=1089464284]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=84240221]
+transform = Transform3D(0.99994516, 0, -0.010471784, 0, 1, 0, 0.010471784, 0, 0.99994516, 0, 0, 4.292904)
