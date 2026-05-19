@@ -1,10 +1,20 @@
 extends Node3D
 
+# --
+
 @onready var markers : Array[Node3D] = [$Markers/Marker1, $Markers/Marker2, $Markers/Marker3]
 @onready var cups : Array[Node3D] = [$Cups/Cup1, $Cups/Cup2, $Cups/Cup3]
 
 @onready var path_1 : CupPath = $Paths/Path1
 @onready var path_2 : CupPath = $Paths/Path2
+
+# --
+
+var _is_shuffling : bool
+
+var speed_multiplier : float
+
+# --
 
 func shuffle_cups():
 	var rand_1 : int = randi_range(0, 2)
@@ -32,17 +42,23 @@ func shuffle_cups():
 	cups[rand_1] = cup_2
 	cups[rand_2] = cup_1
 	
-	create_tween().tween_property(path_1.follow, "progress_ratio", 1, 0.5)
-	create_tween().tween_property(path_2.follow, "progress_ratio", 1, 0.5)
+	create_tween().tween_property(path_1.follow, "progress_ratio", 1, 0.5 / speed_multiplier)
+	create_tween().tween_property(path_2.follow, "progress_ratio", 1, 0.5 / speed_multiplier)
 	
-	await get_tree().create_timer(0.6).timeout
+	await get_tree().create_timer(0.6 / speed_multiplier).timeout
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("interact"):
-		for i in randi_range(5,10): await shuffle_cups()
+#func _process(_delta: float) -> void:
+	#if Input.is_action_just_pressed("interact"):
+		#for i in randi_range(5,10): 
+			#await shuffle_cups()
 
+func _ready() -> void:
+	speed_multiplier = 1.0
+	game()
 
-#func _ready() -> void:
-	##shuffle_cups()
-	#for i in randi_range(3, 7):
-		#await shuffle_cups()
+func game():
+	_is_shuffling = false
+	while true:
+		print(speed_multiplier)
+		for i in randi_range(round(5 * speed_multiplier) , round(10 * speed_multiplier)): await shuffle_cups()
+		speed_multiplier += 0.15
