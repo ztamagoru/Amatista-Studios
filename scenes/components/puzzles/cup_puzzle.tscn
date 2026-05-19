@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://ckxfytt0ofxlt" path="res://scripts/puzzles/cups/cup_puzzle.gd" id="1_7pyt5"]
 [ext_resource type="Script" uid="uid://dpnm886vsmslr" path="res://scripts/puzzles/cups/path.gd" id="2_v3k2j"]
+[ext_resource type="Script" uid="uid://dqu14k26dhgmj" path="res://scripts/puzzles/cups/cup.gd" id="2_vtlwb"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_vtlwb"]
+[sub_resource type="BoxMesh" id="BoxMesh_7pyt5"]
+size = Vector3(1.5, 1.5, 1.5)
 
 [sub_resource type="Curve3D" id="Curve3D_7ks35"]
 _data = {
@@ -34,16 +36,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 
 [node name="Cups" type="Node3D" parent="." unique_id=485788488]
 
-[node name="Cup1" type="MeshInstance3D" parent="Cups" unique_id=464134794]
+[node name="Cup1" type="Node3D" parent="Cups" unique_id=141287908]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
-mesh = SubResource("BoxMesh_vtlwb")
+script = ExtResource("2_vtlwb")
+metadata/_custom_type_script = "uid://dqu14k26dhgmj"
 
-[node name="Cup2" type="MeshInstance3D" parent="Cups" unique_id=1920034582]
-mesh = SubResource("BoxMesh_vtlwb")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cups/Cup1" unique_id=1156937396]
+mesh = SubResource("BoxMesh_7pyt5")
 
-[node name="Cup3" type="MeshInstance3D" parent="Cups" unique_id=1595992844]
+[node name="Cup2" type="Node3D" parent="Cups" unique_id=1096940978]
+script = ExtResource("2_vtlwb")
+metadata/_custom_type_script = "uid://dqu14k26dhgmj"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cups/Cup2" unique_id=2096818153]
+mesh = SubResource("BoxMesh_7pyt5")
+
+[node name="Cup3" type="Node3D" parent="Cups" unique_id=1703686345]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
-mesh = SubResource("BoxMesh_vtlwb")
+script = ExtResource("2_vtlwb")
+metadata/_custom_type_script = "uid://dqu14k26dhgmj"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cups/Cup3" unique_id=1687401779]
+mesh = SubResource("BoxMesh_7pyt5")
 
 [node name="Paths" type="Node3D" parent="." unique_id=22536180]
 
@@ -65,4 +79,4 @@ script = ExtResource("2_v3k2j")
 [node name="CupRemote" type="RemoteTransform3D" parent="Paths/Path2/CupPath" unique_id=1089464284]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=84240221]
-transform = Transform3D(0.99994516, 0, -0.010471784, 0, 1, 0, 0.010471784, 0, 0.99994516, 0, 0, 4.292904)
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 2, 4.293)
