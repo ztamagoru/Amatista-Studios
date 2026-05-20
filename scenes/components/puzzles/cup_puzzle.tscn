@@ -3,16 +3,27 @@
 [ext_resource type="Script" uid="uid://ckxfytt0ofxlt" path="res://scripts/puzzles/cups/cup_puzzle.gd" id="1_7pyt5"]
 [ext_resource type="Script" uid="uid://dpnm886vsmslr" path="res://scripts/puzzles/cups/path.gd" id="2_v3k2j"]
 [ext_resource type="Script" uid="uid://dqu14k26dhgmj" path="res://scripts/puzzles/cups/cup.gd" id="2_vtlwb"]
+[ext_resource type="PackedScene" uid="uid://cmi8pms7we0rl" path="res://assets/models/zone 1/puzzle/calabazas(shellgame).glb" id="3_vtlwb"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_7pyt5"]
-size = Vector3(1.5, 1.5, 1.5)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vtlwb"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_7ks35"]
+sky_material = SubResource("ProceduralSkyMaterial_vtlwb")
+
+[sub_resource type="Environment" id="Environment_jft2p"]
+background_mode = 2
+sky = SubResource("Sky_7ks35")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="Animation" id="Animation_v3k2j"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/path = NodePath("calabazas(shellgame):position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -28,14 +39,14 @@ length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/path = NodePath("calabazas(shellgame):position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 2.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1.0000002, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.5, 0), Vector3(0, 1.5, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 2, 0), Vector3(0, 2, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7ks35"]
@@ -49,7 +60,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/path = NodePath("calabazas(shellgame)2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -65,14 +76,14 @@ length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/path = NodePath("calabazas(shellgame)2:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 2.5, 3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.5, 0), Vector3(0, 1.5, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 2, 0), Vector3(0, 2, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wg3bj"]
@@ -86,7 +97,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/path = NodePath("calabazas(shellgame)3:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -102,14 +113,14 @@ length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/path = NodePath("calabazas(shellgame)3:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 2.5, 3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.5, 0), Vector3(0, 1.5, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 2, 0), Vector3(0, 2, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4t8hw"]
@@ -120,14 +131,14 @@ _data = {
 
 [sub_resource type="Curve3D" id="Curve3D_7ks35"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_7pyt5"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, -1, 0, 0, 0, 2, 0, 0),
+"points": PackedVector3Array(0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, -4, 0, 0, 0, 4, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -135,26 +146,39 @@ point_count = 2
 [node name="CupPuzzle" type="Node3D" unique_id=697723389]
 script = ExtResource("1_7pyt5")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=461787815]
+environment = SubResource("Environment_jft2p")
+
 [node name="Markers" type="Node3D" parent="." unique_id=1360343941]
 
 [node name="Marker1" type="Marker3D" parent="Markers" unique_id=605288070]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 
 [node name="Marker2" type="Marker3D" parent="Markers" unique_id=1505417076]
 
 [node name="Marker3" type="Marker3D" parent="Markers" unique_id=216304330]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 
 [node name="Cups" type="Node3D" parent="." unique_id=485788488]
 
 [node name="Cup1" type="Node3D" parent="Cups" unique_id=141287908 node_paths=PackedStringArray("anim")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 script = ExtResource("2_vtlwb")
 anim = NodePath("AnimationPlayer")
 metadata/_custom_type_script = "uid://dqu14k26dhgmj"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Cups/Cup1" unique_id=1156937396]
-mesh = SubResource("BoxMesh_7pyt5")
+[node name="calabazas(shellgame)" parent="Cups/Cup1" unique_id=1422738843 instance=ExtResource("3_vtlwb")]
+
+[node name="Cube_007" parent="Cups/Cup1/calabazas(shellgame)" index="0" unique_id=568265601]
+transform = Transform3D(0.1451315, 0, 0, 0, 0.16522858, 0, 0, 0, 0.051521458, -0.3, 1, 1.4)
+
+[node name="Cube_010" parent="Cups/Cup1/calabazas(shellgame)" index="1" unique_id=447937501]
+transform = Transform3D(0.16933663, 0, 0, 0, 0.19278552, 0, 0, 0, 0.060114246, 0, 0, 0)
+visible = false
+
+[node name="Cube_020" parent="Cups/Cup1/calabazas(shellgame)" index="2" unique_id=991286417]
+transform = Transform3D(0.19108163, 0, 0, 0, 0.19108163, 0, 0, 0, 0.19108163, 0, 0, 0)
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cups/Cup1" unique_id=1522494416]
 libraries/ = SubResource("AnimationLibrary_7ks35")
@@ -164,20 +188,40 @@ script = ExtResource("2_vtlwb")
 anim = NodePath("AnimationPlayer")
 metadata/_custom_type_script = "uid://dqu14k26dhgmj"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Cups/Cup2" unique_id=2096818153]
-mesh = SubResource("BoxMesh_7pyt5")
+[node name="calabazas(shellgame)2" parent="Cups/Cup2" unique_id=632245195 instance=ExtResource("3_vtlwb")]
+
+[node name="Cube_007" parent="Cups/Cup2/calabazas(shellgame)2" index="0" unique_id=568265601]
+transform = Transform3D(0.1451315, 0, 0, 0, 0.16522858, 0, 0, 0, 0.051521458, -0.3, 1, 1.4)
+visible = false
+
+[node name="Cube_010" parent="Cups/Cup2/calabazas(shellgame)2" index="1" unique_id=447937501]
+transform = Transform3D(0.16933663, 0, 0, 0, 0.19278552, 0, 0, 0, 0.060114246, -0.411, 1.001, 1.4)
+
+[node name="Cube_020" parent="Cups/Cup2/calabazas(shellgame)2" index="2" unique_id=991286417]
+transform = Transform3D(0.19108163, 0, 0, 0, 0.19108163, 0, 0, 0, 0.19108163, 0, 0, 0)
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cups/Cup2" unique_id=2104264809]
 libraries/ = SubResource("AnimationLibrary_wg3bj")
 
 [node name="Cup3" type="Node3D" parent="Cups" unique_id=1703686345 node_paths=PackedStringArray("anim")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 script = ExtResource("2_vtlwb")
 anim = NodePath("AnimationPlayer")
 metadata/_custom_type_script = "uid://dqu14k26dhgmj"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Cups/Cup3" unique_id=1687401779]
-mesh = SubResource("BoxMesh_7pyt5")
+[node name="calabazas(shellgame)3" parent="Cups/Cup3" unique_id=1184544413 instance=ExtResource("3_vtlwb")]
+
+[node name="Cube_007" parent="Cups/Cup3/calabazas(shellgame)3" index="0" unique_id=568265601]
+transform = Transform3D(0.1451315, 0, 0, 0, 0.16522858, 0, 0, 0, 0.051521458, -0.3, 1, 1.4)
+visible = false
+
+[node name="Cube_010" parent="Cups/Cup3/calabazas(shellgame)3" index="1" unique_id=447937501]
+transform = Transform3D(0.16933663, 0, 0, 0, 0.19278552, 0, 0, 0, 0.060114246, 0, 0, 0)
+visible = false
+
+[node name="Cube_020" parent="Cups/Cup3/calabazas(shellgame)3" index="2" unique_id=991286417]
+transform = Transform3D(0.19108163, 0, 0, 0, 0.19108163, 0, 0, 0, 0.19108163, 0, 0.6, 1.4)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cups/Cup3" unique_id=1889603460]
 libraries/ = SubResource("AnimationLibrary_4t8hw")
@@ -202,4 +246,8 @@ script = ExtResource("2_v3k2j")
 [node name="CupRemote" type="RemoteTransform3D" parent="Paths/Path2/CupPath" unique_id=1089464284]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=84240221]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 2, 4.293)
+transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 3.3854675, 7.8477874)
+
+[editable path="Cups/Cup1/calabazas(shellgame)"]
+[editable path="Cups/Cup2/calabazas(shellgame)2"]
+[editable path="Cups/Cup3/calabazas(shellgame)3"]
