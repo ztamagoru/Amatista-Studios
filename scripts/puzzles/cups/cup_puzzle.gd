@@ -13,7 +13,7 @@ extends Node3D
 var _can_choose : bool
 var _currently_hovered : bool = false
 
-var hovered
+var cup_hovered : Node3D
 
 var correct_attempts : int
 
@@ -70,12 +70,11 @@ func _physics_process(_delta: float) -> void:
 	
 	if check_cup_hovered() and not _currently_hovered:
 		_currently_hovered = true
-		Globals.set_interactable_outline.emit(hovered.get_instance_id())
+		Globals.set_interactable_outline.emit(cup_hovered.get_instance_id())
 	elif not check_cup_hovered() and _currently_hovered:
 		_currently_hovered = false
 		Globals.hide_interactable_outline.emit()
-		hovered = null
-	
+		cup_hovered = null
 
 func check_cup_hovered():
 	var mouse_pos : Vector2 = get_viewport().get_mouse_position()
@@ -97,11 +96,11 @@ func check_cup_hovered():
 	query.collide_with_areas = true
 	query.exclude = [self]
 	
-	var result = space_state.intersect_ray(query)
+	var result : Dictionary = space_state.intersect_ray(query)
 	
 	if result:
-		hovered = result.collider
-		if hovered is Cup: return true
+		cup_hovered = result.collider
+		if cup_hovered is Cup: return true
 	
 	return false
 
@@ -112,10 +111,16 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed and _currently_hovered:
-				pass
+				_currently_hovered = false
+				Globals.hide_interactable_outline.emit()
+				game()
 
 func game():
 	_can_choose = false
+	
+	if not cup_hovered == null:
+		cup_hovered.check_inside()
+		await cup_hovered.anim.animation_finished
 	
 	print(speed_multiplier)
 	for i in randi_range(round(5 * speed_multiplier) , round(10 * speed_multiplier)): await shuffle_cups()
