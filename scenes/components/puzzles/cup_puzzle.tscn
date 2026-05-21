@@ -168,7 +168,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 script = ExtResource("2_vtlwb")
 anim = NodePath("AnimationPlayer")
-object_mesh = NodePath("calabazas(shellgame)/Cube_007")
+object_mesh = NodePath("calabazas(shellgame)/Cube_020")
 metadata/_custom_type_script = "uid://dqu14k26dhgmj"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cups/Cup1" unique_id=153002506]
@@ -179,14 +179,14 @@ shape = SubResource("BoxShape3D_vtlwb")
 
 [node name="Cube_007" parent="Cups/Cup1/calabazas(shellgame)" index="0" unique_id=568265601]
 transform = Transform3D(0.1451315, 0, 0, 0, 0.16522858, 0, 0, 0, 0.051521458, -0.3, 1, 1.4)
+visible = false
 
 [node name="Cube_010" parent="Cups/Cup1/calabazas(shellgame)" index="1" unique_id=447937501]
 transform = Transform3D(0.16933663, 0, 0, 0, 0.19278552, 0, 0, 0, 0.060114246, 0, 0, 0)
 visible = false
 
 [node name="Cube_020" parent="Cups/Cup1/calabazas(shellgame)" index="2" unique_id=991286417]
-transform = Transform3D(0.19108163, 0, 0, 0, 0.19108163, 0, 0, 0, 0.19108163, 0, 0, 0)
-visible = false
+transform = Transform3D(0.19108163, 0, 0, 0, 0.19108163, 0, 0, 0, 0.19108163, 0, 0.6, 1.4)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cups/Cup1" unique_id=1522494416]
 libraries/ = SubResource("AnimationLibrary_7ks35")
@@ -194,7 +194,7 @@ libraries/ = SubResource("AnimationLibrary_7ks35")
 [node name="Cup2" type="Area3D" parent="Cups" unique_id=1083554766 node_paths=PackedStringArray("anim", "object_mesh")]
 script = ExtResource("2_vtlwb")
 anim = NodePath("AnimationPlayer")
-object_mesh = NodePath("calabazas(shellgame)2/Cube_010")
+object_mesh = NodePath("calabazas(shellgame)2/Cube_020")
 metadata/_custom_type_script = "uid://dqu14k26dhgmj"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cups/Cup2" unique_id=1265087600]
@@ -209,10 +209,10 @@ visible = false
 
 [node name="Cube_010" parent="Cups/Cup2/calabazas(shellgame)2" index="1" unique_id=447937501]
 transform = Transform3D(0.16933663, 0, 0, 0, 0.19278552, 0, 0, 0, 0.060114246, -0.411, 1.001, 1.4)
+visible = false
 
 [node name="Cube_020" parent="Cups/Cup2/calabazas(shellgame)2" index="2" unique_id=991286417]
-transform = Transform3D(0.19108163, 0, 0, 0, 0.19108163, 0, 0, 0, 0.19108163, 0, 0, 0)
-visible = false
+transform = Transform3D(0.19108163, 0, 0, 0, 0.19108163, 0, 0, 0, 0.19108163, 0, 0.6, 1.4)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cups/Cup2" unique_id=2104264809]
 libraries/ = SubResource("AnimationLibrary_wg3bj")
