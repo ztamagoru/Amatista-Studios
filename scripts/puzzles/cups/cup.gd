@@ -9,6 +9,7 @@ class_name Cup
 # --
 
 var outline_material : StandardMaterial3D = preload("res://scripts/interactable/outline_material_3d.tres")
+var prize_scene : PackedScene = preload("res://scenes/components/puzzles/shell_game_prize.tscn")
 
 var _is_interactable : bool = false
 
@@ -37,3 +38,7 @@ func show_outline(object_id : int):
 
 func chosen_cup():
 	has_item = true
+	
+	var prize = prize_scene.instantiate()
+	
+	add_child(prize)
