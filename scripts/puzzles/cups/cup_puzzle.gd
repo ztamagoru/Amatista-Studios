@@ -21,7 +21,7 @@ var speed_multiplier : float
 
 # --
 
-const attempst_to_win : int = 3
+const attempts_to_win : int = 3
 
 const multiplier_base : float = 1.0
 const multiplier_sum : float = 0.25
@@ -133,7 +133,7 @@ func game():
 			speed_multiplier += multiplier_sum
 			correct_attempts += 1
 			
-			if correct_attempts == attempst_to_win:
+			if correct_attempts == attempts_to_win:
 				win()
 				return
 		else:
