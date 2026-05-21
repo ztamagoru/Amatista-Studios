@@ -10,9 +10,21 @@ extends Node3D
 
 # --
 
-var _is_shuffling : bool
+var _can_choose : bool
+var _currently_hovered : bool = false
+
+var hovered
+
+var correct_attempts : int
 
 var speed_multiplier : float
+
+# --
+
+const attempst_to_win : int = 3
+
+const multiplier_base : float = 1.0
+const multiplier_sum : float = 0.25
 
 # --
 
@@ -47,18 +59,71 @@ func shuffle_cups():
 	
 	await get_tree().create_timer(0.6 / speed_multiplier).timeout
 
-#func _process(_delta: float) -> void:
-	#if Input.is_action_just_pressed("interact"):
-		#for i in randi_range(5,10): 
-			#await shuffle_cups()
-
 func _ready() -> void:
-	speed_multiplier = 1.0
+	speed_multiplier = multiplier_base
+	
 	game()
 
+func _physics_process(_delta: float) -> void:
+	if not _can_choose:
+		return
+	
+	if check_cup_hovered() and not _currently_hovered:
+		_currently_hovered = true
+		Globals.set_interactable_outline.emit(hovered.get_instance_id())
+	elif not check_cup_hovered() and _currently_hovered:
+		_currently_hovered = false
+		Globals.hide_interactable_outline.emit()
+		hovered = null
+	
+
+func check_cup_hovered():
+	var mouse_pos : Vector2 = get_viewport().get_mouse_position()
+	var camera : Camera3D = get_viewport().get_camera_3d()
+	
+	if camera == null:
+		print("no camera detected")
+		return false
+	
+	var origin : Vector3 = camera.project_ray_origin(mouse_pos)
+	var direction : Vector3 = camera.project_ray_normal(mouse_pos)
+	
+	var ray_lenght : float = 1000.0
+	var end : Vector3 = origin + direction * ray_lenght
+	
+	var space_state : PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
+	var query : PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(origin, end)
+	
+	query.collide_with_areas = true
+	query.exclude = [self]
+	
+	var result = space_state.intersect_ray(query)
+	
+	if result:
+		hovered = result.collider
+		if hovered is Cup: return true
+	
+	return false
+
+func _input(event: InputEvent) -> void:
+	if not _can_choose:
+		return
+	
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed and _currently_hovered:
+				pass
+
 func game():
-	_is_shuffling = false
-	while true:
-		print(speed_multiplier)
-		for i in randi_range(round(5 * speed_multiplier) , round(10 * speed_multiplier)): await shuffle_cups()
-		speed_multiplier += 0.15
+	_can_choose = false
+	
+	print(speed_multiplier)
+	for i in randi_range(round(5 * speed_multiplier) , round(10 * speed_multiplier)): await shuffle_cups()
+	
+	_can_choose = true
+	
+	#var cup : Cup = cups.pick_random()
+	#cup.check_inside()
+	#await cup.anim.animation_finished
+	
+	speed_multiplier += multiplier_sum
