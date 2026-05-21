@@ -18,6 +18,9 @@ sky = SubResource("Sky_7ks35")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_vtlwb"]
+size = Vector3(2.8845215, 2.5800781, 1)
+
 [sub_resource type="Animation" id="Animation_v3k2j"]
 length = 0.001
 tracks/0/type = "value"
@@ -161,11 +164,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 
 [node name="Cups" type="Node3D" parent="." unique_id=485788488]
 
-[node name="Cup1" type="Node3D" parent="Cups" unique_id=141287908 node_paths=PackedStringArray("anim")]
+[node name="Cup1" type="Area3D" parent="Cups" unique_id=947006449 node_paths=PackedStringArray("anim", "object_mesh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 script = ExtResource("2_vtlwb")
 anim = NodePath("AnimationPlayer")
+object_mesh = NodePath("calabazas(shellgame)/Cube_007")
 metadata/_custom_type_script = "uid://dqu14k26dhgmj"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cups/Cup1" unique_id=153002506]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.093575954, 0.27791798, 0)
+shape = SubResource("BoxShape3D_vtlwb")
 
 [node name="calabazas(shellgame)" parent="Cups/Cup1" unique_id=1422738843 instance=ExtResource("3_vtlwb")]
 
@@ -183,10 +191,15 @@ visible = false
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cups/Cup1" unique_id=1522494416]
 libraries/ = SubResource("AnimationLibrary_7ks35")
 
-[node name="Cup2" type="Node3D" parent="Cups" unique_id=1096940978 node_paths=PackedStringArray("anim")]
+[node name="Cup2" type="Area3D" parent="Cups" unique_id=1083554766 node_paths=PackedStringArray("anim", "object_mesh")]
 script = ExtResource("2_vtlwb")
 anim = NodePath("AnimationPlayer")
+object_mesh = NodePath("calabazas(shellgame)2/Cube_010")
 metadata/_custom_type_script = "uid://dqu14k26dhgmj"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cups/Cup2" unique_id=1265087600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.278, 0)
+shape = SubResource("BoxShape3D_vtlwb")
 
 [node name="calabazas(shellgame)2" parent="Cups/Cup2" unique_id=632245195 instance=ExtResource("3_vtlwb")]
 
@@ -204,11 +217,16 @@ visible = false
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cups/Cup2" unique_id=2104264809]
 libraries/ = SubResource("AnimationLibrary_wg3bj")
 
-[node name="Cup3" type="Node3D" parent="Cups" unique_id=1703686345 node_paths=PackedStringArray("anim")]
+[node name="Cup3" type="Area3D" parent="Cups" unique_id=1313247635 node_paths=PackedStringArray("anim", "object_mesh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 script = ExtResource("2_vtlwb")
 anim = NodePath("AnimationPlayer")
+object_mesh = NodePath("calabazas(shellgame)3/Cube_020")
 metadata/_custom_type_script = "uid://dqu14k26dhgmj"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cups/Cup3" unique_id=1017916920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.093575954, 0.27791798, 0)
+shape = SubResource("BoxShape3D_vtlwb")
 
 [node name="calabazas(shellgame)3" parent="Cups/Cup3" unique_id=1184544413 instance=ExtResource("3_vtlwb")]
 
