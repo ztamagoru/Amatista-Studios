@@ -64,12 +64,7 @@ func _ready() -> void:
 	
 	cups.pick_random().chosen_cup()
 	
-	for current_cup in cups:
-		current_cup.check_inside()
-	
-	await cups.pick_random().anim.animation_finished
-	
-	game()
+	start_game()
 
 func _physics_process(_delta: float) -> void:
 	if not _can_choose:
@@ -122,6 +117,18 @@ func _input(event: InputEvent) -> void:
 				Globals.hide_interactable_outline.emit()
 				game()
 
+func start_game():
+	correct_attempts = 0
+	speed_multiplier = multiplier_base
+	cup_hovered = null
+	
+	for current_cup in cups:
+		current_cup.check_inside()
+	
+	await cups.pick_random().anim.animation_finished
+	
+	game()
+
 func game():
 	_can_choose = false
 	
@@ -136,11 +143,10 @@ func game():
 			if correct_attempts == attempts_to_win:
 				win()
 				return
-		else:
-			correct_attempts = 0
-			speed_multiplier = multiplier_base
+		else: 
+			start_game()
+			return
 	
-	print(speed_multiplier)
 	for i in randi_range(round(5 * speed_multiplier) , round(10 * speed_multiplier)): await shuffle_cups()
 	
 	_can_choose = true
