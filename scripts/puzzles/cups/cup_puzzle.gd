@@ -62,6 +62,13 @@ func shuffle_cups():
 func _ready() -> void:
 	speed_multiplier = multiplier_base
 	
+	cups.pick_random().chosen_cup()
+	
+	for current_cup in cups:
+		current_cup.check_inside()
+	
+	await cups.pick_random().anim.animation_finished
+	
 	game()
 
 func _physics_process(_delta: float) -> void:
@@ -121,14 +128,24 @@ func game():
 	if not cup_hovered == null:
 		cup_hovered.check_inside()
 		await cup_hovered.anim.animation_finished
+		
+		if cup_hovered.has_item:
+			speed_multiplier += multiplier_sum
+			correct_attempts += 1
+			
+			if correct_attempts == attempst_to_win:
+				win()
+				return
+		else:
+			correct_attempts = 0
+			speed_multiplier = multiplier_base
 	
 	print(speed_multiplier)
 	for i in randi_range(round(5 * speed_multiplier) , round(10 * speed_multiplier)): await shuffle_cups()
 	
 	_can_choose = true
-	
-	#var cup : Cup = cups.pick_random()
-	#cup.check_inside()
-	#await cup.anim.animation_finished
-	
-	speed_multiplier += multiplier_sum
+
+func win():
+	print("puzzle won")
+	await get_tree().create_timer(1).timeout
+	get_tree().quit()

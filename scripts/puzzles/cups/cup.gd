@@ -12,6 +12,8 @@ var outline_material : StandardMaterial3D = preload("res://scripts/interactable/
 
 var _is_interactable : bool = false
 
+var has_item : bool = false
+
 # --
 
 func _ready() -> void:
@@ -32,3 +34,6 @@ func show_outline(object_id : int):
 	if self.get_instance_id() == object_id:
 		_is_interactable = true
 		object_mesh.material_overlay = outline_material
+
+func chosen_cup():
+	has_item = true
