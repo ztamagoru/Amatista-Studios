@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bsawflto2haie"]
+
+[ext_resource type="Texture2D" uid="uid://bx8qtffvs4gn3" path="res://assets/models/zone 1/puzzle/calabazas(shellgame)_calabaza textura.png" id="1_4duqf"]
+
+[resource]
+resource_name = "Material.044"
+albedo_texture = ExtResource("1_4duqf")
+metallic = 0.3272727
+roughness = 0.5

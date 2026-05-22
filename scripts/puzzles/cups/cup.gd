@@ -20,6 +20,8 @@ var has_item : bool = false
 func _ready() -> void:
 	Globals.set_interactable_outline.connect(show_outline)
 	Globals.hide_interactable_outline.connect(hide_outline)
+	
+	object_mesh.set_surface_override_material(2, object_mesh.get_active_material(2).duplicate())
 
 func _process(_delta: float) -> void:
 	global_basis = Basis.IDENTITY
@@ -29,12 +31,12 @@ func check_inside():
 
 func hide_outline():
 	if _is_interactable: _is_interactable = false
-	object_mesh.material_overlay = null
+	object_mesh.get_active_material(2).next_pass = null
 
 func show_outline(object_id : int):
 	if self.get_instance_id() == object_id:
 		_is_interactable = true
-		object_mesh.material_overlay = outline_material
+		object_mesh.get_active_material(2).next_pass = outline_material
 
 func chosen_cup():
 	has_item = true

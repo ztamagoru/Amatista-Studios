@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dpnm886vsmslr" path="res://scripts/puzzles/cups/path.gd" id="2_v3k2j"]
 [ext_resource type="Script" uid="uid://dqu14k26dhgmj" path="res://scripts/puzzles/cups/cup.gd" id="2_vtlwb"]
 [ext_resource type="PackedScene" uid="uid://cmi8pms7we0rl" path="res://assets/models/zone 1/puzzle/calabazas(shellgame).glb" id="3_vtlwb"]
+[ext_resource type="Texture2D" uid="uid://bx8qtffvs4gn3" path="res://assets/models/zone 1/puzzle/calabazas(shellgame)_calabaza textura.png" id="4_7ks35"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vtlwb"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -20,6 +21,13 @@ glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vtlwb"]
 size = Vector3(2.8845215, 2.5800781, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jft2p"]
+resource_local_to_scene = true
+resource_name = "Material.044"
+albedo_texture = ExtResource("4_7ks35")
+metallic = 0.3272727
+roughness = 0.5
 
 [sub_resource type="Animation" id="Animation_v3k2j"]
 length = 0.001
@@ -57,6 +65,13 @@ _data = {
 &"RESET": SubResource("Animation_v3k2j"),
 &"check_inside": SubResource("Animation_vtlwb")
 }
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pu2p"]
+resource_local_to_scene = true
+resource_name = "Material.044"
+albedo_texture = ExtResource("4_7ks35")
+metallic = 0.3272727
+roughness = 0.5
 
 [sub_resource type="Animation" id="Animation_jft2p"]
 length = 0.001
@@ -175,18 +190,19 @@ metadata/_custom_type_script = "uid://dqu14k26dhgmj"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.093575954, 0.27791798, 0)
 shape = SubResource("BoxShape3D_vtlwb")
 
-[node name="calabazas(shellgame)" parent="Cups/Cup1" unique_id=1422738843 instance=ExtResource("3_vtlwb")]
+[node name="calabazas(shellgame)" parent="Cups/Cup1" unique_id=856367893 instance=ExtResource("3_vtlwb")]
 
-[node name="Cube_007" parent="Cups/Cup1/calabazas(shellgame)" index="0" unique_id=568265601]
+[node name="Cube_007" parent="Cups/Cup1/calabazas(shellgame)" index="0" unique_id=402876739]
 transform = Transform3D(0.1451315, 0, 0, 0, 0.16522858, 0, 0, 0, 0.051521458, -0.3, 1, 1.4)
 visible = false
 
-[node name="Cube_010" parent="Cups/Cup1/calabazas(shellgame)" index="1" unique_id=447937501]
+[node name="Cube_010" parent="Cups/Cup1/calabazas(shellgame)" index="1" unique_id=1052587199]
 transform = Transform3D(0.16933663, 0, 0, 0, 0.19278552, 0, 0, 0, 0.060114246, 0, 0, 0)
 visible = false
 
-[node name="Cube_020" parent="Cups/Cup1/calabazas(shellgame)" index="2" unique_id=991286417]
+[node name="Cube_020" parent="Cups/Cup1/calabazas(shellgame)" index="2" unique_id=1891958033]
 transform = Transform3D(0.19108163, 0, 0, 0, 0.19108163, 0, 0, 0, 0.19108163, 0, 0.6, 1.4)
+surface_material_override/2 = SubResource("StandardMaterial3D_jft2p")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cups/Cup1" unique_id=1522494416]
 libraries/ = SubResource("AnimationLibrary_7ks35")
@@ -201,18 +217,19 @@ metadata/_custom_type_script = "uid://dqu14k26dhgmj"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.278, 0)
 shape = SubResource("BoxShape3D_vtlwb")
 
-[node name="calabazas(shellgame)2" parent="Cups/Cup2" unique_id=632245195 instance=ExtResource("3_vtlwb")]
+[node name="calabazas(shellgame)2" parent="Cups/Cup2" unique_id=1828366151 instance=ExtResource("3_vtlwb")]
 
-[node name="Cube_007" parent="Cups/Cup2/calabazas(shellgame)2" index="0" unique_id=568265601]
+[node name="Cube_007" parent="Cups/Cup2/calabazas(shellgame)2" index="0" unique_id=402876739]
 transform = Transform3D(0.1451315, 0, 0, 0, 0.16522858, 0, 0, 0, 0.051521458, -0.3, 1, 1.4)
 visible = false
 
-[node name="Cube_010" parent="Cups/Cup2/calabazas(shellgame)2" index="1" unique_id=447937501]
+[node name="Cube_010" parent="Cups/Cup2/calabazas(shellgame)2" index="1" unique_id=1052587199]
 transform = Transform3D(0.16933663, 0, 0, 0, 0.19278552, 0, 0, 0, 0.060114246, -0.411, 1.001, 1.4)
 visible = false
 
-[node name="Cube_020" parent="Cups/Cup2/calabazas(shellgame)2" index="2" unique_id=991286417]
+[node name="Cube_020" parent="Cups/Cup2/calabazas(shellgame)2" index="2" unique_id=1891958033]
 transform = Transform3D(0.19108163, 0, 0, 0, 0.19108163, 0, 0, 0, 0.19108163, 0, 0.6, 1.4)
+surface_material_override/2 = SubResource("StandardMaterial3D_0pu2p")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cups/Cup2" unique_id=2104264809]
 libraries/ = SubResource("AnimationLibrary_wg3bj")
@@ -228,17 +245,17 @@ metadata/_custom_type_script = "uid://dqu14k26dhgmj"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.093575954, 0.27791798, 0)
 shape = SubResource("BoxShape3D_vtlwb")
 
-[node name="calabazas(shellgame)3" parent="Cups/Cup3" unique_id=1184544413 instance=ExtResource("3_vtlwb")]
+[node name="calabazas(shellgame)3" parent="Cups/Cup3" unique_id=523616093 instance=ExtResource("3_vtlwb")]
 
-[node name="Cube_007" parent="Cups/Cup3/calabazas(shellgame)3" index="0" unique_id=568265601]
+[node name="Cube_007" parent="Cups/Cup3/calabazas(shellgame)3" index="0" unique_id=402876739]
 transform = Transform3D(0.1451315, 0, 0, 0, 0.16522858, 0, 0, 0, 0.051521458, -0.3, 1, 1.4)
 visible = false
 
-[node name="Cube_010" parent="Cups/Cup3/calabazas(shellgame)3" index="1" unique_id=447937501]
+[node name="Cube_010" parent="Cups/Cup3/calabazas(shellgame)3" index="1" unique_id=1052587199]
 transform = Transform3D(0.16933663, 0, 0, 0, 0.19278552, 0, 0, 0, 0.060114246, 0, 0, 0)
 visible = false
 
-[node name="Cube_020" parent="Cups/Cup3/calabazas(shellgame)3" index="2" unique_id=991286417]
+[node name="Cube_020" parent="Cups/Cup3/calabazas(shellgame)3" index="2" unique_id=1891958033]
 transform = Transform3D(0.19108163, 0, 0, 0, 0.19108163, 0, 0, 0, 0.19108163, 0, 0.6, 1.4)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cups/Cup3" unique_id=1889603460]
