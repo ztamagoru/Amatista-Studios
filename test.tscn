@@ -128,6 +128,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95466423, 0)
 [node name="Object" type="CharacterBody3D" parent="." unique_id=26420914 node_paths=PackedStringArray("object_mesh") groups=["interactable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0291753, 1.2968049, 0)
 script = ExtResource("3_g14j6")
+puzzle_scene = "res://scenes/components/puzzles/cup_puzzle.tscn"
 object_mesh = NodePath("MeshInstance3D")
 dialogue_route = ExtResource("4_ykrsh")
 
