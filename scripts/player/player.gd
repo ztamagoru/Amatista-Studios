@@ -10,24 +10,24 @@ extends CharacterBody3D
 @export var raycast : RayCast3D
 @export var raycast_area : Area3D
 
-const raycast_max_distance : float = 3.0
+const raycast_max_distance : float = 12.0
 
 # --
 
-const speed : float = 5.0
-const crouch_speed : float = 4.0
+const speed : float = 25.0
+const crouch_speed : float = 16.0
 
 var current_speed : float = speed
 
-const jump_force : float = 3.5
-const jump_velocity : float = 4.5
-const gravity : float = 8.0
+const jump_force : float = 14.0
+const jump_velocity : float = 16.0
+const gravity : float = 24.0
 
 # --
 
 var mouse_position
 var from
-var ray_lenght : float = 1000
+var ray_lenght : float = 4000
 var cursor_position_on_plane
 
 var projectile_scene = preload("res://scenes/components/projectiles/grenade.tscn")

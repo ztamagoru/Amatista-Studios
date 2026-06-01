@@ -8,8 +8,12 @@
 [ext_resource type="Script" uid="uid://mv5gfj0t68y4" path="res://scenes/components/player/states/walk.gd" id="7_tw4o5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1xbud"]
+radius = 2.0
+height = 8.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_imdkq"]
+radius = 2.0
+height = 8.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_aes0s"]
 radius = 0.25
@@ -19,7 +23,8 @@ height = 0.5
 radius = 0.05
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_aes0s"]
-radius = 3.0
+height = 8.0
+radius = 12.0
 
 [node name="Player" type="CharacterBody3D" unique_id=2109264169 node_paths=PackedStringArray("camera", "timer", "raycast", "raycast_area") groups=["player"]]
 script = ExtResource("1_1xbud")
@@ -64,7 +69,7 @@ script = ExtResource("6_aes0s")
 script = ExtResource("7_tw4o5")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=857669184]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.8660253, 0.49999997, 0, -0.49999997, 0.8660253, 2, 5, 5)
+transform = Transform3D(0.99999994, 0, 0, 0, 0.8660253, 0.49999997, 0, -0.49999997, 0.8660253, 8, 20, 20)
 
 [node name="Timer" type="Timer" parent="." unique_id=1483389585]
 wait_time = 0.5

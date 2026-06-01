@@ -17,4 +17,4 @@ func _process(_delta: float) -> void:
 			DialogueManager.show_dialogue_balloon(dialogue_route, "start", [self])
 
 func start_puzzle():
-	pass
+	get_tree().change_scene_to_file(puzzle_scene)

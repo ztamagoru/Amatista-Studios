@@ -3,8 +3,8 @@ if first_time_dialog:
 	Un anillo, ¿dices?
 	No sé de que me hablas.
 	(se escuchan unas pequeñas risas de fondo)
-	Esas calabazas. Debieron ser ellas.
-	- ¿Las calabazas?
+	Esas zapallos. Debieron ser ellos.
+	- ¿Los zapallos?
 	- ¿A qué te refieres?
 	set first_time_dialog = false
 	=> explanation
@@ -12,19 +12,19 @@ else:
 	=> choice
 
 ~ explanation
-A las calabazas les gusta hacerles bromas a la gente.
-Una debe de tener el anillo que buscas escondido dentro. 
-Vas a tener que encontrar el anillo en la calabaza correcta tres veces seguidas.
-No la pierdas de vista.
+A los zapallos les gusta hacerles bromas a la gente.
+Uno debe de tener el anillo que buscas escondido dentro. 
+Vas a tener que encontrar el anillo en el zapallo correcto tres veces seguidas.
+No lo pierdas de vista.
 Y ten cuidado... [wait=0.25] Cada vez se van mover más rápido.
 => choice
 
 ~ choice
-¿Quieres probar jugar contra las calabazas?
+¿Quieres probar jugar contra los zapallos?
 - Adelante. Necesito ese anillo.
-	(acá cambiaría a la escena del puzzle)
+	do start_puzzle()
 	=> END
-- ¿Qué broma era que hacían las calabazas?
+- ¿Qué broma era que hacían las zapallos?
 	=> explanation
 
 => END
