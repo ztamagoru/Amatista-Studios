@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://6sj3ia7fne8w" path="res://scenes/components/player/states/fall.gd" id="5_frspl"]
 [ext_resource type="Script" uid="uid://sxd7rl0nyqv7" path="res://scenes/components/player/states/jump.gd" id="6_aes0s"]
 [ext_resource type="Script" uid="uid://mv5gfj0t68y4" path="res://scenes/components/player/states/walk.gd" id="7_tw4o5"]
+[ext_resource type="Script" uid="uid://bi0fq0vuovndl" path="res://scripts/player/player_camera.gd" id="7_vj2w8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1xbud"]
 radius = 2.0
@@ -28,7 +29,7 @@ radius = 12.0
 
 [node name="Player" type="CharacterBody3D" unique_id=2109264169 node_paths=PackedStringArray("camera", "timer", "raycast", "raycast_area") groups=["player"]]
 script = ExtResource("1_1xbud")
-camera = NodePath("Camera3D")
+camera = NodePath("Camera Pivot/Camera3D")
 timer = NodePath("Timer")
 raycast = NodePath("RayCast3D")
 raycast_area = NodePath("Area3D")
@@ -68,9 +69,6 @@ script = ExtResource("6_aes0s")
 [node name="Walk" type="Node3D" parent="FSM" unique_id=606669197]
 script = ExtResource("7_tw4o5")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=857669184]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.8660253, 0.49999997, 0, -0.49999997, 0.8660253, 8, 20, 20)
-
 [node name="Timer" type="Timer" parent="." unique_id=1483389585]
 wait_time = 0.5
 one_shot = true
@@ -84,3 +82,9 @@ target_position = Vector3(3, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=65676456]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CylinderShape3D_aes0s")
+
+[node name="Camera Pivot" type="Node3D" parent="." unique_id=1231285814]
+script = ExtResource("7_vj2w8")
+
+[node name="Camera3D" type="Camera3D" parent="Camera Pivot" unique_id=857669184]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 8, 20, 20)
