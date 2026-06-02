@@ -13,8 +13,8 @@ func _ready():
 	original_rotation = rotation_degrees
 
 func _process(delta: float):
-	var mouse_pos = get_viewport().get_mouse_position()
-	var screen_center = get_viewport().size / 2.0
+	var mouse_pos : Vector2 = get_viewport().get_mouse_position()
+	var screen_center : Vector2 = get_viewport().size / 2.0
 	
 	var direction : Vector2 = mouse_pos - screen_center
 	
