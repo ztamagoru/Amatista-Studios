@@ -5,14 +5,12 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_26fn7"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8sfnu"]
-radius = 0.125
 
 [sub_resource type="SphereMesh" id="SphereMesh_26fn7"]
-radius = 0.125
-height = 0.25
 
 [node name="Granade" type="RigidBody3D" unique_id=86485169]
 physics_material_override = SubResource("PhysicsMaterial_26fn7")
+gravity_scale = 4.0
 can_sleep = false
 contact_monitor = true
 max_contacts_reported = 1

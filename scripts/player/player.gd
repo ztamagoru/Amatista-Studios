@@ -87,7 +87,7 @@ func _input(event: InputEvent):
 		projectile.dir = cursor_position_on_plane
 		get_tree().current_scene.add_child(projectile)
 		projectile.global_position = global_position
-		projectile.global_position.y += 2
+		projectile.global_position.y += 4
 		
 	#else: print(timer.time_left)
 

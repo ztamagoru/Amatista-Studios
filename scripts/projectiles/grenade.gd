@@ -3,8 +3,8 @@ extends RigidBody3D
 var dir : Vector3 
 var final_dir : Vector3
 
-const speed : float = 6
-const throw_height : float = 6
+const speed : float = 24
+const throw_height : float = 24
 
 func _ready() -> void:
 	await get_tree().process_frame
