@@ -10,7 +10,7 @@ extends CharacterBody3D
 @export var raycast : RayCast3D
 @export var raycast_area : Area3D
 
-const raycast_max_distance : float = 12.0
+const raycast_max_distance : float = 15.0
 
 # --
 
@@ -79,7 +79,6 @@ func _physics_process(_delta: float):
 
 func _input(event: InputEvent):
 	if event is InputEventMouseButton and not timer.time_left > 0:
-		print("proyectil disparado")
 		var projectile = projectile_scene.instantiate()
 		
 		timer.start(shoot_cd)
@@ -88,8 +87,6 @@ func _input(event: InputEvent):
 		get_tree().current_scene.add_child(projectile)
 		projectile.global_position = global_position
 		projectile.global_position.y += 4
-		
-	#else: print(timer.time_left)
 
 func detect_interactable():
 	var hit_object = raycast.get_collider()
