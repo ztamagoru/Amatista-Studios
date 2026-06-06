@@ -10,7 +10,7 @@ class_name Item
 
 # --
 
-func _process(_delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if _is_interactable and Input.is_action_just_pressed("interact"):
 		pick_up_item()
 
@@ -19,4 +19,4 @@ func pick_up_item():
 	
 	DialogueManager.show_dialogue_balloon(dialogue_route, "start", [self])
 	
-	#queue_free()
+	queue_free()

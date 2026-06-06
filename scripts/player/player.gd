@@ -90,6 +90,7 @@ func _input(event: InputEvent):
 
 func detect_interactable():
 	var hit_object = raycast.get_collider()
+	if not hit_object: return
 	
 	if hit_object.is_in_group("interactable"):
 		Globals.set_interactable_outline.emit(hit_object.get_instance_id())

@@ -1,10 +1,17 @@
+@tool
+
 extends CharacterBody3D
 class_name Interactable
 
 # --
 
+@export_group("Can_Interact")
+@export_custom(PROPERTY_HINT_GROUP_ENABLE, "") var can_interact : bool = false
 @export var object_mesh : MeshInstance3D
 
+@export_group("Dialog")
+@export_custom(PROPERTY_HINT_GROUP_ENABLE, "") var has_dialog : bool = false
+@export var first_time_dialog : bool = true
 @export_file_path("*.dialogue") var dialogue : String 
 @export var dialogue_route : DialogueResource
 

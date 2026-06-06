@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_8uh7m"]
 [ext_resource type="PackedScene" uid="uid://do3crd75ny4ra" path="res://scenes/components/player/player.tscn" id="2_6uqi0"]
-[ext_resource type="Script" uid="uid://cdo0lar8bpl3h" path="res://scripts/interactable/npc.gd" id="3_g14j6"]
+[ext_resource type="Script" uid="uid://di6ihxodtyqu4" path="res://scripts/interactable/npc/scarecrow.gd" id="3_00tp4"]
 [ext_resource type="Resource" uid="uid://dy400g1vmtppv" path="res://dialogs/npc/test/test.dialogue" id="4_ykrsh"]
 [ext_resource type="Script" uid="uid://cnkj0mblmju7d" path="res://scripts/interactable/item.gd" id="5_g14j6"]
 [ext_resource type="Script" uid="uid://ruugex3xy8gw" path="res://scripts/interactable/enviroment/sick_environment.gd" id="5_ykrsh"]
@@ -134,667 +134,667 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.92061615, 0)
 [node name="zonacultivosprueba" parent="StaticBody3D" unique_id=75663646 instance=ExtResource("10_00tp4")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 9.343012, -4.351036, 21.36139)
 
-[node name="efectobarro1_001" parent="StaticBody3D/zonacultivosprueba" index="0" unique_id=1095867280]
+[node name="efectobarro1_001" parent="StaticBody3D/zonacultivosprueba" index="0" unique_id=956957841]
 transform = Transform3D(97.70153, 0, 0, 0, 97.70153, 0, 0, 0, 97.70153, -0.59199524, 4.79879, -0.11804962)
 
-[node name="efectocultivos_001" parent="StaticBody3D/zonacultivosprueba" index="1" unique_id=776463991]
+[node name="efectocultivos_001" parent="StaticBody3D/zonacultivosprueba" index="1" unique_id=191454359]
 transform = Transform3D(-8.60462e-07, 0, 7.2180777, 0, 7.2180777, 0, -7.2180777, 0, -8.60462e-07, 114.17384, 4.5525055, -6.686165)
 
-[node name="espantapajaro_001" parent="StaticBody3D/zonacultivosprueba" index="2" unique_id=1146749424]
-transform = Transform3D(0.2993104, 0, -0.8010009, 0, 0.93696845, 0, 0.493192, 0, 0.48611474, 8.524933, 3.4332657, -48.578133)
+[node name="espantapajaro_001" parent="StaticBody3D/zonacultivosprueba" index="2" unique_id=480308449]
+transform = Transform3D(0.29931033, 0, -0.8010009, 0, 0.93696845, 0, 0.493192, 0, 0.48611465, 8.524933, 3.4332657, -48.578133)
 
-[node name="arbustorosamosqueta_007" parent="StaticBody3D/zonacultivosprueba" index="3" unique_id=2134942398]
+[node name="arbustorosamosqueta_007" parent="StaticBody3D/zonacultivosprueba" index="3" unique_id=158971489]
 transform = Transform3D(0.92465913, -4.670986, 0.66652775, 4.181786, 0.49673828, -2.3201888, 2.1851838, 1.0259167, 4.1581044, 114.50331, 7.068165, 40.82189)
 
-[node name="arbustorosamosqueta_008" parent="StaticBody3D/zonacultivosprueba" index="4" unique_id=1127426880]
+[node name="arbustorosamosqueta_008" parent="StaticBody3D/zonacultivosprueba" index="4" unique_id=677917705]
 transform = Transform3D(0.92465913, -4.670986, 0.66652775, 4.181786, 0.49673828, -2.3201888, 2.1851838, 1.0259167, 4.1581044, 101.96925, 7.068165, 40.82189)
 
-[node name="arbustorosamosqueta_009" parent="StaticBody3D/zonacultivosprueba" index="5" unique_id=1128551322]
+[node name="arbustorosamosqueta_009" parent="StaticBody3D/zonacultivosprueba" index="5" unique_id=1865224647]
 transform = Transform3D(0.92465913, -4.670986, 0.66652775, 4.181786, 0.49673828, -2.3201888, 2.1851838, 1.0259167, 4.1581044, 55.110672, 7.068165, 40.82189)
 
-[node name="arbustorosamosqueta_010" parent="StaticBody3D/zonacultivosprueba" index="6" unique_id=94651171]
+[node name="arbustorosamosqueta_010" parent="StaticBody3D/zonacultivosprueba" index="6" unique_id=2075747609]
 transform = Transform3D(0.92465913, -4.670986, 0.66652775, 4.181786, 0.49673828, -2.3201888, 2.1851838, 1.0259167, 4.1581044, 31.906754, 7.068165, 40.82189)
 
-[node name="arbustorosamosqueta_011" parent="StaticBody3D/zonacultivosprueba" index="7" unique_id=2068571281]
+[node name="arbustorosamosqueta_011" parent="StaticBody3D/zonacultivosprueba" index="7" unique_id=1546475214]
 transform = Transform3D(0.92465913, -4.670986, 0.66652775, 4.181786, 0.49673828, -2.3201888, 2.1851838, 1.0259167, 4.1581044, -31.146011, 7.068165, 40.82189)
 
-[node name="arbustorosamosqueta_012" parent="StaticBody3D/zonacultivosprueba" index="8" unique_id=1674778363]
+[node name="arbustorosamosqueta_012" parent="StaticBody3D/zonacultivosprueba" index="8" unique_id=1415848407]
 transform = Transform3D(0.92465913, -4.670986, 0.66652775, 4.181786, 0.49673828, -2.3201888, 2.1851838, 1.0259167, 4.1581044, -19.905502, 7.068165, 40.82189)
 
-[node name="pisopasto_001" parent="StaticBody3D/zonacultivosprueba" index="9" unique_id=686621837]
+[node name="pisopasto_001" parent="StaticBody3D/zonacultivosprueba" index="9" unique_id=483516576]
 transform = Transform3D(-104.233315, 0, 0, 0, -59.14136, 0, 0, 0, -51.186054, 22.124756, 4.2470665, -0.0749588)
 
-[node name="frutatomate_005" parent="StaticBody3D/zonacultivosprueba" index="10" unique_id=1191126590]
+[node name="frutatomate_005" parent="StaticBody3D/zonacultivosprueba" index="10" unique_id=1448840705]
 transform = Transform3D(-1.9619364, 0.18391699, -2.0994618, -0.80736226, -2.7151477, 0.51662374, -1.9467231, 0.9406957, 1.9016101, 83.189926, 5.4168205, 35.431877)
 
-[node name="frutatomate_006" parent="StaticBody3D/zonacultivosprueba" index="11" unique_id=804428013]
+[node name="frutatomate_006" parent="StaticBody3D/zonacultivosprueba" index="11" unique_id=155596016]
 transform = Transform3D(-1.2819396, 0.1201723, -1.3717996, -0.5275347, -1.7740918, 0.33756477, -1.2719991, 0.6146556, 1.2425221, 82.27199, 5.002983, 35.981438)
 
-[node name="frutatomate_007" parent="StaticBody3D/zonacultivosprueba" index="12" unique_id=1850326002]
+[node name="frutatomate_007" parent="StaticBody3D/zonacultivosprueba" index="12" unique_id=899469895]
 transform = Transform3D(-1.7890143, 0.16770682, -1.9144185, -0.7362026, -2.4758387, 0.4710893, -1.775142, 0.8577843, 1.734005, 80.287674, 5.345398, 37.366936)
 
-[node name="frutatomate_008" parent="StaticBody3D/zonacultivosprueba" index="13" unique_id=1907282904]
+[node name="frutatomate_008" parent="StaticBody3D/zonacultivosprueba" index="13" unique_id=1798614559]
 transform = Transform3D(-1.7890143, 0.16770682, -1.9144185, -0.7362026, -2.4758387, 0.4710893, -1.775142, 0.8577843, 1.734005, 81.42622, 5.345398, 37.02941)
 
-[node name="frutatomate_009" parent="StaticBody3D/zonacultivosprueba" index="14" unique_id=599237005]
+[node name="frutatomate_009" parent="StaticBody3D/zonacultivosprueba" index="14" unique_id=912199959]
 transform = Transform3D(-1.7890143, 0.16770682, -1.9144185, -0.7362026, -2.4758387, 0.4710893, -1.775142, 0.8577843, 1.734005, 88.25597, 10.743675, 40.780754)
 
-[node name="zanahoria_033" parent="StaticBody3D/zonacultivosprueba" index="15" unique_id=8891113]
+[node name="zanahoria_033" parent="StaticBody3D/zonacultivosprueba" index="15" unique_id=469943261]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 72.33385, 1.6466827, -3.3465652)
 
-[node name="zanahoria_034" parent="StaticBody3D/zonacultivosprueba" index="16" unique_id=245062991]
+[node name="zanahoria_034" parent="StaticBody3D/zonacultivosprueba" index="16" unique_id=1343897621]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 72.33385, 1.6466827, -7.940193)
 
-[node name="zanahoria_035" parent="StaticBody3D/zonacultivosprueba" index="17" unique_id=1103426689]
+[node name="zanahoria_035" parent="StaticBody3D/zonacultivosprueba" index="17" unique_id=1251106873]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 72.33385, 1.6466827, -12.420662)
 
-[node name="zanahoria_036" parent="StaticBody3D/zonacultivosprueba" index="18" unique_id=107307363]
+[node name="zanahoria_036" parent="StaticBody3D/zonacultivosprueba" index="18" unique_id=1259903219]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 72.33385, 1.6466827, -17.121712)
 
-[node name="zanahoria_037" parent="StaticBody3D/zonacultivosprueba" index="19" unique_id=838271756]
+[node name="zanahoria_037" parent="StaticBody3D/zonacultivosprueba" index="19" unique_id=1470962985]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 72.33385, 1.6466827, -21.834846)
 
-[node name="zanahoria_038" parent="StaticBody3D/zonacultivosprueba" index="20" unique_id=166886083]
+[node name="zanahoria_038" parent="StaticBody3D/zonacultivosprueba" index="20" unique_id=1121086817]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 72.33385, 1.6466827, -26.695686)
 
-[node name="zanahoria_039" parent="StaticBody3D/zonacultivosprueba" index="21" unique_id=2123885301]
+[node name="zanahoria_039" parent="StaticBody3D/zonacultivosprueba" index="21" unique_id=118376347]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 72.33385, 1.6466827, -31.64576)
 
-[node name="zanahoria_040" parent="StaticBody3D/zonacultivosprueba" index="22" unique_id=986926729]
+[node name="zanahoria_040" parent="StaticBody3D/zonacultivosprueba" index="22" unique_id=1938209361]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 64.61311, 1.6466827, -21.834846)
 
-[node name="zanahoria_041" parent="StaticBody3D/zonacultivosprueba" index="23" unique_id=1959150397]
+[node name="zanahoria_041" parent="StaticBody3D/zonacultivosprueba" index="23" unique_id=712062009]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 64.61311, 1.6466827, -26.695686)
 
-[node name="zanahoria_042" parent="StaticBody3D/zonacultivosprueba" index="24" unique_id=135835475]
+[node name="zanahoria_042" parent="StaticBody3D/zonacultivosprueba" index="24" unique_id=825580799]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 64.61311, 1.6466827, -31.64576)
 
-[node name="zanahoria_043" parent="StaticBody3D/zonacultivosprueba" index="25" unique_id=123351218]
+[node name="zanahoria_043" parent="StaticBody3D/zonacultivosprueba" index="25" unique_id=2054898188]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 33.278946, 1.6466827, 35.22265)
 
-[node name="zanahoria_044" parent="StaticBody3D/zonacultivosprueba" index="26" unique_id=212693893]
+[node name="zanahoria_044" parent="StaticBody3D/zonacultivosprueba" index="26" unique_id=1686017121]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 33.278946, 1.6466827, 30.62902)
 
-[node name="zanahoria_045" parent="StaticBody3D/zonacultivosprueba" index="27" unique_id=1653467050]
+[node name="zanahoria_045" parent="StaticBody3D/zonacultivosprueba" index="27" unique_id=475267012]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 33.278946, 1.6466827, 26.148552)
 
-[node name="zanahoria_046" parent="StaticBody3D/zonacultivosprueba" index="28" unique_id=1393282817]
+[node name="zanahoria_046" parent="StaticBody3D/zonacultivosprueba" index="28" unique_id=1477020612]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 33.278946, 1.6466827, 21.447502)
 
-[node name="zanahoria_047" parent="StaticBody3D/zonacultivosprueba" index="29" unique_id=187842255]
+[node name="zanahoria_047" parent="StaticBody3D/zonacultivosprueba" index="29" unique_id=1553342655]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 33.278946, 1.6466827, 16.734367)
 
-[node name="zanahoria_048" parent="StaticBody3D/zonacultivosprueba" index="30" unique_id=8157483]
+[node name="zanahoria_048" parent="StaticBody3D/zonacultivosprueba" index="30" unique_id=1504128627]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 33.278946, 1.6466827, 11.873528)
 
-[node name="zanahoria_049" parent="StaticBody3D/zonacultivosprueba" index="31" unique_id=509013535]
+[node name="zanahoria_049" parent="StaticBody3D/zonacultivosprueba" index="31" unique_id=415546563]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 33.278946, 1.6466827, 6.9234543)
 
-[node name="zanahoria_050" parent="StaticBody3D/zonacultivosprueba" index="32" unique_id=164620832]
+[node name="zanahoria_050" parent="StaticBody3D/zonacultivosprueba" index="32" unique_id=1964303295]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 33.278946, 1.6466827, 3.6691818)
 
-[node name="zanahoria_051" parent="StaticBody3D/zonacultivosprueba" index="33" unique_id=1748237192]
+[node name="zanahoria_051" parent="StaticBody3D/zonacultivosprueba" index="33" unique_id=2110120077]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 33.278946, 1.6466827, -0.9244461)
 
-[node name="zanahoria_052" parent="StaticBody3D/zonacultivosprueba" index="34" unique_id=110300346]
+[node name="zanahoria_052" parent="StaticBody3D/zonacultivosprueba" index="34" unique_id=293195085]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 33.278946, 1.6466827, -5.404915)
 
-[node name="zanahoria_053" parent="StaticBody3D/zonacultivosprueba" index="35" unique_id=1386228240]
+[node name="zanahoria_053" parent="StaticBody3D/zonacultivosprueba" index="35" unique_id=506009151]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 33.278946, 1.6466827, -10.105965)
 
-[node name="zanahoria_054" parent="StaticBody3D/zonacultivosprueba" index="36" unique_id=1235602960]
+[node name="zanahoria_054" parent="StaticBody3D/zonacultivosprueba" index="36" unique_id=2077884557]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 33.278946, 1.6466827, -14.819099)
 
-[node name="zanahoria_055" parent="StaticBody3D/zonacultivosprueba" index="37" unique_id=1768989250]
+[node name="zanahoria_055" parent="StaticBody3D/zonacultivosprueba" index="37" unique_id=1963403922]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 33.278946, 1.6466827, -19.67994)
 
-[node name="zanahoria_056" parent="StaticBody3D/zonacultivosprueba" index="38" unique_id=1804969149]
+[node name="zanahoria_056" parent="StaticBody3D/zonacultivosprueba" index="38" unique_id=595640488]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 33.278946, 1.6466827, -24.630013)
 
-[node name="zanahoria_057" parent="StaticBody3D/zonacultivosprueba" index="39" unique_id=2065236092]
+[node name="zanahoria_057" parent="StaticBody3D/zonacultivosprueba" index="39" unique_id=56289247]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 33.278946, 1.6466827, -29.521248)
 
-[node name="zanahoria_058" parent="StaticBody3D/zonacultivosprueba" index="40" unique_id=281274275]
+[node name="zanahoria_058" parent="StaticBody3D/zonacultivosprueba" index="40" unique_id=764304277]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 33.278946, 1.6466827, -34.4712)
 
-[node name="zanahoria_059" parent="StaticBody3D/zonacultivosprueba" index="41" unique_id=1215507038]
+[node name="zanahoria_059" parent="StaticBody3D/zonacultivosprueba" index="41" unique_id=259573506]
 transform = Transform3D(-0.50354004, -0.13790089, -0.30766922, 0.19837399, -0.53008634, -0.025278358, 0.30968884, 0.115330994, -0.4840639, 102.16914, 5.8623276, -22.953499)
 
-[node name="zanahoria_060" parent="StaticBody3D/zonacultivosprueba" index="42" unique_id=1658946338]
+[node name="zanahoria_060" parent="StaticBody3D/zonacultivosprueba" index="42" unique_id=1002677447]
 transform = Transform3D(0.39185458, 0.103375256, -0.260637, -0.03342306, -0.39622334, -0.20793161, 0.30376944, -0.1769469, 0.3133366, 99.86623, 5.8793907, -21.146614)
 
-[node name="zanahoria_061" parent="StaticBody3D/zonacultivosprueba" index="43" unique_id=1579542291]
+[node name="zanahoria_061" parent="StaticBody3D/zonacultivosprueba" index="43" unique_id=923338140]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 87.06227, 1.6466827, 23.780998)
 
-[node name="zanahoria_062" parent="StaticBody3D/zonacultivosprueba" index="44" unique_id=76842498]
+[node name="zanahoria_062" parent="StaticBody3D/zonacultivosprueba" index="44" unique_id=1177460951]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 87.06227, 1.6466827, 19.18737)
 
-[node name="zanahoria_063" parent="StaticBody3D/zonacultivosprueba" index="45" unique_id=1011354569]
+[node name="zanahoria_063" parent="StaticBody3D/zonacultivosprueba" index="45" unique_id=1874230850]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 87.06227, 1.6466827, 14.706902)
 
-[node name="zanahoria_064" parent="StaticBody3D/zonacultivosprueba" index="46" unique_id=1340213158]
+[node name="zanahoria_064" parent="StaticBody3D/zonacultivosprueba" index="46" unique_id=815851366]
 transform = Transform3D(-1.0853343, 0, 0, 0, -0.97427255, 0, 0, 0, -0.99930626, 87.06227, 1.6466827, 10.005852)
 
-[node name="coliflor_043" parent="StaticBody3D/zonacultivosprueba" index="47" unique_id=1488424173]
+[node name="coliflor_043" parent="StaticBody3D/zonacultivosprueba" index="47" unique_id=2029806735]
 transform = Transform3D(0.05964982, -0.37054238, -0.08421027, 0.061970916, 0.0823725, -0.42727908, 0.36622047, 0.0464149, 0.08601924, 58.829056, 5.433052, 38.22924)
 
-[node name="coliflor_044" parent="StaticBody3D/zonacultivosprueba" index="48" unique_id=2053251122]
+[node name="coliflor_044" parent="StaticBody3D/zonacultivosprueba" index="48" unique_id=842492829]
 transform = Transform3D(0.05964982, -0.37054238, -0.08421027, 0.061970916, 0.0823725, -0.42727908, 0.36622047, 0.0464149, 0.08601924, 58.829056, 5.433052, 33.011467)
 
-[node name="coliflor_045" parent="StaticBody3D/zonacultivosprueba" index="49" unique_id=413084414]
+[node name="coliflor_045" parent="StaticBody3D/zonacultivosprueba" index="49" unique_id=435158086]
 transform = Transform3D(-0.15364204, -0.3339914, -0.11779178, 0.061970953, 0.08237254, -0.4272791, 0.33774203, -0.16705005, 0.024815166, 58.370346, 5.2215996, 27.75634)
 
-[node name="coliflor_046" parent="StaticBody3D/zonacultivosprueba" index="50" unique_id=1164858746]
+[node name="coliflor_046" parent="StaticBody3D/zonacultivosprueba" index="50" unique_id=561892056]
 transform = Transform3D(0.2889228, -0.2448612, -0.0052576326, 0.06197096, 0.08237255, -0.42727906, 0.23280707, 0.2819557, 0.12026244, 58.370346, 5.2215996, 22.2445)
 
-[node name="coliflor_047" parent="StaticBody3D/zonacultivosprueba" index="51" unique_id=1486260919]
+[node name="coliflor_047" parent="StaticBody3D/zonacultivosprueba" index="51" unique_id=1715654284]
 transform = Transform3D(0.33580253, -0.17119618, 0.023346486, 0.061970983, 0.082372494, -0.42727903, 0.15783589, 0.33188528, 0.11809163, 58.370346, 5.2215996, 17.026726)
 
-[node name="coliflor_048" parent="StaticBody3D/zonacultivosprueba" index="52" unique_id=190552099]
+[node name="coliflor_048" parent="StaticBody3D/zonacultivosprueba" index="52" unique_id=1465099320]
 transform = Transform3D(0.23553379, -0.29708943, -0.029607542, 0.06197096, 0.08237248, -0.42727908, 0.28670427, 0.22626066, 0.11667937, 58.829056, 5.433052, 10.824577)
 
-[node name="coliflor_049" parent="StaticBody3D/zonacultivosprueba" index="53" unique_id=1362824645]
+[node name="coliflor_049" parent="StaticBody3D/zonacultivosprueba" index="53" unique_id=1037623857]
 transform = Transform3D(0.05964982, -0.37054238, -0.08421027, 0.061970916, 0.0823725, -0.42727908, 0.36622047, 0.0464149, 0.08601924, 58.829056, 5.433052, 5.2706223)
 
-[node name="coliflor_050" parent="StaticBody3D/zonacultivosprueba" index="54" unique_id=1755030688]
+[node name="coliflor_050" parent="StaticBody3D/zonacultivosprueba" index="54" unique_id=1016749184]
 transform = Transform3D(0.27532956, -0.25914854, -0.03169775, 0.028225515, 0.070478514, -0.43503505, 0.25477996, 0.2722426, 0.08244924, 58.829056, 5.433052, 0.052848816)
 
-[node name="coliflor_051" parent="StaticBody3D/zonacultivosprueba" index="55" unique_id=1399489322]
+[node name="coliflor_051" parent="StaticBody3D/zonacultivosprueba" index="55" unique_id=78235556]
 transform = Transform3D(-0.17634344, -0.3218063, -0.11921125, 0.061970968, 0.08237258, -0.42727903, 0.32646358, -0.18946414, 0.016714796, 58.829056, 5.433052, -5.675789)
 
-[node name="coliflor_052" parent="StaticBody3D/zonacultivosprueba" index="56" unique_id=1060158938]
+[node name="coliflor_052" parent="StaticBody3D/zonacultivosprueba" index="56" unique_id=1527968746]
 transform = Transform3D(0.05964982, -0.37054238, -0.08421027, 0.061970916, 0.0823725, -0.42727908, 0.36622047, 0.0464149, 0.08601924, 58.829056, 5.433052, -11.587166)
 
-[node name="coliflor_053" parent="StaticBody3D/zonacultivosprueba" index="57" unique_id=1121589148]
+[node name="coliflor_053" parent="StaticBody3D/zonacultivosprueba" index="57" unique_id=1994229697]
 transform = Transform3D(0.2995062, -0.23139115, 0.00037899552, 0.061971005, 0.08237254, -0.42727903, 0.21902405, 0.2931111, 0.12037675, 58.829056, 5.433052, -16.80494)
 
-[node name="coliflor_054" parent="StaticBody3D/zonacultivosprueba" index="58" unique_id=2069507648]
+[node name="coliflor_054" parent="StaticBody3D/zonacultivosprueba" index="58" unique_id=489611520]
 transform = Transform3D(0.19560286, -0.3243709, -0.044758994, 0.06197097, 0.08237249, -0.42727908, 0.31530148, 0.18503931, 0.111746654, 58.829056, 5.433052, -22.533577)
 
-[node name="coliflor_055" parent="StaticBody3D/zonacultivosprueba" index="59" unique_id=1758926157]
+[node name="coliflor_055" parent="StaticBody3D/zonacultivosprueba" index="59" unique_id=1206965918]
 transform = Transform3D(0.05964982, -0.37054238, -0.08421027, 0.061970916, 0.0823725, -0.42727908, 0.36622047, 0.0464149, 0.08601924, 58.960434, 5.433052, -28.760262)
 
-[node name="coliflor_056" parent="StaticBody3D/zonacultivosprueba" index="60" unique_id=380280020]
+[node name="coliflor_056" parent="StaticBody3D/zonacultivosprueba" index="60" unique_id=889575888]
 transform = Transform3D(0.27532956, -0.25914854, -0.03169775, 0.028225515, 0.070478514, -0.43503505, 0.25477996, 0.2722426, 0.08244924, 65.05617, 5.433052, 34.515007)
 
-[node name="coliflor_057" parent="StaticBody3D/zonacultivosprueba" index="61" unique_id=1516147386]
+[node name="coliflor_057" parent="StaticBody3D/zonacultivosprueba" index="61" unique_id=1303105959]
 transform = Transform3D(-0.17634344, -0.3218063, -0.11921125, 0.061970968, 0.08237258, -0.42727903, 0.32646358, -0.18946414, 0.016714796, 65.05617, 5.433052, 28.78637)
 
-[node name="coliflor_058" parent="StaticBody3D/zonacultivosprueba" index="62" unique_id=2045182495]
+[node name="coliflor_058" parent="StaticBody3D/zonacultivosprueba" index="62" unique_id=436575873]
 transform = Transform3D(0.05964982, -0.37054238, -0.08421027, 0.061970916, 0.0823725, -0.42727908, 0.36622047, 0.0464149, 0.08601924, 65.05617, 5.433052, 22.874992)
 
-[node name="coliflor_059" parent="StaticBody3D/zonacultivosprueba" index="63" unique_id=157281909]
+[node name="coliflor_059" parent="StaticBody3D/zonacultivosprueba" index="63" unique_id=1888381519]
 transform = Transform3D(0.2995062, -0.23139115, 0.00037899552, 0.061971005, 0.08237254, -0.42727903, 0.21902405, 0.2931111, 0.12037675, 65.05617, 5.433052, 17.657219)
 
-[node name="coliflor_060" parent="StaticBody3D/zonacultivosprueba" index="64" unique_id=170869576]
+[node name="coliflor_060" parent="StaticBody3D/zonacultivosprueba" index="64" unique_id=1810969157]
 transform = Transform3D(0.19560286, -0.3243709, -0.044758994, 0.06197097, 0.08237249, -0.42727908, 0.31530148, 0.18503931, 0.111746654, 65.05617, 5.433052, 11.928581)
 
-[node name="coliflor_061" parent="StaticBody3D/zonacultivosprueba" index="65" unique_id=1759289068]
+[node name="coliflor_061" parent="StaticBody3D/zonacultivosprueba" index="65" unique_id=998044349]
 transform = Transform3D(0.05964982, -0.37054238, -0.08421027, 0.061970916, 0.0823725, -0.42727908, 0.36622047, 0.0464149, 0.08601924, 65.187546, 5.433052, 5.7018967)
 
-[node name="coliflor_062" parent="StaticBody3D/zonacultivosprueba" index="66" unique_id=2038289557]
+[node name="coliflor_062" parent="StaticBody3D/zonacultivosprueba" index="66" unique_id=716183279]
 transform = Transform3D(-0.19336703, -0.31133276, -0.1199285, 0.061970975, 0.082372524, -0.42727903, 0.3166776, -0.20622297, 0.010384952, 64.9807, 5.433052, 40.749504)
 
-[node name="coliflor_063" parent="StaticBody3D/zonacultivosprueba" index="67" unique_id=1974239333]
+[node name="coliflor_063" parent="StaticBody3D/zonacultivosprueba" index="67" unique_id=1932914327]
 transform = Transform3D(0.05964982, -0.37054238, -0.08421027, 0.061970916, 0.0823725, -0.42727908, 0.36622047, 0.0464149, 0.08601924, 65.18327, 5.433052, -0.18933868)
 
-[node name="coliflor_064" parent="StaticBody3D/zonacultivosprueba" index="68" unique_id=1100244669]
+[node name="coliflor_064" parent="StaticBody3D/zonacultivosprueba" index="68" unique_id=1589215476]
 transform = Transform3D(0.2995062, -0.23139115, 0.00037899552, 0.061971005, 0.08237254, -0.42727903, 0.21902405, 0.2931111, 0.12037675, 65.18327, 5.433052, -5.407112)
 
-[node name="coliflor_065" parent="StaticBody3D/zonacultivosprueba" index="69" unique_id=811129378]
+[node name="coliflor_065" parent="StaticBody3D/zonacultivosprueba" index="69" unique_id=1375360177]
 transform = Transform3D(0.19560286, -0.3243709, -0.044758994, 0.06197097, 0.08237249, -0.42727908, 0.31530148, 0.18503931, 0.111746654, 65.18327, 5.433052, -11.13575)
 
-[node name="coliflor_066" parent="StaticBody3D/zonacultivosprueba" index="70" unique_id=1733656023]
+[node name="coliflor_066" parent="StaticBody3D/zonacultivosprueba" index="70" unique_id=2050308851]
 transform = Transform3D(0.05964982, -0.37054238, -0.08421027, 0.061970916, 0.0823725, -0.42727908, 0.36622047, 0.0464149, 0.08601924, 65.31462, 5.433052, -17.362434)
 
-[node name="coliflor_067" parent="StaticBody3D/zonacultivosprueba" index="71" unique_id=1945220126]
+[node name="coliflor_067" parent="StaticBody3D/zonacultivosprueba" index="71" unique_id=1257902445]
 transform = Transform3D(-0.057780683, -0.10544305, -0.039060738, 0.020305393, 0.026990188, -0.14000224, 0.10696906, -0.0620798, 0.005476765, 88.01701, 4.7176933, 35.762566)
 
-[node name="coliflor_068" parent="StaticBody3D/zonacultivosprueba" index="72" unique_id=98050028]
+[node name="coliflor_068" parent="StaticBody3D/zonacultivosprueba" index="72" unique_id=1602134916]
 transform = Transform3D(-0.057780683, -0.10544305, -0.039060738, 0.020305393, 0.026990188, -0.14000224, 0.10696906, -0.0620798, 0.005476765, 88.97777, 4.7654, 36.872185)
 
-[node name="coliflor_069" parent="StaticBody3D/zonacultivosprueba" index="73" unique_id=159443481]
+[node name="coliflor_069" parent="StaticBody3D/zonacultivosprueba" index="73" unique_id=228578980]
 transform = Transform3D(-0.13477004, -0.025360588, -0.033806205, 0.023066476, 0.030660212, -0.15903927, 0.03018364, -0.13666579, -0.029406281, 97.446915, 4.625656, 33.416985)
 
-[node name="coliflor_070" parent="StaticBody3D/zonacultivosprueba" index="74" unique_id=1204478323]
+[node name="coliflor_070" parent="StaticBody3D/zonacultivosprueba" index="74" unique_id=662122550]
 transform = Transform3D(-0.13477004, -0.025360588, -0.033806205, 0.023066476, 0.030660212, -0.15903927, 0.03018364, -0.13666579, -0.029406281, 97.211624, 4.6798553, 35.06762)
 
-[node name="coliflor_071" parent="StaticBody3D/zonacultivosprueba" index="75" unique_id=382244196]
+[node name="coliflor_071" parent="StaticBody3D/zonacultivosprueba" index="75" unique_id=1423767816]
 transform = Transform3D(-0.11143106, -0.020968735, -0.027951779, 0.019071909, 0.025350587, -0.13149747, 0.02495655, -0.1129985, -0.024313815, 97.419815, 4.651184, 28.327873)
 
-[node name="coliflor_072" parent="StaticBody3D/zonacultivosprueba" index="76" unique_id=1555852351]
+[node name="coliflor_072" parent="StaticBody3D/zonacultivosprueba" index="76" unique_id=195665659]
 transform = Transform3D(-0.11143106, -0.020968735, -0.027951779, 0.019071909, 0.025350587, -0.13149747, 0.02495655, -0.1129985, -0.024313815, 97.225266, 4.6959953, 29.69262)
 
-[node name="coliflor_073" parent="StaticBody3D/zonacultivosprueba" index="77" unique_id=1944833134]
+[node name="coliflor_073" parent="StaticBody3D/zonacultivosprueba" index="77" unique_id=1405153076]
 transform = Transform3D(-0.15364204, -0.3339914, -0.11779178, 0.061970953, 0.08237254, -0.4272791, 0.33774203, -0.16705005, 0.024815166, -37.59645, 5.2215996, 34.86254)
 
-[node name="coliflor_074" parent="StaticBody3D/zonacultivosprueba" index="78" unique_id=1249985385]
+[node name="coliflor_074" parent="StaticBody3D/zonacultivosprueba" index="78" unique_id=1651024441]
 transform = Transform3D(0.2889228, -0.2448612, -0.0052576326, 0.06197096, 0.08237255, -0.42727906, 0.23280707, 0.2819557, 0.12026244, -37.59645, 5.2215996, 29.3507)
 
-[node name="coliflor_075" parent="StaticBody3D/zonacultivosprueba" index="79" unique_id=1972177414]
+[node name="coliflor_075" parent="StaticBody3D/zonacultivosprueba" index="79" unique_id=38857909]
 transform = Transform3D(0.33580253, -0.17119618, 0.023346486, 0.061970983, 0.082372494, -0.42727903, 0.15783589, 0.33188528, 0.11809163, -37.59645, 5.2215996, 24.132927)
 
-[node name="coliflor_076" parent="StaticBody3D/zonacultivosprueba" index="80" unique_id=1195176500]
+[node name="coliflor_076" parent="StaticBody3D/zonacultivosprueba" index="80" unique_id=1643245490]
 transform = Transform3D(0.23553379, -0.29708943, -0.029607542, 0.06197096, 0.08237248, -0.42727908, 0.28670427, 0.22626066, 0.11667937, -29.533936, 5.433052, 33.407585)
 
-[node name="coliflor_077" parent="StaticBody3D/zonacultivosprueba" index="81" unique_id=1356597579]
+[node name="coliflor_077" parent="StaticBody3D/zonacultivosprueba" index="81" unique_id=657905717]
 transform = Transform3D(0.05964982, -0.37054238, -0.08421027, 0.061970916, 0.0823725, -0.42727908, 0.36622047, 0.0464149, 0.08601924, -29.533936, 5.433052, 27.85363)
 
-[node name="coliflor_078" parent="StaticBody3D/zonacultivosprueba" index="82" unique_id=842724438]
+[node name="coliflor_078" parent="StaticBody3D/zonacultivosprueba" index="82" unique_id=26159407]
 transform = Transform3D(0.27532956, -0.25914854, -0.03169775, 0.028225515, 0.070478514, -0.43503505, 0.25477996, 0.2722426, 0.08244924, -29.533936, 5.433052, 22.635857)
 
-[node name="coliflor_079" parent="StaticBody3D/zonacultivosprueba" index="83" unique_id=523418446]
+[node name="coliflor_079" parent="StaticBody3D/zonacultivosprueba" index="83" unique_id=593923870]
 transform = Transform3D(0.23553379, -0.29708943, -0.029607542, 0.06197096, 0.08237248, -0.42727908, 0.28670427, 0.22626066, 0.11667937, -29.533936, 5.433052, 16.98864)
 
-[node name="coliflor_080" parent="StaticBody3D/zonacultivosprueba" index="84" unique_id=1958809892]
+[node name="coliflor_080" parent="StaticBody3D/zonacultivosprueba" index="84" unique_id=202751319]
 transform = Transform3D(0.05964982, -0.37054238, -0.08421027, 0.061970916, 0.0823725, -0.42727908, 0.36622047, 0.0464149, 0.08601924, -29.533936, 5.433052, 11.434685)
 
-[node name="coliflor_081" parent="StaticBody3D/zonacultivosprueba" index="85" unique_id=159894833]
+[node name="coliflor_081" parent="StaticBody3D/zonacultivosprueba" index="85" unique_id=348695466]
 transform = Transform3D(0.27532956, -0.25914854, -0.03169775, 0.028225515, 0.070478514, -0.43503505, 0.25477996, 0.2722426, 0.08244924, -29.533936, 5.433052, 6.2169113)
 
-[node name="coliflor_082" parent="StaticBody3D/zonacultivosprueba" index="86" unique_id=145847768]
+[node name="coliflor_082" parent="StaticBody3D/zonacultivosprueba" index="86" unique_id=1716837781]
 transform = Transform3D(0.2995062, -0.23139115, 0.00037899552, 0.061971005, 0.08237254, -0.42727903, 0.21902405, 0.2931111, 0.12037675, 86.62172, 5.433052, 4.138298)
 
-[node name="coliflor_083" parent="StaticBody3D/zonacultivosprueba" index="87" unique_id=1818123931]
+[node name="coliflor_083" parent="StaticBody3D/zonacultivosprueba" index="87" unique_id=1562462890]
 transform = Transform3D(0.19560286, -0.3243709, -0.044758994, 0.06197097, 0.08237249, -0.42727908, 0.31530148, 0.18503931, 0.111746654, 86.62172, 5.433052, -1.5903397)
 
-[node name="coliflor_084" parent="StaticBody3D/zonacultivosprueba" index="88" unique_id=683567912]
+[node name="coliflor_084" parent="StaticBody3D/zonacultivosprueba" index="88" unique_id=330510564]
 transform = Transform3D(0.05964982, -0.37054238, -0.08421027, 0.061970916, 0.0823725, -0.42727908, 0.36622047, 0.0464149, 0.08601924, 86.75307, 5.433052, -7.817024)
 
-[node name="tomate2_007" parent="StaticBody3D/zonacultivosprueba" index="89" unique_id=1933980074]
+[node name="tomate2_007" parent="StaticBody3D/zonacultivosprueba" index="89" unique_id=1889353650]
 transform = Transform3D(-2.0599413, 0.99540496, 2.012204, -0.85431683, -2.873056, 0.5466697, 2.076039, -0.19461302, 2.2215626, 49.623367, 14.201828, 37.60534)
 
-[node name="tomate1_008" parent="StaticBody3D/zonacultivosprueba" index="90" unique_id=1498938211]
+[node name="tomate1_008" parent="StaticBody3D/zonacultivosprueba" index="90" unique_id=1040230654]
 transform = Transform3D(0.887196, -2.472077, -1.3719558, 2.7618644, 0.450307, 0.9746113, -0.60458726, -1.5705425, 2.4389374, 52.320053, 14.5689125, -20.191048)
 
-[node name="tomate2_008" parent="StaticBody3D/zonacultivosprueba" index="91" unique_id=2001018500]
+[node name="tomate2_008" parent="StaticBody3D/zonacultivosprueba" index="91" unique_id=1009268374]
 transform = Transform3D(-2.5905201, 1.0077177, 1.2477442, -0.8543169, -2.8730564, 0.54666954, 1.3573886, 0.114935875, 2.725333, 49.623367, 14.201828, 19.325676)
 
-[node name="tomate1_009" parent="StaticBody3D/zonacultivosprueba" index="92" unique_id=477561137]
+[node name="tomate1_009" parent="StaticBody3D/zonacultivosprueba" index="92" unique_id=23813421]
 transform = Transform3D(0.9960905, -2.0783741, -1.862447, 2.7618647, 0.45030707, 0.9746115, -0.4005584, -2.0635235, 2.0885327, 51.76982, 14.5689125, 7.2435226)
 
-[node name="tomate2_009" parent="StaticBody3D/zonacultivosprueba" index="93" unique_id=147606909]
+[node name="tomate2_009" parent="StaticBody3D/zonacultivosprueba" index="93" unique_id=1545286279]
 transform = Transform3D(-2.5010378, 1.0129164, 1.4149057, -0.85431665, -2.873055, 0.5466694, 1.5159487, 0.05200941, 2.6424124, 49.623367, 14.201828, 1.3052902)
 
-[node name="tomate1_010" parent="StaticBody3D/zonacultivosprueba" index="94" unique_id=1536547917]
+[node name="tomate1_010" parent="StaticBody3D/zonacultivosprueba" index="94" unique_id=519134081]
 transform = Transform3D(-0.52603865, 2.9125257, 0.14499795, 2.761865, 0.45030746, 0.97461176, 0.9359097, 0.30816305, -2.7945764, 49.28853, 14.5689125, -9.549202)
 
-[node name="tomate1_011" parent="StaticBody3D/zonacultivosprueba" index="95" unique_id=448438953]
+[node name="tomate1_011" parent="StaticBody3D/zonacultivosprueba" index="95" unique_id=1246238969]
 transform = Transform3D(0.715436, -2.777603, -0.7440558, 2.7618647, 0.45030674, 0.9746115, -0.80049634, -0.9288121, 2.6976023, 51.81694, 14.569008, 25.238884)
 
-[node name="tomate2_010" parent="StaticBody3D/zonacultivosprueba" index="96" unique_id=2051636583]
+[node name="tomate2_010" parent="StaticBody3D/zonacultivosprueba" index="96" unique_id=1212122166]
 transform = Transform3D(-1.8366619, 0.9702616, 2.2289948, -0.85431683, -2.8730557, 0.5466696, 2.2759542, -0.29546174, 2.0039678, 49.623367, 14.201828, -24.445076)
 
-[node name="tomate1_012" parent="StaticBody3D/zonacultivosprueba" index="97" unique_id=1380465495]
+[node name="tomate1_012" parent="StaticBody3D/zonacultivosprueba" index="97" unique_id=1148405519]
 transform = Transform3D(0.81902844, -2.6229093, -1.1090914, 2.7618642, 0.450307, 0.9746115, -0.6941435, -1.3031176, 2.5691621, 73.6526, 14.5689125, 7.91967)
 
-[node name="tomate1_013" parent="StaticBody3D/zonacultivosprueba" index="98" unique_id=1465670962]
+[node name="tomate1_013" parent="StaticBody3D/zonacultivosprueba" index="98" unique_id=263362027]
 transform = Transform3D(0.81902844, -2.6229093, -1.1090914, 2.7618642, 0.450307, 0.9746115, -0.6941435, -1.3031176, 2.5691621, 73.10237, 14.5689125, 35.35424)
 
-[node name="tomate2_011" parent="StaticBody3D/zonacultivosprueba" index="99" unique_id=1330631863]
+[node name="tomate2_011" parent="StaticBody3D/zonacultivosprueba" index="99" unique_id=1846096140]
 transform = Transform3D(-1.6295763, 0.94054747, 2.3964567, -0.8543167, -2.8730567, 0.54666954, 2.428534, -0.37957323, 1.8003612, 70.95592, 14.201828, 29.416008)
 
-[node name="tomate1_014" parent="StaticBody3D/zonacultivosprueba" index="100" unique_id=213193328]
+[node name="tomate1_014" parent="StaticBody3D/zonacultivosprueba" index="100" unique_id=1054229837]
 transform = Transform3D(-0.9871576, 2.1226947, 1.8166542, 2.761865, 0.45030746, 0.9746117, 0.42209446, 2.017904, -2.1284847, 70.62108, 14.5689125, 18.561516)
 
-[node name="tomate2_012" parent="StaticBody3D/zonacultivosprueba" index="101" unique_id=670969882]
+[node name="tomate2_012" parent="StaticBody3D/zonacultivosprueba" index="101" unique_id=767900663]
 transform = Transform3D(-2.5041754, 1.0128068, 1.4094268, -0.8543169, -2.8730564, 0.5466697, 1.510763, 0.054108653, 2.6453393, 70.95592, 14.201828, 3.6656418)
 
-[node name="frambuesas_010" parent="StaticBody3D/zonacultivosprueba" index="102" unique_id=688187176]
+[node name="frambuesas_010" parent="StaticBody3D/zonacultivosprueba" index="102" unique_id=182009771]
 transform = Transform3D(0, 6.0887334e-07, 0.10305824, -0.12681319, -1.4207044e-06, 1.9222161e-15, 2.6455293e-08, -6.810133, 9.214125e-09, 41.800797, 7.026863, 37.612053)
 
-[node name="frambuesas_011" parent="StaticBody3D/zonacultivosprueba" index="103" unique_id=205683419]
+[node name="frambuesas_011" parent="StaticBody3D/zonacultivosprueba" index="103" unique_id=1137204881]
 transform = Transform3D(0, 6.0887334e-07, 0.10305824, -0.12681319, -1.4207044e-06, 1.9222161e-15, 2.6455293e-08, -6.810133, 9.214125e-09, 41.800797, 7.026863, 22.497795)
 
-[node name="frambuesas_012" parent="StaticBody3D/zonacultivosprueba" index="104" unique_id=637181250]
+[node name="frambuesas_012" parent="StaticBody3D/zonacultivosprueba" index="104" unique_id=1084572859]
 transform = Transform3D(0, 6.0887334e-07, 0.10305824, -0.12681319, -1.4207044e-06, 1.9222161e-15, 2.6455293e-08, -6.810133, 9.214125e-09, 41.800797, 7.026863, 7.0421066)
 
-[node name="frambuesas_013" parent="StaticBody3D/zonacultivosprueba" index="105" unique_id=260495454]
+[node name="frambuesas_013" parent="StaticBody3D/zonacultivosprueba" index="105" unique_id=90308784]
 transform = Transform3D(0, 6.0887334e-07, 0.10305824, -0.12681319, -1.4207044e-06, 1.9222161e-15, 2.6455293e-08, -6.810133, 9.214125e-09, 41.800797, 7.026863, -8.541634)
 
-[node name="frambuesas_014" parent="StaticBody3D/zonacultivosprueba" index="106" unique_id=1430373744]
+[node name="frambuesas_014" parent="StaticBody3D/zonacultivosprueba" index="106" unique_id=448215219]
 transform = Transform3D(0, 6.0887334e-07, 0.10305824, -0.12681319, -1.4207044e-06, 1.9222161e-15, 2.6455293e-08, -6.810133, 9.214125e-09, 41.800797, 7.026863, -24.06739)
 
-[node name="frambuesas_015" parent="StaticBody3D/zonacultivosprueba" index="107" unique_id=1062293081]
+[node name="frambuesas_015" parent="StaticBody3D/zonacultivosprueba" index="107" unique_id=960265515]
 transform = Transform3D(0, 6.0887334e-07, 0.10305824, -0.12681319, -1.4207044e-06, 1.9222161e-15, 2.6455293e-08, -6.810133, 9.214125e-09, 9.113174, 7.026863, 37.612053)
 
-[node name="frambuesas_016" parent="StaticBody3D/zonacultivosprueba" index="108" unique_id=149157712]
+[node name="frambuesas_016" parent="StaticBody3D/zonacultivosprueba" index="108" unique_id=385453366]
 transform = Transform3D(0, 6.0887334e-07, 0.10305824, -0.12681319, -1.4207044e-06, 1.9222161e-15, 2.6455293e-08, -6.810133, 9.214125e-09, 9.113174, 7.026863, 22.497795)
 
-[node name="frambuesas_017" parent="StaticBody3D/zonacultivosprueba" index="109" unique_id=21899443]
+[node name="frambuesas_017" parent="StaticBody3D/zonacultivosprueba" index="109" unique_id=1636798745]
 transform = Transform3D(0, 6.0887334e-07, 0.10305824, -0.12681319, -1.4207044e-06, 1.9222161e-15, 2.6455293e-08, -6.810133, 9.214125e-09, 9.113174, 7.026863, 7.0421066)
 
-[node name="frambuesas_018" parent="StaticBody3D/zonacultivosprueba" index="110" unique_id=55389512]
+[node name="frambuesas_018" parent="StaticBody3D/zonacultivosprueba" index="110" unique_id=1521292094]
 transform = Transform3D(0, 6.0887334e-07, 0.10305824, -0.12681319, -1.4207044e-06, 1.9222161e-15, 2.6455293e-08, -6.810133, 9.214125e-09, 9.113174, 7.026863, -8.541634)
 
-[node name="acelga_031" parent="StaticBody3D/zonacultivosprueba" index="111" unique_id=1542198310]
+[node name="acelga_031" parent="StaticBody3D/zonacultivosprueba" index="111" unique_id=365088510]
 transform = Transform3D(0.27568537, 0, 1.1459244, 0, 1.1786201, 0, -1.1459244, 0, 0.27568537, 18.919968, 8.533173, 41.332268)
 
-[node name="acelga_032" parent="StaticBody3D/zonacultivosprueba" index="112" unique_id=1379782065]
+[node name="acelga_032" parent="StaticBody3D/zonacultivosprueba" index="112" unique_id=19295005]
 transform = Transform3D(1.1331735, 0, -0.32413417, 0, 1.1786201, 0, 0.32413417, 0, 1.1331735, 18.919968, 8.533173, 36.562614)
 
-[node name="acelga_033" parent="StaticBody3D/zonacultivosprueba" index="113" unique_id=687620176]
+[node name="acelga_033" parent="StaticBody3D/zonacultivosprueba" index="113" unique_id=309689782]
 transform = Transform3D(0.9941179, 0, 0.63314664, 0, 1.1786201, 0, -0.63314664, 0, 0.9941179, 18.919968, 8.533173, 32.240105)
 
-[node name="acelga_034" parent="StaticBody3D/zonacultivosprueba" index="114" unique_id=1467220900]
+[node name="acelga_034" parent="StaticBody3D/zonacultivosprueba" index="114" unique_id=812243559]
 transform = Transform3D(0.27568537, 0, 1.1459244, 0, 1.1786201, 0, -1.1459244, 0, 0.27568537, 18.919968, 8.533173, 27.470451)
 
-[node name="acelga_035" parent="StaticBody3D/zonacultivosprueba" index="115" unique_id=16792689]
+[node name="acelga_035" parent="StaticBody3D/zonacultivosprueba" index="115" unique_id=850442288]
 transform = Transform3D(-0.6003411, 0, 1.0142664, 0, 1.1786201, 0, -1.0142664, 0, -0.6003411, 18.919968, 8.533173, 22.826408)
 
-[node name="acelga_036" parent="StaticBody3D/zonacultivosprueba" index="116" unique_id=1117296278]
+[node name="acelga_036" parent="StaticBody3D/zonacultivosprueba" index="116" unique_id=1728838764]
 transform = Transform3D(0.27568537, 0, 1.1459244, 0, 1.1786201, 0, -1.1459244, 0, 0.27568537, 18.919968, 8.533173, 18.056755)
 
-[node name="acelga_037" parent="StaticBody3D/zonacultivosprueba" index="117" unique_id=883788976]
+[node name="acelga_037" parent="StaticBody3D/zonacultivosprueba" index="117" unique_id=706289443]
 transform = Transform3D(-0.5784723, 0, 1.0268958, 0, 1.1786201, 0, -1.0268958, 0, -0.5784723, 18.919968, 8.533173, 12.565544)
 
-[node name="acelga_038" parent="StaticBody3D/zonacultivosprueba" index="118" unique_id=1406982197]
+[node name="acelga_038" parent="StaticBody3D/zonacultivosprueba" index="118" unique_id=1934427629]
 transform = Transform3D(0.27568537, 0, 1.1459244, 0, 1.1786201, 0, -1.1459244, 0, 0.27568537, 18.919968, 8.533173, 7.795891)
 
-[node name="acelga_039" parent="StaticBody3D/zonacultivosprueba" index="119" unique_id=1734818356]
+[node name="acelga_039" parent="StaticBody3D/zonacultivosprueba" index="119" unique_id=1723282109]
 transform = Transform3D(0.88851136, 0, 0.7743982, 0, 1.1786201, 0, -0.7743982, 0, 0.88851136, 18.919968, 8.533173, 3.3714523)
 
-[node name="acelga_040" parent="StaticBody3D/zonacultivosprueba" index="120" unique_id=2052274179]
+[node name="acelga_040" parent="StaticBody3D/zonacultivosprueba" index="120" unique_id=189845990]
 transform = Transform3D(0.27568537, 0, 1.1459244, 0, 1.1786201, 0, -1.1459244, 0, 0.27568537, 18.919968, 8.533173, -1.398201)
 
-[node name="acelga_041" parent="StaticBody3D/zonacultivosprueba" index="121" unique_id=284603912]
+[node name="acelga_041" parent="StaticBody3D/zonacultivosprueba" index="121" unique_id=920510955]
 transform = Transform3D(-0.9917931, 0, -0.63678277, 0, 1.1786201, 0, 0.63678277, 0, -0.9917931, 18.919968, 8.533173, -5.858162)
 
-[node name="acelga_042" parent="StaticBody3D/zonacultivosprueba" index="122" unique_id=1619579978]
+[node name="acelga_042" parent="StaticBody3D/zonacultivosprueba" index="122" unique_id=1876478441]
 transform = Transform3D(-0.8410167, 0, -0.82573366, 0, 1.1786201, 0, 0.82573366, 0, -0.8410167, 18.919968, 8.533173, -10.627815)
 
-[node name="acelga_043" parent="StaticBody3D/zonacultivosprueba" index="123" unique_id=947358533]
+[node name="acelga_043" parent="StaticBody3D/zonacultivosprueba" index="123" unique_id=1214690330]
 transform = Transform3D(0.27568537, 0, 1.1459244, 0, 1.1786201, 0, -1.1459244, 0, 0.27568537, 26.571, 8.533173, 37.101555)
 
-[node name="acelga_044" parent="StaticBody3D/zonacultivosprueba" index="124" unique_id=1942093237]
+[node name="acelga_044" parent="StaticBody3D/zonacultivosprueba" index="124" unique_id=579037610]
 transform = Transform3D(0.9118762, 0, 0.7467441, 0, 1.1786201, 0, -0.7467441, 0, 0.9118762, 26.571, 8.533173, 32.3319)
 
-[node name="acelga_045" parent="StaticBody3D/zonacultivosprueba" index="125" unique_id=965972061]
+[node name="acelga_045" parent="StaticBody3D/zonacultivosprueba" index="125" unique_id=1945363127]
 transform = Transform3D(0.27568537, 0, 1.1459244, 0, 1.1786201, 0, -1.1459244, 0, 0.27568537, 26.571, 8.533173, 26.84069)
 
-[node name="acelga_046" parent="StaticBody3D/zonacultivosprueba" index="126" unique_id=1476487974]
+[node name="acelga_046" parent="StaticBody3D/zonacultivosprueba" index="126" unique_id=498673124]
 transform = Transform3D(-0.748722, 0, 0.91025275, 0, 1.1786201, 0, -0.91025275, 0, -0.748722, 26.571, 8.533173, 22.071037)
 
-[node name="acelga_047" parent="StaticBody3D/zonacultivosprueba" index="127" unique_id=1863023794]
+[node name="acelga_047" parent="StaticBody3D/zonacultivosprueba" index="127" unique_id=338700003]
 transform = Transform3D(0.8073894, 0, 0.8586428, 0, 1.1786201, 0, -0.8586428, 0, 0.8073894, 26.571, 8.533173, 17.646599)
 
-[node name="acelga_048" parent="StaticBody3D/zonacultivosprueba" index="128" unique_id=945420432]
+[node name="acelga_048" parent="StaticBody3D/zonacultivosprueba" index="128" unique_id=1824620524]
 transform = Transform3D(0.8846338, 0, 0.7788248, 0, 1.1786201, 0, -0.7788248, 0, 0.8846338, 26.571, 8.533173, 13.327507)
 
-[node name="acelga_049" parent="StaticBody3D/zonacultivosprueba" index="129" unique_id=981281427]
+[node name="acelga_049" parent="StaticBody3D/zonacultivosprueba" index="129" unique_id=2073966365]
 transform = Transform3D(0.27568537, 0, 1.1459244, 0, 1.1786201, 0, -1.1459244, 0, 0.27568537, 26.571, 8.533173, 7.771721)
 
-[node name="acelga_050" parent="StaticBody3D/zonacultivosprueba" index="130" unique_id=762572967]
+[node name="acelga_050" parent="StaticBody3D/zonacultivosprueba" index="130" unique_id=1652544724]
 transform = Transform3D(0.84198874, 0, 0.82474244, 0, 1.1786201, 0, -0.82474244, 0, 0.84198874, 26.571, 8.533173, 3.0666428)
 
-[node name="acelga_051" parent="StaticBody3D/zonacultivosprueba" index="131" unique_id=1915905335]
+[node name="acelga_051" parent="StaticBody3D/zonacultivosprueba" index="131" unique_id=1584269189]
 transform = Transform3D(-0.5795313, 0, 1.0262984, 0, 1.1786201, 0, -1.0262984, 0, -0.57953125, 26.571, 8.533173, -1.7030106)
 
-[node name="acelga_052" parent="StaticBody3D/zonacultivosprueba" index="132" unique_id=1876051743]
+[node name="acelga_052" parent="StaticBody3D/zonacultivosprueba" index="132" unique_id=913126817]
 transform = Transform3D(-0.7440761, 0, 0.914055, 0, 1.1786201, 0, -0.914055, 0, -0.7440761, 26.571, 8.533173, -6.127449)
 
-[node name="acelga_053" parent="StaticBody3D/zonacultivosprueba" index="133" unique_id=45343502]
+[node name="acelga_053" parent="StaticBody3D/zonacultivosprueba" index="133" unique_id=164520413]
 transform = Transform3D(-0.84952664, 0, 0.816976, 0, 1.1786201, 0, -0.816976, 0, -0.84952664, 26.571, 8.533173, -10.124031)
 
-[node name="acelga_054" parent="StaticBody3D/zonacultivosprueba" index="134" unique_id=1245637464]
+[node name="acelga_054" parent="StaticBody3D/zonacultivosprueba" index="134" unique_id=723965532]
 transform = Transform3D(1.1063219, 0, 0.40644416, 0, 1.1786201, 0, -0.40644416, 0, 1.1063219, 26.028183, 8.533173, -14.893684)
 
-[node name="acelga_055" parent="StaticBody3D/zonacultivosprueba" index="135" unique_id=1126970358]
+[node name="acelga_055" parent="StaticBody3D/zonacultivosprueba" index="135" unique_id=467545957]
 transform = Transform3D(1.1784996, 0, -0.01684694, 0, 1.1786201, 0, 0.01684694, 0, 1.1784996, 26.079544, 8.533173, -20.104134)
 
-[node name="acelga_056" parent="StaticBody3D/zonacultivosprueba" index="136" unique_id=1520817157]
+[node name="acelga_056" parent="StaticBody3D/zonacultivosprueba" index="136" unique_id=1792419474]
 transform = Transform3D(-0.25671, 0, -0.16482116, 0, 0.30506715, 0, 0.16482116, 0, -0.25671, 5.1377716, 5.794052, 25.6986)
 
-[node name="acelga_057" parent="StaticBody3D/zonacultivosprueba" index="137" unique_id=60117071]
+[node name="acelga_057" parent="StaticBody3D/zonacultivosprueba" index="137" unique_id=128291500]
 transform = Transform3D(-0.04374707, 0.23894492, 0.050543517, 0.09667315, 0.06409546, -0.21933813, -0.22428474, -0.018979581, -0.104399614, 3.2927399, 5.218109, 25.971794)
 
-[node name="acelga_058" parent="StaticBody3D/zonacultivosprueba" index="138" unique_id=416535042]
+[node name="acelga_058" parent="StaticBody3D/zonacultivosprueba" index="138" unique_id=798373759]
 transform = Transform3D(-0.84952664, 0, 0.816976, 0, 1.1786201, 0, -0.816976, 0, -0.84952664, 87.461624, 8.533173, -13.785774)
 
-[node name="acelga_059" parent="StaticBody3D/zonacultivosprueba" index="139" unique_id=677183390]
+[node name="acelga_059" parent="StaticBody3D/zonacultivosprueba" index="139" unique_id=238528166]
 transform = Transform3D(1.1063219, 0, 0.40644416, 0, 1.1786201, 0, -0.40644416, 0, 1.1063219, 86.91878, 8.533173, -18.55555)
 
-[node name="acelga_060" parent="StaticBody3D/zonacultivosprueba" index="140" unique_id=1563685253]
+[node name="acelga_060" parent="StaticBody3D/zonacultivosprueba" index="140" unique_id=1091863015]
 transform = Transform3D(1.1784996, 0, -0.01684694, 0, 1.1786201, 0, 0.01684694, 0, 1.1784996, 86.97017, 8.533173, -23.765999)
 
-[node name="cebojja_024" parent="StaticBody3D/zonacultivosprueba" index="141" unique_id=1330944614]
+[node name="cebojja_024" parent="StaticBody3D/zonacultivosprueba" index="141" unique_id=307336732]
 transform = Transform3D(1.2914317, 0, 0, 0, 1.2914317, 0, 0, 0, 1.2914317, -38.072006, 4.8500786, 19.206413)
 
-[node name="cebojja_025" parent="StaticBody3D/zonacultivosprueba" index="142" unique_id=1353642054]
+[node name="cebojja_025" parent="StaticBody3D/zonacultivosprueba" index="142" unique_id=202789663]
 transform = Transform3D(1.2914317, 0, 0, 0, 1.2914317, 0, 0, 0, 1.2914317, -38.072006, 4.8500786, 14.221672)
 
-[node name="cebojja_026" parent="StaticBody3D/zonacultivosprueba" index="143" unique_id=967807871]
+[node name="cebojja_026" parent="StaticBody3D/zonacultivosprueba" index="143" unique_id=237683919]
 transform = Transform3D(1.2914317, 0, 0, 0, 1.2914317, 0, 0, 0, 1.2914317, -38.072006, 4.8500786, 9.460686)
 
-[node name="cebojja_027" parent="StaticBody3D/zonacultivosprueba" index="144" unique_id=1235792193]
+[node name="cebojja_027" parent="StaticBody3D/zonacultivosprueba" index="144" unique_id=1261427706]
 transform = Transform3D(1.2914317, 0, 0, 0, 1.2914317, 0, 0, 0, 1.2914317, -38.072006, 4.8500786, 4.302971)
 
-[node name="cebojja_028" parent="StaticBody3D/zonacultivosprueba" index="145" unique_id=148785537]
+[node name="cebojja_028" parent="StaticBody3D/zonacultivosprueba" index="145" unique_id=97886452]
 transform = Transform3D(1.2914317, 0, 0, 0, 1.2914317, 0, 0, 0, 1.2914317, -38.072006, 4.8500786, -0.82849884)
 
-[node name="cebojja_029" parent="StaticBody3D/zonacultivosprueba" index="146" unique_id=793500369]
+[node name="cebojja_029" parent="StaticBody3D/zonacultivosprueba" index="146" unique_id=1213655125]
 transform = Transform3D(1.2914317, 0, 0, 0, 1.2914317, 0, 0, 0, 1.2914317, -38.072006, 4.8500786, -7.0991287)
 
-[node name="cebojja_030" parent="StaticBody3D/zonacultivosprueba" index="147" unique_id=1294412321]
+[node name="cebojja_030" parent="StaticBody3D/zonacultivosprueba" index="147" unique_id=1589067847]
 transform = Transform3D(1.2914317, 0, 0, 0, 1.2914317, 0, 0, 0, 1.2914317, -29.531693, 4.8500786, 1.2835617)
 
-[node name="cebojja_031" parent="StaticBody3D/zonacultivosprueba" index="148" unique_id=1195222362]
+[node name="cebojja_031" parent="StaticBody3D/zonacultivosprueba" index="148" unique_id=1214858073]
 transform = Transform3D(1.2914317, 0, 0, 0, 1.2914317, 0, 0, 0, 1.2914317, -29.531693, 4.8500786, -3.7011795)
 
-[node name="cebojja_032" parent="StaticBody3D/zonacultivosprueba" index="149" unique_id=542505797]
+[node name="cebojja_032" parent="StaticBody3D/zonacultivosprueba" index="149" unique_id=675764907]
 transform = Transform3D(1.2914317, 0, 0, 0, 1.2914317, 0, 0, 0, 1.2914317, -29.531693, 4.8500786, -8.462166)
 
-[node name="cebojja_033" parent="StaticBody3D/zonacultivosprueba" index="150" unique_id=1973781400]
+[node name="cebojja_033" parent="StaticBody3D/zonacultivosprueba" index="150" unique_id=1569614042]
 transform = Transform3D(1.2914317, 0, 0, 0, 1.2914317, 0, 0, 0, 1.2914317, -29.531693, 4.8500786, -13.619881)
 
-[node name="cebojja_034" parent="StaticBody3D/zonacultivosprueba" index="151" unique_id=1266309977]
+[node name="cebojja_034" parent="StaticBody3D/zonacultivosprueba" index="151" unique_id=832139315]
 transform = Transform3D(1.2914317, 0, 0, 0, 1.2914317, 0, 0, 0, 1.2914317, -29.531693, 4.8500786, -18.75135)
 
-[node name="cebojja_035" parent="StaticBody3D/zonacultivosprueba" index="152" unique_id=1688238564]
+[node name="cebojja_035" parent="StaticBody3D/zonacultivosprueba" index="152" unique_id=719469473]
 transform = Transform3D(1.2914317, 0, 0, 0, 1.2914317, 0, 0, 0, 1.2914317, -29.531693, 4.8500786, -25.02198)
 
-[node name="cebojja_036" parent="StaticBody3D/zonacultivosprueba" index="153" unique_id=164463875]
+[node name="cebojja_036" parent="StaticBody3D/zonacultivosprueba" index="153" unique_id=1203101159]
 transform = Transform3D(1.2914317, 0, 0, 0, 1.2914317, 0, 0, 0, 1.2914317, 94.255356, 4.8500786, 24.13256)
 
-[node name="cebojja_037" parent="StaticBody3D/zonacultivosprueba" index="154" unique_id=543227484]
+[node name="cebojja_037" parent="StaticBody3D/zonacultivosprueba" index="154" unique_id=114096626]
 transform = Transform3D(1.2914317, 0, 0, 0, 1.2914317, 0, 0, 0, 1.2914317, 94.255356, 4.8500786, 19.14782)
 
-[node name="cebojja_038" parent="StaticBody3D/zonacultivosprueba" index="155" unique_id=351077843]
+[node name="cebojja_038" parent="StaticBody3D/zonacultivosprueba" index="155" unique_id=1518945038]
 transform = Transform3D(1.2914317, 0, 0, 0, 1.2914317, 0, 0, 0, 1.2914317, 94.255356, 4.8500786, 14.386833)
 
-[node name="cebojja_039" parent="StaticBody3D/zonacultivosprueba" index="156" unique_id=2072390005]
+[node name="cebojja_039" parent="StaticBody3D/zonacultivosprueba" index="156" unique_id=420804313]
 transform = Transform3D(1.2914317, 0, 0, 0, 1.2914317, 0, 0, 0, 1.2914317, 94.255356, 4.8500786, 9.229118)
 
-[node name="cebojja_040" parent="StaticBody3D/zonacultivosprueba" index="157" unique_id=2072911551]
+[node name="cebojja_040" parent="StaticBody3D/zonacultivosprueba" index="157" unique_id=1970093975]
 transform = Transform3D(1.2914317, 0, 0, 0, 1.2914317, 0, 0, 0, 1.2914317, 94.255356, 4.8500786, 4.0976486)
 
-[node name="cebojja_041" parent="StaticBody3D/zonacultivosprueba" index="158" unique_id=508226232]
+[node name="cebojja_041" parent="StaticBody3D/zonacultivosprueba" index="158" unique_id=816198293]
 transform = Transform3D(1.2914317, 0, 0, 0, 1.2914317, 0, 0, 0, 1.2914317, 94.255356, 4.8500786, -2.1729813)
 
-[node name="cebojja_042" parent="StaticBody3D/zonacultivosprueba" index="159" unique_id=497780510]
+[node name="cebojja_042" parent="StaticBody3D/zonacultivosprueba" index="159" unique_id=922103251]
 transform = Transform3D(1.2914317, 0, 0, 0, 1.2914317, 0, 0, 0, 1.2914317, 94.79558, 4.8500786, -8.322762)
 
-[node name="cebojja_043" parent="StaticBody3D/zonacultivosprueba" index="160" unique_id=1624265004]
+[node name="cebojja_043" parent="StaticBody3D/zonacultivosprueba" index="160" unique_id=1554076462]
 transform = Transform3D(1.2914317, 0, 0, 0, 1.2914317, 0, 0, 0, 1.2914317, 94.79558, 4.8500786, -13.480476)
 
-[node name="cebojja_044" parent="StaticBody3D/zonacultivosprueba" index="161" unique_id=963096327]
+[node name="cebojja_044" parent="StaticBody3D/zonacultivosprueba" index="161" unique_id=779335796]
 transform = Transform3D(1.2914317, 0, 0, 0, 1.2914317, 0, 0, 0, 1.2914317, 94.79558, 4.8500786, -18.611946)
 
-[node name="cebojja_045" parent="StaticBody3D/zonacultivosprueba" index="162" unique_id=720331282]
+[node name="cebojja_045" parent="StaticBody3D/zonacultivosprueba" index="162" unique_id=878261100]
 transform = Transform3D(1.2914317, 0, 0, 0, 1.2914317, 0, 0, 0, 1.2914317, 94.79558, 4.8500786, -24.882576)
 
-[node name="cebojja_046" parent="StaticBody3D/zonacultivosprueba" index="163" unique_id=843447177]
+[node name="cebojja_046" parent="StaticBody3D/zonacultivosprueba" index="163" unique_id=699406680]
 transform = Transform3D(0.1627273, 0.115506954, 0.48694873, 0.15970407, 0.47328696, -0.1656358, -0.47429475, 0.19899438, 0.11129608, 101.08266, 5.7798843, -28.77967)
 
-[node name="uvas_007" parent="StaticBody3D/zonacultivosprueba" index="164" unique_id=1647943606]
+[node name="uvas_007" parent="StaticBody3D/zonacultivosprueba" index="164" unique_id=2114497015]
 transform = Transform3D(1.5599475, 0.0065327436, -2.0354886, 1.9354008, 0.7895454, 1.4857773, 0.6304592, -2.4399319, 0.4753376, 118.1313, 8.534607, -40.971443)
 
-[node name="uvas_013" parent="StaticBody3D/zonacultivosprueba" index="165" unique_id=162381749]
+[node name="uvas_013" parent="StaticBody3D/zonacultivosprueba" index="165" unique_id=1455546062]
 transform = Transform3D(1.5599475, 0.0065327436, -2.0354886, 1.9354008, 0.7895454, 1.4857773, 0.6304592, -2.4399319, 0.4753376, 118.1313, 8.534607, -25.130379)
 
-[node name="uvas_014" parent="StaticBody3D/zonacultivosprueba" index="166" unique_id=1053818808]
+[node name="uvas_014" parent="StaticBody3D/zonacultivosprueba" index="166" unique_id=1649725860]
 transform = Transform3D(1.5599475, 0.0065327436, -2.0354886, 1.9354008, 0.7895454, 1.4857773, 0.6304592, -2.4399319, 0.4753376, 118.1313, 8.534607, -9.590706)
 
-[node name="uvas_019" parent="StaticBody3D/zonacultivosprueba" index="167" unique_id=855104932]
+[node name="uvas_019" parent="StaticBody3D/zonacultivosprueba" index="167" unique_id=1544387437]
 transform = Transform3D(1.5599475, 0.0065327436, -2.0354886, 1.9354008, 0.7895454, 1.4857773, 0.6304592, -2.4399319, 0.4753376, 118.1313, 8.534607, 6.0626144)
 
-[node name="uvas_020" parent="StaticBody3D/zonacultivosprueba" index="168" unique_id=943472996]
+[node name="uvas_020" parent="StaticBody3D/zonacultivosprueba" index="168" unique_id=2037015146]
 transform = Transform3D(1.5599475, 0.0065327436, -2.0354886, 1.9354008, 0.7895454, 1.4857773, 0.6304592, -2.4399319, 0.4753376, 118.1313, 8.534607, 22.195427)
 
-[node name="uvas_021" parent="StaticBody3D/zonacultivosprueba" index="169" unique_id=2052101911]
+[node name="uvas_021" parent="StaticBody3D/zonacultivosprueba" index="169" unique_id=1791695299]
 transform = Transform3D(1.5599475, 0.0065327436, -2.0354886, 1.9354008, 0.7895454, 1.4857773, 0.6304592, -2.4399319, 0.4753376, 118.1313, 8.534607, 37.909416)
 
-[node name="uvas_022" parent="StaticBody3D/zonacultivosprueba" index="170" unique_id=1563561220]
+[node name="uvas_022" parent="StaticBody3D/zonacultivosprueba" index="170" unique_id=711305112]
 transform = Transform3D(1.5599475, 0.0065327436, -2.0354886, 1.9354008, 0.7895454, 1.4857773, 0.6304592, -2.4399319, 0.4753376, 107.7357, 8.534607, -25.130379)
 
-[node name="uvas_023" parent="StaticBody3D/zonacultivosprueba" index="171" unique_id=719140859]
+[node name="uvas_023" parent="StaticBody3D/zonacultivosprueba" index="171" unique_id=1610250874]
 transform = Transform3D(1.5599475, 0.0065327436, -2.0354886, 1.9354008, 0.7895454, 1.4857773, 0.6304592, -2.4399319, 0.4753376, 107.7357, 8.534607, -9.590706)
 
-[node name="uvas_024" parent="StaticBody3D/zonacultivosprueba" index="172" unique_id=1838811797]
+[node name="uvas_024" parent="StaticBody3D/zonacultivosprueba" index="172" unique_id=1487639757]
 transform = Transform3D(1.5599475, 0.0065327436, -2.0354886, 1.9354008, 0.7895454, 1.4857773, 0.6304592, -2.4399319, 0.4753376, 107.7357, 8.534607, 6.0626144)
 
-[node name="uvas_025" parent="StaticBody3D/zonacultivosprueba" index="173" unique_id=320464802]
+[node name="uvas_025" parent="StaticBody3D/zonacultivosprueba" index="173" unique_id=1279142597]
 transform = Transform3D(1.5599475, 0.0065327436, -2.0354886, 1.9354008, 0.7895454, 1.4857773, 0.6304592, -2.4399319, 0.4753376, 107.7357, 8.534607, 22.195427)
 
-[node name="uvas_026" parent="StaticBody3D/zonacultivosprueba" index="174" unique_id=1760668717]
+[node name="uvas_026" parent="StaticBody3D/zonacultivosprueba" index="174" unique_id=726148809]
 transform = Transform3D(1.5599475, 0.0065327436, -2.0354886, 1.9354008, 0.7895454, 1.4857773, 0.6304592, -2.4399319, 0.4753376, 107.7357, 8.534607, 37.909416)
 
-[node name="uvas_027" parent="StaticBody3D/zonacultivosprueba" index="175" unique_id=1515442939]
+[node name="uvas_027" parent="StaticBody3D/zonacultivosprueba" index="175" unique_id=1049337651]
 transform = Transform3D(1.5599475, 0.0065327436, -2.0354886, 1.9354008, 0.7895454, 1.4857773, 0.6304592, -2.4399319, 0.4753376, 100.44026, 8.534607, -9.590706)
 
-[node name="uvas_028" parent="StaticBody3D/zonacultivosprueba" index="176" unique_id=1859827562]
+[node name="uvas_028" parent="StaticBody3D/zonacultivosprueba" index="176" unique_id=514364147]
 transform = Transform3D(1.5599475, 0.0065327436, -2.0354886, 1.9354008, 0.7895454, 1.4857773, 0.6304592, -2.4399319, 0.4753376, 100.44026, 8.534607, 6.0626144)
 
-[node name="uvas_029" parent="StaticBody3D/zonacultivosprueba" index="177" unique_id=1185281366]
+[node name="uvas_029" parent="StaticBody3D/zonacultivosprueba" index="177" unique_id=972083653]
 transform = Transform3D(1.5599475, 0.0065327436, -2.0354886, 1.9354008, 0.7895454, 1.4857773, 0.6304592, -2.4399319, 0.4753376, 100.44026, 8.534607, 22.195427)
 
-[node name="uvas_030" parent="StaticBody3D/zonacultivosprueba" index="178" unique_id=1685516673]
+[node name="uvas_030" parent="StaticBody3D/zonacultivosprueba" index="178" unique_id=1808764883]
 transform = Transform3D(1.5599475, 0.0065327436, -2.0354886, 1.9354008, 0.7895454, 1.4857773, 0.6304592, -2.4399319, 0.4753376, 100.44026, 8.534607, 37.909416)
 
-[node name="piedra1_004" parent="StaticBody3D/zonacultivosprueba" index="179" unique_id=142390030]
+[node name="piedra1_004" parent="StaticBody3D/zonacultivosprueba" index="179" unique_id=1941355651]
 transform = Transform3D(1.2408034, 0, 0, 0, 0.7667866, 0, 0, 0, 1.2408034, -48.05394, 5.174347, -6.1574783)
 
-[node name="piedra2_003" parent="StaticBody3D/zonacultivosprueba" index="180" unique_id=325270755]
+[node name="piedra2_003" parent="StaticBody3D/zonacultivosprueba" index="180" unique_id=1635643029]
 transform = Transform3D(0.7567777, 0, 0, 0, 0.94455165, 0, 0, 0, 1.0358856, 111.08995, 5.305134, 36.07946)
 
-[node name="piedra3_004" parent="StaticBody3D/zonacultivosprueba" index="181" unique_id=1768924855]
+[node name="piedra3_004" parent="StaticBody3D/zonacultivosprueba" index="181" unique_id=936963227]
 transform = Transform3D(1.2408034, 0, 0, 0, 1.2408034, 0, 0, 0, 1.2408034, 60.027603, 4.0848656, -32.617683)
 
-[node name="cajon3_007" parent="StaticBody3D/zonacultivosprueba" index="182" unique_id=1775673161]
+[node name="cajon3_007" parent="StaticBody3D/zonacultivosprueba" index="182" unique_id=1325775463]
 transform = Transform3D(0.10170485, 0, 0.74691236, 0, 1.0630128, 0, -0.08714606, 0, 0.871693, 101.28313, 6.3539314, -21.917244)
 
-[node name="cajon2_004" parent="StaticBody3D/zonacultivosprueba" index="183" unique_id=1960557153]
+[node name="cajon2_004" parent="StaticBody3D/zonacultivosprueba" index="183" unique_id=2061795678]
 transform = Transform3D(0.10850475, 0, -0.6729604, 0, 1.0630128, 0, 0.078517705, 0, 0.92997366, -17.045578, 5.7226563, 32.43676)
 
-[node name="cajon1_004" parent="StaticBody3D/zonacultivosprueba" index="184" unique_id=2036853020]
+[node name="cajon1_004" parent="StaticBody3D/zonacultivosprueba" index="184" unique_id=109739204]
 transform = Transform3D(0.056204163, 0, 0.26957446, 0, 0.51118284, 0, -0.031452622, 0, 0.48171523, -6.6383514, 5.3932114, 31.972527)
 
-[node name="caja2_005" parent="StaticBody3D/zonacultivosprueba" index="185" unique_id=498499325]
+[node name="caja2_005" parent="StaticBody3D/zonacultivosprueba" index="185" unique_id=17190216]
 transform = Transform3D(1.0831424, 0, 0.8481053, 0, 1.3756742, 0, -0.8481053, 0, 1.0831424, -4.319626, 6.3395767, 34.562126)
 
-[node name="caja1_012" parent="StaticBody3D/zonacultivosprueba" index="186" unique_id=1405461252]
+[node name="caja1_012" parent="StaticBody3D/zonacultivosprueba" index="186" unique_id=1055211370]
 transform = Transform3D(2.0933816, 0, 0, 0, 2.0933816, 0, 0, 0, 2.0933816, -8.287247, 6.4221764, 36.499016)
 
-[node name="cajon3_008" parent="StaticBody3D/zonacultivosprueba" index="187" unique_id=1114169949]
+[node name="cajon3_008" parent="StaticBody3D/zonacultivosprueba" index="187" unique_id=593024099]
 transform = Transform3D(-0.099818274, 0, -0.7653801, 0, 1.0630128, 0, 0.08930077, 0, -0.8555236, 81.732346, 5.838459, 36.52343)
 
-[node name="caja2_006" parent="StaticBody3D/zonacultivosprueba" index="188" unique_id=1618467062]
+[node name="caja2_006" parent="StaticBody3D/zonacultivosprueba" index="188" unique_id=1584430147]
 transform = Transform3D(1.7954605, 0, 0, 0, 1.7954605, 0, 0, 0, 1.7954605, 84.04784, 6.4614906, 40.927605)
 
-[node name="caja1_013" parent="StaticBody3D/zonacultivosprueba" index="189" unique_id=266987099]
+[node name="caja1_013" parent="StaticBody3D/zonacultivosprueba" index="189" unique_id=103785883]
 transform = Transform3D(1.7954605, 0, 0, 0, 1.7954605, 0, 0, 0, 1.7954605, 89.67369, 6.4614906, 40.905754)
 
-[node name="caja1_014" parent="StaticBody3D/zonacultivosprueba" index="190" unique_id=1238931326]
+[node name="caja1_014" parent="StaticBody3D/zonacultivosprueba" index="190" unique_id=1353185575]
 transform = Transform3D(1.163255, 0, 0, 0, 1.163255, 0, 0, 0, 1.163255, 88.43526, 9.175896, 40.905754)
 
-[node name="cajon3_009" parent="StaticBody3D/zonacultivosprueba" index="191" unique_id=794605811]
+[node name="cajon3_009" parent="StaticBody3D/zonacultivosprueba" index="191" unique_id=1921870146]
 transform = Transform3D(-0.052846182, 0, 0.4978543, 0, 0.62327427, 0, -0.058087196, 0, -0.4529346, 88.57808, 5.059273, 36.52343)
 
-[node name="cajon3_010" parent="StaticBody3D/zonacultivosprueba" index="192" unique_id=13492315]
+[node name="cajon3_010" parent="StaticBody3D/zonacultivosprueba" index="192" unique_id=98618135]
 transform = Transform3D(0.010415254, 0, 0.7593509, 0, 0.7080251, 0, -0.088597335, 0, 0.089267164, 97.21278, 5.013687, 34.46496)
 
-[node name="cajon3_011" parent="StaticBody3D/zonacultivosprueba" index="193" unique_id=1092025066]
+[node name="cajon3_011" parent="StaticBody3D/zonacultivosprueba" index="193" unique_id=105699618]
 transform = Transform3D(0.008611578, 0, 0.6278493, 0, 0.58541185, 0, -0.07325436, 0, 0.07380821, 97.22621, 4.972019, 29.194328)
 
-[node name="caja2_007" parent="StaticBody3D/zonacultivosprueba" index="194" unique_id=657045165]
+[node name="caja2_007" parent="StaticBody3D/zonacultivosprueba" index="194" unique_id=161443353]
 transform = Transform3D(0.36181834, 0, -0.9298865, 0, 0.99779826, 0, 0.9298865, 0, 0.36181834, 75.10768, 6.4614906, 36.977165)
 
-[node name="caja1_015" parent="StaticBody3D/zonacultivosprueba" index="195" unique_id=1693879530]
+[node name="caja1_015" parent="StaticBody3D/zonacultivosprueba" index="195" unique_id=1821087551]
 transform = Transform3D(2.0933816, 0, 0, 0, 2.0933816, 0, 0, 0, 2.0933816, -13.126053, 6.4221764, 36.499016)
 
-[node name="cajon2_005" parent="StaticBody3D/zonacultivosprueba" index="196" unique_id=1195478763]
+[node name="cajon2_005" parent="StaticBody3D/zonacultivosprueba" index="196" unique_id=623044585]
 transform = Transform3D(-0.09566196, 0, -0.0030513534, 0, 0.75925905, 0, 0.00035601686, 0, -0.81990063, 2.5026398, 5.8190384, 43.357536)
 
-[node name="cajon1_005" parent="StaticBody3D/zonacultivosprueba" index="197" unique_id=340399525]
+[node name="cajon1_005" parent="StaticBody3D/zonacultivosprueba" index="197" unique_id=1457197087]
 transform = Transform3D(-0.020555895, 0, 0.35272524, 0, 0.36511338, 0, -0.04115424, 0, -0.1761807, 2.5203705, 5.5837326, 33.66491)
 
-[node name="caja2_008" parent="StaticBody3D/zonacultivosprueba" index="198" unique_id=1146464833]
+[node name="caja2_008" parent="StaticBody3D/zonacultivosprueba" index="198" unique_id=1468254360]
 transform = Transform3D(-0.67125314, 0, 0.94557494, 0, 1.1596085, 0, -0.94557494, 0, -0.67125314, 4.721863, 6.259678, 29.357903)
 
-[node name="caja1_016" parent="StaticBody3D/zonacultivosprueba" index="199" unique_id=581020856]
+[node name="caja1_016" parent="StaticBody3D/zonacultivosprueba" index="199" unique_id=647623094]
 transform = Transform3D(0.034776475, 0, 0.7400217, 0, 0.7408381, 0, -0.7400217, 0, 0.034776475, 5.694565, 5.433571, 33.287834)
 
-[node name="caja1_017" parent="StaticBody3D/zonacultivosprueba" index="200" unique_id=981224310]
+[node name="caja1_017" parent="StaticBody3D/zonacultivosprueba" index="200" unique_id=539135560]
 transform = Transform3D(0.04682739, 0, 0.99646145, 0, 0.9975608, 0, -0.99646145, 0, 0.04682739, 5.5323334, 5.139572, 36.739983)
 
-[node name="cajon2_006" parent="StaticBody3D/zonacultivosprueba" index="201" unique_id=1284751130]
+[node name="cajon2_006" parent="StaticBody3D/zonacultivosprueba" index="201" unique_id=426045599]
 transform = Transform3D(0.043867283, 0, -0.27289113, 0, 0.43021044, 0, 0.031839598, 0, 0.37597814, 3.9430847, 5.8190384, 39.01757)
 
-[node name="cajon1_006" parent="StaticBody3D/zonacultivosprueba" index="202" unique_id=99733806]
+[node name="cajon1_006" parent="StaticBody3D/zonacultivosprueba" index="202" unique_id=1929200347]
 transform = Transform3D(0.08597928, 0, 0.16973114, 0, 0.70027107, 0, -0.019803395, 0, 0.7369121, 4.0639954, 5.5837326, 25.90966)
 
-[node name="cajon3_012" parent="StaticBody3D/zonacultivosprueba" index="203" unique_id=718822367]
+[node name="cajon3_012" parent="StaticBody3D/zonacultivosprueba" index="203" unique_id=1510335926]
 transform = Transform3D(-0.054525845, 0, 0.5809578, 0, 0.69044316, 0, -0.067783296, 0, -0.46733066, 101.28313, 6.3539314, -28.594246)
 
-[node name="caja1_018" parent="StaticBody3D/zonacultivosprueba" index="204" unique_id=1369264077]
+[node name="caja1_018" parent="StaticBody3D/zonacultivosprueba" index="204" unique_id=343197890]
 transform = Transform3D(0.034776475, 0, 0.7400217, 0, 0.7408381, 0, -0.7400217, 0, 0.034776475, 5.694565, 5.433571, 33.287834)
 
-[node name="caja1_019" parent="StaticBody3D/zonacultivosprueba" index="205" unique_id=807834946]
+[node name="caja1_019" parent="StaticBody3D/zonacultivosprueba" index="205" unique_id=1762056084]
 transform = Transform3D(0.04682739, 0, 0.99646145, 0, 0.9975608, 0, -0.99646145, 0, 0.04682739, 5.5323334, 5.139572, 36.739983)
 
-[node name="caja1_020" parent="StaticBody3D/zonacultivosprueba" index="206" unique_id=361333653]
+[node name="caja1_020" parent="StaticBody3D/zonacultivosprueba" index="206" unique_id=1615610923]
 transform = Transform3D(0.042851854, 0, 0.9118607, 0, 0.9128667, 0, -0.9118607, 0, 0.042851854, -6.3726196, 5.429367, -10.634285)
 
-[node name="caja1_021" parent="StaticBody3D/zonacultivosprueba" index="207" unique_id=1240732124]
+[node name="caja1_021" parent="StaticBody3D/zonacultivosprueba" index="207" unique_id=910639487]
 transform = Transform3D(0.08442115, 0, 1.7964295, 0, 1.7984116, 0, -1.7964295, 0, 0.08442115, -5.084488, 6.174103, -7.3588943)
 
-[node name="caja1_022" parent="StaticBody3D/zonacultivosprueba" index="208" unique_id=1602752099]
+[node name="caja1_022" parent="StaticBody3D/zonacultivosprueba" index="208" unique_id=1248933169]
 transform = Transform3D(0.042851854, 0, 0.9118607, 0, 0.9128667, 0, -0.9118607, 0, 0.042851854, -8.588196, 5.429367, -6.6054764)
 
-[node name="vallacultivos_001" parent="StaticBody3D/zonacultivosprueba" index="209" unique_id=456480387]
+[node name="vallacultivos_001" parent="StaticBody3D/zonacultivosprueba" index="209" unique_id=684295068]
 transform = Transform3D(-2.2197334e-08, 0, 0.18620472, 0, 0.29170284, 0, -0.18620472, 0, -2.2197334e-08, 5.1664734, 4.842289, -48.92408)
 
-[node name="nouvavalla_002" parent="StaticBody3D/zonacultivosprueba" index="210" unique_id=1748438284]
+[node name="nouvavalla_002" parent="StaticBody3D/zonacultivosprueba" index="210" unique_id=454902934]
 transform = Transform3D(-7.784204e-09, 4.1802807e-07, 0.053066745, -0.06529864, -4.1802812e-07, -6.326048e-09, 7.784204e-09, -3.5066736, 6.32605e-09, 107.83281, 5.8763847, -37.91163)
 
-[node name="calabazanormal_005" parent="StaticBody3D/zonacultivosprueba" index="211" unique_id=1783814362]
+[node name="calabazanormal_005" parent="StaticBody3D/zonacultivosprueba" index="211" unique_id=1138298790]
 transform = Transform3D(0.018116603, 0, 0.092280895, 0, 0.23691861, 0, -0.2599474, 0, 0.0064313645, 2.3228455, 6.387375, -7.0117264)
 
-[node name="calabazamala3_002" parent="StaticBody3D/zonacultivosprueba" index="212" unique_id=1652684131]
+[node name="calabazamala3_002" parent="StaticBody3D/zonacultivosprueba" index="212" unique_id=1124503219]
 transform = Transform3D(-0.1627213, 0, 0.000537622, 0, 0.18526205, 0, -0.001514435, 0, -0.057765815, -12.918716, 9.818249, 36.43908)
 
-[node name="calabazamala2_002" parent="StaticBody3D/zonacultivosprueba" index="213" unique_id=831095408]
+[node name="calabazamala2_002" parent="StaticBody3D/zonacultivosprueba" index="213" unique_id=363093896]
 transform = Transform3D(-0.13946177, 0, 0.00046077382, 0, 0.15878053, 0, -0.0012979602, 0, -0.049508713, -8.215637, 9.887493, 36.440544)
 
-[node name="calabazamala1_002" parent="StaticBody3D/zonacultivosprueba" index="214" unique_id=1157212765]
+[node name="calabazamala1_002" parent="StaticBody3D/zonacultivosprueba" index="214" unique_id=740058232]
 transform = Transform3D(-0.16340277, 0, -0.08377083, 0, 0.1836247, 0, 0.08377083, 0, -0.16340277, -4.4009247, 8.144886, 34.666862)
 
-[node name="calabazaaplastada_004" parent="StaticBody3D/zonacultivosprueba" index="215" unique_id=1289220842]
+[node name="calabazaaplastada_004" parent="StaticBody3D/zonacultivosprueba" index="215" unique_id=1949619298]
 transform = Transform3D(0.005763752, 0, 0.03197995, 0, 0.060219143, 0, -0.08270161, 0, 0.0022287897, -5.579193, 8.193283, -6.943001)
 
-[node name="calabazanormal_006" parent="StaticBody3D/zonacultivosprueba" index="216" unique_id=908819262]
+[node name="calabazanormal_006" parent="StaticBody3D/zonacultivosprueba" index="216" unique_id=1985782590]
 transform = Transform3D(0.018116603, 0, 0.092280895, 0, 0.23691861, 0, -0.2599474, 0, 0.0064313645, 2.3228455, 6.387375, -0.91480255)
 
-[node name="calabazanormal_007" parent="StaticBody3D/zonacultivosprueba" index="217" unique_id=206000224]
+[node name="calabazanormal_007" parent="StaticBody3D/zonacultivosprueba" index="217" unique_id=2064638306]
 transform = Transform3D(0.018116603, 0, 0.092280895, 0, 0.23691861, 0, -0.2599474, 0, 0.0064313645, 2.3228455, 6.387375, 5.112053)
 
-[node name="calabazaaplastada_005" parent="StaticBody3D/zonacultivosprueba" index="218" unique_id=1557477532]
+[node name="calabazaaplastada_005" parent="StaticBody3D/zonacultivosprueba" index="218" unique_id=381706686]
 transform = Transform3D(0.014006969, 0, 0.07771711, 0, 0.1463435, 0, -0.20098, 0, 0.005416366, 2.7071533, 5.3478775, 11.111565)
 
-[node name="calabazanormal_008" parent="StaticBody3D/zonacultivosprueba" index="219" unique_id=1121143821]
+[node name="calabazanormal_008" parent="StaticBody3D/zonacultivosprueba" index="219" unique_id=2047871582]
 transform = Transform3D(0.018116603, 0, 0.092280895, 0, 0.23691861, 0, -0.2599474, 0, 0.0064313645, -5.851425, 6.387375, -0.91480255)
 
-[node name="calabazaaplastada_006" parent="StaticBody3D/zonacultivosprueba" index="220" unique_id=1657672974]
+[node name="calabazaaplastada_006" parent="StaticBody3D/zonacultivosprueba" index="220" unique_id=860097726]
 transform = Transform3D(0.014006969, 0, 0.07771711, 0, 0.1463435, 0, -0.20098, 0, 0.005416366, -6.251602, 5.3478775, 6.4428635)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=623530796]
@@ -806,9 +806,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8133354, 4.6396694, 57.6767
 
 [node name="Object" type="CharacterBody3D" parent="." unique_id=26420914 node_paths=PackedStringArray("object_mesh") groups=["interactable"]]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -71.439865, 1.2968087, 4.0640697)
-script = ExtResource("3_g14j6")
+script = ExtResource("3_00tp4")
+has_puzzle = true
 puzzle_scene = "res://scenes/components/puzzles/cup_puzzle.tscn"
 object_mesh = NodePath("MeshInstance3D")
+has_dialog = true
 dialogue_route = ExtResource("4_ykrsh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Object" unique_id=1441897176]
@@ -819,20 +821,38 @@ shape = SubResource("SphereShape3D_ppyta")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.013874769, 0)
 mesh = SubResource("SphereMesh_g14j6")
 
+[node name="Puzzle" type="CanvasLayer" parent="Object" unique_id=61234224]
+visible = false
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Object/Puzzle" unique_id=56975041]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Object/Puzzle/SubViewportContainer" unique_id=1143439012]
+own_world_3d = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 0
+
 [node name="Object2" type="CharacterBody3D" parent="." unique_id=934941537 node_paths=PackedStringArray("object_mesh") groups=["interactable"]]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 8.473709, 1.2968049, 14.594805)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 21.730577, 1.2968011, -1.0438099)
 script = ExtResource("5_g14j6")
 item_id = "sdfs"
 item_name = "madera"
 object_mesh = NodePath("MeshInstance3D")
+has_dialog = true
 dialogue_route = ExtResource("6_vbegm")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Object2" unique_id=1461366193]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.3841858e-07, 0)
 shape = SubResource("SphereShape3D_ppyta")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Object2" unique_id=1746849089]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.561125, -0.013874769, -3.0250406)
 mesh = SubResource("SphereMesh_g14j6")
 
 [node name="tree" type="StaticBody3D" parent="." unique_id=1141626556 node_paths=PackedStringArray("mesh") groups=["sick_environment"]]
