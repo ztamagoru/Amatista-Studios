@@ -2,10 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://do3crd75ny4ra" path="res://scenes/components/player/player.tscn" id="2_6uqi0"]
 [ext_resource type="Script" uid="uid://di6ihxodtyqu4" path="res://scripts/interactable/npc/scarecrow.gd" id="3_00tp4"]
-[ext_resource type="Resource" uid="uid://dy400g1vmtppv" path="res://dialogs/npc/test/test.dialogue" id="4_ykrsh"]
 [ext_resource type="Script" uid="uid://cnkj0mblmju7d" path="res://scripts/interactable/item.gd" id="5_g14j6"]
 [ext_resource type="Script" uid="uid://ruugex3xy8gw" path="res://scripts/interactable/enviroment/sick_environment.gd" id="5_ykrsh"]
-[ext_resource type="Resource" uid="uid://nkmjbpud0thh" path="res://dialogs/item_grabbed.dialogue" id="6_vbegm"]
 [ext_resource type="Texture2D" uid="uid://bll65wwd0qmun" path="res://assets/models/zone 1/trees/arbolarrayan1_texturamadera1.png" id="8_0m0f1"]
 [ext_resource type="PackedScene" uid="uid://bujt1vsm66aj2" path="res://assets/models/zone 1/trees/arbolarrayan1.glb" id="8_00tp4"]
 [ext_resource type="PackedScene" uid="uid://cfbkvmcd5r504" path="res://assets/models/zone 1/trees/arbolarrayan22.glb" id="9_77dp3"]
@@ -745,11 +743,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8133354, 4.6396694, 57.6767
 [node name="Object" type="CharacterBody3D" parent="." unique_id=26420914 node_paths=PackedStringArray("object_mesh") groups=["interactable"]]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -71.439865, 1.2968087, 4.0640697)
 script = ExtResource("3_00tp4")
-has_puzzle = true
-puzzle_scene = "res://scenes/components/puzzles/cup_puzzle.tscn"
 object_mesh = NodePath("MeshInstance3D")
 has_dialog = true
-dialogue_route = ExtResource("4_ykrsh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Object" unique_id=1441897176]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.3841858e-07, 0)
@@ -779,11 +774,11 @@ render_target_update_mode = 0
 [node name="Object2" type="CharacterBody3D" parent="." unique_id=934941537 node_paths=PackedStringArray("object_mesh") groups=["interactable"]]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 21.730577, 1.2968011, -1.0438099)
 script = ExtResource("5_g14j6")
+is_pickable = true
 item_id = "sdfs"
 item_name = "madera"
 object_mesh = NodePath("MeshInstance3D")
 has_dialog = true
-dialogue_route = ExtResource("6_vbegm")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Object2" unique_id=1461366193]
