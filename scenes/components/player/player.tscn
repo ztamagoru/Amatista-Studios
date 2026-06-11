@@ -7,12 +7,9 @@
 [ext_resource type="Script" uid="uid://sxd7rl0nyqv7" path="res://scenes/components/player/states/jump.gd" id="6_aes0s"]
 [ext_resource type="Script" uid="uid://mv5gfj0t68y4" path="res://scenes/components/player/states/walk.gd" id="7_tw4o5"]
 [ext_resource type="Script" uid="uid://bi0fq0vuovndl" path="res://scripts/player/player_camera.gd" id="7_vj2w8"]
+[ext_resource type="PackedScene" uid="uid://c3xf2k24qsbr8" path="res://assets/models/player/PJ.blend" id="8_vj2w8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1xbud"]
-radius = 2.0
-height = 8.0
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_imdkq"]
 radius = 2.0
 height = 8.0
 
@@ -37,11 +34,6 @@ raycast_area = NodePath("Area3D")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1087679022]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_1xbud")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1912228836]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_imdkq")
-skeleton = NodePath("..")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1497152542]
 transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 0, 1.4555948, 0)
@@ -88,3 +80,29 @@ script = ExtResource("7_vj2w8")
 
 [node name="Camera3D" type="Camera3D" parent="Camera Pivot" unique_id=857669184]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 8, 20, 20)
+
+[node name="PJ" parent="." unique_id=1333093289 instance=ExtResource("8_vj2w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4672184, -4.7797437, -1.3194134)
+
+[node name="cabeza" parent="PJ" index="0" unique_id=1531367428]
+transform = Transform3D(1.0577137, 0, 0, 0, 1.0577137, 0, 0, 0, 1.0577137, 1.5631008, 6.7892933, 1.29671)
+
+[node name="mano2" parent="PJ" index="1" unique_id=1098062000]
+transform = Transform3D(0.2141744, 0, 0, 0, 0.2141744, 0, 0, 0, 0.2141744, 2.833624, 4.382782, 1.4204788)
+
+[node name="pelo" parent="PJ" index="2" unique_id=185006954]
+transform = Transform3D(0.46603772, 0, 0, 0, 0.59068525, 0, 0, 0, 0.21832982, 1.5691719, 6.488825, 1.5776157)
+
+[node name="vestido" parent="PJ" index="3" unique_id=878746250]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5412788, 4.5121818, 1.3415442)
+
+[node name="mano1" parent="PJ" index="4" unique_id=1952426152]
+transform = Transform3D(-0.2141744, 0, -8.340259e-08, 0, 0.2141744, 0, 8.340259e-08, 0, -0.2141744, 0.23635101, 4.3392725, 1.3357306)
+
+[node name="pata2" parent="PJ" index="5" unique_id=810065874]
+transform = Transform3D(-0.22815405, 0.026436789, -0.20953368, 0.20464139, -0.048569817, -0.22895506, -0.052203137, -0.3059405, 0.018241806, 1.8345852, 2.2693672, 1.2502928)
+
+[node name="pata1" parent="PJ" index="6" unique_id=708645921]
+transform = Transform3D(0.35253158, 0, 0, 0, 0.006152529, -0.3524779, 0, 0.3524779, 0.006152529, 1.2842464, 2.2694294, 1.2502699)
+
+[editable path="PJ"]
