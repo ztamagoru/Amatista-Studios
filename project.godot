@@ -19,9 +19,6 @@ config/icon="res://icon.svg"
 
 Globals="*uid://bw3gbjihrjt0w"
 DialogueManager="*uid://c3rodes2l3gxb"
-QuestWeaverGlobal="*uid://dmhog666hpq8h"
-QuestWeaverServices="*uid://1umj0il2i4h"
-QuestWeaverGameState="*uid://dyublgkaguaj8"
 
 [editor_plugins]
 
