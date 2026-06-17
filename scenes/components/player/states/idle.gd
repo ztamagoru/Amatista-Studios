@@ -16,7 +16,7 @@ func physics_update(_delta):
 		#return
 	
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backwards")
-	var direction = (player.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction = (player.camera.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	if direction != Vector3.ZERO:
 		player.velocity.x = direction.x * player.current_speed
