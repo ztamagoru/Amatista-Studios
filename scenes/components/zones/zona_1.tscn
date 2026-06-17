@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://dfey011whe4wd" path="res://assets/models/zone 1/npcs/espantapajaros.glb" id="2_pj16y"]
 [ext_resource type="PackedScene" uid="uid://do3crd75ny4ra" path="res://scenes/components/player/player.tscn" id="4_nq1qf"]
 [ext_resource type="Script" uid="uid://bf2jk0pdjkoh3" path="res://addons/transparecy circle/mesh_example.gd" id="4_ws4xm"]
+[ext_resource type="Script" uid="uid://clnd8r6n7qdgn" path="res://scenes/components/zones/area.gd" id="6_8ybk8"]
+[ext_resource type="PackedScene" uid="uid://bfh8nsyv0y463" path="res://scenes/components/player/camera.tscn" id="6_ws4xm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3n6v3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -32,13 +34,45 @@ size = Vector3(278.046, 6.8494873, 293.669)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_3n6v3"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_nq1qf"]
+size = Vector3(29.625, 8.605, 1.41)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ybk8"]
+size = Vector3(41.428833, 8.605, 1.41)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_865dq"]
+size = Vector3(1.3378906, 8.605, 55.20984)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3h0tw"]
+size = Vector3(1.3378906, 8.605, 90.21808)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tx00k"]
+size = Vector3(68.88412, 12.198809, 2.9824219)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8ybk8"]
+height = 15.647461
+radius = 2.5625
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0g7v3"]
+size = Vector3(54.46635, 12.198809, 2.9824219)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2mm5i"]
+size = Vector3(64.92568, 12.198809, 2.9824219)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_apa5p"]
+size = Vector3(95.003, 15.383758, 167.06966)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eu1hp"]
+size = Vector3(27.090637, 18.945068, 27.4375)
+
 [node name="Zona1" type="Node3D" unique_id=1401956631]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=601760298]
 environment = SubResource("Environment_ws4xm")
 
-[node name="Player" parent="." unique_id=2109264169 instance=ExtResource("4_nq1qf")]
+[node name="Player" parent="." unique_id=2109264169 node_paths=PackedStringArray("camera") instance=ExtResource("4_nq1qf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.936728, 7.3321075, 14.267519)
+camera = NodePath("../Camera/Camera3D")
 
 [node name="Map" type="Node3D" parent="." unique_id=1928232530]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
@@ -1463,5 +1497,133 @@ shape = SubResource("WorldBoundaryShape3D_3n6v3")
 transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 102.85199, 8.860622, -154.70595)
 shape = SubResource("WorldBoundaryShape3D_3n6v3")
 
+[node name="CropsZone" type="Node3D" parent="." unique_id=1133006840]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.413937, 0, 33.32909)
+
+[node name="Fences" type="StaticBody3D" parent="CropsZone" unique_id=1384536822]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CropsZone/Fences" unique_id=2133625053]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.29868, 3.7343082, -87.19618)
+shape = SubResource("BoxShape3D_nq1qf")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="CropsZone/Fences" unique_id=1265380001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.322926, 3.7343082, -87.19618)
+shape = SubResource("BoxShape3D_8ybk8")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="CropsZone/Fences" unique_id=1094411089]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.666996, 3.7343082, -60.344757)
+shape = SubResource("BoxShape3D_865dq")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="CropsZone/Fences" unique_id=2083678891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.666996, 3.7343082, 31.480732)
+shape = SubResource("BoxShape3D_3h0tw")
+
+[node name="Crops" type="StaticBody3D" parent="CropsZone" unique_id=1934619135]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CropsZone/Crops" unique_id=974342870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.224186, 10.169768, 1.5191498)
+shape = SubResource("BoxShape3D_tx00k")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="CropsZone/Crops" unique_id=275789592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.087154, 10.903302, 9.872631)
+shape = SubResource("CylinderShape3D_8ybk8")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="CropsZone/Crops" unique_id=1013804647]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.55692, 10.903302, 10.694061)
+shape = SubResource("CylinderShape3D_8ybk8")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="CropsZone/Crops" unique_id=2099993751]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.77393, 10.903302, 10.694061)
+shape = SubResource("CylinderShape3D_8ybk8")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="CropsZone/Crops" unique_id=128690720]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20525, 10.903302, 10.6198845)
+shape = SubResource("CylinderShape3D_8ybk8")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="CropsZone/Crops" unique_id=1457763271]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5145493, 10.903302, 10.493511)
+shape = SubResource("CylinderShape3D_8ybk8")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="CropsZone/Crops" unique_id=984057683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.992592, 10.903302, 9.229771)
+shape = SubResource("CylinderShape3D_8ybk8")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="CropsZone/Crops" unique_id=521065734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.965134, 10.903302, 10.935818)
+shape = SubResource("CylinderShape3D_8ybk8")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="CropsZone/Crops" unique_id=1011891401]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.294819, 10.903302, 9.924828)
+shape = SubResource("CylinderShape3D_8ybk8")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="CropsZone/Crops" unique_id=167199292]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.32344, 10.903302, 31.72432)
+shape = SubResource("CylinderShape3D_8ybk8")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="CropsZone/Crops" unique_id=1737422929]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.224525, 10.903302, 31.15564)
+shape = SubResource("CylinderShape3D_8ybk8")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="CropsZone/Crops" unique_id=178762387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.504723, 10.903302, 31.15564)
+shape = SubResource("CylinderShape3D_8ybk8")
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="CropsZone/Crops" unique_id=988763251]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.342613, 10.903302, 32.293007)
+shape = SubResource("CylinderShape3D_8ybk8")
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="CropsZone/Crops" unique_id=263940117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1134377, 10.903302, 32.166634)
+shape = SubResource("CylinderShape3D_8ybk8")
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="CropsZone/Crops" unique_id=1840561296]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1134377, 10.903302, 32.166634)
+shape = SubResource("CylinderShape3D_8ybk8")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="CropsZone/Crops" unique_id=1957091776]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.433071, 10.169768, 60.19663)
+shape = SubResource("BoxShape3D_0g7v3")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="CropsZone/Crops" unique_id=901654888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2034035, 10.169768, 66.16194)
+shape = SubResource("BoxShape3D_2mm5i")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="CropsZone/Crops" unique_id=1914149936]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.039173, 10.169768, -30.54537)
+shape = SubResource("BoxShape3D_tx00k")
+
+[node name="CropsArea" type="Area3D" parent="CropsZone" unique_id=1196655786 node_paths=PackedStringArray("camera")]
+script = ExtResource("6_8ybk8")
+changes_camera = true
+camera = NodePath("../../Camera")
+camera_position = Vector3(20, 25, 8)
+camera_rotation = Vector3(-35, 60, 0)
+metadata/_custom_type_script = "uid://clnd8r6n7qdgn"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CropsZone/CropsArea" unique_id=1165677985]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6143494, 11.241625, -2.6919785)
+shape = SubResource("BoxShape3D_apa5p")
+debug_color = Color(0.7019608, 0.49019608, 0.05882353, 0.41960785)
+
+[node name="PuzzleArea" type="Area3D" parent="CropsZone" unique_id=1321660982 node_paths=PackedStringArray("camera", "parent_area")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.942841, 0, -48.56276)
+script = ExtResource("6_8ybk8")
+changes_camera = true
+camera = NodePath("../../Camera")
+camera_position = Vector3(20, 15, 8)
+camera_rotation = Vector3(-25, 80, 0)
+exits_to_another_area = true
+parent_area = NodePath("../CropsArea")
+metadata/_custom_type_script = "uid://clnd8r6n7qdgn"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CropsZone/PuzzleArea" unique_id=1339920195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.282318, 13.494928, 0)
+shape = SubResource("BoxShape3D_eu1hp")
+debug_color = Color(0.7019608, 0.49019608, 0.05882353, 0.41960785)
+
+[node name="Camera" parent="." unique_id=672466676 node_paths=PackedStringArray("player") instance=ExtResource("6_ws4xm")]
+player = NodePath("../Player")
+
 [editable path="Map/zona1"]
 [editable path="Map/Scarecrow/espantapajaros"]
+[editable path="Camera"]

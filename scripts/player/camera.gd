@@ -15,6 +15,7 @@ var pivot_original_rotation : Vector3
 # --
 
 var camera_original_position : Vector3
+var camera_original_rotation : Vector3
 
 var tween : Tween
 const tween_duration : float = 1.0
@@ -24,6 +25,7 @@ const tween_duration : float = 1.0
 func _ready():
 	pivot_original_rotation = rotation_degrees
 	camera_original_position = camera.position
+	camera_original_rotation = camera.rotation_degrees
 
 func _process(_delta: float):
 	if player:
