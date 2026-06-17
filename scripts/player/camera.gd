@@ -1,0 +1,52 @@
+extends Node3D
+
+# --
+
+@export var player : CharacterBody3D
+@export var camera : Camera3D
+
+# --
+
+var max_pitch : float = 1.25
+var max_yaw : float = 1.5
+
+var pivot_original_rotation : Vector3
+
+# --
+
+var camera_original_position : Vector3
+
+var tween : Tween
+const tween_duration : float = 1.0
+
+# --
+
+func _ready():
+	pivot_original_rotation = rotation_degrees
+	camera_original_position = camera.position
+
+func _process(_delta: float):
+	if player:
+		self.global_position = player.global_position
+	
+	var mouse_pos : Vector2 = get_viewport().get_mouse_position()
+	var screen_center : Vector2 = get_viewport().size / 2.0
+	
+	var direction : Vector2 = mouse_pos - screen_center
+	
+	direction = direction / screen_center
+	
+	rotation_degrees = Vector3(
+		pivot_original_rotation.x - direction.y * max_pitch,
+		pivot_original_rotation.y - direction.x * max_yaw,
+		pivot_original_rotation.z
+	)
+
+func move_camera(new_position : Vector3, new_rotation : Vector3):
+	if tween: tween.kill()
+	
+	tween = create_tween()
+	tween.set_parallel(true)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(camera, "position", new_position, tween_duration)
+	tween.tween_property(camera, "rotation_degrees", new_rotation, tween_duration)
