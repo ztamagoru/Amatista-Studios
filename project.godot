@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Faunesty"
 run/main_scene="uid://b6vf1aji6dy38"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
