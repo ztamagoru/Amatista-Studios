@@ -19,7 +19,7 @@ var pivot_original_position : Vector3
 var pivot_original_rotation : Vector3
 
 var tween : Tween
-const tween_duration : float = 1.0
+const tween_duration : float = 1.5
 
 # --
 
