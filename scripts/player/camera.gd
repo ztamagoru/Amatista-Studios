@@ -8,6 +8,8 @@ extends Node3D
 
 # --
 
+const camera_speed : float = 3.0
+
 const max_pitch : float = 0.3
 const max_yaw : float = 0.5
 
@@ -27,10 +29,14 @@ func _ready():
 	pivot_original_position = pivot.position
 	pivot_original_rotation = pivot.rotation_degrees
 
-func _process(_delta: float):
+func _process(delta: float):
 	if player:
-		self.global_position = player.global_position
-	
+		self.global_position = lerp(
+			self.global_position,
+			player.global_position,
+			delta * camera_speed
+		)
+		
 	var mouse_pos : Vector2 = get_viewport().get_mouse_position()
 	var screen_center : Vector2 = get_viewport().size / 2.0
 	
