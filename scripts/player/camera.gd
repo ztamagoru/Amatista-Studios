@@ -55,6 +55,7 @@ func move_camera(new_position : Vector3, new_rotation : Vector3):
 	
 	tween = create_tween()
 	tween.set_parallel(true)
+	tween.set_trans(Tween.TRANS_CUBIC)
 	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(pivot, "position", new_position, tween_duration)
 	tween.tween_property(pivot, "rotation_degrees", new_rotation, tween_duration)
