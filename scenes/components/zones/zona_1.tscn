@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bf2jk0pdjkoh3" path="res://addons/transparecy circle/mesh_example.gd" id="4_ws4xm"]
 [ext_resource type="Script" uid="uid://clnd8r6n7qdgn" path="res://scenes/components/zones/area.gd" id="6_8ybk8"]
 [ext_resource type="PackedScene" uid="uid://bfh8nsyv0y463" path="res://scenes/components/player/camera.tscn" id="6_ws4xm"]
+[ext_resource type="Script" uid="uid://q4hkvlcaud4" path="res://scenes/components/zones/camera_zoom_area.gd" id="8_58w3p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3n6v3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -1623,6 +1624,17 @@ debug_color = Color(0.7019608, 0.49019608, 0.05882353, 0.41960785)
 
 [node name="Camera" parent="." unique_id=672466676 node_paths=PackedStringArray("player") instance=ExtResource("6_ws4xm")]
 player = NodePath("../Player")
+
+[node name="CameraZoomArea" type="Marker3D" parent="." unique_id=1126227845 node_paths=PackedStringArray("player", "camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.00312, 7.284643, -140.66202)
+gizmo_extents = 10.0
+script = ExtResource("8_58w3p")
+player = NodePath("../Player")
+min_distance = 25.0
+camera = NodePath("../Camera")
+camera_position = Vector3(20, 15, 8)
+camera_rotation = Vector3(-25, 80, 0)
+metadata/_custom_type_script = "uid://q4hkvlcaud4"
 
 [editable path="Map/zona1"]
 [editable path="Map/Scarecrow/espantapajaros"]
