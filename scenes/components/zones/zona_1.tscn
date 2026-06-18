@@ -72,7 +72,7 @@ environment = SubResource("Environment_ws4xm")
 
 [node name="Player" parent="." unique_id=2109264169 node_paths=PackedStringArray("camera") instance=ExtResource("4_nq1qf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.936728, 7.3321075, 14.267519)
-camera = NodePath("../Camera/Camera3D")
+camera = NodePath("../Camera/Pivot/Camera3D")
 
 [node name="Map" type="Node3D" parent="." unique_id=1928232530]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)

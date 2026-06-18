@@ -35,6 +35,6 @@ func _on_body_exited(body : Node3D):
 	if body.is_in_group("player"):
 		if changes_camera: 
 			camera.move_camera(
-				parent_area.camera_position if exits_to_another_area else camera.camera_original_position,
-				parent_area.camera_rotation if exits_to_another_area else camera.camera_original_rotation
+				parent_area.camera_position if exits_to_another_area else camera.pivot_original_position,
+				parent_area.camera_rotation if exits_to_another_area else camera.pivot_original_rotation
 			)

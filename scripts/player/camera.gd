@@ -4,18 +4,17 @@ extends Node3D
 
 @export var player : CharacterBody3D
 @export var camera : Camera3D
+@export var pivot : Node3D
 
 # --
 
-var max_pitch : float = 1.25
-var max_yaw : float = 1.5
+const max_pitch : float = 0.3
+const max_yaw : float = 0.5
 
-var pivot_original_rotation : Vector3
-
-# --
-
-var camera_original_position : Vector3
 var camera_original_rotation : Vector3
+
+var pivot_original_position : Vector3
+var pivot_original_rotation : Vector3
 
 var tween : Tween
 const tween_duration : float = 1.0
@@ -23,9 +22,10 @@ const tween_duration : float = 1.0
 # --
 
 func _ready():
-	pivot_original_rotation = rotation_degrees
-	camera_original_position = camera.position
 	camera_original_rotation = camera.rotation_degrees
+	
+	pivot_original_position = pivot.position
+	pivot_original_rotation = pivot.rotation_degrees
 
 func _process(_delta: float):
 	if player:
@@ -38,10 +38,10 @@ func _process(_delta: float):
 	
 	direction = direction / screen_center
 	
-	rotation_degrees = Vector3(
-		pivot_original_rotation.x - direction.y * max_pitch,
-		pivot_original_rotation.y - direction.x * max_yaw,
-		pivot_original_rotation.z
+	camera.rotation_degrees = Vector3(
+		camera_original_rotation.x - direction.y * max_pitch,
+		camera_original_rotation.y - direction.x * max_yaw,
+		camera_original_rotation.z
 	)
 
 func move_camera(new_position : Vector3, new_rotation : Vector3):
@@ -50,5 +50,5 @@ func move_camera(new_position : Vector3, new_rotation : Vector3):
 	tween = create_tween()
 	tween.set_parallel(true)
 	tween.set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(camera, "position", new_position, tween_duration)
-	tween.tween_property(camera, "rotation_degrees", new_rotation, tween_duration)
+	tween.tween_property(pivot, "position", new_position, tween_duration)
+	tween.tween_property(pivot, "rotation_degrees", new_rotation, tween_duration)
