@@ -26,6 +26,14 @@ class_name Area
 func _ready() -> void:
 	connect("body_entered", _on_body_entered)
 	connect("body_exited", _on_body_exited)
+	
+	check_required()
+
+func check_required():
+	if exits_to_another_area: assert(not parent_area == null, "Parent area not assigned in %s" % name)
+	if changes_sound:
+		assert(not player == null, "Player not assigned in %s" % name)
+		assert(ground_type in player.audio_footsteps, "Can't assign an unloaded sfx")
 
 func _on_body_entered(body : Node3D):
 	if body.is_in_group("player"):
