@@ -1,6 +1,7 @@
 extends State
 
 func enter():
+	player.walking_sfx.play(0.15)
 	print(name)
 
 func update(_delta):
@@ -30,4 +31,5 @@ func physics_update(_delta):
 		return
 
 func exit():
-	pass
+	if player.walking_sfx.is_playing():
+		player.walking_sfx.stop()

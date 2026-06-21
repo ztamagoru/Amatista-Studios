@@ -16,9 +16,10 @@ class_name Area
 
 # --
 
-#@export_group("Footsteps SFX")
-#@export_custom(PROPERTY_HINT_GROUP_ENABLE, "") var changes_sound : bool = false
-#@export var new_sfx : 
+@export_group("Ground SFX")
+@export_custom(PROPERTY_HINT_GROUP_ENABLE, "") var changes_sound : bool = false
+@export var player : CharacterBody3D
+@export var ground_type : String = ""
 
 # --
 
@@ -28,11 +29,15 @@ func _ready() -> void:
 
 func _on_body_entered(body : Node3D):
 	if body.is_in_group("player"):
+		body.current_area = self
+		
 		if changes_camera:
 			camera.move_camera(camera_position, camera_rotation)
 
 func _on_body_exited(body : Node3D):
 	if body.is_in_group("player"):
+		body.current_area = parent_area if exits_to_another_area else null
+		
 		if changes_camera: 
 			camera.move_camera(
 				parent_area.camera_position if exits_to_another_area else camera.pivot_original_position,

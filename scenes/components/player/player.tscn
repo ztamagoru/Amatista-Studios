@@ -23,11 +23,12 @@ radius = 0.05
 height = 8.0
 radius = 15.0
 
-[node name="Player" type="CharacterBody3D" unique_id=2109264169 node_paths=PackedStringArray("timer", "raycast", "raycast_area") groups=["player"]]
+[node name="Player" type="CharacterBody3D" unique_id=2109264169 node_paths=PackedStringArray("timer", "raycast", "raycast_area", "walking_sfx") groups=["player"]]
 script = ExtResource("1_1xbud")
 timer = NodePath("Timer")
 raycast = NodePath("RayCast3D")
 raycast_area = NodePath("Area3D")
+walking_sfx = NodePath("WalkingSFX")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1087679022]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -96,5 +97,10 @@ transform = Transform3D(-0.22815405, 0.026436789, -0.20953368, 0.20464139, -0.04
 
 [node name="pata1" parent="PJ" index="6" unique_id=708645921]
 transform = Transform3D(0.35253158, 0, 0, 0, 0.006152529, -0.3524779, 0, 0.3524779, 0.006152529, 1.2842464, 2.2694294, 1.2502699)
+
+[node name="WalkingSFX" type="AudioStreamPlayer" parent="." unique_id=1599624262]
+bus = &"SFX"
+
+[connection signal="finished" from="WalkingSFX" to="." method="_on_walking_sfx_finished"]
 
 [editable path="PJ"]

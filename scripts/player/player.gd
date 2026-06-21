@@ -10,6 +10,15 @@ extends CharacterBody3D
 @export var raycast : RayCast3D
 @export var raycast_area : Area3D
 
+@export_group("SFX")
+@export_subgroup("Walking")
+@export var walking_sfx : AudioStreamPlayer
+@export var audio_footsteps : Dictionary[String, AudioStream]
+@export var default_walking_sfx : String = ""
+
+var current_area : Area
+var current_footstep_sound : AudioStream
+
 const raycast_max_distance : float = 15.0
 
 # --
@@ -38,6 +47,8 @@ const shoot_cd : float = 0.5
 func _ready() -> void:
 	DialogueManager.dialogue_started.connect(_dialog_started)
 	DialogueManager.dialogue_ended.connect(_dialog_ended)
+	walking_sfx.stream = audio_footsteps[default_walking_sfx]
+	current_footstep_sound = audio_footsteps[default_walking_sfx]
 
 func _process(_delta) -> void:
 	if Input.is_key_pressed(KEY_ESCAPE):
@@ -104,3 +115,15 @@ func _dialog_ended(_resource: DialogueResource):
 	self.process_mode = Node.PROCESS_MODE_INHERIT
 	print("dialog ended")
 	pass
+
+func _on_walking_sfx_finished() -> void:
+	if current_area == null:
+		if current_footstep_sound != audio_footsteps[default_walking_sfx]:
+			current_footstep_sound = audio_footsteps[default_walking_sfx]
+	else:
+		if current_area.changes_sound and current_footstep_sound != audio_footsteps[current_area.ground_type]:
+			current_footstep_sound = audio_footsteps[current_area.ground_type]
+	
+	walking_sfx.stream = current_footstep_sound
+	walking_sfx.pitch_scale = randf_range(0.9, 1.1)
+	walking_sfx.play(0.15)
