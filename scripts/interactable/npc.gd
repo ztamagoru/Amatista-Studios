@@ -1,3 +1,4 @@
+@icon("res://assets/icons/npc.svg")
 @tool
 
 extends Interactable

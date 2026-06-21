@@ -1,3 +1,4 @@
+@icon("res://assets/icons/area.svg")
 @tool
 
 extends Area3D
