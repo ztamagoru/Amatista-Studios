@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://l6hatfpxmolt" path="res://assets/models/zone 1/zona1.glb" id="1_m2vvh"]
 [ext_resource type="Script" uid="uid://cdo0lar8bpl3h" path="res://scripts/interactable/npc.gd" id="2_3n6v3"]
 [ext_resource type="PackedScene" uid="uid://dfey011whe4wd" path="res://assets/models/zone 1/npcs/espantapajaros.glb" id="2_pj16y"]
+[ext_resource type="AudioStream" uid="uid://drkgxm6exsq6" path="res://assets/sounds/sfx/grounds/footsteps_grass.mp3" id="2_tx00k"]
+[ext_resource type="AudioStream" uid="uid://n67qgop8nx7q" path="res://assets/sounds/sfx/grounds/footsteps_dirt.mp3" id="3_0g7v3"]
+[ext_resource type="AudioStream" uid="uid://delarm7tt024v" path="res://assets/sounds/sfx/grounds/footsteps_wood.mp3" id="4_2mm5i"]
 [ext_resource type="PackedScene" uid="uid://do3crd75ny4ra" path="res://scenes/components/player/player.tscn" id="4_nq1qf"]
 [ext_resource type="Script" uid="uid://bf2jk0pdjkoh3" path="res://addons/transparecy circle/mesh_example.gd" id="4_ws4xm"]
 [ext_resource type="Script" uid="uid://clnd8r6n7qdgn" path="res://scenes/components/zones/area.gd" id="6_8ybk8"]
@@ -74,6 +77,12 @@ environment = SubResource("Environment_ws4xm")
 [node name="Player" parent="." unique_id=2109264169 node_paths=PackedStringArray("camera") instance=ExtResource("4_nq1qf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.936728, 7.3321075, 14.267519)
 camera = NodePath("../Camera/Pivot/Camera3D")
+audio_footsteps = Dictionary[String, AudioStream]({
+"Dirt": ExtResource("3_0g7v3"),
+"Grass": ExtResource("2_tx00k"),
+"Wood": ExtResource("4_2mm5i")
+})
+default_walking_sfx = "Grass"
 
 [node name="Map" type="Node3D" parent="." unique_id=1928232530]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
@@ -1593,12 +1602,15 @@ shape = SubResource("BoxShape3D_2mm5i")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.039173, 10.169768, -30.54537)
 shape = SubResource("BoxShape3D_tx00k")
 
-[node name="CropsArea" type="Area3D" parent="CropsZone" unique_id=1196655786 node_paths=PackedStringArray("camera")]
+[node name="CropsArea" type="Area3D" parent="CropsZone" unique_id=1196655786 node_paths=PackedStringArray("camera", "player")]
 script = ExtResource("6_8ybk8")
 changes_camera = true
 camera = NodePath("../../Camera")
 camera_position = Vector3(20, 25, 8)
 camera_rotation = Vector3(-35, 60, 0)
+changes_sound = true
+player = NodePath("../../Player")
+ground_type = "Dirt"
 metadata/_custom_type_script = "uid://clnd8r6n7qdgn"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CropsZone/CropsArea" unique_id=1165677985]
@@ -1615,6 +1627,7 @@ camera_position = Vector3(20, 15, 8)
 camera_rotation = Vector3(-25, 80, 0)
 exits_to_another_area = true
 parent_area = NodePath("../CropsArea")
+ground_type = "Grass"
 metadata/_custom_type_script = "uid://clnd8r6n7qdgn"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CropsZone/PuzzleArea" unique_id=1339920195]
