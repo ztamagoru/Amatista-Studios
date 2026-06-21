@@ -9,6 +9,7 @@ class_name Area
 @export_group("Camera")
 @export_custom(PROPERTY_HINT_GROUP_ENABLE, "") var changes_camera : bool = false
 @export var camera : Node3D
+@export_range(0.5, 3.0, 0.1) var camera_movement_duration : float = 1.5
 @export var camera_position : Vector3 = Vector3(8.0, 20.0, 20.0)
 @export var camera_rotation : Vector3 = Vector3(-30.0, 0.0, 0.0)
 @export_subgroup("Exits to another area")
@@ -41,7 +42,7 @@ func _on_body_entered(body : Node3D):
 		body.current_area = self
 		
 		if changes_camera:
-			camera.move_camera(camera_position, camera_rotation)
+			camera.move_camera(camera_position, camera_rotation, camera_movement_duration)
 
 func _on_body_exited(body : Node3D):
 	if body.is_in_group("player"):
@@ -50,5 +51,6 @@ func _on_body_exited(body : Node3D):
 		if changes_camera: 
 			camera.move_camera(
 				parent_area.camera_position if exits_to_another_area else camera.pivot_original_position,
-				parent_area.camera_rotation if exits_to_another_area else camera.pivot_original_rotation
+				parent_area.camera_rotation if exits_to_another_area else camera.pivot_original_rotation,
+				camera_movement_duration
 			)

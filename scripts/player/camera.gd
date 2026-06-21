@@ -19,7 +19,6 @@ var pivot_original_position : Vector3
 var pivot_original_rotation : Vector3
 
 var tween : Tween
-const tween_duration : float = 1.5
 
 # --
 
@@ -50,7 +49,7 @@ func _process(delta: float):
 		camera_original_rotation.z
 	)
 
-func move_camera(new_position : Vector3, new_rotation : Vector3):
+func move_camera(new_position : Vector3, new_rotation : Vector3, tween_duration : float = 1.5):
 	if tween: tween.kill()
 	
 	tween = create_tween()
