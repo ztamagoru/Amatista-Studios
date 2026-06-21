@@ -899,7 +899,7 @@ transform = Transform3D(-8.60462e-07, 0, 7.2180777, 0, 7.2180777, 0, -7.2180777,
 transform = Transform3D(95.37856, 0, 0, 0, 95.37856, 0, 0, 0, 95.37856, -100.90813, 4.7710404, 53.685287)
 
 [node name="pisopasto" parent="Map/zona1" index="269" unique_id=1362684719]
-transform = Transform3D(-134.26363, 0, 0, 0, -59.14136, 0, 0, 0, -139.73184, -19.643164, 4.247068, -29.5392)
+transform = Transform3D(-249.70259, 0, 0, 0, -59.14136, 0, 0, 0, -139.73184, -19.643164, 4.247068, -29.5392)
 surface_material_override/0 = SubResource("StandardMaterial3D_3n6v3")
 
 [node name="fondoderecha" parent="Map/zona1" index="270" unique_id=842280277]
@@ -1639,14 +1639,15 @@ debug_color = Color(0.7019608, 0.49019608, 0.05882353, 0.41960785)
 player = NodePath("../Player")
 
 [node name="CameraZoomArea" type="Marker3D" parent="." unique_id=1126227845 node_paths=PackedStringArray("player", "camera")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.00312, 7.284643, -140.66202)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.019047, 7.284643, 83.188774)
 gizmo_extents = 10.0
 script = ExtResource("8_58w3p")
 player = NodePath("../Player")
 min_distance = 25.0
+max_distance = 50.0
 camera = NodePath("../Camera")
-camera_position = Vector3(20, 15, 8)
-camera_rotation = Vector3(-25, 80, 0)
+camera_position = Vector3(5, 15, 10)
+camera_rotation = Vector3(-35, 0, 0)
 metadata/_custom_type_script = "uid://q4hkvlcaud4"
 
 [editable path="Map/zona1"]

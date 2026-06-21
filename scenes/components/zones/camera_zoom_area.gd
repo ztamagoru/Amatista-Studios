@@ -18,12 +18,14 @@ class_name CameraZoomArea
 
 # --
 
-var original_cam_position : Vector3
-var original_cam_rotation : Vector3
+var zoom_start_position  : Vector3
+var zoom_start_rotation  : Vector3
+
 var expected_cam_position : Vector3
 var expected_cam_rotation : Vector3
 
 var player_in_range : bool
+var was_in_range : bool = false
 
 # --
 
@@ -35,38 +37,38 @@ func _physics_process(delta: float) -> void:
 	
 	player_in_range = dist_from_player <= max_distance
 	
-	if not player_in_range and original_cam_position:
-		if not camera.pivot.position == original_cam_position:
-			camera.pivot.position = lerp(
-				camera.pivot.position,
-				original_cam_position,
-				delta
+	if player_in_range and not was_in_range:
+		zoom_start_position = camera.pivot.position
+		zoom_start_rotation = camera.pivot.rotation_degrees
+	
+	if not player_in_range:
+		if was_in_range:
+			camera.pivot.position = camera.pivot.position.move_toward(
+				zoom_start_position,
+				delta * camera.pivot.position.distance_to(zoom_start_position)
+			)
+			
+			camera.pivot.rotation_degrees = camera.pivot.rotation_degrees.move_toward(
+				zoom_start_rotation,
+				delta * camera.pivot.rotation_degrees.distance_to(zoom_start_rotation)
 			)
 		
-		if not camera.pivot.rotation_degrees == original_cam_rotation:
-			camera.pivot.rotation_degrees = lerp(
-				camera.pivot.rotation_degrees,
-				original_cam_rotation,
-				delta
-			)
+		was_in_range = player_in_range
 		return
-	elif not player_in_range: return
-	
-	if not original_cam_position:
-		original_cam_position = camera.pivot.position
-		original_cam_rotation = camera.pivot.rotation_degrees
 	
 	dist_from_player = clamp(dist_from_player, min_distance, max_distance)
 	var blend : float = remap(dist_from_player, min_distance, max_distance, 0, 1) 
 	
-	expected_cam_position = camera_position.lerp(original_cam_position, blend)
+	expected_cam_position = camera_position.lerp(zoom_start_position, blend)
 	camera.pivot.position = camera.pivot.position.move_toward(
 		expected_cam_position,
 		delta * camera.pivot.position.distance_to(expected_cam_position)
 	)
 	
-	expected_cam_rotation = camera_rotation.lerp(original_cam_rotation, blend)
+	expected_cam_rotation = camera_rotation.lerp(zoom_start_rotation, blend)
 	camera.pivot.rotation_degrees = camera.pivot.rotation_degrees.move_toward(
 		expected_cam_rotation,
 		delta * camera.pivot.rotation_degrees.distance_to(expected_cam_rotation)
 	)
+	
+	was_in_range = player_in_range
