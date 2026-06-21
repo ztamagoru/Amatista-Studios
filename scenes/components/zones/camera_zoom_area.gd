@@ -9,7 +9,7 @@ class_name CameraZoomArea
 
 @export_group("Distances")
 @export_range(0.0, 25.0, 1.0) var min_distance : float = 10.0
-@export_range(30.0, 50.0, 1.0) var max_distance : float = 35.0
+@export_range(20.0, 50.0, 1.0) var max_distance : float = 35.0
 
 @export_group("Camera Settings")
 @export var camera : Node3D
