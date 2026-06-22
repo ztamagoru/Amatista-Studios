@@ -7,7 +7,7 @@ class_name Interactable
 # --
 
 @export_group("Can_Interact")
-@export var can_interact : bool = false
+@export_custom(PROPERTY_HINT_GROUP_ENABLE, "") var can_interact : bool = false
 @export var object_meshes : Array[MeshInstance3D]
 @export var mesh_material : int = 0
 
@@ -58,8 +58,9 @@ func outline():
 	
 
 func _process(_delta: float) -> void:
-	if _is_interacting and Input.is_action_just_pressed("interact") and _can_start_dialog:
-		if dialogue_route: DialogueManager.show_dialogue_balloon(dialogue, "start", [self])
+	if has_dialog:
+		if _is_interacting and Input.is_action_just_pressed("interact") and _can_start_dialog:
+			DialogueManager.show_dialogue_balloon(dialogue, "start", [self])
 
 func hide_outline():
 	if _is_interacting: _is_interacting = false
