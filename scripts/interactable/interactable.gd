@@ -1,3 +1,4 @@
+@icon("res://assets/icons/tap.svg")
 @tool
 
 extends CharacterBody3D
