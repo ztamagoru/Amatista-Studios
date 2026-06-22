@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://hegi540g3xl8"]
 
 [ext_resource type="Script" uid="uid://7i51r4q8pebd" path="res://scripts/projectiles/grenade.gd" id="1_p5bkk"]
+[ext_resource type="AudioStream" uid="uid://w8pn3witpkfl" path="res://assets/sounds/sfx/shoot.mp3" id="2_n0e01"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_26fn7"]
 
@@ -15,6 +16,7 @@ can_sleep = false
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_p5bkk")
+shoot_sfx = ExtResource("2_n0e01")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1425371215]
 shape = SubResource("SphereShape3D_8sfnu")

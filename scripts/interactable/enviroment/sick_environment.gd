@@ -1,10 +1,12 @@
-extends Node3D
+extends StaticBody3D
 class_name Sick_Environment
 
 # --
 
 var tree_shader : Shader = preload("res://scripts/interactable/enviroment/tree.gdshader") 
 var leaves_shader : Shader = preload("res://scripts/interactable/enviroment/leaves.gdshader") 
+
+var heal_sfx : String = "res://assets/sounds/sfx/sfx_heal_magic.mp3"
 
 @export var mesh : MeshInstance3D 
 
@@ -40,9 +42,6 @@ func _ready() -> void:
 		if object_mesh.surface_get_material(i) is StandardMaterial3D:
 			var shader_mat : ShaderMaterial = ShaderMaterial.new()
 			
-			print(mesh.name)
-			print("index:" + str(i))
-			print("leaves in:" + str(leaves_surface))
 			shader_mat.shader = leaves_shader if has_leaves and leaves_surface == i else tree_shader
 			
 			shader_mat.set_shader_parameter(
@@ -89,3 +88,7 @@ func _process(delta: float) -> void:
 func collision():
 	if not _is_cured:
 		_is_cured = not _is_cured
+		
+		var sfx : SFXOneShot = SFXOneShot.new()
+		sfx.stream = load(heal_sfx)
+		get_tree().current_scene.add_child(sfx)

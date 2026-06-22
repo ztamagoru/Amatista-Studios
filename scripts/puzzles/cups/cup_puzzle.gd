@@ -7,6 +7,9 @@ signal puzzle_exited
 
 # --
 
+@export var sfx_correct : AudioStream
+@export var sfx_incorrect : AudioStream
+
 @onready var markers : Array[Node3D] = [$Markers/Marker1, $Markers/Marker2, $Markers/Marker3]
 @onready var cups : Array[Node3D] = [$Cups/Cup1, $Cups/Cup2, $Cups/Cup3]
 
@@ -149,16 +152,25 @@ func game():
 			speed_multiplier += multiplier_sum
 			correct_attempts += 1
 			
+			play_sfx(true)
+			
 			if correct_attempts == attempts_to_win:
 				win()
 				return
 		else: 
+			play_sfx(false)
+			
 			start_game()
 			return
 	
 	for i in randi_range(round(5 * speed_multiplier) , round(10 * speed_multiplier)): await shuffle_cups()
 	
 	_can_choose = true
+
+func play_sfx(correct : bool):
+	var sfx : SFXOneShot = SFXOneShot.new()
+	sfx.stream = sfx_correct if correct else sfx_incorrect
+	get_tree().current_scene.add_child(sfx)
 
 func exit():
 	await get_tree().create_timer(1).timeout
