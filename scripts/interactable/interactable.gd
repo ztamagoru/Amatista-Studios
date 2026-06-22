@@ -33,6 +33,13 @@ func _ready():
 	
 	connect_signals()
 	outline()
+	
+	quest_initiation()
+
+func quest_initiation():
+	pass
+
+func connect_signals():
 	Globals.set_interactable_outline.connect(show_outline)
 	Globals.hide_interactable_outline.connect(hide_outline)
 	
