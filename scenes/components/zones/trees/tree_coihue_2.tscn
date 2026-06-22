@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://baltee05uyrbk"]
+
+[ext_resource type="Script" uid="uid://ruugex3xy8gw" path="res://scripts/interactable/enviroment/sick_environment.gd" id="1_lbr1q"]
+[ext_resource type="Texture2D" uid="uid://bregfmvmcvna7" path="res://assets/models/zone 1/trees/arbolcoihue1_texturamadera3.png" id="2_j7hju"]
+[ext_resource type="Texture2D" uid="uid://128lnvsw7ya2" path="res://assets/models/zone 1/trees/arbolcoihue1_hoja2re.png" id="3_sx865"]
+[ext_resource type="Texture2D" uid="uid://d3p7ni7bfa701" path="res://assets/models/zone 1/trees/sick/texturatroncoenfermo.png" id="4_rhmmq"]
+[ext_resource type="Texture2D" uid="uid://co3pu8bc2cvp2" path="res://assets/models/zone 1/trees/sick/texturahojaenferma.png" id="5_vcryt"]
+[ext_resource type="PackedScene" uid="uid://o0kj4yegvblm" path="res://assets/models/zone 1/trees/arbolcoihue11.glb" id="6_lbr1q"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ppyta"]
+height = 6.026985
+radius = 0.28466797
+
+[node name="TreeCoihue2" type="StaticBody3D" unique_id=208782084 node_paths=PackedStringArray("mesh") groups=["sick_environment"]]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+script = ExtResource("1_lbr1q")
+mesh = NodePath("arbolcoihue11/arbolcoihue11_005")
+has_leaves = true
+leaves_surface = 1
+texture_healthy = Array[Texture]([ExtResource("2_j7hju"), ExtResource("3_sx865")])
+texture_sick = Array[Texture]([ExtResource("4_rhmmq"), ExtResource("5_vcryt")])
+metadata/_custom_type_script = "uid://ruugex3xy8gw"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=250569183]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.046912193, 2.9351225, -0.044444084)
+shape = SubResource("CylinderShape3D_ppyta")
+
+[node name="arbolcoihue11" parent="." unique_id=2041593977 instance=ExtResource("6_lbr1q")]
+
+[node name="arbolcoihue11_005" parent="arbolcoihue11" index="0" unique_id=1320145068]
+transform = Transform3D(0.58512425, 0, -0.91319036, 0, 0.15093379, 0, 0.91319036, 0, 0.58512425, -0.011451244, -0.007709503, 0)
+
+[editable path="arbolcoihue11"]

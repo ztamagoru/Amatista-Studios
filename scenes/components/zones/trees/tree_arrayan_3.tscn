@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cbfobuwmfg1rt"]
+
+[ext_resource type="Script" uid="uid://ruugex3xy8gw" path="res://scripts/interactable/enviroment/sick_environment.gd" id="1_4xesd"]
+[ext_resource type="Texture2D" uid="uid://do5mgbki871pn" path="res://assets/models/zone 1/trees/arbolarrayan11_texturamadera1.png" id="2_4xesd"]
+[ext_resource type="Texture2D" uid="uid://c77tchhu0jx66" path="res://assets/models/zone 1/trees/arbolarrayan11_hoja1re.png" id="3_addo1"]
+[ext_resource type="Texture2D" uid="uid://co3pu8bc2cvp2" path="res://assets/models/zone 1/trees/sick/texturahojaenferma.png" id="4_krwxt"]
+[ext_resource type="Texture2D" uid="uid://d3p7ni7bfa701" path="res://assets/models/zone 1/trees/sick/texturatroncoenfermo.png" id="5_5f04f"]
+[ext_resource type="PackedScene" uid="uid://ctr03xusurvyq" path="res://assets/models/zone 1/trees/arbolarrayan11.glb" id="6_4xesd"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ppyta"]
+height = 12.710221
+radius = 0.6557617
+
+[node name="TreeArrayan3" type="StaticBody3D" unique_id=1939623392 node_paths=PackedStringArray("mesh") groups=["sick_environment"]]
+script = ExtResource("1_4xesd")
+mesh = NodePath("arbolarrayan11/arbolarrayan11_032")
+has_leaves = true
+leaves_surface = 1
+texture_healthy = Array[Texture]([ExtResource("2_4xesd"), ExtResource("3_addo1")])
+texture_sick = Array[Texture]([ExtResource("5_5f04f"), ExtResource("4_krwxt")])
+metadata/_custom_type_script = "uid://ruugex3xy8gw"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2116187680]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00807476, 6.213469, -0.010728836)
+shape = SubResource("CylinderShape3D_ppyta")
+
+[node name="arbolarrayan11" parent="." unique_id=659797780 instance=ExtResource("6_4xesd")]
+
+[node name="arbolarrayan11_032" parent="arbolarrayan11" index="0" unique_id=1300626513]
+transform = Transform3D(0.7917404, 0, 0, 0, 0.1101825, 0, 0, 0, 0.7917404, 0, -0.08061552, 0)
+
+[editable path="arbolarrayan11"]
