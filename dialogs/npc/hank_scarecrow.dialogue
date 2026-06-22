@@ -1,0 +1,80 @@
+~ start
+if first_time_dialog:
+	set first_time_dialog = false
+	???: Hola niña... veo que no eres de estos lugares, ¿verdad?
+	???: Se nota cuando alguien viene con buenas intenciones. Los demás ya ni se detienen a mirar lo que tienen enfrente.
+	???: Pero tú... tienes una mirada distinta. Me alegra ver una cara nueva por aquí.
+	Hank el espantapájaros: Mi nombre es Hank. Soy el encargado de cuidar este huerto. Un gusto conocerte.
+	Hank el espantapájaros: Aunque supongo que "encargado" suena más importante de lo que realmente es...
+	Hank el espantapájaros: Verás, mi trabajo es vigilar que ningún animal se robe las verduras, avisar si algo extraño ocurre y mantener todo en orden.
+	Hank el espantapájaros: El pequeño detalle es que... bueno... [wait=0.25] mis pies están un poco ocupados aquí abajo.
+	Hank el espantapájaros: No puedo ir a buscar problemas, así que los problemas suelen venir a buscarme a mí.
+	=> END
+else:
+	if check_quest_parent_completed():
+		if congratulated_for_puzzle:
+			set congratulated_for_puzzle = false
+			=> puzzle_congrats
+		else:
+			=> idle
+	else:
+		if is_quest_accepted():
+			=> idle
+		else:
+			=> give_quest
+
+~ idle
+% => past
+% => current_state
+% => thankful
+
+~ past
+Hank el espantapájaros: Cuidar un huerto parece sencillo desde afuera, pero créeme, las verduras tienen más personalidad de la que uno imagina.
+Hank el espantapájaros: Algunas son muy orgullosas, otras se quejan por todo... y las zanahorias de la esquina son unas verdaderas tramposas.
+Hank el espantapájaros: Pero al menos el trabajo me mantiene ocupado.
+Hank el espantapájaros: Aunque... debo admitir que a veces extraño cuando la gente venía a hablar conmigo más seguido.
+Hank el espantapájaros: Antes me contaban historias, me pedían consejos... incluso algunos niños venían a saludarme.
+Hank el espantapájaros: Ahora la mayoría pasa de largo como si fuera parte del paisaje.
+=> END
+
+~ current_state
+Hank el espantapájaros: Últimamente algo raro está pasando por aquí.
+Hank el espantapájaros: Los animales están más inquietos, las plantas parecen estar nerviosas y hasta el viento sopla diferente.
+Hank el espantapájaros: Intenté avisar, pero ya sabes... gritar desde un palo no es precisamente la forma más efectiva de llamar la atención.
+Hank el espantapájaros: Aun así, seguiré vigilando. Aunque no pueda moverme, mis ojos todavía funcionan perfectamente.
+=> END
+
+~ thankful
+Hank el espantapájaros: Qué agradable es volver a tener una conversación.
+Hank el espantapájaros: No sabes cuánto tiempo puede sentirse cuando uno pasa los días mirando el mismo árbol... aunque ese árbol es bastante bonito, debo admitirlo.
+Hank el espantapájaros: Si necesitas algo, no dudes en volver. Yo estaré aquí.
+Hank el espantapájaros: Bueno... técnicamente siempre estaré aquí.
+=> END
+
+# --
+
+~ give_quest
+do give_quest()
+Hank el espantapájaros: Ahora que lo pienso... quizá puedas ayudarme con algo.
+Hank el espantapájaros: Hace unos días pasó por aquí el guardia del bosque. Parecía estar apurado y dejó caer un pequeño arito suyo cerca de los zapallos.
+Hank el espantapájaros: Ten cuidado con ellas, les gusta molestar al resto con distintos juegos.
+Hank el espantapájaros: Intenté llamarlo, pero... bueno... mi capacidad de perseguir personas es bastante limitada.
+Hank el espantapájaros: Si logras encontrarlo y devolvérselo, quizá pueda ayudarte con lo que está ocurriendo por aquí.
+Hank el espantapájaros: Además, estoy seguro de que apreciará que alguien se haya tomado la molestia de ayudarlo.
+=> END
+
+~ puzzle_hint
+Hank el espantapájaros: ¿Las verduras te están dando problemas?>
+Hank el espantapájaros: Je, no te preocupes. No eres la primera persona que se confunde con ellas.
+Hank el espantapájaros: Estas verduras no juegan limpio, míralas con atención y ganarás en su juego.
+Hank el espantapájaros: Recuerda: ellas pueden parecer iguales, pero cada una tiene sus pequeños secretos.
+Hank el espantapájaros: Llevo tanto tiempo observándolas que podría reconocerlas incluso con los ojos cerrados... [wait=0.5] aunque prefiero no intentarlo, mis ojos son lo único que tengo para trabajar.
+=> END
+
+~ puzzle_congrats
+Hank el espantapájaros: ¡Lo sabía! Sabía que podrías hacerlo.
+Hank el espantapájaros: Tienes algo que muchos han perdido: paciencia y ganas de ayudar.
+Hank el espantapájaros: El huerto está un poco más tranquilo gracias a ti.
+Hank el espantapájaros: Si algún día necesitas un consejo, ya sabes dónde encontrarme.
+Hank el espantapájaros: Aunque... probablemente no tengas muchas opciones.
+=> END

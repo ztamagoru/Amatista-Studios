@@ -1,0 +1,89 @@
+~ start
+if first_time_dialog:
+	set first_time_dialog = false
+	???: Hola... un humano.
+	???: Hace tiempo que no veo uno por aquí.
+	???: Supongo que eso significa que las cosas están peor de lo que pensaba...
+	???: No me malinterpretes, no estoy diciendo que seas un problema.
+	???: Solo digo que los problemas suelen aparecer justo antes que los humanos.
+	Tomás, el guardián: Mi nombre es Tomás. Antes era el guardia del puente.
+	Tomás, el guardián: Antes de que todos decidieran alejarse y fingir que este lugar ya no existía.
+	Tomás, el guardián: [speed=0.2]...[speed=1]
+	Tomás, el guardián: Espera... ¿esa energía que tienes encima?
+	Tomás, el guardián: ¿Recibiste magia purificadora?
+	Tomás, el guardián: Vaya... pensé que ya no quedaba nadie capaz de recibir algo así.
+	Tomás, el guardián: Qué suerte la tuya.
+	Tomás, el guardián: Hay animales que darían cualquier cosa por tener una oportunidad así...
+	Tomás, el guardián: Aunque supongo que algunos tenemos que conformarnos con sobrevivir.
+	Tomás, el guardián: ...
+	Tomás, el guardián: No importa. No vine a hablar de eso.
+	=> give_notebook
+else:
+	if is_quest_completed():
+		% => idle
+		% => redemption
+	else:
+		if has_earing():
+			do complete_quest()
+			=> thankful
+		elif is_quest_accepted():
+			% => quest_explanation
+			% => idle
+
+# --
+
+~ give_notebook
+Tomás, el guardián: Toma.
+Tomás, el guardián: Es un block de hojas. No pongas esa cara, es lo mejor que tengo.
+Tomás, el guardián: Si vas a recorrer el bosque, anota lo que encuentres.
+Tomás, el guardián: Lugares, animales, cosas extrañas... lo que sea.
+Tomás, el guardián: La memoria falla cuando estás solo demasiado tiempo.
+Tomás, el guardián: Y prefiero que alguien recuerde lo que pasó aquí.
+=> quest
+
+~ quest
+do give_quest()
+Tomás, el guardián: ... Hay algo más.
+Tomás, el guardián: Perdí un arito cerca del puente viejo.
+Tomás, el guardián: No es importante.
+Tomás, el guardián: ...
+Tomás, el guardián: Bueno, sí lo es.
+Tomás, el guardián: Fue un regalo de alguien que todavía confiaba en mí.
+Tomás, el guardián: No necesito que lo hagas, pero si lo encuentras... tráemelo.
+Tomás, el guardián: Te lo agradecería.
+=> END
+
+# --
+
+~ idle
+Tomás, el guardián: ¿Otra vez tú?
+Tomás, el guardián: No esperaba que regresaras.
+Tomás, el guardián: La mayoría de los que dicen que ayudarán no vuelve.
+Tomás, el guardián: Supongo que eres diferente... o simplemente más terca de lo normal.
+=> END
+
+~ redemption
+Tomás, el guardián: Quizá me equivoqué contigo.
+Tomás, el guardián: Pensé que eras como los demás.
+Tomás, el guardián: Alguien que aparece cuando todo está bien y desaparece cuando las cosas se complican.
+Tomás, el guardián: Pero seguiste aquí.
+Tomás, el guardián: Eso vale más de lo que crees.
+=> END
+
+~ quest_explanation
+Tomás, el guardián: ¿Que cómo lo perdí?
+Tomás, el guardián: Ese día estaba revisando el puente.
+Tomás, el guardián: Hubo problemas y tuve que moverme rápido.
+Tomás, el guardián: Cuando volví, ya no estaba.
+Tomás, el guardián: Supongo que debería haberlo buscado más.
+Tomás, el guardián: Pero estaba ocupado intentando mantener todo en pie... como siempre.
+=> END
+
+~ thankful
+Tomás, el guardián: Lo encontraste...
+Tomás, el guardián: Pensé que ya lo había perdido para siempre.
+Tomás, el guardián: Gracias.
+Tomás, el guardián: ...
+Tomás, el guardián: No soy bueno diciendo estas cosas, así que no esperes un gran discurso.
+Tomás, el guardián: Pero significa mucho para mí.
+=> END
