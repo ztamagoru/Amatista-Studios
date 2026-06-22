@@ -2,6 +2,11 @@ extends Node3D
 
 # --
 
+signal puzzle_won
+signal puzzle_exited
+
+# --
+
 @onready var markers : Array[Node3D] = [$Markers/Marker1, $Markers/Marker2, $Markers/Marker3]
 @onready var cups : Array[Node3D] = [$Cups/Cup1, $Cups/Cup2, $Cups/Cup3]
 
@@ -117,6 +122,10 @@ func _input(event: InputEvent) -> void:
 				Globals.hide_interactable_outline.emit()
 				game()
 
+func _process(_delta: float) -> void:
+	if Input.is_key_pressed(KEY_ESCAPE):
+		await exit()
+
 func start_game():
 	correct_attempts = 0
 	speed_multiplier = multiplier_base
@@ -151,7 +160,12 @@ func game():
 	
 	_can_choose = true
 
-func win():
-	print("puzzle won")
+func exit():
 	await get_tree().create_timer(1).timeout
-	get_tree().quit()
+	puzzle_exited.emit()
+	queue_free()
+
+func win():
+	await get_tree().create_timer(1).timeout
+	puzzle_won.emit()
+	queue_free()
