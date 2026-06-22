@@ -14,7 +14,6 @@ class_name Interactable
 @export_custom(PROPERTY_HINT_GROUP_ENABLE, "") var has_dialog : bool = false
 @export var first_time_dialog : bool = true
 @export var dialogue : DialogueResource
-@export_file_path("*.dialogue") var dialogue_route : String 
 
 # --
 
