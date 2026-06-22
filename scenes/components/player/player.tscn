@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://6sj3ia7fne8w" path="res://scenes/components/player/states/fall.gd" id="5_frspl"]
 [ext_resource type="Script" uid="uid://sxd7rl0nyqv7" path="res://scenes/components/player/states/jump.gd" id="6_aes0s"]
 [ext_resource type="Script" uid="uid://mv5gfj0t68y4" path="res://scenes/components/player/states/walk.gd" id="7_tw4o5"]
-[ext_resource type="PackedScene" uid="uid://c3xf2k24qsbr8" path="res://assets/models/player/PJ.blend" id="8_vj2w8"]
+[ext_resource type="PackedScene" uid="uid://c57ffqc27c7o3" path="res://assets/models/player/PJ.glb" id="7_vj2w8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1xbud"]
 radius = 2.0
@@ -74,33 +74,32 @@ target_position = Vector3(15, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CylinderShape3D_aes0s")
 
-[node name="PJ" parent="." unique_id=1333093289 instance=ExtResource("8_vj2w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4672184, -4.7797437, -1.3194134)
-
-[node name="cabeza" parent="PJ" index="0" unique_id=1531367428]
-transform = Transform3D(1.0577137, 0, 0, 0, 1.0577137, 0, 0, 0, 1.0577137, 1.5631008, 6.7892933, 1.29671)
-
-[node name="mano2" parent="PJ" index="1" unique_id=1098062000]
-transform = Transform3D(0.2141744, 0, 0, 0, 0.2141744, 0, 0, 0, 0.2141744, 2.833624, 4.382782, 1.4204788)
-
-[node name="pelo" parent="PJ" index="2" unique_id=185006954]
-transform = Transform3D(0.46603772, 0, 0, 0, 0.59068525, 0, 0, 0, 0.21832982, 1.5691719, 6.488825, 1.5776157)
-
-[node name="vestido" parent="PJ" index="3" unique_id=878746250]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5412788, 4.5121818, 1.3415442)
-
-[node name="mano1" parent="PJ" index="4" unique_id=1952426152]
-transform = Transform3D(-0.2141744, 0, -8.340259e-08, 0, 0.2141744, 0, 8.340259e-08, 0, -0.2141744, 0.23635101, 4.3392725, 1.3357306)
-
-[node name="pata2" parent="PJ" index="5" unique_id=810065874]
-transform = Transform3D(-0.22815405, 0.026436789, -0.20953368, 0.20464139, -0.048569817, -0.22895506, -0.052203137, -0.3059405, 0.018241806, 1.8345852, 2.2693672, 1.2502928)
-
-[node name="pata1" parent="PJ" index="6" unique_id=708645921]
-transform = Transform3D(0.35253158, 0, 0, 0, 0.006152529, -0.3524779, 0, 0.3524779, 0.006152529, 1.2842464, 2.2694294, 1.2502699)
-
 [node name="WalkingSFX" type="AudioStreamPlayer" parent="." unique_id=1599624262]
 bus = &"SFX"
 
+[node name="PJ2" parent="." unique_id=1991311373 instance=ExtResource("7_vj2w8")]
+
+[node name="cabeza" parent="PJ2" index="0" unique_id=23743476]
+transform = Transform3D(1.0577137, 0, 0, 0, 1.0577137, 0, 0, 0, 1.0577137, 0.107322216, 2.01794, -0.042292625)
+
+[node name="mano2" parent="PJ2" index="1" unique_id=778215867]
+transform = Transform3D(0.2141744, 0, 0, 0, 0.2141744, 0, 0, 0, 0.2141744, 1.3778448, -0.38857126, 0.081477135)
+
+[node name="pelo" parent="PJ2" index="2" unique_id=1016884929]
+transform = Transform3D(0.46603772, 0, 0, 0, 0.59068525, 0, 0, 0, 0.21832982, 0.11339319, 1.7174716, 0.23861405)
+
+[node name="vestido" parent="PJ2" index="3" unique_id=1054218343]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0855, -0.2591715, 0.0025434196)
+
+[node name="mano1" parent="PJ2" index="4" unique_id=298113152]
+transform = Transform3D(-0.2141744, 0, -8.340259e-08, 0, 0.2141744, 0, 8.340259e-08, 0, -0.2141744, -1.2194281, -0.43208075, -0.003270179)
+
+[node name="pata2" parent="PJ2" index="5" unique_id=353732530]
+transform = Transform3D(-0.22815405, 0.026436789, -0.20953368, 0.20464139, -0.048569817, -0.22895506, -0.052203137, -0.3059405, 0.018241806, 0.37880635, -2.501986, -0.08870795)
+
+[node name="pata1" parent="PJ2" index="6" unique_id=2115764603]
+transform = Transform3D(0.35253158, 0, 0, 0, 0.006152529, -0.3524779, 0, 0.3524779, 0.006152529, -0.17153215, -2.5019238, -0.08873084)
+
 [connection signal="finished" from="WalkingSFX" to="." method="_on_walking_sfx_finished"]
 
-[editable path="PJ"]
+[editable path="PJ2"]
