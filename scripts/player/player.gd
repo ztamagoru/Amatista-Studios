@@ -52,6 +52,8 @@ func _ready() -> void:
 	
 	walking_sfx.stream = audio_footsteps[default_walking_sfx]
 	current_footstep_sound = audio_footsteps[default_walking_sfx]
+	
+	Globals.player = self
 
 func check_required():
 	assert(not audio_footsteps.is_empty(), "Needs to have at least one sfx loaded")
