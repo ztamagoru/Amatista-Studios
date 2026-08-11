@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Faunesty"
-run/main_scene="uid://b6vf1aji6dy38"
+config/version="0.2"
+run/main_scene="uid://coq8jfcyrk2xk"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://cescis0ik2000"
 
 [autoload]
 
