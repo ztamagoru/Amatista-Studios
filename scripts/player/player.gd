@@ -34,6 +34,8 @@ const gravity : float = 24.0
 
 # --
 
+var can_shoot : bool = false
+
 var mouse_position
 var from
 var ray_lenght : float = 4000
@@ -100,6 +102,9 @@ func _physics_process(_delta: float):
 
 func _input(event: InputEvent):
 	if event is InputEventMouseButton and not timer.time_left > 0:
+		if not can_shoot:
+			return
+		
 		var projectile = projectile_scene.instantiate()
 		
 		timer.start(shoot_cd)
