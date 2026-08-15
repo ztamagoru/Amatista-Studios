@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://wwwquqc6xid8"]
+
+[ext_resource type="Script" uid="uid://bpet0ro8o2b1s" path="res://scripts/interactable/npc/chicken.gd" id="1_giayq"]
+[ext_resource type="PackedScene" uid="uid://cf2wiivx8fn3t" path="res://assets/models/zone 1/npcs/chickens/white-chicken.glb" id="2_2dvjb"]
+[ext_resource type="Script" uid="uid://bug25m4xttpfr" path="res://scripts/interactable/npc/behavior tree/behavior_tree.gd" id="3_4a30b"]
+[ext_resource type="Script" uid="uid://cxw84w747u7sd" path="res://scripts/interactable/npc/composite_selector.gd" id="4_b1qfm"]
+[ext_resource type="Script" uid="uid://ty6hb7dlraef" path="res://scripts/interactable/npc/composite_sequence.gd" id="5_o0p0f"]
+[ext_resource type="Script" uid="uid://cw6rbl2qgvt2s" path="res://scripts/interactable/npc/leafs/leaf_is_player_inside_area_3d.gd" id="6_eh2nv"]
+[ext_resource type="Script" uid="uid://bdjtcgbbrx454" path="res://scripts/interactable/npc/leafs/leaf_check_bool.gd" id="7_1ik3i"]
+[ext_resource type="Script" uid="uid://cg8yo6qx41d5d" path="res://scripts/interactable/npc/leafs/leaf_set_bool.gd" id="8_x0gnp"]
+[ext_resource type="Script" uid="uid://dxk7m6al3ob1u" path="res://scripts/interactable/npc/leafs/leaf_set_nav_target_position.gd" id="9_erquc"]
+[ext_resource type="Script" uid="uid://hi6u2m2tu6fe" path="res://scripts/interactable/npc/leafs/leaf_move_to_nav_target.gd" id="10_2a4ne"]
+[ext_resource type="Script" uid="uid://dgi3fuytrorts" path="res://scripts/interactable/npc/leafs/leaf_look_at.gd" id="11_fw1al"]
+[ext_resource type="Script" uid="uid://bxu3f71pipsjo" path="res://scripts/interactable/npc/leafs/leaf_is_nav_target_near.gd" id="12_xxp46"]
+[ext_resource type="Script" uid="uid://c2vyvfmm6gcfv" path="res://scripts/interactable/npc/leafs/leaf_is_nav_target_empty.gd" id="13_2dvjb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
+size = Vector3(0.9716797, 2.15, 2.071289)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_g4v7s"]
+height = 6.0
+radius = 5.0
+
+[node name="Chicken" type="CharacterBody3D" unique_id=1266909227 node_paths=PackedStringArray("nav_agent")]
+script = ExtResource("1_giayq")
+nav_agent = NodePath("NavigationAgent3D")
+metadata/_custom_type_script = "uid://cdo0lar8bpl3h"
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1374545339]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1867979648]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005270958, 1.0754637, 0.07990599)
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="white-chicken" parent="." unique_id=207729985 instance=ExtResource("2_2dvjb")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 1.3910154, 0)
+
+[node name="RangeArea" type="Area3D" parent="." unique_id=397126445]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RangeArea" unique_id=1895072858]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("CylinderShape3D_g4v7s")
+
+[node name="BehaviorTree" type="Node" parent="." unique_id=485497756]
+script = ExtResource("3_4a30b")
+metadata/_custom_type_script = "uid://bug25m4xttpfr"
+
+[node name="CompositeSelector" type="Node" parent="BehaviorTree" unique_id=392107650]
+script = ExtResource("4_b1qfm")
+metadata/_custom_type_script = "uid://cxw84w747u7sd"
+
+[node name="CheckIfPlayerNear" type="Node" parent="BehaviorTree/CompositeSelector" unique_id=1839206518]
+script = ExtResource("5_o0p0f")
+metadata/_custom_type_script = "uid://ty6hb7dlraef"
+
+[node name="IsPlayerNear" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfPlayerNear" unique_id=321036723 node_paths=PackedStringArray("range_area")]
+script = ExtResource("6_eh2nv")
+range_area = NodePath("../../../../RangeArea")
+metadata/_custom_type_script = "uid://cw6rbl2qgvt2s"
+
+[node name="PlayerSelector" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfPlayerNear" unique_id=1633298207]
+script = ExtResource("4_b1qfm")
+metadata/_custom_type_script = "uid://cxw84w747u7sd"
+
+[node name="CompositeSequence" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfPlayerNear/PlayerSelector" unique_id=1417227129]
+script = ExtResource("5_o0p0f")
+metadata/_custom_type_script = "uid://ty6hb7dlraef"
+
+[node name="IsShy" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfPlayerNear/PlayerSelector/CompositeSequence" unique_id=369786760]
+script = ExtResource("7_1ik3i")
+property_name = "is_shy"
+metadata/_custom_type_script = "uid://bdjtcgbbrx454"
+
+[node name="SetAlertStateTrue" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfPlayerNear/PlayerSelector/CompositeSequence" unique_id=1977665772]
+script = ExtResource("8_x0gnp")
+property_name = "is_alerted"
+turn_to = true
+metadata/_custom_type_script = "uid://cg8yo6qx41d5d"
+
+[node name="SetNavTargetPosition" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfPlayerNear/PlayerSelector/CompositeSequence" unique_id=719563024]
+script = ExtResource("9_erquc")
+metadata/_custom_type_script = "uid://dxk7m6al3ob1u"
+
+[node name="MoveToNavTarget" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfPlayerNear/PlayerSelector/CompositeSequence" unique_id=269730688]
+script = ExtResource("10_2a4ne")
+metadata/_custom_type_script = "uid://hi6u2m2tu6fe"
+
+[node name="LookAtPlayer" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfPlayerNear/PlayerSelector" unique_id=211601659]
+script = ExtResource("11_fw1al")
+metadata/_custom_type_script = "uid://dgi3fuytrorts"
+
+[node name="CheckIfItsAlert" type="Node" parent="BehaviorTree/CompositeSelector" unique_id=1108925101]
+script = ExtResource("5_o0p0f")
+metadata/_custom_type_script = "uid://ty6hb7dlraef"
+
+[node name="IsAlert" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfItsAlert" unique_id=820121986]
+script = ExtResource("7_1ik3i")
+property_name = "is_alerted"
+metadata/_custom_type_script = "uid://bdjtcgbbrx454"
+
+[node name="CompositeSelector" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfItsAlert" unique_id=1447520349]
+script = ExtResource("4_b1qfm")
+metadata/_custom_type_script = "uid://cxw84w747u7sd"
+
+[node name="CompositeSequence" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfItsAlert/CompositeSelector" unique_id=2133103740]
+script = ExtResource("5_o0p0f")
+metadata/_custom_type_script = "uid://ty6hb7dlraef"
+
+[node name="IsNavTargetNear" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfItsAlert/CompositeSelector/CompositeSequence" unique_id=1881374566]
+script = ExtResource("12_xxp46")
+metadata/_custom_type_script = "uid://bxu3f71pipsjo"
+
+[node name="SetAlertStateFalse" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfItsAlert/CompositeSelector/CompositeSequence" unique_id=1861923248]
+script = ExtResource("8_x0gnp")
+property_name = "is_alerted"
+metadata/_custom_type_script = "uid://cg8yo6qx41d5d"
+
+[node name="SetNavTargetPosition" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfItsAlert/CompositeSelector/CompositeSequence" unique_id=2002036163]
+script = ExtResource("9_erquc")
+metadata/_custom_type_script = "uid://dxk7m6al3ob1u"
+
+[node name="MoveToNavTarget" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfItsAlert/CompositeSelector" unique_id=1571914622]
+script = ExtResource("10_2a4ne")
+metadata/_custom_type_script = "uid://hi6u2m2tu6fe"
+
+[node name="IdleMovement" type="Node" parent="BehaviorTree/CompositeSelector" unique_id=1121945043]
+script = ExtResource("4_b1qfm")
+metadata/_custom_type_script = "uid://cxw84w747u7sd"
+
+[node name="NavTargetEmpty" type="Node" parent="BehaviorTree/CompositeSelector/IdleMovement" unique_id=2075459544]
+script = ExtResource("5_o0p0f")
+metadata/_custom_type_script = "uid://ty6hb7dlraef"
+
+[node name="IsNavTargetEmpty" type="Node" parent="BehaviorTree/CompositeSelector/IdleMovement/NavTargetEmpty" unique_id=671411783]
+script = ExtResource("13_2dvjb")
+metadata/_custom_type_script = "uid://c2vyvfmm6gcfv"
+
+[node name="SetNavTargetPosition" type="Node" parent="BehaviorTree/CompositeSelector/IdleMovement/NavTargetEmpty" unique_id=1259069105]
+script = ExtResource("9_erquc")
+metadata/_custom_type_script = "uid://dxk7m6al3ob1u"
+
+[node name="ReachedDestiny" type="Node" parent="BehaviorTree/CompositeSelector/IdleMovement" unique_id=2056928135]
+script = ExtResource("5_o0p0f")
+metadata/_custom_type_script = "uid://ty6hb7dlraef"
+
+[node name="IsNavTargetNear" type="Node" parent="BehaviorTree/CompositeSelector/IdleMovement/ReachedDestiny" unique_id=824347930]
+script = ExtResource("12_xxp46")
+metadata/_custom_type_script = "uid://bxu3f71pipsjo"
+
+[node name="SetNavTargetPosition" type="Node" parent="BehaviorTree/CompositeSelector/IdleMovement/ReachedDestiny" unique_id=1155052366]
+script = ExtResource("9_erquc")
+metadata/_custom_type_script = "uid://dxk7m6al3ob1u"
+
+[node name="MoveToNavTarget" type="Node" parent="BehaviorTree/CompositeSelector/IdleMovement" unique_id=1479628390]
+script = ExtResource("10_2a4ne")
+metadata/_custom_type_script = "uid://hi6u2m2tu6fe"
