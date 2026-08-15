@@ -9,6 +9,7 @@ func step() -> Result:
 	
 	for child : BehaviorNode in children:
 		var child_result = child.step()
-		if child_result != Result.SUCCESS:
-			return child_result
-	return Result.SUCCESS
+		if child_result == Result.SUCCESS:
+			return Result.SUCCESS
+		
+	return Result.FAILURE
