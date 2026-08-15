@@ -3,8 +3,8 @@ class_name Sick_Environment
 
 # --
 
-var tree_shader : Shader = preload("res://scripts/interactable/enviroment/tree.gdshader") 
-var leaves_shader : Shader = preload("res://scripts/interactable/enviroment/leaves.gdshader") 
+var tree_shader : Shader = preload("res://shaders/environment/tree.gdshader") 
+var leaves_shader : Shader = preload("res://shaders/environment/leaves.gdshader") 
 
 var heal_sfx : String = "res://assets/sounds/sfx/sfx_heal_magic.mp3"
 
