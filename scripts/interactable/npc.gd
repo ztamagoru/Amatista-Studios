@@ -21,11 +21,6 @@ var quest : QuestEntry
 
 # --
 
-var behaviour_root : BehaviorNode
-var behaviour_one_shot : bool
-
-#--
-
 func quest_initiation():
 	quest = quest_holder.quest.add_subquest(
 		quest_name,
