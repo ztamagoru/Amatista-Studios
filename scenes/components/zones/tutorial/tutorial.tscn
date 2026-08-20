@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://do3crd75ny4ra" path="res://scenes/components/player/player.tscn" id="1_hwv2g"]
 [ext_resource type="PackedScene" uid="uid://coq8jfcyrk2xk" path="res://scenes/components/zones/zona_1.tscn" id="2_hwv2g"]
+[ext_resource type="Resource" uid="uid://cbk8p8n26whjq" path="res://dialogs/tutorial/tutorial.dialogue" id="3_7kssk"]
 [ext_resource type="AudioStream" uid="uid://drkgxm6exsq6" path="res://assets/sounds/sfx/grounds/footsteps_grass.mp3" id="4_6kmcb"]
 [ext_resource type="PackedScene" uid="uid://dnu7on0g2bdv4" path="res://assets/models/tutorial/Pasillo_Arreglado.glb" id="4_oeldt"]
 [ext_resource type="Script" uid="uid://c2dhob2i1igg0" path="res://scripts/tutorial/tutorial.gd" id="5_oeldt"]
@@ -34,6 +35,7 @@ size = Vector3(119.8418, 16.240997, 80.781006)
 script = ExtResource("5_oeldt")
 area_end = NodePath("EndTutorial")
 garden_scene = ExtResource("2_hwv2g")
+tutorial_movement = ExtResource("3_7kssk")
 player = NodePath("Player")
 z_boundary = NodePath("WorldBoundaries/StaticBody3D/CollisionShape3D")
 world_environment = NodePath("WorldEnvironment")
@@ -98,8 +100,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -227.958)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.9786835, -19.53186)
 shape = SubResource("BoxShape3D_g4v7s")
 debug_color = Color(0, 0.6, 0.69803923, 0.7411765)
-
-[node name="Marker3D" type="Marker3D" parent="." unique_id=1537471627]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 80)
 
 [editable path="Camera"]

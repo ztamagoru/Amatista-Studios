@@ -7,6 +7,11 @@ extends Node3D
 
 # --
 
+@export_category("Dialogs")
+@export var tutorial_movement : DialogueResource
+
+# --
+
 @export_category("Z Boundary")
 @export var player : CharacterBody3D
 @export var z_boundary : CollisionShape3D
@@ -34,6 +39,13 @@ func _ready():
 	boundary_furthest = player.global_position.z
 	
 	env.fog_enabled = true
+	
+	# --
+	
+	await get_tree().process_frame
+	
+	DialogueManager.show_dialogue_balloon(tutorial_movement, "movement")
+	
 
 func _process(_delta: float):
 	var progress := inverse_lerp(fog_start_z, fog_end_z, player.global_position.z)
