@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://f8r0kmchkfgl"
+path="res://.godot/imported/jorge.dialogue-de3fdb7a07ba806f678428dbdf730da8.tres"
+
+[deps]
+
+source_file="res://dialogs/npc/jorge.dialogue"
+dest_files=["res://.godot/imported/jorge.dialogue-de3fdb7a07ba806f678428dbdf730da8.tres"]
+
+[params]
+
+defaults=true

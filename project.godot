@@ -86,7 +86,7 @@ interact={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogs/npc/test/test.dialogue", "res://dialogs/item_grabbed.dialogue", "res://dialogs/npc/hank_scarecrow.dialogue", "res://dialogs/npc/tomas_fox.dialogue", "res://dialogs/npc/pumpkins.dialogue", "res://dialogs/npc/lucy_pudu.dialogue", "res://dialogs/tutorial/tutorial.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogs/npc/test/test.dialogue", "res://dialogs/item_grabbed.dialogue", "res://dialogs/npc/hank_scarecrow.dialogue", "res://dialogs/npc/tomas_fox.dialogue", "res://dialogs/npc/pumpkins.dialogue", "res://dialogs/npc/lucy_pudu.dialogue", "res://dialogs/tutorial/tutorial.dialogue", "res://dialogs/npc/jorge.dialogue")
 
 [physics]
 
