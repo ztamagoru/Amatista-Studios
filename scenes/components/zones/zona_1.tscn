@@ -18,16 +18,23 @@
 [ext_resource type="Script" uid="uid://co0p52gqeasdx" path="res://scripts/interactable/npc/tomas_fox.gd" id="13_eu1hp"]
 [ext_resource type="Resource" uid="uid://wgk8qp8hoxdw" path="res://dialogs/npc/tomas_fox.dialogue" id="14_qpm4l"]
 [ext_resource type="PackedScene" uid="uid://sn4mbx3h0y2s" path="res://assets/models/zone 1/npcs/guardian.glb" id="15_nkst3"]
+[ext_resource type="Texture2D" uid="uid://cnybxrosqvh0a" path="res://assets/models/zone 1/npcs/guardian_marron.png" id="16_b6yrg"]
+[ext_resource type="Texture2D" uid="uid://c1mq225edkykc" path="res://assets/models/zone 1/npcs/guardian_cabezazorro22.png" id="17_r5oa8"]
+[ext_resource type="Texture2D" uid="uid://mhsj4kr5u01s" path="res://assets/models/zone 1/npcs/guardian_orejaxd.png" id="18_m5xas"]
+[ext_resource type="Texture2D" uid="uid://bj8s55nxyueis" path="res://assets/models/zone 1/npcs/guardian_negro.png" id="19_46v6x"]
+[ext_resource type="Texture2D" uid="uid://cmyulsspfw7ta" path="res://assets/models/zone 1/npcs/guardian_cabezazorro.png" id="20_wxuwt"]
+[ext_resource type="Texture2D" uid="uid://d1chxjtto0cou" path="res://assets/models/zone 1/npcs/guardian_pata.png" id="21_drvkm"]
+[ext_resource type="Texture2D" uid="uid://6gj3kx5b4d2" path="res://assets/models/zone 1/npcs/guardian_54545.png" id="22_2jtx8"]
+[ext_resource type="Texture2D" uid="uid://bi3gbj6xpnb15" path="res://assets/models/zone 1/npcs/guardian_armaduraxd.png" id="23_fn803"]
 [ext_resource type="Texture2D" uid="uid://cvjwnpbaapkf" path="res://assets/models/zone 1/npcs/espantapajaros_texturamadera2.png" id="24_g0i58"]
 [ext_resource type="Texture2D" uid="uid://7qf1x5137s1a" path="res://assets/models/zone 1/npcs/espantapajaros_textura10.png" id="25_6keiw"]
 [ext_resource type="Texture2D" uid="uid://bfg7x0pnlv8fd" path="res://assets/models/zone 1/npcs/espantapajaros_hoja21.png" id="26_p40vx"]
 [ext_resource type="Script" uid="uid://cdo0lar8bpl3h" path="res://scripts/interactable/npc.gd" id="27_egbc0"]
 [ext_resource type="Script" uid="uid://rafvhtq5xfsk" path="res://scripts/interactable/npc/lucy.gd" id="27_hiew7"]
-[ext_resource type="PackedScene" uid="uid://blik8nndjfo35" path="res://assets/models/zone 1/npcs/placeholders/christmas_deer.glb" id="28_2mmur"]
 [ext_resource type="Resource" uid="uid://bu11swf3rbgow" path="res://dialogs/npc/lucy_pudu.dialogue" id="28_17sas"]
-[ext_resource type="Texture2D" uid="uid://bseup38gmpbox" path="res://assets/models/zone 1/npcs/placeholders/christmas_deer_0.jpg" id="30_3papl"]
 [ext_resource type="Material" uid="uid://3dh1jucld5sj" path="res://scripts/interactable/outline_material_3d.tres" id="30_vlemn"]
 [ext_resource type="PackedScene" uid="uid://i5g7aw7alf36" path="res://assets/models/zone 1/npcs/miss_sunday.glb" id="31_qpxxo"]
+[ext_resource type="PackedScene" uid="uid://d05jslitcld3i" path="res://assets/models/zone 1/npcs/lucy.glb" id="32_wympj"]
 [ext_resource type="Script" uid="uid://dnpxm4djul3fw" path="res://scripts/interactable/npc/jorge.gd" id="33_4i0xk"]
 [ext_resource type="PackedScene" uid="uid://ddquqpwxee54k" path="res://assets/models/zone 1/npcs/jorge.glb" id="33_nkst3"]
 [ext_resource type="PackedScene" uid="uid://wwwquqc6xid8" path="res://scenes/components/npcs/chicken.tscn" id="34_m271u"]
@@ -165,6 +172,83 @@ size = Vector3(278.046, 6.8494873, 293.669)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_3n6v3"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2retf"]
+resource_name = "Material.020"
+cull_mode = 2
+albedo_texture = ExtResource("16_b6yrg")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5iv8d"]
+resource_name = "Material.037"
+cull_mode = 2
+albedo_texture = ExtResource("17_r5oa8")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tqt6o"]
+resource_name = "Material.031"
+cull_mode = 2
+albedo_texture = ExtResource("18_m5xas")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pqdu1"]
+resource_name = "Material.041"
+cull_mode = 2
+albedo_texture = ExtResource("19_46v6x")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6bmys"]
+resource_name = "Material.034"
+cull_mode = 2
+albedo_texture = ExtResource("20_wxuwt")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mcosx"]
+resource_name = "Material.049"
+cull_mode = 2
+albedo_texture = ExtResource("21_drvkm")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7rqoh"]
+resource_name = "Material.035"
+cull_mode = 2
+albedo_texture = ExtResource("20_wxuwt")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4ep7"]
+resource_name = "Material.051"
+cull_mode = 2
+albedo_texture = ExtResource("22_2jtx8")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8g3k2"]
+resource_name = "Material.050"
+cull_mode = 2
+albedo_texture = ExtResource("23_fn803")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pdnds"]
+resource_name = "Material.048"
+cull_mode = 2
+albedo_texture = ExtResource("21_drvkm")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ip3wo"]
+resource_name = "Material.047"
+cull_mode = 2
+albedo_texture = ExtResource("16_b6yrg")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_voof8"]
 radius = 2.5229492
 height = 12.228699
@@ -192,22 +276,9 @@ texture_repeat = false
 [sub_resource type="BoxShape3D" id="BoxShape3D_ws4xm"]
 size = Vector3(3.796875, 11.948395, 5.2339478)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gtvam"]
-resource_name = "material"
-cull_mode = 2
-shading_mode = 0
-albedo_texture = ExtResource("30_3papl")
-metadata/_gltf_primary_texture_coord = 0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_760lv"]
-resource_name = "None"
-cull_mode = 2
-shading_mode = 0
-albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_57qmd"]
 radius = 2.180664
-height = 9.049683
+height = 11.137634
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
 radius = 3.8588867
@@ -793,7 +864,7 @@ shadow_enabled = true
 environment = SubResource("Environment_ws4xm")
 
 [node name="Player" parent="." unique_id=2109264169 node_paths=PackedStringArray("camera") instance=ExtResource("4_nq1qf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.75209, 7.3321037, -87.43518)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.593624, 7.3321037, 96.67292)
 camera = NodePath("../Camera/Pivot/Camera3D")
 audio_footsteps = Dictionary[String, AudioStream]({
 "Dirt": ExtResource("3_0g7v3"),
@@ -2638,6 +2709,19 @@ metadata/_edit_group_ = true
 [node name="guardian" parent="Map/NPCs/Tomas" unique_id=1659700864 instance=ExtResource("15_nkst3")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 4.360038, 0)
 
+[node name="Cube_040" parent="Map/NPCs/Tomas/guardian" index="0" unique_id=1269195550]
+surface_material_override/0 = SubResource("StandardMaterial3D_2retf")
+surface_material_override/1 = SubResource("StandardMaterial3D_5iv8d")
+surface_material_override/2 = SubResource("StandardMaterial3D_tqt6o")
+surface_material_override/3 = SubResource("StandardMaterial3D_pqdu1")
+surface_material_override/4 = SubResource("StandardMaterial3D_6bmys")
+surface_material_override/5 = SubResource("StandardMaterial3D_mcosx")
+surface_material_override/6 = SubResource("StandardMaterial3D_7rqoh")
+surface_material_override/7 = SubResource("StandardMaterial3D_g4ep7")
+surface_material_override/8 = SubResource("StandardMaterial3D_8g3k2")
+surface_material_override/9 = SubResource("StandardMaterial3D_pdnds")
+surface_material_override/10 = SubResource("StandardMaterial3D_ip3wo")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NPCs/Tomas" unique_id=116647149]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028593093, 1.8938751, -0.3929766)
 shape = SubResource("CapsuleShape3D_voof8")
@@ -2683,25 +2767,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5361328, 4.8835297, -3.4847
 shape = SubResource("BoxShape3D_ws4xm")
 
 [node name="Lucy" type="CharacterBody3D" parent="Map/NPCs" unique_id=592324460 node_paths=PackedStringArray("object_meshes")]
-transform = Transform3D(0.8175866, 0, 0.5758056, 0, 1, 0, -0.5758056, 0, 0.8175866, 81.94181, 3.3864145, -64.655334)
+transform = Transform3D(0.8175866, 0, 0.5758056, 0, 1, 0, -0.5758056, 0, 0.8175866, 81.94181, 3.6920853, -64.655334)
 script = ExtResource("27_hiew7")
 gives_quest = true
 quest_name = "Restaurar el bosque"
 can_interact = true
-object_meshes = [NodePath("Sketchfab_Scene/Sketchfab_model/Xmas deer_obj_cleaner_materialmerger_gles/Object_2"), NodePath("Sketchfab_Scene/Sketchfab_model/Xmas deer_obj_cleaner_materialmerger_gles/Object_3")]
+object_meshes = [NodePath("lucy/Cube_056")]
 has_dialog = true
 first_time_dialog = null
 dialogue = ExtResource("28_17sas")
 metadata/_custom_type_script = "uid://cdo0lar8bpl3h"
 metadata/_edit_group_ = true
-
-[node name="Sketchfab_Scene" parent="Map/NPCs/Lucy" unique_id=1070009452 instance=ExtResource("28_2mmur")]
-
-[node name="Object_2" parent="Map/NPCs/Lucy/Sketchfab_Scene/Sketchfab_model/Xmas deer_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(1070009452, 1336037539) index="0" unique_id=694849904]
-surface_material_override/0 = SubResource("StandardMaterial3D_gtvam")
-
-[node name="Object_3" parent="Map/NPCs/Lucy/Sketchfab_Scene/Sketchfab_model/Xmas deer_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(1070009452, 1336037539) index="1" unique_id=1346789702]
-surface_material_override/0 = SubResource("StandardMaterial3D_760lv")
 
 [node name="CameraZoomArea" type="Marker3D" parent="Map/NPCs/Lucy" unique_id=28962165 node_paths=PackedStringArray("player", "camera")]
 transform = Transform3D(0.5758056, 0, 0.8175867, 0, 1, 0, -0.8175867, 0, 0.5758056, 0, 0, 0)
@@ -2714,8 +2790,11 @@ camera_rotation = Vector3(-35, 0, 0)
 metadata/_custom_type_script = "uid://q4hkvlcaud4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NPCs/Lucy" unique_id=2140283039]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5613632, 3.7417603, 3.0857506)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23801422, 4.785736, 2.630825)
 shape = SubResource("CapsuleShape3D_57qmd")
+
+[node name="lucy" parent="Map/NPCs/Lucy" unique_id=1779687701 instance=ExtResource("32_wympj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.2566008e-07, 5.90757, 2.5354602)
 
 [node name="Miss Sunday" type="CharacterBody3D" parent="Map/NPCs" unique_id=428079424]
 transform = Transform3D(0.83134973, 0, -0.5557497, 0, 1, 0, 0.5557497, 0, 0.83134973, 94.07686, 6.9682894, -138.8654)
@@ -2824,7 +2903,7 @@ shape = SubResource("CylinderShape3D_3gngh")
 [editable path="Map/zona1"]
 [editable path="Map/NPCs/Tomas/guardian"]
 [editable path="Map/NPCs/Scarecrow/espantapajaros"]
-[editable path="Map/NPCs/Lucy/Sketchfab_Scene"]
+[editable path="Map/NPCs/Lucy/lucy"]
 [editable path="Map/NPCs/Miss Sunday/miss_sunday"]
 [editable path="Map/NPCs/Jorge/jorge"]
 [editable path="Map/NPCs/Chickens/Chicken"]
