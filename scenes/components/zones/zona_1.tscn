@@ -31,8 +31,8 @@
 [ext_resource type="PackedScene" uid="uid://blik8nndjfo35" path="res://assets/models/zone 1/npcs/placeholders/christmas_deer.glb" id="28_2mmur"]
 [ext_resource type="Resource" uid="uid://bu11swf3rbgow" path="res://dialogs/npc/lucy_pudu.dialogue" id="28_17sas"]
 [ext_resource type="PackedScene" uid="uid://c6fjb06ccdg7i" path="res://assets/models/zone 1/npcs/placeholders/kiara_in_a_chicken_suit.glb" id="29_q2r7i"]
-[ext_resource type="PackedScene" uid="uid://bncqe5vr2jtqg" path="res://assets/models/zone 1/npcs/placeholders/el_bobrito_gangsterito_gangster__beaver.glb" id="30_2mmur"]
 [ext_resource type="Texture2D" uid="uid://bseup38gmpbox" path="res://assets/models/zone 1/npcs/placeholders/christmas_deer_0.jpg" id="30_3papl"]
+[ext_resource type="PackedScene" uid="uid://ddquqpwxee54k" path="res://assets/models/zone 1/npcs/jorge.glb" id="33_nkst3"]
 [ext_resource type="PackedScene" uid="uid://wwwquqc6xid8" path="res://scenes/components/npcs/chicken.tscn" id="34_m271u"]
 [ext_resource type="Texture2D" uid="uid://bll65wwd0qmun" path="res://assets/models/zone 1/trees/arbolarrayan1_texturamadera1.png" id="37_3papl"]
 [ext_resource type="Shader" uid="uid://si1l01yy2t8a" path="res://shaders/environment/tree.gdshader" id="37_dvkrl"]
@@ -2762,14 +2762,17 @@ metadata/_edit_group_ = true
 transform = Transform3D(0.9999999, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 0.9999999, 0, 1.784668, 0)
 shape = SubResource("CapsuleShape3D_g4v7s")
 
-[node name="NPC" type="CharacterBody3D" parent="Map/NPCs" unique_id=1584431337]
+[node name="Jorge" type="CharacterBody3D" parent="Map/NPCs" unique_id=1584431337 node_paths=PackedStringArray("object_meshes")]
 transform = Transform3D(0.9325733, 0, 0.36098057, 0, 1, 0, -0.36098057, 0, 0.9325733, -103.33814, 8.1054125, -124.45139)
 script = ExtResource("27_egbc0")
+can_interact = true
+object_meshes = [NodePath("jorge/Cube_058")]
 metadata/_custom_type_script = "uid://cdo0lar8bpl3h"
 
-[node name="Sketchfab_Scene" parent="Map/NPCs/NPC" unique_id=1192618600 instance=ExtResource("30_2mmur")]
+[node name="jorge" parent="Map/NPCs/Jorge" unique_id=1704506808 instance=ExtResource("33_nkst3")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NPCs/NPC" unique_id=146199996]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NPCs/Jorge" unique_id=146199996]
 transform = Transform3D(1.0000007, 0, 2.3841858e-07, 0, 1, 0, -2.3841858e-07, 0, 1.0000007, 0, -0.33251953, 0)
 shape = SubResource("CapsuleShape3D_yf5fn")
 
@@ -2824,4 +2827,5 @@ parameters/looping = true
 [editable path="Map/NPCs/Tomas/Sketchfab_Scene"]
 [editable path="Map/NPCs/Scarecrow/espantapajaros"]
 [editable path="Map/NPCs/Lucy/Sketchfab_Scene"]
+[editable path="Map/NPCs/Jorge/jorge"]
 [editable path="Map/NPCs/Chickens/Chicken"]
