@@ -17,10 +17,7 @@
 [ext_resource type="Resource" uid="uid://bdyrfut3v75pd" path="res://dialogs/npc/hank_scarecrow.dialogue" id="11_2mm5i"]
 [ext_resource type="Script" uid="uid://co0p52gqeasdx" path="res://scripts/interactable/npc/tomas_fox.gd" id="13_eu1hp"]
 [ext_resource type="Resource" uid="uid://wgk8qp8hoxdw" path="res://dialogs/npc/tomas_fox.dialogue" id="14_qpm4l"]
-[ext_resource type="PackedScene" uid="uid://wvb38fvb5i2r" path="res://assets/models/zone 1/npcs/placeholders/fox_in_a_cape.glb" id="15_v8o8s"]
-[ext_resource type="Texture2D" uid="uid://cffbdwuy8kgjd" path="res://assets/models/zone 1/npcs/placeholders/fox_in_a_cape_0.png" id="18_0n588"]
-[ext_resource type="Texture2D" uid="uid://b4huc4yhb561o" path="res://assets/models/zone 1/npcs/placeholders/fox_in_a_cape_1.png" id="19_o2vt1"]
-[ext_resource type="Texture2D" uid="uid://cxoqc2sd1u4xd" path="res://assets/models/zone 1/npcs/placeholders/fox_in_a_cape_2.png" id="20_pl6ja"]
+[ext_resource type="PackedScene" uid="uid://sn4mbx3h0y2s" path="res://assets/models/zone 1/npcs/guardian.glb" id="15_nkst3"]
 [ext_resource type="Texture2D" uid="uid://cvjwnpbaapkf" path="res://assets/models/zone 1/npcs/espantapajaros_texturamadera2.png" id="24_g0i58"]
 [ext_resource type="Texture2D" uid="uid://7qf1x5137s1a" path="res://assets/models/zone 1/npcs/espantapajaros_textura10.png" id="25_6keiw"]
 [ext_resource type="Texture2D" uid="uid://bfg7x0pnlv8fd" path="res://assets/models/zone 1/npcs/espantapajaros_hoja21.png" id="26_p40vx"]
@@ -28,8 +25,9 @@
 [ext_resource type="Script" uid="uid://rafvhtq5xfsk" path="res://scripts/interactable/npc/lucy.gd" id="27_hiew7"]
 [ext_resource type="PackedScene" uid="uid://blik8nndjfo35" path="res://assets/models/zone 1/npcs/placeholders/christmas_deer.glb" id="28_2mmur"]
 [ext_resource type="Resource" uid="uid://bu11swf3rbgow" path="res://dialogs/npc/lucy_pudu.dialogue" id="28_17sas"]
-[ext_resource type="PackedScene" uid="uid://c6fjb06ccdg7i" path="res://assets/models/zone 1/npcs/placeholders/kiara_in_a_chicken_suit.glb" id="29_q2r7i"]
 [ext_resource type="Texture2D" uid="uid://bseup38gmpbox" path="res://assets/models/zone 1/npcs/placeholders/christmas_deer_0.jpg" id="30_3papl"]
+[ext_resource type="Material" uid="uid://3dh1jucld5sj" path="res://scripts/interactable/outline_material_3d.tres" id="30_vlemn"]
+[ext_resource type="PackedScene" uid="uid://i5g7aw7alf36" path="res://assets/models/zone 1/npcs/miss_sunday.glb" id="31_qpxxo"]
 [ext_resource type="Script" uid="uid://dnpxm4djul3fw" path="res://scripts/interactable/npc/jorge.gd" id="33_4i0xk"]
 [ext_resource type="PackedScene" uid="uid://ddquqpwxee54k" path="res://assets/models/zone 1/npcs/jorge.glb" id="33_nkst3"]
 [ext_resource type="PackedScene" uid="uid://wwwquqc6xid8" path="res://scenes/components/npcs/chicken.tscn" id="34_m271u"]
@@ -170,20 +168,6 @@ size = Vector3(278.046, 6.8494873, 293.669)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_voof8"]
 radius = 2.5229492
 height = 12.228699
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_euqe3"]
-resource_name = "material"
-cull_mode = 2
-albedo_texture = ExtResource("18_0n588")
-metallic = 1.0
-metallic_texture = ExtResource("19_o2vt1")
-metallic_texture_channel = 2
-roughness = 0.7406035
-roughness_texture = ExtResource("19_o2vt1")
-roughness_texture_channel = 1
-normal_enabled = true
-normal_texture = ExtResource("20_pl6ja")
-metadata/_gltf_primary_texture_coord = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3fpa"]
 resource_name = "Material.047"
@@ -2643,32 +2627,20 @@ script = ExtResource("13_eu1hp")
 gives_quest = true
 quest_name = "El arito"
 quest_description = "Tomás me dijo que perdió su arito y me pidió si es que podía encontrarlo."
-object_meshes = [NodePath("Sketchfab_Scene/Sketchfab_model/Fox in a Cape_fbx/RootNode/Armature/Object_4/Skeleton3D/Object_7"), NodePath("Sketchfab_Scene/Sketchfab_model/Fox in a Cape_fbx/RootNode/Armature/Object_4/Skeleton3D/Object_9"), NodePath("Sketchfab_Scene/Sketchfab_model/Fox in a Cape_fbx/RootNode/Armature/Object_4/Skeleton3D/Object_11"), NodePath("Sketchfab_Scene/Sketchfab_model/Fox in a Cape_fbx/RootNode/Armature/Object_4/Skeleton3D/Object_13"), NodePath("Sketchfab_Scene/Sketchfab_model/Fox in a Cape_fbx/RootNode/Armature/Object_4/Skeleton3D/Object_48")]
+can_interact = true
+object_meshes = [NodePath("guardian/Cube_040")]
 has_dialog = true
+first_time_dialog = null
 dialogue = ExtResource("14_qpm4l")
 metadata/_custom_type_script = "uid://cdo0lar8bpl3h"
 metadata/_edit_group_ = true
 
+[node name="guardian" parent="Map/NPCs/Tomas" unique_id=1659700864 instance=ExtResource("15_nkst3")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 4.360038, 0)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NPCs/Tomas" unique_id=116647149]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028593093, 1.8938751, -0.3929766)
 shape = SubResource("CapsuleShape3D_voof8")
-
-[node name="Sketchfab_Scene" parent="Map/NPCs/Tomas" unique_id=371661239 instance=ExtResource("15_v8o8s")]
-
-[node name="Object_7" parent="Map/NPCs/Tomas/Sketchfab_Scene/Sketchfab_model/Fox in a Cape_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(371661239, 2025840129) index="0" unique_id=1005520970]
-surface_material_override/0 = SubResource("StandardMaterial3D_euqe3")
-
-[node name="Object_9" parent="Map/NPCs/Tomas/Sketchfab_Scene/Sketchfab_model/Fox in a Cape_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(371661239, 2025840129) index="1" unique_id=1745854914]
-surface_material_override/0 = SubResource("StandardMaterial3D_euqe3")
-
-[node name="Object_11" parent="Map/NPCs/Tomas/Sketchfab_Scene/Sketchfab_model/Fox in a Cape_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(371661239, 2025840129) index="2" unique_id=1996199001]
-surface_material_override/0 = SubResource("StandardMaterial3D_euqe3")
-
-[node name="Object_13" parent="Map/NPCs/Tomas/Sketchfab_Scene/Sketchfab_model/Fox in a Cape_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(371661239, 2025840129) index="3" unique_id=1969324834]
-surface_material_override/0 = SubResource("StandardMaterial3D_euqe3")
-
-[node name="Object_48" parent="Map/NPCs/Tomas/Sketchfab_Scene/Sketchfab_model/Fox in a Cape_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(371661239, 2025840129) index="4" unique_id=795727050]
-surface_material_override/0 = SubResource("StandardMaterial3D_euqe3")
 
 [node name="CameraZoomArea2" type="Marker3D" parent="Map/NPCs/Tomas" unique_id=979301794 node_paths=PackedStringArray("player", "camera")]
 transform = Transform3D(0.91425395, 0, -0.4051416, 0, 1, 0, 0.4051416, 0, 0.91425395, 0, 0, 0)
@@ -2692,8 +2664,8 @@ is_subquest = true
 quest_holder = NodePath("../Tomas")
 can_interact = true
 object_meshes = [NodePath("espantapajaros/Cube_015")]
-mesh_material = 1
 has_dialog = true
+first_time_dialog = null
 dialogue = ExtResource("11_2mm5i")
 metadata/_custom_type_script = "uid://cdo0lar8bpl3h"
 metadata/_edit_group_ = true
@@ -2718,6 +2690,7 @@ quest_name = "Restaurar el bosque"
 can_interact = true
 object_meshes = [NodePath("Sketchfab_Scene/Sketchfab_model/Xmas deer_obj_cleaner_materialmerger_gles/Object_2"), NodePath("Sketchfab_Scene/Sketchfab_model/Xmas deer_obj_cleaner_materialmerger_gles/Object_3")]
 has_dialog = true
+first_time_dialog = null
 dialogue = ExtResource("28_17sas")
 metadata/_custom_type_script = "uid://cdo0lar8bpl3h"
 metadata/_edit_group_ = true
@@ -2747,10 +2720,14 @@ shape = SubResource("CapsuleShape3D_57qmd")
 [node name="Miss Sunday" type="CharacterBody3D" parent="Map/NPCs" unique_id=428079424]
 transform = Transform3D(0.83134973, 0, -0.5557497, 0, 1, 0, 0.5557497, 0, 0.83134973, 94.07686, 6.9682894, -138.8654)
 script = ExtResource("27_egbc0")
+has_dialog = true
+first_time_dialog = null
+dialogue = ExtResource("30_vlemn")
 metadata/_custom_type_script = "uid://cdo0lar8bpl3h"
 metadata/_edit_group_ = true
 
-[node name="Sketchfab_Scene" parent="Map/NPCs/Miss Sunday" unique_id=1990193631 instance=ExtResource("29_q2r7i")]
+[node name="miss_sunday" parent="Map/NPCs/Miss Sunday" unique_id=604614495 instance=ExtResource("31_qpxxo")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 2.496851, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NPCs/Miss Sunday" unique_id=315426095]
 transform = Transform3D(0.9999999, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 0.9999999, 0, 1.784668, 0)
@@ -2764,6 +2741,7 @@ quest_name = "Flower quest"
 quest_description = "Jorge me pidió que le recolectara unas flores, pero no me quedó bien claro de qué color las quiere."
 can_interact = true
 has_dialog = true
+first_time_dialog = null
 dialogue = ExtResource("34_vlemn")
 metadata/_custom_type_script = "uid://cdo0lar8bpl3h"
 
@@ -2781,6 +2759,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.42094, 0, -130.8313)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.997337, 5.8247795, 5.1152496)
 look_target = NodePath("../../../../Player")
 nav_region = NodePath("../../../ChickenCoopZone/NavigationRegion3D")
+has_dialog = true
+first_time_dialog = null
+dialogue = ExtResource("30_vlemn")
 
 [node name="Trees" type="Node3D" parent="Map" unique_id=1916969591]
 
@@ -2841,9 +2822,10 @@ shape = SubResource("CylinderShape3D_3gngh")
 [editable path="Map/CropsZone/PuzzlePumpkin/calabazas(shellgame)2"]
 [editable path="Map/CropsZone/PuzzlePumpkin/calabazas(shellgame)3"]
 [editable path="Map/zona1"]
-[editable path="Map/NPCs/Tomas/Sketchfab_Scene"]
+[editable path="Map/NPCs/Tomas/guardian"]
 [editable path="Map/NPCs/Scarecrow/espantapajaros"]
 [editable path="Map/NPCs/Lucy/Sketchfab_Scene"]
+[editable path="Map/NPCs/Miss Sunday/miss_sunday"]
 [editable path="Map/NPCs/Jorge/jorge"]
 [editable path="Map/NPCs/Chickens/Chicken"]
 [editable path="OrangeFlower/flower_orange"]
