@@ -105,6 +105,12 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -
 [node name="Pasillo_Arreglado2" parent="Hallway" unique_id=96680980 instance=ExtResource("4_oeldt")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -9.442136, -219)
 
+[node name="Pasillo_Arreglado3" parent="Hallway" unique_id=1304402566 instance=ExtResource("4_oeldt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -9.442, -438)
+
+[node name="Pasillo_Arreglado4" parent="Hallway" unique_id=1926220355 instance=ExtResource("4_oeldt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -9.442, -657)
+
 [node name="EndTutorial" type="Area3D" parent="." unique_id=1060985997]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -227.958)
 
