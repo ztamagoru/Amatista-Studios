@@ -9,7 +9,6 @@ class_name Interactable
 @export_group("Can_Interact")
 @export_custom(PROPERTY_HINT_GROUP_ENABLE, "") var can_interact : bool = false
 @export var object_meshes : Array[MeshInstance3D]
-@export var mesh_material : int = 0
 
 @export_group("Dialog")
 @export_custom(PROPERTY_HINT_GROUP_ENABLE, "") var has_dialog : bool = false
