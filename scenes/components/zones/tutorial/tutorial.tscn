@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dnu7on0g2bdv4" path="res://assets/models/tutorial/Pasillo_Arreglado.glb" id="4_oeldt"]
 [ext_resource type="Script" uid="uid://c2dhob2i1igg0" path="res://scripts/tutorial/tutorial.gd" id="5_oeldt"]
 [ext_resource type="PackedScene" uid="uid://bfh8nsyv0y463" path="res://scenes/components/player/camera.tscn" id="5_sdmj0"]
+[ext_resource type="PackedScene" uid="uid://d05jslitcld3i" path="res://assets/models/zone 1/npcs/lucy.glb" id="8_3we8h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6kmcb"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -19,9 +20,8 @@ sky_material = SubResource("ProceduralSkyMaterial_6kmcb")
 background_mode = 2
 sky = SubResource("Sky_oeldt")
 tonemap_mode = 2
-fog_light_color = Color(0.3529412, 0.4392157, 0.4, 1)
-fog_height = 230.01
-volumetric_fog_density = 0.0392
+fog_depth_curve = 3.8637466
+fog_depth_end = 360.2
 volumetric_fog_temporal_reprojection_enabled = false
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_yf5fn"]
@@ -31,15 +31,23 @@ volumetric_fog_temporal_reprojection_enabled = false
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
 size = Vector3(119.8418, 16.240997, 80.781006)
 
-[node name="Tutorial" type="Node3D" unique_id=683256499 node_paths=PackedStringArray("area_end", "player", "z_boundary", "world_environment")]
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
 radius = 2.0649414
 height = 8.0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
+size = Vector3(115.6355, 7.9298096, 9.821777)
+
+[node name="Tutorial" type="Node3D" unique_id=683256499 node_paths=PackedStringArray("area_end", "lucy", "lucy_signal_area", "player", "z_boundary", "world_environment")]
 script = ExtResource("5_oeldt")
 area_end = NodePath("EndTutorial")
 garden_scene = ExtResource("2_hwv2g")
 tutorial_movement = ExtResource("3_7kssk")
+lucy = NodePath("Lucy")
+lucy_mov_speed = 50.0
+lucy_rot_speed = 10.0
+lucy_final_pos = Vector3(0, 0, -437.4697)
+lucy_signal_area = NodePath("HalfTutorial")
 player = NodePath("Player")
 z_boundary = NodePath("WorldBoundaries/StaticBody3D/CollisionShape3D")
 world_environment = NodePath("WorldEnvironment")
@@ -106,12 +114,22 @@ shape = SubResource("BoxShape3D_g4v7s")
 debug_color = Color(0, 0.6, 0.69803923, 0.7411765)
 
 [node name="Lucy" type="CharacterBody3D" parent="." unique_id=648067272]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.268488, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 5.268488, 0)
 
 [node name="lucy" parent="Lucy" unique_id=1224823781 instance=ExtResource("8_3we8h")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Lucy" unique_id=87146196]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.0088658, 0)
 shape = SubResource("CapsuleShape3D_g4v7s")
+
+[node name="HalfTutorial" type="Area3D" parent="." unique_id=805403461]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.884224, 0, 46.09271)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HalfTutorial" unique_id=1004946924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.442261, 3.4649048, -5.760315)
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1969168011]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -437.4697)
 
 [editable path="Camera"]
