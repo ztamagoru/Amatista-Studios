@@ -7,11 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://delarm7tt024v" path="res://assets/sounds/sfx/grounds/footsteps_wood.mp3" id="4_2mm5i"]
 [ext_resource type="PackedScene" uid="uid://do3crd75ny4ra" path="res://scenes/components/player/player.tscn" id="4_nq1qf"]
 [ext_resource type="Script" uid="uid://bf2jk0pdjkoh3" path="res://addons/transparecy circle/mesh_example.gd" id="4_ws4xm"]
-[ext_resource type="Script" uid="uid://boy0di8p5br8u" path="res://scripts/interactable/npc/puzzle_pumpkin.gd" id="6_5koma"]
 [ext_resource type="Script" uid="uid://clnd8r6n7qdgn" path="res://scenes/components/zones/area.gd" id="6_8ybk8"]
 [ext_resource type="PackedScene" uid="uid://bfh8nsyv0y463" path="res://scenes/components/player/camera.tscn" id="6_ws4xm"]
 [ext_resource type="PackedScene" uid="uid://cmi8pms7we0rl" path="res://assets/models/zone 1/puzzle/calabazas(shellgame).glb" id="7_7f8ev"]
-[ext_resource type="Resource" uid="uid://brak1n531wwi7" path="res://dialogs/npc/pumpkins.dialogue" id="7_yqgfd"]
 [ext_resource type="Script" uid="uid://q4hkvlcaud4" path="res://scenes/components/zones/camera_zoom_area.gd" id="8_58w3p"]
 [ext_resource type="Texture2D" uid="uid://crkytjchqlcg5" path="res://assets/models/zone 1/puzzle/calabazas(shellgame)_textura verde.png" id="9_5koma"]
 [ext_resource type="Script" uid="uid://di6ihxodtyqu4" path="res://scripts/interactable/npc/scarecrow.gd" id="10_0g7v3"]
@@ -32,8 +30,10 @@
 [ext_resource type="Resource" uid="uid://bu11swf3rbgow" path="res://dialogs/npc/lucy_pudu.dialogue" id="28_17sas"]
 [ext_resource type="PackedScene" uid="uid://c6fjb06ccdg7i" path="res://assets/models/zone 1/npcs/placeholders/kiara_in_a_chicken_suit.glb" id="29_q2r7i"]
 [ext_resource type="Texture2D" uid="uid://bseup38gmpbox" path="res://assets/models/zone 1/npcs/placeholders/christmas_deer_0.jpg" id="30_3papl"]
+[ext_resource type="Script" uid="uid://dnpxm4djul3fw" path="res://scripts/interactable/npc/jorge.gd" id="33_4i0xk"]
 [ext_resource type="PackedScene" uid="uid://ddquqpwxee54k" path="res://assets/models/zone 1/npcs/jorge.glb" id="33_nkst3"]
 [ext_resource type="PackedScene" uid="uid://wwwquqc6xid8" path="res://scenes/components/npcs/chicken.tscn" id="34_m271u"]
+[ext_resource type="Resource" uid="uid://f8r0kmchkfgl" path="res://dialogs/npc/jorge.dialogue" id="34_vlemn"]
 [ext_resource type="Texture2D" uid="uid://bll65wwd0qmun" path="res://assets/models/zone 1/trees/arbolarrayan1_texturamadera1.png" id="37_3papl"]
 [ext_resource type="Shader" uid="uid://si1l01yy2t8a" path="res://shaders/environment/tree.gdshader" id="37_dvkrl"]
 [ext_resource type="Script" uid="uid://bsgs4m6qrp2pv" path="res://scripts/multi_mesh_instance_3d.gd" id="37_q2r7i"]
@@ -51,6 +51,8 @@
 [ext_resource type="Texture2D" uid="uid://id3ghnp27u3b" path="res://assets/models/zone 1/trees/arbol_coihue_1_hoja2re.png" id="45_4i0xk"]
 [ext_resource type="Texture2D" uid="uid://kjbecns7oyr7" path="res://assets/models/zone 1/trees/arbol_coihue_2_hoja2re.png" id="46_vlemn"]
 [ext_resource type="AudioStream" uid="uid://d145aetqv8ucx" path="res://assets/sounds/music/music_garden.mp3" id="51_nkst3"]
+[ext_resource type="Script" uid="uid://cnkj0mblmju7d" path="res://scripts/interactable/item.gd" id="52_4i0xk"]
+[ext_resource type="PackedScene" uid="uid://bmnqimsdrs28x" path="res://assets/models/zone 1/flowers/flower_orange.glb" id="53_vlemn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3n6v3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -793,6 +795,10 @@ instance_count = 6
 mesh = SubResource("ArrayMesh_h00gx")
 buffer = PackedFloat32Array(1, 0, 0, -150.24344, 0, 1, 0, 33.75072, 0, 0, 1, 22.523733, 0, 0, 0, 0, 1, 0, 0, -66.03543, 0, 1, 0, 33.75072, 0, 0, 1, 93.16629, 0, 0, 0, 0, 1, 0, 0, -117.73762, 0, 1, 0, 33.75072, 0, 0, 1, 40.952232, 0, 0, 0, 0, 1, 0, 0, -120.553085, 0, 1, 0, 33.75072, 0, 0, 1, 6.6547546, 0, 0, 0, 0, 1, 0, 0, -78.57704, 0, 1, 0, 33.75072, 0, 0, 1, 73.96994, 0, 0, 0, 0, 1, 0, 0, -86.51155, 0, 1, 0, 33.75072, 0, 0, 1, 41.72008, 0, 0, 0, 0)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3gngh"]
+height = 8.35498
+radius = 1.5927734
+
 [node name="Zona1" type="Node3D" unique_id=1401956631]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1790202128]
@@ -803,7 +809,7 @@ shadow_enabled = true
 environment = SubResource("Environment_ws4xm")
 
 [node name="Player" parent="." unique_id=2109264169 node_paths=PackedStringArray("camera") instance=ExtResource("4_nq1qf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.92051, 7.3321037, 99.60565)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.75209, 7.3321037, -87.43518)
 camera = NodePath("../Camera/Pivot/Camera3D")
 audio_footsteps = Dictionary[String, AudioStream]({
 "Dirt": ExtResource("3_0g7v3"),
@@ -822,20 +828,8 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0
 [node name="CropsZone" type="Node3D" parent="Map" unique_id=1133006840]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 33.329094, 0, 62.413937)
 
-[node name="PuzzlePumpkin" type="CharacterBody3D" parent="Map/CropsZone" unique_id=604124997 node_paths=PackedStringArray("player", "quest_giver", "puzzle_layer", "puzzle_subviewport", "object_meshes")]
+[node name="PuzzlePumpkin" type="CharacterBody3D" parent="Map/CropsZone" unique_id=604124997]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.000004, 5.627, -42.568)
-script = ExtResource("6_5koma")
-player = NodePath("../../../Player")
-quest_giver = NodePath("../../NPCs/Scarecrow")
-has_puzzle = true
-puzzle_scene = "res://scenes/components/puzzles/cup_puzzle.tscn"
-puzzle_layer = NodePath("Puzzle")
-puzzle_subviewport = NodePath("Puzzle/SubViewportContainer/SubViewport")
-can_interact = true
-object_meshes = [NodePath("calabazas(shellgame)/Cube_020"), NodePath("calabazas(shellgame)2/Cube_020"), NodePath("calabazas(shellgame)3/Cube_020")]
-has_dialog = true
-first_time_dialog = false
-dialogue = ExtResource("7_yqgfd")
 metadata/_custom_type_script = "uid://cnkj0mblmju7d"
 
 [node name="Puzzle" type="CanvasLayer" parent="Map/CropsZone/PuzzlePumpkin" unique_id=1229369538]
@@ -2762,11 +2756,15 @@ metadata/_edit_group_ = true
 transform = Transform3D(0.9999999, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 0.9999999, 0, 1.784668, 0)
 shape = SubResource("CapsuleShape3D_g4v7s")
 
-[node name="Jorge" type="CharacterBody3D" parent="Map/NPCs" unique_id=1584431337 node_paths=PackedStringArray("object_meshes")]
+[node name="Jorge" type="CharacterBody3D" parent="Map/NPCs" unique_id=1584431337]
 transform = Transform3D(0.9325733, 0, 0.36098057, 0, 1, 0, -0.36098057, 0, 0.9325733, -103.33814, 8.1054125, -124.45139)
-script = ExtResource("27_egbc0")
+script = ExtResource("33_4i0xk")
+gives_quest = true
+quest_name = "Flower quest"
+quest_description = "Jorge me pidió que le recolectara unas flores, pero no me quedó bien claro de qué color las quiere."
 can_interact = true
-object_meshes = [NodePath("jorge/Cube_058")]
+has_dialog = true
+dialogue = ExtResource("34_vlemn")
 metadata/_custom_type_script = "uid://cdo0lar8bpl3h"
 
 [node name="jorge" parent="Map/NPCs/Jorge" unique_id=1704506808 instance=ExtResource("33_nkst3")]
@@ -2819,6 +2817,25 @@ autoplay = true
 bus = &"Music"
 parameters/looping = true
 
+[node name="OrangeFlower" type="CharacterBody3D" parent="." unique_id=1271231664]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.11824, -1.9073486e-06, -105.98768)
+script = ExtResource("52_4i0xk")
+is_pickable = true
+item_quantity = 1
+can_interact = true
+metadata/_custom_type_script = "uid://cnkj0mblmju7d"
+metadata/_edit_group_ = true
+
+[node name="flower_orange" parent="OrangeFlower" unique_id=1882753760 instance=ExtResource("53_vlemn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.658309, 0)
+
+[node name="hoja12" parent="OrangeFlower/flower_orange" index="0" unique_id=691396357]
+transform = Transform3D(5.942163, 0, 0, 0, 0.052314237, -5.9419327, 0, 5.9419327, 0.052314237, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OrangeFlower" unique_id=88606933]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.12542, 0)
+shape = SubResource("CylinderShape3D_3gngh")
+
 [editable path="Camera"]
 [editable path="Map/CropsZone/PuzzlePumpkin/calabazas(shellgame)"]
 [editable path="Map/CropsZone/PuzzlePumpkin/calabazas(shellgame)2"]
@@ -2829,3 +2846,4 @@ parameters/looping = true
 [editable path="Map/NPCs/Lucy/Sketchfab_Scene"]
 [editable path="Map/NPCs/Jorge/jorge"]
 [editable path="Map/NPCs/Chickens/Chicken"]
+[editable path="OrangeFlower/flower_orange"]
