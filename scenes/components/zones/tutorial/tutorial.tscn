@@ -32,6 +32,10 @@ volumetric_fog_temporal_reprojection_enabled = false
 size = Vector3(119.8418, 16.240997, 80.781006)
 
 [node name="Tutorial" type="Node3D" unique_id=683256499 node_paths=PackedStringArray("area_end", "player", "z_boundary", "world_environment")]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
+radius = 2.0649414
+height = 8.0
+
 script = ExtResource("5_oeldt")
 area_end = NodePath("EndTutorial")
 garden_scene = ExtResource("2_hwv2g")
@@ -100,5 +104,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -227.958)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.9786835, -19.53186)
 shape = SubResource("BoxShape3D_g4v7s")
 debug_color = Color(0, 0.6, 0.69803923, 0.7411765)
+
+[node name="Lucy" type="CharacterBody3D" parent="." unique_id=648067272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.268488, 0)
+
+[node name="lucy" parent="Lucy" unique_id=1224823781 instance=ExtResource("8_3we8h")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lucy" unique_id=87146196]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.0088658, 0)
+shape = SubResource("CapsuleShape3D_g4v7s")
 
 [editable path="Camera"]
