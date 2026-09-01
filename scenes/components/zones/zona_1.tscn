@@ -7,9 +7,11 @@
 [ext_resource type="AudioStream" uid="uid://delarm7tt024v" path="res://assets/sounds/sfx/grounds/footsteps_wood.mp3" id="4_2mm5i"]
 [ext_resource type="PackedScene" uid="uid://do3crd75ny4ra" path="res://scenes/components/player/player.tscn" id="4_nq1qf"]
 [ext_resource type="Script" uid="uid://bf2jk0pdjkoh3" path="res://addons/transparecy circle/mesh_example.gd" id="4_ws4xm"]
+[ext_resource type="Script" uid="uid://boy0di8p5br8u" path="res://scripts/interactable/npc/puzzle_pumpkin.gd" id="6_5koma"]
 [ext_resource type="Script" uid="uid://clnd8r6n7qdgn" path="res://scenes/components/zones/area.gd" id="6_8ybk8"]
 [ext_resource type="PackedScene" uid="uid://bfh8nsyv0y463" path="res://scenes/components/player/camera.tscn" id="6_ws4xm"]
 [ext_resource type="PackedScene" uid="uid://cmi8pms7we0rl" path="res://assets/models/zone 1/puzzle/calabazas(shellgame).glb" id="7_7f8ev"]
+[ext_resource type="Resource" uid="uid://brak1n531wwi7" path="res://dialogs/npc/pumpkins.dialogue" id="7_yqgfd"]
 [ext_resource type="Script" uid="uid://q4hkvlcaud4" path="res://scenes/components/zones/camera_zoom_area.gd" id="8_58w3p"]
 [ext_resource type="Texture2D" uid="uid://crkytjchqlcg5" path="res://assets/models/zone 1/puzzle/calabazas(shellgame)_textura verde.png" id="9_5koma"]
 [ext_resource type="Script" uid="uid://di6ihxodtyqu4" path="res://scripts/interactable/npc/scarecrow.gd" id="10_0g7v3"]
@@ -883,8 +885,20 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0
 [node name="CropsZone" type="Node3D" parent="Map" unique_id=1133006840]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 33.329094, 0, 62.413937)
 
-[node name="PuzzlePumpkin" type="CharacterBody3D" parent="Map/CropsZone" unique_id=604124997]
+[node name="PuzzlePumpkin" type="CharacterBody3D" parent="Map/CropsZone" unique_id=604124997 node_paths=PackedStringArray("player", "quest_giver", "puzzle_layer", "puzzle_subviewport", "object_meshes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.000004, 5.627, -42.568)
+script = ExtResource("6_5koma")
+player = NodePath("../../../Player")
+quest_giver = NodePath("../../NPCs/Scarecrow")
+has_puzzle = true
+puzzle_scene = "res://scenes/components/puzzles/cup_puzzle.tscn"
+puzzle_layer = NodePath("Puzzle")
+puzzle_subviewport = NodePath("Puzzle/SubViewportContainer/SubViewport")
+can_interact = true
+object_meshes = [NodePath("calabazas(shellgame)/Cube_020"), NodePath("calabazas(shellgame)2/Cube_020"), NodePath("calabazas(shellgame)3/Cube_020")]
+has_dialog = true
+first_time_dialog = false
+dialogue = ExtResource("7_yqgfd")
 metadata/_custom_type_script = "uid://cnkj0mblmju7d"
 
 [node name="Puzzle" type="CanvasLayer" parent="Map/CropsZone/PuzzlePumpkin" unique_id=1229369538]
