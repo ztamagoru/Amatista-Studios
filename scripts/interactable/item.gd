@@ -12,11 +12,14 @@ class_name Item
 @export var puzzle_layer : CanvasLayer
 @export var puzzle_subviewport : SubViewport
 
+# --
+
 @export_group("Pickable")
 @export_custom(PROPERTY_HINT_GROUP_ENABLE, "") var is_pickable : bool = false
-@export var item_id : String
-@export var item_name : String
-@export var item_quantity : int
+@export var item_data : ItemData 
+@export var item_quantity : int = 1
+
+var pickup_dialogue : DialogueResource = load("res://dialogs/item_grabbed.dialogue")
 
 # --
 
@@ -28,8 +31,9 @@ func start_puzzle():
 	pass
 
 func pick_up_item():
-	# lógica para agregar el item al inventario
-	
-	DialogueManager.show_dialogue_balloon(dialogue, "start", [self])
-	
+	InventoryManager.add_item(
+		item_data.id,
+		item_quantity
+	)
+	DialogueManager.show_dialogue_balloon(pickup_dialogue, "start", [self])
 	queue_free()

@@ -1,4 +1,4 @@
 ~ start
-Agarraste {{str(item_quantity)}}x {{item_name}}.
-#% Recogiste {{str(item_quantity)}}x {{item_name}}.
+% Agarraste {{str(item_quantity)}}x {{item_data.item_name}}.
+% Recogiste {{str(item_quantity)}}x {{item_data.item_name}}.
 => END

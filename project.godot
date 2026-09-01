@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://cescis0ik2000"
 
 Globals="*uid://bw3gbjihrjt0w"
 DialogueManager="*uid://c3rodes2l3gxb"
+InventoryManager="*uid://jsjxj0linimk"
 
 [editor_plugins]
 
@@ -34,6 +35,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://add
 folder_colors={
 "res://addons/": "red",
 "res://assets/": "yellow",
+"res://data/": "orange",
 "res://dialogs/": "gray",
 "res://scenes/": "green",
 "res://scripts/": "blue",
