@@ -1,0 +1,211 @@
+[gd_scene format=3 uid="uid://cshhkyv0w8byc"]
+
+[ext_resource type="PackedScene" uid="uid://cnyekxpwlw6vg" path="res://assets/temp/Rogue.glb" id="1_qlg0r"]
+[ext_resource type="Script" uid="uid://3oqnrn03w28b" path="res://scripts/player/player.gd" id="1_ur7pv"]
+[ext_resource type="Script" uid="uid://be1tt23sunnkm" path="res://scripts/player/player_visuals.gd" id="2_d2wvv"]
+[ext_resource type="Animation" uid="uid://7kicejl2dnt" path="res://assets/temp/anims/Idle_A.res" id="2_tuyoq"]
+[ext_resource type="Script" uid="uid://c1cf1s81y2tcs" path="res://scripts/player/player_movement.gd" id="3_3v2ag"]
+[ext_resource type="Animation" uid="uid://ducxfqvaj8l6w" path="res://assets/temp/anims/Running_A.res" id="3_fjrip"]
+[ext_resource type="Animation" uid="uid://mjbhtfpidbwf" path="res://assets/temp/anims/Throw.res" id="4_smehm"]
+[ext_resource type="Animation" uid="uid://brhqj4qxppaw4" path="res://assets/temp/anims/Walking_A.res" id="5_ur7pv"]
+[ext_resource type="Script" uid="uid://cey8cp60m7lcg" path="res://components/state_machine/state_machine.gd" id="6_fjrip"]
+[ext_resource type="Script" uid="uid://vsprl21yf2jx" path="res://scripts/player/player_input.gd" id="7_y4r1p"]
+[ext_resource type="Script" uid="uid://gdo5annln8lq" path="res://scripts/player/states/state_grounded.gd" id="9_y4r1p"]
+[ext_resource type="Script" uid="uid://c6mwmaryafgmy" path="res://scripts/player/movement_settings.gd" id="12_jej6c"]
+[ext_resource type="Script" uid="uid://deoaw2o81i55" path="res://scenes/state_jump.gd" id="13_f1ej7"]
+[ext_resource type="Script" uid="uid://cpnl2esit1ut2" path="res://scenes/transition_jump.gd" id="13_oprun"]
+[ext_resource type="Script" uid="uid://dvlde7yrjsm6r" path="res://scenes/transition_aim.gd" id="14_qfm1y"]
+[ext_resource type="Script" uid="uid://bnty8rlnls6qv" path="res://scenes/transition_grounded.gd" id="15_a8ls1"]
+[ext_resource type="Script" uid="uid://h6n5tavox1pk" path="res://scenes/state_aim.gd" id="17_fulsm"]
+[ext_resource type="Script" uid="uid://dqptjen21owrn" path="res://scenes/transition_unaim.gd" id="18_fulsm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fbwj1"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y4r1p"]
+_data = {
+&"Idle_A": ExtResource("2_tuyoq"),
+&"Running_A": ExtResource("3_fjrip"),
+&"Throw": ExtResource("4_smehm"),
+&"Walking_A": ExtResource("5_ur7pv")
+}
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_3v2ag"]
+filter_enabled = true
+filters = ["Rig_Medium/Skeleton3D:chest", "Rig_Medium/Skeleton3D:hand.l", "Rig_Medium/Skeleton3D:hand.r", "Rig_Medium/Skeleton3D:handslot.l", "Rig_Medium/Skeleton3D:handslot.r", "Rig_Medium/Skeleton3D:head", "Rig_Medium/Skeleton3D:lowerarm.l", "Rig_Medium/Skeleton3D:lowerarm.r", "Rig_Medium/Skeleton3D:upperarm.l", "Rig_Medium/Skeleton3D:upperarm.r", "Rig_Medium/Skeleton3D:wrist.l", "Rig_Medium/Skeleton3D:wrist.r"]
+
+[sub_resource type="AnimationNodeTimeSeek" id="AnimationNodeTimeSeek_a8ls1"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d2wvv"]
+animation = &"Throw"
+use_custom_timeline = true
+timeline_length = 0.55
+stretch_time_scale = false
+start_offset = 0.0
+loop_mode = 0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jej6c"]
+animation = &"Idle_A"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f1ej7"]
+animation = &"Running_A"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oprun"]
+animation = &"Walking_A"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a8ls1"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qfm1y"]
+xfade_time = 0.1
+advance_mode = 2
+advance_expression = "player.input.is_running"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fulsm"]
+xfade_time = 0.1
+advance_mode = 2
+advance_expression = "!player.input.is_running"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4r5pv"]
+states/Running_A/node = SubResource("AnimationNodeAnimation_f1ej7")
+states/Running_A/position = Vector2(334, 165)
+states/Walking_A/node = SubResource("AnimationNodeAnimation_oprun")
+states/Walking_A/position = Vector2(334, 92)
+transitions = ["Start", "Walking_A", SubResource("AnimationNodeStateMachineTransition_a8ls1"), "Walking_A", "Running_A", SubResource("AnimationNodeStateMachineTransition_qfm1y"), "Running_A", "Walking_A", SubResource("AnimationNodeStateMachineTransition_fulsm")]
+graph_offset = Vector2(-38, -5)
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_60mlk"]
+min_space = 0.0
+blend_point_0/node = SubResource("AnimationNodeAnimation_jej6c")
+blend_point_0/pos = 0.0
+blend_point_0/name = &"Idle_A"
+blend_point_1/node = SubResource("AnimationNodeStateMachine_4r5pv")
+blend_point_1/pos = 1.0
+blend_point_1/name = &"StateMachine"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jej6c"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_oprun"]
+states/MovementBlend/node = SubResource("AnimationNodeBlendSpace1D_60mlk")
+states/MovementBlend/position = Vector2(356, 100)
+transitions = ["Start", "MovementBlend", SubResource("AnimationNodeStateMachineTransition_jej6c")]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_gkek8"]
+graph_offset = Vector2(-449.2739, 20.71756)
+nodes/MoveMachine/node = SubResource("AnimationNodeStateMachine_oprun")
+nodes/MoveMachine/position = Vector2(-80, 100)
+nodes/AimTimeSeek/node = SubResource("AnimationNodeTimeSeek_a8ls1")
+nodes/AimTimeSeek/position = Vector2(-20, 280)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_d2wvv")
+nodes/Animation/position = Vector2(-160, 280)
+nodes/AimBlend/node = SubResource("AnimationNodeBlend2_3v2ag")
+nodes/AimBlend/position = Vector2(160, 180)
+node_connections = [&"output", 0, &"AimBlend", &"AimTimeSeek", 0, &"Animation", &"AimBlend", 0, &"MoveMachine", &"AimBlend", 1, &"AimTimeSeek"]
+
+[sub_resource type="Resource" id="Resource_3v2ag"]
+script = ExtResource("12_jej6c")
+metadata/_custom_type_script = "uid://c6mwmaryafgmy"
+
+[sub_resource type="Resource" id="Resource_jej6c"]
+script = ExtResource("12_jej6c")
+max_speed = 10.0
+acceleration = 2.5
+deceleration = 5.0
+metadata/_custom_type_script = "uid://c6mwmaryafgmy"
+
+[sub_resource type="Resource" id="Resource_a8ls1"]
+script = ExtResource("12_jej6c")
+metadata/_custom_type_script = "uid://c6mwmaryafgmy"
+
+[sub_resource type="Resource" id="Resource_fulsm"]
+script = ExtResource("12_jej6c")
+max_speed = 2.5
+metadata/_custom_type_script = "uid://c6mwmaryafgmy"
+
+[node name="Player" type="CharacterBody3D" unique_id=242546826 groups=["player"]]
+script = ExtResource("1_ur7pv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1485397746]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_fbwj1")
+
+[node name="Input" type="Node3D" parent="." unique_id=528179105]
+script = ExtResource("7_y4r1p")
+
+[node name="Movement" type="Node3D" parent="." unique_id=1195421819]
+script = ExtResource("3_3v2ag")
+
+[node name="Visuals" type="Node3D" parent="." unique_id=480415599]
+script = ExtResource("2_d2wvv")
+
+[node name="Rogue" parent="Visuals" unique_id=408453990 instance=ExtResource("1_qlg0r")]
+
+[node name="LookAtModifier3D" type="LookAtModifier3D" parent="Visuals/Rogue/Rig_Medium/Skeleton3D" parent_id_path=PackedInt32Array(408453990, 1789574537) index="7" unique_id=570731692]
+target_node = NodePath("../../../../AimNode")
+bone_name = "chest"
+bone = 11
+forward_axis = 0
+use_secondary_rotation = false
+duration = 0.1
+use_angle_limitation = true
+symmetry_limitation = true
+primary_limit_angle = 3.1415927
+primary_damp_threshold = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Visuals/Rogue" unique_id=1954846416]
+libraries/ = SubResource("AnimationLibrary_y4r1p")
+
+[node name="AnimationTree" type="AnimationTree" parent="Visuals" unique_id=151975009]
+root_node = NodePath("../Rogue")
+tree_root = SubResource("AnimationNodeBlendTree_gkek8")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("../Rogue/AnimationPlayer")
+parameters/MoveMachine/MovementBlend/blend_position = 0.0
+parameters/AimTimeSeek/seek_request = -1.0
+parameters/AimBlend/blend_amount = 0.0
+
+[node name="AimNode" type="Node3D" parent="Visuals" unique_id=1083641434]
+
+[node name="StateMachine" type="Node" parent="." unique_id=621772183 node_paths=PackedStringArray("root")]
+script = ExtResource("6_fjrip")
+root = NodePath("..")
+metadata/_custom_type_script = "uid://cey8cp60m7lcg"
+
+[node name="Grounded" type="Node" parent="StateMachine" unique_id=1531714548]
+script = ExtResource("9_y4r1p")
+walk_settings = SubResource("Resource_3v2ag")
+run_settings = SubResource("Resource_jej6c")
+metadata/_custom_type_script = "uid://ddph5uie3edkd"
+
+[node name="JumpTransition" type="Node" parent="StateMachine/Grounded" unique_id=2054225132 node_paths=PackedStringArray("target_state")]
+script = ExtResource("13_oprun")
+target_state = NodePath("../../Jump")
+metadata/_custom_type_script = "uid://cn204pqn8fpqo"
+
+[node name="AimTransition" type="Node" parent="StateMachine/Grounded" unique_id=73750258 node_paths=PackedStringArray("target_state")]
+script = ExtResource("14_qfm1y")
+target_state = NodePath("../../Aim")
+metadata/_custom_type_script = "uid://cn204pqn8fpqo"
+
+[node name="Jump" type="Node" parent="StateMachine" unique_id=1866858508]
+script = ExtResource("13_f1ej7")
+movement_settings = SubResource("Resource_a8ls1")
+jump_force = 5.0
+metadata/_custom_type_script = "uid://ddph5uie3edkd"
+
+[node name="GroundedTransition" type="Node" parent="StateMachine/Jump" unique_id=81337905 node_paths=PackedStringArray("target_state")]
+script = ExtResource("15_a8ls1")
+target_state = NodePath("../../Grounded")
+metadata/_custom_type_script = "uid://cn204pqn8fpqo"
+
+[node name="Aim" type="Node" parent="StateMachine" unique_id=1753932382]
+script = ExtResource("17_fulsm")
+movement_settings = SubResource("Resource_fulsm")
+metadata/_custom_type_script = "uid://ddph5uie3edkd"
+
+[node name="UnaimTransition" type="Node" parent="StateMachine/Aim" unique_id=2140951322 node_paths=PackedStringArray("target_state")]
+script = ExtResource("18_fulsm")
+target_state = NodePath("../../Grounded")
+metadata/_custom_type_script = "uid://cn204pqn8fpqo"
+
+[editable path="Visuals/Rogue"]
