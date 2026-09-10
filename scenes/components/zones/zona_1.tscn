@@ -34,32 +34,57 @@
 [ext_resource type="Script" uid="uid://cdo0lar8bpl3h" path="res://scripts/interactable/npc.gd" id="27_egbc0"]
 [ext_resource type="Script" uid="uid://rafvhtq5xfsk" path="res://scripts/interactable/npc/lucy.gd" id="27_hiew7"]
 [ext_resource type="Resource" uid="uid://bu11swf3rbgow" path="res://dialogs/npc/lucy_pudu.dialogue" id="28_17sas"]
-[ext_resource type="Material" uid="uid://3dh1jucld5sj" path="res://scripts/interactable/outline_material_3d.tres" id="30_vlemn"]
 [ext_resource type="PackedScene" uid="uid://i5g7aw7alf36" path="res://assets/models/zone 1/npcs/miss_sunday.glb" id="31_qpxxo"]
 [ext_resource type="PackedScene" uid="uid://d05jslitcld3i" path="res://assets/models/zone 1/npcs/lucy.glb" id="32_wympj"]
 [ext_resource type="Script" uid="uid://dnpxm4djul3fw" path="res://scripts/interactable/npc/jorge.gd" id="33_4i0xk"]
 [ext_resource type="PackedScene" uid="uid://ddquqpwxee54k" path="res://assets/models/zone 1/npcs/jorge.glb" id="33_nkst3"]
 [ext_resource type="PackedScene" uid="uid://wwwquqc6xid8" path="res://scenes/components/npcs/chicken.tscn" id="34_m271u"]
 [ext_resource type="Resource" uid="uid://f8r0kmchkfgl" path="res://dialogs/npc/jorge.dialogue" id="34_vlemn"]
+[ext_resource type="Texture2D" uid="uid://bi8ndx3ibaxh0" path="res://assets/models/zone 1/npcs/lucy_vestido.png" id="35_m1jtj"]
+[ext_resource type="Texture2D" uid="uid://c25xri8butdgf" path="res://assets/models/zone 1/npcs/lucy_Ucupaint Material.png" id="36_esswg"]
 [ext_resource type="Texture2D" uid="uid://bll65wwd0qmun" path="res://assets/models/zone 1/trees/arbolarrayan1_texturamadera1.png" id="37_3papl"]
 [ext_resource type="Shader" uid="uid://si1l01yy2t8a" path="res://shaders/environment/tree.gdshader" id="37_dvkrl"]
+[ext_resource type="Texture2D" uid="uid://csciasdwrqp4l" path="res://assets/models/zone 1/npcs/lucy_cuerno.png" id="37_nctqn"]
 [ext_resource type="Script" uid="uid://bsgs4m6qrp2pv" path="res://scripts/multi_mesh_instance_3d.gd" id="37_q2r7i"]
 [ext_resource type="Texture2D" uid="uid://bck7bbaey6n12" path="res://assets/models/zone 1/trees/arbolarrayan1_hoja1re.png" id="38_3papl"]
 [ext_resource type="Texture2D" uid="uid://bt8qvlfyhhp6l" path="res://assets/models/zone 1/trees/arbol_arrayan_2_hoja1re.png" id="38_4sved"]
+[ext_resource type="Texture2D" uid="uid://duaot85w2ae3m" path="res://assets/models/zone 1/npcs/lucy_tt2.png" id="38_h00gx"]
 [ext_resource type="Texture2D" uid="uid://d3p7ni7bfa701" path="res://assets/models/zone 1/trees/sick/texturatroncoenfermo.png" id="38_o6kkm"]
 [ext_resource type="Texture2D" uid="uid://bjjpifbr1ej0b" path="res://assets/models/zone 1/trees/arbol_arrayan_2_texturamadera1.png" id="39_kruyp"]
+[ext_resource type="Texture2D" uid="uid://vo87p2vj833q" path="res://assets/models/zone 1/npcs/lucy_tt.png" id="39_lqnaq"]
 [ext_resource type="Shader" uid="uid://b5ia68gcluwd7" path="res://shaders/environment/leaves.gdshader" id="39_v8fot"]
 [ext_resource type="Texture2D" uid="uid://c8vpruvunxpur" path="res://assets/models/zone 1/trees/arbol_arrayan_3_texturamadera1.png" id="40_hiew7"]
 [ext_resource type="Texture2D" uid="uid://co3pu8bc2cvp2" path="res://assets/models/zone 1/trees/sick/texturahojaenferma.png" id="40_o6kkm"]
+[ext_resource type="Texture2D" uid="uid://c2xn8yu2h4cif" path="res://assets/models/zone 1/npcs/lucy_oreja.png" id="40_wo2ux"]
 [ext_resource type="Texture2D" uid="uid://ddl3x55746t2x" path="res://assets/models/zone 1/trees/arbol_arrayan_3_hoja1re.png" id="41_17sas"]
+[ext_resource type="Texture2D" uid="uid://cqvqjs3ueockv" path="res://assets/models/zone 1/npcs/lucy_cintu.png" id="41_my270"]
 [ext_resource type="Texture2D" uid="uid://dlimpc1u82jlo" path="res://assets/models/zone 1/trees/arbol_arrayan_4_hoja1re.png" id="42_m271u"]
+[ext_resource type="Texture2D" uid="uid://b61e3ofh4psg4" path="res://assets/models/zone 1/npcs/lucy_ttdorado.png" id="42_v3r82"]
+[ext_resource type="Texture2D" uid="uid://bnpuc8ure5o0y" path="res://assets/models/zone 1/npcs/lucy_ojo.png" id="43_isggq"]
 [ext_resource type="Texture2D" uid="uid://c3efy6ho3ximb" path="res://assets/models/zone 1/trees/arbol_arrayan_4_texturamadera1.png" id="43_nkst3"]
 [ext_resource type="Texture2D" uid="uid://b4shw6bljvbdb" path="res://assets/models/zone 1/trees/arbol_coihue_1_texturamadera3.png" id="44_58bye"]
 [ext_resource type="Texture2D" uid="uid://id3ghnp27u3b" path="res://assets/models/zone 1/trees/arbol_coihue_1_hoja2re.png" id="45_4i0xk"]
 [ext_resource type="Texture2D" uid="uid://kjbecns7oyr7" path="res://assets/models/zone 1/trees/arbol_coihue_2_hoja2re.png" id="46_vlemn"]
+[ext_resource type="Texture2D" uid="uid://chf8vwhjbiv26" path="res://assets/models/zone 1/npcs/jorge_adsasad.png" id="49_fqbdn"]
+[ext_resource type="Texture2D" uid="uid://cmi1cwdx8gj6g" path="res://assets/models/zone 1/npcs/jorge_pdasd.png" id="50_du7ee"]
 [ext_resource type="AudioStream" uid="uid://d145aetqv8ucx" path="res://assets/sounds/music/music_garden.mp3" id="51_nkst3"]
-[ext_resource type="Script" uid="uid://cnkj0mblmju7d" path="res://scripts/interactable/item.gd" id="52_4i0xk"]
+[ext_resource type="Texture2D" uid="uid://7vv1vnr3fvx" path="res://assets/models/zone 1/npcs/jorge_orejascastor.png" id="51_tl45v"]
+[ext_resource type="Texture2D" uid="uid://ddwthtdajhn3m" path="res://assets/models/zone 1/npcs/jorge_cuerno.png" id="52_ukxw1"]
+[ext_resource type="Texture2D" uid="uid://ta63k01d7j77" path="res://assets/models/zone 1/npcs/jorge_marron.png" id="53_nvm7y"]
 [ext_resource type="PackedScene" uid="uid://bmnqimsdrs28x" path="res://assets/models/zone 1/flowers/flower_orange.glb" id="53_vlemn"]
+[ext_resource type="Texture2D" uid="uid://br53ow5caol1o" path="res://assets/models/zone 1/npcs/jorge_castorpiel.png" id="54_b8tqw"]
+[ext_resource type="Texture2D" uid="uid://bxpm12uwjp8ol" path="res://assets/models/zone 1/npcs/jorge_remera.png" id="55_pj7n3"]
+[ext_resource type="Texture2D" uid="uid://dh2uw0fu8glsv" path="res://assets/models/zone 1/npcs/jorge_asdads.png" id="56_sdop3"]
+[ext_resource type="Texture2D" uid="uid://1wvdv5lw2ro6" path="res://assets/models/zone 1/npcs/jorge_tt2.png" id="57_x2jj1"]
+[ext_resource type="Texture2D" uid="uid://dqx4glmq1psv8" path="res://assets/models/zone 1/npcs/jorge_sonrojo.png" id="58_ybegy"]
+[ext_resource type="Texture2D" uid="uid://chxscgnq3ahnv" path="res://assets/models/zone 1/npcs/jorge_blanco.png" id="59_sd2p7"]
+[ext_resource type="Texture2D" uid="uid://liy4ygm64yoc" path="res://assets/models/zone 1/npcs/jorge_flor1.png" id="60_y5qin"]
+[ext_resource type="Texture2D" uid="uid://c6biqrwdrc171" path="res://assets/models/zone 1/npcs/jorge_flor4.png" id="61_288fs"]
+[ext_resource type="Texture2D" uid="uid://csukrp3hsh14g" path="res://assets/models/zone 1/npcs/jorge_pasto.png" id="62_sbqtd"]
+[ext_resource type="Texture2D" uid="uid://cfmem7po32lbh" path="res://assets/models/zone 1/npcs/jorge_flor3.png" id="63_q6pdf"]
+[ext_resource type="PackedScene" uid="uid://ty2rymk0fjrn" path="res://scenes/components/zones/flower.tscn" id="82_tl45v"]
+[ext_resource type="PackedScene" uid="uid://dsggjs0xb5t14" path="res://assets/models/zone 1/flowers/flower_violet.glb" id="84_ukxw1"]
+[ext_resource type="PackedScene" uid="uid://cpt16orqb8eu0" path="res://assets/models/zone 1/flowers/flower_yellow.glb" id="85_nvm7y"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3n6v3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -282,9 +307,213 @@ size = Vector3(3.796875, 11.948395, 5.2339478)
 radius = 2.180664
 height = 11.137634
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7eg5y"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_texture = ExtResource("35_m1jtj")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0l24l"]
+resource_name = "Material.006"
+cull_mode = 2
+albedo_texture = ExtResource("36_esswg")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8drr3"]
+resource_name = "Material.017"
+cull_mode = 2
+albedo_texture = ExtResource("37_nctqn")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_83o30"]
+resource_name = "Material.013"
+cull_mode = 2
+albedo_texture = ExtResource("38_h00gx")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ee0i"]
+resource_name = "Material.009"
+cull_mode = 2
+albedo_texture = ExtResource("39_lqnaq")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xk6mf"]
+resource_name = "Material.008"
+cull_mode = 2
+albedo_texture = ExtResource("39_lqnaq")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3yuu7"]
+resource_name = "Material.012"
+cull_mode = 2
+albedo_texture = ExtResource("39_lqnaq")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwvqy"]
+resource_name = "Material.010"
+cull_mode = 2
+albedo_texture = ExtResource("40_wo2ux")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wq4nj"]
+resource_name = "Material.022"
+cull_mode = 2
+albedo_texture = ExtResource("41_my270")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75rev"]
+resource_name = "Material.019"
+cull_mode = 2
+albedo_texture = ExtResource("42_v3r82")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kst50"]
+resource_name = "Material.021"
+cull_mode = 2
+albedo_texture = ExtResource("42_v3r82")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pnxft"]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("43_isggq")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
 radius = 3.8588867
 height = 11.287109
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6oltv"]
+resource_name = "Material.036"
+cull_mode = 2
+albedo_texture = ExtResource("49_fqbdn")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x74pw"]
+resource_name = "Material.033"
+cull_mode = 2
+albedo_texture = ExtResource("50_du7ee")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dx1qv"]
+resource_name = "Material.030"
+cull_mode = 2
+albedo_texture = ExtResource("51_tl45v")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ldhhh"]
+resource_name = "Material.028"
+cull_mode = 2
+albedo_texture = ExtResource("52_ukxw1")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6woog"]
+resource_name = "Material.029"
+cull_mode = 2
+albedo_texture = ExtResource("53_nvm7y")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eee1u"]
+resource_name = "Material.026"
+cull_mode = 2
+albedo_texture = ExtResource("54_b8tqw")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwgu7"]
+resource_name = "Material.025"
+cull_mode = 2
+albedo_texture = ExtResource("54_b8tqw")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cf4n0"]
+resource_name = "Material.023"
+cull_mode = 2
+albedo_texture = ExtResource("55_pj7n3")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jyi66"]
+resource_name = "Material.038"
+cull_mode = 2
+albedo_texture = ExtResource("56_sdop3")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8m2vt"]
+resource_name = "Material.032"
+cull_mode = 2
+albedo_texture = ExtResource("57_x2jj1")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fgqot"]
+resource_name = "Material.039"
+cull_mode = 2
+albedo_texture = ExtResource("58_ybegy")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eqrtl"]
+resource_name = "Material.040"
+cull_mode = 2
+albedo_texture = ExtResource("59_sd2p7")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lojm7"]
+resource_name = "flor1"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("60_y5qin")
+roughness = 0.5
+texture_repeat = false
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n5x6q"]
+resource_name = "flor4"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("61_288fs")
+roughness = 0.5
+texture_repeat = false
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dnljx"]
+resource_name = "pasto"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("62_sbqtd")
+roughness = 0.5
+texture_repeat = false
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w10cv"]
+resource_name = "flor3"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("63_q6pdf")
+roughness = 0.5
+texture_repeat = false
+metadata/_gltf_primary_texture_coord = 0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yf5fn"]
 radius = 2.2749023
@@ -852,10 +1081,6 @@ instance_count = 6
 mesh = SubResource("ArrayMesh_h00gx")
 buffer = PackedFloat32Array(1, 0, 0, -150.24344, 0, 1, 0, 33.75072, 0, 0, 1, 22.523733, 0, 0, 0, 0, 1, 0, 0, -66.03543, 0, 1, 0, 33.75072, 0, 0, 1, 93.16629, 0, 0, 0, 0, 1, 0, 0, -117.73762, 0, 1, 0, 33.75072, 0, 0, 1, 40.952232, 0, 0, 0, 0, 1, 0, 0, -120.553085, 0, 1, 0, 33.75072, 0, 0, 1, 6.6547546, 0, 0, 0, 0, 1, 0, 0, -78.57704, 0, 1, 0, 33.75072, 0, 0, 1, 73.96994, 0, 0, 0, 0, 1, 0, 0, -86.51155, 0, 1, 0, 33.75072, 0, 0, 1, 41.72008, 0, 0, 0, 0)
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_3gngh"]
-height = 8.35498
-radius = 1.5927734
-
 [node name="Zona1" type="Node3D" unique_id=1401956631]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1790202128]
@@ -866,7 +1091,7 @@ shadow_enabled = true
 environment = SubResource("Environment_ws4xm")
 
 [node name="Player" parent="." unique_id=2109264169 node_paths=PackedStringArray("camera") instance=ExtResource("4_nq1qf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.593624, 7.3321037, 96.67292)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.36322, 7.3320713, -88.73291)
 camera = NodePath("../Camera/Pivot/Camera3D")
 audio_footsteps = Dictionary[String, AudioStream]({
 "Dirt": ExtResource("3_0g7v3"),
@@ -894,6 +1119,9 @@ has_puzzle = true
 puzzle_scene = "res://scenes/components/puzzles/cup_puzzle.tscn"
 puzzle_layer = NodePath("Puzzle")
 puzzle_subviewport = NodePath("Puzzle/SubViewportContainer/SubViewport")
+item_id = null
+item_name = null
+item_quantity = ""
 can_interact = true
 object_meshes = [NodePath("calabazas(shellgame)/Cube_020"), NodePath("calabazas(shellgame)2/Cube_020"), NodePath("calabazas(shellgame)3/Cube_020")]
 has_dialog = true
@@ -2715,7 +2943,6 @@ quest_description = "Tomás me dijo que perdió su arito y me pidió si es que p
 can_interact = true
 object_meshes = [NodePath("guardian/Cube_040")]
 has_dialog = true
-first_time_dialog = null
 dialogue = ExtResource("14_qpm4l")
 metadata/_custom_type_script = "uid://cdo0lar8bpl3h"
 metadata/_edit_group_ = true
@@ -2763,7 +2990,6 @@ quest_holder = NodePath("../Tomas")
 can_interact = true
 object_meshes = [NodePath("espantapajaros/Cube_015")]
 has_dialog = true
-first_time_dialog = null
 dialogue = ExtResource("11_2mm5i")
 metadata/_custom_type_script = "uid://cdo0lar8bpl3h"
 metadata/_edit_group_ = true
@@ -2788,7 +3014,6 @@ quest_name = "Restaurar el bosque"
 can_interact = true
 object_meshes = [NodePath("lucy/Cube_056")]
 has_dialog = true
-first_time_dialog = null
 dialogue = ExtResource("28_17sas")
 metadata/_custom_type_script = "uid://cdo0lar8bpl3h"
 metadata/_edit_group_ = true
@@ -2810,12 +3035,24 @@ shape = SubResource("CapsuleShape3D_57qmd")
 [node name="lucy" parent="Map/NPCs/Lucy" unique_id=1779687701 instance=ExtResource("32_wympj")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.2566008e-07, 5.90757, 2.5354602)
 
+[node name="Cube_056" parent="Map/NPCs/Lucy/lucy" index="0" unique_id=2139084660]
+surface_material_override/0 = SubResource("StandardMaterial3D_7eg5y")
+surface_material_override/1 = SubResource("StandardMaterial3D_0l24l")
+surface_material_override/2 = SubResource("StandardMaterial3D_8drr3")
+surface_material_override/3 = SubResource("StandardMaterial3D_83o30")
+surface_material_override/4 = SubResource("StandardMaterial3D_4ee0i")
+surface_material_override/5 = SubResource("StandardMaterial3D_xk6mf")
+surface_material_override/6 = SubResource("StandardMaterial3D_3yuu7")
+surface_material_override/7 = SubResource("StandardMaterial3D_dwvqy")
+surface_material_override/8 = SubResource("StandardMaterial3D_wq4nj")
+surface_material_override/9 = SubResource("StandardMaterial3D_75rev")
+surface_material_override/10 = SubResource("StandardMaterial3D_kst50")
+surface_material_override/11 = SubResource("StandardMaterial3D_pnxft")
+
 [node name="Miss Sunday" type="CharacterBody3D" parent="Map/NPCs" unique_id=428079424]
 transform = Transform3D(0.83134973, 0, -0.5557497, 0, 1, 0, 0.5557497, 0, 0.83134973, 94.07686, 6.9682894, -138.8654)
 script = ExtResource("27_egbc0")
 has_dialog = true
-first_time_dialog = null
-dialogue = ExtResource("30_vlemn")
 metadata/_custom_type_script = "uid://cdo0lar8bpl3h"
 metadata/_edit_group_ = true
 
@@ -2826,20 +3063,48 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 2
 transform = Transform3D(0.9999999, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 0.9999999, 0, 1.784668, 0)
 shape = SubResource("CapsuleShape3D_g4v7s")
 
-[node name="Jorge" type="CharacterBody3D" parent="Map/NPCs" unique_id=1584431337]
+[node name="Jorge" type="CharacterBody3D" parent="Map/NPCs" unique_id=1584431337 node_paths=PackedStringArray("object_meshes") groups=["flower_quest"]]
 transform = Transform3D(0.9325733, 0, 0.36098057, 0, 1, 0, -0.36098057, 0, 0.9325733, -103.33814, 8.1054125, -124.45139)
 script = ExtResource("33_4i0xk")
+flower_subquest = Dictionary[String, String]({
+"flower_orange": "De tanta tierra que junta,ya parece una verdura.",
+"flower_violet": "Un pollito se la robó de tan hermosa que era...Espero que su madre no se dé cuenta.",
+"flower_yellow": "En el centro, donde siempre da el sol,hay una flor que pareciera ser el mismo sol."
+})
+flower_hints = Dictionary[String, String]({
+"flower_orange": "De tanta tierra que junta,ya parece una verdura.",
+"flower_violet": "Un pollito se la robó de tan hermosa que era...Espero que su madre no se dé cuenta.",
+"flower_yellow": "En el centro, donde siempre da el sol,hay una flor que pareciera ser el mismo sol."
+})
 gives_quest = true
 quest_name = "Flower quest"
 quest_description = "Jorge me pidió que le recolectara unas flores, pero no me quedó bien claro de qué color las quiere."
 can_interact = true
+object_meshes = [NodePath("jorge/Cube_058")]
 has_dialog = true
-first_time_dialog = null
 dialogue = ExtResource("34_vlemn")
 metadata/_custom_type_script = "uid://cdo0lar8bpl3h"
 
 [node name="jorge" parent="Map/NPCs/Jorge" unique_id=1704506808 instance=ExtResource("33_nkst3")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Cube_058" parent="Map/NPCs/Jorge/jorge" index="0" unique_id=1715060261]
+surface_material_override/0 = SubResource("StandardMaterial3D_6oltv")
+surface_material_override/1 = SubResource("StandardMaterial3D_x74pw")
+surface_material_override/2 = SubResource("StandardMaterial3D_dx1qv")
+surface_material_override/3 = SubResource("StandardMaterial3D_ldhhh")
+surface_material_override/4 = SubResource("StandardMaterial3D_6woog")
+surface_material_override/5 = SubResource("StandardMaterial3D_eee1u")
+surface_material_override/6 = SubResource("StandardMaterial3D_dwgu7")
+surface_material_override/7 = SubResource("StandardMaterial3D_cf4n0")
+surface_material_override/8 = SubResource("StandardMaterial3D_jyi66")
+surface_material_override/9 = SubResource("StandardMaterial3D_8m2vt")
+surface_material_override/10 = SubResource("StandardMaterial3D_fgqot")
+surface_material_override/11 = SubResource("StandardMaterial3D_eqrtl")
+surface_material_override/12 = SubResource("StandardMaterial3D_lojm7")
+surface_material_override/13 = SubResource("StandardMaterial3D_n5x6q")
+surface_material_override/14 = SubResource("StandardMaterial3D_dnljx")
+surface_material_override/15 = SubResource("StandardMaterial3D_w10cv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NPCs/Jorge" unique_id=146199996]
 transform = Transform3D(1.0000007, 0, 2.3841858e-07, 0, 1, 0, -2.3841858e-07, 0, 1.0000007, 0, -0.33251953, 0)
@@ -2853,8 +3118,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.997337, 5.8247795, 5.11524
 look_target = NodePath("../../../../Player")
 nav_region = NodePath("../../../ChickenCoopZone/NavigationRegion3D")
 has_dialog = true
-first_time_dialog = null
-dialogue = ExtResource("30_vlemn")
 
 [node name="Trees" type="Node3D" parent="Map" unique_id=1916969591]
 
@@ -2891,24 +3154,38 @@ autoplay = true
 bus = &"Music"
 parameters/looping = true
 
-[node name="OrangeFlower" type="CharacterBody3D" parent="." unique_id=1271231664]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.11824, -1.9073486e-06, -105.98768)
-script = ExtResource("52_4i0xk")
-is_pickable = true
-item_quantity = 1
-can_interact = true
-metadata/_custom_type_script = "uid://cnkj0mblmju7d"
-metadata/_edit_group_ = true
+[node name="FlowerOrange" parent="." unique_id=2126320126 node_paths=PackedStringArray("object_meshes") instance=ExtResource("82_tl45v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.8473, 4.1919203, 80.31772)
+item_id = "flower_orange"
+item_name = "flor naranja"
+object_meshes = [NodePath("flower_orange/hoja12")]
 
-[node name="flower_orange" parent="OrangeFlower" unique_id=1882753760 instance=ExtResource("53_vlemn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.658309, 0)
+[node name="flower_orange" parent="FlowerOrange" unique_id=1882753760 instance=ExtResource("53_vlemn")]
 
-[node name="hoja12" parent="OrangeFlower/flower_orange" index="0" unique_id=691396357]
-transform = Transform3D(5.942163, 0, 0, 0, 0.052314237, -5.9419327, 0, 5.9419327, 0.052314237, 0, 0, 0)
+[node name="hoja12" parent="FlowerOrange/flower_orange" index="0" unique_id=691396357]
+transform = Transform3D(5.942163, 0, 0, 0, 0.052314237, -5.9419327, 0, 5.9419327, 0.052314237, 0, 4.3311443, -0.03813246)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="OrangeFlower" unique_id=88606933]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.12542, 0)
-shape = SubResource("CylinderShape3D_3gngh")
+[node name="FlowerViolet" parent="." unique_id=484045305 node_paths=PackedStringArray("object_meshes") instance=ExtResource("82_tl45v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.37914, 4.1919203, 71.64059)
+item_id = "flower_violet"
+item_name = "flor violeta"
+object_meshes = [NodePath("flower_violet/hoja15_001")]
+
+[node name="flower_violet" parent="FlowerViolet" unique_id=523972233 instance=ExtResource("84_ukxw1")]
+
+[node name="hoja15_001" parent="FlowerViolet/flower_violet" index="0" unique_id=954566994]
+transform = Transform3D(3.841175, 0, 0, 0, -1.3772417e-07, -5.942163, 0, 3.1507618, -2.597402e-07, 0, 3.9606357, 1.731249e-07)
+
+[node name="FlowerYellow" parent="." unique_id=838975548 node_paths=PackedStringArray("object_meshes") instance=ExtResource("82_tl45v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4680252, 4.1919203, -25.75983)
+item_id = "flower_yellow"
+item_name = "flor amarilla"
+object_meshes = [NodePath("flower_yellow/hoja11")]
+
+[node name="flower_yellow" parent="FlowerYellow" unique_id=1290490417 instance=ExtResource("85_nvm7y")]
+
+[node name="hoja11" parent="FlowerYellow/flower_yellow" index="0" unique_id=240821359]
+transform = Transform3D(5.942163, 0, 0, 0, -0.07373897, -5.941706, 0, 5.941706, -0.07373897, 0, 3.5217736, 0.043706633)
 
 [editable path="Camera"]
 [editable path="Map/CropsZone/PuzzlePumpkin/calabazas(shellgame)"]
@@ -2921,4 +3198,9 @@ shape = SubResource("CylinderShape3D_3gngh")
 [editable path="Map/NPCs/Miss Sunday/miss_sunday"]
 [editable path="Map/NPCs/Jorge/jorge"]
 [editable path="Map/NPCs/Chickens/Chicken"]
-[editable path="OrangeFlower/flower_orange"]
+[editable path="FlowerOrange"]
+[editable path="FlowerOrange/flower_orange"]
+[editable path="FlowerViolet"]
+[editable path="FlowerViolet/flower_violet"]
+[editable path="FlowerYellow"]
+[editable path="FlowerYellow/flower_yellow"]

@@ -1,5 +1,4 @@
 @icon("res://assets/icons/npc.svg")
-@tool
 
 extends Interactable
 class_name NPC
@@ -8,7 +7,7 @@ class_name NPC
 
 @export_group("Quests")
 var quest_manager: QuestManager = QuestManager.new()
-var quest : QuestEntry
+var quest
 
 @export_group("Gives quest")
 @export_custom(PROPERTY_HINT_GROUP_ENABLE, "") var gives_quest : bool = false
@@ -20,6 +19,13 @@ var quest : QuestEntry
 @export var quest_holder : NPC
 
 # --
+
+func _ready():
+	add_to_group("interactable")
+	
+	connect_signals()
+	outline()
+	if gives_quest: quest_initiation()
 
 func quest_initiation():
 	quest = quest_holder.quest.add_subquest(

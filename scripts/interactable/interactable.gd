@@ -1,5 +1,4 @@
 @icon("res://assets/icons/tap.svg")
-@tool
 
 extends CharacterBody3D
 class_name Interactable
@@ -32,8 +31,6 @@ func _ready():
 	
 	connect_signals()
 	outline()
-	
-	quest_initiation()
 
 func quest_initiation():
 	pass

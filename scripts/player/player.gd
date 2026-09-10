@@ -66,6 +66,11 @@ func _process(_delta) -> void:
 	if Input.is_key_pressed(KEY_ESCAPE):
 		get_tree().quit()
 	
+	#if Input.is_key_pressed(KEY_0):
+		#InventoryManager.add_items("flower_yellow")
+		#InventoryManager.add_items("flower_violet")
+		#InventoryManager.add_items("flower_orange")
+	
 	var target_plane_mouse : Plane = Plane(Vector3(0,1,0), position.y)
 	mouse_position = get_viewport().get_mouse_position()
 	from = camera.project_ray_origin(mouse_position)

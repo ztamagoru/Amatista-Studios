@@ -11,7 +11,7 @@ else:
 	elif current_subquest == null:
 		=> quest
 	elif has_flower():
-		do complete_quest()
+		do complete_subquest()
 		=> thankful
 	else:
 		=> quest_explanation

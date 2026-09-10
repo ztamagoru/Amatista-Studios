@@ -21,7 +21,7 @@ func remove_item(item_id : StringName, amount : int = 1) -> bool:
 	return true
 
 func has_item(item_id : StringName, amount : int = 1) -> bool:
-	return items.get(item_id, amount) >= amount
+	return items.get(item_id, 0) >= amount
 
 func get_amount(item_id : StringName) -> int:
 	return items.get(item_id, 0)

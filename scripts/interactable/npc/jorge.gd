@@ -1,6 +1,8 @@
-@tool
-
 extends NPC
+
+# --
+
+signal flower_now_needed(flower_id : String)
 
 # --
 
@@ -50,6 +52,8 @@ func get_uncompleted_quest() -> QuestEntry:
 
 func give_next_quest():
 	current_subquest = get_uncompleted_quest()
+	
+	if not current_subquest == null: emit_signal("flower_now_needed", get_current_flower_id())
 
 func is_quest_accepted() -> bool:
 	return current_subquest != null
@@ -73,6 +77,7 @@ func has_flower() -> bool:
 		return false
 	
 	var flower_id := get_current_flower_id()
+	
 	return InventoryManager.has_item(flower_id)
 
 func complete_subquest() -> void:
@@ -101,3 +106,10 @@ func get_current_flower_hint() -> String:
 	
 	var flower_id := get_current_flower_id()
 	return flower_hints.get(flower_id, "")
+
+# -------------------------------------------
+
+func is_flower_needed(flower_id : String) -> bool:
+	if current_subquest == null:
+		return false
+	return get_current_flower_id() == flower_id
