@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ty2rymk0fjrn"]
+
+[ext_resource type="Script" uid="uid://cagcgxy2v104v" path="res://scripts/interactable/flower.gd" id="1_b3mkh"]
+[ext_resource type="Resource" uid="uid://nkmjbpud0thh" path="res://dialogs/item_grabbed.dialogue" id="2_0osgr"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3gngh"]
+height = 8.35498
+radius = 0.9160156
+
+[node name="Flower" type="CharacterBody3D" unique_id=2126320126]
+script = ExtResource("1_b3mkh")
+is_pickable = true
+item_id = "flower_"
+item_name = "flor "
+can_interact = true
+has_dialog = true
+dialogue = ExtResource("2_0osgr")
+metadata/_custom_type_script = "uid://cnkj0mblmju7d"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=140720014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.146056, 0)
+shape = SubResource("CylinderShape3D_3gngh")
