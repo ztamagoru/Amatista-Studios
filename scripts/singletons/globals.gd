@@ -9,7 +9,7 @@ signal hide_interactable_outline
 
 var player : CharacterBody3D
 
-var current_trees : Array[Sick_Environment] = []
+var sick_trees : Array[Sick_Environment] = []
 
 # --
 

@@ -11,8 +11,8 @@ uniform vec3 player_position;
 uniform vec3 camera_forward;
 
 uniform vec2 position_adjustment = vec2(0.0);
-uniform float radius = 0.15;
-uniform float smoothness = 0.07;
+uniform float radius = 0.575;
+uniform float smoothness = 0.45;
 
 // --
 
@@ -50,4 +50,3 @@ void fragment(){
 	ALBEDO = final_color;
 	ALPHA = alpha;
 }
-
