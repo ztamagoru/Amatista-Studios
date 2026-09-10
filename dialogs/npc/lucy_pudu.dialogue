@@ -56,7 +56,7 @@ Lucy: Si conseguimos restaurarlos todos, quizás podamos devolverle la vida a es
 => END
 
 ~ restore_all
-Lucy: Aún quedan muchos árboles enfermos por la zona.
+Lucy: Aún quedan {{sick_trees_left()}} árboles enfermos por la zona.
 Lucy: ¿Podrías ayudarme a curarlos también?
 Lucy: Si conseguimos restaurarlos todos, quizás podamos devolverle la vida a esta parte del bosque.
 => END

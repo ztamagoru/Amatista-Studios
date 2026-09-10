@@ -51,7 +51,6 @@
 [ext_resource type="Texture2D" uid="uid://bnpuc8ure5o0y" path="res://assets/models/zone 1/npcs/lucy_ojo.png" id="43_isggq"]
 [ext_resource type="Texture2D" uid="uid://chf8vwhjbiv26" path="res://assets/models/zone 1/npcs/jorge_adsasad.png" id="49_fqbdn"]
 [ext_resource type="Texture2D" uid="uid://cmi1cwdx8gj6g" path="res://assets/models/zone 1/npcs/jorge_pdasd.png" id="50_du7ee"]
-[ext_resource type="AudioStream" uid="uid://d145aetqv8ucx" path="res://assets/sounds/music/music_garden.mp3" id="51_nkst3"]
 [ext_resource type="Texture2D" uid="uid://7vv1vnr3fvx" path="res://assets/models/zone 1/npcs/jorge_orejascastor.png" id="51_tl45v"]
 [ext_resource type="Texture2D" uid="uid://ddwthtdajhn3m" path="res://assets/models/zone 1/npcs/jorge_cuerno.png" id="52_ukxw1"]
 [ext_resource type="Texture2D" uid="uid://ta63k01d7j77" path="res://assets/models/zone 1/npcs/jorge_marron.png" id="53_nvm7y"]
@@ -72,6 +71,7 @@
 [ext_resource type="PackedScene" uid="uid://ccy1cnrupwn6t" path="res://scenes/components/zones/trees/tree_arrayan_4.tscn" id="68_87cpv"]
 [ext_resource type="PackedScene" uid="uid://cfpwjksgrcuci" path="res://scenes/components/zones/trees/tree_coihue_1.tscn" id="69_ayata"]
 [ext_resource type="PackedScene" uid="uid://baltee05uyrbk" path="res://scenes/components/zones/trees/tree_coihue_2.tscn" id="70_75h86"]
+[ext_resource type="AudioStream" uid="uid://dtsx5hn4blbj2" path="res://assets/sounds/music/garden_wind.mp3" id="72_isggq"]
 [ext_resource type="PackedScene" uid="uid://ty2rymk0fjrn" path="res://scenes/components/zones/flower.tscn" id="82_tl45v"]
 [ext_resource type="PackedScene" uid="uid://dsggjs0xb5t14" path="res://assets/models/zone 1/flowers/flower_violet.glb" id="84_ukxw1"]
 [ext_resource type="PackedScene" uid="uid://cpt16orqb8eu0" path="res://assets/models/zone 1/flowers/flower_yellow.glb" id="85_nvm7y"]
@@ -520,7 +520,7 @@ directional_shadow_max_distance = 450.0
 environment = SubResource("Environment_ws4xm")
 
 [node name="Player" parent="." unique_id=2109264169 node_paths=PackedStringArray("camera") instance=ExtResource("4_nq1qf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.36322, 7.3320713, -88.73291)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.94633, 7.3320713, 92.46819)
 camera = NodePath("../Camera/Pivot/Camera3D")
 audio_footsteps = Dictionary[String, AudioStream]({
 "Dirt": ExtResource("3_0g7v3"),
@@ -548,8 +548,6 @@ has_puzzle = true
 puzzle_scene = "res://scenes/components/puzzles/cup_puzzle.tscn"
 puzzle_layer = NodePath("Puzzle")
 puzzle_subviewport = NodePath("Puzzle/SubViewportContainer/SubViewport")
-item_id = null
-item_name = null
 item_quantity = 0
 can_interact = true
 object_meshes = [NodePath("calabazas(shellgame)/Cube_020"), NodePath("calabazas(shellgame)2/Cube_020"), NodePath("calabazas(shellgame)3/Cube_020")]
@@ -2481,7 +2479,6 @@ surface_material_override/11 = SubResource("StandardMaterial3D_pnxft")
 [node name="Miss Sunday" type="CharacterBody3D" parent="Map/NPCs" unique_id=428079424]
 transform = Transform3D(0.83134973, 0, -0.5557497, 0, 1, 0, 0.5557497, 0, 0.83134973, 94.07686, 6.9682894, -138.8654)
 script = ExtResource("27_egbc0")
-has_dialog = true
 metadata/_custom_type_script = "uid://cdo0lar8bpl3h"
 metadata/_edit_group_ = true
 
@@ -2544,6 +2541,54 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.42094, 0, -130.8313)
 
 [node name="Chicken" parent="Map/NPCs/Chickens" unique_id=1266909227 node_paths=PackedStringArray("look_target", "nav_region") instance=ExtResource("34_m271u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.997337, 5.8247795, 5.1152496)
+look_target = NodePath("../../../../Player")
+nav_region = NodePath("../../../ChickenCoopZone/NavigationRegion3D")
+has_dialog = true
+
+[node name="Chicken2" parent="Map/NPCs/Chickens" unique_id=502333268 node_paths=PackedStringArray("look_target", "nav_region") instance=ExtResource("34_m271u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9699404, 5.8247795, -4.452194)
+look_target = NodePath("../../../../Player")
+nav_region = NodePath("../../../ChickenCoopZone/NavigationRegion3D")
+has_dialog = true
+
+[node name="Chicken3" parent="Map/NPCs/Chickens" unique_id=222523472 node_paths=PackedStringArray("look_target", "nav_region") instance=ExtResource("34_m271u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.120438, 5.8247795, 1.5371709)
+look_target = NodePath("../../../../Player")
+nav_region = NodePath("../../../ChickenCoopZone/NavigationRegion3D")
+has_dialog = true
+
+[node name="Chicken4" parent="Map/NPCs/Chickens" unique_id=1290582241 node_paths=PackedStringArray("look_target", "nav_region") instance=ExtResource("34_m271u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.626644, 5.8247795, 9.966042)
+look_target = NodePath("../../../../Player")
+nav_region = NodePath("../../../ChickenCoopZone/NavigationRegion3D")
+has_dialog = true
+
+[node name="Chicken5" parent="Map/NPCs/Chickens" unique_id=788652764 node_paths=PackedStringArray("look_target", "nav_region") instance=ExtResource("34_m271u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.622528, 5.8247776, -5.3927755)
+look_target = NodePath("../../../../Player")
+nav_region = NodePath("../../../ChickenCoopZone/NavigationRegion3D")
+has_dialog = true
+
+[node name="Chicken6" parent="Map/NPCs/Chickens" unique_id=1926475275 node_paths=PackedStringArray("look_target", "nav_region") instance=ExtResource("34_m271u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.491508, 5.8247776, 6.6603556)
+look_target = NodePath("../../../../Player")
+nav_region = NodePath("../../../ChickenCoopZone/NavigationRegion3D")
+has_dialog = true
+
+[node name="Chicken7" parent="Map/NPCs/Chickens" unique_id=198017374 node_paths=PackedStringArray("look_target", "nav_region") instance=ExtResource("34_m271u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.078178, 5.8247776, 15.947846)
+look_target = NodePath("../../../../Player")
+nav_region = NodePath("../../../ChickenCoopZone/NavigationRegion3D")
+has_dialog = true
+
+[node name="Chicken8" parent="Map/NPCs/Chickens" unique_id=1774788501 node_paths=PackedStringArray("look_target", "nav_region") instance=ExtResource("34_m271u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.641529, 5.8247776, 14.988686)
+look_target = NodePath("../../../../Player")
+nav_region = NodePath("../../../ChickenCoopZone/NavigationRegion3D")
+has_dialog = true
+
+[node name="Chicken9" parent="Map/NPCs/Chickens" unique_id=1720005227 node_paths=PackedStringArray("look_target", "nav_region") instance=ExtResource("34_m271u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.510984, 5.8247776, -8.9123745)
 look_target = NodePath("../../../../Player")
 nav_region = NodePath("../../../ChickenCoopZone/NavigationRegion3D")
 has_dialog = true
@@ -2737,7 +2782,7 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -145.14072, 4.0552616, 22.696
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -120.353325, 4.0552616, 3.5837212)
 
 [node name="BGMusic" type="AudioStreamPlayer" parent="." unique_id=644343171]
-stream = ExtResource("51_nkst3")
+stream = ExtResource("72_isggq")
 autoplay = true
 bus = &"Music"
 parameters/looping = true
@@ -2786,6 +2831,14 @@ transform = Transform3D(5.942163, 0, 0, 0, -0.07373897, -5.941706, 0, 5.941706, 
 [editable path="Map/NPCs/Miss Sunday/miss_sunday"]
 [editable path="Map/NPCs/Jorge/jorge"]
 [editable path="Map/NPCs/Chickens/Chicken"]
+[editable path="Map/NPCs/Chickens/Chicken2"]
+[editable path="Map/NPCs/Chickens/Chicken3"]
+[editable path="Map/NPCs/Chickens/Chicken4"]
+[editable path="Map/NPCs/Chickens/Chicken5"]
+[editable path="Map/NPCs/Chickens/Chicken6"]
+[editable path="Map/NPCs/Chickens/Chicken7"]
+[editable path="Map/NPCs/Chickens/Chicken8"]
+[editable path="Map/NPCs/Chickens/Chicken9"]
 [editable path="FlowerOrange"]
 [editable path="FlowerOrange/flower_orange"]
 [editable path="FlowerViolet"]

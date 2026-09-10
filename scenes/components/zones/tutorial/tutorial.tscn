@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://cxbeuww1jr058"]
 
 [ext_resource type="PackedScene" uid="uid://do3crd75ny4ra" path="res://scenes/components/player/player.tscn" id="1_hwv2g"]
-[ext_resource type="PackedScene" uid="uid://coq8jfcyrk2xk" path="res://scenes/components/zones/zona_1.tscn" id="2_hwv2g"]
 [ext_resource type="Resource" uid="uid://cbk8p8n26whjq" path="res://dialogs/tutorial/tutorial.dialogue" id="3_7kssk"]
 [ext_resource type="AudioStream" uid="uid://drkgxm6exsq6" path="res://assets/sounds/sfx/grounds/footsteps_grass.mp3" id="4_6kmcb"]
 [ext_resource type="PackedScene" uid="uid://dnu7on0g2bdv4" path="res://assets/models/tutorial/Pasillo_Arreglado.glb" id="4_oeldt"]
 [ext_resource type="Script" uid="uid://c2dhob2i1igg0" path="res://scripts/tutorial/tutorial.gd" id="5_oeldt"]
 [ext_resource type="PackedScene" uid="uid://bfh8nsyv0y463" path="res://scenes/components/player/camera.tscn" id="5_sdmj0"]
 [ext_resource type="PackedScene" uid="uid://d05jslitcld3i" path="res://assets/models/zone 1/npcs/lucy.glb" id="8_3we8h"]
+[ext_resource type="AudioStream" uid="uid://cce43nox24wf" path="res://assets/sounds/music/tutorial.mp3" id="10_sdmj0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6kmcb"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -41,7 +41,6 @@ size = Vector3(115.6355, 7.9298096, 9.821777)
 [node name="Tutorial" type="Node3D" unique_id=683256499 node_paths=PackedStringArray("area_end", "lucy", "lucy_signal_area", "player", "z_boundary", "world_environment")]
 script = ExtResource("5_oeldt")
 area_end = NodePath("EndTutorial")
-garden_scene = ExtResource("2_hwv2g")
 tutorial_movement = ExtResource("3_7kssk")
 lucy = NodePath("Lucy")
 lucy_mov_speed = 50.0
@@ -137,5 +136,11 @@ shape = SubResource("BoxShape3D_yf5fn")
 
 [node name="Marker3D" type="Marker3D" parent="." unique_id=1969168011]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -437.4697)
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="." unique_id=1773674036]
+stream = ExtResource("10_sdmj0")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
 
 [editable path="Camera"]

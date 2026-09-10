@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 # --
 
+#@export var start : PackedScene
 @export var camera : Camera3D
 @export var timer : Timer
 
@@ -44,6 +45,7 @@ var cursor_position_on_plane
 var projectile_scene = preload("res://scenes/components/projectiles/grenade.tscn")
 const shoot_cd : float = 0.5
 
+
 # --
 
 func _ready() -> void:
@@ -64,7 +66,8 @@ func check_required():
 
 func _process(_delta) -> void:
 	if Input.is_key_pressed(KEY_ESCAPE):
-		get_tree().quit()
+		get_tree().change_scene_to_file("res://scenes/start_menu.tscn")
+		return
 	
 	var target_plane_mouse : Plane = Plane(Vector3(0,1,0), position.y)
 	mouse_position = get_viewport().get_mouse_position()

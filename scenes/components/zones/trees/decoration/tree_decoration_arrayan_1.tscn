@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bthqv368oxte6"]
+
+[ext_resource type="Script" uid="uid://ruugex3xy8gw" path="res://scripts/interactable/enviroment/sick_environment.gd" id="1_gvfp1"]
+[ext_resource type="Texture2D" uid="uid://bll65wwd0qmun" path="res://assets/models/zone 1/trees/arbolarrayan1_texturamadera1.png" id="2_sclut"]
+[ext_resource type="Texture2D" uid="uid://bck7bbaey6n12" path="res://assets/models/zone 1/trees/arbolarrayan1_hoja1re.png" id="3_pibhh"]
+[ext_resource type="Texture2D" uid="uid://d3p7ni7bfa701" path="res://assets/models/zone 1/trees/sick/texturatroncoenfermo.png" id="4_1xxjk"]
+[ext_resource type="Texture2D" uid="uid://co3pu8bc2cvp2" path="res://assets/models/zone 1/trees/sick/texturahojaenferma.png" id="5_r3sg7"]
+[ext_resource type="PackedScene" uid="uid://bujt1vsm66aj2" path="res://assets/models/zone 1/trees/arbolarrayan1.glb" id="6_vkyay"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ppyta"]
+height = 14.649202
+radius = 1.2460938
+
+[node name="TreeArrayan1" type="StaticBody3D" unique_id=1984043268 node_paths=PackedStringArray("mesh") groups=["sick_environment"]]
+script = ExtResource("1_gvfp1")
+mesh = NodePath("arbolarrayan1/arbolarrayan1_002")
+has_leaves = true
+leaves_surface = 1
+texture_healthy = Array[Texture]([ExtResource("2_sclut"), ExtResource("3_pibhh")])
+texture_sick = Array[Texture]([ExtResource("4_1xxjk"), ExtResource("5_r3sg7")])
+metadata/_custom_type_script = "uid://ruugex3xy8gw"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1715950630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011663914, 7.2721395, 0.008235931)
+shape = SubResource("CylinderShape3D_ppyta")
+
+[node name="arbolarrayan1" parent="." unique_id=1201085142 instance=ExtResource("6_vkyay")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="arbolarrayan1_002" parent="arbolarrayan1" index="0" unique_id=1443005708]
+transform = Transform3D(0.87330973, 0, 0, 0, 0.12153409, 0, 0, 0, 0.87330973, 0, 0, 0)
+
+[editable path="arbolarrayan1"]

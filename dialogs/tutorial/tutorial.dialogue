@@ -1,5 +1,6 @@
 ~ movement
 Podés moverte con {{Globals.get_event_key("move_forward")}}, {{Globals.get_event_key("move_left")}}, {{Globals.get_event_key("move_backwards")}}, {{Globals.get_event_key("move_right")}}.
+Podés interactuar con el entorno con {{Globals.get_event_key("interact")}}.
 => END
 
 ~ interaction

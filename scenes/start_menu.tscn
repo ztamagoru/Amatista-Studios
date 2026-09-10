@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bv6vs8gv7iyo"]
+
+[ext_resource type="Script" uid="uid://duqydps5twoxa" path="res://scripts/start_menu.gd" id="1_thu50"]
+[ext_resource type="AudioStream" uid="uid://drevu7k1coapg" path="res://assets/sounds/music/menu.mp3" id="2_m7x51"]
+[ext_resource type="Texture2D" uid="uid://b2lxt7beilq1x" path="res://assets/sprites/tituloparainicio.png" id="3_m7x51"]
+
+[node name="StartMenu" type="Control" unique_id=1745164973]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_thu50")
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="." unique_id=403749965]
+stream = ExtResource("2_m7x51")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=627861134]
+layout_mode = 0
+offset_right = 1201.7778
+offset_bottom = 676.0
+texture = ExtResource("3_m7x51")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=314881780]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_right = 255
+theme_override_constants/margin_bottom = 265
+
+[node name="Button" type="Button" parent="MarginContainer" unique_id=604342948]
+custom_minimum_size = Vector2(125, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Empezar"
+
+[connection signal="pressed" from="MarginContainer/Button" to="." method="_on_button_pressed"]

@@ -3,7 +3,8 @@ extends Node3D
 # --
 
 @export var area_end : Area3D
-@export var garden_scene : PackedScene
+#@export_file var escena_epica_path : String
+#@export var garden_scene : PackedScene
 
 # --
 
@@ -91,7 +92,7 @@ func _physics_process(delta: float):
 
 func end_tutorial(body : Node3D):
 	if body.is_in_group("player"):
-		get_tree().change_scene_to_packed(garden_scene)
+		get_tree().change_scene_to_file("res://scenes/components/zones/zona_1.tscn")
 
 func lucy_run(body : Node3D):
 	if body.is_in_group("player"):

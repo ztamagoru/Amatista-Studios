@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://do3crd75ny4ra"]
 
 [ext_resource type="Script" uid="uid://ds4i83s26qvqm" path="res://scripts/player/player.gd" id="1_1xbud"]
+[ext_resource type="PackedScene" uid="uid://bv6vs8gv7iyo" path="res://scenes/start_menu.tscn" id="2_vj2w8"]
 [ext_resource type="Script" uid="uid://cftjnbyt7gyop" path="res://scripts/player/fsm/fsm.gd" id="3_c8uok"]
 [ext_resource type="Script" uid="uid://mv8nikkecad4" path="res://scenes/components/player/states/idle.gd" id="4_tcka2"]
 [ext_resource type="Script" uid="uid://6sj3ia7fne8w" path="res://scenes/components/player/states/fall.gd" id="5_frspl"]
@@ -25,6 +26,7 @@ radius = 15.0
 
 [node name="Player" type="CharacterBody3D" unique_id=2109264169 node_paths=PackedStringArray("timer", "raycast", "raycast_area", "walking_sfx") groups=["player"]]
 script = ExtResource("1_1xbud")
+start = ExtResource("2_vj2w8")
 timer = NodePath("Timer")
 raycast = NodePath("RayCast3D")
 raycast_area = NodePath("Area3D")

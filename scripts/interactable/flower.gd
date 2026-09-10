@@ -22,7 +22,6 @@ func _ready():
 func now_needed(flower_id : String):
 	if flower_id == item_id:
 		is_needed = true
-	is_needed = true
 
 func _process(_delta: float) -> void:
 	pass

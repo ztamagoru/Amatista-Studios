@@ -2,7 +2,7 @@ extends NPC
 
 # --
 
-#var _tutorial_completed : bool = false 
+var _tutorial_completed : bool = false 
 
 var sick_trees : Array[Sick_Environment] = []
 const sick_amount : int = 20
@@ -43,13 +43,21 @@ func set_up_trees():
 		tree.set_healthy()
 
 func check_one_cured() -> bool:
-	for tree in Globals.current_trees:
+	for tree in Globals.sick_trees:
 		if tree._is_cured:
 			return true
 	return false
 
 func check_all_cured() -> bool:
-	for tree in Globals.current_trees:
+	for tree in Globals.sick_trees:
 		if tree._is_cured == false:
 			return false
 	return true
+
+func sick_trees_left() -> String:
+	var trees_left : int
+	
+	for tree in Globals.sick_trees:
+		if not tree._is_cured: trees_left += 1
+	
+	return str(trees_left)

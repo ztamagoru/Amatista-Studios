@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://ixgbwk8lwc4m"]
+
+[ext_resource type="Script" uid="uid://ruugex3xy8gw" path="res://scripts/interactable/enviroment/sick_environment.gd" id="1_qwnkw"]
+[ext_resource type="Texture2D" uid="uid://cf2ank2rr0otq" path="res://assets/models/zone 1/trees/arbolarrayan22_hoja1re.png" id="2_2mqoe"]
+[ext_resource type="Texture2D" uid="uid://b7vo64ytie8as" path="res://assets/models/zone 1/trees/arbolarrayan22_texturamadera1.png" id="3_3wyh2"]
+[ext_resource type="Texture2D" uid="uid://co3pu8bc2cvp2" path="res://assets/models/zone 1/trees/sick/texturahojaenferma.png" id="4_62njy"]
+[ext_resource type="Texture2D" uid="uid://d3p7ni7bfa701" path="res://assets/models/zone 1/trees/sick/texturatroncoenfermo.png" id="5_d67bd"]
+[ext_resource type="PackedScene" uid="uid://dmo22203tj5li" path="res://assets/models/zone 1/trees/arbol_arrayan_2.glb" id="6_uf770"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ppyta"]
+height = 4.0674477
+radius = 0.31591797
+
+[node name="TreeArrayan2" type="StaticBody3D" unique_id=1939623392 node_paths=PackedStringArray("mesh") groups=["sick_environment"]]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+script = ExtResource("1_qwnkw")
+mesh = NodePath("arbol_arrayan_2/arbolarrayan2")
+has_leaves = true
+texture_healthy = Array[Texture]([ExtResource("2_2mqoe"), ExtResource("3_3wyh2")])
+texture_sick = Array[Texture]([ExtResource("4_62njy"), ExtResource("5_d67bd")])
+metadata/_custom_type_script = "uid://ruugex3xy8gw"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2116187680]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005927086, 1.9553537, -0.015206337)
+shape = SubResource("CylinderShape3D_ppyta")
+
+[node name="arbol_arrayan_2" parent="." unique_id=675342582 instance=ExtResource("6_uf770")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="arbolarrayan2" parent="arbol_arrayan_2" index="0" unique_id=981181324]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.9232385, 21.558535, -0.46161962)
+
+[editable path="arbol_arrayan_2"]
