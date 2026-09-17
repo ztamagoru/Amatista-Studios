@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ifexlpqnvave"]
 
-[ext_resource type="PackedScene" uid="uid://cshhkyv0w8byc" path="res://scenes/player.tscn" id="1_errlg"]
+[ext_resource type="PackedScene" uid="uid://cshhkyv0w8byc" path="res://scenes/components/player.tscn" id="1_errlg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_errlg"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
