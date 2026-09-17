@@ -8,3 +8,6 @@ class_name Player
 @onready var state_machine : StateMachine = $StateMachine
 
 # --
+
+func _ready() -> void:
+	Globals.player = self

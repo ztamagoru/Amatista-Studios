@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 
 buses/default_bus_layout="uid://cescis0ik2000"
 
+[autoload]
+
+Globals="*uid://ywyeuma71ij2"
+
 [editor_plugins]
 
 enabled=PackedStringArray()
