@@ -23,10 +23,11 @@ buses/default_bus_layout="uid://cescis0ik2000"
 [autoload]
 
 Globals="*uid://ywyeuma71ij2"
+DialogueManager="*uid://c3rodes2l3gxb"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/rubonnek.quest_manager/plugin.cfg")
 
 [file_customization]
 
@@ -115,10 +116,6 @@ interact={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":2,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
-
-[internationalization]
-
-locale/translations_pot_files=PackedStringArray("res://dialogs/npc/test/test.dialogue", "res://dialogs/item_grabbed.dialogue", "res://dialogs/npc/hank_scarecrow.dialogue", "res://dialogs/npc/tomas_fox.dialogue", "res://dialogs/npc/pumpkins.dialogue", "res://dialogs/npc/lucy_pudu.dialogue", "res://dialogs/tutorial/tutorial.dialogue", "res://dialogs/npc/jorge.dialogue")
 
 [physics]
 
