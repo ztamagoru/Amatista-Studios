@@ -23,16 +23,16 @@ func _ready() -> void: set_collisions.call_deferred()
 @export var cylinder_radius : float = 1.25
 func set_collisions():
 	for instance in range(multimesh.instance_count):
-		var col_pos = multimesh.get_instance_transform(instance)
-		var body := Sick_Environment.new()
+		var body := StaticBody3D.new()
 		body.owner = get_tree().edited_scene_root
 		body.tree_instance = instance
 		get_parent().add_child(body)
-		body.add_to_group("sick_environment")
-		body.tree_healing.connect(change_tree_texture)
+		var col_pos = multimesh.get_instance_transform(instance)
 		body.global_position = to_global(col_pos.origin)
+		
 		var col := CollisionShape3D.new()
 		body.add_child(col)
+		
 		var shape := CylinderShape3D.new()
 		shape.radius = cylinder_radius
 		shape.height = cylinder_height

@@ -11,6 +11,9 @@ var is_jumping : bool
 
 # --
 
+func _init() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+
 func _input(event: InputEvent) -> void:
 	
 	# Movement

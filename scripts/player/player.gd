@@ -5,5 +5,6 @@ class_name Player
 
 @onready var input : PlayerInput = $Input
 @onready var movement : PlayerMovement = $Movement
+@onready var state_machine : StateMachine = $StateMachine
 
 # --

@@ -10324,7 +10324,7 @@ _subresources={
 "Running_A": {
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://assets/temp/anims/Running_A.res",
-"save_to_file/keep_custom_tracks": "",
+"save_to_file/keep_custom_tracks": true,
 "save_to_file/path": "uid://b05c37juyy4k4",
 "settings/loop_mode": 1,
 "slice_1/end_frame": 0,
@@ -12380,7 +12380,7 @@ _subresources={
 "Running_B": {
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://assets/temp/anims/Running_B.res",
-"save_to_file/keep_custom_tracks": "",
+"save_to_file/keep_custom_tracks": true,
 "save_to_file/path": "uid://csl3rr7cj4fsh",
 "settings/loop_mode": 1,
 "slice_1/end_frame": 0,
@@ -16492,7 +16492,7 @@ _subresources={
 "Walking_A": {
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://assets/temp/anims/Walking_A.res",
-"save_to_file/keep_custom_tracks": "",
+"save_to_file/keep_custom_tracks": true,
 "save_to_file/path": "uid://bhjk0ctbk66fk",
 "settings/loop_mode": 1,
 "slice_1/end_frame": 0,
@@ -18548,7 +18548,7 @@ _subresources={
 "Walking_B": {
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://assets/temp/anims/Walking_B.res",
-"save_to_file/keep_custom_tracks": "",
+"save_to_file/keep_custom_tracks": true,
 "save_to_file/path": "uid://bohp6ikhk3a16",
 "settings/loop_mode": 1,
 "slice_1/end_frame": 0,

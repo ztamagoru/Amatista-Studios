@@ -9,7 +9,11 @@ class_name PlayerVisuals
 @onready var skeleton : Skeleton3D = $Rogue/Rig_Medium/Skeleton3D
 
 @onready var look_at_modifier : LookAtModifier3D = $Rogue/Rig_Medium/Skeleton3D/LookAtModifier3D
-@onready var aim_node : Node3D = $AimNode
+
+# --
+
+@export_category("Aim")
+@export var aim_target : Node3D
 # --
 
 func _physics_process(delta: float) -> void:
@@ -18,12 +22,11 @@ func _physics_process(delta: float) -> void:
 	anim_tree.set("parameters/MoveMachine/MovementBlend/blend_position", player.movement.speed_progress)
 	
 	# Aiming
-	if player.input.is_aiming():
+	if player.state_machine.current_state.name == "Aim":
 		anim_tree.set("parameters/AimBlend/blend_amount", 1)
 		anim_tree.set("parameters/AimTimeSeek/seek_request", player.input.aim_dir.length() * 0.5)
 		
 		look_at_modifier.influence = player.input.aim_dir.length()
-		aim_node.global_position = global_position + player.input.get_aiming_direction().slide(Vector3.UP)
 	else:
 		anim_tree.set("parameters/AimBlend/blend_amount", 0)
 		look_at_modifier.influence = 0
@@ -33,3 +36,6 @@ func _physics_process(delta: float) -> void:
 		look_at(global_position + -player.velocity.slide(Vector3.UP))
 
 # --
+
+func on_step() -> void:
+	pass
