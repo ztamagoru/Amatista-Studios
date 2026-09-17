@@ -24,6 +24,8 @@ buses/default_bus_layout="uid://cescis0ik2000"
 
 Globals="*uid://ywyeuma71ij2"
 DialogueManager="*uid://c3rodes2l3gxb"
+InventoryManager="*uid://bqn5f5q5rr435"
+CollectibleManager="*uid://dtod17rsqqj4g"
 
 [editor_plugins]
 
