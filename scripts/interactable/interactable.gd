@@ -1,3 +1,5 @@
+@icon("res://assets/icons/tap.svg")
+
 extends Area3D
 class_name Interactable
 
