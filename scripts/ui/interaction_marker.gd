@@ -25,7 +25,7 @@ func _ready() -> void:
 	billboard = BaseMaterial3D.BILLBOARD_ENABLED
 
 func _process(_delta: float) -> void:
-	var new_type : IndicatorType = npc.get_interacion_type()
+	var new_type : IndicatorType = get_interaction_type()
 	
 	if new_type == current_type:
 		return
