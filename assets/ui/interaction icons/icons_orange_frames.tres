@@ -1,0 +1,42 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dg4trx22gkx74"]
+
+[ext_resource type="Texture2D" uid="uid://clc2o023tkjht" path="res://assets/ui/interaction icons/icons_orange.png" id="1_0h335"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3vjy"]
+atlas = ExtResource("1_0h335")
+region = Rect2(770, 0, 770, 750)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s20sb"]
+atlas = ExtResource("1_0h335")
+region = Rect2(1540, 0, 770, 750)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqy6k"]
+atlas = ExtResource("1_0h335")
+region = Rect2(0, 0, 770, 750)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3vjy")
+}],
+"loop": 1,
+"name": &"dialogue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s20sb")
+}],
+"loop": 1,
+"name": &"quest_active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqy6k")
+}],
+"loop": 1,
+"name": &"quest_available",
+"speed": 5.0
+}]
