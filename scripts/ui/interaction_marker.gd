@@ -1,3 +1,4 @@
+@icon("res://assets/icons/speech_bubble.svg")
 extends AnimatedSprite3D
 class_name InteractionMarker
 
