@@ -50,8 +50,8 @@ func is_aiming() -> bool:
 
 func get_movement_direction() -> Vector3:
 	var camera := get_viewport().get_camera_3d()
-	return (camera.basis * Vector3(move_dir.x, 0, move_dir.y)).limit_length()
+	return (camera.global_basis * Vector3(move_dir.x, 0, move_dir.y)).limit_length()
 
 func get_aiming_direction() -> Vector3:
-	#var camera := get_viewport().get_camera_3d()
-	return (Globals.camera.transform.basis * Vector3(aim_dir.x, 0, aim_dir.y)).limit_length()
+	var camera := get_viewport().get_camera_3d()
+	return (camera.global_basis * Vector3(aim_dir.x, 0, aim_dir.y)).limit_length()
