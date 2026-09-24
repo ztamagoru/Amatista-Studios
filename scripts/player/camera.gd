@@ -36,19 +36,6 @@ func _process(delta: float):
 			player.global_position,
 			delta * camera_speed
 		)
-		
-	var mouse_pos : Vector2 = get_viewport().get_mouse_position()
-	var screen_center : Vector2 = get_viewport().size / 2.0
-	
-	var direction : Vector2 = mouse_pos - screen_center
-	
-	direction = direction / screen_center
-	
-	camera.rotation_degrees = Vector3(
-		camera_original_rotation.x - direction.y * max_pitch,
-		camera_original_rotation.y - direction.x * max_yaw,
-		camera_original_rotation.z
-	)
 
 func move_camera(new_position : Vector3, new_rotation : Vector3, tween_duration : float = 1.5):
 	if tween: tween.kill()
