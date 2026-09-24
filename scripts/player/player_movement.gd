@@ -15,7 +15,7 @@ func move(delta : float, settings : MovementSettings) -> void:
 	if !player.is_on_floor():
 		player.velocity += player.get_gravity() * delta
 	
-	var dir = player.input.get_movement_direction()
+	var dir = player.input.get_movement_direction().slide(Vector3.UP).limit_length()
 	
 	var desired_vel = dir * settings.max_speed
 	var current_vel = player.velocity.slide(Vector3.UP)
