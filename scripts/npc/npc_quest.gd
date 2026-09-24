@@ -48,14 +48,3 @@ func is_quest_completed() -> bool:
 
 func check_quest_parent_completed() -> bool:
 	return quest_holder.quest.is_completed()
-
-# --
-
-func get_interaction_type() -> InteractionMarker.IndicatorType:
-	if is_quest_accepted() and not is_quest_completed():
-		return InteractionMarker.IndicatorType.QUEST_ACTIVE
-	
-	if not is_quest_accepted():
-		return InteractionMarker.IndicatorType.QUEST_ACTIVE
-	
-	return super()

@@ -32,6 +32,23 @@ func _process(_delta: float) -> void:
 	current_type = new_type
 	update_visual()
 
+# --
+
+func get_interaction_type() -> IndicatorType:
+	if npc is NPCQuest:
+		if npc.is_quest_accepted() and not npc.is_quest_completed():
+			return IndicatorType.QUEST_ACTIVE
+		
+		if not npc.is_quest_accepted():
+			return IndicatorType.QUEST_AVAILABLE
+	
+	if npc.dialogue_handler == null:
+		return IndicatorType.NONE
+	
+	return IndicatorType.DIALOGUE
+
+# --
+
 func update_visual() -> void:
 	match current_type:
 		IndicatorType.NONE:
