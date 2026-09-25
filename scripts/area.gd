@@ -38,14 +38,14 @@ func check_required():
 
 func _on_body_entered(body : Node3D):
 	if body.is_in_group("player"):
-		body.current_area = self
+		#body.current_area = self
 		
 		if changes_camera:
 			camera.move_camera(camera_position, camera_rotation, camera_movement_duration)
 
 func _on_body_exited(body : Node3D):
 	if body.is_in_group("player"):
-		body.current_area = parent_area if exits_to_another_area else null
+		#body.current_area = parent_area if exits_to_another_area else null
 		
 		if changes_camera: 
 			camera.move_camera(
