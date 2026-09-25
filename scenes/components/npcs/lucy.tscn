@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://tj582qybx6lb"]
+
+[ext_resource type="Script" uid="uid://csudaelv6ajs4" path="res://scripts/npc/npc.gd" id="1_q4qu4"]
+[ext_resource type="PackedScene" uid="uid://011v1my14ili" path="res://assets/models/npcs/lucy/lucy.glb" id="2_s77ri"]
+[ext_resource type="SpriteFrames" uid="uid://dg4trx22gkx74" path="res://assets/ui/interaction icons/icons_orange_frames.tres" id="4_arfm3"]
+[ext_resource type="Script" uid="uid://dbyh0ac8p2iqp" path="res://scripts/ui/interaction_marker.gd" id="5_qmi54"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
+radius = 2.8842773
+height = 13.709106
+
+[node name="Lucy" type="CharacterBody3D" unique_id=1709419815]
+script = ExtResource("1_q4qu4")
+metadata/_custom_type_script = "uid://csudaelv6ajs4"
+
+[node name="InteractionMarker" type="AnimatedSprite3D" parent="." unique_id=1065127807]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 17.5, 0)
+sprite_frames = ExtResource("4_arfm3")
+animation = &"dialogue"
+script = ExtResource("5_qmi54")
+metadata/_custom_type_script = "uid://dbyh0ac8p2iqp"
+
+[node name="lucy" parent="." unique_id=2064277401 instance=ExtResource("2_s77ri")]
+
+[node name="Armature" parent="lucy" index="0" unique_id=55102420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.051, 5.287257, -0.01)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1748639179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.857971, 0)
+shape = SubResource("CapsuleShape3D_g4v7s")
+
+[editable path="lucy"]

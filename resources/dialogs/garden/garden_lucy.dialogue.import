@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://lchbrjx6xoyt"
+path="res://.godot/imported/garden_lucy.dialogue-61533d30129572be8996491f7d166fd5.tres"
+
+[deps]
+
+source_file="res://resources/dialogs/garden/garden_lucy.dialogue"
+dest_files=["res://.godot/imported/garden_lucy.dialogue-61533d30129572be8996491f7d166fd5.tres"]
+
+[params]
+
+defaults=true

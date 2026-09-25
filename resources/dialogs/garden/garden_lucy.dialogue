@@ -1,0 +1,42 @@
+~ start
+if times_talked == 0:
+	???: Sé que es todo muy confuso.
+	Lo es. Pero nunca dudé que este bosque escondía algo más. Ahora que estoy aquí, quiero saberlo todo.
+	???: Pero tienes la capacidad para entenderlo.
+	???: Me llamo Lucy, la pudú y segunda guardia de la zona.
+	Lucy: Sé que… [wait=0.5] el bosque enfermo llegó a las residencias vecinas. La gente se empezó a ir.
+	Sofía: Sí… por eso estoy aquí. No quiero que mi familia se mude y tampoco quiero ver cómo el bosque en el que nací se desvanece.
+	Lucy: Puedo ayudarte, si me ayudas. Tengo un poco de magia en polvo que pude rescatar…
+	La pudú saca un polvo de su bolsa y me lo entrega, confiando plenamente en mí.
+	Lucy: Tenemos que ir a curar el bosque y todas sus criaturas… [wait=0.5] el [wave]Nahuelito[/wave] está aquí, ¿sabes?
+	¡Lo sabía! [shake]¡Sabía que existía![/shake] Nadie me creyó, oh, pero cuando llegue a mi casa… [wait=0.5] ¡ya verán!
+	Lucy: Te prometo que podrás verlo al final.
+	Lucy: Intenta usar esa tirachinas que tienes… ponle un poco de magia e intenta curar algo.
+	## unlock slingshot
+	=> END
+elif:
+	a
+elif:
+	a
+else:
+	=> idle_tutorial
+
+~ idle_tutorial
+% Lucy: Intenta usar esa tirachinas que tienes… intenta curar algo.
+% Lucy: Creo que si usas esa tirachinas con un árbol… [wait=0.5] o algo enfermo, se curará.
+=> END
+
+~ healed
+Lucy: ¡Bien! [bounce]¡Es posible![/bounce] Oh… [wait=0.5] estoy tan contenta… al fin algo de esperanza.
+Sofía: Con esto… voy a poder ayudar.
+=> idle_healed
+
+~ idle_healed
+Lucy: Hay mucho para curar… ve poco a poco y ten cuidado con los habitantes, algunos son un poco… [wait=0.5] cascarrabias. Y averigua la forma de pasar a la siguiente zona.
+=> END
+
+~ ending
+Lucy: ¿Sí pudiste? [bounce]¡Es genial![/bounce] [wait=0.5] Ahora te seguiré y buscaré más magia para curar el resto del bosque.
+Sofía: Sígueme, Lucy. Quiero que recorras esto conmigo.
+=> END
+
