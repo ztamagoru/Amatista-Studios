@@ -3,8 +3,7 @@
 [ext_resource type="Script" uid="uid://3oqnrn03w28b" path="res://scripts/player/player.gd" id="1_ur7pv"]
 [ext_resource type="Script" uid="uid://be1tt23sunnkm" path="res://scripts/player/player_visuals.gd" id="2_d2wvv"]
 [ext_resource type="Script" uid="uid://c1cf1s81y2tcs" path="res://scripts/player/player_movement.gd" id="3_3v2ag"]
-[ext_resource type="PackedScene" uid="uid://gdw24qfsbxxd" path="res://assets/models/player.glb" id="5_q3gs8"]
-[ext_resource type="Shader" uid="uid://drmekfjann8ck" path="res://shaders/movement/wind_movement.gdshader" id="6_1sqjn"]
+[ext_resource type="PackedScene" uid="uid://gdw24qfsbxxd" path="res://assets/models/player/player.glb" id="5_q3gs8"]
 [ext_resource type="Script" uid="uid://cey8cp60m7lcg" path="res://scripts/state_machine/state_machine.gd" id="6_fjrip"]
 [ext_resource type="Script" uid="uid://vsprl21yf2jx" path="res://scripts/player/player_input.gd" id="7_y4r1p"]
 [ext_resource type="Script" uid="uid://gdo5annln8lq" path="res://scripts/player/states/state_grounded.gd" id="9_y4r1p"]
@@ -19,14 +18,6 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fbwj1"]
 radius = 2.166504
 height = 9.972229
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pa0r3"]
-render_priority = 0
-shader = ExtResource("6_1sqjn")
-shader_parameter/wind_speed = 1.2
-shader_parameter/wind_strength = 0.3
-shader_parameter/wind_frequency = 2.5
-shader_parameter/base_color = Color(1, 1, 1, 1)
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_3v2ag"]
 filters = ["Rig_Medium/Skeleton3D:chest", "Rig_Medium/Skeleton3D:hand.l", "Rig_Medium/Skeleton3D:hand.r", "Rig_Medium/Skeleton3D:handslot.l", "Rig_Medium/Skeleton3D:handslot.r", "Rig_Medium/Skeleton3D:head", "Rig_Medium/Skeleton3D:lowerarm.l", "Rig_Medium/Skeleton3D:lowerarm.r", "Rig_Medium/Skeleton3D:upperarm.l", "Rig_Medium/Skeleton3D:upperarm.r", "Rig_Medium/Skeleton3D:wrist.l", "Rig_Medium/Skeleton3D:wrist.r"]
@@ -145,21 +136,18 @@ script = ExtResource("2_d2wvv")
 [node name="player" parent="Visuals" unique_id=1530604751 instance=ExtResource("5_q3gs8")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.6734377, 0)
 
-[node name="Skeleton3D" parent="Visuals/player/Armature" parent_id_path=PackedInt32Array(1530604751, 78706927) index="0" unique_id=731794299]
+[node name="Skeleton3D" parent="Visuals/player/Armature" parent_id_path=PackedInt32Array(1530604751, 1499099279) index="0" unique_id=710344120]
 bones/0/position = Vector3(0.430916, -1.5654256, 3.1050714e-08)
 bones/0/rotation = Quaternion(0.7070975, 0.0036467176, -0.70709735, -0.0036467267)
 bones/2/position = Vector3(-0.43760982, -1.5654256, -3.1050714e-08)
 bones/2/rotation = Quaternion(0.7071054, 0.0014295949, -0.7071053, -0.0014295856)
-bones/4/position = Vector3(-0.067946225, -0.3062389, -0.10266486)
+bones/4/position = Vector3(-0.06794196, -0.30756745, -0.10142048)
 bones/4/rotation = Quaternion(0.01817262, -0.5623016, -0.012452725, 0.8266388)
-bones/5/position = Vector3(0.80978346, 1.3725853, -0.0006508951)
+bones/5/position = Vector3(0.7971817, 1.3600904, -0.0025849498)
 bones/5/rotation = Quaternion(0.7862409, 0.2851456, 0.5313277, -0.13493834)
 bones/6/rotation = Quaternion(-0.0667985, -0.0020584862, 0.03754949, 0.99705756)
-bones/7/position = Vector3(-1.0006591, 1.3734379, -0.06116066)
+bones/7/position = Vector3(-0.9919546, 1.3620137, -0.06287449)
 bones/8/rotation = Quaternion(0.05572952, 0.007788003, 0.055339575, 0.9968807)
-
-[node name="pelo" parent="Visuals/player/Armature/Skeleton3D" index="1" unique_id=1062384247]
-surface_material_override/1 = SubResource("ShaderMaterial_pa0r3")
 
 [node name="LookAtModifier3D" type="LookAtModifier3D" parent="Visuals/player/Armature/Skeleton3D" index="2" unique_id=23742200]
 bone_name = "Bone.002"
