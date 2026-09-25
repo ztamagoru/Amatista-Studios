@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://gdw24qfsbxxd"
-path="res://.godot/imported/player.glb-ae1edf01baaba8d1685741a4f60c906f.scn"
+path="res://.godot/imported/player.glb-559fefffd5d763f7360a1780c87316a0.scn"
 
 [deps]
 
-source_file="res://assets/models/player.glb"
-dest_files=["res://.godot/imported/player.glb-ae1edf01baaba8d1685741a4f60c906f.scn"]
+source_file="res://assets/models/player/player.glb"
+dest_files=["res://.godot/imported/player.glb-559fefffd5d763f7360a1780c87316a0.scn"]
 
 [params]
 
@@ -19,7 +19,7 @@ nodes/root_script=null
 mesh_library/use_node_names_as_mesh_names=false
 array_mesh/deduplicate_surfaces=true
 nodes/apply_root_scale=true
-nodes/root_scale=1.5
+nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
