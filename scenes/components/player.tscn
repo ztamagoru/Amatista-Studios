@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://be1tt23sunnkm" path="res://scripts/player/player_visuals.gd" id="2_d2wvv"]
 [ext_resource type="Script" uid="uid://c1cf1s81y2tcs" path="res://scripts/player/player_movement.gd" id="3_3v2ag"]
 [ext_resource type="PackedScene" uid="uid://gdw24qfsbxxd" path="res://assets/models/player/player.glb" id="5_q3gs8"]
+[ext_resource type="PackedScene" uid="uid://c3oewvnlgyuc4" path="res://assets/models/player/slingshot.glb" id="6_1sqjn"]
 [ext_resource type="Script" uid="uid://cey8cp60m7lcg" path="res://scripts/state_machine/state_machine.gd" id="6_fjrip"]
 [ext_resource type="Script" uid="uid://vsprl21yf2jx" path="res://scripts/player/player_input.gd" id="7_y4r1p"]
 [ext_resource type="Script" uid="uid://gdo5annln8lq" path="res://scripts/player/states/state_grounded.gd" id="9_y4r1p"]
@@ -81,7 +82,7 @@ transitions = ["Start", "MovementBlend", SubResource("AnimationNodeStateMachineT
 graph_offset = Vector2(33, -42)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_gkek8"]
-graph_offset = Vector2(-284.44446, 134.44444)
+graph_offset = Vector2(-313.49524, -112.14322)
 nodes/MoveMachine/node = SubResource("AnimationNodeStateMachine_oprun")
 nodes/MoveMachine/position = Vector2(-80, 100)
 nodes/AimTimeSeek/node = SubResource("AnimationNodeTimeSeek_a8ls1")
@@ -136,22 +137,30 @@ script = ExtResource("2_d2wvv")
 [node name="player" parent="Visuals" unique_id=1530604751 instance=ExtResource("5_q3gs8")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.6734377, 0)
 
-[node name="Skeleton3D" parent="Visuals/player/Armature" parent_id_path=PackedInt32Array(1530604751, 1499099279) index="0" unique_id=710344120]
+[node name="Skeleton3D" parent="Visuals/player/Armature" parent_id_path=PackedInt32Array(1530604751, 773401923) index="0" unique_id=1350507336]
 bones/0/position = Vector3(0.430916, -1.5654256, 3.1050714e-08)
 bones/0/rotation = Quaternion(0.7070975, 0.0036467176, -0.70709735, -0.0036467267)
 bones/2/position = Vector3(-0.43760982, -1.5654256, -3.1050714e-08)
 bones/2/rotation = Quaternion(0.7071054, 0.0014295949, -0.7071053, -0.0014295856)
-bones/4/position = Vector3(-0.06794196, -0.30756745, -0.10142048)
+bones/4/position = Vector3(-0.067945786, -0.5005227, -0.10253647)
 bones/4/rotation = Quaternion(0.01817262, -0.5623016, -0.012452725, 0.8266388)
-bones/5/position = Vector3(0.7971817, 1.3600904, -0.0025849498)
+bones/5/position = Vector3(0.8094839, 1.1757953, -0.0006968898)
 bones/5/rotation = Quaternion(0.7862409, 0.2851456, 0.5313277, -0.13493834)
 bones/6/rotation = Quaternion(-0.0667985, -0.0020584862, 0.03754949, 0.99705756)
-bones/7/position = Vector3(-0.9919546, 1.3620137, -0.06287449)
+bones/7/position = Vector3(-1.0008738, 1.1757952, -0.0611184)
 bones/8/rotation = Quaternion(0.05572952, 0.007788003, 0.055339575, 0.9968807)
 
 [node name="LookAtModifier3D" type="LookAtModifier3D" parent="Visuals/player/Armature/Skeleton3D" index="2" unique_id=23742200]
 bone_name = "Bone.002"
 bone = 0
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Visuals/player/Armature/Skeleton3D" index="3" unique_id=1573407]
+transform = Transform3D(0.2727658, 0.5917791, 0.75854886, 0.30499318, -0.8009672, 0.51519954, 0.912457, 0.09082344, -0.39896512, 0.8094839, 1.1757953, -0.0006968898)
+bone_name = "Bone.007"
+bone_idx = 5
+
+[node name="slingshot" parent="Visuals/player/Armature/Skeleton3D/BoneAttachment3D" unique_id=456766792 instance=ExtResource("6_1sqjn")]
+transform = Transform3D(-0.123380065, -0.54512054, 0.82922935, 0.93693835, 0.21135463, 0.27834675, -0.3269929, 0.81127894, 0.4846676, -0.0052701235, 1.9427207, -0.30186176)
 
 [node name="AnimationTree" type="AnimationTree" parent="Visuals" unique_id=151975009]
 root_node = NodePath("../player")
