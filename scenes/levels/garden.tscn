@@ -53,6 +53,14 @@ size = Vector3(167, 29, 96)
 [sub_resource type="BoxShape3D" id="BoxShape3D_krdl3"]
 size = Vector3(28.103027, 20.258667, 34.46811)
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_57qmd"]
+vertices = PackedVector3Array(-11.89209, 1.5, 21.85791, -6.89209, 1.5, 23.85791, -3.3920898, 1.5, 24.60791, 24.60791, 1.5, -3.3920898, 23.85791, 1.5, -6.89209, 21.85791, 1.5, -11.89209, -24.64209, 1.5, 3.1079102, -23.89209, 1.5, 6.85791, -21.89209, 1.5, 11.85791, 11.85791, 1.5, -21.89209, 6.85791, 1.5, -23.89209, 3.1079102, 1.5, -24.64209, 19.35791, 1.5, -15.64209, 15.60791, 1.5, -19.39209, -3.1420898, 1.5, -24.64209, -6.89209, 1.5, -23.89209, -11.89209, 1.5, -21.89209, -21.89209, 1.5, -11.89209, -23.89209, 1.5, -6.89209, -24.64209, 1.5, -3.1420898, -15.64209, 1.5, -19.39209, -19.39209, 1.5, -15.64209, 21.60791, 1.5, 12.35791, 23.60791, 1.5, 7.85791, 24.60791, 1.5, 3.3579102, 15.35791, 1.5, 19.60791, 18.35791, 1.5, 16.85791, -19.39209, 1.5, 15.60791, -15.64209, 1.5, 19.35791, 5.10791, 1.5, 24.35791, 9.85791, 1.5, 22.85791)
+polygons = [PackedInt32Array(0, 2, 1), PackedInt32Array(5, 4, 3), PackedInt32Array(8, 7, 6), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 13), PackedInt32Array(11, 13, 12), PackedInt32Array(11, 12, 5), PackedInt32Array(15, 14, 16), PackedInt32Array(16, 14, 11), PackedInt32Array(18, 17, 19), PackedInt32Array(19, 17, 21), PackedInt32Array(19, 21, 20), PackedInt32Array(19, 20, 16), PackedInt32Array(24, 23, 22), PackedInt32Array(26, 25, 22), PackedInt32Array(22, 25, 24), PackedInt32Array(24, 25, 3), PackedInt32Array(3, 25, 5), PackedInt32Array(28, 27, 8), PackedInt32Array(16, 11, 19), PackedInt32Array(19, 11, 5), PackedInt32Array(19, 5, 25), PackedInt32Array(19, 25, 2), PackedInt32Array(0, 28, 2), PackedInt32Array(2, 28, 8), PackedInt32Array(2, 8, 6), PackedInt32Array(2, 6, 19), PackedInt32Array(30, 29, 25), PackedInt32Array(25, 29, 2)]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yf5fn"]
+top_radius = 25.14209
+bottom_radius = 25.14209
+
 [node name="Garden" type="Node3D" unique_id=508071924]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2096877708]
@@ -64,7 +72,7 @@ shadow_enabled = true
 directional_shadow_max_distance = 500.0
 
 [node name="Player" parent="." unique_id=242546826 instance=ExtResource("1_8i028")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 4.289216, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 94.19454, 4.289218, 16.79965)
 
 [node name="Environment" type="Node3D" parent="." unique_id=228048704]
 
@@ -1269,9 +1277,11 @@ debug_color = Color(0.83530337, 0.38862136, 0, 0.41960785)
 
 [node name="NPCs" type="Node3D" parent="Environment" unique_id=339679470]
 
-[node name="Lucy" parent="Environment/NPCs" unique_id=460240726 node_paths=PackedStringArray("dialogue_handler") instance=ExtResource("4_32lya")]
-transform = Transform3D(0.69110036, 0, -0.7227589, 0, 1, 0, 0.7227589, 0, 0.69110036, -36.299397, 4.274521, 0)
+[node name="Lucy" parent="Environment/NPCs" unique_id=460240726 node_paths=PackedStringArray("dialogue_handler", "nav_region", "look_target") instance=ExtResource("4_32lya")]
+transform = Transform3D(0.69110036, 0, -0.7227589, 0, 1, 0, 0.7227589, 0, 0.69110036, 75.11682, 3.4753456, -16.071283)
 dialogue_handler = NodePath("DialogueHandler")
+nav_region = NodePath("../../../NavigationRegion3D")
+look_target = NodePath("../../../Player")
 
 [node name="DialogueHandler" type="Node" parent="Environment/NPCs/Lucy" unique_id=487469033]
 script = ExtResource("5_0qt43")
@@ -1281,5 +1291,12 @@ metadata/_custom_type_script = "uid://c1bj0q5evhiei"
 [node name="Camera" parent="." unique_id=672466676 node_paths=PackedStringArray("player") instance=ExtResource("3_2dny5")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 57.36074, 23.484562, 0)
 player = NodePath("../Player")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=2039987934]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.43282, 2.7913342, -13.511094)
+navigation_mesh = SubResource("NavigationMesh_57qmd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D" unique_id=1147676420]
+mesh = SubResource("CylinderMesh_yf5fn")
 
 [editable path="Environment/garden_scene"]
