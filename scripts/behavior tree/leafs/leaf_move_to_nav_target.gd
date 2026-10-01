@@ -1,6 +1,11 @@
 extends Leaf
 class_name LeafMoveToNavTarget
 
+## Moves owner to it's [NavigationAgent3D]'s [code]target_position[/code]
+##
+## Owner needs to have a [code]speed[/code] variable declared in order
+## to work properly. 
+
 @export var rotation_speed : float = 2.5
 
 func step() -> Result:

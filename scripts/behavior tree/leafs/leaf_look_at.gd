@@ -1,6 +1,11 @@
 extends Leaf
 class_name LeafLookAt
 
+## Changes owner's rotation based on target's [global_position].
+##
+## Target needs to be declared as [code]lookt_target[/code]
+## inside of a script attached to owner.
+
 @export var rotation_speed : float = 2.5
 
 func step() -> Result:

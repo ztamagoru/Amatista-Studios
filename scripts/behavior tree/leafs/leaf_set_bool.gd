@@ -1,6 +1,8 @@
 extends Leaf
 class_name LeafSetBool
 
+## Changes owner's desired bool value.
+
 @export var property_name : String
 @export var turn_to : bool
 
