@@ -1,0 +1,59 @@
+{
+	"npc": [
+		{
+			"id": "lucy",
+			"name": "Lucy",
+			"species": "Pudú",
+			"title": "El ciervo más pequeño de Sudamérica",
+			"description": "Siempre ocultos entre los bosques, animales muy difíciles de encontrar\nPero ella te encontró a tí, al nunca perder la fé en este bosque\nTe ayudará con su bolsa llena de cositas útiles. ¡Una gran amiga!",
+			"fun_fact": "Datito: ¡Saca su\nlengua para alcanzar\nsu comidita!"
+		},
+		{
+			"id": "thomas",
+			"name": "Thomas",
+			"species": "Zorro",
+			"title": "Cánido de la Paragonia",
+			"description": "Solitario, aunque no quiera.\nCurioso y creativo... el bosque le quitó\neso. ¿O la gente? Ayúdalo a volver a\nser él mismo.\nParece un guardia pero solo\nse resguarda",
+			"fun_fact": "Datito: Son los\nanimales más\n oportunistas\n del bosque" 
+		},
+		{
+			"id": "miss_sunday",
+			"name": "Miss Sunday",
+			"species": "Gallina",
+			"title": "Ave de campo",
+			"description": "No vuela, no ataca...\n(esperemos) pero te juzga\nProteje a sus polluelos con todo su\ncorazón y quiere que el bosque se cure en todo su esplendor",
+			"fun_fact": "Datito: Son capaces de\nrecordar y reconocer a\nlos animales que conocen" 
+		},
+		{
+			"id": "jorge",
+			"name": "Jorge",
+			"species": "Castor",
+			"title": "Roedor semiacuático de la Patagonia",
+			"description": "Famosos constructores de diques con\nramas y barro. Donde allí crecen\nfloresillas!\n(Pero este es muy vago..)\nFan #1 de las flores, las protege de la\nenfermedad del bosque, aunque se\nduerma en el intento",
+			"fun_fact": "Datito: ¡Sus dientes\nnunca dejan de crecer!" 
+		}
+	],
+	"plants": [
+		{
+			"id": "lupinas",
+			"name": "Lupinas",
+			"title": "Flores silvestres leguminosas",
+			"description": "Forman una especie de\n\"torre\" de capullos\nCada espiga puede reunir decenas\nde pequeñas flores, creando esas\nllamativas columnas de colores",
+			"fun_fact": "Se dice que... \"Su altura\nparece una torre donde\nallí guardan los secretos\nde la montaña\"" 
+		},
+		{
+			"id": "amancay",
+			"name": "Amancay",
+			"title": "Flor que sigue la luz del Sol en la\nPatagonia",
+			"description": "Crece entre los bosques andinos y sus\nflores amarillas y anaranjadas\ndestacan entre el verde del paisaje. Su\nnombre está ligado a la leyenda de la\nenamorada de Quintral",
+			"fun_fact": "Se dice que.. \"Quien\nregala un amancay,\nregala su corazón.\n" 
+		},
+		{
+			"id": "mutisia",
+			"name": "Mutisia",
+			"title": "Flor trepadora de los bosques\nPatagónicos",
+			"description": "Conocida por sus pétalos alargados y\ncolores intensos. Suele crecer\napoyándose en otras plantas para\nalcanzar la luz",
+			"fun_fact": "Se dice que.. \"Sus flores\nguardan los colores del\natardecer Patagónico\"" 
+		}
+	]
+}
