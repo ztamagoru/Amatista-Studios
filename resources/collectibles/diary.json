@@ -9,16 +9,16 @@
 			"fun_fact": "Datito: ¡Saca su\nlengua para alcanzar\nsu comidita!"
 		},
 		{
-			"id": "thomas",
-			"name": "Thomas",
+			"id": "chilla",
+			"name": "Chilla",
 			"species": "Zorro",
 			"title": "Cánido de la Paragonia",
 			"description": "Solitario, aunque no quiera.\nCurioso y creativo... el bosque le quitó\neso. ¿O la gente? Ayúdalo a volver a\nser él mismo.\nParece un guardia pero solo\nse resguarda",
 			"fun_fact": "Datito: Son los\nanimales más\n oportunistas\n del bosque" 
 		},
 		{
-			"id": "miss_sunday",
-			"name": "Miss Sunday",
+			"id": "gagabriela",
+			"name": "Gagabriela",
 			"species": "Gallina",
 			"title": "Ave de campo",
 			"description": "No vuela, no ataca...\n(esperemos) pero te juzga\nProteje a sus polluelos con todo su\ncorazón y quiere que el bosque se cure en todo su esplendor",
