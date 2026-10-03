@@ -1,0 +1,379 @@
+[gd_scene format=3 uid="uid://djucwy5pgkuy6"]
+
+[ext_resource type="Texture2D" uid="uid://dmtailek7lhxa" path="res://assets/ui/diary/diary_back.PNG" id="1_7c3j0"]
+[ext_resource type="Texture2D" uid="uid://6q6s2p2xfxw3" path="res://assets/ui/diary/diary_sticker_01.PNG" id="2_2chqf"]
+[ext_resource type="Texture2D" uid="uid://csccs6y860oe5" path="res://assets/ui/diary/diary_sticker_02.PNG" id="3_yb08e"]
+[ext_resource type="Texture2D" uid="uid://co44yu386vvex" path="res://assets/ui/diary/diary_sticker_03.PNG" id="4_p3eiw"]
+[ext_resource type="Texture2D" uid="uid://psfvvqa0qmu2" path="res://assets/ui/diary/diary_sticker_04.PNG" id="5_gev7q"]
+[ext_resource type="Texture2D" uid="uid://mq0stn2quwr5" path="res://assets/ui/diary/diary_sticker_05.PNG" id="6_gnhgv"]
+[ext_resource type="Texture2D" uid="uid://dqggl02vinnut" path="res://assets/ui/diary/diary_tab_plants.PNG" id="7_000iq"]
+[ext_resource type="Script" uid="uid://tflk3oekoebt" path="res://scripts/ui/diary/tab_manager.gd" id="7_p3eiw"]
+[ext_resource type="Texture2D" uid="uid://n5nwe31v3lg8" path="res://assets/ui/diary/diary_tab_animals.png" id="8_6jtnm"]
+[ext_resource type="Script" uid="uid://curpqdwhe71dy" path="res://scripts/ui/diary/tab.gd" id="9_gev7q"]
+[ext_resource type="Texture2D" uid="uid://cum16yn42bboq" path="res://assets/ui/diary/diary_tab_info.png" id="9_whird"]
+[ext_resource type="Texture2D" uid="uid://c5174prq1yhh4" path="res://assets/ui/diary/diary_page.PNG" id="10_18vdf"]
+[ext_resource type="Texture2D" uid="uid://dwv1h74imq7ay" path="res://assets/ui/diary/diary_lines.PNG" id="11_nywfn"]
+[ext_resource type="Texture2D" uid="uid://ddxy0rg226pmv" path="res://assets/ui/diary/drawings/amancay.png" id="12_kxsei"]
+[ext_resource type="Texture2D" uid="uid://ttilmevk02if" path="res://assets/ui/diary/diary_spiral.PNG" id="12_yb08e"]
+[ext_resource type="FontFile" uid="uid://biu80sh4ufjyk" path="res://assets/fonts/CaveatBrush-Regular.ttf" id="14_p3eiw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g4v7s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yf5fn"]
+atlas = ExtResource("7_000iq")
+region = Rect2(353.38638, 278.84082, 207.03677, 109.315216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gev7q"]
+atlas = ExtResource("8_6jtnm")
+region = Rect2(356.92953, 386.90613, 207.03677, 109.315216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnhgv"]
+atlas = ExtResource("9_whird")
+region = Rect2(358.70102, 491.42834, 207.03677, 109.315216)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gev7q"]
+font = ExtResource("14_p3eiw")
+font_size = 32
+font_color = Color(0.39215687, 0.2, 0.45882353, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gnhgv"]
+font = ExtResource("14_p3eiw")
+font_color = Color(0.39215687, 0.2, 0.45882353, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font = ExtResource("14_p3eiw")
+font_color = Color(0.78039217, 0.30980393, 0.5568628, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_000iq"]
+font = ExtResource("14_p3eiw")
+font_color = Color(0.39215687, 0.2, 0.45882353, 1)
+
+[node name="Diary" type="Control" unique_id=1036958420]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DiaryBackTexture" type="TextureRect" parent="." unique_id=1810887065]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7c3j0")
+expand_mode = 2
+
+[node name="Stickers" type="Control" parent="." unique_id=2039724950]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Stickers" unique_id=19370414]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2chqf")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Stickers" unique_id=96858370]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_yb08e")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Stickers" unique_id=571638321]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_p3eiw")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="Stickers" unique_id=1701567984]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_gev7q")
+expand_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="Stickers" unique_id=992931654]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_gnhgv")
+expand_mode = 1
+
+[node name="Tabs" type="Control" parent="." unique_id=27725416 node_paths=PackedStringArray("tabs")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_p3eiw")
+tabs = [NodePath("PlantTab"), NodePath("NPCTab")]
+
+[node name="PlantTab" type="Button" parent="Tabs" unique_id=1861401583 node_paths=PackedStringArray("entry_template")]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 162.0
+offset_right = 421.0
+offset_bottom = 271.0
+scale = Vector2(0.62, 0.62)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g4v7s")
+icon = SubResource("AtlasTexture_yf5fn")
+script = ExtResource("9_gev7q")
+entry_template = NodePath("../../DiaryEntries/PlantEntry")
+metadata/_custom_type_script = "uid://curpqdwhe71dy"
+
+[node name="NPCTab" type="Button" parent="Tabs" unique_id=329056481 node_paths=PackedStringArray("entry_template")]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 231.0
+offset_right = 421.0
+offset_bottom = 340.0
+scale = Vector2(0.62, 0.62)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g4v7s")
+icon = SubResource("AtlasTexture_gev7q")
+script = ExtResource("9_gev7q")
+entry_template = NodePath("../../DiaryEntries/NPCEntry")
+metadata/_custom_type_script = "uid://curpqdwhe71dy"
+
+[node name="InfoTab" type="Button" parent="Tabs" unique_id=27892547]
+visible = false
+layout_mode = 0
+offset_left = 214.0
+offset_top = 296.0
+offset_right = 421.0
+offset_bottom = 405.0
+scale = Vector2(0.62, 0.62)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g4v7s")
+icon = SubResource("AtlasTexture_gnhgv")
+script = ExtResource("9_gev7q")
+metadata/_custom_type_script = "uid://curpqdwhe71dy"
+
+[node name="PageTexture" type="TextureRect" parent="." unique_id=210228825]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("10_18vdf")
+expand_mode = 2
+
+[node name="PageLinesTexture" type="TextureRect" parent="." unique_id=1706673924]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("11_nywfn")
+expand_mode = 2
+
+[node name="SpiralTexture" type="TextureRect" parent="." unique_id=635153759]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("12_yb08e")
+expand_mode = 2
+
+[node name="DiaryEntries" type="MarginContainer" parent="." unique_id=1907789105]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 282
+theme_override_constants/margin_top = 153
+theme_override_constants/margin_right = 243
+theme_override_constants/margin_bottom = 126
+
+[node name="PlantEntry" type="Control" parent="DiaryEntries" unique_id=1976302706]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="DiaryEntries/PlantEntry" unique_id=1321124103]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -184.5
+offset_right = 268.06097
+offset_bottom = 184.5
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 26
+theme_override_constants/margin_top = 21
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 27
+
+[node name="EntryTexture" type="TextureRect" parent="DiaryEntries/PlantEntry/MarginContainer" unique_id=585996461]
+layout_mode = 2
+texture = ExtResource("12_kxsei")
+expand_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="DiaryEntries/PlantEntry" unique_id=1654884281]
+custom_minimum_size = Vector2(299.985, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 27
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DiaryEntries/PlantEntry/MarginContainer2" unique_id=104154725]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="PlantName" type="Label" parent="DiaryEntries/PlantEntry/MarginContainer2/VBoxContainer" unique_id=2077647191]
+layout_mode = 2
+text = "titulo"
+label_settings = SubResource("LabelSettings_gev7q")
+horizontal_alignment = 1
+
+[node name="PlantTitle" type="Label" parent="DiaryEntries/PlantEntry/MarginContainer2/VBoxContainer" unique_id=1038107485]
+layout_mode = 2
+text = "subtitulo"
+label_settings = SubResource("LabelSettings_gnhgv")
+horizontal_alignment = 1
+
+[node name="PlantFunFact" type="Label" parent="DiaryEntries/PlantEntry/MarginContainer2" unique_id=1752015365]
+layout_mode = 2
+size_flags_vertical = 8
+text = "hola"
+label_settings = SubResource("LabelSettings_g4v7s")
+horizontal_alignment = 1
+
+[node name="NPCEntry" type="Control" parent="DiaryEntries" unique_id=1357765685]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="DiaryEntries/NPCEntry" unique_id=451450156]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -184.5
+offset_right = 268.06097
+offset_bottom = 184.5
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 26
+theme_override_constants/margin_top = 21
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 27
+
+[node name="EntryTexture" type="TextureRect" parent="DiaryEntries/NPCEntry/MarginContainer" unique_id=1754440195]
+layout_mode = 2
+texture = ExtResource("12_kxsei")
+expand_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="DiaryEntries/NPCEntry" unique_id=1621255156]
+custom_minimum_size = Vector2(299.985, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 27
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DiaryEntries/NPCEntry/MarginContainer2" unique_id=541088431]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="NPCSpecies" type="Label" parent="DiaryEntries/NPCEntry/MarginContainer2/VBoxContainer" unique_id=1103358081]
+layout_mode = 2
+text = "titulo"
+label_settings = SubResource("LabelSettings_gev7q")
+horizontal_alignment = 1
+
+[node name="NPCTitle" type="Label" parent="DiaryEntries/NPCEntry/MarginContainer2/VBoxContainer" unique_id=781452698]
+layout_mode = 2
+text = "subtitulo"
+label_settings = SubResource("LabelSettings_000iq")
+horizontal_alignment = 1
+
+[node name="NPCDescription" type="Label" parent="DiaryEntries/NPCEntry/MarginContainer2/VBoxContainer" unique_id=1711462090]
+layout_mode = 2
+text = "subtitulo"
+label_settings = SubResource("LabelSettings_000iq")
+horizontal_alignment = 1
+
+[node name="NPCFunFact" type="Label" parent="DiaryEntries/NPCEntry/MarginContainer2" unique_id=1120211386]
+layout_mode = 2
+size_flags_vertical = 8
+text = "hola"
+label_settings = SubResource("LabelSettings_g4v7s")
+horizontal_alignment = 1
