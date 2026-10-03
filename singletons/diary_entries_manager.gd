@@ -15,8 +15,6 @@ var unlocked_entries : Array[StringName]
 
 func _ready() -> void:
 	_load_diary_entries()
-	_update_unlocks()
-	print(collection)
 
 func _load_diary_entries() -> void:
 	if not FileAccess.file_exists(diary_route):
@@ -31,6 +29,8 @@ func _load_diary_entries() -> void:
 	assert(error == OK, "error parsing diary entries")
 	
 	all_entries = json.data
+	
+	_update_unlocks()
 
 func _update_unlocks() -> void:
 	collection.clear()

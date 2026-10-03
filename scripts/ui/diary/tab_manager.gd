@@ -4,6 +4,8 @@ extends Control
 
 @export var tabs : Array[TabButton] = []
 
+@export var entry_manager = Control
+
 # --
 
 var current_tab : TabButton
@@ -29,3 +31,4 @@ func _change_tab_visibility(new_tab : TabButton) -> void:
 		current_tab.move_tab(false)
 		
 		current_tab = new_tab
+		entry_manager.change_tab(current_tab.category)

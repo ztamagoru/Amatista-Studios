@@ -16,6 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://ddxy0rg226pmv" path="res://assets/ui/diary/drawings/amancay.png" id="12_kxsei"]
 [ext_resource type="Texture2D" uid="uid://ttilmevk02if" path="res://assets/ui/diary/diary_spiral.PNG" id="12_yb08e"]
 [ext_resource type="FontFile" uid="uid://biu80sh4ufjyk" path="res://assets/fonts/CaveatBrush-Regular.ttf" id="14_p3eiw"]
+[ext_resource type="Script" uid="uid://hkfvogqiniqj" path="res://scripts/ui/diary/entry_manager.gd" id="15_gnhgv"]
+[ext_resource type="Script" uid="uid://dn1c2331x66n4" path="res://scripts/ui/diary/plant_entry.gd" id="16_6jtnm"]
+[ext_resource type="Script" uid="uid://bflk7anrp16tu" path="res://scripts/ui/diary/npc_entry.gd" id="19_whird"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g4v7s"]
 
@@ -124,7 +127,7 @@ grow_vertical = 2
 texture = ExtResource("6_gnhgv")
 expand_mode = 1
 
-[node name="Tabs" type="Control" parent="." unique_id=27725416 node_paths=PackedStringArray("tabs")]
+[node name="Tabs" type="Control" parent="." unique_id=27725416 node_paths=PackedStringArray("tabs", "entry_manager")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -133,6 +136,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("7_p3eiw")
 tabs = [NodePath("PlantTab"), NodePath("NPCTab")]
+entry_manager = NodePath("../EntryManager")
 
 [node name="PlantTab" type="Button" parent="Tabs" unique_id=1861401583 node_paths=PackedStringArray("entry_template")]
 layout_mode = 0
@@ -154,7 +158,8 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_g4v7s")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_g4v7s")
 icon = SubResource("AtlasTexture_yf5fn")
 script = ExtResource("9_gev7q")
-entry_template = NodePath("../../DiaryEntries/PlantEntry")
+entry_template = NodePath("../../EntryManager/PlantEntry")
+category = &"plants"
 metadata/_custom_type_script = "uid://curpqdwhe71dy"
 
 [node name="NPCTab" type="Button" parent="Tabs" unique_id=329056481 node_paths=PackedStringArray("entry_template")]
@@ -177,7 +182,8 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_g4v7s")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_g4v7s")
 icon = SubResource("AtlasTexture_gev7q")
 script = ExtResource("9_gev7q")
-entry_template = NodePath("../../DiaryEntries/NPCEntry")
+entry_template = NodePath("../../EntryManager/NPCEntry")
+category = &"npc"
 metadata/_custom_type_script = "uid://curpqdwhe71dy"
 
 [node name="InfoTab" type="Button" parent="Tabs" unique_id=27892547]
@@ -236,7 +242,7 @@ mouse_filter = 2
 texture = ExtResource("12_yb08e")
 expand_mode = 2
 
-[node name="DiaryEntries" type="MarginContainer" parent="." unique_id=1907789105]
+[node name="EntryManager" type="MarginContainer" parent="." unique_id=1907789105 node_paths=PackedStringArray("plant_entry_template", "npc_entry_template")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -248,12 +254,22 @@ theme_override_constants/margin_left = 282
 theme_override_constants/margin_top = 153
 theme_override_constants/margin_right = 243
 theme_override_constants/margin_bottom = 126
+script = ExtResource("15_gnhgv")
+plant_entry_template = NodePath("PlantEntry")
+npc_entry_template = NodePath("NPCEntry")
 
-[node name="PlantEntry" type="Control" parent="DiaryEntries" unique_id=1976302706]
+[node name="PlantEntry" type="Control" parent="EntryManager" unique_id=1976302706 node_paths=PackedStringArray("name_label", "desc_label", "fun_fact_label", "entry_rect")]
 layout_mode = 2
 mouse_filter = 2
+script = ExtResource("16_6jtnm")
+name_label = NodePath("MarginContainer2/VBoxContainer/PlantName")
+desc_label = NodePath("MarginContainer2/VBoxContainer/PlantDescription")
+fun_fact_label = NodePath("MarginContainer2/PlantFunFact")
+entry_rect = NodePath("MarginContainer/PlantEntryTexture")
 
-[node name="MarginContainer" type="MarginContainer" parent="DiaryEntries/PlantEntry" unique_id=1321124103]
+[node name="MarginContainer" type="MarginContainer" parent="EntryManager/PlantEntry" unique_id=1321124103]
+custom_minimum_size = Vector2(300, 0)
+custom_maximum_size = Vector2(300, -1)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -263,18 +279,17 @@ offset_right = 268.06097
 offset_bottom = 184.5
 grow_vertical = 2
 size_flags_horizontal = 0
-theme_override_constants/margin_left = 26
-theme_override_constants/margin_top = 21
-theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 27
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_right = 27
 
-[node name="EntryTexture" type="TextureRect" parent="DiaryEntries/PlantEntry/MarginContainer" unique_id=585996461]
+[node name="PlantEntryTexture" type="TextureRect" parent="EntryManager/PlantEntry/MarginContainer" unique_id=585996461]
 layout_mode = 2
 texture = ExtResource("12_kxsei")
 expand_mode = 3
 
-[node name="MarginContainer2" type="MarginContainer" parent="DiaryEntries/PlantEntry" unique_id=1654884281]
-custom_minimum_size = Vector2(299.985, 0)
+[node name="MarginContainer2" type="MarginContainer" parent="EntryManager/PlantEntry" unique_id=1654884281]
+custom_minimum_size = Vector2(300, 0)
+custom_maximum_size = Vector2(300, -1)
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -287,35 +302,43 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 27
 
-[node name="VBoxContainer" type="VBoxContainer" parent="DiaryEntries/PlantEntry/MarginContainer2" unique_id=104154725]
+[node name="VBoxContainer" type="VBoxContainer" parent="EntryManager/PlantEntry/MarginContainer2" unique_id=104154725]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="PlantName" type="Label" parent="DiaryEntries/PlantEntry/MarginContainer2/VBoxContainer" unique_id=2077647191]
+[node name="PlantName" type="Label" parent="EntryManager/PlantEntry/MarginContainer2/VBoxContainer" unique_id=2077647191]
 layout_mode = 2
 text = "titulo"
 label_settings = SubResource("LabelSettings_gev7q")
 horizontal_alignment = 1
 
-[node name="PlantTitle" type="Label" parent="DiaryEntries/PlantEntry/MarginContainer2/VBoxContainer" unique_id=1038107485]
+[node name="PlantDescription" type="Label" parent="EntryManager/PlantEntry/MarginContainer2/VBoxContainer" unique_id=1038107485]
 layout_mode = 2
 text = "subtitulo"
 label_settings = SubResource("LabelSettings_gnhgv")
 horizontal_alignment = 1
+autowrap_mode = 2
 
-[node name="PlantFunFact" type="Label" parent="DiaryEntries/PlantEntry/MarginContainer2" unique_id=1752015365]
+[node name="PlantFunFact" type="Label" parent="EntryManager/PlantEntry/MarginContainer2" unique_id=1752015365]
 layout_mode = 2
 size_flags_vertical = 8
 text = "hola"
 label_settings = SubResource("LabelSettings_g4v7s")
 horizontal_alignment = 1
+autowrap_mode = 2
 
-[node name="NPCEntry" type="Control" parent="DiaryEntries" unique_id=1357765685]
+[node name="NPCEntry" type="Control" parent="EntryManager" unique_id=1357765685 node_paths=PackedStringArray("species_label", "title_label", "desc_label", "fun_fact_label", "entry_rect")]
 visible = false
 layout_mode = 2
 mouse_filter = 2
+script = ExtResource("19_whird")
+species_label = NodePath("MarginContainer2/VBoxContainer/NPCSpecies")
+title_label = NodePath("MarginContainer2/VBoxContainer/NPCTitle")
+desc_label = NodePath("MarginContainer2/VBoxContainer/NPCDescription")
+fun_fact_label = NodePath("MarginContainer2/NPCFunFact")
+entry_rect = NodePath("MarginContainer/NPCEntryTexture")
 
-[node name="MarginContainer" type="MarginContainer" parent="DiaryEntries/NPCEntry" unique_id=451450156]
+[node name="MarginContainer" type="MarginContainer" parent="EntryManager/NPCEntry" unique_id=451450156]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -330,13 +353,14 @@ theme_override_constants/margin_top = 21
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 27
 
-[node name="EntryTexture" type="TextureRect" parent="DiaryEntries/NPCEntry/MarginContainer" unique_id=1754440195]
+[node name="NPCEntryTexture" type="TextureRect" parent="EntryManager/NPCEntry/MarginContainer" unique_id=1754440195]
 layout_mode = 2
 texture = ExtResource("12_kxsei")
 expand_mode = 3
 
-[node name="MarginContainer2" type="MarginContainer" parent="DiaryEntries/NPCEntry" unique_id=1621255156]
-custom_minimum_size = Vector2(299.985, 0)
+[node name="MarginContainer2" type="MarginContainer" parent="EntryManager/NPCEntry" unique_id=1621255156]
+custom_minimum_size = Vector2(300, 0)
+custom_maximum_size = Vector2(300, -1)
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -349,31 +373,33 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 27
 
-[node name="VBoxContainer" type="VBoxContainer" parent="DiaryEntries/NPCEntry/MarginContainer2" unique_id=541088431]
+[node name="VBoxContainer" type="VBoxContainer" parent="EntryManager/NPCEntry/MarginContainer2" unique_id=541088431]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="NPCSpecies" type="Label" parent="DiaryEntries/NPCEntry/MarginContainer2/VBoxContainer" unique_id=1103358081]
+[node name="NPCSpecies" type="Label" parent="EntryManager/NPCEntry/MarginContainer2/VBoxContainer" unique_id=1103358081]
 layout_mode = 2
 text = "titulo"
 label_settings = SubResource("LabelSettings_gev7q")
 horizontal_alignment = 1
 
-[node name="NPCTitle" type="Label" parent="DiaryEntries/NPCEntry/MarginContainer2/VBoxContainer" unique_id=781452698]
+[node name="NPCTitle" type="Label" parent="EntryManager/NPCEntry/MarginContainer2/VBoxContainer" unique_id=781452698]
 layout_mode = 2
 text = "subtitulo"
 label_settings = SubResource("LabelSettings_000iq")
 horizontal_alignment = 1
 
-[node name="NPCDescription" type="Label" parent="DiaryEntries/NPCEntry/MarginContainer2/VBoxContainer" unique_id=1711462090]
+[node name="NPCDescription" type="Label" parent="EntryManager/NPCEntry/MarginContainer2/VBoxContainer" unique_id=1711462090]
 layout_mode = 2
 text = "subtitulo"
 label_settings = SubResource("LabelSettings_000iq")
 horizontal_alignment = 1
+autowrap_mode = 2
 
-[node name="NPCFunFact" type="Label" parent="DiaryEntries/NPCEntry/MarginContainer2" unique_id=1120211386]
+[node name="NPCFunFact" type="Label" parent="EntryManager/NPCEntry/MarginContainer2" unique_id=1120211386]
 layout_mode = 2
 size_flags_vertical = 8
 text = "hola"
 label_settings = SubResource("LabelSettings_g4v7s")
 horizontal_alignment = 1
+autowrap_mode = 2

@@ -9,6 +9,8 @@ signal new_tab_selected(tab : TabButton)
 
 @export var entry_template : Control
 
+@export var category : StringName
+
 # --
 
 var initial_pos : Vector2
