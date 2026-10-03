@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqggl02vinnut"
-path="res://.godot/imported/diary_tab.PNG-e5c0a95848212239684f9e97f7ff88da.ctex"
+uid="uid://n5nwe31v3lg8"
+path="res://.godot/imported/diary_tab_animals.png-f1e706f7305ba06bddde097d364b5122.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/diary/diary_tab.PNG"
-dest_files=["res://.godot/imported/diary_tab.PNG-e5c0a95848212239684f9e97f7ff88da.ctex"]
+source_file="res://assets/ui/diary/diary_tab_animals.png"
+dest_files=["res://.godot/imported/diary_tab_animals.png-f1e706f7305ba06bddde097d364b5122.ctex"]
 
 [params]
 
