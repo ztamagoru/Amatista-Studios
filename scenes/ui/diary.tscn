@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://djucwy5pgkuy6"]
 
 [ext_resource type="Texture2D" uid="uid://dmtailek7lhxa" path="res://assets/ui/diary/diary_back.PNG" id="1_7c3j0"]
+[ext_resource type="Script" uid="uid://u3vly2lcimpr" path="res://scenes/ui/diary.gd" id="1_18vdf"]
 [ext_resource type="Texture2D" uid="uid://6q6s2p2xfxw3" path="res://assets/ui/diary/diary_sticker_01.PNG" id="2_2chqf"]
 [ext_resource type="Texture2D" uid="uid://csccs6y860oe5" path="res://assets/ui/diary/diary_sticker_02.PNG" id="3_yb08e"]
 [ext_resource type="Texture2D" uid="uid://co44yu386vvex" path="res://assets/ui/diary/diary_sticker_03.PNG" id="4_p3eiw"]
@@ -19,6 +20,7 @@
 [ext_resource type="Script" uid="uid://hkfvogqiniqj" path="res://scripts/ui/diary/entry_manager.gd" id="15_gnhgv"]
 [ext_resource type="Script" uid="uid://dn1c2331x66n4" path="res://scripts/ui/diary/plant_entry.gd" id="16_6jtnm"]
 [ext_resource type="Script" uid="uid://bflk7anrp16tu" path="res://scripts/ui/diary/npc_entry.gd" id="19_whird"]
+[ext_resource type="Texture2D" uid="uid://dd5firt4lmy81" path="res://assets/ui/diary/diary_buttons.png" id="21_nywfn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g4v7s"]
 
@@ -51,6 +53,20 @@ font_color = Color(0.78039217, 0.30980393, 0.5568628, 1)
 font = ExtResource("14_p3eiw")
 font_color = Color(0.39215687, 0.2, 0.45882353, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d0u6y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57qmd"]
+atlas = ExtResource("21_nywfn")
+region = Rect2(391.9442, 279.50998, 217.24219, 213.19104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18vdf"]
+atlas = ExtResource("21_nywfn")
+region = Rect2(391.9442, 539.0551, 217.24219, 213.19104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4v7s"]
+atlas = ExtResource("21_nywfn")
+region = Rect2(1188.1172, 379.5452, 220.6134, 213.54645)
+
 [node name="Diary" type="Control" unique_id=1036958420]
 layout_mode = 3
 anchors_preset = 15
@@ -58,6 +74,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_18vdf")
 
 [node name="DiaryBackTexture" type="TextureRect" parent="." unique_id=1810887065]
 layout_mode = 1
@@ -242,7 +259,7 @@ mouse_filter = 2
 texture = ExtResource("12_yb08e")
 expand_mode = 2
 
-[node name="EntryManager" type="MarginContainer" parent="." unique_id=1907789105 node_paths=PackedStringArray("plant_entry_template", "npc_entry_template")]
+[node name="EntryManager" type="MarginContainer" parent="." unique_id=1907789105 node_paths=PackedStringArray("plant_entry_template", "npc_entry_template", "button_previous_page", "button_next_page")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -257,6 +274,8 @@ theme_override_constants/margin_bottom = 126
 script = ExtResource("15_gnhgv")
 plant_entry_template = NodePath("PlantEntry")
 npc_entry_template = NodePath("NPCEntry")
+button_previous_page = NodePath("Buttons/PreviousPageButton")
+button_next_page = NodePath("Buttons/NextPageButton")
 
 [node name="PlantEntry" type="Control" parent="EntryManager" unique_id=1976302706 node_paths=PackedStringArray("name_label", "desc_label", "fun_fact_label", "entry_rect")]
 layout_mode = 2
@@ -403,3 +422,70 @@ text = "hola"
 label_settings = SubResource("LabelSettings_g4v7s")
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="Buttons" type="Control" parent="EntryManager" unique_id=2048224937]
+layout_mode = 2
+
+[node name="PreviousPageButton" type="Button" parent="EntryManager/Buttons" unique_id=256635857]
+layout_mode = 0
+offset_left = -12.000004
+offset_top = 157.0
+offset_right = 205.0
+offset_bottom = 370.0
+scale = Vector2(0.2, 0.2)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d0u6y")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_d0u6y")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_d0u6y")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_d0u6y")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_d0u6y")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_d0u6y")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_d0u6y")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_d0u6y")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_d0u6y")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_d0u6y")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_d0u6y")
+icon = SubResource("AtlasTexture_57qmd")
+
+[node name="NextPageButton" type="Button" parent="EntryManager/Buttons" unique_id=1450449145]
+layout_mode = 0
+offset_left = 598.0
+offset_top = 157.0
+offset_right = 815.0
+offset_bottom = 370.0
+scale = Vector2(0.2, 0.2)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d0u6y")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_d0u6y")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_d0u6y")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_d0u6y")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_d0u6y")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_d0u6y")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_d0u6y")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_d0u6y")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_d0u6y")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_d0u6y")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_d0u6y")
+icon = SubResource("AtlasTexture_18vdf")
+
+[node name="ExitButton" type="Button" parent="." unique_id=1630445945]
+layout_mode = 0
+offset_left = 875.00006
+offset_top = 100.00001
+offset_right = 1103.0
+offset_bottom = 321.0
+scale = Vector2(0.345, 0.345)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g4v7s")
+icon = SubResource("AtlasTexture_g4v7s")
+
+[connection signal="pressed" from="EntryManager/Buttons/PreviousPageButton" to="EntryManager" method="_on_previous_page_button_pressed"]
+[connection signal="pressed" from="EntryManager/Buttons/NextPageButton" to="EntryManager" method="_on_next_page_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

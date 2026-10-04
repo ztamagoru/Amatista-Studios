@@ -20,3 +20,9 @@ func update_entry(index : int) -> void:
 	desc_label.text = new_entry.description
 	fun_fact_label.text = new_entry.fun_fact
 	entry_rect.texture = get_image(new_entry.id)
+	
+	change_buttons_visibility(index, entries)
+
+func change_buttons_visibility(index : int, entries : Array) -> void:
+	get_parent().button_previous_page.visible = index > 0
+	get_parent().button_next_page.visible = index < entries.size() - 1
