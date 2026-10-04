@@ -16,9 +16,6 @@ var current_cat : StringName
 
 # --
 
-func _ready() -> void:
-	pass
-
 func change_tab(new_cat : StringName):
 	index = 0
 	current_cat = new_cat
