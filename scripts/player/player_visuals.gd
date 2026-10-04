@@ -6,7 +6,7 @@ class_name PlayerVisuals
 @onready var player : Player = get_parent()
 
 @onready var anim_tree : AnimationTree = $AnimationTree
-@onready var skeleton : Skeleton3D = $Rogue/Rig_Medium/Skeleton3D
+#@onready var skeleton : Skeleton3D = $Rogue/Rig_Medium/Skeleton3D
 
 #@onready var look_at_modifier : LookAtModifier3D = $Rogue/Rig_Medium/Skeleton3D/LookAtModifier3D
 

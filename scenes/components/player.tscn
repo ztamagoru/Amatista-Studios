@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://cpnl2esit1ut2" path="res://scripts/player/states/transition_jump.gd" id="13_oprun"]
 [ext_resource type="Script" uid="uid://dvlde7yrjsm6r" path="res://scripts/player/states/transition_aim.gd" id="14_qfm1y"]
 [ext_resource type="Script" uid="uid://bnty8rlnls6qv" path="res://scripts/player/states/transition_grounded.gd" id="15_a8ls1"]
+[ext_resource type="Script" uid="uid://brha25elchg3v" path="res://scripts/player/interactor.gd" id="16_x2hwn"]
 [ext_resource type="Script" uid="uid://h6n5tavox1pk" path="res://scripts/player/states/state_aim.gd" id="17_fulsm"]
 [ext_resource type="Script" uid="uid://dqptjen21owrn" path="res://scripts/player/states/transition_unaim.gd" id="18_fulsm"]
 
@@ -118,6 +119,9 @@ script = ExtResource("12_jej6c")
 max_speed = 2.5
 metadata/_custom_type_script = "uid://c6mwmaryafgmy"
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_fbwj1"]
+radius = 15.0
+
 [node name="Player" type="CharacterBody3D" unique_id=242546826 groups=["player"]]
 script = ExtResource("1_ur7pv")
 
@@ -137,17 +141,17 @@ script = ExtResource("2_d2wvv")
 [node name="player" parent="Visuals" unique_id=1530604751 instance=ExtResource("5_q3gs8")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.6734377, 0)
 
-[node name="Skeleton3D" parent="Visuals/player/Armature" parent_id_path=PackedInt32Array(1530604751, 773401923) index="0" unique_id=1350507336]
+[node name="Skeleton3D" parent="Visuals/player/Armature" parent_id_path=PackedInt32Array(1530604751, 1631440679) index="0" unique_id=801933019]
 bones/0/position = Vector3(0.430916, -1.5654256, 3.1050714e-08)
 bones/0/rotation = Quaternion(0.7070975, 0.0036467176, -0.70709735, -0.0036467267)
 bones/2/position = Vector3(-0.43760982, -1.5654256, -3.1050714e-08)
 bones/2/rotation = Quaternion(0.7071054, 0.0014295949, -0.7071053, -0.0014295856)
-bones/4/position = Vector3(-0.067945786, -0.5005227, -0.10253647)
+bones/4/position = Vector3(-0.06793506, -0.33061156, -0.09940204)
 bones/4/rotation = Quaternion(0.01817262, -0.5623016, -0.012452725, 0.8266388)
-bones/5/position = Vector3(0.8094839, 1.1757953, -0.0006968898)
+bones/5/position = Vector3(0.77520853, 1.3210082, -0.005957284)
 bones/5/rotation = Quaternion(0.7862409, 0.2851456, 0.5313277, -0.13493834)
 bones/6/rotation = Quaternion(-0.0667985, -0.0020584862, 0.03754949, 0.99705756)
-bones/7/position = Vector3(-1.0008738, 1.1757952, -0.0611184)
+bones/7/position = Vector3(-0.97493213, 1.3286408, -0.06622603)
 bones/8/rotation = Quaternion(0.05572952, 0.007788003, 0.055339575, 0.9968807)
 
 [node name="LookAtModifier3D" type="LookAtModifier3D" parent="Visuals/player/Armature/Skeleton3D" index="2" unique_id=23742200]
@@ -155,7 +159,7 @@ bone_name = "Bone.002"
 bone = 0
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Visuals/player/Armature/Skeleton3D" index="3" unique_id=1573407]
-transform = Transform3D(0.2727658, 0.5917791, 0.75854886, 0.30499318, -0.8009672, 0.51519954, 0.912457, 0.09082344, -0.39896512, 0.8094839, 1.1757953, -0.0006968898)
+transform = Transform3D(0.2727658, 0.5917791, 0.75854886, 0.30499318, -0.8009672, 0.51519954, 0.912457, 0.09082344, -0.39896512, 0.77520853, 1.3210082, -0.005957284)
 bone_name = "Bone.007"
 bone_idx = 5
 
@@ -220,5 +224,11 @@ metadata/_custom_type_script = "uid://ddph5uie3edkd"
 script = ExtResource("18_fulsm")
 target_state = NodePath("../../Grounded")
 metadata/_custom_type_script = "uid://cn204pqn8fpqo"
+
+[node name="Interactor" type="Area3D" parent="." unique_id=1729763951]
+script = ExtResource("16_x2hwn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactor" unique_id=1967501318]
+shape = SubResource("SphereShape3D_fbwj1")
 
 [editable path="Visuals/player"]
