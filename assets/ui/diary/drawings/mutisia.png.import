@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqggl02vinnut"
-path="res://.godot/imported/diary_tab.PNG-e5c0a95848212239684f9e97f7ff88da.ctex"
+uid="uid://w8tnlf7pb8vw"
+path="res://.godot/imported/mutisia.png-7357be482925f02b9df1f9ec8f2997a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/diary/diary_tab.PNG"
-dest_files=["res://.godot/imported/diary_tab.PNG-e5c0a95848212239684f9e97f7ff88da.ctex"]
+source_file="res://assets/ui/diary/drawings/mutisia.png"
+dest_files=["res://.godot/imported/mutisia.png-7357be482925f02b9df1f9ec8f2997a4.ctex"]
 
 [params]
 
