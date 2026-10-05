@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://tj582qybx6lb" path="res://scenes/components/npcs/lucy.tscn" id="4_32lya"]
 [ext_resource type="Script" uid="uid://c1bj0q5evhiei" path="res://scripts/dialogue_handler.gd" id="5_0qt43"]
 [ext_resource type="Resource" uid="uid://lchbrjx6xoyt" path="res://resources/dialogs/garden/garden_lucy.dialogue" id="6_ne1lt"]
+[ext_resource type="PackedScene" uid="uid://do4juj1x8a12b" path="res://scenes/components/trees/tree_arrayan_1.tscn" id="7_330lt"]
+[ext_resource type="PackedScene" uid="uid://qo42s8wkj658" path="res://scenes/components/trees/tree_arrayan_2.tscn" id="8_2yqtw"]
+[ext_resource type="PackedScene" uid="uid://cbfobuwmfg1rt" path="res://scenes/components/trees/tree_arrayan_3.tscn" id="9_64guk"]
+[ext_resource type="PackedScene" uid="uid://ccy1cnrupwn6t" path="res://scenes/components/trees/tree_arrayan_4.tscn" id="10_sphon"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2dny5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -54,12 +58,12 @@ size = Vector3(167, 29, 96)
 size = Vector3(28.103027, 20.258667, 34.46811)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_57qmd"]
-vertices = PackedVector3Array(-11.89209, 1.5, 21.85791, -6.89209, 1.5, 23.85791, -3.3920898, 1.5, 24.60791, 24.60791, 1.5, -3.3920898, 23.85791, 1.5, -6.89209, 21.85791, 1.5, -11.89209, -24.64209, 1.5, 3.1079102, -23.89209, 1.5, 6.85791, -21.89209, 1.5, 11.85791, 11.85791, 1.5, -21.89209, 6.85791, 1.5, -23.89209, 3.1079102, 1.5, -24.64209, 19.35791, 1.5, -15.64209, 15.60791, 1.5, -19.39209, -3.1420898, 1.5, -24.64209, -6.89209, 1.5, -23.89209, -11.89209, 1.5, -21.89209, -21.89209, 1.5, -11.89209, -23.89209, 1.5, -6.89209, -24.64209, 1.5, -3.1420898, -15.64209, 1.5, -19.39209, -19.39209, 1.5, -15.64209, 21.60791, 1.5, 12.35791, 23.60791, 1.5, 7.85791, 24.60791, 1.5, 3.3579102, 15.35791, 1.5, 19.60791, 18.35791, 1.5, 16.85791, -19.39209, 1.5, 15.60791, -15.64209, 1.5, 19.35791, 5.10791, 1.5, 24.35791, 9.85791, 1.5, 22.85791)
-polygons = [PackedInt32Array(0, 2, 1), PackedInt32Array(5, 4, 3), PackedInt32Array(8, 7, 6), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 13), PackedInt32Array(11, 13, 12), PackedInt32Array(11, 12, 5), PackedInt32Array(15, 14, 16), PackedInt32Array(16, 14, 11), PackedInt32Array(18, 17, 19), PackedInt32Array(19, 17, 21), PackedInt32Array(19, 21, 20), PackedInt32Array(19, 20, 16), PackedInt32Array(24, 23, 22), PackedInt32Array(26, 25, 22), PackedInt32Array(22, 25, 24), PackedInt32Array(24, 25, 3), PackedInt32Array(3, 25, 5), PackedInt32Array(28, 27, 8), PackedInt32Array(16, 11, 19), PackedInt32Array(19, 11, 5), PackedInt32Array(19, 5, 25), PackedInt32Array(19, 25, 2), PackedInt32Array(0, 28, 2), PackedInt32Array(2, 28, 8), PackedInt32Array(2, 8, 6), PackedInt32Array(2, 6, 19), PackedInt32Array(30, 29, 25), PackedInt32Array(25, 29, 2)]
+vertices = PackedVector3Array(-9.171387, 1.5, -17.421387, -11.921387, 1.5, -15.671387, -14.421387, 1.5, -13.421387, -17.421387, 1.5, -9.171387, -19.421387, 1.5, -2.9213867, -4.1713867, 1.5, -19.171387, -12.671387, 1.5, 15.078613, -10.171387, 1.5, 16.828613, -6.4213867, 1.5, 18.578613, 18.578613, 1.5, -6.4213867, 16.828613, 1.5, -10.171387, 15.078613, 1.5, -12.671387, 11.578613, 1.5, -15.921387, 19.328613, 1.5, 3.5786133, 19.328613, 1.5, -3.4213867, 16.578613, 1.5, 10.578613, 18.328613, 1.5, 7.0786133, 11.328613, 1.5, 16.078613, -19.171387, 1.5, 4.3286133, -17.921387, 1.5, 8.078613, -15.921387, 1.5, 11.578613, 8.078613, 1.5, -17.921387, 4.3286133, 1.5, -19.171387, 3.5786133, 1.5, 19.328613, 7.0786133, 1.5, 18.328613, -3.4213867, 1.5, 19.328613)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 5), PackedInt32Array(3, 5, 4), PackedInt32Array(8, 7, 6), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 14), PackedInt32Array(11, 14, 12), PackedInt32Array(12, 14, 13), PackedInt32Array(16, 15, 13), PackedInt32Array(13, 15, 17), PackedInt32Array(19, 18, 20), PackedInt32Array(20, 18, 6), PackedInt32Array(6, 18, 8), PackedInt32Array(8, 18, 4), PackedInt32Array(21, 12, 22), PackedInt32Array(22, 12, 5), PackedInt32Array(24, 23, 17), PackedInt32Array(17, 23, 25), PackedInt32Array(17, 25, 8), PackedInt32Array(17, 8, 13), PackedInt32Array(13, 8, 12), PackedInt32Array(12, 8, 5), PackedInt32Array(5, 8, 4)]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_yf5fn"]
-top_radius = 25.14209
-bottom_radius = 25.14209
+top_radius = 19.921387
+bottom_radius = 19.921387
 
 [node name="Garden" type="Node3D" unique_id=508071924]
 
@@ -1287,6 +1291,136 @@ look_target = NodePath("../../../Player")
 script = ExtResource("5_0qt43")
 dialogue = ExtResource("6_ne1lt")
 metadata/_custom_type_script = "uid://c1bj0q5evhiei"
+
+[node name="Trees" type="Node3D" parent="Environment" unique_id=1121390256]
+
+[node name="Arrayan1" type="Node3D" parent="Environment/Trees" unique_id=723987996]
+
+[node name="TreeArrayan2" parent="Environment/Trees/Arrayan1" unique_id=807210377 instance=ExtResource("7_330lt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.94931, 0, 43.98416)
+
+[node name="TreeArrayan3" parent="Environment/Trees/Arrayan1" unique_id=2009207473 instance=ExtResource("7_330lt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.617569, 0, -24.053818)
+
+[node name="TreeArrayan4" parent="Environment/Trees/Arrayan1" unique_id=972321470 instance=ExtResource("7_330lt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.821808, 0, -45.015007)
+
+[node name="TreeArrayan5" parent="Environment/Trees/Arrayan1" unique_id=1804893723 instance=ExtResource("7_330lt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -124.73627, 0, -29.208208)
+
+[node name="TreeArrayan6" parent="Environment/Trees/Arrayan1" unique_id=640536609 instance=ExtResource("7_330lt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -137.10681, 0, -90.030014)
+
+[node name="TreeArrayan7" parent="Environment/Trees/Arrayan1" unique_id=1400478485 instance=ExtResource("7_330lt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.65554, 0, -108.585815)
+
+[node name="TreeArrayan8" parent="Environment/Trees/Arrayan1" unique_id=1090219031 instance=ExtResource("7_330lt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.41249, 0, -39.516983)
+
+[node name="TreeArrayan9" parent="Environment/Trees/Arrayan1" unique_id=1015165795 instance=ExtResource("7_330lt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.54393, 0, -65.63255)
+
+[node name="Arrayan2" type="Node3D" parent="Environment/Trees" unique_id=910851237]
+
+[node name="TreeArrayan2" parent="Environment/Trees/Arrayan2" unique_id=190958355 instance=ExtResource("8_2yqtw")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14.775909, 0, 44.32778)
+
+[node name="TreeArrayan3" parent="Environment/Trees/Arrayan2" unique_id=653285598 instance=ExtResource("8_2yqtw")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -17.18129, 0, -58.41642)
+
+[node name="TreeArrayan4" parent="Environment/Trees/Arrayan2" unique_id=1624791161 instance=ExtResource("8_2yqtw")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -12.026901, 0, -104.80594)
+
+[node name="TreeArrayan5" parent="Environment/Trees/Arrayan2" unique_id=1216800915 instance=ExtResource("8_2yqtw")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -139.16855, 0, -32.64447)
+
+[node name="Arrayan3" type="Node3D" parent="Environment/Trees" unique_id=1270637791]
+
+[node name="TreeArrayan3" parent="Environment/Trees/Arrayan3" unique_id=1922282045 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.02606, 0, 40.89151)
+
+[node name="TreeArrayan4" parent="Environment/Trees/Arrayan3" unique_id=38475666 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.40454, 0, 26.115585)
+
+[node name="TreeArrayan5" parent="Environment/Trees/Arrayan3" unique_id=1714827628 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.19632, 0, 20.273937)
+
+[node name="TreeArrayan6" parent="Environment/Trees/Arrayan3" unique_id=522177175 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.011047, 0, -16.49406)
+
+[node name="TreeArrayan7" parent="Environment/Trees/Arrayan3" unique_id=1693560221 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.27707, 0, -45.358643)
+
+[node name="TreeArrayan8" parent="Environment/Trees/Arrayan3" unique_id=494773701 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.38556, 0, 44.327766)
+
+[node name="TreeArrayan9" parent="Environment/Trees/Arrayan3" unique_id=991491295 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.52098, 0, 25.08471)
+
+[node name="TreeArrayan10" parent="Environment/Trees/Arrayan3" unique_id=543928588 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.424347, 0, 41.922386)
+
+[node name="TreeArrayan11" parent="Environment/Trees/Arrayan3" unique_id=1045892760 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.52095, 0, 19.930328)
+
+[node name="TreeArrayan12" parent="Environment/Trees/Arrayan3" unique_id=43670685 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.76004, 0, 16.837696)
+
+[node name="TreeArrayan13" parent="Environment/Trees/Arrayan3" unique_id=2041401656 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.46627, 0, 26.80284)
+
+[node name="TreeArrayan14" parent="Environment/Trees/Arrayan3" unique_id=1102453823 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.32776, 0, -13.057787)
+
+[node name="TreeArrayan15" parent="Environment/Trees/Arrayan3" unique_id=56250577 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.358658, 0, -44.327763)
+
+[node name="TreeArrayan16" parent="Environment/Trees/Arrayan3" unique_id=1930654773 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.965134, 0, -27.49009)
+
+[node name="TreeArrayan17" parent="Environment/Trees/Arrayan3" unique_id=1003358120 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.833694, 0, -50.16941)
+
+[node name="TreeArrayan18" parent="Environment/Trees/Arrayan3" unique_id=1375539042 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.173355, 0, -71.81785)
+
+[node name="TreeArrayan19" parent="Environment/Trees/Arrayan3" unique_id=726083457 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.791718, 0, -84.780426)
+
+[node name="TreeArrayan20" parent="Environment/Trees/Arrayan3" unique_id=1096301948 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.06543, 0, -108.34875)
+
+[node name="TreeArrayan21" parent="Environment/Trees/Arrayan3" unique_id=1527009652 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126.67073, 0, -55.32003)
+
+[node name="TreeArrayan22" parent="Environment/Trees/Arrayan3" unique_id=872905876 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114.66147, 0, -107.20829)
+
+[node name="TreeArrayan23" parent="Environment/Trees/Arrayan3" unique_id=693896011 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -129.8848, 0, -90.12844)
+
+[node name="TreeArrayan24" parent="Environment/Trees/Arrayan3" unique_id=528021836 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.38788, 0, -98.668365)
+
+[node name="TreeArrayan25" parent="Environment/Trees/Arrayan3" unique_id=1712973730 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.31166, 0, -38.1463)
+
+[node name="TreeArrayan26" parent="Environment/Trees/Arrayan3" unique_id=78519002 instance=ExtResource("9_64guk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105.39041, 0, -64.95526)
+
+[node name="Arrayan4" type="Node3D" parent="Environment/Trees" unique_id=2054568586]
+
+[node name="TreeArrayan4" parent="Environment/Trees/Arrayan4" unique_id=712175566 instance=ExtResource("10_sphon")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -12.235199, 0, -80.888054)
+
+[node name="TreeArrayan5" parent="Environment/Trees/Arrayan4" unique_id=1567517718 instance=ExtResource("10_sphon")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -94.14282, 0, 54.71836)
+
+[node name="TreeArrayan6" parent="Environment/Trees/Arrayan4" unique_id=915624885 instance=ExtResource("10_sphon")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 24.470276, 0, 44.522396)
+
+[node name="TreeArrayan7" parent="Environment/Trees/Arrayan4" unique_id=1258699285 instance=ExtResource("10_sphon")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 32.2872, 0, -46.561604)
 
 [node name="Camera" parent="." unique_id=672466676 node_paths=PackedStringArray("player") instance=ExtResource("3_2dny5")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 57.36074, 23.484562, 0)

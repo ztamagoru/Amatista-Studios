@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cbfobuwmfg1rt"]
+
+[ext_resource type="Script" uid="uid://c3q2ehkn7jdg5" path="res://scripts/interactable/sick_environment.gd" id="1_4rk2d"]
+[ext_resource type="Texture2D" uid="uid://ceaw1dqpe7id6" path="res://assets/models/levels/garden/trees/tree_arrayan_11_texturamadera1.png" id="2_4xesd"]
+[ext_resource type="Texture2D" uid="uid://caubab3axvk35" path="res://assets/models/levels/garden/trees/tree_arrayan_11_hoja1re.png" id="3_addo1"]
+[ext_resource type="Texture2D" uid="uid://dem408siqyov8" path="res://assets/models/levels/garden/trees/sick_leaves_texture.png" id="4_krwxt"]
+[ext_resource type="Texture2D" uid="uid://clkf15v81cvtf" path="res://assets/models/levels/garden/trees/sick_trunk_texture.png" id="5_5f04f"]
+[ext_resource type="PackedScene" uid="uid://c5vg0dt5ah6gg" path="res://assets/models/levels/garden/trees/tree_arrayan_11.glb" id="6_4xesd"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ppyta"]
+height = 12.710221
+radius = 0.81640625
+
+[node name="TreeArrayan3" type="StaticBody3D" unique_id=1922282045 node_paths=PackedStringArray("mesh") groups=["sick_environment"]]
+script = ExtResource("1_4rk2d")
+mesh = NodePath("arbolarrayan11/arbolarrayan11")
+has_leaves = true
+leaves_surface = 1
+texture_healthy = Array[Texture]([ExtResource("2_4xesd"), ExtResource("3_addo1")])
+texture_sick = Array[Texture]([ExtResource("5_5f04f"), ExtResource("4_krwxt")])
+metadata/_custom_type_script = "uid://c3q2ehkn7jdg5"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2116187680]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00807476, 6.213469, -0.010728836)
+shape = SubResource("CylinderShape3D_ppyta")
+
+[node name="arbolarrayan11" parent="." unique_id=659797780 instance=ExtResource("6_4xesd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.52942276, 12.070791, 0)
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=796195599]
+
+[editable path="arbolarrayan11"]

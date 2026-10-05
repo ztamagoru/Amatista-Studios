@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://qo42s8wkj658"]
+
+[ext_resource type="Script" uid="uid://c3q2ehkn7jdg5" path="res://scripts/interactable/sick_environment.gd" id="1_4mtcm"]
+[ext_resource type="Texture2D" uid="uid://b7lumyr78wf44" path="res://assets/models/levels/garden/trees/tree_arrayan_2_hoja1re.png" id="2_3r1lq"]
+[ext_resource type="Texture2D" uid="uid://cbrketvp6rkck" path="res://assets/models/levels/garden/trees/tree_arrayan_2_texturamadera1.png" id="3_vhspt"]
+[ext_resource type="Texture2D" uid="uid://dem408siqyov8" path="res://assets/models/levels/garden/trees/sick_leaves_texture.png" id="4_ava4r"]
+[ext_resource type="Texture2D" uid="uid://clkf15v81cvtf" path="res://assets/models/levels/garden/trees/sick_trunk_texture.png" id="5_7b3bo"]
+[ext_resource type="PackedScene" uid="uid://bfnmolm4s4gv8" path="res://assets/models/levels/garden/trees/tree_arrayan_2.glb" id="6_3txvr"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ppyta"]
+height = 4.0674477
+radius = 0.31591797
+
+[node name="TreeArrayan2" type="StaticBody3D" unique_id=190958355 node_paths=PackedStringArray("mesh") groups=["sick_environment"]]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+script = ExtResource("1_4mtcm")
+mesh = NodePath("arbol_arrayan_2/arbolarrayan2")
+has_leaves = true
+texture_healthy = Array[Texture]([ExtResource("2_3r1lq"), ExtResource("3_vhspt")])
+texture_sick = Array[Texture]([ExtResource("4_ava4r"), ExtResource("5_7b3bo")])
+metadata/_custom_type_script = "uid://c3q2ehkn7jdg5"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2116187680]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005927086, 1.9553537, -0.015206337)
+shape = SubResource("CylinderShape3D_ppyta")
+
+[node name="arbol_arrayan_2" parent="." unique_id=675342582 instance=ExtResource("6_3txvr")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.00097078085, -1.599227, 0)
+
+[node name="arbolarrayan2" parent="arbol_arrayan_2" index="0" unique_id=1858640047]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.9232385, 21.558535, -0.46161962)
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1999863866]
+
+[editable path="arbol_arrayan_2"]
