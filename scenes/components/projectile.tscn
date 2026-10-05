@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cw4i6jycv7wd0"]
+
+[ext_resource type="Script" uid="uid://cobivorue1lil" path="res://scripts/player/projectile.gd" id="1_ae8u7"]
+
+[sub_resource type="Curve3D" id="Curve3D_07c8n"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 5, 5, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="SphereMesh" id="SphereMesh_yf5fn"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g4v7s"]
+
+[node name="ProjectilePath" type="Path3D" unique_id=398802731]
+curve = SubResource("Curve3D_07c8n")
+script = ExtResource("1_ae8u7")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="." unique_id=1161772737]
+transform = Transform3D(1, 0, 0, 0, 0.99999934, 0, 0, 0, 0.99999934, 0, 7, 0)
+rotation_mode = 0
+
+[node name="Projectile" type="Area3D" parent="PathFollow3D" unique_id=290861367]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PathFollow3D/Projectile" unique_id=727258877]
+mesh = SubResource("SphereMesh_yf5fn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PathFollow3D/Projectile" unique_id=1030952887]
+shape = SubResource("SphereShape3D_g4v7s")
