@@ -21,15 +21,10 @@
 radius = 2.166504
 height = 9.972229
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_3v2ag"]
-filters = ["Rig_Medium/Skeleton3D:chest", "Rig_Medium/Skeleton3D:hand.l", "Rig_Medium/Skeleton3D:hand.r", "Rig_Medium/Skeleton3D:handslot.l", "Rig_Medium/Skeleton3D:handslot.r", "Rig_Medium/Skeleton3D:head", "Rig_Medium/Skeleton3D:lowerarm.l", "Rig_Medium/Skeleton3D:lowerarm.r", "Rig_Medium/Skeleton3D:upperarm.l", "Rig_Medium/Skeleton3D:upperarm.r", "Rig_Medium/Skeleton3D:wrist.l", "Rig_Medium/Skeleton3D:wrist.r"]
-
-[sub_resource type="AnimationNodeTimeSeek" id="AnimationNodeTimeSeek_a8ls1"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d2wvv"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_faj08"]
 animation = &"Disparo"
 use_custom_timeline = true
-timeline_length = 0.55
+timeline_length = 0.7
 stretch_time_scale = false
 start_offset = 0.0
 loop_mode = 0
@@ -37,92 +32,72 @@ loop_mode = 0
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jej6c"]
 animation = &"Idle"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f1ej7"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x2hwn"]
 animation = &"Caminar"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oprun"]
-animation = &"Caminar"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a8ls1"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qfm1y"]
-xfade_time = 0.1
-advance_mode = 2
-advance_expression = "player.input.is_running"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fulsm"]
-xfade_time = 0.1
-advance_mode = 2
-advance_expression = "!player.input.is_running"
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4r5pv"]
-states/Running_A/node = SubResource("AnimationNodeAnimation_f1ej7")
-states/Running_A/position = Vector2(351.77777, 187.22223)
-states/Walking_A/node = SubResource("AnimationNodeAnimation_oprun")
-states/Walking_A/position = Vector2(334, 92)
-transitions = ["Start", "Walking_A", SubResource("AnimationNodeStateMachineTransition_a8ls1"), "Walking_A", "Running_A", SubResource("AnimationNodeStateMachineTransition_qfm1y"), "Running_A", "Walking_A", SubResource("AnimationNodeStateMachineTransition_fulsm")]
-graph_offset = Vector2(-38, -5)
 
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_60mlk"]
 min_space = 0.0
 blend_point_0/node = SubResource("AnimationNodeAnimation_jej6c")
 blend_point_0/pos = 0.0
 blend_point_0/name = &"Idle_A"
-blend_point_1/node = SubResource("AnimationNodeStateMachine_4r5pv")
+blend_point_1/node = SubResource("AnimationNodeAnimation_x2hwn")
 blend_point_1/pos = 1.0
-blend_point_1/name = &"StateMachine"
+blend_point_1/name = &"Caminar"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jej6c"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gi4s7"]
+animation = &"Salto"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x2hwn"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_oprun"]
-states/MovementBlend/node = SubResource("AnimationNodeBlendSpace1D_60mlk")
-states/MovementBlend/position = Vector2(356, 100)
-transitions = ["Start", "MovementBlend", SubResource("AnimationNodeStateMachineTransition_jej6c")]
-graph_offset = Vector2(33, -42)
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gvgjr"]
+xfade_time = 0.1
+advance_mode = 2
+advance_expression = "current_state == \"Aim\""
 
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_gkek8"]
-graph_offset = Vector2(-313.49524, -112.14322)
-nodes/MoveMachine/node = SubResource("AnimationNodeStateMachine_oprun")
-nodes/MoveMachine/position = Vector2(-80, 100)
-nodes/AimTimeSeek/node = SubResource("AnimationNodeTimeSeek_a8ls1")
-nodes/AimTimeSeek/position = Vector2(-20, 280)
-nodes/Animation/node = SubResource("AnimationNodeAnimation_d2wvv")
-nodes/Animation/position = Vector2(-160, 280)
-nodes/AimBlend/node = SubResource("AnimationNodeBlend2_3v2ag")
-nodes/AimBlend/position = Vector2(160, 180)
-node_connections = [&"output", 0, &"AimBlend", &"AimTimeSeek", 0, &"Animation", &"AimBlend", 0, &"MoveMachine", &"AimBlend", 1, &"AimTimeSeek"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7d24l"]
+xfade_time = 0.1
+advance_mode = 2
+advance_expression = "current_state == \"Jump\""
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_faj08"]
+xfade_time = 0.1
+advance_mode = 2
+advance_expression = "current_state != \"Aim\""
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gi4s7"]
+xfade_time = 0.1
+advance_mode = 2
+advance_expression = "current_state != \"Jump\""
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_x2hwn"]
+states/Disparo/node = SubResource("AnimationNodeAnimation_faj08")
+states/Disparo/position = Vector2(533, 100)
+states/MovementBlend/node = SubResource("AnimationNodeBlendSpace1D_60mlk")
+states/MovementBlend/position = Vector2(374, 100)
+states/Salto/node = SubResource("AnimationNodeAnimation_gi4s7")
+states/Salto/position = Vector2(533, 161)
+transitions = ["Start", "MovementBlend", SubResource("AnimationNodeStateMachineTransition_x2hwn"), "MovementBlend", "Disparo", SubResource("AnimationNodeStateMachineTransition_gvgjr"), "MovementBlend", "Salto", SubResource("AnimationNodeStateMachineTransition_7d24l"), "Disparo", "MovementBlend", SubResource("AnimationNodeStateMachineTransition_faj08"), "Salto", "MovementBlend", SubResource("AnimationNodeStateMachineTransition_gi4s7")]
 
 [sub_resource type="TorusMesh" id="TorusMesh_fulsm"]
-inner_radius = 0.651
-outer_radius = 0.895
+inner_radius = 0.321
+outer_radius = 0.263
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2hwn"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 0)
 
 [sub_resource type="Resource" id="Resource_3v2ag"]
 script = ExtResource("12_jej6c")
 max_speed = 15.0
 metadata/_custom_type_script = "uid://c6mwmaryafgmy"
 
-[sub_resource type="Resource" id="Resource_jej6c"]
-script = ExtResource("12_jej6c")
-max_speed = 25.0
-acceleration = 2.5
-deceleration = 5.0
-metadata/_custom_type_script = "uid://c6mwmaryafgmy"
-
-[sub_resource type="Resource" id="Resource_a8ls1"]
-script = ExtResource("12_jej6c")
-metadata/_custom_type_script = "uid://c6mwmaryafgmy"
-
-[sub_resource type="Resource" id="Resource_fulsm"]
-script = ExtResource("12_jej6c")
-max_speed = 2.5
-metadata/_custom_type_script = "uid://c6mwmaryafgmy"
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_fbwj1"]
 radius = 15.0
 
 [node name="Player" type="CharacterBody3D" unique_id=242546826 groups=["player"]]
+collision_layer = 16
 script = ExtResource("1_ur7pv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1485397746]
@@ -135,31 +110,22 @@ script = ExtResource("7_y4r1p")
 [node name="Movement" type="Node3D" parent="." unique_id=1195421819]
 script = ExtResource("3_3v2ag")
 
-[node name="Visuals" type="Node3D" parent="." unique_id=480415599]
+[node name="Visuals" type="Node3D" parent="." unique_id=480415599 node_paths=PackedStringArray("aim_target_mesh")]
 script = ExtResource("2_d2wvv")
+aim_target_mesh = NodePath("../AimTarget/MeshInstance3D")
 
 [node name="player" parent="Visuals" unique_id=1530604751 instance=ExtResource("5_q3gs8")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.6734377, 0)
 
-[node name="Skeleton3D" parent="Visuals/player/Armature" parent_id_path=PackedInt32Array(1530604751, 1631440679) index="0" unique_id=801933019]
-bones/0/position = Vector3(0.430916, -1.5654256, 3.1050714e-08)
-bones/0/rotation = Quaternion(0.7070975, 0.0036467176, -0.70709735, -0.0036467267)
-bones/2/position = Vector3(-0.43760982, -1.5654256, -3.1050714e-08)
-bones/2/rotation = Quaternion(0.7071054, 0.0014295949, -0.7071053, -0.0014295856)
-bones/4/position = Vector3(-0.06793506, -0.33061156, -0.09940204)
-bones/4/rotation = Quaternion(0.01817262, -0.5623016, -0.012452725, 0.8266388)
-bones/5/position = Vector3(0.77520853, 1.3210082, -0.005957284)
-bones/5/rotation = Quaternion(0.7862409, 0.2851456, 0.5313277, -0.13493834)
-bones/6/rotation = Quaternion(-0.0667985, -0.0020584862, 0.03754949, 0.99705756)
-bones/7/position = Vector3(-0.97493213, 1.3286408, -0.06622603)
-bones/8/rotation = Quaternion(0.05572952, 0.007788003, 0.055339575, 0.9968807)
+[node name="LookAtModifier3D" type="LookAtModifier3D" parent="Visuals/player/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1530604751, 463344258) index="2" unique_id=23742200]
+active = false
+target_node = NodePath("../../../../../AimTarget")
+bone_name = "Bone.006"
+bone = 4
+forward_axis = 1
 
-[node name="LookAtModifier3D" type="LookAtModifier3D" parent="Visuals/player/Armature/Skeleton3D" index="2" unique_id=23742200]
-bone_name = "Bone.002"
-bone = 0
-
-[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Visuals/player/Armature/Skeleton3D" index="3" unique_id=1573407]
-transform = Transform3D(0.2727658, 0.5917791, 0.75854886, 0.30499318, -0.8009672, 0.51519954, 0.912457, 0.09082344, -0.39896512, 0.77520853, 1.3210082, -0.005957284)
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Visuals/player/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1530604751, 463344258) index="3" unique_id=1573407]
+transform = Transform3D(0.27276573, 0.5917791, 0.7585489, 0.3049932, -0.80096745, 0.51519954, 0.91245705, 0.09082344, -0.39896524, 0.8094839, 1.1757953, -0.0006968826)
 bone_name = "Bone.007"
 bone_idx = 5
 
@@ -168,28 +134,30 @@ transform = Transform3D(-0.123380065, -0.54512054, 0.82922935, 0.93693835, 0.211
 
 [node name="AnimationTree" type="AnimationTree" parent="Visuals" unique_id=151975009]
 root_node = NodePath("../player")
-tree_root = SubResource("AnimationNodeBlendTree_gkek8")
+tree_root = SubResource("AnimationNodeStateMachine_x2hwn")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../player/AnimationPlayer")
-parameters/MoveMachine/MovementBlend/blend_position = 0.0
-parameters/AimTimeSeek/seek_request = -1.0
-parameters/AimBlend/blend_amount = 0.0
+parameters/MovementBlend/blend_position = 0.0
+
+[node name="ShotSource" type="Marker3D" parent="Visuals" unique_id=149463865]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 2)
 
 [node name="AimTarget" type="Node3D" parent="." unique_id=1083641434]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AimTarget" unique_id=1743446532]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 mesh = SubResource("TorusMesh_fulsm")
+surface_material_override/0 = SubResource("StandardMaterial3D_x2hwn")
 
 [node name="StateMachine" type="Node" parent="." unique_id=621772183 node_paths=PackedStringArray("root")]
 script = ExtResource("6_fjrip")
 root = NodePath("..")
+transition_process = 1
 metadata/_custom_type_script = "uid://cey8cp60m7lcg"
 
 [node name="Grounded" type="Node" parent="StateMachine" unique_id=1531714548]
 script = ExtResource("9_y4r1p")
 walk_settings = SubResource("Resource_3v2ag")
-run_settings = SubResource("Resource_jej6c")
 metadata/_custom_type_script = "uid://ddph5uie3edkd"
 
 [node name="JumpTransition" type="Node" parent="StateMachine/Grounded" unique_id=2054225132 node_paths=PackedStringArray("target_state")]
@@ -204,7 +172,7 @@ metadata/_custom_type_script = "uid://cn204pqn8fpqo"
 
 [node name="Jump" type="Node" parent="StateMachine" unique_id=1866858508]
 script = ExtResource("13_f1ej7")
-movement_settings = SubResource("Resource_a8ls1")
+movement_settings = SubResource("Resource_3v2ag")
 jump_force = 5.0
 metadata/_custom_type_script = "uid://ddph5uie3edkd"
 
@@ -213,9 +181,9 @@ script = ExtResource("15_a8ls1")
 target_state = NodePath("../../Grounded")
 metadata/_custom_type_script = "uid://cn204pqn8fpqo"
 
-[node name="Aim" type="Node" parent="StateMachine" unique_id=1753932382 node_paths=PackedStringArray("aim_target")]
+[node name="Aim" type="Node" parent="StateMachine" unique_id=1753932382 node_paths=PackedStringArray("shot_source", "aim_target")]
 script = ExtResource("17_fulsm")
-movement_settings = SubResource("Resource_fulsm")
+shot_source = NodePath("../../Visuals/ShotSource")
 aim_target = NodePath("../../AimTarget")
 aim_distance = 25.0
 metadata/_custom_type_script = "uid://ddph5uie3edkd"
@@ -230,5 +198,8 @@ script = ExtResource("16_x2hwn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactor" unique_id=1967501318]
 shape = SubResource("SphereShape3D_fbwj1")
+
+[connection signal="aimed" from="StateMachine/Aim" to="Visuals" method="_on_aim_aimed"]
+[connection signal="unaimed" from="StateMachine/Aim" to="Visuals" method="_on_aim_unaimed"]
 
 [editable path="Visuals/player"]

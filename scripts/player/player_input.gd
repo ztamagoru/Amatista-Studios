@@ -44,7 +44,7 @@ func _input(event: InputEvent) -> void:
 # --
 
 func is_aiming() -> bool:
-	return aim_dir.length() > 0.1
+	return Input.is_action_pressed("aim")
 
 func is_interacting() -> bool:
 	return Input.is_action_just_pressed("interact")
@@ -57,4 +57,4 @@ func get_movement_direction() -> Vector3:
 
 func get_aiming_direction() -> Vector3:
 	var camera := get_viewport().get_camera_3d()
-	return (camera.global_basis * Vector3(aim_dir.x, 0, aim_dir.y)).limit_length()
+	return (camera.global_basis * Vector3(aim_dir.x, 0, aim_dir.y))
