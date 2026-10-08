@@ -12,7 +12,7 @@ var is_jumping : bool
 # --
 
 func _init() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _input(event: InputEvent) -> void:
 	
@@ -26,8 +26,10 @@ func _input(event: InputEvent) -> void:
 	elif Input.is_action_pressed("mouse_click"):
 		if event is InputEventMouseMotion:
 			aim_dir += event.relative * 0.01
+			aim_dir = aim_dir.limit_length()
 	else:
 		aim_dir = Vector2.ZERO
+	print(aim_dir)
 	
 	# Run
 	if event.is_action_pressed("move_run"):

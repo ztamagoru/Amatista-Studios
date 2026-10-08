@@ -57,11 +57,11 @@ metadata/_custom_type_script = "uid://dbyh0ac8p2iqp"
 
 [node name="lucy" parent="." unique_id=2064277401 instance=ExtResource("2_s77ri")]
 
-[node name="Armature" parent="lucy" index="0" unique_id=55102420]
+[node name="Armature" parent="lucy" index="0" unique_id=1233119796]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.051, 5.287257, -0.01)
 
-[node name="Skeleton3D" parent="lucy/Armature" index="0" unique_id=1794459844]
-bones/0/position = Vector3(0, 0.6816068, 0)
+[node name="Skeleton3D" parent="lucy/Armature" index="0" unique_id=1296104]
+bones/0/position = Vector3(0, 0.66119736, 0)
 bones/2/rotation = Quaternion(-0.7301575, 0.0020132198, 0.68296415, -0.020638796)
 bones/3/rotation = Quaternion(-0.7071043, -0.0018406233, 0.7071045, -0.0018405658)
 bones/4/position = Vector3(1.0705135, 2.852421, -0.009296418)
@@ -76,6 +76,7 @@ shape = SubResource("CapsuleShape3D_g4v7s")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=935345919]
 
 [node name="PlayerDetection" type="Area3D" parent="." unique_id=256158338]
+collision_mask = 17
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetection" unique_id=1561435833]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
