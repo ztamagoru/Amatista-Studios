@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c5i5gfgqmjm12"]
+
+[ext_resource type="Script" uid="uid://cunqxrd8qlp3m" path="res://scenes/components/game_manager.gd" id="1_j8dua"]
+
+[node name="GameManager" type="Node3D" unique_id=1613743384 node_paths=PackedStringArray("map_node")]
+script = ExtResource("1_j8dua")
+map_node = NodePath("Map")
+
+[node name="Map" type="Node3D" parent="." unique_id=1589424651]
