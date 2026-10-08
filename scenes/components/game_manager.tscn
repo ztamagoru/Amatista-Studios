@@ -2,8 +2,19 @@
 
 [ext_resource type="Script" uid="uid://cunqxrd8qlp3m" path="res://scenes/components/game_manager.gd" id="1_j8dua"]
 
-[node name="GameManager" type="Node3D" unique_id=1613743384 node_paths=PackedStringArray("map_node")]
+[node name="GameManager" type="Node3D" unique_id=1613743384 node_paths=PackedStringArray("map_node", "fade_layer")]
 script = ExtResource("1_j8dua")
 map_node = NodePath("Map")
+fade_layer = NodePath("CanvasLayer/ColorRect")
 
 [node name="Map" type="Node3D" parent="." unique_id=1589424651]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1948312502]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=209969779]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
