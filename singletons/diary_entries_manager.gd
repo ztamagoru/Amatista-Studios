@@ -37,13 +37,45 @@ func _update_unlocks() -> void:
 	
 	for cat in all_entries:
 		for item in all_entries[cat]:
-			if unlocked_entries.has(item.id):
-				if not collection.has(cat): collection[cat] = []
-				if cat == "npc":
-					collection[cat].append(DiaryEntry.NPCEntry.new(
-						item.id, item.name, item.species, item.title, item.description, item.fun_fact
-					))
-				else:
-					collection[cat].append(DiaryEntry.PlantEntry.new(
-						item.id, item.name, item.title, item.description, item.fun_fact
-					))
+			if not unlocked_entries.has(StringName(item.id)): continue
+			
+			if not collection.has(cat): collection[cat] = []
+			
+			if cat == "npc":
+				collection[cat].append(DiaryEntry.NPCEntry.new(
+					item.id, item.name, item.species, item.title, item.description, item.fun_fact
+				))
+			else:
+				collection[cat].append(DiaryEntry.PlantEntry.new(
+					item.id, item.name, item.title, item.description, item.fun_fact
+				))
+
+func unlock_entry(entry_id : StringName) -> void:
+	if unlocked_entries.has(entry_id): return
+	unlocked_entries.append(entry_id)
+	_update_unlocks()
+	save_diary()
+
+func get_save_data() -> Dictionary:
+	var data : Array[String] = []
+	
+	for entry_id : StringName in unlocked_entries:
+		data.append(String(entry_id))
+	
+	return { "unlocked_entries": data }
+
+func load_save_data(data : Dictionary) -> void:
+	unlocked_entries.clear()
+	
+	var saved_entries = data.get("unlocked_entries", [])
+	
+	if saved_entries is Array:
+		for entry_id in saved_entries:
+			var id : StringName = StringName(str(entry_id))
+			if not unlocked_entries.has(id): unlocked_entries.append(id)
+
+func save_diary() -> void:
+	SaveManager.save_section("diary", get_save_data())
+
+func load_diary() -> void:
+	load_save_data(SaveManager.load_section("diary"))
