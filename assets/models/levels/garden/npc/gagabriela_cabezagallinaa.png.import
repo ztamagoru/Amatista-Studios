@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbtfjd01j65fx"
-path.s3tc="res://.godot/imported/thomas_orejaxd.png-5501e1819d4370f1965796ca1e4c0c1d.s3tc.ctex"
+uid="uid://n88gsgc2yi5b"
+path.s3tc="res://.godot/imported/gagabriela_cabezagallinaa.png-dcaa0d8cd8a57e3acabdcba6ed4df599.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "72b7315b5c297abfd5d145075edcfbc2"
+"md5": "2a11cbe1293beb6b91d133bfd8c8eb06"
 }
 
 [deps]
 
-source_file="res://assets/models/levels/garden/npc/thomas_orejaxd.png"
-dest_files=["res://.godot/imported/thomas_orejaxd.png-5501e1819d4370f1965796ca1e4c0c1d.s3tc.ctex"]
+source_file="res://assets/models/levels/garden/npc/gagabriela_cabezagallinaa.png"
+dest_files=["res://.godot/imported/gagabriela_cabezagallinaa.png-dcaa0d8cd8a57e3acabdcba6ed4df599.s3tc.ctex"]
 
 [params]
 

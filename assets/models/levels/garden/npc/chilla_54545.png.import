@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvhn4tr8xqgsr"
-path.s3tc="res://.godot/imported/thomas_marron.png-bc27bb1b0713850785bc102093442adf.s3tc.ctex"
+uid="uid://d4n2a72adbsd0"
+path.s3tc="res://.godot/imported/chilla_54545.png-ac2df5ec84f51140a3a6b0d8a48c3dc3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "9b830ef31f38fe87692c499bcd9e088b"
+"md5": "417c1a74f0c23386801771c1adebd5e8"
 }
 
 [deps]
 
-source_file="res://assets/models/levels/garden/npc/thomas_marron.png"
-dest_files=["res://.godot/imported/thomas_marron.png-bc27bb1b0713850785bc102093442adf.s3tc.ctex"]
+source_file="res://assets/models/levels/garden/npc/chilla_54545.png"
+dest_files=["res://.godot/imported/chilla_54545.png-ac2df5ec84f51140a3a6b0d8a48c3dc3.s3tc.ctex"]
 
 [params]
 

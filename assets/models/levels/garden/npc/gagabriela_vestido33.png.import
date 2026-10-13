@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2h6vj840gmij"
-path.s3tc="res://.godot/imported/thomas_cabezazorro.png-2adb86c3c49a16fe8dfbf488dfad1def.s3tc.ctex"
+uid="uid://ckchkhltaexek"
+path.s3tc="res://.godot/imported/gagabriela_vestido33.png-9d4d5e1e099711bb89f43c4b4efdb814.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "0499fafa92bfb507f0860cbdcffb5d59"
+"md5": "1d4cf5ca79f9cf467709ef3e64da0fa1"
 }
 
 [deps]
 
-source_file="res://assets/models/levels/garden/npc/thomas_cabezazorro.png"
-dest_files=["res://.godot/imported/thomas_cabezazorro.png-2adb86c3c49a16fe8dfbf488dfad1def.s3tc.ctex"]
+source_file="res://assets/models/levels/garden/npc/gagabriela_vestido33.png"
+dest_files=["res://.godot/imported/gagabriela_vestido33.png-9d4d5e1e099711bb89f43c4b4efdb814.s3tc.ctex"]
 
 [params]
 

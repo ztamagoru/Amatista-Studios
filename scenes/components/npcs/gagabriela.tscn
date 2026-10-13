@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://c8ll5udwkv8tk"]
+
+[ext_resource type="Script" uid="uid://csudaelv6ajs4" path="res://scripts/npc/npc.gd" id="1_pi3u4"]
+[ext_resource type="SpriteFrames" uid="uid://dg4trx22gkx74" path="res://assets/ui/interaction icons/icons_orange_frames.tres" id="2_y7vi4"]
+[ext_resource type="Script" uid="uid://dbyh0ac8p2iqp" path="res://scripts/ui/interaction_marker.gd" id="3_v1aru"]
+[ext_resource type="PackedScene" uid="uid://c24feg488hick" path="res://assets/models/levels/garden/npc/gagabriela.glb" id="4_16s2o"]
+[ext_resource type="Script" uid="uid://bekj481qkmixn" path="res://scripts/behavior tree/behavior_tree.gd" id="5_0clms"]
+[ext_resource type="Script" uid="uid://clwtum3tidnac" path="res://scripts/behavior tree/composite_selector.gd" id="6_fhyx0"]
+[ext_resource type="Script" uid="uid://cngo8lv5njg42" path="res://scripts/behavior tree/composite_sequence.gd" id="7_ne3n7"]
+[ext_resource type="Script" uid="uid://cw6rbl2qgvt2s" path="res://scripts/behavior tree/leafs/leaf_is_player_inside_area_3d.gd" id="8_miygt"]
+[ext_resource type="Script" uid="uid://dgi3fuytrorts" path="res://scripts/behavior tree/leafs/leaf_look_at.gd" id="9_p6peu"]
+[ext_resource type="Script" uid="uid://hp5c25x1v4m3" path="res://scripts/behavior tree/leafs/leaf_set_animation_blend.gd" id="10_kpgd2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
+radius = 2.8842773
+height = 9.343811
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_g4v7s"]
+height = 15.0
+radius = 15.0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kb88u"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_57qmd"]
+min_space = 0.0
+blend_point_0/node = SubResource("AnimationNodeAnimation_kb88u")
+blend_point_0/pos = 0.5
+blend_point_0/name = &"idle"
+
+[node name="Gagabriela" type="CharacterBody3D" unique_id=1709419815 node_paths=PackedStringArray("nav_agent", "idle_timer")]
+script = ExtResource("1_pi3u4")
+nav_agent = NodePath("NavigationAgent3D")
+speed = 5.0
+idle_timer = NodePath("IdleTimer")
+metadata/_custom_type_script = "uid://csudaelv6ajs4"
+
+[node name="InteractionMarker" type="AnimatedSprite3D" parent="." unique_id=1065127807]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 17.5, 0)
+sprite_frames = ExtResource("2_y7vi4")
+animation = &"dialogue"
+script = ExtResource("3_v1aru")
+metadata/_custom_type_script = "uid://dbyh0ac8p2iqp"
+
+[node name="gagabriela" parent="." unique_id=2058808511 instance=ExtResource("4_16s2o")]
+metadata/_edit_group_ = true
+
+[node name="Armature" parent="gagabriela" index="0" unique_id=407083056]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.030618206, 3.2807631, 0.007724285)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1748639179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.6753235, 0)
+shape = SubResource("CapsuleShape3D_g4v7s")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=935345919]
+
+[node name="PlayerDetection" type="Area3D" parent="." unique_id=256158338]
+collision_mask = 17
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetection" unique_id=1561435833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
+shape = SubResource("CylinderShape3D_g4v7s")
+debug_color = Color(0, 0.49803922, 0, 0.41960785)
+
+[node name="IdleTimer" type="Timer" parent="." unique_id=938067448]
+one_shot = true
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1370625233]
+root_node = NodePath("../gagabriela")
+tree_root = SubResource("AnimationNodeBlendSpace1D_57qmd")
+anim_player = NodePath("../gagabriela/AnimationPlayer")
+parameters/blend_position = 0.0
+
+[node name="BehaviorTree" type="Node" parent="." unique_id=1268456869]
+script = ExtResource("5_0clms")
+metadata/_custom_type_script = "uid://bekj481qkmixn"
+
+[node name="LeafSetAnimationBlend" type="Node" parent="BehaviorTree" unique_id=1149020859 node_paths=PackedStringArray("anim_tree")]
+script = ExtResource("10_kpgd2")
+anim_tree = NodePath("../../AnimationTree")
+blend_value = 0.5
+metadata/_custom_type_script = "uid://hp5c25x1v4m3"
+
+[node name="CompositeSelector" type="Node" parent="BehaviorTree" unique_id=34875689]
+script = ExtResource("6_fhyx0")
+metadata/_custom_type_script = "uid://clwtum3tidnac"
+
+[node name="CheckIfPlayerNear" type="Node" parent="BehaviorTree/CompositeSelector" unique_id=484546206]
+script = ExtResource("7_ne3n7")
+metadata/_custom_type_script = "uid://cngo8lv5njg42"
+
+[node name="LeafIsPlayerNear" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfPlayerNear" unique_id=35860828 node_paths=PackedStringArray("range_area")]
+script = ExtResource("8_miygt")
+range_area = NodePath("../../../../PlayerDetection")
+metadata/_custom_type_script = "uid://cw6rbl2qgvt2s"
+
+[node name="LeafLookAt" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfPlayerNear" unique_id=199316353]
+script = ExtResource("9_p6peu")
+metadata/_custom_type_script = "uid://dgi3fuytrorts"
+
+[editable path="gagabriela"]

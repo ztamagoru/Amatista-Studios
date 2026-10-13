@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb7t62gi4k7qq"
-path.s3tc="res://.godot/imported/miss_sunday_naranja.png-97c9e7dd6f22b593ac55b65c6de5ffe8.s3tc.ctex"
+uid="uid://cciq1cfx6l7sd"
+path.s3tc="res://.godot/imported/chilla_marron.png-c62835cb20d07009e34d0721fbd0274e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "9347c5a64788e2951d3d2510d4c920a8"
+"md5": "9b830ef31f38fe87692c499bcd9e088b"
 }
 
 [deps]
 
-source_file="res://assets/models/levels/garden/npc/miss_sunday_naranja.png"
-dest_files=["res://.godot/imported/miss_sunday_naranja.png-97c9e7dd6f22b593ac55b65c6de5ffe8.s3tc.ctex"]
+source_file="res://assets/models/levels/garden/npc/chilla_marron.png"
+dest_files=["res://.godot/imported/chilla_marron.png-c62835cb20d07009e34d0721fbd0274e.s3tc.ctex"]
 
 [params]
 

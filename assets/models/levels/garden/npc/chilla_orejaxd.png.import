@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g4li847ndl1n"
-path.s3tc="res://.godot/imported/miss_sunday_orejascastor.png-7057f01de8bd8ba2f288d5af14326c5d.s3tc.ctex"
+uid="uid://cokjfsmjdyar3"
+path.s3tc="res://.godot/imported/chilla_orejaxd.png-15ec43c4b78831612872ab6be21b2a68.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "9672f16301ab144803beb3e342c33ac9"
+"md5": "72b7315b5c297abfd5d145075edcfbc2"
 }
 
 [deps]
 
-source_file="res://assets/models/levels/garden/npc/miss_sunday_orejascastor.png"
-dest_files=["res://.godot/imported/miss_sunday_orejascastor.png-7057f01de8bd8ba2f288d5af14326c5d.s3tc.ctex"]
+source_file="res://assets/models/levels/garden/npc/chilla_orejaxd.png"
+dest_files=["res://.godot/imported/chilla_orejaxd.png-15ec43c4b78831612872ab6be21b2a68.s3tc.ctex"]
 
 [params]
 

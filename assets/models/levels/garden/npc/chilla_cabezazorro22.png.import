@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4lwk6q52hjlh"
-path.s3tc="res://.godot/imported/miss_sunday_patas.png-5b3c566b84d006978bb4b144386c76e2.s3tc.ctex"
+uid="uid://babs6osk66vl1"
+path.s3tc="res://.godot/imported/chilla_cabezazorro22.png-98131a6567c7d343a5f4fe625c8c93e3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "b5908057d5973a343be54c3280ad8e4b"
+"md5": "f20073bfbc03e09889e84818cba9955c"
 }
 
 [deps]
 
-source_file="res://assets/models/levels/garden/npc/miss_sunday_patas.png"
-dest_files=["res://.godot/imported/miss_sunday_patas.png-5b3c566b84d006978bb4b144386c76e2.s3tc.ctex"]
+source_file="res://assets/models/levels/garden/npc/chilla_cabezazorro22.png"
+dest_files=["res://.godot/imported/chilla_cabezazorro22.png-98131a6567c7d343a5f4fe625c8c93e3.s3tc.ctex"]
 
 [params]
 

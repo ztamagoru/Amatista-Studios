@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhed42plrqf81"
-path.s3tc="res://.godot/imported/miss_sunday_vestido33.png-04cc90ac6338a996bf743fee853425b8.s3tc.ctex"
+uid="uid://cv2jn0gat2x41"
+path.s3tc="res://.godot/imported/chilla_cabezazorro.png-01c1a6ad16b0819b9251019b98fcb7ee.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "1d4cf5ca79f9cf467709ef3e64da0fa1"
+"md5": "0499fafa92bfb507f0860cbdcffb5d59"
 }
 
 [deps]
 
-source_file="res://assets/models/levels/garden/npc/miss_sunday_vestido33.png"
-dest_files=["res://.godot/imported/miss_sunday_vestido33.png-04cc90ac6338a996bf743fee853425b8.s3tc.ctex"]
+source_file="res://assets/models/levels/garden/npc/chilla_cabezazorro.png"
+dest_files=["res://.godot/imported/chilla_cabezazorro.png-01c1a6ad16b0819b9251019b98fcb7ee.s3tc.ctex"]
 
 [params]
 

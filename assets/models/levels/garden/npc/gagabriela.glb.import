@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cvykbl53r1ka7"
-path="res://.godot/imported/miss_sunday.glb-57bee1a82afdf4f55ae7d86d80685165.scn"
+uid="uid://c24feg488hick"
+path="res://.godot/imported/gagabriela.glb-4df380e4b3942c4eb9a6a6a9c1301809.scn"
 
 [deps]
 
-source_file="res://assets/models/levels/garden/npc/miss_sunday.glb"
-dest_files=["res://.godot/imported/miss_sunday.glb-57bee1a82afdf4f55ae7d86d80685165.scn"]
+source_file="res://assets/models/levels/garden/npc/gagabriela.glb"
+dest_files=["res://.godot/imported/gagabriela.glb-4df380e4b3942c4eb9a6a6a9c1301809.scn"]
 
 [params]
 
@@ -19,7 +19,7 @@ nodes/root_script=null
 mesh_library/use_node_names_as_mesh_names=false
 array_mesh/deduplicate_surfaces=true
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=3.0
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true

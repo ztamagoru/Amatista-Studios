@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy8edyyfqr75k"
-path.s3tc="res://.godot/imported/miss_sunday_rojo.png-f34390c10db7e3ff0b6e7c4c9a6c3ea2.s3tc.ctex"
+uid="uid://caeqifrnra1hi"
+path.s3tc="res://.godot/imported/chilla_negro.png-c2de7f4ab2e725e66660917e34eb6a3f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "bd619510f338856faf32b95dd0849275"
+"md5": "8dc73e3e08a39daf7a0353c0b135bf10"
 }
 
 [deps]
 
-source_file="res://assets/models/levels/garden/npc/miss_sunday_rojo.png"
-dest_files=["res://.godot/imported/miss_sunday_rojo.png-f34390c10db7e3ff0b6e7c4c9a6c3ea2.s3tc.ctex"]
+source_file="res://assets/models/levels/garden/npc/chilla_negro.png"
+dest_files=["res://.godot/imported/chilla_negro.png-c2de7f4ab2e725e66660917e34eb6a3f.s3tc.ctex"]
 
 [params]
 

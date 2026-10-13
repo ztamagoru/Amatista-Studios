@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rb0q5hwmtio5"
-path.s3tc="res://.godot/imported/miss_sunday_cabezagallinaa.png-c5cc7381a5472ef3893fe5916c74bca3.s3tc.ctex"
+uid="uid://dntmeklehonen"
+path.s3tc="res://.godot/imported/gagabriela_rojo.png-7f23915f179b64133ecc38b7a3a43c58.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "2a11cbe1293beb6b91d133bfd8c8eb06"
+"md5": "bd619510f338856faf32b95dd0849275"
 }
 
 [deps]
 
-source_file="res://assets/models/levels/garden/npc/miss_sunday_cabezagallinaa.png"
-dest_files=["res://.godot/imported/miss_sunday_cabezagallinaa.png-c5cc7381a5472ef3893fe5916c74bca3.s3tc.ctex"]
+source_file="res://assets/models/levels/garden/npc/gagabriela_rojo.png"
+dest_files=["res://.godot/imported/gagabriela_rojo.png-7f23915f179b64133ecc38b7a3a43c58.s3tc.ctex"]
 
 [params]
 
