@@ -84,7 +84,7 @@ func report_item_collected(item_id : StringName, amount : int = 1) -> void:
 	if amount <= 0: return
 	_report_progress(QuestObjective.ObjectiveType.COLLECT_ITEM, item_id, amount)
 
-func _report_progress(objective_type : QuestObjective.ObjectiveType, target_id : StringName, amount : int) -> void:
+func _report_progress(objective_type : int, target_id : StringName, amount : int) -> void:
 	var changed : bool = false
 	var quest_ids : Array = _states.keys()
 	
@@ -129,10 +129,45 @@ func _report_progress(objective_type : QuestObjective.ObjectiveType, target_id :
 	
 	if changed: _save_progress()
 
+func _check_completition(quest_id : StringName) -> bool:
+	if is_completed(quest_id) or not is_accepted(quest_id): return false
+	
+	var quest : QuestResource = database.get_quest(quest_id)
+	if quest == null: return false
+	
+	var state : Dictionary = _states[quest_id]
+	var objectives: Dictionary = state["objectives"]
+	
+	for objective in quest.objectives:
+		if objective == null: continue
+		if int(objectives.get(objective.id, 0)) < objective.required_amount: return false
+	
+	state["completed"] = true
+	
+	quest_completed.emit(quest_id)
+	quest_state_changed.emit(quest_id)
+	
+	var parent : QuestResource = _find_parent(quest_id, database.quests)
+	if not parent == null: _check_completition(parent.id)
+	
+	return true
+
+func _find_parent(target_id : StringName, candidates : Array[QuestResource]) -> QuestResource:
+	for candidate in candidates:
+		if candidate == null: continue
+		
+		for child in candidate.subquests:
+			if child != null and child.id == target_id: return candidate
+		
+		var parent : QuestResource = _find_parent(target_id, candidate.subquests)
+		if not parent == null: return parent
+	
+	return null 
+
 func deliver_item(quest_id : StringName, objective_id : StringName) -> bool:
 	if not is_accepted(quest_id) or is_completed(quest_id): return false
 	
-	var quest : QuestResource = dtabase.get_quest(quest_id)
+	var quest : QuestResource = database.get_quest(quest_id)
 	if quest == null: return false
 	
 	var objective : QuestObjective
@@ -147,3 +182,67 @@ func deliver_item(quest_id : StringName, objective_id : StringName) -> bool:
 	
 	var current := get_objective_progress(quest_id, objective_id)
 	var remaining : int = objective.required_amount
+	
+	if remaining <= 0: return false
+	
+	var item : ItemResource = ItemDatabase.get_item(objective.item_id)
+	if item == null: 
+		push_warning("QuestManager: Unknown item: " + str(objective.item_id))
+		return false
+	
+	var amount_to_deliver : int = mini(remaining, InventoryManager.get_amount(item))
+	if amount_to_deliver <= 0: return false
+	if not InventoryManager.remove_item(item, amount_to_deliver): return false
+	
+	var state : Dictionary = _states[quest_id]
+	var objectives : Dictionary = state["objectives"]
+	var next : int = current + amount_to_deliver
+	objectives[objective_id] = next
+	
+	objective_progress_changed.emit(quest_id, objective_id, next, objective.required_amount)
+	_check_completition(quest_id)
+	_save_progress()
+	return true
+
+func get_save_data() -> Dictionary:
+	var saved_states : Dictionary = {}
+	
+	for quest_id in _states:
+		saved_states[String(quest_id)] = _states[quest_id].duplicate(true)
+	
+	return { "states": saved_states }
+
+func load_save_data(data : Dictionary) -> void:
+	_states.clear()
+	
+	var saved_states = data.get("states", {})
+	if not saved_states is Dictionary: return
+	
+	for raw_id in saved_states:
+		var quest_id : StringName = StringName(str(raw_id))
+		
+		if not has_quest(quest_id):
+			push_warning("QuestManager: Unknown quest: " + str(quest_id))
+			continue
+		
+		var quest : QuestResource = database.get_quest(quest_id)
+		var saved_state = saved_states[raw_id]
+		if not saved_state is Dictionary: continue
+		
+		var saved_objectives = saved_state.get("objectives", {})
+		if not saved_objectives is Dictionary: saved_objectives = {}
+		
+		var state : Dictionary = _get_or_create_state(quest_id)
+		state["accepted"] = bool(saved_state.get("accepted", false))
+		state["completed"] = bool(saved_state.get("completed", false))
+		
+		var objectives : Dictionary = state["objectives"]
+		
+		for objective in quest.objectives:
+			if objective == null: continue
+			
+			var progress : int = int(saved_objectives.get(objective.id, 0))
+			objectives[objective.id] = clamp(progress, 0, objective.required_amount)
+
+func _save_progress() -> void:
+	SaveManager.save_section("quests", get_save_data())
