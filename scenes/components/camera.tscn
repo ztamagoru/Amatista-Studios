@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://bfh8nsyv0y463"]
 
-[ext_resource type="Script" uid="uid://bi0fq0vuovndl" path="res://scripts/player/camera.gd" id="1_sg30d"]
+[ext_resource type="Script" uid="uid://85q7tn4fubqe" path="res://scripts/player/camera.gd" id="1_sg30d"]
+[ext_resource type="Shader" uid="uid://dvw4lk7wgy7n" path="res://shaders/postprocessing/camera.gdshader" id="2_fombx"]
+[ext_resource type="Script" uid="uid://b1uxn1julshju" path="res://scripts/camera_post_processing.gd" id="2_tkqhq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
+shader = ExtResource("2_fombx")
+shader_parameter/brightness = 1.0
 
 [node name="Camera" type="Node3D" unique_id=672466676 node_paths=PackedStringArray("camera", "pivot")]
 script = ExtResource("1_sg30d")
@@ -11,3 +17,17 @@ pivot = NodePath("Pivot")
 transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 8, 20, 20)
 
 [node name="Camera3D" type="Camera3D" parent="Pivot" unique_id=588489516]
+
+[node name="PostProcessing" type="Node3D" parent="." unique_id=582494496]
+script = ExtResource("2_tkqhq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="PostProcessing" unique_id=1958696622]
+
+[node name="ColorRect" type="ColorRect" parent="PostProcessing/CanvasLayer" unique_id=490196299]
+material = SubResource("ShaderMaterial_g4v7s")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
