@@ -24,7 +24,7 @@ func _ready() -> void:
 	settings_loaded = true
 
 func load_video_settings() -> void:
-	var video_settings : Dictionary #= ConfigHandler.load_video_settings()
+	var video_settings : Dictionary = ConfigHandler.load_video_settings()
 	
 	brightness_slider.value = video_settings.get("brightness", 1.0)
 	brightness_label.text = str(roundi(video_settings.get("brightness", 1.0) * 100)) + "%"
@@ -39,7 +39,7 @@ func vsync_changed(value : bool) -> void:
 	if value: DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
 	else: DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 	
-	#ConfigHandler.save_video_settings("vsync", value)
+	ConfigHandler.save_video_settings("vsync", value)
 
 func fullscreen_changed(value : bool) -> void:
 	if not settings_loaded: return
@@ -47,11 +47,11 @@ func fullscreen_changed(value : bool) -> void:
 	if value: DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else: DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	
-	#ConfigHandler.save_video_settings("fullscreen", value)
+	ConfigHandler.save_video_settings("fullscreen", value)
 
 func brightness_changed(value : float) -> void:
 	if not settings_loaded: return
 	
 	Globals.set_brightness(value)
 	brightness_label.text = str(roundi(value * 100)) + "%"
-	#ConfigHandler.save_video_settings("bright", value)
+	ConfigHandler.save_video_settings("bright", value)

@@ -49,7 +49,7 @@ func load_save_data(data : Dictionary) -> void:
 	items.clear()
 	
 	for id in data:
-		var item : ItemResource #= ItemDatabase.get_item(StringName(id))
+		var item : ItemResource = ItemDatabase.get_item(StringName(id))
 		
 		if item == null:
 			push_warning("InventoryManager: Unknown item ID: " + str(id))
@@ -59,12 +59,12 @@ func load_save_data(data : Dictionary) -> void:
 		
 		if amount > 0: items[item] = amount
 
-#func save_inventory() -> void:
-	#SaveManager.save_section(
-		#"inventory",
-		#get_save_data()
-	#)
+func save_inventory() -> void:
+	SaveManager.save_section(
+		"inventory",
+		get_save_data()
+	)
 
 func load_inventory() -> void:
-	var data : Dictionary #= SaveManager.load_section("inventory")
+	var data : Dictionary = SaveManager.load_section("inventory")
 	load_save_data(data) 

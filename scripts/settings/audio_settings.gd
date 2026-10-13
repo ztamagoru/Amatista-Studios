@@ -38,7 +38,7 @@ func _ready() -> void:
 	settings_loaded = true
 
 func load_audio_settings() -> void:
-	var audio_settings : Dictionary #= ConfigHandler.load_audio_settings()
+	var audio_settings : Dictionary = ConfigHandler.load_audio_settings()
 	
 	for bus_name in audio_sliders:
 		var setting_key = bus_name.to_lower() + "_volume"
@@ -56,4 +56,4 @@ func slider_changed(value : float, bus_name : String) -> void:
 	AudioServer.set_bus_volume_linear(bus_index, value)
 	
 	bus_name += "_volume"
-	#ConfigHandler.save_audio_settings(bus_name, value)
+	ConfigHandler.save_audio_settings(bus_name, value)
