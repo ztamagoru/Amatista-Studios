@@ -1,10 +1,44 @@
 [gd_scene format=3 uid="uid://dp5qx70trbskd"]
 
 [ext_resource type="Script" uid="uid://d2wldjvqpho88" path="res://scenes/components/items/flower.gd" id="1_x6wbi"]
+[ext_resource type="PackedScene" uid="uid://dv5srsfswl1j2" path="res://assets/models/levels/garden/puzzles/flower_orange.glb" id="2_3gpon"]
+[ext_resource type="PackedScene" uid="uid://cytuntqb0jg27" path="res://assets/models/levels/garden/puzzles/flower_violet.glb" id="3_etxns"]
+[ext_resource type="PackedScene" uid="uid://bgv8t0fdo0wst" path="res://assets/models/levels/garden/puzzles/flower_yellow.glb" id="4_0cn30"]
 
-[node name="Flower" type="Area3D" unique_id=1831841508]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3gpon"]
+height = 10.0
+radius = 2.4926758
+
+[node name="Flower" type="Area3D" unique_id=244075112 node_paths=PackedStringArray("object_meshes")]
+collision_layer = 17
 script = ExtResource("1_x6wbi")
+object_meshes = [NodePath("FlowerModels/flower_orange/hoja12"), NodePath("FlowerModels/flower_violet/hoja15_001"), NodePath("FlowerModels/flower_yellow/hoja11")]
 metadata/_custom_type_script = "uid://bry8pb26dpxym"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=750904218]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+shape = SubResource("CylinderShape3D_3gpon")
+
+[node name="FlowerModels" type="Node3D" parent="." unique_id=532942390]
+
+[node name="flower_orange" parent="FlowerModels" unique_id=1411184992 instance=ExtResource("2_3gpon")]
+visible = false
+
+[node name="hoja12" parent="FlowerModels/flower_orange" index="0" unique_id=644233198]
+transform = Transform3D(5.942163, 0, 0, 0, 0.052314237, -5.9419327, 0, 5.9419327, 0.052314237, 0, 4.4059725, 0)
+
+[node name="flower_violet" parent="FlowerModels" unique_id=2003894442 instance=ExtResource("3_etxns")]
+
+[node name="hoja15_001" parent="FlowerModels/flower_violet" index="0" unique_id=285553122]
+transform = Transform3D(2.9734924, 1.9945929, 0, 0, 0, -5.942163, -2.4316597, 2.4390366, 0, 0, 6.3999352, 0)
+
+[node name="flower_yellow" parent="FlowerModels" unique_id=2124408152 instance=ExtResource("4_0cn30")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.757371, 0)
+visible = false
+
+[node name="hoja11" parent="FlowerModels/flower_yellow" index="0" unique_id=1700979805]
+transform = Transform3D(5.942163, 0, 0, 0, -2.597402e-07, -5.9421635, 0, 5.9421635, -2.597402e-07, 0, -1.6093616, 0)
+
+[editable path="FlowerModels/flower_orange"]
+[editable path="FlowerModels/flower_violet"]
+[editable path="FlowerModels/flower_yellow"]
