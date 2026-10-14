@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://cs6328xhsxb1n"]
+
+[ext_resource type="Script" uid="uid://43121g5l01co" path="res://resources/items/item_resource.gd" id="1_p3uen"]
+
+[resource]
+script = ExtResource("1_p3uen")
+id = &"flower_lupina"
+name = &"Lupina"
+description = "Forman una especie de \"torre\" de capullos Cada espiga puede reunir decenas de pequeñas flores, creando esas llamativas columnas de colores."
+metadata/_custom_type_script = "uid://43121g5l01co"

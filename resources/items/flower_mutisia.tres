@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://fimcb747t2a4"]
+
+[ext_resource type="Script" uid="uid://43121g5l01co" path="res://resources/items/item_resource.gd" id="1_bsg48"]
+
+[resource]
+script = ExtResource("1_bsg48")
+id = &"flower_mutisia"
+name = &"Mutisia"
+description = "Conocida por sus pétalos alargados y colores intensos. Suele crecer apoyándose en otras plantas para alcanzar la luz."
+metadata/_custom_type_script = "uid://43121g5l01co"

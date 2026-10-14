@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://dr78h574xujii"]
+
+[ext_resource type="Script" uid="uid://43121g5l01co" path="res://resources/items/item_resource.gd" id="1_x6rc3"]
+
+[resource]
+script = ExtResource("1_x6rc3")
+id = &"flower_amancay"
+name = &"Amancay"
+description = "Crece entre los bosques andinos y sus flores amarillas y anaranjadas destacan entre el verde del paisaje. Su nombre está ligado a la leyenda de la enamorada de Quintral."
+metadata/_custom_type_script = "uid://43121g5l01co"

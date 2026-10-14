@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dp5qx70trbskd"]
+
+[ext_resource type="Script" uid="uid://d2wldjvqpho88" path="res://scenes/components/items/flower.gd" id="1_x6wbi"]
+
+[node name="Flower" type="Area3D" unique_id=1831841508]
+script = ExtResource("1_x6wbi")
+metadata/_custom_type_script = "uid://bry8pb26dpxym"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=750904218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, 0)
