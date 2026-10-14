@@ -54,6 +54,30 @@ func accept_quest(quest_id : StringName) -> bool:
 	_save_progress()
 	return true
 
+func can_progress_objective(quest : QuestResource, objective_id : StringName) -> bool:
+	if quest == null: return false
+	if not is_accepted(quest.id) or is_completed(quest.id): return false
+	
+	var target : QuestObjective
+	
+	for objective in quest.objectives:
+		if objective != null and objective.id == objective_id:
+			target = objective
+			break
+	
+	if target == null: return false
+	if get_objective_progress(quest.id, objective_id) >= target.required_amount: return false
+	
+	match quest.objective_mode:
+		QuestResource.ObjectiveMode.ALL:
+			return true
+		
+		QuestResource.ObjectiveMode.SEQUENCE:
+			var next_objective := _get_next_objective(quest)
+			return next_objective != null and next_objective.id == objective_id
+	
+	return false
+
 func _can_start_quest(quest_id : StringName) -> bool:
 	var parent : QuestResource = _find_parent(quest_id, database.quests)
 	if parent == null: return true
@@ -61,13 +85,13 @@ func _can_start_quest(quest_id : StringName) -> bool:
 	if not is_accepted(parent.id) or is_completed(parent.id): return false
 	
 	match parent.subquest_mode:
-		QuestResource.Subquestmode.ALL:
+		QuestResource.SubquestMode.ALL:
 			return true
 		
-		QuestResource.Subquestmode.SEQUENCE:
+		QuestResource.SubquestMode.SEQUENCE:
 			return _get_next_sequence_subquest(parent) == quest_id
 		
-		QuestResource.Subquestmode.RANDOM_SEQUENCE:
+		QuestResource.SubquestMode.RANDOM_SEQUENCE:
 			return _get_active_random_subquest(parent) == quest_id
 	
 	return false
@@ -94,12 +118,12 @@ func _activate_subquests(quest_id : StringName) -> void:
 	_activating_subquests[quest_id] = true
 	
 	match quest.subquest_mode:
-		QuestResource.Subquestmode.ALL:
+		QuestResource.SubquestMode.ALL:
 			for subquest in quest.subquests:
 				if subquest == null: continue
 				if not is_completed(subquest.id): _start_quest(subquest.id)
 		
-		QuestResource.Subquestmode.SEQUENCE:
+		QuestResource.SubquestMode.SEQUENCE:
 			while is_accepted(quest_id) and not is_completed(quest_id):
 				var next_id : StringName = (_get_next_sequence_subquest(quest))
 				if next_id == &"": break
@@ -107,7 +131,7 @@ func _activate_subquests(quest_id : StringName) -> void:
 				
 				if not is_completed(next_id): break
 		
-		QuestResource.Subquestmode.RANDOM_SEQUENCE:
+		QuestResource.SubquestMode.RANDOM_SEQUENCE:
 			while is_accepted(quest_id) and not is_completed(quest_id):
 				var next_id : StringName = (_get_active_random_subquest(quest))
 				if next_id == &"": break
@@ -177,6 +201,17 @@ func _get_completed_subquest_count(quest : QuestResource) -> int:
 	
 	return count
 
+func _get_next_objective(quest: QuestResource) -> QuestObjective:
+	if quest == null: return null
+	
+	for objective in quest.objectives:
+		if objective == null: continue
+		
+		var progress : int = get_objective_progress(quest.id, objective.id)
+		if progress < objective.required_amount: return objective
+	
+	return null
+
 func _get_or_create_state(quest_id : StringName) -> Dictionary:
 	if not _states.has(quest_id):
 		var quest : QuestResource = database.get_quest(quest_id)
@@ -221,13 +256,13 @@ func get_active_subquest(quest_id : StringName) -> QuestResource:
 	var active_id : StringName = &""
 	
 	match quest.subquest_mode:
-		QuestResource.Subquestmode.SEQUENCE:
+		QuestResource.SubquestMode.SEQUENCE:
 			active_id = _get_next_sequence_subquest(quest)
 		
-		QuestResource.Subquestmode.RANDOM_SEQUENCE:
+		QuestResource.SubquestMode.RANDOM_SEQUENCE:
 			active_id = _get_active_random_subquest(quest)
 		
-		QuestResource.Subquestmode.ALL:
+		QuestResource.SubquestMode.ALL:
 			return null
 	
 	if active_id == &"" or not is_accepted(active_id) or is_completed(active_id): return null
@@ -266,6 +301,7 @@ func _report_progress(objective_type : int, target_id : StringName, amount : int
 				matches = objective.item_id == target_id
 			
 			if not matches: continue
+			if not can_progress_objective(quest, objective.id): continue
 			
 			var current : int = int(objectives.get(objective.id, 0))
 			var next : int = mini(current + amount, objective.required_amount)
@@ -281,6 +317,8 @@ func _report_progress(objective_type : int, target_id : StringName, amount : int
 				next,
 				objective.required_amount
 			)
+			
+			if quest.objective_mode == QuestResource.ObjectiveMode.SEQUENCE: break
 		
 		if _check_completition(quest_id): changed = true
 	
@@ -322,13 +360,13 @@ func _are_subquests_complete(quest : QuestResource) -> bool:
 	var completed_count : int = _get_completed_subquest_count(quest)
 	
 	match quest.subquest_mode:
-		QuestResource.Subquestmode.ALL:
+		QuestResource.SubquestMode.ALL:
 			return completed_count == total
 			
-		QuestResource.Subquestmode.SEQUENCE:
+		QuestResource.SubquestMode.SEQUENCE:
 			return completed_count == total
 			
-		QuestResource.Subquestmode.RANDOM_SEQUENCE:
+		QuestResource.SubquestMode.RANDOM_SEQUENCE:
 			var required : int = mini(quest.required_subquests, total)
 			return completed_count >= required
 	
@@ -361,6 +399,7 @@ func deliver_item(quest_id : StringName, objective_id : StringName) -> bool:
 	
 	if objective == null: return false
 	if objective.type != QuestObjective.ObjectiveType.DELIVER_ITEM: return false
+	if not can_progress_objective(quest, objective_id): return false
 	
 	var current := get_objective_progress(quest_id, objective_id)
 	var remaining : int = objective.required_amount - current
