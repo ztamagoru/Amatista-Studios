@@ -3,48 +3,31 @@ class_name NPCQuest
 
 # --
 
-var quest_manager : QuestManager 
-var quest
-
-# -- 
-
 @export_group("Quest")
-@export var quest_name : StringName
-@export_multiline() var quest_description : String
-
-@export_subgroup("Subquest")
-@export_custom(PROPERTY_HINT_GROUP_ENABLE, "") var is_subquest : bool = false
-@export var quest_holder : NPCQuest
+@export var quest_id : StringName
 
 # --
 
-func quest_initiation() -> void:
-	quest_manager = QuestManager.new()
-	quest = quest_holder.quest.add_subquest(
-		quest_name,
-		quest_description
-	) if is_subquest else quest_manager.add_quest(
-		quest_name,
-		quest_description
-	)
+func _get_quest() -> QuestResource:
+	if QuestManager.database == null: return null
+	return QuestManager.database.get_quest(quest_id)
 
-# --
-
-func give_quest() -> void:
-	quest.set_accepted()
+func give_quest() -> bool:
+	if _get_quest() == null: return false
+	return QuestManager.accept_quest(quest_id)
 
 func is_quest_accepted() -> bool:
-	return quest.is_active()
-
-# --
-
-func complete_quest() -> void:
-	quest.set_completed()
+	if _get_quest() == null: return false
+	return QuestManager.is_accepted(quest_id)
 
 func is_quest_completed() -> bool:
-	return quest.is_completed()
+	if _get_quest() == null: return false
+	return QuestManager.is_completed(quest_id)
 
-# --
+func get_active_subquest() -> QuestResource:
+	if _get_quest() == null: return null
+	return QuestManager.get_active_subquest(quest_id)
 
-func check_quest_parent_completed() -> bool:
-	return quest_holder.quest.is_completed()
+func get_active_subquests() -> Array[QuestResource]:
+	if _get_quest() == null: return []
+	return QuestManager.get_active_subquests(quest_id)

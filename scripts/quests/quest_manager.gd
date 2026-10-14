@@ -202,6 +202,37 @@ func get_objective_progress(quest_id : StringName, objective_id : StringName) ->
 	var objectives : Dictionary = state.get("objectives", {})
 	return int(objectives.get(objective_id, 0))
 
+func get_active_subquests(quest_id : StringName) -> Array[QuestResource]:
+	var result : Array[QuestResource] = []
+	var quest : QuestResource = database.get_quest(quest_id)
+	if quest == null or not is_accepted(quest_id): return result
+	
+	for subquest in quest.subquests:
+		if subquest == null: continue
+		if is_accepted(subquest.id) and not is_completed(subquest.id):
+			result.append(subquest)
+	
+	return result
+
+func get_active_subquest(quest_id : StringName) -> QuestResource:
+	var quest : QuestResource = database.get_quest(quest_id)
+	if quest == null or not is_accepted(quest_id): return null
+	
+	var active_id : StringName = &""
+	
+	match quest.subquest_mode:
+		QuestResource.Subquestmode.SEQUENCE:
+			active_id = _get_next_sequence_subquest(quest)
+		
+		QuestResource.Subquestmode.RANDOM_SEQUENCE:
+			active_id = _get_active_random_subquest(quest)
+		
+		QuestResource.Subquestmode.ALL:
+			return null
+	
+	if active_id == &"" or not is_accepted(active_id) or is_completed(active_id): return null
+	return database.get_quest(active_id)
+
 func report_event(event_id : StringName, amount : int = 1) -> void:
 	if amount <= 0: return
 	_report_progress(QuestObjective.ObjectiveType.EVENT, event_id, amount)
