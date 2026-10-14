@@ -10,6 +10,11 @@ class_name Interactable
 # --
 
 var can_interact : bool = false
+var is_closest : bool = false:
+	set(value):
+		if value != is_closest:
+			is_closest = value
+			toggle_ui_interaction()
 
 var outline_material : StandardMaterial3D
 
@@ -28,5 +33,8 @@ func show_outline() -> void:
 
 func hide_outline() -> void:
 	pass 
+
+func toggle_ui_interaction() -> void:
+	pass
 
 # --

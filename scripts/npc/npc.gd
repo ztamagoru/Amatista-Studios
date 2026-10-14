@@ -16,8 +16,19 @@ class_name NPC
 
 # --
 
+var is_closest : bool = false:
+	set(value):
+		if value != is_closest:
+			is_closest = value
+			toggle_ui_interaction()
+
+# --
+
 func _ready() -> void:
 	pass
 
 func interact() -> void:
+	pass
+
+func toggle_ui_interaction() -> void:
 	pass

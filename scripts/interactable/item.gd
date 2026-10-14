@@ -8,5 +8,11 @@ class_name Item
 
 # --
 
+func _ready() -> void:
+	tree_exiting.connect(exiting_tree)
+
+func exiting_tree():
+	pass
+
 func pick_up() -> void:
 	pass
