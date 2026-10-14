@@ -32,7 +32,6 @@ func _ready() -> void:
 	
 	QuestManager.quest_state_changed.connect(_on_quest_state_changed)
 	_update_quest_state()
-	can_interact = true
 
 func _update_model() -> void:
 	var lupina_model := get_node_or_null("FlowerModels/flower_violet")
