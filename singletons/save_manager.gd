@@ -70,6 +70,9 @@ func new_game() -> void:
 		"diary": {
 			"unlocked_entries": []
 		},
+		"quests": {
+			"states": {}
+		}
 	}
 	
 	save_game()
