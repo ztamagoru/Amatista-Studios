@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="QuestResource" format=3 uid="uid://bdm2eml11nmek"]
+
+[ext_resource type="Script" uid="uid://irg1osbq3q4l" path="res://scripts/quests/quest_objective.gd" id="1_14vs6"]
+[ext_resource type="Script" uid="uid://rau5swn7y6cm" path="res://scripts/quests/quest_resource.gd" id="2_siss5"]
+
+[sub_resource type="Resource" id="Resource_301nb"]
+script = ExtResource("1_14vs6")
+id = &"get_flower"
+description = "Buscar la flor para Jorge."
+type = 1
+item_id = &"flower_lupina"
+metadata/_custom_type_script = "uid://irg1osbq3q4l"
+
+[sub_resource type="Resource" id="Resource_dlhes"]
+script = ExtResource("1_14vs6")
+id = &"deliver_flower"
+description = "Llevarle la flor a Jorge."
+type = 2
+item_id = &"flower_lupina"
+metadata/_custom_type_script = "uid://irg1osbq3q4l"
+
+[resource]
+script = ExtResource("2_siss5")
+id = &"find_lupina"
+title = "Flor violeta"
+description = "Un pollito se la robó de tan hermosa que era... Espero que su madre no se dé cuenta."
+objectives = Array[ExtResource("1_14vs6")]([SubResource("Resource_301nb"), SubResource("Resource_dlhes")])
+metadata/_custom_type_script = "uid://rau5swn7y6cm"

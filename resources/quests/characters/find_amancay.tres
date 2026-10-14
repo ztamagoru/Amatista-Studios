@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="QuestResource" format=3 uid="uid://bs3o3w3xlgrtp"]
+
+[ext_resource type="Script" uid="uid://irg1osbq3q4l" path="res://scripts/quests/quest_objective.gd" id="1_s7nnk"]
+[ext_resource type="Script" uid="uid://rau5swn7y6cm" path="res://scripts/quests/quest_resource.gd" id="2_h28pu"]
+
+[sub_resource type="Resource" id="Resource_301nb"]
+script = ExtResource("1_s7nnk")
+id = &"get_flower"
+description = "Buscar la flor para Jorge."
+type = 1
+item_id = &"flower_amancay"
+metadata/_custom_type_script = "uid://irg1osbq3q4l"
+
+[sub_resource type="Resource" id="Resource_dlhes"]
+script = ExtResource("1_s7nnk")
+id = &"deliver_flower"
+description = "Llevarle la flor a Jorge."
+type = 2
+item_id = &"flower_amancay"
+metadata/_custom_type_script = "uid://irg1osbq3q4l"
+
+[resource]
+script = ExtResource("2_h28pu")
+id = &"find_amancay"
+title = "Flor amarilla"
+description = "En el centro, donde siempre da el sol, hay una flor que pareciera ser el mismo sol."
+objectives = Array[ExtResource("1_s7nnk")]([SubResource("Resource_301nb"), SubResource("Resource_dlhes")])
+metadata/_custom_type_script = "uid://rau5swn7y6cm"

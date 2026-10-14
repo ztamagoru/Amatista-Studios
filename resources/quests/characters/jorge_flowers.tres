@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="QuestResource" format=3 uid="uid://dcjmn7rqicwfd"]
+
+[ext_resource type="Script" uid="uid://irg1osbq3q4l" path="res://scripts/quests/quest_objective.gd" id="1_awc84"]
+[ext_resource type="Script" uid="uid://rau5swn7y6cm" path="res://scripts/quests/quest_resource.gd" id="2_ebk60"]
+[ext_resource type="Resource" uid="uid://bs3o3w3xlgrtp" path="res://resources/quests/characters/find_amancay.tres" id="3_5jjhl"]
+[ext_resource type="Resource" uid="uid://bdm2eml11nmek" path="res://resources/quests/characters/find_lupina.tres" id="4_301nb"]
+[ext_resource type="Resource" uid="uid://bgh1a713gsbmp" path="res://resources/quests/characters/find_mutisia.tres" id="5_jk5sw"]
+
+[resource]
+script = ExtResource("2_ebk60")
+id = &"jorge_flowers"
+title = "Flores para Jorge"
+description = "Jorge necesita que le busque unas flores, aunque no me dijo exactamente cuáles."
+objective_mode = null
+subquests = Array[ExtResource("2_ebk60")]([ExtResource("3_5jjhl"), ExtResource("4_301nb"), ExtResource("5_jk5sw")])
+subquest_mode = 2
+required_subquests = 3
+metadata/_custom_type_script = "uid://rau5swn7y6cm"
