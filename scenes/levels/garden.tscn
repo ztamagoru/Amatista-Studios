@@ -1453,7 +1453,15 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 24.470276, 0, 44.522396)
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 32.2872, 0, -46.561604)
 
 [node name="Flower" parent="Environment" unique_id=1831841508 instance=ExtResource("14_udanu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.084, 2.2227345, 11.838383)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.4308, 2.2227345, -61.42416)
+
+[node name="Flower2" parent="Environment" unique_id=244075112 instance=ExtResource("14_udanu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.971424, 2.2227306, 38.56448)
+flower_type = 1
+
+[node name="Flower3" parent="Environment" unique_id=585308799 instance=ExtResource("14_udanu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.5577, 2.2227306, 132.75127)
+flower_type = 2
 
 [node name="Camera" parent="." unique_id=672466676 node_paths=PackedStringArray("player") instance=ExtResource("3_2dny5")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 57.36074, 23.484562, 0)
