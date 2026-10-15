@@ -11,3 +11,4 @@ class_name Player
 
 func _ready() -> void:
 	Globals.player = self
+	AudioManager.setup_player(self)

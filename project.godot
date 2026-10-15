@@ -30,6 +30,8 @@ ConfigHandler="*uid://dg20we1ow3041"
 SaveManager="*uid://lr74qwi5fyy4"
 QuestManager="*uid://b5y11aql210dd"
 ItemDatabase="*uid://1sl68q5xniw"
+WwiseRuntimeManager="*uid://c5vri24p1why5"
+AudioManager="*uid://ckv8i05uydwlb"
 
 [editor_plugins]
 
@@ -144,3 +146,8 @@ common/physics_interpolation=true
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+
+[wwise]
+
+common_user_settings/root_output_path="res://Wwise/SoundBanks"
+project_settings/windows_platform_info="res://Wwise/resources/Windows.tres"
