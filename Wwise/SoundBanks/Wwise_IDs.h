@@ -13,9 +13,11 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID CLOSE_DIARY = 207989427U;
         static const AkUniqueID FOOTSTEP = 1866025847U;
         static const AkUniqueID JUMP = 3833651337U;
-        static const AkUniqueID PLAY_NEW_LINE = 3324007173U;
+        static const AkUniqueID LAND = 674522502U;
+        static const AkUniqueID PAGES_TURN = 1666598327U;
         static const AkUniqueID SHOOT = 3038207054U;
     } // namespace EVENTS
 
@@ -37,6 +39,9 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID MASTER = 4056684167U;
+        static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID SFX = 393239870U;
         static const AkUniqueID SS_AIR_FEAR = 1351367891U;
         static const AkUniqueID SS_AIR_FREEFALL = 3002758120U;
         static const AkUniqueID SS_AIR_FURY = 1029930033U;

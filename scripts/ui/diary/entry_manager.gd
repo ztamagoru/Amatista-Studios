@@ -25,11 +25,13 @@ func change_tab(new_cat : StringName):
 func update_entry():
 	if current_cat == &"npc": npc_entry_template.update_entry(index)
 	elif current_cat == &"plants": plant_entry_template.update_entry(index)
-
+	
 func _on_previous_page_button_pressed() -> void:
 	index -= 1
+	AudioManager.on_page_turn()
 	update_entry()
 
 func _on_next_page_button_pressed() -> void:
 	index += 1
+	AudioManager.on_page_turn()
 	update_entry()
