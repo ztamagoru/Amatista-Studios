@@ -1,0 +1,9 @@
+~ start
+% Encontraste x{{item_quantity}} {{item.name}}.
+% Agarraste x{{item_quantity}} {{item.name}}.
+% Obtuviste x{{item_quantity}} {{item.name}}.
+% Conseguiste x{{item_quantity}} {{item.name}}.
+% Guardaste x{{item_quantity}} {{item.name}}.
+% Juntaste x{{item_quantity}} {{item.name}}.
+% Recolectaste x{{item_quantity}} {{item.name}}.
+=> END

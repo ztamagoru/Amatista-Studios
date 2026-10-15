@@ -20,7 +20,9 @@ var should_initialize : bool = true
 # --
 
 func _ready() -> void:
-	if _should_be_removed():
+	await get_tree().process_frame # juro que esto es temporal
+	
+	if _should_be_removed(): 
 		should_initialize = false
 		queue_free()
 		return

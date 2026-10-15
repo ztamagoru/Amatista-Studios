@@ -2,7 +2,7 @@ extends Node
 
 # --
 
-const ITEMS_PATH : String = "res://resouces/items/"
+const ITEMS_PATH : String = "res://resources/items/"
 
 var items_by_id : Dictionary[StringName, ItemResource] = {}
 

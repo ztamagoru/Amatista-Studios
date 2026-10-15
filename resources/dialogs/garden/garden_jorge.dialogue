@@ -1,14 +1,12 @@
 ~ start
-if times_talked == 0:
+if is_quest_completed():
+	=> completed
+elif times_talked == 0 and not is_quest_accepted():
 	=> introduction
+elif not is_quest_accepted():
+	=> quest
 else:
-	if is_quest_completed():
-		=> completed
-	elif not is_quest_accepted():
-		=> quest
-	else:
-		=> riddle
-
+	=> riddle
 
 ~ introduction
 ???: Hmm...
@@ -30,12 +28,14 @@ Jorge: No me acuerdo de cómo eran, pero sé qué...
 
 
 ~ quest
-if not is_quest_accepted():
+if not is_quest_accepted() and not is_quest_completed():
 	do give_quest()
 Jorge: Hay algo que necesito de vos.
 Jorge: Estoy buscando una flor en particular.
 Jorge: {{get_quest_hint()}}
 Jorge: Si llegás a encontrarla, traémela.
+=> END
+
 
 ~ riddle
 Jorge: ¿Todavía no encontraste la flor?
@@ -43,12 +43,21 @@ Jorge: {{get_quest_hint()}}
 Jorge: Fijate bien por los alrededores.
 => END
 
+
 ~ right_flower
-
-
-~ thankful
-=> END
+Jorge: Justo la que necesitaba.
+if not is_quest_completed():
+	Jorge: Pero aún falta algo...
+	Jorge: ¡Ya sé!
+	=> quest
+else:
+	=> completed
 
 
 ~ completed
+Jorge: Hhmm...[wait=1.5] Muchas gracias, pequeña.
+Jorge: Aquí hay muchas cosas interesantes, ¿no lo crees?
+Jorge: Este bosque es mágico y deberías aprovechar para llevarte un lindo recuerdo.
+Jorge: Hhm...[wait=1.5] llévate alguna florcita de aquí y yo...
+Jorge: Hmm...[wait=1] Espero que me acuerde de que te la llevaste cuando me levante de la siesta.
 => END

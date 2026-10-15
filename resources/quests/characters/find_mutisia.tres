@@ -23,6 +23,6 @@ metadata/_custom_type_script = "uid://irg1osbq3q4l"
 script = ExtResource("2_g64sc")
 id = &"find_mutisia"
 title = "Flor naranja"
-description = "En el centro, donde siempre da el sol, hay una flor que pareciera ser el mismo sol."
+description = "De tanta tierra que junta,ya parece una verdura."
 objectives = Array[ExtResource("1_hk2gw")]([SubResource("Resource_301nb"), SubResource("Resource_dlhes")])
 metadata/_custom_type_script = "uid://rau5swn7y6cm"

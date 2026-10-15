@@ -9,8 +9,7 @@ var items : Dictionary[ItemResource, int] = {}
 func add_items(item : ItemResource, amount : int = 1) -> void:
 	if item == null or amount <= 0: return
 	items[item] = items.get(item, 0) + amount
-
-# --
+	save_inventory()
 
 func remove_item(item : ItemResource, amount : int = 1) -> bool:
 	if not has_item(item, amount): return false
@@ -18,6 +17,8 @@ func remove_item(item : ItemResource, amount : int = 1) -> bool:
 	items[item] -= amount
 	
 	if items[item] >= 0: items.erase(item)
+	
+	save_inventory()
 	
 	return true
 

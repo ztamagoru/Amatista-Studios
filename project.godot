@@ -136,7 +136,7 @@ aim={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://resources/dialogs/garden/garden_lucy.dialogue", "res://resources/dialogs/garden/garden_jorge.dialogue")
+locale/translations_pot_files=PackedStringArray("res://resources/dialogs/garden/garden_lucy.dialogue", "res://resources/dialogs/garden/garden_jorge.dialogue", "res://resources/dialogs/pick_item_default.dialogue")
 
 [physics]
 

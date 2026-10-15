@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://d2fc8wvs6ay02"
+path="res://.godot/imported/pick_item_default.dialogue-a06a572af32a7cddae9492ce4f8e23bf.tres"
+
+[deps]
+
+source_file="res://resources/dialogs/pick_item_default.dialogue"
+dest_files=["res://.godot/imported/pick_item_default.dialogue-a06a572af32a7cddae9492ce4f8e23bf.tres"]
+
+[params]
+
+defaults=true
