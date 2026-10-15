@@ -3,16 +3,16 @@
   "Project": {
    "Name": "Faunesty -Sounds",
    "GUID": "{BE1777FD-74E8-4628-9D96-3C0577623ECC}",
-   "Generator": "2025.1.9.9197"
+   "Generator": "2025.1.11.9262"
   },
-  "CacheRoot": "../../../Faunesty -Sounds/.cache",
+  "CacheRoot": "../../../../../WwiseProjects/Faunesty -Sounds/.cache",
   "Platforms": [
    {
     "Name": "Windows",
     "GUID": "{232BD09F-B53D-4B34-9904-0669F5347FF7}",
     "BasePlatform": "Windows",
     "BasePlatformGUID": "{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}",
-    "Path": "."
+    "Path": "Windows"
    }
   ],
   "Languages": [
@@ -24,6 +24,6 @@
     "UseAsStandIn": "true"
    }
   ],
-  "FileHash": "{0B8C1496-CEF8-B47F-32B9-D1DD3658C49E}"
+  "FileHash": "{756AF2A9-4F16-67A8-97D3-87F5532044F0}"
  }
 }
