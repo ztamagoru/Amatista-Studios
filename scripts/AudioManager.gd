@@ -6,9 +6,8 @@ var player: CharacterBody3D
 
 
 func _ready() -> void:
-	
 	Wwise.load_bank("Main")
-	print("AUDIO -> Bank Main solicitado")
+	#Wwise.post_event("Play_New_Line", self)
 	bank_loaded = true
 
 func setup_player(player_node: CharacterBody3D) -> void:
@@ -17,30 +16,22 @@ func setup_player(player_node: CharacterBody3D) -> void:
 	player = player_node
 	Wwise.register_game_obj(player, "Player")
 	Wwise.register_listener(player)
-	print("AUDIO -> Player registrado en Wwise")
-
 
 func on_footstep(surface: String) -> void:
 	if player == null:
-		print("AUDIO ERROR -> Player todavía no está configurado")
 		return
-
-	print("FOOTSTEP -> Superficie: ", surface)
-
+	#print("FOOTSTEP -> Superficie: ", surface)
 	Wwise.set_switch("Material", surface, player)
-	print("FOOTSTEP -> Switch enviado: Material / ", surface)
-
+	#print("FOOTSTEP -> Switch enviado: Material / ", surface)
 	Wwise.post_event("Footstep", player)
-	print("FOOTSTEP -> Evento enviado: Footstep")
+	#print("FOOTSTEP -> Evento enviado: Footstep")
 
 
 func on_shoot() -> void:
 	if player == null:
 		print("AUDIO ERROR -> Player todavía no está configurado")
 		return
-
-	print("SHOOT -> Evento enviado")
-
+	#print("SHOOT -> Evento enviado")
 	Wwise.post_event("Shoot", player)
 	
 func on_jump(surface) -> void:

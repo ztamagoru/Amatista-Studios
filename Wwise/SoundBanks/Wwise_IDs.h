@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID FOOTSTEP = 1866025847U;
         static const AkUniqueID JUMP = 3833651337U;
+        static const AkUniqueID PLAY_NEW_LINE = 3324007173U;
         static const AkUniqueID SHOOT = 3038207054U;
     } // namespace EVENTS
 
@@ -51,7 +52,7 @@ namespace AK
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
-        static const AkUniqueID TEST = 3157003241U;
+        static const AkUniqueID MAIN = 3161908922U;
     } // namespace BANKS
 
     namespace BUSSES
