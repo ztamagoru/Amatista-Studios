@@ -15,21 +15,24 @@ extends Node
 
 var settings_loaded : bool = false
 
-var audio_sliders : Dictionary = {
-	"Master": master_slider,
-	"Music": music_slider,
-	"Sfx": sfx_slider
-}
+var audio_sliders : Dictionary = {}
 
-var audio_labels : Dictionary = {
-	"Master": master_label,
-	"Music": music_label,
-	"Sfx": sfx_label
-}
+var audio_labels : Dictionary = {}
 
 # --
 
 func _ready() -> void:
+	audio_labels = {
+		"Master": master_label,
+		"Music": music_label,
+		"Sfx": sfx_label
+	}
+	audio_sliders = {
+		"Master": master_slider,
+		"Music": music_slider,
+		"Sfx": sfx_slider
+	}
+	
 	master_slider.value_changed.connect(slider_changed.bind("master"))
 	music_slider.value_changed.connect(slider_changed.bind("music"))
 	sfx_slider.value_changed.connect(slider_changed.bind("sfx"))
@@ -47,10 +50,12 @@ func load_audio_settings() -> void:
 		
 		AudioServer.set_bus_volume_linear(bus_index, volume)
 		audio_sliders[bus_name].value = volume
-		audio_labels[bus_name].text = str(volume * 10)
+		audio_labels[bus_name].text = str(int(volume * 10))
 
 func slider_changed(value : float, bus_name : String) -> void:
 	if not settings_loaded: return
+	
+	audio_labels[bus_name.capitalize()].text = str(int(value * 10))
 	
 	var bus_index : int = AudioServer.get_bus_index(bus_name.capitalize())
 	AudioServer.set_bus_volume_linear(bus_index, value)
