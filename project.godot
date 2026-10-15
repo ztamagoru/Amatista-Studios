@@ -26,6 +26,8 @@ Globals="*uid://ywyeuma71ij2"
 DialogueManager="*uid://c3rodes2l3gxb"
 InventoryManager="*uid://bqn5f5q5rr435"
 DiaryEntriesManager="*uid://dtod17rsqqj4g"
+WwiseRuntimeManager="*uid://c5vri24p1why5"
+AudioManager="*uid://ckv8i05uydwlb"
 
 [editor_plugins]
 
@@ -140,3 +142,8 @@ common/physics_interpolation=true
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+
+[wwise]
+
+common_user_settings/root_output_path="res://Wwise/SoundBanks"
+project_settings/windows_platform_info="res://Wwise/resources/Windows.tres"

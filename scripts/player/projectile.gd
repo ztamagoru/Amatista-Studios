@@ -15,6 +15,7 @@ func _ready() -> void:
 
 func shoot(source_pos : Vector3, target_pos : Vector3) -> void:
 	global_position = source_pos
+	AudioManager.on_shoot()
 	
 	# Conseguimos la dirección hacia el target
 	# Y la multiplicamos por 1.1 para hacer que le atine mejor el proyectil
