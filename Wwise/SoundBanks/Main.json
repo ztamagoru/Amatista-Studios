@@ -1,0 +1,321 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3161908922",
+    "Type": "User",
+    "GUID": "{B2AB37D9-0287-4B83-B475-5B48B6C26BCF}",
+    "Language": "SFX",
+    "Hash": "{C719791D-8F13-C7C8-2DA9-553226740876}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
+    "ShortName": "Main",
+    "Path": "Main.bnk",
+    "Media": [
+     {
+      "Id": "7115285",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "footsteps-wood.wav",
+      "CachePath": "C5/{C5FD9B5E-0862-B6B3-BB6D-3D6C6FF96153}.wem"
+     },
+     {
+      "Id": "126474508",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Shoot.wav",
+      "CachePath": "DB/{DB92B09F-A485-F9FE-A5A9-FCB1E48D1600}.wem"
+     },
+     {
+      "Id": "228327416",
+      "Language": "SFX",
+      "Streaming": "true",
+      "Location": "Loose",
+      "ShortName": "footsteps-dirt.wav",
+      "Path": "Media/228327416.wem",
+      "CachePath": "9E/{9E9865A3-BDF6-1023-882D-F6D39D7E5015}.wem"
+     },
+     {
+      "Id": "259443018",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "close_diary.wav",
+      "CachePath": "4F/{4F8D6FCF-63D8-FDE4-6E78-CEB4366BEFF0}.wem"
+     },
+     {
+      "Id": "270729911",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Jump_grass.wav",
+      "CachePath": "5F/{5F2ED369-2D08-22D9-42D1-73388CA53676}.wem"
+     },
+     {
+      "Id": "353595088",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Jump_dirt.wav",
+      "CachePath": "EF/{EF98B9E5-17AE-3649-D60F-1FBA7E2487AC}.wem"
+     },
+     {
+      "Id": "646357272",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Jump_grass.wav",
+      "CachePath": "00/{007BB897-316D-70D4-DA9D-783618A5955A}.wem"
+     },
+     {
+      "Id": "774489380",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "pages_turn.wav",
+      "CachePath": "DE/{DE2C1D78-C929-0F7C-0859-C3C9B09D33D4}.wem"
+     },
+     {
+      "Id": "786250105",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Jump_dirt.wav",
+      "CachePath": "32/{32258BCE-1556-7B24-1042-C88FCA4AD977}.wem"
+     },
+     {
+      "Id": "1015484737",
+      "Language": "SFX",
+      "Streaming": "true",
+      "Location": "Loose",
+      "ShortName": "footsteps-grass.wav",
+      "Path": "Media/1015484737.wem",
+      "CachePath": "73/{730E6AD4-0FBF-6D8D-F6CB-1284A90AD5D8}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "207989427",
+      "Name": "Close_Diary",
+      "ObjectPath": "\\Events\\Default Work Unit\\Close_Diary",
+      "GUID": "{85F0A50B-205B-4C56-BD1B-A62D3798E11C}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.75723356",
+      "DurationMax": "0.75723356",
+      "MediaRefs": [
+       {
+        "Id": "259443018"
+       }
+      ]
+     },
+     {
+      "Id": "1866025847",
+      "Name": "Footstep",
+      "ObjectPath": "\\Events\\Default Work Unit\\Footstep",
+      "GUID": "{154542E0-B3FE-4217-8D30-E5ABC0A39016}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.28734693",
+      "DurationMax": "0.40132",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3865314626",
+         "Id": "2195636714",
+         "GUID": "{B51CCF14-62AC-4C92-8007-286D939784AC}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "228327416"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3865314626",
+         "Id": "4248645337",
+         "GUID": "{F50D523E-B2C1-40CB-A265-22E5BA36C789}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "1015484737"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3865314626",
+         "Id": "2058049674",
+         "GUID": "{937BD9C1-BD6B-4C5C-88EA-B3E3F4F677CF}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "7115285"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "Id": "3833651337",
+      "Name": "Jump",
+      "ObjectPath": "\\Events\\Default Work Unit\\Jump",
+      "GUID": "{BF22F850-3B9D-472A-A7F5-1E7BBB1F9415}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.63236",
+      "DurationMax": "0.64298",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3865314626",
+         "Id": "2195636714",
+         "GUID": "{B51CCF14-62AC-4C92-8007-286D939784AC}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "786250105"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3865314626",
+         "Id": "4248645337",
+         "GUID": "{F50D523E-B2C1-40CB-A265-22E5BA36C789}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "646357272"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "Id": "674522502",
+      "Name": "Land",
+      "ObjectPath": "\\Events\\Default Work Unit\\Land",
+      "GUID": "{998FD5F8-CF25-4698-8751-DB88918B5610}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.59295",
+      "DurationMax": "0.7207873",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3865314626",
+         "Id": "2195636714",
+         "GUID": "{B51CCF14-62AC-4C92-8007-286D939784AC}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "353595088"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3865314626",
+         "Id": "4248645337",
+         "GUID": "{F50D523E-B2C1-40CB-A265-22E5BA36C789}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "270729911"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "Id": "1666598327",
+      "Name": "Pages_Turn",
+      "ObjectPath": "\\Events\\Default Work Unit\\Pages_Turn",
+      "GUID": "{40B26BBF-485D-4271-879D-C157F41A5932}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.003759",
+      "DurationMax": "1.003759",
+      "MediaRefs": [
+       {
+        "Id": "774489380"
+       }
+      ]
+     },
+     {
+      "Id": "3038207054",
+      "Name": "Shoot",
+      "ObjectPath": "\\Events\\Default Work Unit\\Shoot",
+      "GUID": "{B56F29E4-E27C-4D5D-8BD0-DF0F87383E30}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.41723356",
+      "DurationMax": "0.41723356",
+      "MediaRefs": [
+       {
+        "Id": "126474508"
+       }
+      ]
+     }
+    ],
+    "Busses": [
+     {
+      "Id": "393239870",
+      "Name": "SFX",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Master\\SFX",
+      "GUID": "{CDD68098-87CF-45E3-9900-98F646FC003C}"
+     },
+     {
+      "Id": "3991942870",
+      "Name": "Music",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Master\\Music",
+      "GUID": "{93676219-233C-4FA3-9331-FBC9E266679C}"
+     },
+     {
+      "Id": "4056684167",
+      "Name": "Master",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Master",
+      "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
+     }
+    ],
+    "SwitchGroups": [
+     {
+      "Id": "3865314626",
+      "Name": "Material",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Material",
+      "GUID": "{1F788AB2-445C-4157-A8FE-53FDF731F520}",
+      "Switches": [
+       {
+        "Id": "2058049674",
+        "Name": "Wood",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Material\\Wood",
+        "GUID": "{937BD9C1-BD6B-4C5C-88EA-B3E3F4F677CF}"
+       },
+       {
+        "Id": "2195636714",
+        "Name": "Dirt",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Material\\Dirt",
+        "GUID": "{B51CCF14-62AC-4C92-8007-286D939784AC}"
+       },
+       {
+        "Id": "4248645337",
+        "Name": "Grass",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Material\\Grass",
+        "GUID": "{F50D523E-B2C1-40CB-A265-22E5BA36C789}"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{0EFFB96E-673E-7E12-7907-7AFC6E613E3A}"
+ }
+}
