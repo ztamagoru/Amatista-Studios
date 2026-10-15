@@ -1,0 +1,54 @@
+~ start
+if times_talked == 0:
+	=> introduction
+else:
+	if is_quest_completed():
+		=> completed
+	elif not is_quest_accepted():
+		=> quest
+	else:
+		=> riddle
+
+
+~ introduction
+???: Hmm...
+???: Hhmmm...
+Es realmente un tipo muy pancho.
+???: Hmm...[wait=1.5] Flores...[wait=1] Me gustan las flores...
+Sofia: Disculpe, lo dejo tranquilo.
+???: No, no,[wait=0.5] espera.
+El castor se refriega los ojos y se acomoda las flores de su cabeza.
+???: Quiero flores.
+???: Quiero [shake]MÁS[/shake] flores. Porque me estuve fijando y me robaron unas...[wait=0.5] [shake]¡tres flores![/shake]
+Jorge: Yo, Jorge el castor, superviso las flores de aquí, ¿sabes?
+Jorge: Como ya nadie solicita trabajo de castor porque el bosque ya no los necesita...[wait=0.5] Al menos me quedo cuidando las flores.
+Pobre castor, lo juzgué antes de tiempo.
+Sofia: ¿En qué lo puedo ayudar?
+Jorge: Encuentra las flores que me faltan.
+Jorge: No me acuerdo de cómo eran, pero sé qué...
+=> quest
+
+
+~ quest
+if not is_quest_accepted():
+	do give_quest()
+Jorge: Hay algo que necesito de vos.
+Jorge: Estoy buscando una flor en particular.
+Jorge: {{get_quest_hint()}}
+Jorge: Si llegás a encontrarla, traémela.
+
+~ riddle
+Jorge: ¿Todavía no encontraste la flor?
+Jorge: {{get_quest_hint()}}
+Jorge: Fijate bien por los alrededores.
+=> END
+
+~ right_flower
+
+
+~ thankful
+=> END
+
+
+~ completed
+=> END

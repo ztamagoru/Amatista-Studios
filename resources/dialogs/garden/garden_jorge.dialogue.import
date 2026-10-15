@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://3076rb6xddyu"
+path="res://.godot/imported/garden_jorge.dialogue-634f71e9d11f0a144bc16dd49fff2fa0.tres"
+
+[deps]
+
+source_file="res://resources/dialogs/garden/garden_jorge.dialogue"
+dest_files=["res://.godot/imported/garden_jorge.dialogue-634f71e9d11f0a144bc16dd49fff2fa0.tres"]
+
+[params]
+
+defaults=true
