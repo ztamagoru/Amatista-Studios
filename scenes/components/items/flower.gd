@@ -25,13 +25,8 @@ func _ready() -> void:
 		_update_model()
 		return
 	
-	
 	super._ready()
-	
 	if not should_initialize: return
-	
-	QuestManager.quest_state_changed.connect(_on_quest_state_changed)
-	_update_quest_state()
 
 func _update_model() -> void:
 	var lupina_model := get_node_or_null("FlowerModels/flower_violet")
@@ -46,13 +41,3 @@ func _update_model() -> void:
 
 	if is_instance_valid(amancay_model):
 		amancay_model.visible = flower_type == FlowerType.AMANCAY
-
-func _on_quest_state_changed(changed_quest_id : StringName) -> void:
-	if changed_quest_id != quest_id: return
-	_update_quest_state()
-
-func _update_quest_state() -> void:
-	can_interact = (
-		QuestManager.is_accepted(quest_id)
-		and not QuestManager.is_completed(quest_id)
-	)

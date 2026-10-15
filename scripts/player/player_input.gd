@@ -29,7 +29,6 @@ func _input(event: InputEvent) -> void:
 			aim_dir = aim_dir.limit_length()
 	else:
 		aim_dir = Vector2.ZERO
-	print(aim_dir)
 	
 	# Run
 	if event.is_action_pressed("move_run"):

@@ -13,6 +13,13 @@ var closest_target : Node3D
 
 # --
 
+func _process(_delta: float) -> void:
+	if parent.input.is_interacting():
+		if not is_instance_valid(closest_target): return
+		
+		if closest_target is Item: closest_target.pick_up()
+		else: closest_target.interact()
+
 func _physics_process(_delta: float) -> void:
 	var candidates : Array[Node3D] = []
 	

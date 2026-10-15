@@ -53,5 +53,13 @@ func _toggle_outline() -> void:
 	for i in override_materials:
 		i.next_pass = outline_material if is_closest else null
 
+func _execute_dialogue(triggered_by : Interactable, position : String = "start") -> void:
+	if dialogue_handler != null and dialogue_handler.dialogue != null:
+		DialogueManager.show_dialogue_balloon(
+			dialogue_handler.dialogue,
+			position,
+			[triggered_by, dialogue_handler]
+		)
+
 func toggle_ui_interaction() -> void:
 	pass
