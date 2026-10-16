@@ -8,11 +8,6 @@ class_name Projectile
 
 # --
 
-func _ready() -> void:
-	body_entered.connect(_on_body_entered)
-	
-# --
-
 func shoot(source_pos : Vector3, target_pos : Vector3) -> void:
 	global_position = source_pos
 	AudioManager.on_shoot()
@@ -45,7 +40,11 @@ func shoot(source_pos : Vector3, target_pos : Vector3) -> void:
 
 # --
 
-func _on_body_entered(body : Node3D) -> void:
-	# Si es un "shooteable" acá le decimos que pasa cuando lo shooteamos
-	print(body)
+
+func _on_hitbox_body_entered(body: Node3D) -> void:
 	queue_free()
+
+
+func _on_hitbox_area_entered(area: Area3D) -> void:
+	if area is HurtBox:
+		area.hit()

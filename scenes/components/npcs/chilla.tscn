@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://cw6rbl2qgvt2s" path="res://scripts/behavior tree/leafs/leaf_is_player_inside_area_3d.gd" id="8_5tdrr"]
 [ext_resource type="Script" uid="uid://dgi3fuytrorts" path="res://scripts/behavior tree/leafs/leaf_look_at.gd" id="9_o24r7"]
 [ext_resource type="Script" uid="uid://hp5c25x1v4m3" path="res://scripts/behavior tree/leafs/leaf_set_animation_blend.gd" id="10_k3wt5"]
+[ext_resource type="Script" uid="uid://dpi8fnv26aayl" path="res://scripts/npc/hurt_box.gd" id="11_5kill"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
 radius = 2.8842773
@@ -28,6 +29,9 @@ blend_point_0/node = SubResource("AnimationNodeAnimation_5kill")
 blend_point_0/pos = 0.5
 blend_point_0/name = &"idle"
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_a453d"]
+size = Vector3(7, 14.447, 7)
+
 [node name="Lucy" type="CharacterBody3D" unique_id=1709419815 node_paths=PackedStringArray("nav_agent", "idle_timer")]
 script = ExtResource("1_8bmpm")
 nav_agent = NodePath("NavigationAgent3D")
@@ -45,17 +49,17 @@ metadata/_custom_type_script = "uid://dbyh0ac8p2iqp"
 [node name="chilla" parent="." unique_id=1255409666 instance=ExtResource("4_fckuj")]
 metadata/_edit_group_ = true
 
-[node name="Armature_001" parent="chilla" index="0" unique_id=30741607]
+[node name="Armature_001" parent="chilla" index="0" unique_id=149249984]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.004297912, 3.5700765, -0.11996126)
 
-[node name="Skeleton3D" parent="chilla/Armature_001" index="0" unique_id=1142888615]
-bones/0/position = Vector3(-8.5800974e-35, 0.9545583, 0.059672497)
+[node name="Skeleton3D" parent="chilla/Armature_001" index="0" unique_id=167683450]
+bones/0/position = Vector3(-1.5834838e-36, 0.69607335, 0.059688002)
 bones/2/rotation = Quaternion(-0.23140064, -0.0041984348, 0.9595126, -0.16053581)
 bones/4/rotation = Quaternion(-0.23140064, -0.0041984348, 0.9595126, -0.16053581)
-bones/6/position = Vector3(0.22961536, 3.3217824, -1.37029)
+bones/6/position = Vector3(0.22961538, 3.2122657, -1.37029)
 bones/6/rotation = Quaternion(0.89556795, -0.1084148, 0.34319174, -0.26157913)
-bones/8/position = Vector3(1.0705923, 1.5639147, -2.4751427)
-bones/10/position = Vector3(1.0705924, 1.5639147, -2.475143)
+bones/8/position = Vector3(1.0705923, 1.1543313, -2.4751427)
+bones/10/position = Vector3(1.0705924, 1.1543313, -2.475143)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1748639179]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.857971, 0)
@@ -106,5 +110,12 @@ metadata/_custom_type_script = "uid://cw6rbl2qgvt2s"
 [node name="LeafLookAt" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfPlayerNear" unique_id=199316353]
 script = ExtResource("9_o24r7")
 metadata/_custom_type_script = "uid://dgi3fuytrorts"
+
+[node name="HurtBox" type="Area3D" parent="." unique_id=1424322186]
+script = ExtResource("11_5kill")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox" unique_id=884473539]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.7233887, 0)
+shape = SubResource("BoxShape3D_a453d")
 
 [editable path="chilla"]

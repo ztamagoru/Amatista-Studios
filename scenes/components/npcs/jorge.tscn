@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://de5vhatfo2bf7" path="res://scripts/behavior tree/leafs/leaf_set_nav_target_empty.gd" id="15_dfccr"]
 [ext_resource type="Script" uid="uid://damc2axxj1jex" path="res://scripts/behavior tree/leafs/leaf_set_timer.gd" id="16_b6jba"]
 [ext_resource type="Script" uid="uid://hi6u2m2tu6fe" path="res://scripts/behavior tree/leafs/leaf_move_to_nav_target.gd" id="17_0vcwc"]
+[ext_resource type="Script" uid="uid://dpi8fnv26aayl" path="res://scripts/npc/hurt_box.gd" id="18_qm71c"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
 radius = 2.8842773
@@ -47,6 +48,9 @@ blend_point_2/node = SubResource("AnimationNodeAnimation_qm71c")
 blend_point_2/pos = 0.5
 blend_point_2/name = &"Player near"
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ug0rj"]
+size = Vector3(7, 14.447, 7)
+
 [node name="Jorge" type="CharacterBody3D" unique_id=1709419815 node_paths=PackedStringArray("nav_agent", "idle_timer")]
 script = ExtResource("1_ymukt")
 nav_agent = NodePath("NavigationAgent3D")
@@ -65,11 +69,11 @@ metadata/_custom_type_script = "uid://dbyh0ac8p2iqp"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.0484836, 0.20967007)
 metadata/_edit_group_ = true
 
-[node name="Armature_001" parent="jorge" index="0" unique_id=768755069]
+[node name="Armature_001" parent="jorge" index="0" unique_id=1547009847]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36282945, 5.6507044, -0.2381401)
 
-[node name="Skeleton3D" parent="jorge/Armature_001" index="0" unique_id=1577318117]
-bones/0/position = Vector3(0.18057226, 0.29695404, 0)
+[node name="Skeleton3D" parent="jorge/Armature_001" index="0" unique_id=325088795]
+bones/0/position = Vector3(0.18057226, 0.2880656, 0)
 bones/2/rotation = Quaternion(0.7301547, 0.019998811, -0.682126, 0.034326732)
 bones/3/rotation = Quaternion(-0.70622706, 0.028142149, 0.7065466, 0.03526101)
 bones/4/rotation = Quaternion(-0.5695773, 0.5082055, 0.59399605, -0.25392458)
@@ -195,5 +199,12 @@ script = ExtResource("10_0wuyv")
 anim_tree = NodePath("../../../../AnimationTree")
 blend_value = 1.0
 metadata/_custom_type_script = "uid://hp5c25x1v4m3"
+
+[node name="HurtBox" type="Area3D" parent="." unique_id=1591959756]
+script = ExtResource("18_qm71c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox" unique_id=1201957586]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.7233887, 0)
+shape = SubResource("BoxShape3D_ug0rj")
 
 [editable path="jorge"]

@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://hi6u2m2tu6fe" path="res://scripts/behavior tree/leafs/leaf_move_to_nav_target.gd" id="13_kb88u"]
 [ext_resource type="Script" uid="uid://de5vhatfo2bf7" path="res://scripts/behavior tree/leafs/leaf_set_nav_target_empty.gd" id="13_outbu"]
 [ext_resource type="Script" uid="uid://hp5c25x1v4m3" path="res://scripts/behavior tree/leafs/leaf_set_animation_blend.gd" id="13_yo7n4"]
+[ext_resource type="Script" uid="uid://dpi8fnv26aayl" path="res://scripts/npc/hurt_box.gd" id="18_ne7lm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
 radius = 2.8842773
@@ -41,6 +42,9 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_yo7n4")
 blend_point_1/pos = 1.0
 blend_point_1/name = &"Caminar"
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_fbwj1"]
+size = Vector3(7, 14.447, 7)
+
 [node name="Lucy" type="CharacterBody3D" unique_id=1709419815 node_paths=PackedStringArray("nav_agent", "idle_timer")]
 script = ExtResource("1_q4qu4")
 nav_agent = NodePath("NavigationAgent3D")
@@ -58,11 +62,11 @@ metadata/_custom_type_script = "uid://dbyh0ac8p2iqp"
 [node name="lucy" parent="." unique_id=2064277401 instance=ExtResource("2_s77ri")]
 metadata/_edit_group_ = true
 
-[node name="Armature" parent="lucy" index="0" unique_id=55102420]
+[node name="Armature" parent="lucy" index="0" unique_id=532499152]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.051, 5.287257, -0.01)
 
-[node name="Skeleton3D" parent="lucy/Armature" index="0" unique_id=1794459844]
-bones/0/position = Vector3(0, 0.6261697, 0)
+[node name="Skeleton3D" parent="lucy/Armature" index="0" unique_id=559518466]
+bones/0/position = Vector3(0, 0.6234569, 0)
 bones/2/rotation = Quaternion(-0.7301575, 0.0020132198, 0.68296415, -0.020638796)
 bones/3/rotation = Quaternion(-0.7071043, -0.0018406233, 0.7071045, -0.0018405658)
 bones/4/position = Vector3(1.0705135, 2.852421, -0.009296418)
@@ -184,5 +188,12 @@ script = ExtResource("13_yo7n4")
 anim_tree = NodePath("../../../../AnimationTree")
 blend_value = 1.0
 metadata/_custom_type_script = "uid://hp5c25x1v4m3"
+
+[node name="HurtBox" type="Area3D" parent="." unique_id=1698624291]
+script = ExtResource("18_ne7lm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox" unique_id=422613094]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.7233887, 0)
+shape = SubResource("BoxShape3D_fbwj1")
 
 [editable path="lucy"]

@@ -6,6 +6,9 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_g4v7s"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_fbwj1"]
+size = Vector3(1.5, 1.5, 1.5)
+
 [node name="ProjectilePath" type="RigidBody3D" unique_id=1413910892]
 collision_layer = 32
 contact_monitor = true
@@ -18,3 +21,11 @@ mesh = SubResource("SphereMesh_yf5fn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=46752255]
 shape = SubResource("SphereShape3D_g4v7s")
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=1259858088]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=815733008]
+shape = SubResource("BoxShape3D_fbwj1")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

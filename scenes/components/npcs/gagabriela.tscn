@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://cw6rbl2qgvt2s" path="res://scripts/behavior tree/leafs/leaf_is_player_inside_area_3d.gd" id="8_miygt"]
 [ext_resource type="Script" uid="uid://dgi3fuytrorts" path="res://scripts/behavior tree/leafs/leaf_look_at.gd" id="9_p6peu"]
 [ext_resource type="Script" uid="uid://hp5c25x1v4m3" path="res://scripts/behavior tree/leafs/leaf_set_animation_blend.gd" id="10_kpgd2"]
+[ext_resource type="Script" uid="uid://dpi8fnv26aayl" path="res://scripts/npc/hurt_box.gd" id="11_ndh6v"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
 radius = 2.8842773
@@ -28,6 +29,9 @@ blend_point_0/node = SubResource("AnimationNodeAnimation_kb88u")
 blend_point_0/pos = 0.5
 blend_point_0/name = &"idle"
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_2x2s7"]
+size = Vector3(7, 14.447, 7)
+
 [node name="Gagabriela" type="CharacterBody3D" unique_id=1709419815 node_paths=PackedStringArray("nav_agent", "idle_timer")]
 script = ExtResource("1_pi3u4")
 nav_agent = NodePath("NavigationAgent3D")
@@ -45,7 +49,7 @@ metadata/_custom_type_script = "uid://dbyh0ac8p2iqp"
 [node name="gagabriela" parent="." unique_id=2058808511 instance=ExtResource("4_16s2o")]
 metadata/_edit_group_ = true
 
-[node name="Armature" parent="gagabriela" index="0" unique_id=407083056]
+[node name="Armature" parent="gagabriela" index="0" unique_id=1557573473]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.030618206, 3.2807631, 0.007724285)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1748639179]
@@ -97,5 +101,12 @@ metadata/_custom_type_script = "uid://cw6rbl2qgvt2s"
 [node name="LeafLookAt" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfPlayerNear" unique_id=199316353]
 script = ExtResource("9_p6peu")
 metadata/_custom_type_script = "uid://dgi3fuytrorts"
+
+[node name="HurtBox" type="Area3D" parent="." unique_id=1018682229]
+script = ExtResource("11_ndh6v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox" unique_id=812276792]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.7233887, 0)
+shape = SubResource("BoxShape3D_2x2s7")
 
 [editable path="gagabriela"]
