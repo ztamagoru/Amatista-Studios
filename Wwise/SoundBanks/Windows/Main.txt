@@ -1,10 +1,12 @@
 Event	ID	Name			Wwise Object Path	Notes
-	207989427	Close_Diary			\Default Work Unit\Close_Diary	
-	674522502	Land			\Default Work Unit\Land	
-	1666598327	Pages_Turn			\Default Work Unit\Pages_Turn	
-	1866025847	Footstep			\Default Work Unit\Footstep	
-	3038207054	Shoot			\Default Work Unit\Shoot	
-	3833651337	Jump			\Default Work Unit\Jump	
+	207989427	Close_Diary			\Default Work Unit\Diary\Close_Diary	
+	674522502	Land			\Default Work Unit\Player\Land	
+	1666598327	Pages_Turn			\Default Work Unit\Diary\Pages_Turn	
+	1866025847	Footstep			\Default Work Unit\Player\Footstep	
+	2702884089	Play_Music_Garden			\Default Work Unit\Musics\Play_Music_Garden	
+	3038207054	Shoot			\Default Work Unit\Player\Shoot	
+	3448274447	Heal			\Default Work Unit\Heal	
+	3833651337	Jump			\Default Work Unit\Player\Jump	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
 	3865314626	Material			\Default Work Unit\Material	
@@ -14,19 +16,27 @@ Switch	ID	Name	Switch Group			Notes
 	2195636714	Dirt	Material			
 	4248645337	Grass	Material			
 
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	393239870	SFX			\Default Work Unit\SFX	
+	3991942870	Music			\Default Work Unit\Music	
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	393239870	SFX			\Default Work Unit\Master\SFX	
 	3991942870	Music			\Default Work Unit\Master\Music	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	7115285	footsteps-wood	.cache\C5\{C5FD9B5E-0862-B6B3-BB6D-3D6C6FF96153}.wem		\Containers\Default Work Unit\SFX\Player\Footsteps\Wood\footsteps-wood		50784
+	91759783	Heal	.cache\8C\{8C5FF54C-A5B7-840A-1F80-AB99C5526933}.wem		\Containers\Default Work Unit\SFX\Healing\Heal\Heal		364052
 	126474508	Shoot	.cache\DB\{DB92B09F-A485-F9FE-A5A9-FCB1E48D1600}.wem		\Containers\Default Work Unit\SFX\Player\Shoot\Shoot		73696
 	259443018	close_diary	.cache\4F\{4F8D6FCF-63D8-FDE4-6E78-CEB4366BEFF0}.wem		\Containers\Default Work Unit\SFX\Hud\Diary\Close\close_diary		133672
 	270729911	Jump_grass	.cache\5F\{5F2ED369-2D08-22D9-42D1-73388CA53676}.wem		\Containers\Default Work Unit\SFX\Player\Land\Land_grass\Jump_grass		104692
 	353595088	Jump_dirt	.cache\EF\{EF98B9E5-17AE-3649-D60F-1FBA7E2487AC}.wem		\Containers\Default Work Unit\SFX\Player\Land\Land_dirt\Jump_dirt		127244
+	405405491	Melodia 2 82bpm	.cache\E6\{E6E8AE6A-D9FC-7359-E413-19ACC67FDC10}.wem		\Containers\Default Work Unit\Music\Level 1\Garden_lv1\Lv1 garden\Melodia 2 82bpm		5163024
 	646357272	Jump_grass	.cache\00\{007BB897-316D-70D4-DA9D-783618A5955A}.wem		\Containers\Default Work Unit\SFX\Player\Jump\Jump_grass\Jump_grass		113516
+	680647482	Melodia 3 82bpm	.cache\23\{23A174E2-D1CB-E241-F73F-C4DBC5002F19}.wem		\Containers\Default Work Unit\Music\Level 1\Garden_lv1\Lv1 garden\Melodia 3 82bpm		5163024
 	774489380	pages_turn	.cache\DE\{DE2C1D78-C929-0F7C-0859-C3C9B09D33D4}.wem		\Containers\Default Work Unit\SFX\Hud\Diary\Pages turn\pages_turn		177160
 	786250105	Jump_dirt	.cache\32\{32258BCE-1556-7B24-1042-C88FCA4AD977}.wem		\Containers\Default Work Unit\SFX\Player\Jump\Jump_dirt\Jump_dirt		111644
+	854920791	Melodia 1 82bpm	.cache\DE\{DE73BF16-42F3-E804-8836-14E045D1FEFF}.wem		\Containers\Default Work Unit\Music\Level 1\Garden_lv1\Lv1 garden\Melodia 1 82bpm		5163024
 
 Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
 	228327416	footsteps-dirt	.cache\9E\{9E9865A3-BDF6-1023-882D-F6D39D7E5015}.wem	228327416.wem	\Containers\Default Work Unit\SFX\Player\Footsteps\Dirt\footsteps-dirt	

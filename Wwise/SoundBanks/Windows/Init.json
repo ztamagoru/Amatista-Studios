@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{A8862AE8-0BE2-D4AD-E5F5-957329B9D80E}",
+    "Hash": "{C3953539-B416-4B6A-DCB5-A31A6FBD6CE5}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -86,12 +86,6 @@
       "GUID": "{09E2B445-C4A3-447F-B3CA-818A1D925EF7}"
      },
      {
-      "Id": "2918011349",
-      "Name": "MasterVolume",
-      "ObjectPath": "\\Game Parameters\\Default Work Unit\\MasterVolume",
-      "GUID": "{A86A303B-AD04-4CF2-8D0B-2E63B2D9C8D3}"
-     },
-     {
       "Id": "3002758120",
       "Name": "SS_Air_Freefall",
       "ObjectPath": "\\Game Parameters\\Factory Soundseed Air Game Syncs\\SS_Air_Freefall",
@@ -126,6 +120,12 @@
       "Name": "Music",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Music",
       "GUID": "{2779DD62-A272-447D-82FC-C3E581B7CFDB}"
+     },
+     {
+      "Id": "4056684167",
+      "Name": "Master",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Master",
+      "GUID": "{A86A303B-AD04-4CF2-8D0B-2E63B2D9C8D3}"
      },
      {
       "Id": "4160247818",
@@ -641,6 +641,6 @@
     ]
    }
   ],
-  "FileHash": "{61C9ACC6-9C4C-6D4C-1D78-0F6FCB469E15}"
+  "FileHash": "{7B734B20-DFF7-AA3A-D812-FD3F629C2579}"
  }
 }

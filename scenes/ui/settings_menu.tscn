@@ -34,10 +34,9 @@ text = "Close"
 [node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer" unique_id=1552310073]
 layout_mode = 2
 size_flags_vertical = 3
-current_tab = 1
+current_tab = 0
 
 [node name="Audio" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=1222223120]
-visible = false
 layout_mode = 2
 script = ExtResource("1_qwcqe")
 metadata/_tab_index = 0
@@ -190,6 +189,7 @@ size_flags_horizontal = 8
 text = "0"
 
 [node name="Video" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=819102596]
+visible = false
 layout_mode = 2
 script = ExtResource("2_mhswj")
 metadata/_tab_index = 1

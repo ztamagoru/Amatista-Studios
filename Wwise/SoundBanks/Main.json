@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{B2AB37D9-0287-4B83-B475-5B48B6C26BCF}",
     "Language": "SFX",
-    "Hash": "{C719791D-8F13-C7C8-2DA9-553226740876}",
+    "Hash": "{34864632-3069-23EC-B306-B9A15163865E}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -22,6 +22,14 @@
       "Location": "Memory",
       "ShortName": "footsteps-wood.wav",
       "CachePath": "C5/{C5FD9B5E-0862-B6B3-BB6D-3D6C6FF96153}.wem"
+     },
+     {
+      "Id": "91759783",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Heal.wav",
+      "CachePath": "8C/{8C5FF54C-A5B7-840A-1F80-AB99C5526933}.wem"
      },
      {
       "Id": "126474508",
@@ -164,6 +172,20 @@
       ]
      },
      {
+      "Id": "3448274447",
+      "Name": "Heal",
+      "ObjectPath": "\\Events\\Default Work Unit\\Heal",
+      "GUID": "{6B3E3666-8147-4361-80D4-3ABA5E075C6D}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.0632427",
+      "DurationMax": "2.0632427",
+      "MediaRefs": [
+       {
+        "Id": "91759783"
+       }
+      ]
+     },
+     {
       "Id": "3833651337",
       "Name": "Jump",
       "ObjectPath": "\\Events\\Default Work Unit\\Jump",
@@ -286,6 +308,26 @@
       "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
      }
     ],
+    "GameParameters": [
+     {
+      "Id": "393239870",
+      "Name": "SFX",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\SFX",
+      "GUID": "{073D0433-4FDB-454D-8921-8EAE521BD965}"
+     },
+     {
+      "Id": "2918011349",
+      "Name": "MasterVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\MasterVolume",
+      "GUID": "{A86A303B-AD04-4CF2-8D0B-2E63B2D9C8D3}"
+     },
+     {
+      "Id": "3991942870",
+      "Name": "Music",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Music",
+      "GUID": "{2779DD62-A272-447D-82FC-C3E581B7CFDB}"
+     }
+    ],
     "SwitchGroups": [
      {
       "Id": "3865314626",
@@ -316,6 +358,6 @@
     ]
    }
   ],
-  "FileHash": "{0EFFB96E-673E-7E12-7907-7AFC6E613E3A}"
+  "FileHash": "{A9713301-F71C-62E8-A091-1151DABB85A5}"
  }
 }

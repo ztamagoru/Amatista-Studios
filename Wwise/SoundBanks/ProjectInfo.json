@@ -3,9 +3,9 @@
   "Project": {
    "Name": "Faunesty -Sounds",
    "GUID": "{BE1777FD-74E8-4628-9D96-3C0577623ECC}",
-   "Generator": "2025.1.11.9262"
+   "Generator": "2025.1.9.9197"
   },
-  "CacheRoot": "../../../../../WwiseProjects/Faunesty -Sounds/.cache",
+  "CacheRoot": "../../../Faunesty -Sounds/.cache",
   "Platforms": [
    {
     "Name": "Windows",
@@ -24,6 +24,6 @@
     "UseAsStandIn": "true"
    }
   ],
-  "FileHash": "{756AF2A9-4F16-67A8-97D3-87F5532044F0}"
+  "FileHash": "{073D0F8C-3CB5-2AD2-503C-68755248A9DD}"
  }
 }

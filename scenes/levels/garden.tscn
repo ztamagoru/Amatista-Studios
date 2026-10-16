@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cd0mh650gkgik"]
 
 [ext_resource type="PackedScene" uid="uid://cshhkyv0w8byc" path="res://scenes/components/player.tscn" id="1_8i028"]
+[ext_resource type="Script" uid="uid://bsfp8y80muj2c" path="res://scenes/levels/garden.gd" id="1_qf7ro"]
 [ext_resource type="PackedScene" uid="uid://ciev543v4vk70" path="res://assets/models/levels/garden/garden_scene.blend" id="2_2dny5"]
 [ext_resource type="PackedScene" uid="uid://bfh8nsyv0y463" path="res://scenes/components/camera.tscn" id="3_2dny5"]
 [ext_resource type="Script" uid="uid://d3anyit0ecliw" path="res://scripts/area.gd" id="3_jdv7m"]
@@ -76,6 +77,7 @@ top_radius = 19.921387
 bottom_radius = 19.921387
 
 [node name="Garden" type="Node3D" unique_id=508071924]
+script = ExtResource("1_qf7ro")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2096877708]
 environment = SubResource("Environment_2y7ey")
