@@ -24,6 +24,9 @@ func _physics_process(delta: float) -> void:
 	
 	if player.velocity.slide(Vector3.UP).length() > 0.1:
 		look_at(global_position + -player.velocity.slide(Vector3.UP))
+	
+	if current_state == "Aim":
+		look_at(global_position - player.input.get_aiming_direction().slide(Vector3.UP))
 
 
 func _on_aim_aimed() -> void:
