@@ -1,5 +1,8 @@
-extends Node3D
+extends Level
+class_name Garden
 
+# --
 
-func _ready() -> void:
+func level_start() -> void:
 	AudioManager.play_music_garden()
+	super.level_start()

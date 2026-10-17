@@ -112,7 +112,4 @@ func collision():
 	if not _is_cured:
 		_is_cured = not _is_cured
 		
-		#cambiar estas lineas de abajo por lo de wwise
-		var sfx : SFXOneShot = SFXOneShot.new()
-		sfx.stream = load(heal_sfx)
-		get_tree().current_scene.add_child(sfx)
+		AudioManager.on_heal()
