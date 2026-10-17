@@ -52,6 +52,7 @@ func _update_unlocks() -> void:
 
 func unlock_entry(entry_id : StringName) -> void:
 	if unlocked_entries.has(entry_id): return
+	AudioManager.on_discovery()
 	unlocked_entries.append(entry_id)
 	_update_unlocks()
 	save_diary()

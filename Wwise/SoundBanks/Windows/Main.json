@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{B2AB37D9-0287-4B83-B475-5B48B6C26BCF}",
     "Language": "SFX",
-    "Hash": "{B7AF792C-832E-B780-FBFF-5BC00A298895}",
+    "Hash": "{031D390D-E845-7BE7-5B93-B33EF5AEED35}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -49,6 +49,14 @@
       "CachePath": "9E/{9E9865A3-BDF6-1023-882D-F6D39D7E5015}.wem"
      },
      {
+      "Id": "233290653",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "non-curative impact.wav",
+      "CachePath": "4F/{4F7FCAE4-E76F-2981-B561-D07261060024}.wem"
+     },
+     {
       "Id": "259443018",
       "Language": "SFX",
       "Streaming": "false",
@@ -73,12 +81,28 @@
       "CachePath": "EF/{EF98B9E5-17AE-3649-D60F-1FBA7E2487AC}.wem"
      },
      {
+      "Id": "384257364",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "pick up items.wav",
+      "CachePath": "11/{111549FC-B13A-FD5B-928A-964AE1C01D5C}.wem"
+     },
+     {
       "Id": "405405491",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Melodia 2 82bpm.wav",
       "CachePath": "E6/{E6E8AE6A-D9FC-7359-E413-19ACC67FDC10}.wem"
+     },
+     {
+      "Id": "476459709",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "discovery.wav",
+      "CachePath": "15/{15005C85-5EE2-0E69-4314-34EEBB6087CA}.wem"
      },
      {
       "Id": "646357272",
@@ -146,6 +170,20 @@
       ]
      },
      {
+      "Id": "3663283413",
+      "Name": "Discovery",
+      "ObjectPath": "\\Events\\Default Work Unit\\Game\\Discovery",
+      "GUID": "{54B6659F-E79E-4EBB-AB7E-7244D0D36CFE}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.0632427",
+      "DurationMax": "2.0632427",
+      "MediaRefs": [
+       {
+        "Id": "476459709"
+       }
+      ]
+     },
+     {
       "Id": "1866025847",
       "Name": "Footstep",
       "ObjectPath": "\\Events\\Default Work Unit\\Player\\Footstep",
@@ -198,7 +236,7 @@
      {
       "Id": "3448274447",
       "Name": "Heal",
-      "ObjectPath": "\\Events\\Default Work Unit\\Heal",
+      "ObjectPath": "\\Events\\Default Work Unit\\Game\\Heal",
       "GUID": "{6B3E3666-8147-4361-80D4-3ABA5E075C6D}",
       "DurationType": "OneShot",
       "DurationMin": "2.0632427",
@@ -284,6 +322,20 @@
       ]
      },
      {
+      "Id": "4064781185",
+      "Name": "Not_heal",
+      "ObjectPath": "\\Events\\Default Work Unit\\Game\\Not_heal",
+      "GUID": "{50AEB623-3C00-4382-BE04-B9DE06521BB1}",
+      "DurationType": "OneShot",
+      "DurationMin": "2",
+      "DurationMax": "2",
+      "MediaRefs": [
+       {
+        "Id": "233290653"
+       }
+      ]
+     },
+     {
       "Id": "1666598327",
       "Name": "Pages_Turn",
       "ObjectPath": "\\Events\\Default Work Unit\\Diary\\Pages_Turn",
@@ -294,6 +346,20 @@
       "MediaRefs": [
        {
         "Id": "774489380"
+       }
+      ]
+     },
+     {
+      "Id": "467838998",
+      "Name": "Pick_up",
+      "ObjectPath": "\\Events\\Default Work Unit\\Game\\Pick_up",
+      "GUID": "{9EF71EF5-67B7-4917-A862-C4FF56B20001}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.0632427",
+      "DurationMax": "2.0632427",
+      "MediaRefs": [
+       {
+        "Id": "384257364"
        }
       ]
      },
@@ -400,6 +466,6 @@
     ]
    }
   ],
-  "FileHash": "{06F0E732-0ED7-EB61-9E09-940A991C966A}"
+  "FileHash": "{EAE5B570-787D-EE7E-A767-A00B6B7694AA}"
  }
 }

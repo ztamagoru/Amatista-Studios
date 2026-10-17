@@ -36,4 +36,4 @@ func _exiting_tree():
 	pass
 
 func pick_up() -> void:
-	pass
+	AudioManager.on_pick_item()
