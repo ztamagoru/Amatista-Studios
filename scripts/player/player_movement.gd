@@ -44,11 +44,11 @@ func _update_footsteps(delta: float, is_moving: bool) -> void:
 	_step_timer -= delta
 	if _step_timer <= 0.0:
 		_step_timer = step_interval
-		var surface := _detect_surface()
-		print("PLAYER -> Detectó superficie: ", surface)
+		var surface := detect_surface()
+		#print("PLAYER -> Detectó superficie: ", surface)
 		AudioManager.on_footstep(surface)
 
-func _detect_surface() -> String:
+func detect_surface() -> String:
 	if not ground_ray.is_colliding():
 		print("No collisiona con nada")
 		return "Grass"
