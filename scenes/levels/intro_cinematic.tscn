@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://b35ux44lynext"]
+
+[ext_resource type="Script" uid="uid://bw18mehr31b31" path="res://scenes/levels/intro_cinematic.gd" id="1_p6s8m"]
+[ext_resource type="Texture2D" uid="uid://cgwe73sp8tga4" path="res://assets/ui/progress bar/skip_bg.svg" id="2_hs3yp"]
+[ext_resource type="VideoStream" uid="uid://c15f3pphg0id" path="res://assets/videos/video_intro.ogv" id="2_olkm1"]
+[ext_resource type="Texture2D" uid="uid://ba0lifo8ng6jf" path="res://assets/ui/progress bar/skip_progress.svg" id="3_olkm1"]
+
+[node name="IntroCinematic" type="Node3D" unique_id=777533219 node_paths=PackedStringArray("intro_video", "skip_progress_bar")]
+script = ExtResource("1_p6s8m")
+intro_video = NodePath("CanvasLayer/Video/AspectRatioContainer/VideoStreamPlayer")
+tutorial_scene = "res://scenes/levels/tutorial.tscn"
+skip_progress_bar = NodePath("CanvasLayer/Video/AspectRatioContainer/MarginContainer/VBoxContainer/SkipProgressBar")
+adjacent_maps = Array[String](["res://scenes/levels/tutorial.tscn"])
+metadata/_custom_type_script = "uid://xqfthocmw71o"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=789218479]
+
+[node name="Video" type="Control" parent="CanvasLayer" unique_id=406432785]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer/Video" unique_id=1501316265]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+ratio = 1.7778
+stretch_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Video/AspectRatioContainer" unique_id=1741596461]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer/Video/AspectRatioContainer" unique_id=503126843]
+layout_mode = 2
+mouse_filter = 2
+stream = ExtResource("2_olkm1")
+autoplay = true
+expand = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Video/AspectRatioContainer" unique_id=1668531832]
+z_index = 1
+layout_mode = 2
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Video/AspectRatioContainer/MarginContainer" unique_id=761305682]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="SkipProgressBar" type="TextureProgressBar" parent="CanvasLayer/Video/AspectRatioContainer/MarginContainer/VBoxContainer" unique_id=925655220]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+custom_maximum_size = Vector2(50, 50)
+layout_mode = 2
+step = 0.01
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("2_hs3yp")
+texture_progress = ExtResource("3_olkm1")
