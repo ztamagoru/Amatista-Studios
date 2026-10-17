@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://q7cx46uoqgqq"]
+
+[ext_resource type="Script" uid="uid://bvh7rf7fa4nke" path="res://scenes/levels/tutorial.gd" id="1_1wklo"]
+[ext_resource type="PackedScene" uid="uid://tj582qybx6lb" path="res://scenes/components/npcs/lucy.tscn" id="2_1r3rq"]
+[ext_resource type="PackedScene" uid="uid://cshhkyv0w8byc" path="res://scenes/components/player.tscn" id="2_7ac3l"]
+[ext_resource type="PackedScene" uid="uid://bfh8nsyv0y463" path="res://scenes/components/camera.tscn" id="3_iig34"]
+[ext_resource type="PackedScene" uid="uid://bpxxhidrdm7vj" path="res://assets/models/levels/tutorial/tutorial_scene.glb" id="3_u4f7j"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1wklo"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_jdv7m"]
+sky_material = SubResource("ProceduralSkyMaterial_1wklo")
+
+[sub_resource type="Environment" id="Environment_7ac3l"]
+background_mode = 2
+sky = SubResource("Sky_jdv7m")
+glow_enabled = true
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_g4v7s"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_g4v7s"]
+vertices = PackedVector3Array(-398.05878, 9.511547, 33.5381, 82.44122, 9.511547, 33.5381, 82.44122, 9.511547, -67.9619, -398.05878, 9.511547, -67.9619)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+border_size = 10.0
+region_min_size = 150.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_g4v7s"]
+size = Vector2(490.43, 111.475)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(126.881195, 23.294512, 25.095497)
+
+[node name="Tutorial" type="Node3D" unique_id=2086453637 node_paths=PackedStringArray("player", "tutorial_end", "world_environment", "z_boundary", "nav_region")]
+script = ExtResource("1_1wklo")
+player = NodePath("Player")
+tutorial_end = NodePath("TutorialEnd")
+garden_map = "res://scenes/levels/garden.tscn"
+world_environment = NodePath("WorldEnvironment")
+fog_min_density = 0.005
+fog_max_density = 0.05
+fog_start_z = 25.0
+fog_end_z = -200.0
+z_boundary = NodePath("Environment/WorldBoundaries/CollisionShape3D")
+tree_layouts = Array[String](["res://scenes/levels/tutorial tree layouts/tree_layout_01.tscn", "res://scenes/levels/tutorial tree layouts/tree_layout_02.tscn", "res://scenes/levels/tutorial tree layouts/tree_layout_03.tscn", "res://scenes/levels/tutorial tree layouts/tree_layout_04.tscn", "res://scenes/levels/tutorial tree layouts/tree_layout_05.tscn"])
+nav_region = NodePath("Environment/NavigationRegion3D")
+adjacent_maps = Array[String](["res://scenes/levels/garden.tscn"])
+metadata/_custom_type_script = "uid://xqfthocmw71o"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1039948882]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 500.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=90073301]
+environment = SubResource("Environment_7ac3l")
+
+[node name="Player" parent="." unique_id=242546826 instance=ExtResource("2_7ac3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.3342285, 9.701448, 52.165756)
+
+[node name="Camera" parent="." unique_id=672466676 node_paths=PackedStringArray("player") instance=ExtResource("3_iig34")]
+player = NodePath("../Player")
+
+[node name="Lucy" parent="." unique_id=1709419815 node_paths=PackedStringArray("nav_region", "look_target") instance=ExtResource("2_1r3rq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9597406, 10.843609, -38.992325)
+nav_region = NodePath("../Environment/NavigationRegion3D")
+look_target = NodePath("../Player")
+
+[node name="Environment" type="Node3D" parent="." unique_id=897323250]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="WorldBoundaries" type="StaticBody3D" parent="Environment" unique_id=1256145286]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/WorldBoundaries" unique_id=1405594450]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 67.885544, 12.893444, 6.6027974e-07)
+shape = SubResource("WorldBoundaryShape3D_g4v7s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment/WorldBoundaries" unique_id=1109632965]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 42.234505, 0, -75.30049)
+shape = SubResource("WorldBoundaryShape3D_g4v7s")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Environment/WorldBoundaries" unique_id=1831778795]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 41.90629, 0, 43.02881)
+shape = SubResource("WorldBoundaryShape3D_g4v7s")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Environment/WorldBoundaries" unique_id=1748202252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.62621, 9, 22.168)
+shape = SubResource("WorldBoundaryShape3D_g4v7s")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Environment" unique_id=623704039]
+navigation_mesh = SubResource("NavigationMesh_g4v7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/NavigationRegion3D" unique_id=448658860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -157.8438, 9.011547, -17.224401)
+mesh = SubResource("PlaneMesh_g4v7s")
+
+[node name="tutorial_scene" parent="Environment" unique_id=1098991891 instance=ExtResource("3_u4f7j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45683825, 0, 0.6602497)
+metadata/_edit_group_ = true
+
+[node name="fondo03_011" parent="Environment/tutorial_scene" index="26" unique_id=399140111]
+visible = false
+
+[node name="fondo03_013" parent="Environment/tutorial_scene" index="28" unique_id=378871267]
+visible = false
+
+[node name="tutorial_scene2" parent="Environment" unique_id=69672708 instance=ExtResource("3_u4f7j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -219.7431, 0, 0.6602593)
+metadata/_edit_group_ = true
+
+[node name="fondo03_011" parent="Environment/tutorial_scene2" index="26" unique_id=399140111]
+visible = false
+
+[node name="fondo03_013" parent="Environment/tutorial_scene2" index="28" unique_id=378871267]
+visible = false
+
+[node name="tutorial_scene3" parent="Environment" unique_id=860576161 instance=ExtResource("3_u4f7j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -439.075, 0, 0.6602689)
+metadata/_edit_group_ = true
+
+[node name="fondo03_011" parent="Environment/tutorial_scene3" index="26" unique_id=399140111]
+visible = false
+
+[node name="fondo03_013" parent="Environment/tutorial_scene3" index="28" unique_id=378871267]
+visible = false
+
+[node name="TutorialEnd" type="Area3D" parent="." unique_id=812784783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.562454, 15.023621, -263.82068)
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TutorialEnd" unique_id=363535625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2464142, 0, 0)
+shape = SubResource("BoxShape3D_g4v7s")
+debug_color = Color(0.3441367, 0.3530792, 1, 1)
+
+[editable path="Environment/tutorial_scene"]
+[editable path="Environment/tutorial_scene2"]
+[editable path="Environment/tutorial_scene3"]

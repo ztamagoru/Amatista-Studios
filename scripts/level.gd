@@ -4,7 +4,7 @@ class_name Level
 
 # --
 
-signal transition_state_changed()
+signal transition_state_changed(state : bool)
 
 # --
 
@@ -14,7 +14,10 @@ signal transition_state_changed()
 
 var game_manager : GameManager
 
-var transitioning : bool = true
+var transitioning : bool = true:
+	set(value):
+		transitioning = value
+		transition_state_changed.emit(value)
 
 # --
 
@@ -25,3 +28,6 @@ func change_scene(target_scene : String) -> bool:
 	
 	game_manager.change_map(target_scene)
 	return true
+
+func level_start():
+	transitioning = false

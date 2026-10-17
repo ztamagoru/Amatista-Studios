@@ -11,7 +11,7 @@ class_name GameManager
 
 # --
 
-var main_menu : String = ""
+var main_menu : String = "res://scenes/ui/main_menu.tscn"
 
 var loaded_maps : Dictionary[String, PackedScene]
 
@@ -37,8 +37,8 @@ func change_map(path : String) -> void:
 	
 	new_map.game_manager = self
 	
-	if not new_map.adjacent_maps.is_empty():
-		push_warning("GAME MANAGER: %s doesn't have adjacent maps declared.", % new_map.name)
+	if new_map.adjacent_maps.is_empty():
+		push_warning("GAME MANAGER: " + new_map.name + " doesn't have adjacent maps declared.")
 	
 	for map in new_map.adjacent_maps:
 		if not loaded_maps.has(map): loaded_maps[path] = load(path)
@@ -46,9 +46,9 @@ func change_map(path : String) -> void:
 	for map in loaded_maps:
 		if not new_map.adjacent_maps.has(map) or map != path: loaded_maps.erase(map)
 	
-	await _fade(fade_mode.FADE_OUT)
+	await new_map.level_start()
 	
-	new_map.transitioning = false
+	await _fade(fade_mode.FADE_OUT)
 
 # --
 
