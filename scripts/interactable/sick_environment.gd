@@ -61,7 +61,7 @@ func _ready() -> void:
 			mesh.set_surface_override_material(i, shader_mat)
 			shader_passes.append(shader_mat)
 	
-	set_healthy()
+	set_sick()
 
 # --
 

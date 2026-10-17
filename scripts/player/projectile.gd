@@ -42,6 +42,7 @@ func shoot(source_pos : Vector3, target_pos : Vector3) -> void:
 
 
 func _on_hitbox_body_entered(body: Node3D) -> void:
+	if body.is_in_group("sick_environment"): body.collision()
 	queue_free()
 
 
