@@ -3,6 +3,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	467838998	Pick_up			\Default Work Unit\Game\Pick_up	
 	674522502	Land			\Default Work Unit\Player\Land	
 	1330284301	Collectable			\Default Work Unit\Game\Collectable	
+	1351238925	Open_Diary			\Default Work Unit\Diary\Open_Diary	
 	1666598327	Pages_Turn			\Default Work Unit\Diary\Pages_Turn	
 	1866025847	Footstep			\Default Work Unit\Player\Footstep	
 	2649777630	Play_Music_Puzzle			\Default Work Unit\Musics\Play_Music_Puzzle	
@@ -58,6 +59,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	786250105	Jump_dirt	.cache\32\{32258BCE-1556-7B24-1042-C88FCA4AD977}.wem		\Containers\Default Work Unit\SFX\Player\Jump\Jump_dirt\Jump_dirt		111644
 	799179510	Melodia 2 80bpm tutorial	.cache\14\{14AA75E1-0971-DAB8-6E7B-0415F7087329}.wem		\Containers\Default Work Unit\Music\Music Switch\Tutorial_game\Tutorial\Melodia 2 80bpm tutorial		4233696
 	854920791	Melodia 1 82bpm	.cache\DE\{DE73BF16-42F3-E804-8836-14E045D1FEFF}.wem		\Containers\Default Work Unit\Music\Music Switch\Garden_lv1\Lv1 garden\Melodia 1 82bpm		5163024
+	967699816	open_diary	.cache\2A\{2AAA2D9B-2140-ABDE-CD0B-AB54929945CA}.wem		\Containers\Default Work Unit\SFX\Hud\Diary\Open\open_diary		139360
 
 Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
 	228327416	footsteps-dirt	.cache\9E\{9E9865A3-BDF6-1023-882D-F6D39D7E5015}.wem	228327416.wem	\Containers\Default Work Unit\SFX\Player\Footsteps\Dirt\footsteps-dirt	

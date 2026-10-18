@@ -21,6 +21,7 @@ namespace AK
         static const AkUniqueID JUMP = 3833651337U;
         static const AkUniqueID LAND = 674522502U;
         static const AkUniqueID NOT_HEAL = 4064781185U;
+        static const AkUniqueID OPEN_DIARY = 1351238925U;
         static const AkUniqueID PAGES_TURN = 1666598327U;
         static const AkUniqueID PICK_UP = 467838998U;
         static const AkUniqueID PLAY_MUSIC = 2932040671U;
