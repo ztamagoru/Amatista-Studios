@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{B2AB37D9-0287-4B83-B475-5B48B6C26BCF}",
     "Language": "SFX",
-    "Hash": "{031D390D-E845-7BE7-5B93-B33EF5AEED35}",
+    "Hash": "{1D6034F4-3229-5EB1-5D13-7BEACE0D8A3C}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -22,6 +22,14 @@
       "Location": "Memory",
       "ShortName": "footsteps-wood.wav",
       "CachePath": "C5/{C5FD9B5E-0862-B6B3-BB6D-3D6C6FF96153}.wem"
+     },
+     {
+      "Id": "79349208",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Melodia 1 bpm 120 puzzle.wav",
+      "CachePath": "66/{6660B10C-395D-6F5D-0701-7703AAB697DA}.wem"
      },
      {
       "Id": "91759783",
@@ -38,6 +46,14 @@
       "Location": "Memory",
       "ShortName": "Shoot.wav",
       "CachePath": "DB/{DB92B09F-A485-F9FE-A5A9-FCB1E48D1600}.wem"
+     },
+     {
+      "Id": "168680199",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Percusion 80bpm tutorial.wav",
+      "CachePath": "9B/{9B91AB91-405A-D5CB-206F-A58F63D9EC88}.wem"
      },
      {
       "Id": "228327416",
@@ -73,12 +89,36 @@
       "CachePath": "5F/{5F2ED369-2D08-22D9-42D1-73388CA53676}.wem"
      },
      {
+      "Id": "306895049",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Melodia 2 bpm 120 puzzle.wav",
+      "CachePath": "A6/{A6297BA8-DA7A-F0AF-7B91-2B3606FCD47E}.wem"
+     },
+     {
+      "Id": "325813703",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Menu-music.wav",
+      "CachePath": "C8/{C8D5D80A-CFC3-2C74-22D1-9B7307E47B24}.wem"
+     },
+     {
       "Id": "353595088",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Jump_dirt.wav",
       "CachePath": "EF/{EF98B9E5-17AE-3649-D60F-1FBA7E2487AC}.wem"
+     },
+     {
+      "Id": "371608449",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Melodia 1 80bpm tutorial.wav",
+      "CachePath": "E0/{E08E6D92-2C2A-8E30-C8E5-50FF0D98EF41}.wem"
      },
      {
       "Id": "384257364",
@@ -103,6 +143,14 @@
       "Location": "Memory",
       "ShortName": "discovery.wav",
       "CachePath": "15/{15005C85-5EE2-0E69-4314-34EEBB6087CA}.wem"
+     },
+     {
+      "Id": "530536690",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Melodia 3 80bpm tutorial.wav",
+      "CachePath": "5E/{5EAE7A77-BECD-CB06-976C-1F8F0D6E70CF}.wem"
      },
      {
       "Id": "646357272",
@@ -135,6 +183,14 @@
       "Location": "Memory",
       "ShortName": "Jump_dirt.wav",
       "CachePath": "32/{32258BCE-1556-7B24-1042-C88FCA4AD977}.wem"
+     },
+     {
+      "Id": "799179510",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Melodia 2 80bpm tutorial.wav",
+      "CachePath": "14/{14AA75E1-0971-DAB8-6E7B-0415F7087329}.wem"
      },
      {
       "Id": "854920791",
@@ -327,8 +383,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Game\\Not_heal",
       "GUID": "{50AEB623-3C00-4382-BE04-B9DE06521BB1}",
       "DurationType": "OneShot",
-      "DurationMin": "2",
-      "DurationMax": "2",
+      "DurationMin": "3.4822023",
+      "DurationMax": "3.4822023",
       "MediaRefs": [
        {
         "Id": "233290653"
@@ -364,20 +420,80 @@
       ]
      },
      {
-      "Id": "2702884089",
-      "Name": "Play_Music_Garden",
-      "ObjectPath": "\\Events\\Default Work Unit\\Musics\\Play_Music_Garden",
-      "GUID": "{6F9EF1C1-D27F-4B25-8F9F-ABB72586C813}",
+      "Id": "2932040671",
+      "Name": "Play_Music",
+      "ObjectPath": "\\Events\\Default Work Unit\\Musics\\Play_Music",
+      "GUID": "{B581C203-F094-47C8-BADD-1A600DDB0556}",
+      "DurationType": "Infinite",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "2963455281",
+         "Id": "278887670",
+         "GUID": "{457D258B-C56F-475A-9C7A-0A95AA50B896}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "405405491"
+         },
+         {
+          "Id": "680647482"
+         },
+         {
+          "Id": "854920791"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "2963455281",
+         "Id": "2607556080",
+         "GUID": "{A64D2BE7-CFB4-4C2F-8A35-74CCC0F84EC7}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "325813703"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "2963455281",
+         "Id": "3762955427",
+         "GUID": "{D5A4ECF7-16C7-43CE-8C37-8E8777694837}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "168680199"
+         },
+         {
+          "Id": "371608449"
+         },
+         {
+          "Id": "530536690"
+         },
+         {
+          "Id": "799179510"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "Id": "2649777630",
+      "Name": "Play_Music_Puzzle",
+      "ObjectPath": "\\Events\\Default Work Unit\\Musics\\Play_Music_Puzzle",
+      "GUID": "{182FC80C-09F1-41C6-B089-9D45BB2E4E00}",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "405405491"
+        "Id": "79349208"
        },
        {
-        "Id": "680647482"
-       },
-       {
-        "Id": "854920791"
+        "Id": "306895049"
        }
       ]
      },
@@ -394,6 +510,16 @@
         "Id": "126474508"
        }
       ]
+     },
+     {
+      "Id": "2837384057",
+      "Name": "Stop_Music",
+      "ObjectPath": "\\Events\\Default Work Unit\\Musics\\Stop_Music",
+      "GUID": "{C0F52A28-6F97-4EF8-92C4-F8CE09069811}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
      }
     ],
     "Busses": [
@@ -438,6 +564,32 @@
     ],
     "SwitchGroups": [
      {
+      "Id": "2963455281",
+      "Name": "Switch_Music",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Switch_Music",
+      "GUID": "{B6376C94-88F8-426A-A840-CE8FACE5B902}",
+      "Switches": [
+       {
+        "Id": "278887670",
+        "Name": "Garden",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Switch_Music\\Garden",
+        "GUID": "{457D258B-C56F-475A-9C7A-0A95AA50B896}"
+       },
+       {
+        "Id": "2607556080",
+        "Name": "Menu",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Switch_Music\\Menu",
+        "GUID": "{A64D2BE7-CFB4-4C2F-8A35-74CCC0F84EC7}"
+       },
+       {
+        "Id": "3762955427",
+        "Name": "Tutorial",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Switch_Music\\Tutorial",
+        "GUID": "{D5A4ECF7-16C7-43CE-8C37-8E8777694837}"
+       }
+      ]
+     },
+     {
       "Id": "3865314626",
       "Name": "Material",
       "ObjectPath": "\\Switches\\Default Work Unit\\Material",
@@ -466,6 +618,6 @@
     ]
    }
   ],
-  "FileHash": "{EAE5B570-787D-EE7E-A767-A00B6B7694AA}"
+  "FileHash": "{573D1A51-5879-3174-88D7-21D046B5CE0C}"
  }
 }

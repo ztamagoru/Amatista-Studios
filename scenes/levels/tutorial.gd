@@ -39,6 +39,7 @@ func level_start() -> void:
 	
 	_set_trees()
 	_connect_signals()
+	AudioManager.play_music("tutorial")
 	super.level_start()
 
 func _set_trees() -> bool:
