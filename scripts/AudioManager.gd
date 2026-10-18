@@ -79,6 +79,11 @@ func on_discovery()-> void:
 		return
 	Wwise.post_event("Discovery", self)
 
+func on_collectable()-> void:
+	if _audio_ready == null:
+		return
+	Wwise.post_event("Collectable", self)
+
 #------------------------------------Hud--------------------------------------
 func on_page_turn() -> void:
 	if _audio_ready == null:
@@ -89,6 +94,11 @@ func on_close_diary() -> void:
 	if _audio_ready == null:
 		return
 	Wwise.post_event("Close_Diary", self)
+
+func on_open_diary() -> void:
+	if _audio_ready == null:
+		return
+	Wwise.post_event("Open_Diary", self)
 
 #------------------------------------Music----------------------------------------
 const music_switchs := {

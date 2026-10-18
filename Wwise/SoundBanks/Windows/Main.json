@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{B2AB37D9-0287-4B83-B475-5B48B6C26BCF}",
     "Language": "SFX",
-    "Hash": "{1D6034F4-3229-5EB1-5D13-7BEACE0D8A3C}",
+    "Hash": "{73D03F89-63E5-2778-EFF5-7CD8DE4CAD54}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -137,6 +137,14 @@
       "CachePath": "E6/{E6E8AE6A-D9FC-7359-E413-19ACC67FDC10}.wem"
      },
      {
+      "Id": "432846656",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "collectable.wav",
+      "CachePath": "CF/{CF3EDF3D-019A-DDBE-D491-05E99C95FCC4}.wem"
+     },
+     {
       "Id": "476459709",
       "Language": "SFX",
       "Streaming": "false",
@@ -222,6 +230,20 @@
       "MediaRefs": [
        {
         "Id": "259443018"
+       }
+      ]
+     },
+     {
+      "Id": "1330284301",
+      "Name": "Collectable",
+      "ObjectPath": "\\Events\\Default Work Unit\\Game\\Collectable",
+      "GUID": "{A97297F2-5268-4D07-8880-415351780D03}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.5",
+      "DurationMax": "2.5",
+      "MediaRefs": [
+       {
+        "Id": "432846656"
        }
       ]
      },
@@ -618,6 +640,6 @@
     ]
    }
   ],
-  "FileHash": "{573D1A51-5879-3174-88D7-21D046B5CE0C}"
+  "FileHash": "{C8EE67B4-C69B-E73B-CFC9-8B9AEF5DE905}"
  }
 }
