@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{B2AB37D9-0287-4B83-B475-5B48B6C26BCF}",
     "Language": "SFX",
-    "Hash": "{73D03F89-63E5-2778-EFF5-7CD8DE4CAD54}",
+    "Hash": "{B9272504-2717-8EEB-0684-DA382A8E6C6C}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -207,6 +207,14 @@
       "Location": "Memory",
       "ShortName": "Melodia 82bpm.wav",
       "CachePath": "DE/{DE73BF16-42F3-E804-8836-14E045D1FEFF}.wem"
+     },
+     {
+      "Id": "967699816",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "open_diary.wav",
+      "CachePath": "2A/{2AAA2D9B-2140-ABDE-CD0B-AB54929945CA}.wem"
      },
      {
       "Id": "1015484737",
@@ -410,6 +418,20 @@
       "MediaRefs": [
        {
         "Id": "233290653"
+       }
+      ]
+     },
+     {
+      "Id": "1351238925",
+      "Name": "Open_Diary",
+      "ObjectPath": "\\Events\\Default Work Unit\\Diary\\Open_Diary",
+      "GUID": "{8B25754C-26A4-4B3F-BE81-9FECD0D7106D}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.7894785",
+      "DurationMax": "0.7894785",
+      "MediaRefs": [
+       {
+        "Id": "967699816"
        }
       ]
      },
@@ -640,6 +662,6 @@
     ]
    }
   ],
-  "FileHash": "{C8EE67B4-C69B-E73B-CFC9-8B9AEF5DE905}"
+  "FileHash": "{CE76ABBA-B31C-BB95-9464-A04A69D40069}"
  }
 }
