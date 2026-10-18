@@ -6,7 +6,7 @@ class_name MainMenu
 func level_start():
 	# chequear que exista el savefile, y si es así,
 	# que se habilite el botón de continuar la partida
-	
+	AudioManager.play_music("menu")
 	super.level_start()
 
 func _on_continue_button_pressed() -> void:

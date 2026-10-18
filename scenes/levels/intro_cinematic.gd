@@ -22,7 +22,7 @@ var can_skip : bool = false
 
 func level_start() -> void:
 	skip_progress_bar.max_value = skip_held_time
-	
+	AudioManager.stop_music()
 	super.level_start()
 
 func _process(delta: float) -> void:

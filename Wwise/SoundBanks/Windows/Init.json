@@ -136,6 +136,32 @@
     ],
     "SwitchGroups": [
      {
+      "Id": "2963455281",
+      "Name": "Switch_Music",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Switch_Music",
+      "GUID": "{B6376C94-88F8-426A-A840-CE8FACE5B902}",
+      "Switches": [
+       {
+        "Id": "278887670",
+        "Name": "Garden",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Switch_Music\\Garden",
+        "GUID": "{457D258B-C56F-475A-9C7A-0A95AA50B896}"
+       },
+       {
+        "Id": "2607556080",
+        "Name": "Menu",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Switch_Music\\Menu",
+        "GUID": "{A64D2BE7-CFB4-4C2F-8A35-74CCC0F84EC7}"
+       },
+       {
+        "Id": "3762955427",
+        "Name": "Tutorial",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Switch_Music\\Tutorial",
+        "GUID": "{D5A4ECF7-16C7-43CE-8C37-8E8777694837}"
+       }
+      ]
+     },
+     {
       "Id": "3865314626",
       "Name": "Material",
       "ObjectPath": "\\Switches\\Default Work Unit\\Material",
@@ -641,6 +667,6 @@
     ]
    }
   ],
-  "FileHash": "{7B734B20-DFF7-AA3A-D812-FD3F629C2579}"
+  "FileHash": "{FD935D06-0038-3327-C80F-F8C7C58B16A8}"
  }
 }

@@ -4,7 +4,9 @@ Event	ID	Name			Wwise Object Path	Notes
 	674522502	Land			\Default Work Unit\Player\Land	
 	1666598327	Pages_Turn			\Default Work Unit\Diary\Pages_Turn	
 	1866025847	Footstep			\Default Work Unit\Player\Footstep	
-	2702884089	Play_Music_Garden			\Default Work Unit\Musics\Play_Music_Garden	
+	2649777630	Play_Music_Puzzle			\Default Work Unit\Musics\Play_Music_Puzzle	
+	2837384057	Stop_Music			\Default Work Unit\Musics\Stop_Music	
+	2932040671	Play_Music			\Default Work Unit\Musics\Play_Music	
 	3038207054	Shoot			\Default Work Unit\Player\Shoot	
 	3448274447	Heal			\Default Work Unit\Game\Heal	
 	3663283413	Discovery			\Default Work Unit\Game\Discovery	
@@ -12,9 +14,13 @@ Event	ID	Name			Wwise Object Path	Notes
 	4064781185	Not_heal			\Default Work Unit\Game\Not_heal	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
+	2963455281	Switch_Music			\Default Work Unit\Switch_Music	
 	3865314626	Material			\Default Work Unit\Material	
 
 Switch	ID	Name	Switch Group			Notes
+	278887670	Garden	Switch_Music			
+	2607556080	Menu	Switch_Music			
+	3762955427	Tutorial	Switch_Music			
 	2058049674	Wood	Material			
 	2195636714	Dirt	Material			
 	4248645337	Grass	Material			
@@ -29,20 +35,27 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	7115285	footsteps-wood	.cache\C5\{C5FD9B5E-0862-B6B3-BB6D-3D6C6FF96153}.wem		\Containers\Default Work Unit\SFX\Player\Footsteps\Wood\footsteps-wood		50784
+	79349208	Melodia 1 bpm 120 puzzle	.cache\66\{6660B10C-395D-6F5D-0701-7703AAB697DA}.wem		\Containers\Default Work Unit\Music\Puzzle pumpkin\Puzzle\Melodia 1 bpm 120 puzzle		2822496
 	91759783	Heal	.cache\8C\{8C5FF54C-A5B7-840A-1F80-AB99C5526933}.wem		\Containers\Default Work Unit\SFX\Magic\Heal\Heal		364052
 	126474508	Shoot	.cache\DB\{DB92B09F-A485-F9FE-A5A9-FCB1E48D1600}.wem		\Containers\Default Work Unit\SFX\Player\Shoot\Shoot		73696
+	168680199	Percusion 80bpm tutorial	.cache\9B\{9B91AB91-405A-D5CB-206F-A58F63D9EC88}.wem		\Containers\Default Work Unit\Music\Music Switch\Tutorial_game\Tutorial\Percusion 80bpm tutorial		4233696
 	233290653	non-curative impact	.cache\4F\{4F7FCAE4-E76F-2981-B561-D07261060024}.wem		\Containers\Default Work Unit\SFX\Magic\Not_heal\non-curative impact		352896
 	259443018	close_diary	.cache\4F\{4F8D6FCF-63D8-FDE4-6E78-CEB4366BEFF0}.wem		\Containers\Default Work Unit\SFX\Hud\Diary\Close\close_diary		133672
 	270729911	Jump_grass	.cache\5F\{5F2ED369-2D08-22D9-42D1-73388CA53676}.wem		\Containers\Default Work Unit\SFX\Player\Land\Land_grass\Jump_grass		104692
+	306895049	Melodia 2 bpm 120 puzzle	.cache\A6\{A6297BA8-DA7A-F0AF-7B91-2B3606FCD47E}.wem		\Containers\Default Work Unit\Music\Puzzle pumpkin\Puzzle\Melodia 2 bpm 120 puzzle		2822496
+	325813703	Menu-music	.cache\C8\{C8D5D80A-CFC3-2C74-22D1-9B7307E47B24}.wem		\Containers\Default Work Unit\Music\Music Switch\Menu juego\New Music Segment\Menu-music		4234848
 	353595088	Jump_dirt	.cache\EF\{EF98B9E5-17AE-3649-D60F-1FBA7E2487AC}.wem		\Containers\Default Work Unit\SFX\Player\Land\Land_dirt\Jump_dirt		127244
+	371608449	Melodia 1 80bpm tutorial	.cache\E0\{E08E6D92-2C2A-8E30-C8E5-50FF0D98EF41}.wem		\Containers\Default Work Unit\Music\Music Switch\Tutorial_game\Tutorial\Melodia 1 80bpm tutorial		4233696
 	384257364	pick up items	.cache\11\{111549FC-B13A-FD5B-928A-964AE1C01D5C}.wem		\Containers\Default Work Unit\SFX\Items\Pick up\pick up items		364052
-	405405491	Melodia 2 82bpm	.cache\E6\{E6E8AE6A-D9FC-7359-E413-19ACC67FDC10}.wem		\Containers\Default Work Unit\Music\Level 1\Garden_lv1\Lv1 garden\Melodia 2 82bpm		5163024
+	405405491	Melodia 2 82bpm	.cache\E6\{E6E8AE6A-D9FC-7359-E413-19ACC67FDC10}.wem		\Containers\Default Work Unit\Music\Music Switch\Garden_lv1\Lv1 garden\Melodia 2 82bpm		5163024
 	476459709	discovery	.cache\15\{15005C85-5EE2-0E69-4314-34EEBB6087CA}.wem		\Containers\Default Work Unit\SFX\Items\Discovery\discovery		364052
+	530536690	Melodia 3 80bpm tutorial	.cache\5E\{5EAE7A77-BECD-CB06-976C-1F8F0D6E70CF}.wem		\Containers\Default Work Unit\Music\Music Switch\Tutorial_game\Tutorial\Melodia 3 80bpm tutorial		4233696
 	646357272	Jump_grass	.cache\00\{007BB897-316D-70D4-DA9D-783618A5955A}.wem		\Containers\Default Work Unit\SFX\Player\Jump\Jump_grass\Jump_grass		113516
-	680647482	Melodia 3 82bpm	.cache\23\{23A174E2-D1CB-E241-F73F-C4DBC5002F19}.wem		\Containers\Default Work Unit\Music\Level 1\Garden_lv1\Lv1 garden\Melodia 3 82bpm		5163024
+	680647482	Melodia 3 82bpm	.cache\23\{23A174E2-D1CB-E241-F73F-C4DBC5002F19}.wem		\Containers\Default Work Unit\Music\Music Switch\Garden_lv1\Lv1 garden\Melodia 3 82bpm		5163024
 	774489380	pages_turn	.cache\DE\{DE2C1D78-C929-0F7C-0859-C3C9B09D33D4}.wem		\Containers\Default Work Unit\SFX\Hud\Diary\Pages turn\pages_turn		177160
 	786250105	Jump_dirt	.cache\32\{32258BCE-1556-7B24-1042-C88FCA4AD977}.wem		\Containers\Default Work Unit\SFX\Player\Jump\Jump_dirt\Jump_dirt		111644
-	854920791	Melodia 1 82bpm	.cache\DE\{DE73BF16-42F3-E804-8836-14E045D1FEFF}.wem		\Containers\Default Work Unit\Music\Level 1\Garden_lv1\Lv1 garden\Melodia 1 82bpm		5163024
+	799179510	Melodia 2 80bpm tutorial	.cache\14\{14AA75E1-0971-DAB8-6E7B-0415F7087329}.wem		\Containers\Default Work Unit\Music\Music Switch\Tutorial_game\Tutorial\Melodia 2 80bpm tutorial		4233696
+	854920791	Melodia 1 82bpm	.cache\DE\{DE73BF16-42F3-E804-8836-14E045D1FEFF}.wem		\Containers\Default Work Unit\Music\Music Switch\Garden_lv1\Lv1 garden\Melodia 1 82bpm		5163024
 
 Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
 	228327416	footsteps-dirt	.cache\9E\{9E9865A3-BDF6-1023-882D-F6D39D7E5015}.wem	228327416.wem	\Containers\Default Work Unit\SFX\Player\Footsteps\Dirt\footsteps-dirt	

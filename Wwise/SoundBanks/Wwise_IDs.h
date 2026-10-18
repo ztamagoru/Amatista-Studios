@@ -22,8 +22,10 @@ namespace AK
         static const AkUniqueID NOT_HEAL = 4064781185U;
         static const AkUniqueID PAGES_TURN = 1666598327U;
         static const AkUniqueID PICK_UP = 467838998U;
-        static const AkUniqueID PLAY_MUSIC_GARDEN = 2702884089U;
+        static const AkUniqueID PLAY_MUSIC = 2932040671U;
+        static const AkUniqueID PLAY_MUSIC_PUZZLE = 2649777630U;
         static const AkUniqueID SHOOT = 3038207054U;
+        static const AkUniqueID STOP_MUSIC = 2837384057U;
     } // namespace EVENTS
 
     namespace SWITCHES
@@ -39,6 +41,18 @@ namespace AK
                 static const AkUniqueID WOOD = 2058049674U;
             } // namespace SWITCH
         } // namespace MATERIAL
+
+        namespace SWITCH_MUSIC
+        {
+            static const AkUniqueID GROUP = 2963455281U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID GARDEN = 278887670U;
+                static const AkUniqueID MENU = 2607556080U;
+                static const AkUniqueID TUTORIAL = 3762955427U;
+            } // namespace SWITCH
+        } // namespace SWITCH_MUSIC
 
     } // namespace SWITCHES
 
