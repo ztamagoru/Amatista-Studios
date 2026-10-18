@@ -2,6 +2,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	207989427	Close_Diary			\Default Work Unit\Diary\Close_Diary	
 	467838998	Pick_up			\Default Work Unit\Game\Pick_up	
 	674522502	Land			\Default Work Unit\Player\Land	
+	1330284301	Collectable			\Default Work Unit\Game\Collectable	
 	1666598327	Pages_Turn			\Default Work Unit\Diary\Pages_Turn	
 	1866025847	Footstep			\Default Work Unit\Player\Footstep	
 	2649777630	Play_Music_Puzzle			\Default Work Unit\Musics\Play_Music_Puzzle	
@@ -48,6 +49,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	371608449	Melodia 1 80bpm tutorial	.cache\E0\{E08E6D92-2C2A-8E30-C8E5-50FF0D98EF41}.wem		\Containers\Default Work Unit\Music\Music Switch\Tutorial_game\Tutorial\Melodia 1 80bpm tutorial		4233696
 	384257364	pick up items	.cache\11\{111549FC-B13A-FD5B-928A-964AE1C01D5C}.wem		\Containers\Default Work Unit\SFX\Items\Pick up\pick up items		364052
 	405405491	Melodia 2 82bpm	.cache\E6\{E6E8AE6A-D9FC-7359-E413-19ACC67FDC10}.wem		\Containers\Default Work Unit\Music\Music Switch\Garden_lv1\Lv1 garden\Melodia 2 82bpm		5163024
+	432846656	collectable	.cache\CF\{CF3EDF3D-019A-DDBE-D491-05E99C95FCC4}.wem		\Containers\Default Work Unit\SFX\Items\Collectable\collectable		441096
 	476459709	discovery	.cache\15\{15005C85-5EE2-0E69-4314-34EEBB6087CA}.wem		\Containers\Default Work Unit\SFX\Items\Discovery\discovery		364052
 	530536690	Melodia 3 80bpm tutorial	.cache\5E\{5EAE7A77-BECD-CB06-976C-1F8F0D6E70CF}.wem		\Containers\Default Work Unit\Music\Music Switch\Tutorial_game\Tutorial\Melodia 3 80bpm tutorial		4233696
 	646357272	Jump_grass	.cache\00\{007BB897-316D-70D4-DA9D-783618A5955A}.wem		\Containers\Default Work Unit\SFX\Player\Jump\Jump_grass\Jump_grass		113516
