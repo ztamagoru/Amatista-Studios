@@ -49,7 +49,7 @@ func load_audio_settings() -> void:
 		var bus_index = AudioServer.get_bus_index(bus_name)
 		
 		#AudioServer.set_bus_volume_linear(bus_index, volume)
-		AudioManager.set_value(bus_name, volume)
+		#AudioManager.set_value(bus_name, volume)
 		audio_sliders[bus_name].value = volume
 		audio_labels[bus_name].text = str(int(volume * 10))
 
