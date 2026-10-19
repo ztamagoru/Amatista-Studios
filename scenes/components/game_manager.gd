@@ -13,11 +13,18 @@ class_name GameManager
 @export var loading_icon : TextureRect
 @export var loading_fade_duration : float = 1.0
 
+@export_group("Menus")
+@export var pause_menu : Control
+@export var settings_menu : Control
+
 # --
 
 var main_menu : String = "res://scenes/ui/main_menu.tscn"
 
 var loaded_maps : Dictionary[String, PackedScene]
+var current_map_path : String
+
+var is_paused : bool = false
 
 enum fade_mode { FADE_IN, FADE_OUT }
 
@@ -33,6 +40,9 @@ func _ready() -> void:
 # --
 
 func change_map(path : String) -> void:
+	if is_paused: resume_game()
+	current_map_path = path
+	
 	await _fade(fade_mode.FADE_IN)
 	
 	await _fade_loading(fade_mode.FADE_IN)
@@ -64,6 +74,26 @@ func change_map(path : String) -> void:
 
 # --
 
+func _unhandled_input(event: InputEvent) -> void:
+	if not event.is_action_pressed("ui_cancel"): return
+	if event.is_echo(): return
+	if current_map_path == main_menu: return
+	
+	toggle_pause()
+
+# --
+
+func toggle_pause() -> void:
+	is_paused = not is_paused
+	
+	get_tree().paused = is_paused
+	pause_menu.visible = is_paused
+
+func resume_game() -> void:
+	if is_paused: toggle_pause()
+
+# --
+
 func _fade_loading(mode : fade_mode) -> void:
 	var fade_tween : Tween = create_tween()
 	
@@ -84,3 +114,14 @@ func _fade(mode : fade_mode) -> void:
 	var new_a : float = 1.0 if mode == fade_mode.FADE_IN else 0.0
 	fade_tween.tween_property(fade_layer, "modulate:a", new_a, fade_duration)
 	await fade_tween.finished
+
+# --
+
+func _on_resume_pressed() -> void:
+	toggle_pause()
+
+func _on_settings_pressed() -> void:
+	settings_menu.visible = true
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()

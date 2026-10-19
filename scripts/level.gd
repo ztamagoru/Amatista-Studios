@@ -21,6 +21,9 @@ var transitioning : bool = true:
 
 # --
 
+func _ready() -> void:
+	self.process_mode = Node.PROCESS_MODE_PAUSABLE
+
 func change_scene(target_scene : String) -> bool:
 	if game_manager == null: return false
 	

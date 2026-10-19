@@ -17,7 +17,7 @@ func _on_new_game_button_pressed() -> void:
 	change_scene("res://scenes/levels/intro_cinematic.tscn")
 
 func _on_settings_button_pressed() -> void:
-	pass # mostrar menú de ajustes
+	game_manager.settings_menu.visible = true
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
