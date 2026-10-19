@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://cunqxrd8qlp3m" path="res://scenes/components/game_manager.gd" id="1_j8dua"]
 [ext_resource type="Texture2D" uid="uid://gpxy2t37wklq" path="res://assets/ui/loading.png" id="2_g5vmw"]
 [ext_resource type="PackedScene" uid="uid://6dpntf7wwe3f" path="res://scenes/ui/settings_menu.tscn" id="3_ojjuw"]
+[ext_resource type="PackedScene" uid="uid://djucwy5pgkuy6" path="res://scenes/ui/diary.tscn" id="4_aakf7"]
 
-[node name="GameManager" type="Node3D" unique_id=1613743384 node_paths=PackedStringArray("map_node", "fade_layer", "loading_icon", "pause_menu", "settings_menu")]
+[node name="GameManager" type="Node3D" unique_id=1613743384 node_paths=PackedStringArray("map_node", "fade_layer", "loading_icon", "pause_menu", "settings_menu", "diary_menu")]
 process_mode = 3
 script = ExtResource("1_j8dua")
 map_node = NodePath("Map")
@@ -12,6 +13,7 @@ fade_layer = NodePath("CanvasLayer/ColorRect")
 loading_icon = NodePath("CanvasLayer/TextureRect")
 pause_menu = NodePath("CanvasLayer/PauseMenu")
 settings_menu = NodePath("CanvasLayer/SettingsMenu")
+diary_menu = NodePath("CanvasLayer/Diary")
 
 [node name="Map" type="Node3D" parent="." unique_id=1589424651]
 
@@ -29,10 +31,10 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1482168954]
-offset_left = 1658.0
-offset_top = 841.0
-offset_right = 1857.0
-offset_bottom = 1040.0
+offset_left = 1618.0
+offset_top = 810.0
+offset_right = 1818.0
+offset_bottom = 1010.0
 pivot_offset = Vector2(100, 100)
 texture = ExtResource("2_g5vmw")
 expand_mode = 1
@@ -86,6 +88,10 @@ layout_mode = 2
 text = "Salir"
 
 [node name="SettingsMenu" parent="CanvasLayer" unique_id=2032953972 instance=ExtResource("3_ojjuw")]
+visible = false
+
+[node name="Diary" parent="CanvasLayer" unique_id=1036958420 instance=ExtResource("4_aakf7")]
+process_mode = 3
 visible = false
 
 [connection signal="pressed" from="CanvasLayer/PauseMenu/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]

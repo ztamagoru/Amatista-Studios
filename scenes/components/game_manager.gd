@@ -16,6 +16,7 @@ class_name GameManager
 @export_group("Menus")
 @export var pause_menu : Control
 @export var settings_menu : Control
+@export var diary_menu : Control
 
 # --
 
@@ -25,6 +26,7 @@ var loaded_maps : Dictionary[String, PackedScene]
 var current_map_path : String
 
 var is_paused : bool = false
+var is_diary_open : bool = false
 
 enum fade_mode { FADE_IN, FADE_OUT }
 
@@ -36,6 +38,10 @@ func _ready() -> void:
 	var t : Tween = create_tween()
 	t.set_loops()
 	t.tween_property(loading_icon, "rotation", TAU, 1.0).from(0.0)
+	
+	await get_tree().process_frame
+	
+	diary_menu.close_button.pressed.connect(toggle_diary)
 
 # --
 
@@ -74,12 +80,18 @@ func change_map(path : String) -> void:
 
 # --
 
-func _unhandled_input(event: InputEvent) -> void:
-	if not event.is_action_pressed("ui_cancel"): return
-	if event.is_echo(): return
-	if current_map_path == main_menu: return
+func _unhandled_input(event : InputEvent) -> void:
+	if event.is_action_pressed("toggle_pause") and not event.is_echo():
+		if is_diary_open:
+			toggle_diary()
+		elif is_paused:
+			resume_game()
+		elif current_map_path != main_menu:
+			toggle_pause()
 	
-	toggle_pause()
+	elif event.is_action_pressed("toggle_diary") and not event.is_echo():
+		if current_map_path != main_menu and not is_paused:
+			toggle_diary()
 
 # --
 
@@ -91,6 +103,14 @@ func toggle_pause() -> void:
 
 func resume_game() -> void:
 	if is_paused: toggle_pause()
+
+func toggle_diary() -> void:
+	is_diary_open = not is_diary_open
+	diary_menu.visible = is_diary_open
+	
+	if not diary_menu.visible: AudioManager.on_close_diary()
+	
+	get_tree().paused = is_diary_open
 
 # --
 

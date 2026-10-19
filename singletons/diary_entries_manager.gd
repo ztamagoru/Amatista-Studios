@@ -9,7 +9,7 @@ var diary_route : String = "res://resources/collectibles/diary.json"
 var all_entries : Dictionary 
 var collection : Dictionary[StringName, Array]
 
-var unlocked_entries : Array[StringName]
+var unlocked_entries : Array[StringName] = [&"lucy", &"amancay"]
 
 # --
 
