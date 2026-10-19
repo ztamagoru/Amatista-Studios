@@ -15,9 +15,11 @@ namespace AK
     {
         static const AkUniqueID CLOSE_DIARY = 207989427U;
         static const AkUniqueID COLLECTABLE = 1330284301U;
+        static const AkUniqueID CORRECT_PUZZLE = 2805870888U;
         static const AkUniqueID DISCOVERY = 3663283413U;
         static const AkUniqueID FOOTSTEP = 1866025847U;
         static const AkUniqueID HEAL = 3448274447U;
+        static const AkUniqueID INCORRECT_PUZZLE = 2198729253U;
         static const AkUniqueID JUMP = 3833651337U;
         static const AkUniqueID LAND = 674522502U;
         static const AkUniqueID NOT_HEAL = 4064781185U;
