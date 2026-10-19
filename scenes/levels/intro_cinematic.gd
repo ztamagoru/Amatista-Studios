@@ -22,6 +22,7 @@ var can_skip : bool = false
 
 func level_start() -> void:
 	skip_progress_bar.max_value = skip_held_time
+	intro_video.finished.connect(func(): change_scene(tutorial_scene))
 	AudioManager.stop_music()
 	super.level_start()
 
