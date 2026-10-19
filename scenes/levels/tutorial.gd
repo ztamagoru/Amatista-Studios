@@ -32,6 +32,7 @@ var boundary_furthest : float
 
 func level_start() -> void:
 	env = world_environment.environment
+	
 	boundary_furthest = player.global_position.z
 	
 	env.fog_enabled = true
@@ -68,6 +69,8 @@ func _check_player(body : Node3D, from : String) -> void:
 				pass
 
 func _process(_delta: float):
+	if env == null: return
+	
 	var progress := inverse_lerp(fog_start_z, fog_end_z, player.global_position.z)
 	progress = clamp(progress, 0.0, 1.0)
 	
