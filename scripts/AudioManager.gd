@@ -155,3 +155,16 @@ func stop_music(_fade_ms: int = 1000) -> void:
 #
 #func play_music_garden():
 	#Wwise.post_event("Play_Music_Garden", self)
+#-----------------------------Pause and Despause-----------------------------
+func paused():
+	Wwise.set_state("Pausa", "Pausa_on")
+	#Wwise.post_event("Play_Sfx_Radar_Fin", self)
+	#Wwise.set_rtpc_value("Sfx_Nave", 0, self)
+	print("Paused")
+
+func unpaused():
+	Wwise.set_state("Pausa", "Pausa_off")
+	#Wwise.post_event("Play_Sfx_Radar", self)
+	
+	print("Unpaused")
+	

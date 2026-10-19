@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{C3953539-B416-4B6A-DCB5-A31A6FBD6CE5}",
+    "Hash": "{3805529D-7FE8-4DE5-35B1-A074BEE18E49}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -132,6 +132,34 @@
       "Name": "SS_Air_Turbulence",
       "ObjectPath": "\\Game Parameters\\Factory Soundseed Air Game Syncs\\SS_Air_Turbulence",
       "GUID": "{EDA87B19-73AA-40A0-9F19-2073606DB710}"
+     }
+    ],
+    "StateGroups": [
+     {
+      "Id": "3092587493",
+      "Name": "Pause",
+      "ObjectPath": "\\States\\Default Work Unit\\Pause",
+      "GUID": "{24360838-2E9C-437E-8B6F-E3250F8EAC41}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Pause\\None",
+        "GUID": "{BB38A072-ABEB-42B8-A459-2F84EECEC81A}"
+       },
+       {
+        "Id": "3537680115",
+        "Name": "Pause_on",
+        "ObjectPath": "\\States\\Default Work Unit\\Pause\\Pause_on",
+        "GUID": "{C2CFAE01-925B-409F-8FE2-7EE493C236C2}"
+       },
+       {
+        "Id": "3967028551",
+        "Name": "Pause_off",
+        "ObjectPath": "\\States\\Default Work Unit\\Pause\\Pause_off",
+        "GUID": "{30FEE0D0-1D81-4DE7-9402-8E74F4C0F056}"
+       }
+      ]
      }
     ],
     "SwitchGroups": [
@@ -667,6 +695,6 @@
     ]
    }
   ],
-  "FileHash": "{FD935D06-0038-3327-C80F-F8C7C58B16A8}"
+  "FileHash": "{801ABE51-8891-8162-F485-E5898F628FAA}"
  }
 }

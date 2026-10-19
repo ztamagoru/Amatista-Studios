@@ -1,6 +1,7 @@
 Event	ID	Name			Wwise Object Path	Notes
 	207989427	Close_Diary			\Default Work Unit\Diary\Close_Diary	
 	467838998	Pick_up			\Default Work Unit\Game\Pick_up	
+	474894035	Off_Pause			\Default Work Unit\Off_Pause	
 	674522502	Land			\Default Work Unit\Player\Land	
 	1330284301	Collectable			\Default Work Unit\Game\Collectable	
 	1351238925	Open_Diary			\Default Work Unit\Diary\Open_Diary	
@@ -15,6 +16,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3448274447	Heal			\Default Work Unit\Game\Heal	
 	3663283413	Discovery			\Default Work Unit\Game\Discovery	
 	3833651337	Jump			\Default Work Unit\Player\Jump	
+	4046835429	On_Pause			\Default Work Unit\On_Pause	
 	4064781185	Not_heal			\Default Work Unit\Game\Not_heal	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
@@ -28,6 +30,14 @@ Switch	ID	Name	Switch Group			Notes
 	2058049674	Wood	Material			
 	2195636714	Dirt	Material			
 	4248645337	Grass	Material			
+
+State Group	ID	Name			Wwise Object Path	Notes
+	3092587493	Pause			\Default Work Unit\Pause	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Pause			
+	3537680115	Pause_on	Pause			
+	3967028551	Pause_off	Pause			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	393239870	SFX			\Default Work Unit\SFX	
