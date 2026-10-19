@@ -84,6 +84,16 @@ func on_collectable()-> void:
 		return
 	Wwise.post_event("Collectable", self)
 
+func correct_puzzle()-> void:
+	if _audio_ready == null:
+		return
+	Wwise.post_event("Correct_Puzzle", self)
+
+func incorrect_puzzle()-> void:
+	if _audio_ready == null:
+		return
+	Wwise.post_event("Incorrect_Puzzle", self)
+
 #------------------------------------Hud--------------------------------------
 func on_page_turn() -> void:
 	if _audio_ready == null:

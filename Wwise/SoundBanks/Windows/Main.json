@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{B2AB37D9-0287-4B83-B475-5B48B6C26BCF}",
     "Language": "SFX",
-    "Hash": "{B9272504-2717-8EEB-0684-DA382A8E6C6C}",
+    "Hash": "{76BDDBC6-E7D3-21B7-E449-DC1D13C03A55}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -87,6 +87,14 @@
       "Location": "Memory",
       "ShortName": "Jump_grass.wav",
       "CachePath": "5F/{5F2ED369-2D08-22D9-42D1-73388CA53676}.wem"
+     },
+     {
+      "Id": "292948151",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX puzzles incorrecto.wav",
+      "CachePath": "F0/{F096EAC8-B5BA-8DA9-C976-CDD9D5D3588F}.wem"
      },
      {
       "Id": "306895049",
@@ -217,6 +225,14 @@
       "CachePath": "2A/{2AAA2D9B-2140-ABDE-CD0B-AB54929945CA}.wem"
      },
      {
+      "Id": "995029463",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX puzzles correcto.wav",
+      "CachePath": "D9/{D94963D7-44A4-DC82-A8D6-D7D599AB04D1}.wem"
+     },
+     {
       "Id": "1015484737",
       "Language": "SFX",
       "Streaming": "true",
@@ -252,6 +268,20 @@
       "MediaRefs": [
        {
         "Id": "432846656"
+       }
+      ]
+     },
+     {
+      "Id": "2805870888",
+      "Name": "Correct_Puzzle",
+      "ObjectPath": "\\Events\\Default Work Unit\\Game\\Correct_Puzzle",
+      "GUID": "{D539C18B-7E7E-4587-BAC4-B275686A0476}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.3333334",
+      "DurationMax": "1.3333334",
+      "MediaRefs": [
+       {
+        "Id": "995029463"
        }
       ]
      },
@@ -330,6 +360,20 @@
       "MediaRefs": [
        {
         "Id": "91759783"
+       }
+      ]
+     },
+     {
+      "Id": "2198729253",
+      "Name": "Incorrect_Puzzle",
+      "ObjectPath": "\\Events\\Default Work Unit\\Game\\Incorrect_Puzzle",
+      "GUID": "{0D4524DC-4956-4A84-84B0-7D512BBFD485}",
+      "DurationType": "OneShot",
+      "DurationMin": "1",
+      "DurationMax": "1",
+      "MediaRefs": [
+       {
+        "Id": "292948151"
        }
       ]
      },
@@ -662,6 +706,6 @@
     ]
    }
   ],
-  "FileHash": "{CE76ABBA-B31C-BB95-9464-A04A69D40069}"
+  "FileHash": "{ACF73051-BB5E-EE3A-CD5A-612BBBFAFB1A}"
  }
 }
