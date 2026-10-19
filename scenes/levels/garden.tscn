@@ -27,7 +27,9 @@
 [ext_resource type="Resource" uid="uid://cs6328xhsxb1n" path="res://resources/items/flower_lupina.tres" id="16_xl01p"]
 [ext_resource type="Resource" uid="uid://d2fc8wvs6ay02" path="res://resources/dialogs/pick_item_default.dialogue" id="17_b7uji"]
 [ext_resource type="Resource" uid="uid://dr78h574xujii" path="res://resources/items/flower_amancay.tres" id="18_4kk17"]
+[ext_resource type="PackedScene" uid="uid://c8ll5udwkv8tk" path="res://scenes/components/npcs/gagabriela.tscn" id="19_h4k2x"]
 [ext_resource type="Resource" uid="uid://fimcb747t2a4" path="res://resources/items/flower_mutisia.tres" id="19_kswy4"]
+[ext_resource type="Resource" uid="uid://djrgmm08kpf17" path="res://resources/dialogs/garden/garden_gagabriela.dialogue" id="20_hii61"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2dny5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -107,7 +109,7 @@ shadow_enabled = true
 directional_shadow_max_distance = 500.0
 
 [node name="Player" parent="." unique_id=242546826 instance=ExtResource("1_8i028")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27.797974, 4.2892256, 95.540436)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 99.6125, 4.289241, 12.705101)
 
 [node name="Environment" type="Node3D" parent="." unique_id=228048704]
 
@@ -1430,6 +1432,7 @@ mesh = SubResource("CylinderMesh_yf5fn")
 [node name="Lucy" parent="Environment/NPCs" unique_id=460240726 node_paths=PackedStringArray("dialogue_handler", "nav_region", "look_target") instance=ExtResource("4_32lya")]
 transform = Transform3D(0.69110036, 0, -0.7227589, 0, 1, 0, 0.7227589, 0, 0.69110036, 75.11682, 3.4753456, -16.071283)
 dialogue_handler = NodePath("DialogueHandler")
+diary_entry_id = &"lucy"
 nav_region = NodePath("../LucyNavRegion")
 look_target = NodePath("../../../Player")
 
@@ -1446,6 +1449,7 @@ event_id = &""
 puzzle_objective_id = &""
 deliver_objective_id = &""
 dialogue_handler = NodePath("DialogueHandler")
+diary_entry_id = &"jorge"
 nav_region = NodePath("../JorgeNavRegion")
 look_target = NodePath("../../../Player")
 
@@ -1471,10 +1475,21 @@ transform = Transform3D(0.13230374, 0, -0.99120945, 0, 1, 0, 0.99120945, 0, 0.13
 quest_id = &"chilla_garden_quest"
 puzzle_objective_id = &"give_ring_back"
 dialogue_handler = NodePath("DialogueHandler")
+diary_entry_id = &"chilla"
 
 [node name="DialogueHandler" type="Node" parent="Environment/NPCs/Chilla" unique_id=1935580977]
 script = ExtResource("5_0qt43")
 dialogue = ExtResource("14_0vt6h")
+metadata/_custom_type_script = "uid://c1bj0q5evhiei"
+
+[node name="Gagabriela" parent="Environment/NPCs" unique_id=523237248 node_paths=PackedStringArray("dialogue_handler") instance=ExtResource("19_h4k2x")]
+transform = Transform3D(-0.7637112, 0, 0.64555794, 0, 1, 0, -0.64555794, 0, -0.7637112, 90.34187, 4.2088203, -97.98233)
+dialogue_handler = NodePath("DialogueHandler")
+diary_entry_id = &"gagabriela"
+
+[node name="DialogueHandler" type="Node" parent="Environment/NPCs/Gagabriela" unique_id=707875221]
+script = ExtResource("5_0qt43")
+dialogue = ExtResource("20_hii61")
 metadata/_custom_type_script = "uid://c1bj0q5evhiei"
 
 [node name="Trees" type="Node3D" parent="Environment" unique_id=1121390256]

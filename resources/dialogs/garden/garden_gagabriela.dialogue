@@ -1,0 +1,27 @@
+~ start
+if times_talked == 0:
+	=> introduction
+else:
+	=> idle
+
+~ introduction
+[i]Apenas puse un pie en este corral, la mamá gallina me puso el ojo.[/i]
+[i]Se ve que no mucha gente se atreve a pisar este corral.[/i]
+Mamá Gallina: ¿Un turista perdido? [wait=0.5] Oh, espera, eres una niña.
+Sofía: Yo...
+Mamá Gallina: Oh, espera, ¿has visto a mi polluelo perdido? Salió volando una mañana y no sé dónde está.
+[i]No creo que me deje hablar mucho, tiene demasiado para contar.[/i]
+Mamá Gallina: Todo es culpa… [wait=0.5] de... [wait=0.5] [shake]uhg.[/shake]
+Sofía: Si encuentro a su pollito, lo llevaré con usted lo más rápido que pueda. Se lo aseguro.
+Mamá Gallina: Un bosque enfermo no es un buen lugar para cuidar a mis hijos, ¿sabes? Ese conejo gris...
+Mamá Gallina: ¡Si lo encuentras, llévalo también conmigo, así le daré una lección!
+[i]¿Un conejo gris? ¿Qué tiene que ver con el bosque enfermo?[/i]
+Sofía: Haré... lo que pueda.
+Mamá Gallina: Tengo esperanza en que Lucy Pudú pueda hacer algo para arreglar esto. Espero que puedas ayudarla.
+Mamá Gallina: Oh, espera. Antes de que te vayas, ten cuidado de no perder tus cosas, en la zona jardín roban como cuervos.
+Asentí con la cabeza y agarré con fuerza mi tirachinas.
+=> END
+
+~ idle
+% Mamá Gallina: [shake]¡No desordenes nada de mi corral![/shake]
+% Mamá Gallina: Mis polluelos son tranquilos, pero yo no...
