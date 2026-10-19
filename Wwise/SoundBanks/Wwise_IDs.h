@@ -23,6 +23,8 @@ namespace AK
         static const AkUniqueID JUMP = 3833651337U;
         static const AkUniqueID LAND = 674522502U;
         static const AkUniqueID NOT_HEAL = 4064781185U;
+        static const AkUniqueID OFF_PAUSE = 474894035U;
+        static const AkUniqueID ON_PAUSE = 4046835429U;
         static const AkUniqueID OPEN_DIARY = 1351238925U;
         static const AkUniqueID PAGES_TURN = 1666598327U;
         static const AkUniqueID PICK_UP = 467838998U;
@@ -31,6 +33,22 @@ namespace AK
         static const AkUniqueID SHOOT = 3038207054U;
         static const AkUniqueID STOP_MUSIC = 2837384057U;
     } // namespace EVENTS
+
+    namespace STATES
+    {
+        namespace PAUSE
+        {
+            static const AkUniqueID GROUP = 3092587493U;
+
+            namespace STATE
+            {
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID PAUSE_OFF = 3967028551U;
+                static const AkUniqueID PAUSE_ON = 3537680115U;
+            } // namespace STATE
+        } // namespace PAUSE
+
+    } // namespace STATES
 
     namespace SWITCHES
     {

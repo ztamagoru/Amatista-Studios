@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{B2AB37D9-0287-4B83-B475-5B48B6C26BCF}",
     "Language": "SFX",
-    "Hash": "{76BDDBC6-E7D3-21B7-E449-DC1D13C03A55}",
+    "Hash": "{F03135E9-C053-EFE2-5043-7ECA9DB3E1C9}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -466,6 +466,44 @@
       ]
      },
      {
+      "Id": "474894035",
+      "Name": "Off_Pause",
+      "ObjectPath": "\\Events\\Default Work Unit\\Off_Pause",
+      "GUID": "{E53F3A69-9731-4C24-ACEB-1E14CD79CDB2}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "3092587493",
+        "Id": "3967028551",
+        "Name": "Pause_off",
+        "ObjectPath": "\\States\\Default Work Unit\\Pause\\Pause_off",
+        "GUID": "{30FEE0D0-1D81-4DE7-9402-8E74F4C0F056}"
+       }
+      ]
+     },
+     {
+      "Id": "4046835429",
+      "Name": "On_Pause",
+      "ObjectPath": "\\Events\\Default Work Unit\\On_Pause",
+      "GUID": "{8B965AA8-10D0-4605-8FE8-9B10CC2BAB7F}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "3092587493",
+        "Id": "3537680115",
+        "Name": "Pause_on",
+        "ObjectPath": "\\States\\Default Work Unit\\Pause\\Pause_on",
+        "GUID": "{C2CFAE01-925B-409F-8FE2-7EE493C236C2}"
+       }
+      ]
+     },
+     {
       "Id": "1351238925",
       "Name": "Open_Diary",
       "ObjectPath": "\\Events\\Default Work Unit\\Diary\\Open_Diary",
@@ -650,6 +688,34 @@
       "GUID": "{A86A303B-AD04-4CF2-8D0B-2E63B2D9C8D3}"
      }
     ],
+    "StateGroups": [
+     {
+      "Id": "3092587493",
+      "Name": "Pause",
+      "ObjectPath": "\\States\\Default Work Unit\\Pause",
+      "GUID": "{24360838-2E9C-437E-8B6F-E3250F8EAC41}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Pause\\None",
+        "GUID": "{BB38A072-ABEB-42B8-A459-2F84EECEC81A}"
+       },
+       {
+        "Id": "3537680115",
+        "Name": "Pause_on",
+        "ObjectPath": "\\States\\Default Work Unit\\Pause\\Pause_on",
+        "GUID": "{C2CFAE01-925B-409F-8FE2-7EE493C236C2}"
+       },
+       {
+        "Id": "3967028551",
+        "Name": "Pause_off",
+        "ObjectPath": "\\States\\Default Work Unit\\Pause\\Pause_off",
+        "GUID": "{30FEE0D0-1D81-4DE7-9402-8E74F4C0F056}"
+       }
+      ]
+     }
+    ],
     "SwitchGroups": [
      {
       "Id": "2963455281",
@@ -706,6 +772,6 @@
     ]
    }
   ],
-  "FileHash": "{ACF73051-BB5E-EE3A-CD5A-612BBBFAFB1A}"
+  "FileHash": "{0397A697-3B7E-A415-AB9E-ACE75D1D52B0}"
  }
 }

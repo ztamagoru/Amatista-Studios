@@ -1,3 +1,11 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	3092587493	Pause			\Default Work Unit\Pause	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Pause			
+	3537680115	Pause_on	Pause			
+	3967028551	Pause_off	Pause			
+
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	393239870	SFX			\Default Work Unit\SFX	
 	3991942870	Music			\Default Work Unit\Music	
