@@ -69,11 +69,11 @@ metadata/_custom_type_script = "uid://dbyh0ac8p2iqp"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.0484836, 0.20967007)
 metadata/_edit_group_ = true
 
-[node name="Armature_001" parent="jorge" index="0" unique_id=1547009847]
+[node name="Armature_001" parent="jorge" index="0" unique_id=1353233363]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36282945, 5.6507044, -0.2381401)
 
-[node name="Skeleton3D" parent="jorge/Armature_001" index="0" unique_id=325088795]
-bones/0/position = Vector3(0.18057226, 0.2880656, 0)
+[node name="Skeleton3D" parent="jorge/Armature_001" index="0" unique_id=1568782348]
+bones/0/position = Vector3(0.18057226, 0, 0)
 bones/2/rotation = Quaternion(0.7301547, 0.019998811, -0.682126, 0.034326732)
 bones/3/rotation = Quaternion(-0.70622706, 0.028142149, 0.7065466, 0.03526101)
 bones/4/rotation = Quaternion(-0.5695773, 0.5082055, 0.59399605, -0.25392458)

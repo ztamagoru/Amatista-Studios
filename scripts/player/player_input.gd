@@ -9,7 +9,7 @@ var aim_dir : Vector2
 var is_running : bool
 var is_jumping : bool
 
-var _input_enabled : bool = true
+var input_enabled : bool = true
 
 # --
 
@@ -18,13 +18,13 @@ func _ready() -> void:
 	DialogueManager.dialogue_ended.connect(_change_input_mode.bind(true))
 
 func _change_input_mode(_resource : DialogueResource, is_talking : bool) -> void:
-	_input_enabled = is_talking
+	input_enabled = is_talking
 
 func _init() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _input(event: InputEvent) -> void:
-	if not _input_enabled: return
+	if not input_enabled: return
 	
 	# Movement
 	move_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backwards")
@@ -55,10 +55,10 @@ func _input(event: InputEvent) -> void:
 # --
 
 func is_aiming() -> bool:
-	return Input.is_action_pressed("aim") and _input_enabled
+	return Input.is_action_pressed("aim") and input_enabled
 
 func is_interacting() -> bool:
-	return Input.is_action_just_pressed("interact") and _input_enabled
+	return Input.is_action_just_pressed("interact") and input_enabled
 
 # --
 

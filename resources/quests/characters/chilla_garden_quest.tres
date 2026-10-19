@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="QuestResource" format=3 uid="uid://ddgreroxslrvk"]
+
+[ext_resource type="Script" uid="uid://irg1osbq3q4l" path="res://scripts/quests/quest_objective.gd" id="1_612fq"]
+[ext_resource type="Script" uid="uid://rau5swn7y6cm" path="res://scripts/quests/quest_resource.gd" id="2_d1ipq"]
+
+[sub_resource type="Resource" id="Resource_r111l"]
+script = ExtResource("1_612fq")
+id = &"scarecrow_talked"
+description = "Capaz el espantapájaros sepa algo."
+event_id = &"scarecrow_talked"
+metadata/_custom_type_script = "uid://irg1osbq3q4l"
+
+[sub_resource type="Resource" id="Resource_4kk17"]
+script = ExtResource("1_612fq")
+id = &"collect_ring"
+description = "El espantapájaros mencionó algo acerca de unos vegetales traviesos."
+type = 1
+item_id = &"chilla_ring"
+metadata/_custom_type_script = "uid://irg1osbq3q4l"
+
+[sub_resource type="Resource" id="Resource_612fq"]
+script = ExtResource("1_612fq")
+id = &"give_ring_back"
+description = "Las calabazas me dieron esto. Creo que es de Chilla."
+type = 2
+item_id = &"chilla_ring"
+metadata/_custom_type_script = "uid://irg1osbq3q4l"
+
+[resource]
+script = ExtResource("2_d1ipq")
+id = &"chilla_garden_quest"
+title = "Ayudando a Chilla"
+objectives = Array[ExtResource("1_612fq")]([SubResource("Resource_r111l"), SubResource("Resource_4kk17"), SubResource("Resource_612fq")])
+metadata/_custom_type_script = "uid://rau5swn7y6cm"

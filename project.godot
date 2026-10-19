@@ -24,12 +24,12 @@ buses/default_bus_layout="uid://cescis0ik2000"
 
 Globals="*uid://ywyeuma71ij2"
 DialogueManager="*uid://c3rodes2l3gxb"
+ItemDatabase="*uid://1sl68q5xniw"
 InventoryManager="*uid://bqn5f5q5rr435"
 DiaryEntriesManager="*uid://dtod17rsqqj4g"
 ConfigHandler="*uid://dg20we1ow3041"
-SaveManager="*uid://lr74qwi5fyy4"
 QuestManager="*uid://b5y11aql210dd"
-ItemDatabase="*uid://1sl68q5xniw"
+SaveManager="*uid://lr74qwi5fyy4"
 WwiseRuntimeManager="*uid://c5vri24p1why5"
 AudioManager="*uid://ckv8i05uydwlb"
 
@@ -149,7 +149,7 @@ skip_cutscene={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://resources/dialogs/garden/garden_lucy.dialogue", "res://resources/dialogs/garden/garden_jorge.dialogue", "res://resources/dialogs/pick_item_default.dialogue")
+locale/translations_pot_files=PackedStringArray("res://resources/dialogs/garden/garden_lucy.dialogue", "res://resources/dialogs/garden/garden_jorge.dialogue", "res://resources/dialogs/pick_item_default.dialogue", "res://resources/dialogs/garden/garden_scarecrow.dialogue", "res://resources/dialogs/garden/garden_chilla.dialogue", "res://resources/dialogs/garden/garden_pumpkins.dialogue")
 
 [physics]
 

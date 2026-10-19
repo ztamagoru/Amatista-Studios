@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://bn0lou4d1irth"
+path="res://.godot/imported/garden_pumpkins.dialogue-b07798a0ad9b290912e54ef51839ebc9.tres"
+
+[deps]
+
+source_file="res://resources/dialogs/garden/garden_pumpkins.dialogue"
+dest_files=["res://.godot/imported/garden_pumpkins.dialogue-b07798a0ad9b290912e54ef51839ebc9.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,50 @@
+~ start
+if is_quest_completed():
+	=> idle_final
+elif not is_quest_accepted():
+	if times_talked == 0:
+		=> introduction
+	else:
+		=> idle_intro
+elif is_objective_completed(puzzle_objective_id):
+	=> idle_veggies
+else:
+	=> veggie_hint
+
+~ introduction
+???: Este solía ser un lugar hermoso, ¿sabes? La naturaleza viva, el agua cristalina y animales amables.
+Espantapájaro: Llámame como soy. El espantapájaro que cuida el huerto. Aunque ahora mis tareas son más difíciles con este [shake]malhumor[/shake] del bosque.
+Espantapájaro: Si no me crees, ve a hablar con los otros habitantes de aquí. Tanto animales como… [wait=0.5] cosas.
+Espantapájaro: En especial ten cuidado con el zorro del puente, [wait=0.5] es algo raro.
+=> END
+
+
+~ idle_intro
+Espantapájaro: Ve a hablar con los otros habitantes a ver si me das la razón.
+Espantapájaro: ¿Has visto lo raros que son los habitantes de aquí?
+Espantapájaro: Hasta algunos se visten raro y me dan risa.
+=> END
+
+
+~ veggie_hint
+Espantapájaro: Así que… [wait=0.5] buscas algo.
+Intenta mover su cuello hacia atrás, pero no lo logra.
+Espantapájaro: No me puedo dar la vuelta, pero aquí cerca hay unos... [wait=0.5] vegetales bastante traviesos. Quizá ellos lo tengan.
+Espantapájaro: Pero ten cuidado, no son de fiar.
+do report_event()
+=> END
+
+
+~ idle_veggies
+% Espantapájaro: No hagas sopa con los que te hacen enojar.
+% Espantapájaro: ¿Qué te habrá dicho ese chillón?
+=> END
+
+
+~ idle_final
+Espantapájaro: Les diste una lección a ellos, sabía que podías. Nunca me equivoco.
+Espantapájaro: Suerte en tu camino.
+Sofía: Gracias. ¿Sabes? Serías un buen guardián de aquí.
+Espantapájaro: ¿Tú crees? Siempre he querido, pero por mi condición de poca movilidad... [wait=0.5] nunca me di el espacio.
+Espantapájaro: Supongo que me diste algo para pensar... [wait=0.5] ¿ser un guardia?
+=> END

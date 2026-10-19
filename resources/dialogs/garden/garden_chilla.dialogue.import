@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://dio50modyb475"
+path="res://.godot/imported/garden_chilla.dialogue-abb6256c335551dea7fa60af65b77f11.tres"
+
+[deps]
+
+source_file="res://resources/dialogs/garden/garden_chilla.dialogue"
+dest_files=["res://.godot/imported/garden_chilla.dialogue-abb6256c335551dea7fa60af65b77f11.tres"]
+
+[params]
+
+defaults=true

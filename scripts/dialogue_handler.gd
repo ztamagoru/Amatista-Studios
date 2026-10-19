@@ -10,6 +10,7 @@ var times_talked : int = 0
 # -- 
 
 func _ready() -> void:
+	if dialogue == null: return
 	DialogueManager.dialogue_ended.connect(func(resource : DialogueResource):
 		if resource == dialogue: times_talked += 1
 		)

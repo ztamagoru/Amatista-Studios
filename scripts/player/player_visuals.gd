@@ -18,7 +18,7 @@ var current_state : StringName:
 
 # --
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	
 	anim_tree.set("parameters/MovementBlend/blend_position", player.movement.speed_progress)
 	

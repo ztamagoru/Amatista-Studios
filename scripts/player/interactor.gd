@@ -18,6 +18,7 @@ func _process(_delta: float) -> void:
 		if not is_instance_valid(closest_target): return
 		
 		if closest_target is Item: closest_target.pick_up()
+		elif closest_target is PuzzleTrigger: closest_target.start_puzzle() 
 		else: closest_target.interact()
 
 func _physics_process(_delta: float) -> void:

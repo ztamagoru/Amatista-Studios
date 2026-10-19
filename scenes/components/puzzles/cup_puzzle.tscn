@@ -1,0 +1,936 @@
+[gd_scene format=3 uid="uid://ew5cdamg78vk"]
+
+[ext_resource type="Script" uid="uid://cbbobbwusjhyv" path="res://scenes/components/puzzles/cup_puzzle.gd" id="1_7pyt5"]
+[ext_resource type="Script" uid="uid://dcsha4he5dt0p" path="res://scenes/components/puzzles/path.gd" id="2_v3k2j"]
+[ext_resource type="Script" uid="uid://csjj3d0ipxt0q" path="res://scenes/components/puzzles/cup.gd" id="2_vtlwb"]
+[ext_resource type="PackedScene" uid="uid://16vq364ahfbr" path="res://scenes/components/puzzles/calabazas(shellgame).glb" id="3_vtlwb"]
+[ext_resource type="Texture2D" uid="uid://cc3y0jgw2dfjo" path="res://scenes/components/puzzles/calabazas(shellgame)_calabaza textura.png" id="4_7ks35"]
+[ext_resource type="PackedScene" uid="uid://r5jqbivn3fl0" path="res://assets/models/levels/garden/farm.blend" id="6_jft2p"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vtlwb"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_7ks35"]
+sky_material = SubResource("ProceduralSkyMaterial_vtlwb")
+
+[sub_resource type="Environment" id="Environment_jft2p"]
+background_mode = 2
+sky = SubResource("Sky_7ks35")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vtlwb"]
+size = Vector3(2.8845215, 2.5800781, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pu2p"]
+resource_local_to_scene = true
+resource_name = "Material.044"
+albedo_texture = ExtResource("4_7ks35")
+metallic = 0.3272727
+roughness = 0.5
+
+[sub_resource type="Animation" id="Animation_v3k2j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("calabazas(shellgame):position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vtlwb"]
+resource_name = "check_inside"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("calabazas(shellgame):position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2, 0), Vector3(0, 2, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ks35"]
+_data = {
+&"RESET": SubResource("Animation_v3k2j"),
+&"check_inside": SubResource("Animation_vtlwb")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wg3bj"]
+resource_local_to_scene = true
+resource_name = "Material.044"
+albedo_texture = ExtResource("4_7ks35")
+metallic = 0.3272727
+roughness = 0.5
+
+[sub_resource type="Animation" id="Animation_jft2p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("calabazas(shellgame)2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0pu2p"]
+resource_name = "check_inside"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("calabazas(shellgame)2:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2, 0), Vector3(0, 2, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wg3bj"]
+_data = {
+&"RESET": SubResource("Animation_jft2p"),
+&"check_inside": SubResource("Animation_0pu2p")
+}
+
+[sub_resource type="Animation" id="Animation_evvxq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("calabazas(shellgame)3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q263b"]
+resource_name = "check_inside"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("calabazas(shellgame)3:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2, 0), Vector3(0, 2, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4t8hw"]
+_data = {
+&"RESET": SubResource("Animation_evvxq"),
+&"check_inside": SubResource("Animation_q263b")
+}
+
+[sub_resource type="Curve3D" id="Curve3D_7ks35"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_7pyt5"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, -4, 0, 0, 0, 4, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="CupPuzzle" type="Node3D" unique_id=697723389]
+script = ExtResource("1_7pyt5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1846182398]
+transform = Transform3D(-0.9249968, -0.37988722, 0.008165783, 0.11490681, -0.25917614, 0.9589704, -0.3621842, 0.8879828, 0.28338864, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=461787815]
+environment = SubResource("Environment_jft2p")
+
+[node name="Markers" type="Node3D" parent="." unique_id=1360343941]
+
+[node name="Marker1" type="Marker3D" parent="Markers" unique_id=605288070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="Marker2" type="Marker3D" parent="Markers" unique_id=1505417076]
+
+[node name="Marker3" type="Marker3D" parent="Markers" unique_id=216304330]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Cups" type="Node3D" parent="." unique_id=485788488]
+
+[node name="Cup1" type="Area3D" parent="Cups" unique_id=947006449 node_paths=PackedStringArray("anim", "object_mesh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+script = ExtResource("2_vtlwb")
+anim = NodePath("AnimationPlayer")
+object_mesh = NodePath("calabazas(shellgame)/Cube_020")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cups/Cup1" unique_id=153002506]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.093575954, 0.27791798, 0)
+shape = SubResource("BoxShape3D_vtlwb")
+
+[node name="calabazas(shellgame)" parent="Cups/Cup1" unique_id=856367893 instance=ExtResource("3_vtlwb")]
+
+[node name="Cube_007" parent="Cups/Cup1/calabazas(shellgame)" index="0" unique_id=1395077999]
+transform = Transform3D(0.1451315, 0, 0, 0, 0.16522858, 0, 0, 0, 0.051521458, -0.3, 1, 1.4)
+visible = false
+
+[node name="Cube_010" parent="Cups/Cup1/calabazas(shellgame)" index="1" unique_id=1192438612]
+transform = Transform3D(0.16933663, 0, 0, 0, 0.19278552, 0, 0, 0, 0.060114246, 0, 0, 0)
+visible = false
+
+[node name="Cube_020" parent="Cups/Cup1/calabazas(shellgame)" index="2" unique_id=2054273987]
+transform = Transform3D(0.19108163, 0, 0, 0, 0.19108163, 0, 0, 0, 0.19108163, 0, 0.6, 1.4)
+surface_material_override/2 = SubResource("StandardMaterial3D_0pu2p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cups/Cup1" unique_id=1522494416]
+libraries/ = SubResource("AnimationLibrary_7ks35")
+
+[node name="Cup2" type="Area3D" parent="Cups" unique_id=1083554766 node_paths=PackedStringArray("anim", "object_mesh")]
+script = ExtResource("2_vtlwb")
+anim = NodePath("AnimationPlayer")
+object_mesh = NodePath("calabazas(shellgame)2/Cube_020")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cups/Cup2" unique_id=1265087600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.278, 0)
+shape = SubResource("BoxShape3D_vtlwb")
+
+[node name="calabazas(shellgame)2" parent="Cups/Cup2" unique_id=1828366151 instance=ExtResource("3_vtlwb")]
+
+[node name="Cube_007" parent="Cups/Cup2/calabazas(shellgame)2" index="0" unique_id=1395077999]
+transform = Transform3D(0.1451315, 0, 0, 0, 0.16522858, 0, 0, 0, 0.051521458, -0.3, 1, 1.4)
+visible = false
+
+[node name="Cube_010" parent="Cups/Cup2/calabazas(shellgame)2" index="1" unique_id=1192438612]
+transform = Transform3D(0.16933663, 0, 0, 0, 0.19278552, 0, 0, 0, 0.060114246, -0.411, 1.001, 1.4)
+visible = false
+
+[node name="Cube_020" parent="Cups/Cup2/calabazas(shellgame)2" index="2" unique_id=2054273987]
+transform = Transform3D(0.19108163, 0, 0, 0, 0.19108163, 0, 0, 0, 0.19108163, 0, 0.6, 1.4)
+surface_material_override/2 = SubResource("StandardMaterial3D_wg3bj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cups/Cup2" unique_id=2104264809]
+libraries/ = SubResource("AnimationLibrary_wg3bj")
+
+[node name="Cup3" type="Area3D" parent="Cups" unique_id=1313247635 node_paths=PackedStringArray("anim", "object_mesh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+script = ExtResource("2_vtlwb")
+anim = NodePath("AnimationPlayer")
+object_mesh = NodePath("calabazas(shellgame)3/Cube_020")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cups/Cup3" unique_id=1017916920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.093575954, 0.27791798, 0)
+shape = SubResource("BoxShape3D_vtlwb")
+
+[node name="calabazas(shellgame)3" parent="Cups/Cup3" unique_id=523616093 instance=ExtResource("3_vtlwb")]
+
+[node name="Cube_007" parent="Cups/Cup3/calabazas(shellgame)3" index="0" unique_id=1395077999]
+transform = Transform3D(0.1451315, 0, 0, 0, 0.16522858, 0, 0, 0, 0.051521458, -0.3, 1, 1.4)
+visible = false
+
+[node name="Cube_010" parent="Cups/Cup3/calabazas(shellgame)3" index="1" unique_id=1192438612]
+transform = Transform3D(0.16933663, 0, 0, 0, 0.19278552, 0, 0, 0, 0.060114246, 0, 0, 0)
+visible = false
+
+[node name="Cube_020" parent="Cups/Cup3/calabazas(shellgame)3" index="2" unique_id=2054273987]
+transform = Transform3D(0.19108163, 0, 0, 0, 0.19108163, 0, 0, 0, 0.19108163, 0, 0.6, 1.4)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cups/Cup3" unique_id=1889603460]
+libraries/ = SubResource("AnimationLibrary_4t8hw")
+
+[node name="Paths" type="Node3D" parent="." unique_id=22536180]
+
+[node name="Path1" type="Path3D" parent="Paths" unique_id=1966068707]
+curve = SubResource("Curve3D_7ks35")
+script = ExtResource("2_v3k2j")
+
+[node name="CupPath" type="PathFollow3D" parent="Paths/Path1" unique_id=46060818]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="CupRemote" type="RemoteTransform3D" parent="Paths/Path1/CupPath" unique_id=2053709944]
+
+[node name="Path2" type="Path3D" parent="Paths" unique_id=1698535891]
+curve = SubResource("Curve3D_7pyt5")
+script = ExtResource("2_v3k2j")
+
+[node name="CupPath" type="PathFollow3D" parent="Paths/Path2" unique_id=829411312]
+
+[node name="CupRemote" type="RemoteTransform3D" parent="Paths/Path2/CupPath" unique_id=1089464284]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=84240221]
+transform = Transform3D(1, 0, 0, 0, 0.81915206, 0.57357645, 0, -0.57357645, 0.81915206, 0, 5.2978725, 6.2762012)
+
+[node name="farm" parent="." unique_id=931605457 instance=ExtResource("6_jft2p")]
+transform = Transform3D(-0.02024302, 0, 0.9997951, 0, 1, 0, -0.9997951, 0, -0.02024302, -14.438904, -5.607083, -5.549303)
+
+[node name="acelga_001" parent="farm" index="0" unique_id=649508178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="acelga_002" parent="farm" index="1" unique_id=2039164340]
+transform = Transform3D(-0.04249668, 0, -0.9990966, 0, 1, 0, 0.9990966, 0, -0.04249668, -1480.269, 0, -40.68918)
+
+[node name="acelga_003" parent="farm" index="2" unique_id=540029572]
+transform = Transform3D(0.71958053, 0, -0.69440895, 0, 1, 0, 0.69440895, 0, 0.71958053, -1033.9684, 0, 1096.7831)
+
+[node name="acelga_004" parent="farm" index="3" unique_id=1675551811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.861023e-05, 0, 1518.8779)
+
+[node name="acelga_005" parent="farm" index="4" unique_id=1454097321]
+transform = Transform3D(0.71754, 0, 0.6965173, 0, 1, 0, -0.6965173, 0, 0.71754, 1043.6146, 0, 1100.3771)
+
+[node name="acelga_006" parent="farm" index="5" unique_id=1808327855]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.861023e-05, 0, 1509.4642)
+
+[node name="acelga_007" parent="farm" index="6" unique_id=1308254564]
+transform = Transform3D(0.7322983, 0, 0.68098396, 0, 1, 0, -0.68098396, 0, 0.7322983, 1020.2429, 0, 1111.9805)
+
+[node name="acelga_008" parent="farm" index="7" unique_id=1376723013]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.861023e-05, 0, 1499.2034)
+
+[node name="acelga_009" parent="farm" index="8" unique_id=427121420]
+transform = Transform3D(0.8151426, 0, -0.5792604, 0, 1, 0, 0.5792604, 0, 0.8151426, -863.07935, 0, 1211.98)
+
+[node name="acelga_010" parent="farm" index="9" unique_id=104407328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.861023e-05, 0, 1490.0093)
+
+[node name="acelga_011" parent="farm" index="10" unique_id=1985496722]
+transform = Transform3D(-0.7221184, 0, 0.69176936, 0, 1, 0, -0.69176936, 0, -0.7221184, 1053.141, 0, -1078.711)
+
+[node name="acelga_012" parent="farm" index="11" unique_id=1402937172]
+transform = Transform3D(-0.8480643, 0, 0.5298935, 0, 1, 0, -0.5298935, 0, -0.8480643, 812.80835, 0, -1273.4681)
+
+[node name="acelga_013" parent="farm" index="12" unique_id=1238317074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.651003, 0, 1528.509)
+
+[node name="acelga_014" parent="farm" index="13" unique_id=572625723]
+transform = Transform3D(0.79696715, 0, -0.6040226, 0, 1, 0, 0.6040226, 0, 0.79696715, -892.2047, 0, 1213.507)
+
+[node name="acelga_015" parent="farm" index="14" unique_id=485536973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.651003, 0, 1518.2482)
+
+[node name="acelga_016" parent="farm" index="15" unique_id=163851876]
+transform = Transform3D(0.60229075, 0, 0.7982768, 0, 1, 0, -0.7982768, 0, 0.60229075, 1204.589, 0, 928.65393)
+
+[node name="acelga_017" parent="farm" index="16" unique_id=714917947]
+transform = Transform3D(0.8685378, 0, -0.495623, 0, 1, 0, 0.495623, 0, 0.8685378, -731.1195, 0, 1306.9744)
+
+[node name="acelga_018" parent="farm" index="17" unique_id=1251927233]
+transform = Transform3D(0.8180245, 0, -0.57518333, 0, 1, 0, 0.57518333, 0, 0.8180245, -849.3718, 0, 1226.2878)
+
+[node name="acelga_019" parent="farm" index="18" unique_id=1392767725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.651003, 0, 1499.1792)
+
+[node name="acelga_020" parent="farm" index="19" unique_id=561652049]
+transform = Transform3D(0.8474394, 0, -0.53089213, 0, 1, 0, 0.53089213, 0, 0.8474394, -783.55597, 0, 1260.4738)
+
+[node name="acelga_021" parent="farm" index="20" unique_id=1681188093]
+transform = Transform3D(0.7315953, 0, 0.68173915, 0, 1, 0, -0.68173915, 0, 0.7315953, 1029.0299, 0, 1096.6705)
+
+[node name="acelga_022" parent="farm" index="21" unique_id=525144671]
+transform = Transform3D(0.60634923, 0, 0.79519844, 0, 1, 0, -0.79519844, 0, 0.60634923, 1199.9447, 0, 906.48193)
+
+[node name="acelga_023" parent="farm" index="22" unique_id=443670818]
+transform = Transform3D(0.50534, 0, 0.86292034, 0, 1, 0, -0.86292034, 0, 0.50534, 1302.2632, 0, 752.39465)
+
+[node name="acelga_024" parent="farm" index="23" unique_id=53461833]
+transform = Transform3D(0.5548382, 0, -0.8319583, 0, 1, 0, 0.8319583, 0, 0.5548382, -1230.4092, 0, 801.994)
+
+[node name="acelga_025" parent="farm" index="24" unique_id=350656142]
+transform = Transform3D(0.21998394, 0, -0.9755035, 0, 1, 0, 0.9755035, 0, 0.21998394, -1440.8994, 0, 294.97092)
+
+[node name="acelga_026" parent="farm" index="25" unique_id=1444727150]
+transform = Transform3D(-0.18690902, 0, 0.17905365, 0, 0.25883418, 0, -0.17905365, 0, -0.18690902, 267.36182, 3.5853765, -253.65573)
+
+[node name="acelga_027" parent="farm" index="26" unique_id=2108504920]
+transform = Transform3D(0.033012062, 0.20273277, 0.04611829, -0.16174953, 0.054381765, -0.1232761, -0.13063148, -0.016103296, 0.16429661, 62.689274, -177.51044, 270.77487)
+
+[node name="acelga_028" parent="farm" index="27" unique_id=1774280828]
+transform = Transform3D(0.50534, 0, 0.86292034, 0, 1, 0, -0.86292034, 0, 0.50534, 1363.1538, 0, 748.7329)
+
+[node name="acelga_029" parent="farm" index="28" unique_id=1287240183]
+transform = Transform3D(0.5548382, 0, -0.8319583, 0, 1, 0, 0.8319583, 0, 0.5548382, -1169.5186, 0, 798.33215)
+
+[node name="acelga_030" parent="farm" index="29" unique_id=212306500]
+transform = Transform3D(0.21998394, 0, -0.9755035, 0, 1, 0, 0.9755035, 0, 0.21998394, -1380.0088, 0, 291.30905)
+
+[node name="arbusto1_002" parent="farm" index="30" unique_id=787126682]
+transform = Transform3D(-10.666048, 6.7972846, -3.1787295e-07, 3.7693474e-07, 1.12335305e-14, -12.647831, -6.797284, -10.666049, -2.0257484e-07, 32.76325, 7.209012, -55.253143)
+
+[node name="arbusto1_004" parent="farm" index="31" unique_id=1318221415]
+transform = Transform3D(-10.666048, 6.7972846, -3.1787295e-07, 3.7693474e-07, 1.12335305e-14, -12.647831, -6.797284, -10.666049, -2.0257484e-07, 71.74396, 7.209012, -55.253143)
+
+[node name="arbusto1_005" parent="farm" index="32" unique_id=149512106]
+transform = Transform3D(-10.666048, 6.7972846, -3.1787295e-07, 3.7693474e-07, 1.12335305e-14, -12.647831, -6.797284, -10.666049, -2.0257484e-07, 55.788322, 7.209304, -55.037445)
+
+[node name="arbusto1_006" parent="farm" index="33" unique_id=1420445373]
+transform = Transform3D(-8.919073, 9.406936, 1.5705926, -5.5553937, -3.376536, -11.324474, -7.7520814, -8.403313, 6.3084593, 63.65968, 6.117156, -54.726776)
+
+[node name="arbusto1_007" parent="farm" index="34" unique_id=1997682444]
+transform = Transform3D(-10.666048, 6.7972846, -3.1787295e-07, 3.7693474e-07, 1.12335305e-14, -12.647831, -6.797284, -10.666049, -2.0257484e-07, 89.733154, 7.209012, -55.253143)
+
+[node name="arbusto1_008" parent="farm" index="35" unique_id=520983174]
+transform = Transform3D(-10.666048, 6.7972846, -3.1787295e-07, 3.7693474e-07, 1.12335305e-14, -12.647831, -6.797284, -10.666049, -2.0257484e-07, 80.597824, 7.209012, -55.253143)
+
+[node name="arbusto1_009" parent="farm" index="36" unique_id=1348921063]
+transform = Transform3D(-10.666048, 6.7972846, -3.1787295e-07, 3.7693474e-07, 1.12335305e-14, -12.647831, -6.797284, -10.666049, -2.0257484e-07, 45.21449, 7.209012, -55.253143)
+
+[node name="arbusto1_010" parent="farm" index="37" unique_id=357788814]
+transform = Transform3D(-10.666048, 6.7972846, -3.1787295e-07, 3.7693474e-07, 1.12335305e-14, -12.647831, -6.797284, -10.666049, -2.0257484e-07, 104.52097, 7.209012, -55.253143)
+
+[node name="arbusto1_011" parent="farm" index="38" unique_id=219284060]
+transform = Transform3D(-8.919073, 9.406936, 1.5705926, -5.5553937, -3.376536, -11.324474, -7.7520814, -8.403313, 6.3084593, 38.221367, 6.117156, -54.726776)
+
+[node name="arbusto1_018" parent="farm" index="39" unique_id=472161825]
+transform = Transform3D(-3.5762687, 8.243571, 1.4877579, 5.2405195, 3.4637675, -6.595367, -6.535047, -1.7336196, -6.1030583, 24.081059, 7.2137346, -53.522552)
+
+[node name="arbusto1_019" parent="farm" index="40" unique_id=406598952]
+transform = Transform3D(-10.666048, 6.7972846, -3.1787295e-07, 3.7693474e-07, 1.12335305e-14, -12.647831, -6.797284, -10.666049, -2.0257484e-07, 97.84983, 7.209012, -55.253143)
+
+[node name="arbusto1_020" parent="farm" index="41" unique_id=659589574]
+transform = Transform3D(-10.666048, 6.7972846, -3.1787295e-07, 3.7693474e-07, 1.12335305e-14, -12.647831, -6.797284, -10.666049, -2.0257484e-07, 112.35182, 7.209012, -55.253143)
+
+[node name="caja1_001" parent="farm" index="42" unique_id=287726830]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="caja1_002" parent="farm" index="43" unique_id=1533009052]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="caja1_003" parent="farm" index="44" unique_id=148173280]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="caja1_004" parent="farm" index="45" unique_id=841883748]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="caja1_005" parent="farm" index="46" unique_id=1428716627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="caja1_006" parent="farm" index="47" unique_id=722509119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="caja1_007" parent="farm" index="48" unique_id=1325117518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="caja1_008" parent="farm" index="49" unique_id=847475117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="caja1_009" parent="farm" index="50" unique_id=2079441726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="caja1_010" parent="farm" index="51" unique_id=1013184208]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="caja1_011" parent="farm" index="52" unique_id=962189391]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="caja2_001" parent="farm" index="53" unique_id=1719369758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="caja2_002" parent="farm" index="54" unique_id=1208683284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="caja2_003" parent="farm" index="55" unique_id=128738794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="caja2_004" parent="farm" index="56" unique_id=1689921302]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="cajon1_001" parent="farm" index="57" unique_id=2109244294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="cajon1_002" parent="farm" index="58" unique_id=1859291947]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="cajon1_003" parent="farm" index="59" unique_id=1428420233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="cajon2_001" parent="farm" index="60" unique_id=2091271041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="cajon2_002" parent="farm" index="61" unique_id=109206906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="cajon2_003" parent="farm" index="62" unique_id=1039521263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="cajon3_001" parent="farm" index="63" unique_id=399563998]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="cajon3_002" parent="farm" index="64" unique_id=1615960142]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="cajon3_003" parent="farm" index="65" unique_id=148103965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="cajon3_004" parent="farm" index="66" unique_id=408730604]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="cajon3_005" parent="farm" index="67" unique_id=304769283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="cajon3_006" parent="farm" index="68" unique_id=786663627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="calabazaaplastada_001" parent="farm" index="69" unique_id=983170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="calabazaaplastada_002" parent="farm" index="70" unique_id=1756195800]
+transform = Transform3D(2.4301825, 0, 0, 0, 2.4301825, 0, 0, 0, 2.4301825, 21.220863, -14.563293, 3731.9968)
+
+[node name="calabazaaplastada_003" parent="farm" index="71" unique_id=112401227]
+transform = Transform3D(2.4301825, 0, 0, 0, 2.4301825, 0, 0, 0, 2.4301825, 17.857544, -14.563293, 3751.3628)
+
+[node name="calabazamala1_004" parent="farm" index="72" unique_id=1145846858]
+transform = Transform3D(-0.41206312, -0.708021, -0.57350713, 0.67118055, -0.6615484, 0.33447078, -0.61621493, -0.24710372, 0.7478094, -884.2648, 526.3575, 1167.5797)
+
+[node name="calabazamala2_001" parent="farm" index="73" unique_id=1554671811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="calabazamala3_001" parent="farm" index="74" unique_id=860822835]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="calabazanormal_001" parent="farm" index="75" unique_id=1092363703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="calabazanormal_002" parent="farm" index="76" unique_id=426126601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1538.8368)
+
+[node name="calabazanormal_003" parent="farm" index="77" unique_id=1337414127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1544.8636)
+
+[node name="calabazanormal_004" parent="farm" index="78" unique_id=428600161]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.174264, 0, 1538.8368)
+
+[node name="cebojja_013" parent="farm" index="79" unique_id=1268317574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.32736, 0, 1537.6659)
+
+[node name="cebojja_014" parent="farm" index="80" unique_id=837428895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.32736, 0, 1532.6812)
+
+[node name="cebojja_015" parent="farm" index="81" unique_id=301062470]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.32736, 0, 1527.9202)
+
+[node name="cebojja_016" parent="farm" index="82" unique_id=1170922494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.32736, 0, 1522.7625)
+
+[node name="cebojja_017" parent="farm" index="83" unique_id=412904267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.32736, 0, 1517.631)
+
+[node name="cebojja_018" parent="farm" index="84" unique_id=1393173290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.32736, 0, 1511.3604)
+
+[node name="cebojja_019" parent="farm" index="85" unique_id=1767652067]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.86758, 0, 1505.2106)
+
+[node name="cebojja_020" parent="farm" index="86" unique_id=615713292]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.86758, 0, 1500.0529)
+
+[node name="cebojja_021" parent="farm" index="87" unique_id=1604982171]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.86758, 0, 1494.9214)
+
+[node name="cebojja_022" parent="farm" index="88" unique_id=610442525]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.86758, 0, 1488.6508)
+
+[node name="cebojja_023" parent="farm" index="89" unique_id=1264653717]
+transform = Transform3D(0.12600534, 0.08944101, 0.37706116, 0.123664364, 0.36648238, -0.1282575, -0.36726275, 0.15408818, 0.08618038, 670.53937, -184.787, 82.167206)
+
+[node name="cipres_006" parent="farm" index="90" unique_id=441501757]
+transform = Transform3D(29.979624, 21.572506, 0, 0, 0, -36.934414, -21.572506, 29.979624, 0, 21.571396, 22.269714, 43.006073)
+
+[node name="cipres_007" parent="farm" index="91" unique_id=1125480324]
+transform = Transform3D(29.979624, 21.572506, 0, 0, 0, -36.934414, -21.572506, 29.979624, 0, 59.48079, 22.380451, 43.10251)
+
+[node name="cipres_008" parent="farm" index="92" unique_id=485290880]
+transform = Transform3D(29.979624, 21.572506, 0, 0, 0, -36.934414, -21.572506, 29.979624, 0, 76.90578, 22.269684, 43.00656)
+
+[node name="cipres_009" parent="farm" index="93" unique_id=443288805]
+transform = Transform3D(29.979624, 21.572506, 0, 0, 0, -36.934414, -21.572506, 29.979624, 0, 113.73766, 23.04492, 43.680756)
+
+[node name="cipres_010" parent="farm" index="94" unique_id=212968556]
+transform = Transform3D(29.979624, 21.572506, 0, 0, 0, -36.934414, -21.572506, 29.979624, 0, -29.657135, 22.269714, 43.006073)
+
+[node name="cipres_011" parent="farm" index="95" unique_id=1205042993]
+transform = Transform3D(29.979624, 21.572506, 0, 0, 0, -36.934414, -21.572506, 29.979624, 0, -8.128254, 22.380451, 43.10251)
+
+[node name="coliflor_001" parent="farm" index="96" unique_id=563842222]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="coliflor_002" parent="farm" index="97" unique_id=1725228860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-05, -1.5258789e-05, 1527.522)
+
+[node name="coliflor_003" parent="farm" index="98" unique_id=369812222]
+transform = Transform3D(0.8318349, 0, -0.5550232, 0, 1, 0, 0.5550232, 0, 0.8318349, -822.53986, -0.21155548, 1242.0082)
+
+[node name="coliflor_004" parent="farm" index="99" unique_id=1489865264]
+transform = Transform3D(0.7444526, 0, 0.66767526, 0, 1, 0, -0.66767526, 0, 0.7444526, 1012.03564, -0.21147537, 1168.6165)
+
+[node name="coliflor_005" parent="farm" index="100" unique_id=9412699]
+transform = Transform3D(0.5653385, 0, 0.824859, 0, 1, 0, -0.824859, 0, 0.5653385, 1256.5168, -0.21143723, 903.39624)
+
+[node name="coliflor_006" parent="farm" index="101" unique_id=1115649625]
+transform = Transform3D(0.86468905, 0, 0.5023075, 0, 1, 0, -0.5023075, 0, 0.86468905, 758.7932, 0.00010681152, 1328.6525)
+
+[node name="coliflor_007" parent="farm" index="102" unique_id=868604063]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-05, -1.5258789e-05, 1499.7811)
+
+[node name="coliflor_008" parent="farm" index="103" unique_id=1008675836]
+transform = Transform3D(0.7862228, 0.043329723, 0.6164221, 0.019227246, 0.9953403, -0.09448837, -0.6176439, 0.086141005, 0.7817261, 933.3965, -142.38995, 1199.1718)
+
+[node name="coliflor_009" parent="farm" index="104" unique_id=1063802466]
+transform = Transform3D(0.7919985, 0, -0.6105231, 0, 1, 0, 0.6105231, 0, 0.7919985, -903.1011, -5.340576e-05, 1146.0947)
+
+[node name="coliflor_010" parent="farm" index="105" unique_id=465298563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-05, -1.5258789e-05, 1482.9233)
+
+[node name="coliflor_011" parent="farm" index="106" unique_id=1909883966]
+transform = Transform3D(0.71237487, 0, 0.70179915, 0, 1, 0, -0.70179915, 0, 0.71237487, 1065.22, 0.00010681152, 1083.3102)
+
+[node name="coliflor_012" parent="farm" index="107" unique_id=1825086043]
+transform = Transform3D(0.92345774, 0, 0.38370013, 0, 1, 0, -0.38370013, 0, 0.92345774, 578.24316, 3.8146973e-05, 1377.1539)
+
+[node name="coliflor_013" parent="farm" index="108" unique_id=99929211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13137817, -1.5258789e-05, 1465.7502)
+
+[node name="coliflor_014" parent="farm" index="109" unique_id=1600287217]
+transform = Transform3D(0.7862228, 0.043329723, 0.6164221, 0.019227246, 0.9953403, -0.09448837, -0.6176439, 0.086141005, 0.7817261, 939.6236, -142.38995, 1233.6339)
+
+[node name="coliflor_015" parent="farm" index="110" unique_id=1880380250]
+transform = Transform3D(0.7919985, 0, -0.6105231, 0, 1, 0, 0.6105231, 0, 0.7919985, -896.874, -5.340576e-05, 1180.5569)
+
+[node name="coliflor_016" parent="farm" index="111" unique_id=833217229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.227127, -1.5258789e-05, 1517.3855)
+
+[node name="coliflor_017" parent="farm" index="112" unique_id=584722407]
+transform = Transform3D(0.71237487, 0, 0.70179915, 0, 1, 0, -0.70179915, 0, 0.71237487, 1071.447, 0.00010681152, 1117.7723)
+
+[node name="coliflor_018" parent="farm" index="113" unique_id=594208375]
+transform = Transform3D(0.92345774, 0, 0.38370013, 0, 1, 0, -0.38370013, 0, 0.92345774, 584.4703, 3.8146973e-05, 1411.6161)
+
+[node name="coliflor_019" parent="farm" index="114" unique_id=1816368010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.35849, -1.5258789e-05, 1500.2124)
+
+[node name="coliflor_020" parent="farm" index="115" unique_id=1568547844]
+transform = Transform3D(0.7585917, 0, -0.6515663, 0, 1, 0, 0.6515663, 0, 0.7585917, -956.66235, -3.0517578e-05, 1140.4066)
+
+[node name="coliflor_021" parent="farm" index="116" unique_id=677441895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3542175, -1.5258789e-05, 1494.3212)
+
+[node name="coliflor_022" parent="farm" index="117" unique_id=865256555]
+transform = Transform3D(0.71237487, 0, 0.70179915, 0, 1, 0, -0.70179915, 0, 0.71237487, 1071.5741, 0.00010681152, 1094.708)
+
+[node name="coliflor_023" parent="farm" index="118" unique_id=1367365343]
+transform = Transform3D(0.92345774, 0, 0.38370013, 0, 1, 0, -0.38370013, 0, 0.92345774, 584.5974, 3.8146973e-05, 1388.5518)
+
+[node name="coliflor_024" parent="farm" index="119" unique_id=1997331134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.485565, -1.5258789e-05, 1477.1481)
+
+[node name="coliflor_025" parent="farm" index="120" unique_id=1299231381]
+transform = Transform3D(0.25950617, 0, -0.20004395, 0, 0.32765993, 0, 0.20004395, 0, 0.25950617, -232.12892, 2.9374905, 411.6428)
+
+[node name="coliflor_026" parent="farm" index="121" unique_id=353083403]
+transform = Transform3D(0.25950617, 0, -0.20004395, 0, 0.32765993, 0, 0.20004395, 0, 0.25950617, -231.16817, 2.985199, 412.7524)
+
+[node name="coliflor_027" parent="farm" index="122" unique_id=1621093833]
+transform = Transform3D(0.021898182, 0, -0.3715693, 0, 0.37221405, 0, 0.37156934, 0, 0.02189818, -467.20514, 2.603407, 44.83127)
+
+[node name="coliflor_028" parent="farm" index="123" unique_id=1472997311]
+transform = Transform3D(0.021898182, 0, -0.3715693, 0, 0.37221405, 0, 0.37156934, 0, 0.02189818, -467.44043, 2.6576023, 46.481903)
+
+[node name="coliflor_029" parent="farm" index="124" unique_id=413562831]
+transform = Transform3D(0.018105954, 0, -0.3072223, 0, 0.30775544, 0, 0.3072223, 0, 0.018105954, -370.72537, 2.979126, 37.3768)
+
+[node name="coliflor_030" parent="farm" index="125" unique_id=1448280485]
+transform = Transform3D(0.018105954, 0, -0.3072223, 0, 0.30775544, 0, 0.3072223, 0, 0.018105954, -370.91992, 3.0239372, 38.741547)
+
+[node name="coliflor_040" parent="farm" index="126" unique_id=1831994581]
+transform = Transform3D(0.71237487, 0, 0.70179915, 0, 1, 0, -0.70179915, 0, 0.71237487, 1093.0126, 0.00010681152, 1104.2534)
+
+[node name="coliflor_041" parent="farm" index="127" unique_id=391487298]
+transform = Transform3D(0.92345774, 0, 0.38370013, 0, 1, 0, -0.38370013, 0, 0.92345774, 606.0358, 3.8146973e-05, 1398.0972)
+
+[node name="coliflor_042" parent="farm" index="128" unique_id=949556544]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.924011, -1.5258789e-05, 1486.6935)
+
+[node name="comidadelgallinero" parent="farm" index="129" unique_id=1012860252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="comidadelgallinero_001" parent="farm" index="130" unique_id=2070616276]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="efectobarro1" parent="farm" index="131" unique_id=1251894362]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="efectocultivos" parent="farm" index="132" unique_id=1579176610]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="fondoizquierda" parent="farm" index="133" unique_id=1097034579]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="frambuesas_001" parent="farm" index="134" unique_id=1231749750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.73227, 0, 1588.76)
+
+[node name="frambuesas_002" parent="farm" index="135" unique_id=890799985]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.73227, 0, 1575.1304)
+
+[node name="frambuesas_003" parent="farm" index="136" unique_id=2075737535]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.73227, 0, 1561.5967)
+
+[node name="frambuesas_004" parent="farm" index="137" unique_id=1316237594]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.73227, 0, 1547.4242)
+
+[node name="frambuesas_005" parent="farm" index="138" unique_id=741917982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0517578e-05, 0, 1588.7594)
+
+[node name="frambuesas_006" parent="farm" index="139" unique_id=1666307590]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0517578e-05, 0, 1575.2257)
+
+[node name="frambuesas_007" parent="farm" index="140" unique_id=1688376336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0517578e-05, 0, 1561.0532)
+
+[node name="frambuesas_008" parent="farm" index="141" unique_id=1565875100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0517578e-05, 0, 1546.801)
+
+[node name="frambuesas_009" parent="farm" index="142" unique_id=905642552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="frutatomate" parent="farm" index="143" unique_id=1322987533]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="frutatomate_001" parent="farm" index="144" unique_id=214294537]
+transform = Transform3D(0.65340537, 0, 0, 0, 0.6534053, 0, 0, 0, 0.65340537, 25.358353, 1.4636536, 1013.55273)
+
+[node name="frutatomate_002" parent="farm" index="145" unique_id=716551665]
+transform = Transform3D(0.91186154, 0, 0, 0, 0.91186154, 0, 0, 0, 0.91186154, 3.7798386, 0.40603638, 1402.5067)
+
+[node name="frutatomate_003" parent="farm" index="146" unique_id=1749308373]
+transform = Transform3D(0.91186154, 0, 0, 0, 0.91186154, 0, 0, 0, 0.91186154, 4.9183884, 0.40603638, 1402.1691)
+
+[node name="frutatomate_004" parent="farm" index="147" unique_id=692765595]
+transform = Transform3D(0.91186154, 0, 0, 0, 0.91186154, 0, 0, 0, 0.91186154, 11.748146, 5.8043213, 1405.9205)
+
+[node name="hoja11_001" parent="farm" index="148" unique_id=516176097]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="nouvavalla_001" parent="farm" index="149" unique_id=2090229419]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="piedra2_002" parent="farm" index="150" unique_id=1434555943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="piedra3_003" parent="farm" index="151" unique_id=1290448271]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="pisopasto" parent="farm" index="152" unique_id=936611988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="tomate1_001" parent="farm" index="153" unique_id=1901569152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="tomate1_002" parent="farm" index="154" unique_id=1409087771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="tomate1_003" parent="farm" index="155" unique_id=1032619129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="tomate1_004" parent="farm" index="156" unique_id=197265464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="tomate1_005" parent="farm" index="157" unique_id=356045616]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="tomate1_006" parent="farm" index="158" unique_id=126814348]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="tomate1_007" parent="farm" index="159" unique_id=474180918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="tomate2_001" parent="farm" index="160" unique_id=1464392775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="tomate2_002" parent="farm" index="161" unique_id=1487452161]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="tomate2_003" parent="farm" index="162" unique_id=1295019837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="tomate2_004" parent="farm" index="163" unique_id=1542695601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="tomate2_005" parent="farm" index="164" unique_id=2094300548]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="tomate2_006" parent="farm" index="165" unique_id=1438341646]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="uvas_001" parent="farm" index="166" unique_id=138359416]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="uvas_002" parent="farm" index="167" unique_id=1059306795]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0517578e-05, 0, 1519.0092)
+
+[node name="uvas_003" parent="farm" index="168" unique_id=731885812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4491272, 0, 1505.1016)
+
+[node name="uvas_004" parent="farm" index="169" unique_id=1836227566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4491272, 0, 1491.4762)
+
+[node name="uvas_005" parent="farm" index="170" unique_id=770759787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.034637, 0, 1532.4802)
+
+[node name="uvas_006" parent="farm" index="171" unique_id=1031079316]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.483795, 0, 1518.5726)
+
+[node name="uvas_007" parent="farm" index="172" unique_id=1209193185]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.483795, 0, 1504.9473)
+
+[node name="uvas_008" parent="farm" index="173" unique_id=817567209]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.483795, 0, 1491.4639)
+
+[node name="uvas_009" parent="farm" index="174" unique_id=1070476994]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.483795, 0, 1477.5217)
+
+[node name="uvas_010" parent="farm" index="175" unique_id=157937601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.483795, 0, 1464.0383)
+
+[node name="uvas_011" parent="farm" index="176" unique_id=1004038511]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.781715, 0, 1532.4802)
+
+[node name="uvas_012" parent="farm" index="177" unique_id=1076529506]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.33256, 0, 1518.5726)
+
+[node name="uvas_013" parent="farm" index="178" unique_id=684190635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.33256, 0, 1504.9473)
+
+[node name="uvas_014" parent="farm" index="179" unique_id=118845737]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.33256, 0, 1491.4639)
+
+[node name="uvas_015" parent="farm" index="180" unique_id=54348514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.33256, 0, 1477.5217)
+
+[node name="vallacultivos" parent="farm" index="181" unique_id=361774000]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="zanahoria_001" parent="farm" index="182" unique_id=1280349698]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1532.7399)
+
+[node name="zanahoria_002" parent="farm" index="183" unique_id=1378235988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1528.1462)
+
+[node name="zanahoria_003" parent="farm" index="184" unique_id=208188338]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1523.6658)
+
+[node name="zanahoria_004" parent="farm" index="185" unique_id=1797012211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1518.9647)
+
+[node name="zanahoria_005" parent="farm" index="186" unique_id=193980677]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1514.2516)
+
+[node name="zanahoria_006" parent="farm" index="187" unique_id=1773687141]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1509.3907)
+
+[node name="zanahoria_007" parent="farm" index="188" unique_id=2055948349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1504.4407)
+
+[node name="zanahoria_008" parent="farm" index="189" unique_id=936350107]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.72073, 0, 1514.2516)
+
+[node name="zanahoria_009" parent="farm" index="190" unique_id=1627130076]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.72073, 0, 1509.3907)
+
+[node name="zanahoria_010" parent="farm" index="191" unique_id=1699715159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.72073, 0, 1504.4407)
+
+[node name="zanahoria_011" parent="farm" index="192" unique_id=1456684880]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.05491, 0, 1571.3091)
+
+[node name="zanahoria_012" parent="farm" index="193" unique_id=1948217716]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.05491, 0, 1566.7155)
+
+[node name="zanahoria_013" parent="farm" index="194" unique_id=686465288]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.05491, 0, 1562.235)
+
+[node name="zanahoria_014" parent="farm" index="195" unique_id=822034928]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.05491, 0, 1557.5339)
+
+[node name="zanahoria_015" parent="farm" index="196" unique_id=499535185]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.05491, 0, 1552.8208)
+
+[node name="zanahoria_016" parent="farm" index="197" unique_id=1381823292]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.05491, 0, 1547.96)
+
+[node name="zanahoria_017" parent="farm" index="198" unique_id=2027437125]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.05491, 0, 1543.0099)
+
+[node name="zanahoria_018" parent="farm" index="199" unique_id=1804187612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.05491, 0, 1539.7556)
+
+[node name="zanahoria_019" parent="farm" index="200" unique_id=688525121]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.05491, 0, 1535.162)
+
+[node name="zanahoria_020" parent="farm" index="201" unique_id=1481903833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.05491, 0, 1530.6815)
+
+[node name="zanahoria_021" parent="farm" index="202" unique_id=544437864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.05491, 0, 1525.9805)
+
+[node name="zanahoria_022" parent="farm" index="203" unique_id=1069803317]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.05491, 0, 1521.2673)
+
+[node name="zanahoria_023" parent="farm" index="204" unique_id=533528501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.05491, 0, 1516.4065)
+
+[node name="zanahoria_024" parent="farm" index="205" unique_id=1926032265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.05491, 0, 1511.4564)
+
+[node name="zanahoria_025" parent="farm" index="206" unique_id=739353270]
+transform = Transform3D(0.46394923, 0.14154246, 0.3078829, -0.18277693, 0.54408425, 0.025295893, -0.28533968, -0.11837657, 0.48439994, 538.0478, 55.752438, 738.69934)
+
+[node name="zanahoria_026" parent="farm" index="207" unique_id=591641856]
+transform = Transform3D(-0.361045, -0.10610509, 0.26081797, 0.030795189, 0.4066864, 0.20807597, -0.27988562, 0.18161954, -0.31355414, 517.34033, 323.29898, -487.85934)
+
+[node name="zanahoria_027" parent="farm" index="208" unique_id=1931498134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.05491, 0, 1506.5652)
+
+[node name="zanahoria_028" parent="farm" index="209" unique_id=787071689]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.05491, 0, 1501.6151)
+
+[node name="zanahoria_029" parent="farm" index="210" unique_id=1523684432]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.728423, 0, 1559.8674)
+
+[node name="zanahoria_030" parent="farm" index="211" unique_id=855090478]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.728423, 0, 1555.2738)
+
+[node name="zanahoria_031" parent="farm" index="212" unique_id=1895228293]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.728423, 0, 1550.7933)
+
+[node name="zanahoria_032" parent="farm" index="213" unique_id=1175489991]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.728423, 0, 1546.0923)
+
+[editable path="Cups/Cup1/calabazas(shellgame)"]
+[editable path="Cups/Cup2/calabazas(shellgame)2"]
+[editable path="Cups/Cup3/calabazas(shellgame)3"]
+[editable path="farm"]
