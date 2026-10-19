@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://c5i5gfgqmjm12"]
 
 [ext_resource type="Script" uid="uid://cunqxrd8qlp3m" path="res://scenes/components/game_manager.gd" id="1_j8dua"]
+[ext_resource type="Texture2D" uid="uid://gpxy2t37wklq" path="res://assets/ui/loading.png" id="2_g5vmw"]
 
-[node name="GameManager" type="Node3D" unique_id=1613743384 node_paths=PackedStringArray("map_node", "fade_layer")]
+[node name="GameManager" type="Node3D" unique_id=1613743384 node_paths=PackedStringArray("map_node", "fade_layer", "loading_icon")]
 script = ExtResource("1_j8dua")
 map_node = NodePath("Map")
 fade_layer = NodePath("CanvasLayer/ColorRect")
+loading_icon = NodePath("CanvasLayer/TextureRect")
 
 [node name="Map" type="Node3D" parent="." unique_id=1589424651]
 
@@ -19,3 +21,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1482168954]
+offset_left = 1658.0
+offset_top = 841.0
+offset_right = 1857.0
+offset_bottom = 1040.0
+pivot_offset = Vector2(100, 100)
+texture = ExtResource("2_g5vmw")
+expand_mode = 1
