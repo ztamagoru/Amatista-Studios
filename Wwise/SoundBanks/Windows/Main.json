@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{B2AB37D9-0287-4B83-B475-5B48B6C26BCF}",
     "Language": "SFX",
-    "Hash": "{CAD8CB3C-2490-2149-2DC0-4806C8406194}",
+    "Hash": "{2E5F599E-85EC-0070-E0DB-53AAF0B15602}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -32,14 +32,6 @@
       "CachePath": "66/{6660B10C-395D-6F5D-0701-7703AAB697DA}.wem"
      },
      {
-      "Id": "91759783",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Heal.wav",
-      "CachePath": "8C/{8C5FF54C-A5B7-840A-1F80-AB99C5526933}.wem"
-     },
-     {
       "Id": "126474508",
       "Language": "SFX",
       "Streaming": "false",
@@ -56,6 +48,14 @@
       "CachePath": "9B/{9B91AB91-405A-D5CB-206F-A58F63D9EC88}.wem"
      },
      {
+      "Id": "193042708",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Healing.wav",
+      "CachePath": "2C/{2C80376C-6336-4BE4-F0A6-23FC025D56A9}.wem"
+     },
+     {
       "Id": "228327416",
       "Language": "SFX",
       "Streaming": "true",
@@ -63,14 +63,6 @@
       "ShortName": "footsteps-dirt.wav",
       "Path": "Media/228327416.wem",
       "CachePath": "9E/{9E9865A3-BDF6-1023-882D-F6D39D7E5015}.wem"
-     },
-     {
-      "Id": "233290653",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "non-curative impact.wav",
-      "CachePath": "4F/{4F7FCAE4-E76F-2981-B561-D07261060024}.wem"
      },
      {
       "Id": "259443018",
@@ -355,11 +347,11 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Game\\Heal",
       "GUID": "{6B3E3666-8147-4361-80D4-3ABA5E075C6D}",
       "DurationType": "OneShot",
-      "DurationMin": "2.0632427",
-      "DurationMax": "2.0632427",
+      "DurationMin": "2.5",
+      "DurationMax": "2.5",
       "MediaRefs": [
        {
-        "Id": "91759783"
+        "Id": "193042708"
        }
       ]
      },
@@ -448,20 +440,6 @@
           "Id": "270729911"
          }
         ]
-       }
-      ]
-     },
-     {
-      "Id": "4064781185",
-      "Name": "Not_heal",
-      "ObjectPath": "\\Events\\Default Work Unit\\Game\\Not_heal",
-      "GUID": "{50AEB623-3C00-4382-BE04-B9DE06521BB1}",
-      "DurationType": "OneShot",
-      "DurationMin": "3.4822023",
-      "DurationMax": "3.4822023",
-      "MediaRefs": [
-       {
-        "Id": "233290653"
        }
       ]
      },
@@ -772,6 +750,6 @@
     ]
    }
   ],
-  "FileHash": "{8B6BEFEA-498D-736F-1EC5-995EB9DCECE0}"
+  "FileHash": "{DEECDF17-BBAF-99FB-728B-7E8DB6DADCC3}"
  }
 }

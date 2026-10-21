@@ -22,7 +22,6 @@ namespace AK
         static const AkUniqueID INCORRECT_PUZZLE = 2198729253U;
         static const AkUniqueID JUMP = 3833651337U;
         static const AkUniqueID LAND = 674522502U;
-        static const AkUniqueID NOT_HEAL = 4064781185U;
         static const AkUniqueID OFF_PAUSE = 474894035U;
         static const AkUniqueID ON_PAUSE = 4046835429U;
         static const AkUniqueID OPEN_DIARY = 1351238925U;

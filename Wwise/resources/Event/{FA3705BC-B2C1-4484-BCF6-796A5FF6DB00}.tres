@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://bwutm8ypfg4uc"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "Play_Menu_juego"
+id = 2866056268
+guid = "{FA3705BC-B2C1-4484-BCF6-796A5FF6DB00}"
+dummy = true

@@ -12,7 +12,7 @@ func state_enter() -> void:
 	
 	player.velocity += Vector3.UP * jump_force
 
-	var surface := player.movement.detect_surface()
+	var surface := player.visuals.detect_surface()
 	AudioManager.on_jump(surface)
 
 

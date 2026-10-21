@@ -37,11 +37,12 @@ animation = &"Caminar"
 
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_60mlk"]
 min_space = 0.0
+blend_mode = 1
 blend_point_0/node = SubResource("AnimationNodeAnimation_jej6c")
 blend_point_0/pos = 0.0
 blend_point_0/name = &"Idle_A"
 blend_point_1/node = SubResource("AnimationNodeAnimation_x2hwn")
-blend_point_1/pos = 1.0
+blend_point_1/pos = 0.2
 blend_point_1/name = &"Caminar"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gi4s7"]
@@ -117,17 +118,17 @@ aim_target_mesh = NodePath("../AimTarget/MeshInstance3D")
 [node name="player" parent="Visuals" unique_id=1530604751 instance=ExtResource("5_q3gs8")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.6734377, 0)
 
-[node name="Skeleton3D" parent="Visuals/player/Armature" parent_id_path=PackedInt32Array(1530604751, 561762540) index="0" unique_id=1612018394]
+[node name="Skeleton3D" parent="Visuals/player/Armature" parent_id_path=PackedInt32Array(1530604751, 718879574) index="0" unique_id=133696758]
 bones/0/position = Vector3(0.430916, -1.5654256, 3.1050714e-08)
 bones/0/rotation = Quaternion(0.7070975, 0.0036467176, -0.70709735, -0.0036467267)
 bones/2/position = Vector3(-0.43760982, -1.5654256, -3.1050714e-08)
 bones/2/rotation = Quaternion(0.7071054, 0.0014295949, -0.7071053, -0.0014295856)
-bones/4/position = Vector3(-0.067945264, -0.30380145, -0.10238388)
+bones/4/position = Vector3(-0.067946106, -0.30542925, -0.10262916)
 bones/4/rotation = Quaternion(0.01817262, -0.5623016, -0.012452725, 0.8266388)
-bones/5/position = Vector3(0.8077935, 1.3713436, -0.000956306)
+bones/5/position = Vector3(0.8100967, 1.3721614, -0.0006028265)
 bones/5/rotation = Quaternion(0.7862409, 0.2851456, 0.5313277, -0.13493834)
 bones/6/rotation = Quaternion(-0.0667985, -0.0020584862, 0.03754949, 0.99705756)
-bones/7/position = Vector3(-0.9996304, 1.371645, -0.061363216)
+bones/7/position = Vector3(-1.000427, 1.3739212, -0.061206367)
 bones/8/rotation = Quaternion(0.05572952, 0.007788003, 0.055339575, 0.9968807)
 
 [node name="LookAtModifier3D" type="LookAtModifier3D" parent="Visuals/player/Armature/Skeleton3D" index="2" unique_id=23742200]
@@ -138,7 +139,7 @@ bone = 4
 forward_axis = 1
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Visuals/player/Armature/Skeleton3D" index="3" unique_id=1573407]
-transform = Transform3D(0.2727658, 0.5917791, 0.75854886, 0.30499318, -0.8009672, 0.51519954, 0.912457, 0.09082344, -0.39896512, 0.8077935, 1.3713436, -0.000956306)
+transform = Transform3D(0.2727658, 0.5917791, 0.75854886, 0.30499318, -0.8009672, 0.51519954, 0.912457, 0.09082344, -0.39896512, 0.8100967, 1.3721614, -0.0006028265)
 bone_name = "Bone.007"
 bone_idx = 5
 

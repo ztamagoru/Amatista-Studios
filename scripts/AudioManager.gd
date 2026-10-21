@@ -64,11 +64,6 @@ func on_heal() -> void:
 		return
 	Wwise.post_event("Heal", self)
 
-func on_not_heal()-> void:
-	if _audio_ready == null:
-		return
-	Wwise.post_event("Not_heal", self)
-
 func on_pick_item()-> void:
 	if _audio_ready == null:
 		return
@@ -144,27 +139,12 @@ func stop_music(_fade_ms: int = 1000) -> void:
 	_music_playing = false
 	_current_music = ""
 
-#func game_start():
-	#Wwise.post_event("Play_Music_Menu", self)
-	#
-#func play_music_menu():
-	#Wwise.post_event("Play_Music_Menu", self)
-#
-#func play_music_tutorial():
-	#Wwise.post_event("Play_Music_Tutorial", self)
-#
-#func play_music_garden():
-	#Wwise.post_event("Play_Music_Garden", self)
 #-----------------------------Pause and Despause-----------------------------
 func paused():
 	Wwise.set_state("Pause", "Pause_on")
-	#Wwise.post_event("Play_Sfx_Radar_Fin", self)
-	#Wwise.set_rtpc_value("Sfx_Nave", 0, self)
 	print("Paused")
 
 func unpaused():
 	Wwise.set_state("Pause", "Pause_off")
-	#Wwise.post_event("Play_Sfx_Radar", self)
-	
 	print("Unpaused")
 	

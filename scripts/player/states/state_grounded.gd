@@ -7,7 +7,7 @@ extends State
 func state_enter() -> void:
 	if !root.movement:
 		return
-	var surface := root.movement.detect_surface() as String
+	var surface := root.visuals.detect_surface() as String
 	AudioManager.on_land(surface)
 
 func state_phys_process(_delta : float) -> void:
