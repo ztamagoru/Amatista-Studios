@@ -23,7 +23,7 @@ glow_enabled = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_vtlwb"]
 size = Vector3(2.8845215, 2.5800781, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pu2p"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jft2p"]
 resource_local_to_scene = true
 resource_name = "Material.044"
 albedo_texture = ExtResource("4_7ks35")
@@ -67,7 +67,7 @@ _data = {
 &"check_inside": SubResource("Animation_vtlwb")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wg3bj"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pu2p"]
 resource_local_to_scene = true
 resource_name = "Material.044"
 albedo_texture = ExtResource("4_7ks35")
@@ -206,7 +206,7 @@ visible = false
 
 [node name="Cube_020" parent="Cups/Cup1/calabazas(shellgame)" index="2" unique_id=2054273987]
 transform = Transform3D(0.19108163, 0, 0, 0, 0.19108163, 0, 0, 0, 0.19108163, 0, 0.6, 1.4)
-surface_material_override/2 = SubResource("StandardMaterial3D_0pu2p")
+surface_material_override/2 = SubResource("StandardMaterial3D_jft2p")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cups/Cup1" unique_id=1522494416]
 libraries/ = SubResource("AnimationLibrary_7ks35")
@@ -232,7 +232,7 @@ visible = false
 
 [node name="Cube_020" parent="Cups/Cup2/calabazas(shellgame)2" index="2" unique_id=2054273987]
 transform = Transform3D(0.19108163, 0, 0, 0, 0.19108163, 0, 0, 0, 0.19108163, 0, 0.6, 1.4)
-surface_material_override/2 = SubResource("StandardMaterial3D_wg3bj")
+surface_material_override/2 = SubResource("StandardMaterial3D_0pu2p")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cups/Cup2" unique_id=2104264809]
 libraries/ = SubResource("AnimationLibrary_wg3bj")
