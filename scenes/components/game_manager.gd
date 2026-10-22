@@ -56,7 +56,7 @@ func change_map(path : String) -> void:
 	if not loaded_maps.has(path):
 		loaded_maps[path] = load(path)
 	
-	for child in map_node.get_children(): child.queue_free()
+	for child in map_node.get_children(): child.free()
 	
 	var new_map = loaded_maps[path].instantiate()
 	map_node.add_child(new_map)

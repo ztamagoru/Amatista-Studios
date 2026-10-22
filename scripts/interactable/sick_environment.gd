@@ -82,8 +82,7 @@ func set_healthy() -> void:
 # --
 
 func _process(delta: float) -> void:
-	if !player or !camera:
-		return
+	if !player or !camera: return
 	
 	var camera_forward : Vector3 = camera.global_transform.basis.z
 	var screen_pos = camera.unproject_position(
@@ -110,6 +109,6 @@ func _process(delta: float) -> void:
 
 func collision():
 	if not _is_cured:
-		_is_cured = not _is_cured
+		_is_cured = true
 		
 		AudioManager.on_heal()
