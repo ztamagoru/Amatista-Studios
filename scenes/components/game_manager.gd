@@ -28,6 +28,8 @@ var current_map_path : String
 var is_paused : bool = false
 var is_diary_open : bool = false
 
+var _previous_mouse_mode : Input.MouseMode = Input.MOUSE_MODE_CAPTURED
+
 enum fade_mode { FADE_IN, FADE_OUT }
 
 # --
@@ -46,7 +48,7 @@ func _ready() -> void:
 # --
 
 func change_map(path : String) -> void:
-	if is_paused: resume_game()
+	if is_paused: _resume_game()
 	current_map_path = path
 	
 	await _fade(fade_mode.FADE_IN)
@@ -86,7 +88,7 @@ func _unhandled_input(event : InputEvent) -> void:
 			toggle_diary()
 		elif is_paused:
 			AudioManager.unpaused()
-			resume_game()
+			_resume_game()
 		elif current_map_path != main_menu:
 			AudioManager.paused()
 			toggle_pause()
@@ -102,9 +104,9 @@ func toggle_pause() -> void:
 	
 	get_tree().paused = is_paused
 	pause_menu.visible = is_paused
-
-func resume_game() -> void:
-	if is_paused: toggle_pause()
+	
+	if is_paused: _show_mouse()
+	else: _restore_mouse()
 
 func toggle_diary() -> void:
 	is_diary_open = not is_diary_open
@@ -113,6 +115,21 @@ func toggle_diary() -> void:
 	if not diary_menu.visible: AudioManager.on_close_diary()
 	
 	get_tree().paused = is_diary_open
+	
+	if is_diary_open: _show_mouse()
+	else: _restore_mouse()
+
+# --
+
+func _resume_game() -> void:
+	if is_paused: toggle_pause()
+
+func _show_mouse() -> void:
+	_previous_mouse_mode = Input.mouse_mode
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+func _restore_mouse() -> void:
+	Input.mouse_mode = _previous_mouse_mode
 
 # --
 
