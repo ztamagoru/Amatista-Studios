@@ -10,6 +10,8 @@ signal transition_state_changed(state : bool)
 
 @export var adjacent_maps : Array[String]
 
+@export var save_map : bool = true
+
 # --
 
 var game_manager : GameManager
@@ -34,3 +36,5 @@ func change_scene(target_scene : String) -> bool:
 
 func level_start():
 	transitioning = false
+	
+	if save_map: SaveManager.save_section("current_level", { "current_level": scene_file_path })

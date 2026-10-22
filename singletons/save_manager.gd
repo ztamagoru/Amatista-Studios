@@ -68,13 +68,10 @@ func delete_save() -> void:
 
 func new_game() -> void:
 	game_data = {
+		"current_level": {},
 		"inventory": {},
-		"diary": {
-			"unlocked_entries": []
-		},
-		"quests": {
-			"states": {}
-		}
+		"diary": { "unlocked_entries": [] },
+		"quests": { "states": {} }
 	}
 	
 	save_game()

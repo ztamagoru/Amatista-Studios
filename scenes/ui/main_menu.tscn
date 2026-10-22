@@ -3,8 +3,12 @@
 [ext_resource type="Script" uid="uid://cp8oixxa7tt04" path="res://scenes/ui/main_menu.gd" id="1_fe2o3"]
 [ext_resource type="Texture2D" uid="uid://wy7lv28e4d22" path="res://assets/ui/tituloparainicio.png" id="2_1g8jr"]
 
-[node name="MainMenu" type="Node3D" unique_id=400254085]
+[node name="MainMenu" type="Node3D" unique_id=400254085 node_paths=PackedStringArray("continue_button", "new_save_button")]
 script = ExtResource("1_fe2o3")
+continue_button = NodePath("CanvasLayer/Control/AspectRatioContainer/MarginContainer/VBoxContainer/ContinueButton")
+new_save_button = NodePath("CanvasLayer/Control/AspectRatioContainer/MarginContainer/VBoxContainer/NewGameButton")
+new_save_scene = "res://scenes/levels/intro_cinematic.tscn"
+save_map = false
 metadata/_custom_type_script = "uid://xqfthocmw71o"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1611554259]

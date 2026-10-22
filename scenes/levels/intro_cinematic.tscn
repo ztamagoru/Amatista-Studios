@@ -11,6 +11,7 @@ intro_video = NodePath("CanvasLayer/Video/AspectRatioContainer/VideoStreamPlayer
 tutorial_scene = "res://scenes/levels/tutorial.tscn"
 skip_progress_bar = NodePath("CanvasLayer/Video/AspectRatioContainer/MarginContainer/VBoxContainer/SkipProgressBar")
 adjacent_maps = Array[String](["res://scenes/levels/tutorial.tscn"])
+save_map = false
 metadata/_custom_type_script = "uid://xqfthocmw71o"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=789218479]
