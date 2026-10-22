@@ -37,3 +37,26 @@ func _on_aim_aimed() -> void:
 func _on_aim_unaimed() -> void:
 	var tween = create_tween()
 	tween.tween_property(aim_target_mesh.get_active_material(0), "albedo_color", Color.TRANSPARENT, 0.5)
+
+# --
+
+func footstep() -> void:
+	var surface := detect_surface()
+	print("PLAYER -> Detectó superficie: ", surface)
+	AudioManager.on_footstep(surface)
+
+
+@onready var ground_ray: RayCast3D = $"../RayCast3D"
+
+func detect_surface() -> String:
+	if not ground_ray.is_colliding():
+		print("No collisiona con nada")
+		return "Grass"
+	var collider := ground_ray.get_collider()
+	if collider.is_in_group("Grass"):
+		return "Grass"
+	if collider.is_in_group("Dirt"):
+		return "Dirt"
+	if collider.is_in_group("Wood"):
+		return "Wood"
+	return "Grass"

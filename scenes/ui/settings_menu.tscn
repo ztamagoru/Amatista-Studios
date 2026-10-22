@@ -92,7 +92,7 @@ alignment = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-max_value = 1.0
+max_value = 10.0
 step = 0.1
 
 [node name="CurrentMasterLabel" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Master/HBoxContainer" unique_id=446915323]
@@ -137,7 +137,7 @@ alignment = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-max_value = 1.0
+max_value = 10.0
 step = 0.1
 
 [node name="CurrentMusicLabel" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Music/HBoxContainer" unique_id=1786428729]
@@ -182,7 +182,7 @@ alignment = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-max_value = 1.0
+max_value = 10.0
 step = 0.1
 
 [node name="CurrentSFXLabel" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/SFX/HBoxContainer" unique_id=218751057]

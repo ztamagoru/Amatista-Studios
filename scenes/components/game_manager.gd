@@ -85,8 +85,10 @@ func _unhandled_input(event : InputEvent) -> void:
 		if is_diary_open:
 			toggle_diary()
 		elif is_paused:
+			AudioManager.unpaused()
 			resume_game()
 		elif current_map_path != main_menu:
+			AudioManager.paused()
 			toggle_pause()
 	
 	elif event.is_action_pressed("toggle_diary") and not event.is_echo():
