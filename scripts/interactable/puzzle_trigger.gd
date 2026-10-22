@@ -133,10 +133,8 @@ func _give_reward() -> void:
 # --
 
 func _update_quest_state() -> void:
-	
 	match quest_requirement:
-		Requirement.NONE:
-			can_interact = true
+		Requirement.NONE: can_interact = true
 		
 		Requirement.QUEST_ACCEPTED:
 			can_interact = (
@@ -155,21 +153,8 @@ func _update_quest_state() -> void:
 			if quest == null: return
 			
 			can_interact = QuestManager.can_progress_objective(quest, quest_required_objective_id)
-			
-			print("Quest accepted: ", QuestManager.is_accepted(quest_required_quest_id))
-			print("Quest completed: ", QuestManager.is_completed(quest_required_quest_id))
-			print("Can progress objective: ", QuestManager.can_progress_objective(
-				quest,
-				quest_required_objective_id
-			))
 		
 		Requirement.OBJECTIVE_COMPLETED: can_interact = _is_objective_completed()
-	
-	print("--- PuzzleTrigger ---")
-	print("Requirement: ", quest_requirement)
-	print("Quest ID: ", quest_required_quest_id)
-	print("Objective ID: ", quest_required_objective_id)
-	print("Can interact: ", can_interact)
 
 # --
 
