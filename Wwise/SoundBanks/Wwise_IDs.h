@@ -71,6 +71,7 @@ namespace AK
             {
                 static const AkUniqueID GARDEN = 278887670U;
                 static const AkUniqueID MENU = 2607556080U;
+                static const AkUniqueID PUZZLE_PUMPKIN = 1660104240U;
                 static const AkUniqueID TUTORIAL = 3762955427U;
             } // namespace SWITCH
         } // namespace SWITCH_MUSIC

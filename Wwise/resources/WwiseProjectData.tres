@@ -135,8 +135,11 @@ guid = "{CDD68098-87CF-45E3-9900-98F646FC003C}"
 id = 393239870
 
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_5n8hf"]
+path = "\\Busses\\Default Work Unit\\Master"
 children = [SubResource("WwiseTreeObject_yyrou"), SubResource("WwiseTreeObject_geu6g")]
+type = 2
 name = "Master"
+guid = "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
 id = 4056684167
 
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_tnib1"]
@@ -510,22 +513,29 @@ guid = "{A64D2BE7-CFB4-4C2F-8A35-74CCC0F84EC7}"
 id = 2607556080
 
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_daq1u"]
+path = "\\Switches\\Default Work Unit\\Switch_Music\\Puzzle_pumpkin"
+type = 10
+name = "Puzzle_pumpkin"
+guid = "{198ED24F-3AB6-40D3-A295-C39D809EDBBF}"
+id = 1660104240
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_32x57"]
 path = "\\Switches\\Default Work Unit\\Switch_Music\\Tutorial"
 type = 10
 name = "Tutorial"
 guid = "{D5A4ECF7-16C7-43CE-8C37-8E8777694837}"
 id = 3762955427
 
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_32x57"]
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_6w8b0"]
 path = "\\Switches\\Default Work Unit\\Switch_Music"
-children = [SubResource("WwiseTreeObject_44i7c"), SubResource("WwiseTreeObject_rq0og"), SubResource("WwiseTreeObject_daq1u")]
+children = [SubResource("WwiseTreeObject_44i7c"), SubResource("WwiseTreeObject_rq0og"), SubResource("WwiseTreeObject_daq1u"), SubResource("WwiseTreeObject_32x57")]
 type = 11
 name = "Switch_Music"
 guid = "{B6376C94-88F8-426A-A840-CE8FACE5B902}"
 id = 2963455281
 
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_6w8b0"]
-children = [SubResource("WwiseTreeObject_f4oxd"), SubResource("WwiseTreeObject_32x57")]
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_cdp8j"]
+children = [SubResource("WwiseTreeObject_f4oxd"), SubResource("WwiseTreeObject_6w8b0")]
 name = "Default Work Unit"
 id = 125608783
 
@@ -536,4 +546,4 @@ bank_root = [SubResource("WwiseTreeObject_v560u")]
 event_root = [SubResource("WwiseTreeObject_d4u1n")]
 game_parameter_root = [SubResource("WwiseTreeObject_8ttr2"), SubResource("WwiseTreeObject_ltcrj")]
 state_root = [SubResource("WwiseTreeObject_v46i2")]
-switch_root = [SubResource("WwiseTreeObject_6w8b0")]
+switch_root = [SubResource("WwiseTreeObject_cdp8j")]

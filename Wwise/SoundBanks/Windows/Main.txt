@@ -24,6 +24,7 @@ Switch Group	ID	Name			Wwise Object Path	Notes
 
 Switch	ID	Name	Switch Group			Notes
 	278887670	Garden	Switch_Music			
+	1660104240	Puzzle_pumpkin	Switch_Music			
 	2607556080	Menu	Switch_Music			
 	3762955427	Tutorial	Switch_Music			
 	2058049674	Wood	Material			
@@ -48,14 +49,14 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	7115285	footsteps-wood	.cache\C5\{C5FD9B5E-0862-B6B3-BB6D-3D6C6FF96153}.wem		\Containers\Default Work Unit\SFX\Player\Footsteps\Wood\footsteps-wood		50784
-	79349208	Melodia 1 bpm 120 puzzle	.cache\66\{6660B10C-395D-6F5D-0701-7703AAB697DA}.wem		\Containers\Default Work Unit\Music\Puzzle pumpkin\Puzzle\Melodia 1 bpm 120 puzzle		2822496
+	79349208	Melodia 1 bpm 120 puzzle	.cache\66\{6660B10C-395D-6F5D-0701-7703AAB697DA}.wem		\Containers\Default Work Unit\Music\Music Switch\Puzzle pumpkin\Puzzle\Melodia 1 bpm 120 puzzle		2822496
 	126474508	Shoot	.cache\DB\{DB92B09F-A485-F9FE-A5A9-FCB1E48D1600}.wem		\Containers\Default Work Unit\SFX\Player\Shoot\Shoot		73696
 	168680199	Percusion 80bpm tutorial	.cache\9B\{9B91AB91-405A-D5CB-206F-A58F63D9EC88}.wem		\Containers\Default Work Unit\Music\Music Switch\Tutorial_game\Tutorial\Percusion 80bpm tutorial		4233696
 	193042708	Healing	.cache\2C\{2C80376C-6336-4BE4-F0A6-23FC025D56A9}.wem		\Containers\Default Work Unit\SFX\Magic\Heal\Healing		441096
 	259443018	close_diary	.cache\4F\{4F8D6FCF-63D8-FDE4-6E78-CEB4366BEFF0}.wem		\Containers\Default Work Unit\SFX\Hud\Diary\Close\close_diary		133672
 	270729911	Jump_grass	.cache\5F\{5F2ED369-2D08-22D9-42D1-73388CA53676}.wem		\Containers\Default Work Unit\SFX\Player\Land\Land_grass\Jump_grass		104692
 	292948151	puzzles incorrect	.cache\F0\{F096EAC8-B5BA-8DA9-C976-CDD9D5D3588F}.wem		\Containers\Default Work Unit\SFX\Puzzles\Incorrect\puzzles incorrect		176496
-	306895049	Melodia 2 bpm 120 puzzle	.cache\A6\{A6297BA8-DA7A-F0AF-7B91-2B3606FCD47E}.wem		\Containers\Default Work Unit\Music\Puzzle pumpkin\Puzzle\Melodia 2 bpm 120 puzzle		2822496
+	306895049	Melodia 2 bpm 120 puzzle	.cache\A6\{A6297BA8-DA7A-F0AF-7B91-2B3606FCD47E}.wem		\Containers\Default Work Unit\Music\Music Switch\Puzzle pumpkin\Puzzle\Melodia 2 bpm 120 puzzle		2822496
 	325813703	Menu-music	.cache\C8\{C8D5D80A-CFC3-2C74-22D1-9B7307E47B24}.wem		\Containers\Default Work Unit\Music\Music Switch\Menu juego\New Music Segment\Menu-music		4234848
 	353595088	Jump_dirt	.cache\EF\{EF98B9E5-17AE-3649-D60F-1FBA7E2487AC}.wem		\Containers\Default Work Unit\SFX\Player\Land\Land_dirt\Jump_dirt		127244
 	371608449	Melodia 1 80bpm tutorial	.cache\E0\{E08E6D92-2C2A-8E30-C8E5-50FF0D98EF41}.wem		\Containers\Default Work Unit\Music\Music Switch\Tutorial_game\Tutorial\Melodia 1 80bpm tutorial		4233696

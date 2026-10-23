@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{B2AB37D9-0287-4B83-B475-5B48B6C26BCF}",
     "Language": "SFX",
-    "Hash": "{2E5F599E-85EC-0070-E0DB-53AAF0B15602}",
+    "Hash": "{64D8C675-8D2C-84C0-C7D5-31414C081726}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -583,6 +583,22 @@
           "Id": "799179510"
          }
         ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "2963455281",
+         "Id": "1660104240",
+         "GUID": "{198ED24F-3AB6-40D3-A295-C39D809EDBBF}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "79349208"
+         },
+         {
+          "Id": "306895049"
+         }
+        ]
        }
       ]
      },
@@ -708,6 +724,12 @@
         "GUID": "{457D258B-C56F-475A-9C7A-0A95AA50B896}"
        },
        {
+        "Id": "1660104240",
+        "Name": "Puzzle_pumpkin",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Switch_Music\\Puzzle_pumpkin",
+        "GUID": "{198ED24F-3AB6-40D3-A295-C39D809EDBBF}"
+       },
+       {
         "Id": "2607556080",
         "Name": "Menu",
         "ObjectPath": "\\Switches\\Default Work Unit\\Switch_Music\\Menu",
@@ -750,6 +772,6 @@
     ]
    }
   ],
-  "FileHash": "{DEECDF17-BBAF-99FB-728B-7E8DB6DADCC3}"
+  "FileHash": "{6F22365A-B8F4-CB99-18FD-E0EA9EAC57F5}"
  }
 }

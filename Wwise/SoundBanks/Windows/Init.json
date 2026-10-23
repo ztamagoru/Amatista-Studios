@@ -176,6 +176,12 @@
         "GUID": "{457D258B-C56F-475A-9C7A-0A95AA50B896}"
        },
        {
+        "Id": "1660104240",
+        "Name": "Puzzle_pumpkin",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Switch_Music\\Puzzle_pumpkin",
+        "GUID": "{198ED24F-3AB6-40D3-A295-C39D809EDBBF}"
+       },
+       {
         "Id": "2607556080",
         "Name": "Menu",
         "ObjectPath": "\\Switches\\Default Work Unit\\Switch_Music\\Menu",
@@ -695,6 +701,6 @@
     ]
    }
   ],
-  "FileHash": "{41C2D92E-C5E5-317D-1F61-0A6C6108694A}"
+  "FileHash": "{6D75F7F6-F823-64D2-9855-5FE78C823421}"
  }
 }
