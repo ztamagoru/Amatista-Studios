@@ -11,7 +11,7 @@
 height = 4.983528
 radius = 0.43066406
 
-[node name="TreeArrayan4" type="StaticBody3D" unique_id=712175566 node_paths=PackedStringArray("mesh") groups=["sick_environment"]]
+[node name="TreeArrayan4" type="StaticBody3D" unique_id=1920819113 node_paths=PackedStringArray("mesh") groups=["sick_environment"]]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 script = ExtResource("1_yjqbq")
 mesh = NodePath("arbolarrayan22/arbolarrayan22")

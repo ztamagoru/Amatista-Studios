@@ -1,5 +1,5 @@
 extends StaticBody3D
-class_name Sick_Environment
+class_name SickEnvironment
 
 # --
 
@@ -9,8 +9,6 @@ var leaves_shader : Shader = preload("res://shaders/environment/leaves.gdshader"
 var heal_sfx : String = "res://assets/sounds/sfx/sfx_heal_magic.mp3"
 
 var tree_instance : int 
-
-signal tree_healing(instance : int)
 
 @export var mesh : MeshInstance3D 
 
@@ -27,7 +25,9 @@ const transition_time : float = 1.25
 
 var shader_blend : float = 0.0
 
-var _is_cured : bool
+var is_cured : bool
+
+var level : Level
 
 var player : CharacterBody3D
 var camera : Camera3D
@@ -60,20 +60,18 @@ func _ready() -> void:
 			
 			mesh.set_surface_override_material(i, shader_mat)
 			shader_passes.append(shader_mat)
-	
-	set_sick()
 
 # --
 
 func set_sick() -> void:
-	_is_cured = false
+	is_cured = false
 	shader_blend = 0.0
 	
 	for shader in shader_passes:
 		shader.set_shader_parameter("blend", shader_blend)
 
 func set_healthy() -> void:
-	_is_cured = true
+	is_cured = true
 	shader_blend = 1.0
 	
 	for shader in shader_passes:
@@ -97,7 +95,7 @@ func _process(delta: float) -> void:
 		shader.set_shader_parameter("player_position", player.global_transform.origin)
 		shader.set_shader_parameter("camera_forward", camera_forward)
 	
-	if not _is_cured:
+	if not is_cured:
 		return
 	
 	if shader_blend >= transition_time:
@@ -108,7 +106,7 @@ func _process(delta: float) -> void:
 		i.set_shader_parameter("blend", shader_blend)
 
 func collision():
-	if not _is_cured:
-		_is_cured = true
-		
-		AudioManager.on_heal()
+	if is_cured: return
+	
+	level.make_healthy(self)
+	AudioManager.on_heal()

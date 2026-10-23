@@ -11,7 +11,7 @@
 height = 14.649202
 radius = 1.2460938
 
-[node name="TreeArrayan1" type="StaticBody3D" unique_id=807210377 node_paths=PackedStringArray("mesh") groups=["sick_environment"]]
+[node name="TreeArrayan1" type="StaticBody3D" unique_id=1442680852 node_paths=PackedStringArray("mesh") groups=["sick_environment"]]
 script = ExtResource("1_id6cq")
 mesh = NodePath("arbolarrayan1/arbolarrayan1")
 has_leaves = true
