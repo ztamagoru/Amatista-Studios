@@ -4,36 +4,15 @@ class_name PlayerVisuals
 # --
 
 @onready var player : Player = get_parent()
-@onready var anim_tree : AnimationTree = $AnimationTree
-
-# --
-
-@export var aim_target_mesh : MeshInstance3D
-
-# --
-
-var current_state : StringName: 
-	get():
-		return player.state_machine.current_state.name
+@onready var anim_player : AnimationPlayer = $AnimationPlayer
 
 # --
 
 func _physics_process(delta: float) -> void:
+	if player.velocity.slide(Vector3.UP).length() > 5:
+		anim_player.play("Movement")
+	else:
+		anim_player.play("Idle")
 	
-	anim_tree.set("parameters/MovementBlend/blend_position", player.movement.speed_progress)
-	
-	if player.velocity.slide(Vector3.UP).length() > 0.1:
-		look_at(global_position + -player.velocity.slide(Vector3.UP))
-	
-	if current_state == "Aim":
-		look_at(global_position - player.input.get_aiming_direction().slide(Vector3.UP))
-
-
-func _on_aim_aimed() -> void:
-	var tween = create_tween()
-	tween.tween_property(aim_target_mesh.get_active_material(0), "albedo_color", Color.RED, 0.5)
-
-
-func _on_aim_unaimed() -> void:
-	var tween = create_tween()
-	tween.tween_property(aim_target_mesh.get_active_material(0), "albedo_color", Color.TRANSPARENT, 0.5)
+	var desired_rot_degrees = Vector3.UP * (180 if player.velocity.z > 0 else 0)
+	rotation_degrees = lerp(rotation_degrees, desired_rot_degrees, 10 * delta)
