@@ -1,7 +1,7 @@
 ~ start
 if times_talked == 0:
 	???: Sé que es todo muy confuso.
-	Lo es. Pero nunca dudé que este bosque escondía algo más. Ahora que estoy aquí, quiero saberlo todo.
+	[i]Lo es. Pero nunca dudé que este bosque escondía algo más. Ahora que estoy aquí, quiero saberlo todo.[/i]
 	???: Pero tienes la capacidad para entenderlo.
 	???: Me llamo Lucy, la pudú y segunda guardia de la zona.
 	Lucy: Sé que… [wait=0.5] el bosque enfermo llegó a las residencias vecinas. La gente se empezó a ir.
@@ -9,7 +9,7 @@ if times_talked == 0:
 	Lucy: Puedo ayudarte, si me ayudas. Tengo un poco de magia en polvo que pude rescatar…
 	La pudú saca un polvo de su bolsa y me lo entrega, confiando plenamente en mí.
 	Lucy: Tenemos que ir a curar el bosque y todas sus criaturas… [wait=0.5] el [wave]Nahuelito[/wave] está aquí, ¿sabes?
-	¡Lo sabía! [shake]¡Sabía que existía![/shake] Nadie me creyó, oh, pero cuando llegue a mi casa… [wait=0.5] ¡ya verán!
+	[i]¡Lo sabía! [shake]¡Sabía que existía![/shake] Nadie me creyó, oh, pero cuando llegue a mi casa… [wait=0.5] ¡ya verán![/i]
 	Lucy: Te prometo que podrás verlo al final.
 	Lucy: Intenta usar esa tirachinas que tienes… ponle un poco de magia e intenta curar algo.
 	## unlock slingshot

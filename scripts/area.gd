@@ -17,13 +17,6 @@ class_name Area
 
 # --
 
-@export_group("Ground SFX")
-@export_custom(PROPERTY_HINT_GROUP_ENABLE, "") var changes_sound : bool = false
-@export var player : CharacterBody3D
-@export var ground_type : String = ""
-
-# --
-
 func _ready() -> void:
 	connect("body_entered", _on_body_entered)
 	connect("body_exited", _on_body_exited)
@@ -32,9 +25,6 @@ func _ready() -> void:
 
 func check_required():
 	if exits_to_another_area: assert(not parent_area == null, "Parent area not assigned in %s" % name)
-	if changes_sound:
-		assert(not player == null, "Player not assigned in %s" % name)
-		assert(ground_type in player.audio_footsteps, "Can't assign an unloaded sfx")
 
 func _on_body_entered(body : Node3D):
 	if body.is_in_group("player"):

@@ -1,0 +1,50 @@
+~ start
+if is_quest_completed():
+	=> idle_final
+elif not is_quest_accepted():
+	=> intro
+elif deliver_quest_item(deliver_objective_id):
+	=> ring_returned
+else:
+	=> idle_ring
+
+~ intro
+???: [shake]¡Un intruso! ¡Un intruso![/shake]
+???: ¡Sabes que no te dejaré pasar, eh! Ningún animal de esta zona sale o entra.
+???: ¡Y se lo merecen! Se merecen quedarse aquí como gato encerrado. Por sus burlas y malos tratos que me dieron.
+Chilla: Siempre me dijeron “Chilla, chilla, [wave]qué vestimenta chillona[/wave]” por mis gustos peculiares de vestir.
+Chilla: Me encanta usar joyas y cositas [rainbow]brillantes[/rainbow].
+[i]Me asustan un poco los movimientos bruscos que hace Chilla, agradezco que la lanza sea de disfraz también.[/i]
+Chilla: Pero parece ser que a ellos no. Y siempre me lo hicieron saber.
+Chilla: Así, como venganza, me disfracé de guardia y todos me tienen respeto.
+Sofía: Siempre va a haber gente que critique por cómo eres. Cerrar la frontera no es la solución para perdonarlos y perdonarte.
+Chilla: Como te ven, te tratan.
+Chilla: Ni mi anillo favorito me dejaban usar... [wait=0.5] de hecho, no sé dónde está ese.
+Chilla: Ojalá pudiera volver a encontrarlo y volver a ser yo.
+[i]Creo que si encuentro algo que le haga recordar cómo era antes... se dará cuenta de que su yo del pasado no estaría de acuerdo con esto.[/i]
+do give_quest()
+=> END
+
+
+~ idle_ring
+Chilla: Ojalá pudiera volver a encontrar mi anillo. Me recordaba quién era.
+[i]Creo que si encuentro algo que le haga recordar cómo era antes... se dará cuenta de que su yo del pasado no estaría de acuerdo con esto.[/i]
+=> END
+
+
+~ ring_returned
+Chilla: ...
+Chilla: ¿Tú? ¿Me lo devuelves?
+Chilla: ¿Crees que me queda... [wait=0.5] lindo?
+[i]Asentí con la cabeza, sus ojos brillaban y la lanza que tenía la tiró al piso.[/i]
+Chilla: Lo recuperaste. [bounce]Muchas gracias.[/bounce]
+Chilla: Creo que... este anillo puede combinar con algunas cosas que tengo guardadas. Iré a ver qué tengo.
+=> idle_final
+
+
+~ idle_final
+Sofía: No le digas a nadie, pero creo que tú eres de aquí el más valiente de todos.
+Sofía: Incluso sin ser un guardia.
+Chilla: Muchas gracias. En serio.
+Chilla: Creo que este lugar necesita más gente como tú.
+=> END

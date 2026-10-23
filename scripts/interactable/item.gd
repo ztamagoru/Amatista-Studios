@@ -43,6 +43,8 @@ func _exiting_tree():
 func pick_up() -> void:
 	if item == null: return
 	
+	AudioManager.on_pick_item()
+	
 	_execute_dialogue(self)
 	
 	if not diary_entry_id.is_empty():

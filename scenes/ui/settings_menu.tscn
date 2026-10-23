@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://6dpntf7wwe3f"]
 
 [ext_resource type="Script" uid="uid://co7qcuos0m3wv" path="res://scripts/settings/audio_settings.gd" id="1_qwcqe"]
+[ext_resource type="Script" uid="uid://b6wh8w6ik6010" path="res://scenes/ui/settings_menu.gd" id="1_x3vyp"]
 [ext_resource type="Script" uid="uid://ddljsfhlmanrq" path="res://scripts/settings/video_settings.gd" id="2_mhswj"]
 
 [node name="SettingsMenu" type="Control" unique_id=2032953972]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_x3vyp")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=906707686]
 layout_mode = 1
@@ -34,10 +36,9 @@ text = "Close"
 [node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer" unique_id=1552310073]
 layout_mode = 2
 size_flags_vertical = 3
-current_tab = 1
+current_tab = 0
 
 [node name="Audio" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=1222223120]
-visible = false
 layout_mode = 2
 script = ExtResource("1_qwcqe")
 metadata/_tab_index = 0
@@ -91,7 +92,7 @@ alignment = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-max_value = 1.0
+max_value = 10.0
 step = 0.1
 
 [node name="CurrentMasterLabel" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Master/HBoxContainer" unique_id=446915323]
@@ -136,7 +137,7 @@ alignment = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-max_value = 1.0
+max_value = 10.0
 step = 0.1
 
 [node name="CurrentMusicLabel" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Music/HBoxContainer" unique_id=1786428729]
@@ -181,7 +182,7 @@ alignment = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-max_value = 1.0
+max_value = 10.0
 step = 0.1
 
 [node name="CurrentSFXLabel" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/SFX/HBoxContainer" unique_id=218751057]
@@ -190,6 +191,7 @@ size_flags_horizontal = 8
 text = "0"
 
 [node name="Video" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=819102596]
+visible = false
 layout_mode = 2
 script = ExtResource("2_mhswj")
 metadata/_tab_index = 1
@@ -312,3 +314,5 @@ value = 1.0
 layout_mode = 2
 size_flags_horizontal = 8
 text = "0"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CloseSettingButton" to="." method="_on_close_setting_button_pressed"]

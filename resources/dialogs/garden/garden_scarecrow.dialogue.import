@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://oc583hidbywk"
+path="res://.godot/imported/garden_scarecrow.dialogue-891b4b8cbbf6fe01158fbfb803ddbac7.tres"
+
+[deps]
+
+source_file="res://resources/dialogs/garden/garden_scarecrow.dialogue"
+dest_files=["res://.godot/imported/garden_scarecrow.dialogue-891b4b8cbbf6fe01158fbfb803ddbac7.tres"]
+
+[params]
+
+defaults=true

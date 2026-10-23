@@ -1,0 +1,755 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3161908922",
+    "Type": "User",
+    "GUID": "{B2AB37D9-0287-4B83-B475-5B48B6C26BCF}",
+    "Language": "SFX",
+    "Hash": "{2E5F599E-85EC-0070-E0DB-53AAF0B15602}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
+    "ShortName": "Main",
+    "Path": "Main.bnk",
+    "Media": [
+     {
+      "Id": "7115285",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "footsteps-wood.wav",
+      "CachePath": "C5/{C5FD9B5E-0862-B6B3-BB6D-3D6C6FF96153}.wem"
+     },
+     {
+      "Id": "79349208",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Melodia 1 bpm 120 puzzle.wav",
+      "CachePath": "66/{6660B10C-395D-6F5D-0701-7703AAB697DA}.wem"
+     },
+     {
+      "Id": "126474508",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Shoot.wav",
+      "CachePath": "DB/{DB92B09F-A485-F9FE-A5A9-FCB1E48D1600}.wem"
+     },
+     {
+      "Id": "168680199",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Percusion 80bpm tutorial.wav",
+      "CachePath": "9B/{9B91AB91-405A-D5CB-206F-A58F63D9EC88}.wem"
+     },
+     {
+      "Id": "193042708",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Healing.wav",
+      "CachePath": "2C/{2C80376C-6336-4BE4-F0A6-23FC025D56A9}.wem"
+     },
+     {
+      "Id": "228327416",
+      "Language": "SFX",
+      "Streaming": "true",
+      "Location": "Loose",
+      "ShortName": "footsteps-dirt.wav",
+      "Path": "Media/228327416.wem",
+      "CachePath": "9E/{9E9865A3-BDF6-1023-882D-F6D39D7E5015}.wem"
+     },
+     {
+      "Id": "259443018",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "close_diary.wav",
+      "CachePath": "4F/{4F8D6FCF-63D8-FDE4-6E78-CEB4366BEFF0}.wem"
+     },
+     {
+      "Id": "270729911",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Jump_grass.wav",
+      "CachePath": "5F/{5F2ED369-2D08-22D9-42D1-73388CA53676}.wem"
+     },
+     {
+      "Id": "292948151",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX puzzles incorrecto.wav",
+      "CachePath": "F0/{F096EAC8-B5BA-8DA9-C976-CDD9D5D3588F}.wem"
+     },
+     {
+      "Id": "306895049",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Melodia 2 bpm 120 puzzle.wav",
+      "CachePath": "A6/{A6297BA8-DA7A-F0AF-7B91-2B3606FCD47E}.wem"
+     },
+     {
+      "Id": "325813703",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Menu-music.wav",
+      "CachePath": "C8/{C8D5D80A-CFC3-2C74-22D1-9B7307E47B24}.wem"
+     },
+     {
+      "Id": "353595088",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Jump_dirt.wav",
+      "CachePath": "EF/{EF98B9E5-17AE-3649-D60F-1FBA7E2487AC}.wem"
+     },
+     {
+      "Id": "371608449",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Melodia 1 80bpm tutorial.wav",
+      "CachePath": "E0/{E08E6D92-2C2A-8E30-C8E5-50FF0D98EF41}.wem"
+     },
+     {
+      "Id": "384257364",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "pick up items.wav",
+      "CachePath": "11/{111549FC-B13A-FD5B-928A-964AE1C01D5C}.wem"
+     },
+     {
+      "Id": "405405491",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Melodia 2 82bpm.wav",
+      "CachePath": "E6/{E6E8AE6A-D9FC-7359-E413-19ACC67FDC10}.wem"
+     },
+     {
+      "Id": "432846656",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "collectable.wav",
+      "CachePath": "CF/{CF3EDF3D-019A-DDBE-D491-05E99C95FCC4}.wem"
+     },
+     {
+      "Id": "476459709",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "discovery.wav",
+      "CachePath": "15/{15005C85-5EE2-0E69-4314-34EEBB6087CA}.wem"
+     },
+     {
+      "Id": "530536690",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Melodia 3 80bpm tutorial.wav",
+      "CachePath": "5E/{5EAE7A77-BECD-CB06-976C-1F8F0D6E70CF}.wem"
+     },
+     {
+      "Id": "646357272",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Jump_grass.wav",
+      "CachePath": "00/{007BB897-316D-70D4-DA9D-783618A5955A}.wem"
+     },
+     {
+      "Id": "680647482",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Melodia 3 82bpm.wav",
+      "CachePath": "23/{23A174E2-D1CB-E241-F73F-C4DBC5002F19}.wem"
+     },
+     {
+      "Id": "774489380",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "pages_turn.wav",
+      "CachePath": "DE/{DE2C1D78-C929-0F7C-0859-C3C9B09D33D4}.wem"
+     },
+     {
+      "Id": "786250105",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Jump_dirt.wav",
+      "CachePath": "32/{32258BCE-1556-7B24-1042-C88FCA4AD977}.wem"
+     },
+     {
+      "Id": "799179510",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Melodia 2 80bpm tutorial.wav",
+      "CachePath": "14/{14AA75E1-0971-DAB8-6E7B-0415F7087329}.wem"
+     },
+     {
+      "Id": "854920791",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Melodia 82bpm.wav",
+      "CachePath": "DE/{DE73BF16-42F3-E804-8836-14E045D1FEFF}.wem"
+     },
+     {
+      "Id": "967699816",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "open_diary.wav",
+      "CachePath": "2A/{2AAA2D9B-2140-ABDE-CD0B-AB54929945CA}.wem"
+     },
+     {
+      "Id": "995029463",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX puzzles correcto.wav",
+      "CachePath": "D9/{D94963D7-44A4-DC82-A8D6-D7D599AB04D1}.wem"
+     },
+     {
+      "Id": "1015484737",
+      "Language": "SFX",
+      "Streaming": "true",
+      "Location": "Loose",
+      "ShortName": "footsteps-grass.wav",
+      "Path": "Media/1015484737.wem",
+      "CachePath": "73/{730E6AD4-0FBF-6D8D-F6CB-1284A90AD5D8}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "207989427",
+      "Name": "Close_Diary",
+      "ObjectPath": "\\Events\\Default Work Unit\\Diary\\Close_Diary",
+      "GUID": "{85F0A50B-205B-4C56-BD1B-A62D3798E11C}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.75723356",
+      "DurationMax": "0.75723356",
+      "MediaRefs": [
+       {
+        "Id": "259443018"
+       }
+      ]
+     },
+     {
+      "Id": "1330284301",
+      "Name": "Collectable",
+      "ObjectPath": "\\Events\\Default Work Unit\\Game\\Collectable",
+      "GUID": "{A97297F2-5268-4D07-8880-415351780D03}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.5",
+      "DurationMax": "2.5",
+      "MediaRefs": [
+       {
+        "Id": "432846656"
+       }
+      ]
+     },
+     {
+      "Id": "2805870888",
+      "Name": "Correct_Puzzle",
+      "ObjectPath": "\\Events\\Default Work Unit\\Game\\Correct_Puzzle",
+      "GUID": "{D539C18B-7E7E-4587-BAC4-B275686A0476}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.3333334",
+      "DurationMax": "1.3333334",
+      "MediaRefs": [
+       {
+        "Id": "995029463"
+       }
+      ]
+     },
+     {
+      "Id": "3663283413",
+      "Name": "Discovery",
+      "ObjectPath": "\\Events\\Default Work Unit\\Game\\Discovery",
+      "GUID": "{54B6659F-E79E-4EBB-AB7E-7244D0D36CFE}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.0632427",
+      "DurationMax": "2.0632427",
+      "MediaRefs": [
+       {
+        "Id": "476459709"
+       }
+      ]
+     },
+     {
+      "Id": "1866025847",
+      "Name": "Footstep",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player\\Footstep",
+      "GUID": "{154542E0-B3FE-4217-8D30-E5ABC0A39016}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.28734693",
+      "DurationMax": "0.40132",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3865314626",
+         "Id": "2195636714",
+         "GUID": "{B51CCF14-62AC-4C92-8007-286D939784AC}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "228327416"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3865314626",
+         "Id": "4248645337",
+         "GUID": "{F50D523E-B2C1-40CB-A265-22E5BA36C789}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "1015484737"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3865314626",
+         "Id": "2058049674",
+         "GUID": "{937BD9C1-BD6B-4C5C-88EA-B3E3F4F677CF}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "7115285"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "Id": "3448274447",
+      "Name": "Heal",
+      "ObjectPath": "\\Events\\Default Work Unit\\Game\\Heal",
+      "GUID": "{6B3E3666-8147-4361-80D4-3ABA5E075C6D}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.5",
+      "DurationMax": "2.5",
+      "MediaRefs": [
+       {
+        "Id": "193042708"
+       }
+      ]
+     },
+     {
+      "Id": "2198729253",
+      "Name": "Incorrect_Puzzle",
+      "ObjectPath": "\\Events\\Default Work Unit\\Game\\Incorrect_Puzzle",
+      "GUID": "{0D4524DC-4956-4A84-84B0-7D512BBFD485}",
+      "DurationType": "OneShot",
+      "DurationMin": "1",
+      "DurationMax": "1",
+      "MediaRefs": [
+       {
+        "Id": "292948151"
+       }
+      ]
+     },
+     {
+      "Id": "3833651337",
+      "Name": "Jump",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player\\Jump",
+      "GUID": "{BF22F850-3B9D-472A-A7F5-1E7BBB1F9415}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.63236",
+      "DurationMax": "0.64298",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3865314626",
+         "Id": "2195636714",
+         "GUID": "{B51CCF14-62AC-4C92-8007-286D939784AC}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "786250105"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3865314626",
+         "Id": "4248645337",
+         "GUID": "{F50D523E-B2C1-40CB-A265-22E5BA36C789}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "646357272"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "Id": "674522502",
+      "Name": "Land",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player\\Land",
+      "GUID": "{998FD5F8-CF25-4698-8751-DB88918B5610}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.59295",
+      "DurationMax": "0.7207873",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3865314626",
+         "Id": "2195636714",
+         "GUID": "{B51CCF14-62AC-4C92-8007-286D939784AC}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "353595088"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3865314626",
+         "Id": "4248645337",
+         "GUID": "{F50D523E-B2C1-40CB-A265-22E5BA36C789}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "270729911"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "Id": "474894035",
+      "Name": "Off_Pause",
+      "ObjectPath": "\\Events\\Default Work Unit\\Off_Pause",
+      "GUID": "{E53F3A69-9731-4C24-ACEB-1E14CD79CDB2}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "3092587493",
+        "Id": "3967028551",
+        "Name": "Pause_off",
+        "ObjectPath": "\\States\\Default Work Unit\\Pause\\Pause_off",
+        "GUID": "{30FEE0D0-1D81-4DE7-9402-8E74F4C0F056}"
+       }
+      ]
+     },
+     {
+      "Id": "4046835429",
+      "Name": "On_Pause",
+      "ObjectPath": "\\Events\\Default Work Unit\\On_Pause",
+      "GUID": "{8B965AA8-10D0-4605-8FE8-9B10CC2BAB7F}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "3092587493",
+        "Id": "3537680115",
+        "Name": "Pause_on",
+        "ObjectPath": "\\States\\Default Work Unit\\Pause\\Pause_on",
+        "GUID": "{C2CFAE01-925B-409F-8FE2-7EE493C236C2}"
+       }
+      ]
+     },
+     {
+      "Id": "1351238925",
+      "Name": "Open_Diary",
+      "ObjectPath": "\\Events\\Default Work Unit\\Diary\\Open_Diary",
+      "GUID": "{8B25754C-26A4-4B3F-BE81-9FECD0D7106D}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.7894785",
+      "DurationMax": "0.7894785",
+      "MediaRefs": [
+       {
+        "Id": "967699816"
+       }
+      ]
+     },
+     {
+      "Id": "1666598327",
+      "Name": "Pages_Turn",
+      "ObjectPath": "\\Events\\Default Work Unit\\Diary\\Pages_Turn",
+      "GUID": "{40B26BBF-485D-4271-879D-C157F41A5932}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.003759",
+      "DurationMax": "1.003759",
+      "MediaRefs": [
+       {
+        "Id": "774489380"
+       }
+      ]
+     },
+     {
+      "Id": "467838998",
+      "Name": "Pick_up",
+      "ObjectPath": "\\Events\\Default Work Unit\\Game\\Pick_up",
+      "GUID": "{9EF71EF5-67B7-4917-A862-C4FF56B20001}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.0632427",
+      "DurationMax": "2.0632427",
+      "MediaRefs": [
+       {
+        "Id": "384257364"
+       }
+      ]
+     },
+     {
+      "Id": "2932040671",
+      "Name": "Play_Music",
+      "ObjectPath": "\\Events\\Default Work Unit\\Musics\\Play_Music",
+      "GUID": "{B581C203-F094-47C8-BADD-1A600DDB0556}",
+      "DurationType": "Infinite",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "2963455281",
+         "Id": "278887670",
+         "GUID": "{457D258B-C56F-475A-9C7A-0A95AA50B896}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "405405491"
+         },
+         {
+          "Id": "680647482"
+         },
+         {
+          "Id": "854920791"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "2963455281",
+         "Id": "2607556080",
+         "GUID": "{A64D2BE7-CFB4-4C2F-8A35-74CCC0F84EC7}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "325813703"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "2963455281",
+         "Id": "3762955427",
+         "GUID": "{D5A4ECF7-16C7-43CE-8C37-8E8777694837}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "168680199"
+         },
+         {
+          "Id": "371608449"
+         },
+         {
+          "Id": "530536690"
+         },
+         {
+          "Id": "799179510"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "Id": "2649777630",
+      "Name": "Play_Music_Puzzle",
+      "ObjectPath": "\\Events\\Default Work Unit\\Musics\\Play_Music_Puzzle",
+      "GUID": "{182FC80C-09F1-41C6-B089-9D45BB2E4E00}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "79349208"
+       },
+       {
+        "Id": "306895049"
+       }
+      ]
+     },
+     {
+      "Id": "3038207054",
+      "Name": "Shoot",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player\\Shoot",
+      "GUID": "{B56F29E4-E27C-4D5D-8BD0-DF0F87383E30}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.41723356",
+      "DurationMax": "0.41723356",
+      "MediaRefs": [
+       {
+        "Id": "126474508"
+       }
+      ]
+     },
+     {
+      "Id": "2837384057",
+      "Name": "Stop_Music",
+      "ObjectPath": "\\Events\\Default Work Unit\\Musics\\Stop_Music",
+      "GUID": "{C0F52A28-6F97-4EF8-92C4-F8CE09069811}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ],
+    "Busses": [
+     {
+      "Id": "393239870",
+      "Name": "SFX",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Master\\SFX",
+      "GUID": "{CDD68098-87CF-45E3-9900-98F646FC003C}"
+     },
+     {
+      "Id": "3991942870",
+      "Name": "Music",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Master\\Music",
+      "GUID": "{93676219-233C-4FA3-9331-FBC9E266679C}"
+     },
+     {
+      "Id": "4056684167",
+      "Name": "Master",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Master",
+      "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "393239870",
+      "Name": "SFX",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\SFX",
+      "GUID": "{073D0433-4FDB-454D-8921-8EAE521BD965}"
+     },
+     {
+      "Id": "3991942870",
+      "Name": "Music",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Music",
+      "GUID": "{2779DD62-A272-447D-82FC-C3E581B7CFDB}"
+     },
+     {
+      "Id": "4056684167",
+      "Name": "Master",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Master",
+      "GUID": "{A86A303B-AD04-4CF2-8D0B-2E63B2D9C8D3}"
+     }
+    ],
+    "StateGroups": [
+     {
+      "Id": "3092587493",
+      "Name": "Pause",
+      "ObjectPath": "\\States\\Default Work Unit\\Pause",
+      "GUID": "{24360838-2E9C-437E-8B6F-E3250F8EAC41}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Pause\\None",
+        "GUID": "{BB38A072-ABEB-42B8-A459-2F84EECEC81A}"
+       },
+       {
+        "Id": "3537680115",
+        "Name": "Pause_on",
+        "ObjectPath": "\\States\\Default Work Unit\\Pause\\Pause_on",
+        "GUID": "{C2CFAE01-925B-409F-8FE2-7EE493C236C2}"
+       },
+       {
+        "Id": "3967028551",
+        "Name": "Pause_off",
+        "ObjectPath": "\\States\\Default Work Unit\\Pause\\Pause_off",
+        "GUID": "{30FEE0D0-1D81-4DE7-9402-8E74F4C0F056}"
+       }
+      ]
+     }
+    ],
+    "SwitchGroups": [
+     {
+      "Id": "2963455281",
+      "Name": "Switch_Music",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Switch_Music",
+      "GUID": "{B6376C94-88F8-426A-A840-CE8FACE5B902}",
+      "Switches": [
+       {
+        "Id": "278887670",
+        "Name": "Garden",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Switch_Music\\Garden",
+        "GUID": "{457D258B-C56F-475A-9C7A-0A95AA50B896}"
+       },
+       {
+        "Id": "2607556080",
+        "Name": "Menu",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Switch_Music\\Menu",
+        "GUID": "{A64D2BE7-CFB4-4C2F-8A35-74CCC0F84EC7}"
+       },
+       {
+        "Id": "3762955427",
+        "Name": "Tutorial",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Switch_Music\\Tutorial",
+        "GUID": "{D5A4ECF7-16C7-43CE-8C37-8E8777694837}"
+       }
+      ]
+     },
+     {
+      "Id": "3865314626",
+      "Name": "Material",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Material",
+      "GUID": "{1F788AB2-445C-4157-A8FE-53FDF731F520}",
+      "Switches": [
+       {
+        "Id": "2058049674",
+        "Name": "Wood",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Material\\Wood",
+        "GUID": "{937BD9C1-BD6B-4C5C-88EA-B3E3F4F677CF}"
+       },
+       {
+        "Id": "2195636714",
+        "Name": "Dirt",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Material\\Dirt",
+        "GUID": "{B51CCF14-62AC-4C92-8007-286D939784AC}"
+       },
+       {
+        "Id": "4248645337",
+        "Name": "Grass",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Material\\Grass",
+        "GUID": "{F50D523E-B2C1-40CB-A265-22E5BA36C789}"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{DEECDF17-BBAF-99FB-728B-7E8DB6DADCC3}"
+ }
+}

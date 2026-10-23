@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dxqim2mw0ctsj"]
 
-[ext_resource type="Script" uid="uid://csudaelv6ajs4" path="res://scripts/npc/npc.gd" id="1_8bmpm"]
+[ext_resource type="Script" uid="uid://jcqyuur4jml2" path="res://scripts/npc/npc_quest.gd" id="1_5kill"]
 [ext_resource type="SpriteFrames" uid="uid://dg4trx22gkx74" path="res://assets/ui/interaction icons/icons_orange_frames.tres" id="2_lbvto"]
 [ext_resource type="Script" uid="uid://dbyh0ac8p2iqp" path="res://scripts/ui/interaction_marker.gd" id="3_3mn0j"]
 [ext_resource type="PackedScene" uid="uid://b33blcnymxptl" path="res://assets/models/levels/garden/npc/chilla.glb" id="4_fckuj"]
@@ -32,12 +32,12 @@ blend_point_0/name = &"idle"
 [sub_resource type="BoxShape3D" id="BoxShape3D_a453d"]
 size = Vector3(7, 14.447, 7)
 
-[node name="Lucy" type="CharacterBody3D" unique_id=1709419815 node_paths=PackedStringArray("nav_agent", "idle_timer")]
-script = ExtResource("1_8bmpm")
+[node name="Chilla" type="CharacterBody3D" unique_id=947225545 node_paths=PackedStringArray("nav_agent", "idle_timer")]
+script = ExtResource("1_5kill")
 nav_agent = NodePath("NavigationAgent3D")
 speed = 5.0
 idle_timer = NodePath("IdleTimer")
-metadata/_custom_type_script = "uid://csudaelv6ajs4"
+metadata/_custom_type_script = "uid://jcqyuur4jml2"
 
 [node name="InteractionMarker" type="AnimatedSprite3D" parent="." unique_id=1065127807]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 17.5, 0)
@@ -49,17 +49,17 @@ metadata/_custom_type_script = "uid://dbyh0ac8p2iqp"
 [node name="chilla" parent="." unique_id=1255409666 instance=ExtResource("4_fckuj")]
 metadata/_edit_group_ = true
 
-[node name="Armature_001" parent="chilla" index="0" unique_id=149249984]
+[node name="Armature_001" parent="chilla" index="0" unique_id=825975304]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.004297912, 3.5700765, -0.11996126)
 
-[node name="Skeleton3D" parent="chilla/Armature_001" index="0" unique_id=167683450]
-bones/0/position = Vector3(-1.5834838e-36, 0.69607335, 0.059688002)
+[node name="Skeleton3D" parent="chilla/Armature_001" index="0" unique_id=902401703]
+bones/0/position = Vector3(-3.250002e-35, 0.95582825, 0.059672423)
 bones/2/rotation = Quaternion(-0.23140064, -0.0041984348, 0.9595126, -0.16053581)
 bones/4/rotation = Quaternion(-0.23140064, -0.0041984348, 0.9595126, -0.16053581)
-bones/6/position = Vector3(0.22961538, 3.2122657, -1.37029)
+bones/6/position = Vector3(0.22961538, 3.3223205, -1.37029)
 bones/6/rotation = Quaternion(0.89556795, -0.1084148, 0.34319174, -0.26157913)
-bones/8/position = Vector3(1.0705923, 1.1543313, -2.4751427)
-bones/10/position = Vector3(1.0705924, 1.1543313, -2.475143)
+bones/8/position = Vector3(1.0705923, 1.5659269, -2.4751427)
+bones/10/position = Vector3(1.0705924, 1.5659269, -2.475143)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1748639179]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.857971, 0)

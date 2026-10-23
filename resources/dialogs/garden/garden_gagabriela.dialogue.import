@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://djrgmm08kpf17"
+path="res://.godot/imported/garden_gagabriela.dialogue-70ff8d3369dd60b268ad00aeb7062f10.tres"
+
+[deps]
+
+source_file="res://resources/dialogs/garden/garden_gagabriela.dialogue"
+dest_files=["res://.godot/imported/garden_gagabriela.dialogue-70ff8d3369dd60b268ad00aeb7062f10.tres"]
+
+[params]
+
+defaults=true

@@ -9,7 +9,7 @@ var diary_route : String = "res://resources/collectibles/diary.json"
 var all_entries : Dictionary 
 var collection : Dictionary[StringName, Array]
 
-var unlocked_entries : Array[StringName]
+var unlocked_entries : Array[StringName] = [&"lucy", &"amancay"]
 
 # --
 
@@ -52,6 +52,7 @@ func _update_unlocks() -> void:
 
 func unlock_entry(entry_id : StringName) -> void:
 	if unlocked_entries.has(entry_id): return
+	AudioManager.on_discovery()
 	unlocked_entries.append(entry_id)
 	_update_unlocks()
 	save_diary()

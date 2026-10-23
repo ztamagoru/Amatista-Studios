@@ -11,8 +11,6 @@ var game_data : Dictionary = {}
 func _ready():
 	game_data = load_game()
 	
-	await get_tree().process_frame
-	
 	if not game_data.is_empty(): QuestManager.load_save_data(game_data.get("quests", {}))
 
 func save_exists() -> bool:
@@ -70,13 +68,10 @@ func delete_save() -> void:
 
 func new_game() -> void:
 	game_data = {
+		"current_level": {},
 		"inventory": {},
-		"diary": {
-			"unlocked_entries": []
-		},
-		"quests": {
-			"states": {}
-		}
+		"diary": { "unlocked_entries": [] },
+		"quests": { "states": {} }
 	}
 	
 	save_game()

@@ -61,7 +61,7 @@ func _ready() -> void:
 			mesh.set_surface_override_material(i, shader_mat)
 			shader_passes.append(shader_mat)
 	
-	set_healthy()
+	set_sick()
 
 # --
 
@@ -82,8 +82,7 @@ func set_healthy() -> void:
 # --
 
 func _process(delta: float) -> void:
-	if !player or !camera:
-		return
+	if !player or !camera: return
 	
 	var camera_forward : Vector3 = camera.global_transform.basis.z
 	var screen_pos = camera.unproject_position(
@@ -110,8 +109,6 @@ func _process(delta: float) -> void:
 
 func collision():
 	if not _is_cured:
-		_is_cured = not _is_cured
+		_is_cured = true
 		
-		var sfx : SFXOneShot = SFXOneShot.new()
-		sfx.stream = load(heal_sfx)
-		get_tree().current_scene.add_child(sfx)
+		AudioManager.on_heal()

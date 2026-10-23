@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://bsmemswk0bw2d"]
+
+[ext_resource type="Script" uid="uid://cp8oixxa7tt04" path="res://scenes/ui/main_menu.gd" id="1_fe2o3"]
+[ext_resource type="Texture2D" uid="uid://wy7lv28e4d22" path="res://assets/ui/tituloparainicio.png" id="2_1g8jr"]
+
+[node name="MainMenu" type="Node3D" unique_id=400254085 node_paths=PackedStringArray("continue_button", "new_save_button")]
+script = ExtResource("1_fe2o3")
+continue_button = NodePath("CanvasLayer/Control/AspectRatioContainer/MarginContainer/VBoxContainer/ContinueButton")
+new_save_button = NodePath("CanvasLayer/Control/AspectRatioContainer/MarginContainer/VBoxContainer/NewGameButton")
+new_save_scene = "res://scenes/levels/intro_cinematic.tscn"
+save_map = false
+metadata/_custom_type_script = "uid://xqfthocmw71o"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1611554259]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1481929074]
+propagate_maximum_size = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer/Control" unique_id=1343600411]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.7778
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/AspectRatioContainer" unique_id=157047825]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_1g8jr")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/AspectRatioContainer" unique_id=596025176]
+layout_mode = 2
+theme_override_constants/margin_left = 1061
+theme_override_constants/margin_top = 259
+theme_override_constants/margin_right = 170
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/AspectRatioContainer/MarginContainer" unique_id=1573463577]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="ContinueButton" type="Button" parent="CanvasLayer/Control/AspectRatioContainer/MarginContainer/VBoxContainer" unique_id=94386854]
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+disabled = true
+text = "Continuar partida"
+
+[node name="NewGameButton" type="Button" parent="CanvasLayer/Control/AspectRatioContainer/MarginContainer/VBoxContainer" unique_id=1838355226]
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Nueva partida"
+
+[node name="SettingsButton" type="Button" parent="CanvasLayer/Control/AspectRatioContainer/MarginContainer/VBoxContainer" unique_id=1325208799]
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Ajustes"
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/Control/AspectRatioContainer/MarginContainer/VBoxContainer" unique_id=225165152]
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Salir"
+
+[connection signal="pressed" from="CanvasLayer/Control/AspectRatioContainer/MarginContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/AspectRatioContainer/MarginContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/AspectRatioContainer/MarginContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/AspectRatioContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
