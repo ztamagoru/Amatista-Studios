@@ -1399,6 +1399,7 @@ dialogue = ExtResource("8_cjej2")
 metadata/_custom_type_script = "uid://c1bj0q5evhiei"
 
 [node name="Puzzle" type="CanvasLayer" parent="Environment/CropsZone/PumpkinPuzzleTrigger" unique_id=444321401]
+layer = 2
 visible = false
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Environment/CropsZone/PumpkinPuzzleTrigger/Puzzle" unique_id=1868654499]
@@ -1677,6 +1678,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="HUD/Control" unique_id=243994002]
 layout_mode = 1
