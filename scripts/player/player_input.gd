@@ -19,6 +19,7 @@ func _ready() -> void:
 
 func _change_input_mode(_resource : DialogueResource, is_talking : bool) -> void:
 	input_enabled = is_talking
+	move_dir = Vector2.ZERO
 
 func _init() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
