@@ -20,16 +20,11 @@ func _ready() -> void:
 	update_quests()
 
 func update_quests() -> void:
-	print("HUD: actualizando misiones")
-	print("HUD: estados = ", QuestManager._states)
-	
 	var quests : Array[Dictionary] = QuestManager.get_active_quests_display_data()
-	print("HUD: datos para mostrar = ", quests)
 	
 	for child in quest_container.get_children(): child.queue_free()
 	
 	for quest_data in quests:
-		print("HUD: creando entrada = ", quest_data)
 		var quest_entry : QuestEntry = quest_entry_scene.instantiate()
 		quest_container.add_child(quest_entry)
 		quest_entry.setup(quest_data)
