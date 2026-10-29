@@ -8,6 +8,8 @@ class_name Player
 @onready var visuals : PlayerVisuals = $Visuals
 @onready var state_machine : StateMachine = $StateMachine
 
+var slingshot_collected : bool
+
 # --
 
 func _ready() -> void:
