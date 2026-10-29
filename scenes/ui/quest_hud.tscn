@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://1whrhty23vh4"]
+
+[ext_resource type="Script" uid="uid://y3gblfqcn262" path="res://scenes/ui/quest_hud.gd" id="1_e3y44"]
+[ext_resource type="Texture2D" uid="uid://caq76r3oqfuhp" path="res://assets/ui/hud/quest_hud_small.png" id="1_qa7di"]
+[ext_resource type="PackedScene" uid="uid://4o2lyjq7evwo" path="res://scenes/ui/quest_entry.tscn" id="2_t6xfq"]
+
+[node name="QuestHUD" type="MarginContainer" unique_id=287424734 node_paths=PackedStringArray("quest_container")]
+custom_minimum_size = Vector2(262, 343)
+custom_maximum_size = Vector2(262, -1)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_e3y44")
+quest_container = NodePath("MarginContainer/QuestEntries")
+quest_entry_scene = ExtResource("2_t6xfq")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=74091153]
+custom_minimum_size = Vector2(262, 343)
+custom_maximum_size = Vector2(737, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_qa7di")
+patch_margin_left = 51
+patch_margin_top = 85
+patch_margin_right = 84
+patch_margin_bottom = 172
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2013954588]
+layout_mode = 2
+theme_override_constants/margin_left = 37
+theme_override_constants/margin_top = 65
+theme_override_constants/margin_right = 45
+theme_override_constants/margin_bottom = 141
+
+[node name="QuestEntries" type="VBoxContainer" parent="MarginContainer" unique_id=1130594945]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="QuestEntry" parent="MarginContainer/QuestEntries" unique_id=1649631985 instance=ExtResource("2_t6xfq")]
+layout_mode = 2

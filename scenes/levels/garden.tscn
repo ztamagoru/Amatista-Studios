@@ -1666,6 +1666,31 @@ metadata/_custom_type_script = "uid://c1bj0q5evhiei"
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 57.36074, 23.484562, 0)
 player = NodePath("../Player")
 
+[node name="HUD" type="CanvasLayer" parent="." unique_id=744249051]
+
+[node name="Control" type="Control" parent="HUD" unique_id=2052069635]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Control" unique_id=243994002]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="QuestHUD" parent="HUD/Control/MarginContainer" unique_id=287424734 instance=ExtResource("31_hii61")]
+layout_mode = 2
+
 [editable path="Environment/garden_scene"]
 [editable path="Environment/CropsZone/PumpkinPuzzleTrigger/StaticBody3D/calabazas(shellgame)"]
 [editable path="Environment/CropsZone/PumpkinPuzzleTrigger/StaticBody3D/calabazas(shellgame)2"]

@@ -268,6 +268,60 @@ func get_active_subquest(quest_id : StringName) -> QuestResource:
 	if active_id == &"" or not is_accepted(active_id) or is_completed(active_id): return null
 	return database.get_quest(active_id)
 
+func get_active_quests_display_data() -> Array[Dictionary]:
+	var result : Array[Dictionary] = []
+	
+	for quest_id in _states:
+		if not is_accepted(quest_id) or is_completed(quest_id): continue
+		
+		var quest : QuestResource = database.get_quest(quest_id)
+		if quest == null: continue
+		
+		if _find_parent(quest_id, database.quests) != null: continue
+		
+		result.append(_get_quest_display_data(quest))
+	
+	return result
+
+func _get_quest_display_data(quest : QuestResource) -> Dictionary:
+	var data : Dictionary = {
+		"id": quest.id,
+		"title": quest.title,
+		"description": quest.description,
+		"objectives":  _get_objectives_display_data(quest),
+		"subquests": []
+	}
+	
+	match quest.subquest_mode:
+		QuestResource.SubquestMode.ALL:
+			for subquest in get_active_subquests(quest.id):
+				data["subquests"].append(_get_quest_display_data(subquest))
+			
+		QuestResource.SubquestMode.SEQUENCE, QuestResource.SubquestMode.RANDOM_SEQUENCE:
+			var subquest := get_active_subquest(quest.id)
+			if subquest != null:
+				data["subquests"].append(_get_quest_display_data(subquest))
+	
+	return data
+
+func _get_objectives_display_data(quest : QuestResource) -> Array[Dictionary]:
+	var result : Array[Dictionary] = []
+	
+	for objective in quest.objectives:
+		if objective == null: continue
+		
+		var progress : int = get_objective_progress(quest.id, objective.id)
+		
+		result.append({
+			"id": objective.id,
+			"description": objective.description,
+			"progress": progress,
+			"required": objective.required_amount,
+			"completed": progress >= objective.required_amount
+		})
+	
+	return result
+
 func report_event(event_id : StringName, amount : int = 1) -> void:
 	if amount <= 0: return
 	_report_progress(QuestObjective.ObjectiveType.EVENT, event_id, amount)
