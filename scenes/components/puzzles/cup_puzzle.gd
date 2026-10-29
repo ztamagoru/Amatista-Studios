@@ -35,6 +35,8 @@ const multiplier_sum : float = 0.25
 # --
 
 func _ready() -> void:
+	AudioManager.stop_music()
+	AudioManager.play_music("puzzle_pumpkin")
 	self.tree_exiting.connect(func(): Input.mouse_mode = Input.MOUSE_MODE_CAPTURED)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	speed_multiplier = multiplier_base
@@ -65,6 +67,7 @@ func game() -> void:
 		await cup_hovered.anim.animation_finished
 		
 		if cup_hovered.has_item:
+			AudioManager.correct_puzzle()
 			speed_multiplier += multiplier_sum
 			correct_attempts += 1
 			
@@ -74,6 +77,7 @@ func game() -> void:
 				win()
 				return
 		else: 
+			AudioManager.incorrect_puzzle()
 			_play_sfx(false)
 			
 			start_game()
@@ -86,6 +90,8 @@ func game() -> void:
 func exit() -> void:
 	#await get_tree().create_timer(1).timeout
 	puzzle_exited.emit()
+	AudioManager.stop_music()
+	AudioManager.play_music("garden")
 	queue_free()
 
 func win() -> void:

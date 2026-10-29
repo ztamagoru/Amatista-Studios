@@ -110,6 +110,7 @@ const music_switchs := {
 	"menu": "Menu",
 	"tutorial": "Tutorial",
 	"garden": "Garden",
+	"puzzle_pumpkin": "Puzzle_pumpkin",
 }
 
 var _music_playing := false

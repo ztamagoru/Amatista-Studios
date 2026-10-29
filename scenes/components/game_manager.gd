@@ -85,6 +85,7 @@ func change_map(path : String) -> void:
 func _unhandled_input(event : InputEvent) -> void:
 	if event.is_action_pressed("toggle_pause") and not event.is_echo():
 		if is_diary_open:
+			AudioManager.on_open_diary()
 			toggle_diary()
 		elif is_paused:
 			AudioManager.unpaused()
