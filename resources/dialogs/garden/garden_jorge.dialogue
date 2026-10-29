@@ -1,5 +1,7 @@
 ~ start
-if is_quest_completed():
+if is_quest_completed() and DiaryEntriesManager.has_entry(reward_collectible_id):
+	=> idle_final
+if is_quest_completed() and not DiaryEntriesManager.has_entry(reward_collectible_id):
 	=> completed
 elif times_talked == 0 and not is_quest_accepted():
 	=> introduction
@@ -60,4 +62,10 @@ Jorge: Aquí hay muchas cosas interesantes, ¿no lo crees?
 Jorge: Este bosque es mágico y deberías aprovechar para llevarte un lindo recuerdo.
 Jorge: Hhm...[wait=1.5] llévate alguna florcita de aquí y yo...
 Jorge: Hmm...[wait=1] Espero que me acuerde de que te la llevaste cuando me levante de la siesta.
+do DiaryEntriesManager.unlock_entry(reward_collectible_id)
+=> END
+
+~ idle_final
+Jorge: Hmm...
+Jorge: Espero quee me acuerde de que te llevaste una flor especial cuando me levante de la siesta.
 => END

@@ -57,6 +57,9 @@ func unlock_entry(entry_id : StringName) -> void:
 	_update_unlocks()
 	save_diary()
 
+func has_entry(entry_id : StringName) -> bool:
+	return unlocked_entries.has(entry_id)
+
 func get_save_data() -> Dictionary:
 	var data : Array[String] = []
 	

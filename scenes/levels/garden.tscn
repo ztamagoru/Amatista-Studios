@@ -1446,6 +1446,7 @@ metadata/_custom_type_script = "uid://c1bj0q5evhiei"
 [node name="Jorge" parent="Environment/NPCs" unique_id=1709419815 node_paths=PackedStringArray("dialogue_handler", "nav_region", "look_target") instance=ExtResource("7_sphon")]
 transform = Transform3D(-0.061048593, 0, -0.9981348, 0, 1, 0, 0.9981348, 0, -0.061048593, -100, 4.2832656, -82)
 script = ExtResource("8_udanu")
+reward_collectible_id = &"diente_de_leon"
 quest_id = &"jorge_flowers"
 event_id = &""
 puzzle_objective_id = &""

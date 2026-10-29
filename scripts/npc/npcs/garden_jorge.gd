@@ -3,6 +3,10 @@ class_name GardenJorge
 
 # --
 
+@export var reward_collectible_id : StringName
+
+# --
+
 func get_quest_hint() -> String:
 	var subquest := get_active_subquest()
 	if subquest == null: return ""
