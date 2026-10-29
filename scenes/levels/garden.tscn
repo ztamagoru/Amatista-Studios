@@ -1631,7 +1631,7 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 32.2872, 0, -46.561604)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.4308, 2.2227345, -61.42416)
 quest_id = &"find_lupina"
 item = ExtResource("16_xl01p")
-diary_entry_id = &"lupina"
+diary_entry_id = &"lupinas"
 dialogue_handler = NodePath("DialogueHandler")
 
 [node name="DialogueHandler" type="Node" parent="Environment/Flower" unique_id=2239829]
