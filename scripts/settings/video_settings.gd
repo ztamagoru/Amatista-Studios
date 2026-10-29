@@ -28,7 +28,10 @@ func load_video_settings() -> void:
 	
 	brightness_slider.value = video_settings.get("brightness", 1.0)
 	brightness_label.text = str(roundi(video_settings.get("brightness", 1.0) * 100)) + "%"
+	
 	fullscreen_check.button_pressed = video_settings.get("fullscreen", false)
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if fullscreen_check.button_pressed else DisplayServer.WINDOW_MODE_WINDOWED)
+	
 	vsync_check.button_pressed = video_settings.get("vsync", false)
 
 # --
