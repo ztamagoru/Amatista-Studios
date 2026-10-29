@@ -1630,7 +1630,7 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 32.2872, 0, -46.561604)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.4308, 2.2227345, -61.42416)
 quest_id = &"find_lupina"
 item = ExtResource("16_xl01p")
-diary_entry_id = &"flower_lupina"
+diary_entry_id = &"lupina"
 dialogue_handler = NodePath("DialogueHandler")
 
 [node name="DialogueHandler" type="Node" parent="Environment/Flower" unique_id=2239829]
@@ -1643,7 +1643,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.971424, 2.2227306, 38.564
 flower_type = 1
 quest_id = &"find_amancay"
 item = ExtResource("18_4kk17")
-diary_entry_id = &"flower_amancay"
+diary_entry_id = &"amancay"
 dialogue_handler = NodePath("DialogueHandler")
 
 [node name="DialogueHandler" type="Node" parent="Environment/Flower2" unique_id=1679125060]
@@ -1656,7 +1656,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.5577, 2.2227306, 132.75127
 flower_type = 2
 quest_id = &"find_mutisia"
 item = ExtResource("19_kswy4")
-diary_entry_id = &"flower_mutisia"
+diary_entry_id = &"mutisia"
 dialogue_handler = NodePath("DialogueHandler")
 
 [node name="DialogueHandler" type="Node" parent="Environment/Flower3" unique_id=1869298325]
