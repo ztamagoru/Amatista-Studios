@@ -11,7 +11,10 @@ var game_data : Dictionary = {}
 func _ready():
 	game_data = load_game()
 	
-	if not game_data.is_empty(): QuestManager.load_save_data(game_data.get("quests", {}))
+	if not game_data.is_empty(): call_deferred("_load_quests")
+
+func _load_quests() -> void:
+	QuestManager.load_save_data(game_data.get("quests", {}))
 
 func save_exists() -> bool:
 	return FileAccess.file_exists(SAVE_FILE_PATH)

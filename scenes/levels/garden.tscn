@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://c8ll5udwkv8tk" path="res://scenes/components/npcs/gagabriela.tscn" id="19_h4k2x"]
 [ext_resource type="Resource" uid="uid://fimcb747t2a4" path="res://resources/items/flower_mutisia.tres" id="19_kswy4"]
 [ext_resource type="Resource" uid="uid://djrgmm08kpf17" path="res://resources/dialogs/garden/garden_gagabriela.dialogue" id="20_hii61"]
+[ext_resource type="PackedScene" uid="uid://1whrhty23vh4" path="res://scenes/ui/quest_hud.tscn" id="31_hii61"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2dny5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
