@@ -1475,6 +1475,7 @@ metadata/_custom_type_script = "uid://c1bj0q5evhiei"
 transform = Transform3D(0.13230374, 0, -0.99120945, 0, 1, 0, 0.99120945, 0, 0.13230374, -135.11078, 4.3860407, 19.065928)
 quest_id = &"chilla_garden_quest"
 puzzle_objective_id = &"give_ring_back"
+deliver_objective_id = &"chilla_ring"
 dialogue_handler = NodePath("DialogueHandler")
 diary_entry_id = &"chilla"
 

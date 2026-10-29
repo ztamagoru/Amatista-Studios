@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ew5cdamg78vk"]
 
 [ext_resource type="Script" uid="uid://cbbobbwusjhyv" path="res://scenes/components/puzzles/cup_puzzle.gd" id="1_7pyt5"]
+[ext_resource type="Resource" uid="uid://dfpri33bgi65b" path="res://resources/items/chilla_ring.tres" id="2_0pu2p"]
 [ext_resource type="Script" uid="uid://dcsha4he5dt0p" path="res://scenes/components/puzzles/path.gd" id="2_v3k2j"]
 [ext_resource type="Script" uid="uid://csjj3d0ipxt0q" path="res://scenes/components/puzzles/cup.gd" id="2_vtlwb"]
 [ext_resource type="PackedScene" uid="uid://16vq364ahfbr" path="res://scenes/components/puzzles/calabazas(shellgame).glb" id="3_vtlwb"]
@@ -164,6 +165,7 @@ point_count = 2
 
 [node name="CupPuzzle" type="Node3D" unique_id=697723389]
 script = ExtResource("1_7pyt5")
+item_reward = ExtResource("2_0pu2p")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1846182398]
 transform = Transform3D(-0.9249968, -0.37988722, 0.008165783, 0.11490681, -0.25917614, 0.9589704, -0.3621842, 0.8879828, 0.28338864, 0, 0, 0)

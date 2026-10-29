@@ -7,6 +7,8 @@ signal puzzle_exited
 
 # --
 
+@export var item_reward : ItemResource
+
 @onready var markers : Array[Node3D] = [$Markers/Marker1, $Markers/Marker2, $Markers/Marker3]
 @onready var cups : Array[Node3D] = [$Cups/Cup1, $Cups/Cup2, $Cups/Cup3]
 
@@ -87,6 +89,9 @@ func exit() -> void:
 	queue_free()
 
 func win() -> void:
+	InventoryManager.add_items(item_reward)
+	QuestManager.report_item_collected(&"chilla_ring")
+	
 	await get_tree().create_timer(1).timeout
 	puzzle_won.emit()
 	queue_free()
