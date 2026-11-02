@@ -8,7 +8,7 @@ script = ExtResource("1_pk4x3")
 id = &"heal_trees"
 description = "Tengo que curar los árboles de la zona."
 event_id = &"environment_restored"
-required_amount = 20
+required_amount = 15
 metadata/_custom_type_script = "uid://irg1osbq3q4l"
 
 [sub_resource type="Resource" id="Resource_pk4x3"]
