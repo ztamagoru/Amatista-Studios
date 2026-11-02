@@ -5,8 +5,10 @@ class_name Tutorial
 
 @export_group("Tutorial")
 @export var player : Player
+@export var tutorial_text : DialogueResource
 @export var tutorial_half : Area3D 
 @export var tutorial_end : Area3D
+@export var lucy : NPC
 @export_file_path("*.tscn") var garden_map : String
  
 @export_subgroup("Incremental Fog")
@@ -30,6 +32,11 @@ var boundary_furthest : float
 
 # --
 
+var end_callable := _check_player.bind("end")
+var half_callable := _check_player.bind("half")
+
+# --
+
 func level_start() -> void:
 	env = world_environment.environment
 	
@@ -40,6 +47,9 @@ func level_start() -> void:
 	_set_trees()
 	_connect_signals()
 	AudioManager.play_music("tutorial")
+	
+	DialogueManager.show_dialogue_balloon(tutorial_text, "movement")
+	
 	super.level_start()
 
 func _set_trees() -> bool:
@@ -58,8 +68,8 @@ func _set_trees() -> bool:
 	return true
 
 func _connect_signals() -> void:
-	if not tutorial_end == null: tutorial_end.body_entered.connect(_check_player.bind("end"))
-	if not tutorial_half == null: tutorial_half.body_entered.connect(_check_player.bind("half"))
+	if tutorial_end != null: tutorial_end.body_entered.connect(end_callable)
+	if tutorial_half != null: tutorial_half.body_entered.connect(half_callable)
 
 func _check_player(body : Node3D, from : String) -> void:
 	if body is Player:
@@ -67,7 +77,8 @@ func _check_player(body : Node3D, from : String) -> void:
 			"end":
 				change_scene(garden_map)
 			"half":
-				pass
+				lucy.run_away()
+				tutorial_half.body_entered.disconnect(half_callable)
 
 func _process(_delta: float):
 	if env == null: return

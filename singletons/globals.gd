@@ -14,6 +14,12 @@ var post_processing_material: ShaderMaterial
 
 # --
 
+func get_event_key(event_name : String):
+	for input in InputMap.action_get_events(event_name):
+		return input.as_text_physical_keycode()
+
+# --
+
 func register_post_processing(material: ShaderMaterial) -> void:
 	post_processing_material = material
 	_apply_post_processing()
