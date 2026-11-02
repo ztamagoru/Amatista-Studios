@@ -1,3 +1,4 @@
+@tool
 extends NPC
 class_name NPCQuest
 
@@ -11,7 +12,12 @@ class_name NPCQuest
 
 @export_group("Quest Objectives")
 @export var puzzle_objective_id : StringName
-@export var deliver_objective_id : StringName
+@export_subgroup("Deliveries", "deliver_")
+@export var deliver_objective_id : StringName:
+	set(value):
+		deliver_objective_id = value
+		notify_property_list_changed()
+@export var deliver_dialogue_title : String
 
 # --
 
@@ -55,10 +61,41 @@ func get_active_subquests() -> Array[QuestResource]:
 
 # --
 
+func interact() -> void:
+	if deliver_objective_id.is_empty():
+		super.interact()
+		return
+	
+	if is_quest_accepted() and not is_quest_completed():
+		if deliver_quest_item(deliver_objective_id):
+			if dialogue_handler.dialogue != null and not deliver_dialogue_title.is_empty():
+				DialogueManager.show_dialogue_balloon(
+					dialogue_handler.dialogue,
+					deliver_dialogue_title,
+					[self, dialogue_handler]
+				)
+				return
+			return
+	
+	super.interact()
+
 func report_event() -> void:
 	if event_id == null: return
 	if _get_quest() == null: return
 	QuestManager.report_event(event_id)
 
 func deliver_quest_item(objective_id: StringName) -> bool:
-	return QuestManager.deliver_item(quest_id, objective_id)
+	if QuestManager.deliver_item(quest_id, objective_id):
+		return true
+	
+	for subquest in get_active_subquests():
+		if QuestManager.deliver_item(subquest.id, objective_id): return true
+	
+	return false
+
+# --
+
+func _validate_property(property: Dictionary) -> void:
+	if property.name == "deliver_dialogue_title":
+		if deliver_objective_id.is_empty():
+			property.usage &= ~PROPERTY_USAGE_EDITOR

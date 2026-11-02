@@ -15,6 +15,7 @@ func _ready():
 
 func _load_quests() -> void:
 	QuestManager.load_save_data(game_data.get("quests", {}))
+	InventoryManager.load_inventory()
 
 func save_exists() -> bool:
 	return FileAccess.file_exists(SAVE_FILE_PATH)
