@@ -158,10 +158,10 @@ entry_manager = NodePath("../EntryManager")
 
 [node name="PlantTab" type="Button" parent="Tabs" unique_id=1861401583 node_paths=PackedStringArray("entry_template")]
 layout_mode = 0
-offset_left = 214.0
-offset_top = 162.0
-offset_right = 421.0
-offset_bottom = 271.0
+offset_left = 384.0
+offset_top = 305.0
+offset_right = 591.0
+offset_bottom = 414.0
 scale = Vector2(0.62, 0.62)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_g4v7s")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_g4v7s")
@@ -182,10 +182,10 @@ metadata/_custom_type_script = "uid://curpqdwhe71dy"
 
 [node name="NPCTab" type="Button" parent="Tabs" unique_id=329056481 node_paths=PackedStringArray("entry_template")]
 layout_mode = 0
-offset_left = 214.0
-offset_top = 231.0
-offset_right = 421.0
-offset_bottom = 340.0
+offset_left = 384.0
+offset_top = 374.0
+offset_right = 591.0
+offset_bottom = 483.0
 scale = Vector2(0.62, 0.62)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_g4v7s")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_g4v7s")
@@ -268,10 +268,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_constants/margin_left = 282
-theme_override_constants/margin_top = 153
-theme_override_constants/margin_right = 243
-theme_override_constants/margin_bottom = 126
+theme_override_constants/margin_left = 497
+theme_override_constants/margin_top = 289
+theme_override_constants/margin_right = 444
+theme_override_constants/margin_bottom = 265
 script = ExtResource("15_gnhgv")
 plant_entry_template = NodePath("PlantEntry")
 npc_entry_template = NodePath("NPCEntry")
@@ -299,7 +299,7 @@ offset_right = 268.06097
 offset_bottom = 184.5
 grow_vertical = 2
 size_flags_horizontal = 0
-theme_override_constants/margin_left = 28
+theme_override_constants/margin_left = 90
 theme_override_constants/margin_right = 27
 
 [node name="PlantEntryTexture" type="TextureRect" parent="EntryManager/PlantEntry/MarginContainer" unique_id=585996461]
@@ -308,8 +308,8 @@ texture = ExtResource("12_kxsei")
 expand_mode = 3
 
 [node name="MarginContainer2" type="MarginContainer" parent="EntryManager/PlantEntry" unique_id=1654884281]
-custom_minimum_size = Vector2(300, 0)
-custom_maximum_size = Vector2(300, -1)
+custom_minimum_size = Vector2(400, 0)
+custom_maximum_size = Vector2(400, -1)
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -319,7 +319,7 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 30
+theme_override_constants/margin_right = 39
 theme_override_constants/margin_bottom = 27
 
 [node name="VBoxContainer" type="VBoxContainer" parent="EntryManager/PlantEntry/MarginContainer2" unique_id=104154725]
@@ -348,7 +348,6 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="NPCEntry" type="Control" parent="EntryManager" unique_id=1357765685 node_paths=PackedStringArray("species_label", "title_label", "desc_label", "fun_fact_label", "entry_rect")]
-visible = false
 layout_mode = 2
 mouse_filter = 2
 script = ExtResource("19_whird")
@@ -368,10 +367,7 @@ offset_right = 268.06097
 offset_bottom = 184.5
 grow_vertical = 2
 size_flags_horizontal = 0
-theme_override_constants/margin_left = 26
-theme_override_constants/margin_top = 21
-theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 27
+theme_override_constants/margin_left = 90
 
 [node name="NPCEntryTexture" type="TextureRect" parent="EntryManager/NPCEntry/MarginContainer" unique_id=1754440195]
 layout_mode = 2
@@ -379,8 +375,8 @@ texture = ExtResource("12_kxsei")
 expand_mode = 3
 
 [node name="MarginContainer2" type="MarginContainer" parent="EntryManager/NPCEntry" unique_id=1621255156]
-custom_minimum_size = Vector2(300, 0)
-custom_maximum_size = Vector2(300, -1)
+custom_minimum_size = Vector2(400, 0)
+custom_maximum_size = Vector2(400, -1)
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -429,10 +425,10 @@ layout_mode = 2
 
 [node name="PreviousPageButton" type="Button" parent="EntryManager/Buttons" unique_id=256635857]
 layout_mode = 0
-offset_left = -12.000004
-offset_top = 157.0
-offset_right = 205.0
-offset_bottom = 370.0
+offset_left = -56.0
+offset_top = 225.99998
+offset_right = 161.00002
+offset_bottom = 439.0
 scale = Vector2(0.2, 0.2)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_d0u6y")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_d0u6y")
@@ -449,10 +445,10 @@ icon = SubResource("AtlasTexture_57qmd")
 
 [node name="NextPageButton" type="Button" parent="EntryManager/Buttons" unique_id=1450449145]
 layout_mode = 0
-offset_left = 598.0
-offset_top = 157.0
-offset_right = 815.0
-offset_bottom = 370.0
+offset_left = 988.9999
+offset_top = 225.99998
+offset_right = 1205.9999
+offset_bottom = 439.0
 scale = Vector2(0.2, 0.2)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_d0u6y")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_d0u6y")
@@ -469,10 +465,10 @@ icon = SubResource("AtlasTexture_18vdf")
 
 [node name="ExitButton" type="Button" parent="." unique_id=1630445945]
 layout_mode = 0
-offset_left = 875.00006
-offset_top = 100.00001
-offset_right = 1103.0
-offset_bottom = 321.0
+offset_left = 1545.0
+offset_top = 169.0
+offset_right = 1773.0
+offset_bottom = 390.0
 scale = Vector2(0.345, 0.345)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_g4v7s")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_g4v7s")
