@@ -10,6 +10,8 @@ extends EntryTemplate
 # --
 
 func update_entry(index : int) -> void:
+	if DiaryEntriesManager.collection.is_empty(): await DiaryEntriesManager.diary_loaded
+	
 	var entries : Array = DiaryEntriesManager.collection[get_parent().current_cat]
 	
 	if entries.is_empty(): return

@@ -9,12 +9,13 @@ var diary_route : String = "res://resources/collectibles/diary.json"
 var all_entries : Dictionary 
 var collection : Dictionary[StringName, Array]
 
-var unlocked_entries : Array[StringName] = [&"lucy", &"amancay"]
-
+var unlocked_entries : Array[StringName]
+signal diary_loaded
 # --
 
 func _ready() -> void:
 	_load_diary_entries()
+	diary_loaded.emit()
 
 func _load_diary_entries() -> void:
 	if not FileAccess.file_exists(diary_route):
