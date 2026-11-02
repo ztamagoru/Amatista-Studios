@@ -21,7 +21,7 @@ func _load_dependent_data() -> void:
 func save_exists() -> bool:
 	return FileAccess.file_exists(SAVE_FILE_PATH)
 
-func save_section(section : String, data : Dictionary) -> void:
+func save_section(section : String, data : Variant) -> void:
 	game_data[section] = data
 	save_game()
 
@@ -30,6 +30,12 @@ func load_section(section : StringName) -> Dictionary:
 	
 	if data is Dictionary: return data
 	return {}
+
+func load_array_section(section : StringName) -> Array:
+	var data = game_data.get(section, {})
+	
+	if data is Array: return data
+	return []
 
 func save_game() -> void:
 	var file := FileAccess.open(SAVE_FILE_PATH, FileAccess.WRITE)
@@ -77,7 +83,8 @@ func new_game() -> void:
 		"map_state": {},
 		"inventory": {},
 		"diary": { "unlocked_entries": [] },
-		"quests": { "states": {} }
+		"quests": { "states": {} },
+		"skills": [],
 	}
 	save_game()
 	_load_dependent_data()
