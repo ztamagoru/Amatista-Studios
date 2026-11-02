@@ -6,7 +6,7 @@
 [sub_resource type="Resource" id="Resource_r111l"]
 script = ExtResource("1_612fq")
 id = &"scarecrow_talked"
-description = "Capaz el espantapájaros sepa algo."
+description = "Capaz el alguien por acá sepa algo."
 event_id = &"scarecrow_talked"
 metadata/_custom_type_script = "uid://irg1osbq3q4l"
 
