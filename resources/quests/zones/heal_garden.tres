@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="QuestResource" format=3 uid="uid://c3kr4nkntl1in"]
+
+[ext_resource type="Script" uid="uid://irg1osbq3q4l" path="res://scripts/quests/quest_objective.gd" id="1_pk4x3"]
+[ext_resource type="Script" uid="uid://rau5swn7y6cm" path="res://scripts/quests/quest_resource.gd" id="2_v2y6s"]
+
+[sub_resource type="Resource" id="Resource_7b18i"]
+script = ExtResource("1_pk4x3")
+id = &"heal_trees"
+event_id = &"environment_restored"
+required_amount = 20
+metadata/_custom_type_script = "uid://irg1osbq3q4l"
+
+[sub_resource type="Resource" id="Resource_pk4x3"]
+script = ExtResource("1_pk4x3")
+id = &"talk_lucy_after_healing"
+description = "Ya terminé de curar todos los árboles. ¿Qué tendrá Lucy para decirme?"
+event_id = &"talked_to_lucy"
+metadata/_custom_type_script = "uid://irg1osbq3q4l"
+
+[resource]
+script = ExtResource("2_v2y6s")
+id = &"heal_garden"
+title = "Sanar el jardín"
+objectives = Array[ExtResource("1_pk4x3")]([SubResource("Resource_7b18i"), SubResource("Resource_pk4x3")])
+metadata/_custom_type_script = "uid://rau5swn7y6cm"

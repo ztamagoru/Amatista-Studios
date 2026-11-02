@@ -1434,6 +1434,8 @@ mesh = SubResource("CylinderMesh_yf5fn")
 
 [node name="Lucy" parent="Environment/NPCs" unique_id=460240726 node_paths=PackedStringArray("dialogue_handler", "nav_region", "look_target") instance=ExtResource("4_32lya")]
 transform = Transform3D(0.69110036, 0, -0.7227589, 0, 1, 0, 0.7227589, 0, 0.69110036, 75.11682, 3.4753456, -16.071283)
+quest_id = &"heal_garden"
+event_id = &"talked_to_lucy"
 dialogue_handler = NodePath("DialogueHandler")
 diary_entry_id = &"lucy"
 nav_region = NodePath("../LucyNavRegion")

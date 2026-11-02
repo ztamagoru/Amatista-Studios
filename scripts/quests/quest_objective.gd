@@ -13,7 +13,7 @@ enum ObjectiveType {
 # --
 
 @export var id : StringName
-@export var description : String
+@export_multiline() var description : String
 @export var type : ObjectiveType = ObjectiveType.EVENT:
 	set(value):
 		if type != value:
@@ -34,6 +34,6 @@ func _validate_property(property: Dictionary) -> void:
 		if type != ObjectiveType.EVENT:
 			property.usage &= ~PROPERTY_USAGE_EDITOR
 			
-	if property.name == "item_id" or property.name == "required_amount":
+	if property.name == "item_id":
 		if type == ObjectiveType.EVENT:
 			property.usage &= ~PROPERTY_USAGE_EDITOR

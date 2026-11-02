@@ -29,6 +29,8 @@ var is_cured : bool
 
 var level : Level
 
+var quest_id : StringName
+
 var player : CharacterBody3D
 var camera : Camera3D
 
@@ -107,6 +109,12 @@ func _process(delta: float) -> void:
 
 func collision():
 	if is_cured: return
+	if not _can_be_healed(): return
 	
 	level.make_healthy(self)
+	QuestManager.report_event(&"environment_restored")
 	AudioManager.on_heal()
+
+func _can_be_healed() -> bool:
+	if quest_id == null or quest_id.is_empty(): return true
+	return QuestManager.is_accepted(quest_id) and not QuestManager.is_completed(quest_id)
