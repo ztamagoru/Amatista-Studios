@@ -2,11 +2,11 @@
 if is_quest_completed():
 	=> idle_final
 elif not is_quest_accepted():
-	=> intro
+	=> introduction
 else:
 	=> idle_ring
 
-~ intro
+~ introduction
 ???: [shake]¡Un intruso! ¡Un intruso![/shake]
 ???: ¡Sabes que no te dejaré pasar, eh! Ningún animal de esta zona sale o entra.
 ???: ¡Y se lo merecen! Se merecen quedarse aquí como gato encerrado. Por sus burlas y malos tratos que me dieron.
