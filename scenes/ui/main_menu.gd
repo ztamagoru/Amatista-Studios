@@ -38,9 +38,7 @@ func _on_continue_button_pressed() -> void:
 	change_scene(continue_save)
 
 func _on_new_game_button_pressed() -> void:
-	if continue_button != null: SaveManager.delete_save()
 	SaveManager.new_game()
-
 	change_scene(new_save_scene)
 
 func _on_settings_button_pressed() -> void:

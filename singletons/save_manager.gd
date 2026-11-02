@@ -17,8 +17,6 @@ func _load_dependent_data() -> void:
 	QuestManager.load_save_data(game_data.get("quests", {}))
 	InventoryManager.load_inventory()
 	DiaryEntriesManager.load_diary()
-	
-	DiaryEntriesManager.diary_loaded.emit()
 
 func save_exists() -> bool:
 	return FileAccess.file_exists(SAVE_FILE_PATH)
@@ -81,5 +79,5 @@ func new_game() -> void:
 		"diary": { "unlocked_entries": [] },
 		"quests": { "states": {} }
 	}
-	
 	save_game()
+	_load_dependent_data()

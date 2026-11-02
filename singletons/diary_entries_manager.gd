@@ -87,3 +87,4 @@ func save_diary() -> void:
 
 func load_diary() -> void:
 	load_save_data(SaveManager.load_section("diary"))
+	diary_loaded.emit()
