@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode blend_mix, cull_disabled, depth_test_disabled;
+render_mode blend_mix, cull_disabled, depth_draw_opaque,depth_prepass_alpha;
 
 // --
 
@@ -72,5 +72,7 @@ void fragment(){
 	}
 	
 	ALBEDO = final_color;
+
 	ALPHA = alpha;
+	//ALPHA_SCISSOR_THRESHOLD = 0.1;
 }
