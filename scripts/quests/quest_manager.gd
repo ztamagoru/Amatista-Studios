@@ -310,6 +310,8 @@ func _get_objectives_display_data(quest : QuestResource) -> Array[Dictionary]:
 	for objective in quest.objectives:
 		if objective == null: continue
 		
+		if not can_progress_objective(quest, objective.id): continue
+		
 		var progress : int = get_objective_progress(quest.id, objective.id)
 		
 		result.append({

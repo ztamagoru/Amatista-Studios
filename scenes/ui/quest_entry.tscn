@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://4o2lyjq7evwo"]
 
 [ext_resource type="Script" uid="uid://bdd236adjxfbe" path="res://scenes/ui/quest_entry.gd" id="1_simce"]
+[ext_resource type="PackedScene" uid="uid://d2xgnomjb0fbo" path="res://scenes/ui/objective_entry.tscn" id="2_8gge6"]
 [ext_resource type="FontFile" uid="uid://biu80sh4ufjyk" path="res://assets/fonts/CaveatBrush-Regular.ttf" id="2_yninc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
@@ -13,10 +14,12 @@ font = ExtResource("2_yninc")
 font_size = 18
 font_color = Color(0.39215687, 0.2, 0.45882353, 1)
 
-[node name="QuestEntry" type="VBoxContainer" unique_id=1649631985 node_paths=PackedStringArray("label_title", "label_description")]
+[node name="QuestEntry" type="VBoxContainer" unique_id=1649631985 node_paths=PackedStringArray("label_title", "label_description", "objectives_container")]
 script = ExtResource("1_simce")
 label_title = NodePath("QuestTitle")
 label_description = NodePath("QuestDescription")
+objectives_container = NodePath("ObjectivesContainer")
+objectives_entry_scene = ExtResource("2_8gge6")
 
 [node name="QuestTitle" type="Label" parent="." unique_id=1661734011]
 layout_mode = 2
@@ -28,3 +31,9 @@ layout_mode = 2
 text = "Descripción de la misión"
 label_settings = SubResource("LabelSettings_luwyl")
 autowrap_mode = 2
+
+[node name="ObjectivesContainer" type="VBoxContainer" parent="." unique_id=1298168552]
+layout_mode = 2
+
+[node name="ObjectiveEntry" parent="ObjectivesContainer" unique_id=664600207 instance=ExtResource("2_8gge6")]
+layout_mode = 2

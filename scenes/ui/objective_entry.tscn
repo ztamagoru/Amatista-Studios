@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d2xgnomjb0fbo"]
+
+[ext_resource type="FontFile" uid="uid://biu80sh4ufjyk" path="res://assets/fonts/CaveatBrush-Regular.ttf" id="1_pc83v"]
+[ext_resource type="Script" uid="uid://b1i6v4p4n86as" path="res://scenes/ui/objective_entry.gd" id="2_q0q0w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_luwyl"]
+font = ExtResource("1_pc83v")
+font_size = 18
+font_color = Color(0.39215687, 0.2, 0.45882353, 1)
+
+[node name="ObjectiveEntry" type="Label" unique_id=664600207]
+text = "Descripción del objetivo"
+label_settings = SubResource("LabelSettings_luwyl")
+autowrap_mode = 2
+script = ExtResource("2_q0q0w")
