@@ -61,6 +61,15 @@ size = Vector3(4.0510254, 18.09375, 71.353516)
 [sub_resource type="BoxShape3D" id="BoxShape3D_03sew"]
 size = Vector3(4.0510254, 18.09375, 30.03125)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ae5ye"]
+size = Vector3(78.46564, 18.09375, 3.9899902)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c73ps"]
+size = Vector3(3.3928223, 18.09375, 41.195313)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_241ex"]
+size = Vector3(14.531, 15, 13.541)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_32lya"]
 size = Vector3(4.0510254, 18.09375, 43.875244)
 
@@ -122,6 +131,8 @@ interactor_hud = NodePath("../HUD/Control/MarginContainer/InteractionPromptHUD")
 
 [node name="garden_scene" parent="Environment" unique_id=2089909925 instance=ExtResource("2_2dny5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.236, 0, 23.120789)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="acelga_001" parent="Environment/garden_scene" index="0" unique_id=300813497]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1611.7762)
@@ -1225,6 +1236,50 @@ shape = SubResource("BoxShape3D_2dny5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.82118, 9.241041, 35.249275)
 shape = SubResource("BoxShape3D_03sew")
 
+[node name="CollisionShape3D22" type="CollisionShape3D" parent="Environment/CropsZone/Collisions" unique_id=1355151178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.464226, 9.241041, -150.9695)
+shape = SubResource("BoxShape3D_ae5ye")
+
+[node name="CollisionShape3D23" type="CollisionShape3D" parent="Environment/CropsZone/Collisions" unique_id=1134632395]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.50283, 9.241041, -177.0627)
+shape = SubResource("BoxShape3D_c73ps")
+
+[node name="CollisionShape3D24" type="CollisionShape3D" parent="Environment/CropsZone/Collisions" unique_id=2057842985]
+transform = Transform3D(0.77342314, 0, -0.63389015, 0, 1, 0, 0.63389015, 0, 0.77342314, -23.87379, 9.241041, -212.45517)
+shape = SubResource("BoxShape3D_c73ps")
+
+[node name="CollisionShape3D25" type="CollisionShape3D" parent="Environment/CropsZone/Collisions" unique_id=2117751120]
+transform = Transform3D(0.9222312, 0, -0.3866388, 0, 1, 0, 0.3866388, 0, 0.9222312, 3.4967575, 9.766565, -215.10165)
+shape = SubResource("BoxShape3D_241ex")
+
+[node name="CollisionShape3D26" type="CollisionShape3D" parent="Environment/CropsZone/Collisions" unique_id=410860222]
+transform = Transform3D(0.92608243, 0, 0.37732154, 0, 1, 0, -0.37732154, 0, 0.92608243, 23.683014, 9.766565, -216.28372)
+shape = SubResource("BoxShape3D_241ex")
+
+[node name="CollisionShape3D27" type="CollisionShape3D" parent="Environment/CropsZone/Collisions" unique_id=1280541558]
+transform = Transform3D(0.97562796, 0, -0.21943161, 0, 1, 0, 0.21943161, 0, 0.97562796, 46.688065, 9.766565, -216.92023)
+shape = SubResource("BoxShape3D_241ex")
+
+[node name="CollisionShape3D28" type="CollisionShape3D" parent="Environment/CropsZone/Collisions" unique_id=2012190166]
+transform = Transform3D(0.46877795, 0, -0.88331616, 0, 1, 0, 0.88331616, 0, 0.46877795, 65.78316, 9.766565, -214.3742)
+shape = SubResource("BoxShape3D_241ex")
+
+[node name="CollisionShape3D29" type="CollisionShape3D" parent="Environment/CropsZone/Collisions" unique_id=1200674336]
+transform = Transform3D(0.997561, 0, -0.0698013, 0, 1, 0, 0.0698013, 0, 0.997561, 69.96588, 9.766565, -160.99883)
+shape = SubResource("BoxShape3D_241ex")
+
+[node name="CollisionShape3D30" type="CollisionShape3D" parent="Environment/CropsZone/Collisions" unique_id=1267792977]
+transform = Transform3D(0.7557014, 0, 0.6549163, 0, 1, 0, -0.6549163, 0, 0.7557014, 54.68979, 9.766565, -160.54419)
+shape = SubResource("BoxShape3D_241ex")
+
+[node name="CollisionShape3D31" type="CollisionShape3D" parent="Environment/CropsZone/Collisions" unique_id=1422636285]
+transform = Transform3D(0.99319714, 0, 0.116445065, 0, 1, 0, -0.116445065, 0, 0.99319714, 31.77565, 9.766565, -160.72604)
+shape = SubResource("BoxShape3D_241ex")
+
+[node name="CollisionShape3D32" type="CollisionShape3D" parent="Environment/CropsZone/Collisions" unique_id=1937385269]
+transform = Transform3D(0.78034025, 0, -0.62535506, 0, 1, 0, 0.62535506, 0, 0.78034025, 14.680981, 9.766565, -161.08977)
+shape = SubResource("BoxShape3D_241ex")
+
 [node name="CollisionShape3D19" type="CollisionShape3D" parent="Environment/CropsZone/Collisions" unique_id=1949084324]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.82118, 9.241041, -29.671318)
 shape = SubResource("BoxShape3D_32lya")
@@ -1508,6 +1563,7 @@ dialogue = ExtResource("20_hii61")
 metadata/_custom_type_script = "uid://c1bj0q5evhiei"
 
 [node name="Trees" type="Node3D" parent="Environment" unique_id=1121390256]
+metadata/_edit_lock_ = true
 
 [node name="Arrayan1" type="Node3D" parent="Environment/Trees" unique_id=723987996]
 
