@@ -3,7 +3,7 @@ if is_quest_completed():
 	=> idle_healed
 elif not is_quest_accepted():
 	=> introduction
-elif is_objective_completed(&"restore_environment"):
+elif is_objective_completed(&"heal_trees"):
 	do report_event()
 	=> healed
 else:
