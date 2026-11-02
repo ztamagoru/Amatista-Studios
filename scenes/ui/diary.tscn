@@ -67,7 +67,7 @@ region = Rect2(391.9442, 539.0551, 217.24219, 213.19104)
 atlas = ExtResource("21_nywfn")
 region = Rect2(1188.1172, 379.5452, 220.6134, 213.54645)
 
-[node name="Diary" type="Control" unique_id=1036958420]
+[node name="Diary" type="Control" unique_id=1036958420 node_paths=PackedStringArray("entry_manager")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -75,6 +75,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_18vdf")
+entry_manager = NodePath("EntryManager")
 
 [node name="DiaryBackTexture" type="TextureRect" parent="." unique_id=1810887065]
 layout_mode = 1
@@ -486,6 +487,7 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_g4v7s")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_g4v7s")
 icon = SubResource("AtlasTexture_g4v7s")
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="EntryManager/Buttons/PreviousPageButton" to="EntryManager" method="_on_previous_page_button_pressed"]
 [connection signal="pressed" from="EntryManager/Buttons/NextPageButton" to="EntryManager" method="_on_next_page_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

@@ -10,12 +10,13 @@ var all_entries : Dictionary
 var collection : Dictionary[StringName, Array]
 
 var unlocked_entries : Array[StringName]
+
 signal diary_loaded
+
 # --
 
 func _ready() -> void:
 	_load_diary_entries()
-	diary_loaded.emit()
 
 func _load_diary_entries() -> void:
 	if not FileAccess.file_exists(diary_route):
@@ -37,10 +38,10 @@ func _update_unlocks() -> void:
 	collection.clear()
 	
 	for cat in all_entries:
+		collection[cat] = []
+		
 		for item in all_entries[cat]:
 			if not unlocked_entries.has(StringName(item.id)): continue
-			
-			if not collection.has(cat): collection[cat] = []
 			
 			if cat == "npc":
 				collection[cat].append(DiaryEntry.NPCEntry.new(
@@ -78,6 +79,8 @@ func load_save_data(data : Dictionary) -> void:
 		for entry_id in saved_entries:
 			var id : StringName = StringName(str(entry_id))
 			if not unlocked_entries.has(id): unlocked_entries.append(id)
+	
+	_update_unlocks()
 
 func save_diary() -> void:
 	SaveManager.save_section("diary", get_save_data())
