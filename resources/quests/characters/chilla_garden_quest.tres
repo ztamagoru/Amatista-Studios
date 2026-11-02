@@ -30,5 +30,6 @@ metadata/_custom_type_script = "uid://irg1osbq3q4l"
 script = ExtResource("2_d1ipq")
 id = &"chilla_garden_quest"
 title = "Ayudando a Chilla"
+description = "Encuentra el anillo del guardia para que recuerde quién es."
 objectives = Array[ExtResource("1_612fq")]([SubResource("Resource_r111l"), SubResource("Resource_4kk17"), SubResource("Resource_612fq")])
 metadata/_custom_type_script = "uid://rau5swn7y6cm"

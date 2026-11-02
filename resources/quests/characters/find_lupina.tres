@@ -6,7 +6,7 @@
 [sub_resource type="Resource" id="Resource_301nb"]
 script = ExtResource("1_14vs6")
 id = &"get_flower"
-description = "Buscar la flor para Jorge."
+description = "Tengo que buscar la flor para Jorge."
 type = 1
 item_id = &"flower_lupina"
 metadata/_custom_type_script = "uid://irg1osbq3q4l"
@@ -14,7 +14,7 @@ metadata/_custom_type_script = "uid://irg1osbq3q4l"
 [sub_resource type="Resource" id="Resource_dlhes"]
 script = ExtResource("1_14vs6")
 id = &"deliver_flower"
-description = "Llevarle la flor a Jorge."
+description = "Creo que es esta la flor."
 type = 2
 item_id = &"flower_lupina"
 metadata/_custom_type_script = "uid://irg1osbq3q4l"
