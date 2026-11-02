@@ -88,7 +88,6 @@ func game() -> void:
 	_set_can_choose(true)
 
 func exit() -> void:
-	#await get_tree().create_timer(1).timeout
 	puzzle_exited.emit()
 	AudioManager.play_music("garden")
 	queue_free()
@@ -117,10 +116,6 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed and cup_hovered: game()
-
-func _process(_delta: float) -> void:
-	if Input.is_key_pressed(KEY_ESCAPE):
-		exit()
 
 func _get_cup_hovered() -> Cup:
 	var mouse_pos : Vector2 = get_viewport().get_mouse_position()
@@ -181,3 +176,8 @@ func _set_can_choose(value : bool) -> void:
 func _play_sfx(correct : bool):
 	if correct: pass	# acá va la pista de audio de la respuesta correcta
 	else: pass			# acá va la pista de audio de la respuesta incorrecta
+
+# --
+
+func _on_exit_puzzle_pressed() -> void:
+	exit()

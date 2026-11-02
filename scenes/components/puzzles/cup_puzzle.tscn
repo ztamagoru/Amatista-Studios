@@ -21,6 +21,20 @@ sky = SubResource("Sky_7ks35")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="Curve3D" id="Curve3D_7ks35"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_7pyt5"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, -4, 0, 0, 0, 4, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_vtlwb"]
 size = Vector3(2.8845215, 2.5800781, 1)
 
@@ -149,20 +163,6 @@ _data = {
 &"check_inside": SubResource("Animation_q263b")
 }
 
-[sub_resource type="Curve3D" id="Curve3D_7ks35"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0),
-"tilts": PackedFloat32Array(0, 0)
-}
-point_count = 2
-
-[sub_resource type="Curve3D" id="Curve3D_7pyt5"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, -4, 0, 0, 0, 4, 0, 0),
-"tilts": PackedFloat32Array(0, 0)
-}
-point_count = 2
-
 [node name="CupPuzzle" type="Node3D" unique_id=697723389]
 script = ExtResource("1_7pyt5")
 item_reward = ExtResource("2_0pu2p")
@@ -183,6 +183,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 
 [node name="Marker3" type="Marker3D" parent="Markers" unique_id=216304330]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Paths" type="Node3D" parent="." unique_id=22536180]
+
+[node name="Path1" type="Path3D" parent="Paths" unique_id=1966068707]
+curve = SubResource("Curve3D_7ks35")
+script = ExtResource("2_v3k2j")
+
+[node name="CupPath" type="PathFollow3D" parent="Paths/Path1" unique_id=46060818]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="CupRemote" type="RemoteTransform3D" parent="Paths/Path1/CupPath" unique_id=2053709944]
+
+[node name="Path2" type="Path3D" parent="Paths" unique_id=1698535891]
+curve = SubResource("Curve3D_7pyt5")
+script = ExtResource("2_v3k2j")
+
+[node name="CupPath" type="PathFollow3D" parent="Paths/Path2" unique_id=829411312]
+
+[node name="CupRemote" type="RemoteTransform3D" parent="Paths/Path2/CupPath" unique_id=1089464284]
 
 [node name="Cups" type="Node3D" parent="." unique_id=485788488]
 
@@ -264,25 +283,6 @@ transform = Transform3D(0.19108163, 0, 0, 0, 0.19108163, 0, 0, 0, 0.19108163, 0,
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cups/Cup3" unique_id=1889603460]
 libraries/ = SubResource("AnimationLibrary_4t8hw")
-
-[node name="Paths" type="Node3D" parent="." unique_id=22536180]
-
-[node name="Path1" type="Path3D" parent="Paths" unique_id=1966068707]
-curve = SubResource("Curve3D_7ks35")
-script = ExtResource("2_v3k2j")
-
-[node name="CupPath" type="PathFollow3D" parent="Paths/Path1" unique_id=46060818]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-
-[node name="CupRemote" type="RemoteTransform3D" parent="Paths/Path1/CupPath" unique_id=2053709944]
-
-[node name="Path2" type="Path3D" parent="Paths" unique_id=1698535891]
-curve = SubResource("Curve3D_7pyt5")
-script = ExtResource("2_v3k2j")
-
-[node name="CupPath" type="PathFollow3D" parent="Paths/Path2" unique_id=829411312]
-
-[node name="CupRemote" type="RemoteTransform3D" parent="Paths/Path2/CupPath" unique_id=1089464284]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=84240221]
 transform = Transform3D(1, 0, 0, 0, 0.81915206, 0.57357645, 0, -0.57357645, 0.81915206, 0, 5.2978725, 6.2762012)
@@ -931,6 +931,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.728423, 0, 1550.7933)
 
 [node name="zanahoria_032" parent="farm" index="213" unique_id=1175489991]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.728423, 0, 1546.0923)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=882778642]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=225208329]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+
+[node name="ExitPuzzle" type="Button" parent="CanvasLayer/MarginContainer" unique_id=395359691]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "X"
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/ExitPuzzle" to="." method="_on_exit_puzzle_pressed"]
 
 [editable path="Cups/Cup1/calabazas(shellgame)"]
 [editable path="Cups/Cup2/calabazas(shellgame)2"]
