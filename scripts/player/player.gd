@@ -10,6 +10,10 @@ class_name Player
 
 # --
 
+@export var interactor_hud : Control
+
+# --
+
 var skills : Dictionary = {}
 
 # --

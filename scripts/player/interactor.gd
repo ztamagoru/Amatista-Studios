@@ -20,6 +20,10 @@ func _process(_delta: float) -> void:
 		if closest_target is Item: closest_target.pick_up()
 		elif closest_target is PuzzleTrigger: closest_target.start_puzzle() 
 		else: closest_target.interact()
+		
+		if is_instance_valid(closest_target) and closest_target.is_queued_for_deletion():
+			closest_target = null
+			parent.interactor_hud.update_interaction_prompt(null)
 
 func _physics_process(_delta: float) -> void:
 	var candidates : Array[Node3D] = []
@@ -48,3 +52,4 @@ func _physics_process(_delta: float) -> void:
 	if is_instance_valid(closest_target):
 		closest_target.is_closest = true
 	
+	parent.interactor_hud.update_interaction_prompt(closest_target)

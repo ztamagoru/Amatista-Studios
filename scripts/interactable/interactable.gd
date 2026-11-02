@@ -18,7 +18,6 @@ var is_closest : bool = false:
 		
 		is_closest = value
 		_toggle_outline()
-		toggle_ui_interaction()
 
 var outline_material : StandardMaterial3D = load("res://resources/outline_material_3d.tres")
 var override_materials : Array[StandardMaterial3D]
@@ -62,7 +61,4 @@ func _execute_dialogue(triggered_by : Interactable, dialogue_position : String =
 		)
 
 func _update_quest_state() -> void:
-	pass
-
-func toggle_ui_interaction() -> void:
 	pass

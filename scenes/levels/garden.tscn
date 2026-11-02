@@ -31,6 +31,9 @@
 [ext_resource type="Resource" uid="uid://fimcb747t2a4" path="res://resources/items/flower_mutisia.tres" id="19_kswy4"]
 [ext_resource type="Resource" uid="uid://djrgmm08kpf17" path="res://resources/dialogs/garden/garden_gagabriela.dialogue" id="20_hii61"]
 [ext_resource type="PackedScene" uid="uid://1whrhty23vh4" path="res://scenes/ui/quest_hud.tscn" id="31_hii61"]
+[ext_resource type="Script" uid="uid://dc31467mgksbc" path="res://scenes/ui/interaction_prompt_hud.gd" id="32_t4f2t"]
+[ext_resource type="Texture2D" uid="uid://b4e4vliudwlv4" path="res://assets/ui/hud/interaction_npc.png" id="33_ae5ye"]
+[ext_resource type="Texture2D" uid="uid://trru0yinakvl" path="res://assets/ui/hud/interaction_interactable.png" id="34_c73ps"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2dny5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -111,8 +114,9 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 directional_shadow_max_distance = 500.0
 
-[node name="Player" parent="." unique_id=242546826 instance=ExtResource("1_8i028")]
+[node name="Player" parent="." unique_id=242546826 node_paths=PackedStringArray("interactor_hud") instance=ExtResource("1_8i028")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 99.6125, 4.289241, 12.705101)
+interactor_hud = NodePath("../HUD/Control/MarginContainer/InteractionPromptHUD")
 
 [node name="Environment" type="Node3D" parent="." unique_id=228048704]
 
@@ -1700,6 +1704,45 @@ theme_override_constants/margin_bottom = 50
 
 [node name="QuestHUD" parent="HUD/Control/MarginContainer" unique_id=287424734 instance=ExtResource("31_hii61")]
 layout_mode = 2
+
+[node name="InteractionPromptHUD" type="Control" parent="HUD/Control/MarginContainer" unique_id=882795074]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+script = ExtResource("32_t4f2t")
+
+[node name="NPCPrompt" type="TextureRect" parent="HUD/Control/MarginContainer/InteractionPromptHUD" unique_id=1416194563]
+custom_maximum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2000.0
+offset_top = -2000.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(200, 200)
+texture = ExtResource("33_ae5ye")
+expand_mode = 2
+
+[node name="InteractablePrompt" type="TextureRect" parent="HUD/Control/MarginContainer/InteractionPromptHUD" unique_id=976990095]
+custom_maximum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2000.0
+offset_top = -2000.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(200, 200)
+texture = ExtResource("34_c73ps")
+expand_mode = 2
 
 [editable path="Environment/garden_scene"]
 [editable path="Environment/CropsZone/PumpkinPuzzleTrigger/StaticBody3D/calabazas(shellgame)"]
