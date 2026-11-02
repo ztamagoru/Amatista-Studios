@@ -148,4 +148,11 @@ func paused():
 func unpaused():
 	Wwise.set_state("Pause", "Pause_off")
 	print("Unpaused")
-	
+#-----------------------------Transition------------------------------------
+#func on_transition():
+	#Wwise.set_state("Transition", "Low_Volume")
+	#print("Transicion activada")
+#
+#func off_transition():
+	#Wwise.set_state("Transition", "Normal_Volume")
+	#print("Transicion desactivada")

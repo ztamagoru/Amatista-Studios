@@ -42,7 +42,7 @@ func _on_aim_unaimed() -> void:
 
 func footstep() -> void:
 	var surface := detect_surface()
-	print("PLAYER -> Detectó superficie: ", surface)
+	#print("PLAYER -> Detectó superficie: ", surface)
 	AudioManager.on_footstep(surface)
 
 

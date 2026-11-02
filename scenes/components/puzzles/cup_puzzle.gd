@@ -90,7 +90,6 @@ func game() -> void:
 func exit() -> void:
 	#await get_tree().create_timer(1).timeout
 	puzzle_exited.emit()
-	AudioManager.stop_music()
 	AudioManager.play_music("garden")
 	queue_free()
 
@@ -100,6 +99,7 @@ func win() -> void:
 	
 	await get_tree().create_timer(1).timeout
 	puzzle_won.emit()
+	AudioManager.play_music("garden")
 	queue_free()
 
 # --
