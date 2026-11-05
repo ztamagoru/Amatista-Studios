@@ -79,7 +79,7 @@ func _load_all_environment() -> void:
 	if sick_environment.is_empty(): return
 	
 	for environment in all_environment:
-		environment.quest_id = StringName("heal_" + self.name.to_lower())
+		environment.quest_id = StringName("heal_" + self.name.to_snake_case())
 		
 		if sick_environment.has(environment.name): environment.set_sick()
 		else: environment.set_healthy()
