@@ -130,7 +130,7 @@ shadow_enabled = true
 directional_shadow_max_distance = 500.0
 
 [node name="Player" parent="." unique_id=242546826 node_paths=PackedStringArray("interactor_hud") instance=ExtResource("1_8i028")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -54.70707, 4.289241, -83.853676)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 99, 4.289, 12)
 interactor_hud = NodePath("../HUD/Control/MarginContainer/InteractionPromptHUD")
 
 [node name="Environment" type="Node3D" parent="." unique_id=228048704]
