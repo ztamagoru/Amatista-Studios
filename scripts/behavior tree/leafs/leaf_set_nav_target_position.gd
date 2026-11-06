@@ -7,7 +7,7 @@ class_name LeafSetNavTargetPosition
 ## Owner needs to have a [NavigationAgent3D] node and a
 ## [NavigationRgion3D] node declared on an attached script. 
 
-@onready var npc : NPC = owner.get_parent() as NPC
+@onready var npc : NPC3D = owner.get_parent() as NPC3D
 
 func step() -> Result:
 	var map_rid : RID = npc.nav_region.get_rid()

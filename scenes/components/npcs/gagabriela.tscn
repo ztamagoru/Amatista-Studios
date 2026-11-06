@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c8ll5udwkv8tk"]
 
-[ext_resource type="Script" uid="uid://csudaelv6ajs4" path="res://scripts/npc/npc.gd" id="1_pi3u4"]
+[ext_resource type="Script" uid="uid://csudaelv6ajs4" path="res://scripts/npc/npc_3d.gd" id="1_pi3u4"]
 [ext_resource type="SpriteFrames" uid="uid://dg4trx22gkx74" path="res://assets/ui/interaction icons/icons_orange_frames.tres" id="2_y7vi4"]
 [ext_resource type="Script" uid="uid://dbyh0ac8p2iqp" path="res://scripts/ui/interaction_marker.gd" id="3_v1aru"]
 [ext_resource type="PackedScene" uid="uid://c24feg488hick" path="res://assets/models/levels/garden/npc/gagabriela.glb" id="4_16s2o"]

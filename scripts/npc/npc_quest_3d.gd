@@ -1,6 +1,6 @@
 @tool
-extends NPC
-class_name NPCQuest
+extends NPC3D
+class_name NPCQuest3D
 
 # --
 

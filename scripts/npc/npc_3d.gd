@@ -1,7 +1,7 @@
 @icon("res://assets/icons/npc.svg")
 
 extends CharacterBody3D
-class_name NPC
+class_name NPC3D
 
 # --
 

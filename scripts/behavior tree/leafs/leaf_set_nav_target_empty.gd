@@ -6,7 +6,7 @@ class_name LeafSetNavTargetEmpty
 ## Owner needs to have a [NavigationAgent3D] node declared on an
 ## attached script.
 
-@onready var npc : NPC = owner.get_parent() as NPC
+@onready var npc : NPC3D = owner.get_parent() as NPC3D
 
 func step() -> Result:
 	npc.nav_agent.target_position = Vector3.ZERO

@@ -1,4 +1,4 @@
-extends NPC
+extends NPC3D
 
 # --
 

@@ -8,7 +8,7 @@ class_name LeafIsNavTargetNear
 ## between itself and the [NavigationAgent3D]'s
 ## [code]target_position[/code].
 
-@onready var npc : NPC = owner.get_parent() as NPC
+@onready var npc : NPC3D = owner.get_parent() as NPC3D
 
 func step() -> Result:
 	if npc.global_position.distance_to(npc.nav_agent.target_position) < npc.velocity.length() * get_physics_process_delta_time():

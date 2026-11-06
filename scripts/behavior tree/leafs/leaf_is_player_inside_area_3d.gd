@@ -5,7 +5,7 @@ class_name LeafIsPlayerInsideArea3D
 ## 
 ## Player needs to be declared inside of [Globals] in order to work.
 
-@onready var npc : NPC = owner.get_parent() as NPC
+@onready var npc : NPC3D = owner.get_parent() as NPC3D
 
 func step() -> Result:
 	for body in npc.target_detection_area.get_overlapping_bodies():

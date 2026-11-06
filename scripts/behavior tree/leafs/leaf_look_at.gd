@@ -6,10 +6,10 @@ class_name LeafLookAt
 ## Target needs to be declared as [code]lookt_target[/code]
 ## inside of a script attached to owner.
 
-## Velocity at which the NPC rotates
+## Velocity at which the NPC3D rotates
 @export var rotation_speed : float = 2.5
 
-@onready var npc : NPC = owner.get_parent() as NPC
+@onready var npc : NPC3D = owner.get_parent() as NPC3D
 
 # --
 

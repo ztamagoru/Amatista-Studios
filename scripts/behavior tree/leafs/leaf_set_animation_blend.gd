@@ -6,7 +6,7 @@ class_name LeafSetAnimationBlend
 
 @export var blend_value : float = 1
 
-@onready var npc : NPC = owner.get_parent() as NPC
+@onready var npc : NPC3D = owner.get_parent() as NPC3D
 
 func step() -> Result:
 	npc.anim_tree.set("parameters/blend_position", blend_value)

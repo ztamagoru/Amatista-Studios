@@ -8,7 +8,7 @@ class_name LeafMoveToNavTarget
 
 @export var rotation_speed : float = 2.5
 
-@onready var npc : NPC = owner.get_parent() as NPC
+@onready var npc : NPC3D = owner.get_parent() as NPC3D
 
 func step() -> Result:
 	var direction = (

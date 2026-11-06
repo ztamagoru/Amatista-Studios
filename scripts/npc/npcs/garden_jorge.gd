@@ -1,4 +1,4 @@
-extends NPCQuest
+extends NPCQuest3D
 class_name GardenJorge
 
 # --
