@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://1ky4j7v5wk2o"]
+
+[ext_resource type="Script" uid="uid://bekj481qkmixn" path="res://scripts/behavior tree/behavior_tree.gd" id="1_jhcht"]
+[ext_resource type="Script" uid="uid://clwtum3tidnac" path="res://scripts/behavior tree/composite_selector.gd" id="2_qympm"]
+[ext_resource type="Script" uid="uid://cngo8lv5njg42" path="res://scripts/behavior tree/composite_sequence.gd" id="3_1luo5"]
+[ext_resource type="Script" uid="uid://cw6rbl2qgvt2s" path="res://scripts/behavior tree/leafs/leaf_is_player_inside_area_3d.gd" id="4_ft0w5"]
+[ext_resource type="Script" uid="uid://dgi3fuytrorts" path="res://scripts/behavior tree/leafs/leaf_look_at.gd" id="5_6ke5y"]
+[ext_resource type="Script" uid="uid://hp5c25x1v4m3" path="res://scripts/behavior tree/leafs/leaf_set_animation_blend.gd" id="6_mr0fq"]
+[ext_resource type="Script" uid="uid://bon7fesi78kmu" path="res://scripts/behavior tree/leafs/leaf_check_timer.gd" id="7_5myrb"]
+[ext_resource type="Script" uid="uid://c2vyvfmm6gcfv" path="res://scripts/behavior tree/leafs/leaf_is_nav_target_empty.gd" id="8_rinww"]
+[ext_resource type="Script" uid="uid://dxk7m6al3ob1u" path="res://scripts/behavior tree/leafs/leaf_set_nav_target_position.gd" id="9_6afco"]
+[ext_resource type="Script" uid="uid://bxu3f71pipsjo" path="res://scripts/behavior tree/leafs/leaf_is_nav_target_near.gd" id="10_skkeh"]
+[ext_resource type="Script" uid="uid://de5vhatfo2bf7" path="res://scripts/behavior tree/leafs/leaf_set_nav_target_empty.gd" id="11_e878s"]
+[ext_resource type="Script" uid="uid://damc2axxj1jex" path="res://scripts/behavior tree/leafs/leaf_set_timer.gd" id="12_tdg5f"]
+[ext_resource type="Script" uid="uid://hi6u2m2tu6fe" path="res://scripts/behavior tree/leafs/leaf_move_to_nav_target.gd" id="13_6hw8r"]
+
+[node name="BehaviorTree" type="Node" unique_id=298881798]
+script = ExtResource("1_jhcht")
+metadata/_custom_type_script = "uid://bekj481qkmixn"
+
+[node name="CompositeSelector" type="Node" parent="." unique_id=605914212]
+script = ExtResource("2_qympm")
+metadata/_custom_type_script = "uid://clwtum3tidnac"
+
+[node name="CheckIfPlayerNear" type="Node" parent="CompositeSelector" unique_id=2038305676]
+script = ExtResource("3_1luo5")
+metadata/_custom_type_script = "uid://cngo8lv5njg42"
+
+[node name="LeafIsPlayerNear" type="Node" parent="CompositeSelector/CheckIfPlayerNear" unique_id=1398042700]
+script = ExtResource("4_ft0w5")
+metadata/_custom_type_script = "uid://cw6rbl2qgvt2s"
+
+[node name="LeafLookAt" type="Node" parent="CompositeSelector/CheckIfPlayerNear" unique_id=2089431932]
+script = ExtResource("5_6ke5y")
+metadata/_custom_type_script = "uid://dgi3fuytrorts"
+
+[node name="LeafSetAnimationBlend" type="Node" parent="CompositeSelector/CheckIfPlayerNear" unique_id=582348733]
+script = ExtResource("6_mr0fq")
+metadata/_custom_type_script = "uid://hp5c25x1v4m3"
+
+[node name="IdleMovement" type="Node" parent="CompositeSelector" unique_id=890684577]
+script = ExtResource("2_qympm")
+metadata/_custom_type_script = "uid://clwtum3tidnac"
+
+[node name="IsWaiting" type="Node" parent="CompositeSelector/IdleMovement" unique_id=2092738005]
+script = ExtResource("3_1luo5")
+metadata/_custom_type_script = "uid://cngo8lv5njg42"
+
+[node name="LeafCheckTimer" type="Node" parent="CompositeSelector/IdleMovement/IsWaiting" unique_id=508797869]
+script = ExtResource("7_5myrb")
+metadata/_custom_type_script = "uid://bon7fesi78kmu"
+
+[node name="NavTargetEmpty" type="Node" parent="CompositeSelector/IdleMovement" unique_id=1015682420]
+script = ExtResource("3_1luo5")
+metadata/_custom_type_script = "uid://cngo8lv5njg42"
+
+[node name="LeafIsNavTargetEmpty" type="Node" parent="CompositeSelector/IdleMovement/NavTargetEmpty" unique_id=1440955812]
+script = ExtResource("8_rinww")
+metadata/_custom_type_script = "uid://c2vyvfmm6gcfv"
+
+[node name="LeafSetNavTargetPosition" type="Node" parent="CompositeSelector/IdleMovement/NavTargetEmpty" unique_id=85119716]
+script = ExtResource("9_6afco")
+metadata/_custom_type_script = "uid://dxk7m6al3ob1u"
+
+[node name="LeafSetAnimationBlend" type="Node" parent="CompositeSelector/IdleMovement/NavTargetEmpty" unique_id=2123530155]
+script = ExtResource("6_mr0fq")
+metadata/_custom_type_script = "uid://hp5c25x1v4m3"
+
+[node name="ReachedDestiny" type="Node" parent="CompositeSelector/IdleMovement" unique_id=1325360489]
+script = ExtResource("3_1luo5")
+metadata/_custom_type_script = "uid://cngo8lv5njg42"
+
+[node name="LeafIsNavTargetNear" type="Node" parent="CompositeSelector/IdleMovement/ReachedDestiny" unique_id=1074947207]
+script = ExtResource("10_skkeh")
+metadata/_custom_type_script = "uid://bxu3f71pipsjo"
+
+[node name="LeafSetAnimationBlend" type="Node" parent="CompositeSelector/IdleMovement/ReachedDestiny" unique_id=284695697]
+script = ExtResource("6_mr0fq")
+metadata/_custom_type_script = "uid://hp5c25x1v4m3"
+
+[node name="LeafSetNavTargetEmpty" type="Node" parent="CompositeSelector/IdleMovement/ReachedDestiny" unique_id=1669893227]
+script = ExtResource("11_e878s")
+metadata/_custom_type_script = "uid://de5vhatfo2bf7"
+
+[node name="LeafSetTimer" type="Node" parent="CompositeSelector/IdleMovement/ReachedDestiny" unique_id=926116327]
+script = ExtResource("12_tdg5f")
+metadata/_custom_type_script = "uid://damc2axxj1jex"
+
+[node name="LeafMoveToNavTarget" type="Node" parent="CompositeSelector/IdleMovement" unique_id=1197813942]
+script = ExtResource("13_6hw8r")
+metadata/_custom_type_script = "uid://hi6u2m2tu6fe"
+
+[node name="LeafSetAnimationBlend" type="Node" parent="CompositeSelector/IdleMovement" unique_id=274211644]
+script = ExtResource("6_mr0fq")
+metadata/_custom_type_script = "uid://hp5c25x1v4m3"

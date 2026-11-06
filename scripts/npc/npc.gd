@@ -11,11 +11,17 @@ class_name NPC
 @export var diary_entry_id : StringName
 
 @export_group("Movement")
+@export var speed : float
+@export_subgroup("Navigation", "nav_")
 @export var nav_agent : NavigationAgent3D
 @export var nav_region : NavigationRegion3D
-@export var speed : float
-@export var look_target : Node3D
-@export var idle_timer : Timer
+
+@export_group("Target", "target_")
+@export var target_look : Node3D
+@export var target_detection_area : Area3D
+
+@export_group("Animations")
+@export var anim_tree : AnimationTree
 
 # --
 

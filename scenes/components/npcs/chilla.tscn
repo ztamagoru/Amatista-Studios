@@ -4,12 +4,6 @@
 [ext_resource type="SpriteFrames" uid="uid://dg4trx22gkx74" path="res://assets/ui/interaction icons/icons_orange_frames.tres" id="2_lbvto"]
 [ext_resource type="Script" uid="uid://dbyh0ac8p2iqp" path="res://scripts/ui/interaction_marker.gd" id="3_3mn0j"]
 [ext_resource type="PackedScene" uid="uid://b33blcnymxptl" path="res://assets/models/levels/garden/npc/chilla.glb" id="4_fckuj"]
-[ext_resource type="Script" uid="uid://bekj481qkmixn" path="res://scripts/behavior tree/behavior_tree.gd" id="5_xw40b"]
-[ext_resource type="Script" uid="uid://clwtum3tidnac" path="res://scripts/behavior tree/composite_selector.gd" id="6_jxkj2"]
-[ext_resource type="Script" uid="uid://cngo8lv5njg42" path="res://scripts/behavior tree/composite_sequence.gd" id="7_h6wx0"]
-[ext_resource type="Script" uid="uid://cw6rbl2qgvt2s" path="res://scripts/behavior tree/leafs/leaf_is_player_inside_area_3d.gd" id="8_5tdrr"]
-[ext_resource type="Script" uid="uid://dgi3fuytrorts" path="res://scripts/behavior tree/leafs/leaf_look_at.gd" id="9_o24r7"]
-[ext_resource type="Script" uid="uid://hp5c25x1v4m3" path="res://scripts/behavior tree/leafs/leaf_set_animation_blend.gd" id="10_k3wt5"]
 [ext_resource type="Script" uid="uid://dpi8fnv26aayl" path="res://scripts/npc/hurt_box.gd" id="11_5kill"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
@@ -32,11 +26,10 @@ blend_point_0/name = &"idle"
 [sub_resource type="BoxShape3D" id="BoxShape3D_a453d"]
 size = Vector3(7, 14.447, 7)
 
-[node name="Chilla" type="CharacterBody3D" unique_id=947225545 node_paths=PackedStringArray("nav_agent", "idle_timer")]
+[node name="Chilla" type="CharacterBody3D" unique_id=947225545 node_paths=PackedStringArray("target_detection_area")]
 script = ExtResource("1_5kill")
-nav_agent = NodePath("NavigationAgent3D")
-speed = 5.0
-idle_timer = NodePath("IdleTimer")
+diary_entry_id = &"chilla"
+target_detection_area = NodePath("PlayerDetection")
 metadata/_custom_type_script = "uid://jcqyuur4jml2"
 
 [node name="InteractionMarker" type="AnimatedSprite3D" parent="." unique_id=1065127807]
@@ -53,19 +46,17 @@ metadata/_edit_group_ = true
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.004297912, 3.5700765, -0.11996126)
 
 [node name="Skeleton3D" parent="chilla/Armature_001" index="0" unique_id=902401703]
-bones/0/position = Vector3(-3.250002e-35, 0.95582825, 0.059672423)
+bones/0/position = Vector3(-1.1021473e-35, 0.7052811, 0.059687447)
 bones/2/rotation = Quaternion(-0.23140064, -0.0041984348, 0.9595126, -0.16053581)
 bones/4/rotation = Quaternion(-0.23140064, -0.0041984348, 0.9595126, -0.16053581)
-bones/6/position = Vector3(0.22961538, 3.3223205, -1.37029)
+bones/6/position = Vector3(0.22961538, 3.216167, -1.37029)
 bones/6/rotation = Quaternion(0.89556795, -0.1084148, 0.34319174, -0.26157913)
-bones/8/position = Vector3(1.0705923, 1.5659269, -2.4751427)
-bones/10/position = Vector3(1.0705924, 1.5659269, -2.475143)
+bones/8/position = Vector3(1.0705923, 1.1689216, -2.4751427)
+bones/10/position = Vector3(1.0705924, 1.1689216, -2.475143)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1748639179]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.857971, 0)
 shape = SubResource("CapsuleShape3D_g4v7s")
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=935345919]
 
 [node name="PlayerDetection" type="Area3D" parent="." unique_id=256158338]
 collision_mask = 17
@@ -83,33 +74,6 @@ root_node = NodePath("../chilla")
 tree_root = SubResource("AnimationNodeBlendSpace1D_57qmd")
 anim_player = NodePath("../chilla/AnimationPlayer")
 parameters/blend_position = 0.0
-
-[node name="BehaviorTree" type="Node" parent="." unique_id=1268456869]
-script = ExtResource("5_xw40b")
-metadata/_custom_type_script = "uid://bekj481qkmixn"
-
-[node name="LeafSetAnimationBlend" type="Node" parent="BehaviorTree" unique_id=1149020859 node_paths=PackedStringArray("anim_tree")]
-script = ExtResource("10_k3wt5")
-anim_tree = NodePath("../../AnimationTree")
-blend_value = 0.5
-metadata/_custom_type_script = "uid://hp5c25x1v4m3"
-
-[node name="CompositeSelector" type="Node" parent="BehaviorTree" unique_id=34875689]
-script = ExtResource("6_jxkj2")
-metadata/_custom_type_script = "uid://clwtum3tidnac"
-
-[node name="CheckIfPlayerNear" type="Node" parent="BehaviorTree/CompositeSelector" unique_id=484546206]
-script = ExtResource("7_h6wx0")
-metadata/_custom_type_script = "uid://cngo8lv5njg42"
-
-[node name="LeafIsPlayerNear" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfPlayerNear" unique_id=35860828 node_paths=PackedStringArray("range_area")]
-script = ExtResource("8_5tdrr")
-range_area = NodePath("../../../../PlayerDetection")
-metadata/_custom_type_script = "uid://cw6rbl2qgvt2s"
-
-[node name="LeafLookAt" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfPlayerNear" unique_id=199316353]
-script = ExtResource("9_o24r7")
-metadata/_custom_type_script = "uid://dgi3fuytrorts"
 
 [node name="HurtBox" type="Area3D" parent="." unique_id=1424322186]
 script = ExtResource("11_5kill")

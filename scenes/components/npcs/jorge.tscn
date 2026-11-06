@@ -4,19 +4,6 @@
 [ext_resource type="SpriteFrames" uid="uid://dg4trx22gkx74" path="res://assets/ui/interaction icons/icons_orange_frames.tres" id="2_qm71c"]
 [ext_resource type="Script" uid="uid://dbyh0ac8p2iqp" path="res://scripts/ui/interaction_marker.gd" id="3_ug0rj"]
 [ext_resource type="PackedScene" uid="uid://pwrrk2e7bp3m" path="res://assets/models/levels/garden/npc/jorge.glb" id="4_ymukt"]
-[ext_resource type="Script" uid="uid://bekj481qkmixn" path="res://scripts/behavior tree/behavior_tree.gd" id="5_moyru"]
-[ext_resource type="Script" uid="uid://clwtum3tidnac" path="res://scripts/behavior tree/composite_selector.gd" id="6_fggyw"]
-[ext_resource type="Script" uid="uid://cngo8lv5njg42" path="res://scripts/behavior tree/composite_sequence.gd" id="7_1ey6q"]
-[ext_resource type="Script" uid="uid://cw6rbl2qgvt2s" path="res://scripts/behavior tree/leafs/leaf_is_player_inside_area_3d.gd" id="8_l5pj2"]
-[ext_resource type="Script" uid="uid://dgi3fuytrorts" path="res://scripts/behavior tree/leafs/leaf_look_at.gd" id="9_si3hw"]
-[ext_resource type="Script" uid="uid://hp5c25x1v4m3" path="res://scripts/behavior tree/leafs/leaf_set_animation_blend.gd" id="10_0wuyv"]
-[ext_resource type="Script" uid="uid://bon7fesi78kmu" path="res://scripts/behavior tree/leafs/leaf_check_timer.gd" id="11_q7nnc"]
-[ext_resource type="Script" uid="uid://c2vyvfmm6gcfv" path="res://scripts/behavior tree/leafs/leaf_is_nav_target_empty.gd" id="12_khdy2"]
-[ext_resource type="Script" uid="uid://dxk7m6al3ob1u" path="res://scripts/behavior tree/leafs/leaf_set_nav_target_position.gd" id="13_c3ir1"]
-[ext_resource type="Script" uid="uid://bxu3f71pipsjo" path="res://scripts/behavior tree/leafs/leaf_is_nav_target_near.gd" id="14_2tkeb"]
-[ext_resource type="Script" uid="uid://de5vhatfo2bf7" path="res://scripts/behavior tree/leafs/leaf_set_nav_target_empty.gd" id="15_dfccr"]
-[ext_resource type="Script" uid="uid://damc2axxj1jex" path="res://scripts/behavior tree/leafs/leaf_set_timer.gd" id="16_b6jba"]
-[ext_resource type="Script" uid="uid://hi6u2m2tu6fe" path="res://scripts/behavior tree/leafs/leaf_move_to_nav_target.gd" id="17_0vcwc"]
 [ext_resource type="Script" uid="uid://dpi8fnv26aayl" path="res://scripts/npc/hurt_box.gd" id="18_qm71c"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
@@ -51,11 +38,13 @@ blend_point_2/name = &"Player near"
 [sub_resource type="BoxShape3D" id="BoxShape3D_ug0rj"]
 size = Vector3(7, 14.447, 7)
 
-[node name="Jorge" type="CharacterBody3D" unique_id=1709419815 node_paths=PackedStringArray("nav_agent", "idle_timer")]
+[node name="Jorge" type="CharacterBody3D" unique_id=1709419815 node_paths=PackedStringArray("nav_agent", "target_detection_area", "anim_tree")]
 script = ExtResource("1_ymukt")
-nav_agent = NodePath("NavigationAgent3D")
+diary_entry_id = &"jorge"
 speed = 5.0
-idle_timer = NodePath("IdleTimer")
+nav_agent = NodePath("NavigationAgent3D")
+target_detection_area = NodePath("PlayerDetection")
+anim_tree = NodePath("AnimationTree")
 metadata/_custom_type_script = "uid://csudaelv6ajs4"
 
 [node name="InteractionMarker" type="AnimatedSprite3D" parent="." unique_id=1065127807]
@@ -73,7 +62,7 @@ metadata/_edit_group_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36282945, 5.6507044, -0.2381401)
 
 [node name="Skeleton3D" parent="jorge/Armature_001" index="0" unique_id=1568782348]
-bones/0/position = Vector3(0.18057226, 0, 0)
+bones/0/position = Vector3(0.18057226, 0.2607925, 0)
 bones/2/rotation = Quaternion(0.7301547, 0.019998811, -0.682126, 0.034326732)
 bones/3/rotation = Quaternion(-0.70622706, 0.028142149, 0.7065466, 0.03526101)
 bones/4/rotation = Quaternion(-0.5695773, 0.5082055, 0.59399605, -0.25392458)
@@ -93,112 +82,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
 shape = SubResource("CylinderShape3D_g4v7s")
 debug_color = Color(0, 0.49803922, 0, 0.41960785)
 
-[node name="IdleTimer" type="Timer" parent="." unique_id=938067448]
-one_shot = true
-
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=1370625233]
 root_node = NodePath("../jorge")
 tree_root = SubResource("AnimationNodeBlendSpace1D_57qmd")
 anim_player = NodePath("../jorge/AnimationPlayer")
 parameters/blend_position = 0.0
-
-[node name="BehaviorTree" type="Node" parent="." unique_id=1268456869]
-script = ExtResource("5_moyru")
-metadata/_custom_type_script = "uid://bekj481qkmixn"
-
-[node name="CompositeSelector" type="Node" parent="BehaviorTree" unique_id=34875689]
-script = ExtResource("6_fggyw")
-metadata/_custom_type_script = "uid://clwtum3tidnac"
-
-[node name="CheckIfPlayerNear" type="Node" parent="BehaviorTree/CompositeSelector" unique_id=484546206]
-script = ExtResource("7_1ey6q")
-metadata/_custom_type_script = "uid://cngo8lv5njg42"
-
-[node name="LeafIsPlayerNear" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfPlayerNear" unique_id=35860828 node_paths=PackedStringArray("range_area")]
-script = ExtResource("8_l5pj2")
-range_area = NodePath("../../../../PlayerDetection")
-metadata/_custom_type_script = "uid://cw6rbl2qgvt2s"
-
-[node name="LeafLookAt" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfPlayerNear" unique_id=199316353]
-script = ExtResource("9_si3hw")
-metadata/_custom_type_script = "uid://dgi3fuytrorts"
-
-[node name="LeafSetAnimationBlend" type="Node" parent="BehaviorTree/CompositeSelector/CheckIfPlayerNear" unique_id=1149020859 node_paths=PackedStringArray("anim_tree")]
-script = ExtResource("10_0wuyv")
-anim_tree = NodePath("../../../../AnimationTree")
-blend_value = 0.5
-metadata/_custom_type_script = "uid://hp5c25x1v4m3"
-
-[node name="IdleMovement" type="Node" parent="BehaviorTree/CompositeSelector" unique_id=1972117093]
-script = ExtResource("6_fggyw")
-metadata/_custom_type_script = "uid://clwtum3tidnac"
-
-[node name="IsWaiting" type="Node" parent="BehaviorTree/CompositeSelector/IdleMovement" unique_id=973183018]
-script = ExtResource("7_1ey6q")
-metadata/_custom_type_script = "uid://cngo8lv5njg42"
-
-[node name="LeafCheckTimer" type="Node" parent="BehaviorTree/CompositeSelector/IdleMovement/IsWaiting" unique_id=24269487 node_paths=PackedStringArray("timer")]
-script = ExtResource("11_q7nnc")
-timer = NodePath("../../../../../IdleTimer")
-metadata/_custom_type_script = "uid://bon7fesi78kmu"
-
-[node name="NavTargetEmpty" type="Node" parent="BehaviorTree/CompositeSelector/IdleMovement" unique_id=1957040244]
-script = ExtResource("7_1ey6q")
-metadata/_custom_type_script = "uid://cngo8lv5njg42"
-
-[node name="LeafIsNavTargetEmpty" type="Node" parent="BehaviorTree/CompositeSelector/IdleMovement/NavTargetEmpty" unique_id=2066687340]
-script = ExtResource("12_khdy2")
-metadata/_custom_type_script = "uid://c2vyvfmm6gcfv"
-
-[node name="LeafSetNavTargetPosition" type="Node" parent="BehaviorTree/CompositeSelector/IdleMovement/NavTargetEmpty" unique_id=98386363]
-script = ExtResource("13_c3ir1")
-metadata/_custom_type_script = "uid://dxk7m6al3ob1u"
-
-[node name="LeafSetAnimationBlend" type="Node" parent="BehaviorTree/CompositeSelector/IdleMovement/NavTargetEmpty" unique_id=260309197 node_paths=PackedStringArray("anim_tree")]
-script = ExtResource("10_0wuyv")
-anim_tree = NodePath("../../../../../AnimationTree")
-blend_value = 1.0
-metadata/_custom_type_script = "uid://hp5c25x1v4m3"
-
-[node name="ReachedDestiny" type="Node" parent="BehaviorTree/CompositeSelector/IdleMovement" unique_id=863768369]
-script = ExtResource("7_1ey6q")
-metadata/_custom_type_script = "uid://cngo8lv5njg42"
-
-[node name="LeafIsNavTargetNear" type="Node" parent="BehaviorTree/CompositeSelector/IdleMovement/ReachedDestiny" unique_id=1153314634]
-script = ExtResource("14_2tkeb")
-metadata/_custom_type_script = "uid://bxu3f71pipsjo"
-
-[node name="LeafSetAnimationBlend" type="Node" parent="BehaviorTree/CompositeSelector/IdleMovement/ReachedDestiny" unique_id=1670304177 node_paths=PackedStringArray("anim_tree")]
-script = ExtResource("10_0wuyv")
-anim_tree = NodePath("../../../../../AnimationTree")
-metadata/_custom_type_script = "uid://hp5c25x1v4m3"
-
-[node name="LeafSetAnimationBlend2" type="Node" parent="BehaviorTree/CompositeSelector/IdleMovement/ReachedDestiny" unique_id=458298503 node_paths=PackedStringArray("anim_tree")]
-script = ExtResource("10_0wuyv")
-anim_tree = NodePath("../../../../../AnimationTree")
-metadata/_custom_type_script = "uid://hp5c25x1v4m3"
-
-[node name="LeafSetNavTargetEmpty" type="Node" parent="BehaviorTree/CompositeSelector/IdleMovement/ReachedDestiny" unique_id=345626513]
-script = ExtResource("15_dfccr")
-metadata/_custom_type_script = "uid://de5vhatfo2bf7"
-
-[node name="LeafSetTimer" type="Node" parent="BehaviorTree/CompositeSelector/IdleMovement/ReachedDestiny" unique_id=662377400 node_paths=PackedStringArray("timer")]
-script = ExtResource("16_b6jba")
-timer = NodePath("../../../../../IdleTimer")
-random_duration = true
-min_duration = 0.5
-max_duration = 3.0
-metadata/_custom_type_script = "uid://damc2axxj1jex"
-
-[node name="LeafMoveToNavTarget" type="Node" parent="BehaviorTree/CompositeSelector/IdleMovement" unique_id=1081569164]
-script = ExtResource("17_0vcwc")
-metadata/_custom_type_script = "uid://hi6u2m2tu6fe"
-
-[node name="LeafSetAnimationBlend" type="Node" parent="BehaviorTree/CompositeSelector/IdleMovement" unique_id=598709938 node_paths=PackedStringArray("anim_tree")]
-script = ExtResource("10_0wuyv")
-anim_tree = NodePath("../../../../AnimationTree")
-blend_value = 1.0
-metadata/_custom_type_script = "uid://hp5c25x1v4m3"
 
 [node name="HurtBox" type="Area3D" parent="." unique_id=1591959756]
 script = ExtResource("18_qm71c")

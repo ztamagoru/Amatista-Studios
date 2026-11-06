@@ -32,11 +32,13 @@ blend_point_1/name = &"Caminar"
 [sub_resource type="BoxShape3D" id="BoxShape3D_fbwj1"]
 size = Vector3(7, 14.447, 7)
 
-[node name="Lucy" type="CharacterBody3D" unique_id=2062187427 node_paths=PackedStringArray("nav_agent", "idle_timer")]
+[node name="Lucy" type="CharacterBody3D" unique_id=2062187427 node_paths=PackedStringArray("nav_agent", "target_detection_area", "anim_tree")]
 script = ExtResource("1_ne7lm")
-nav_agent = NodePath("NavigationAgent3D")
+diary_entry_id = &"lucy"
 speed = 5.0
-idle_timer = NodePath("IdleTimer")
+nav_agent = NodePath("NavigationAgent3D")
+target_detection_area = NodePath("PlayerDetection")
+anim_tree = NodePath("AnimationTree")
 metadata/_custom_type_script = "uid://jcqyuur4jml2"
 
 [node name="InteractionMarker" type="AnimatedSprite3D" parent="." unique_id=1065127807]
@@ -53,7 +55,7 @@ metadata/_edit_group_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.051, 5.287257, -0.01)
 
 [node name="Skeleton3D" parent="lucy/Armature" index="0" unique_id=1794459844]
-bones/0/position = Vector3(0, 0.61742204, 0)
+bones/0/position = Vector3(0, 0.66680866, 0)
 bones/2/rotation = Quaternion(-0.7301575, 0.0020132198, 0.68296415, -0.020638796)
 bones/3/rotation = Quaternion(-0.7071043, -0.0018406233, 0.7071045, -0.0018405658)
 bones/4/position = Vector3(1.0705135, 2.852421, -0.009296418)
