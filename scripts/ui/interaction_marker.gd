@@ -40,10 +40,10 @@ func get_interaction_type() -> IndicatorType:
 		if npc.is_quest_accepted() and not npc.is_quest_completed():
 			return IndicatorType.QUEST_ACTIVE
 		
-		if not npc.is_quest_accepted():
+		if not npc.is_quest_accepted() and npc.can_offer_quest:
 			return IndicatorType.QUEST_AVAILABLE
 	
-	if npc.dialogue_handler == null:
+	if npc.dialogue_handler != null:
 		return IndicatorType.NONE
 	
 	return IndicatorType.DIALOGUE

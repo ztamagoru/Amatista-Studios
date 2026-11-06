@@ -6,6 +6,7 @@ class_name NPCQuest
 
 @export_group("Quest")
 @export var quest_id : StringName
+@export var can_offer_quest : bool 
 
 @export_group("Event")
 @export var event_id : StringName

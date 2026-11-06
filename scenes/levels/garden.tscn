@@ -1586,6 +1586,7 @@ metadata/_custom_type_script = "uid://c1bj0q5evhiei"
 [node name="Chilla" parent="Environment/NPCs" unique_id=1442050018 node_paths=PackedStringArray("dialogue_handler", "target_look") instance=ExtResource("13_ajom7")]
 transform = Transform3D(0.13230374, 0, -0.99120945, 0, 1, 0, 0.99120945, 0, 0.13230374, -135.11078, 4.3860407, 19.065928)
 quest_id = &"chilla_garden_quest"
+can_offer_quest = true
 puzzle_objective_id = &"give_ring_back"
 deliver_objective_id = &"give_ring_back"
 deliver_dialogue_title = "ring_returned"
