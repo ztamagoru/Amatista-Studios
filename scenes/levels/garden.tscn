@@ -36,8 +36,8 @@
 [ext_resource type="Texture2D" uid="uid://trru0yinakvl" path="res://assets/ui/hud/interaction_interactable.png" id="34_c73ps"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2dny5"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+sky_top_color = Color(0.055368565, 0.46664757, 0.75038546, 1)
+sky_horizon_color = Color(0.46644443, 0.6756766, 0.8767503, 1)
 
 [sub_resource type="Sky" id="Sky_jdv7m"]
 sky_material = SubResource("ProceduralSkyMaterial_2dny5")
@@ -120,6 +120,7 @@ environment = SubResource("Environment_2y7ey")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2065045019]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.89411765, 0.87058824, 0, 1)
 shadow_enabled = true
 directional_shadow_max_distance = 500.0
 
