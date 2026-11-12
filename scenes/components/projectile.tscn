@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cobivorue1lil" path="res://scripts/player/projectile.gd" id="1_ae8u7"]
 [ext_resource type="PackedScene" uid="uid://onv10ju0dtn" path="res://assets/models/player/ball.blend" id="2_im1d0"]
-[ext_resource type="Texture2D" uid="uid://8gjdqwxdccq" path="res://assets/vfx/particles_projectile.png" id="3_c6x4h"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_g4v7s"]
 
@@ -93,29 +92,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_v41id")
 
-[sub_resource type="Curve" id="Curve_bas8g"]
-_data = [Vector2(0, 0.68367374), 0.0, 1.1208972, 0, 0, Vector2(1, 0.05867374), -1.4035395, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_2j2di"]
-curve = SubResource("Curve_bas8g")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_d0u6y"]
-emission_shape_scale = Vector3(0.5, 0.5, 0.5)
-emission_shape = 2
-emission_sphere_radius = 1.0
-gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_2j2di")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33x8s"]
-transparency = 1
-blend_mode = 1
-albedo_texture = ExtResource("3_c6x4h")
-albedo_texture_force_srgb = true
-
-[sub_resource type="QuadMesh" id="QuadMesh_5s0fj"]
-material = SubResource("StandardMaterial3D_33x8s")
-
 [node name="ProjectilePath" type="RigidBody3D" unique_id=1413910892]
 collision_layer = 32
 contact_monitor = true
@@ -138,14 +114,6 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="Cube_001" parent="ball" index="0" unique_id=868016660]
 mesh = SubResource("ArrayMesh_c6x4h")
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=489704834]
-amount = 100
-sub_emitter = NodePath(".")
-transform_align = 1
-transform_align_channel_filter = 1
-process_material = SubResource("ParticleProcessMaterial_d0u6y")
-draw_pass_1 = SubResource("QuadMesh_5s0fj")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

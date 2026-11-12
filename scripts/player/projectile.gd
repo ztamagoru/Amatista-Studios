@@ -8,6 +8,27 @@ class_name Projectile
 
 # --
 
+var _projectile_particles_scene_path = load("res://scenes/components/vfx/particles/projectile_particles.tscn")
+var _projectile_particles_node : GPUParticles3D
+
+# --
+
+func _ready() -> void:
+	_projectile_particles_node = _projectile_particles_scene_path.instantiate() as GPUParticles3D
+	
+	_projectile_particles_node.emitting = false
+	_projectile_particles_node.target_projectile = self
+	_projectile_particles_node.global_position = self.global_position
+	
+	get_parent().add_child(_projectile_particles_node)
+	
+	_projectile_particles_node.restart()
+	_projectile_particles_node.emitting = true
+	
+	tree_exited.connect(_projectile_particles_node.projectile_collided)
+
+# --
+
 func shoot(source_pos : Vector3, target_pos : Vector3) -> void:
 	global_position = source_pos
 	AudioManager.on_shoot()
@@ -40,13 +61,11 @@ func shoot(source_pos : Vector3, target_pos : Vector3) -> void:
 
 # --
 
-
 func _on_hitbox_body_entered(body: Node3D) -> void:
 	if body.is_in_group("sick_environment"): body.collision()
 	#else: AudioManager.on_not_heal()
 	
 	queue_free()
-
 
 func _on_hitbox_area_entered(area: Area3D) -> void:
 	if area is HurtBox:

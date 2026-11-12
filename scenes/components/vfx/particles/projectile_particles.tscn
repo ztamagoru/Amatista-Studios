@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cf5ki8bua4ta5"]
+
+[ext_resource type="Texture2D" uid="uid://8gjdqwxdccq" path="res://assets/vfx/particles_projectile.png" id="1_d84mf"]
+[ext_resource type="Script" uid="uid://53k8jajqrtqk" path="res://scenes/components/vfx/particles/projectile_particles.gd" id="2_jxebt"]
+
+[sub_resource type="Curve" id="Curve_bas8g"]
+_data = [Vector2(0, 0.68367374), 0.0, 1.1208972, 0, 0, Vector2(1, 0.05867374), -1.4035395, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2j2di"]
+curve = SubResource("Curve_bas8g")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_d0u6y"]
+emission_shape_scale = Vector3(0.5, 0.5, 0.5)
+emission_shape = 2
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_2j2di")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33x8s"]
+transparency = 1
+blend_mode = 1
+albedo_texture = ExtResource("1_d84mf")
+albedo_texture_force_srgb = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_5s0fj"]
+material = SubResource("StandardMaterial3D_33x8s")
+
+[node name="GPUParticles3D" type="GPUParticles3D" unique_id=206516545]
+emitting = false
+amount = 100
+sub_emitter = NodePath(".")
+lifetime = 0.75
+randomness = 0.1
+transform_align = 1
+transform_align_channel_filter = 1
+process_material = SubResource("ParticleProcessMaterial_d0u6y")
+draw_pass_1 = SubResource("QuadMesh_5s0fj")
+script = ExtResource("2_jxebt")
