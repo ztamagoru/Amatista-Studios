@@ -18,10 +18,10 @@ func _ready() -> void:
 	
 	_projectile_particles_node.emitting = false
 	_projectile_particles_node.target_projectile = self
-	_projectile_particles_node.global_position = self.global_position
 	
 	get_parent().add_child(_projectile_particles_node)
 	
+	_projectile_particles_node.global_position = self.global_position
 	_projectile_particles_node.restart()
 	_projectile_particles_node.emitting = true
 	
