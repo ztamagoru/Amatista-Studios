@@ -7,10 +7,12 @@ class_name LeafSetNavTargetPosition
 ## Owner needs to have a [NavigationAgent3D] node and a
 ## [NavigationRgion3D] node declared on an attached script. 
 
+@onready var npc : NPC3D = owner.get_parent() as NPC3D
+
 func step() -> Result:
-	var map_rid : RID = owner.nav_region.get_navigation_map()
-	var random_point = NavigationServer3D.map_get_random_point(map_rid, 1, false)
+	var map_rid : RID = npc.nav_region.get_rid()
+	var random_point = NavigationServer3D.region_get_random_point(map_rid, 1, false)
 	
-	owner.nav_agent.target_position = random_point
+	npc.nav_agent.target_position = random_point
 	
 	return Result.SUCCESS

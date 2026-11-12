@@ -13,7 +13,7 @@ enum IndicatorType {
 
 # --
 
-@onready var npc : NPC = get_parent()
+@onready var npc : NPC3D = get_parent()
 
 # --
 
@@ -36,14 +36,14 @@ func _process(_delta: float) -> void:
 # --
 
 func get_interaction_type() -> IndicatorType:
-	if npc is NPCQuest:
+	if npc is NPCQuest3D:
 		if npc.is_quest_accepted() and not npc.is_quest_completed():
 			return IndicatorType.QUEST_ACTIVE
 		
-		if not npc.is_quest_accepted():
+		if not npc.is_quest_accepted() and npc.can_offer_quest:
 			return IndicatorType.QUEST_AVAILABLE
 	
-	if npc.dialogue_handler == null:
+	if npc.dialogue_handler != null:
 		return IndicatorType.NONE
 	
 	return IndicatorType.DIALOGUE

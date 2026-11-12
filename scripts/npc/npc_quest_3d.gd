@@ -1,11 +1,12 @@
 @tool
-extends NPC
-class_name NPCQuest
+extends NPC3D
+class_name NPCQuest3D
 
 # --
 
 @export_group("Quest")
 @export var quest_id : StringName
+@export var can_offer_quest : bool 
 
 @export_group("Event")
 @export var event_id : StringName

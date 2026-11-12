@@ -7,7 +7,7 @@ class_name Tutorial
 @export var tutorial_text : DialogueResource
 @export var tutorial_half : Area3D 
 @export var tutorial_end : Area3D
-@export var lucy : NPC
+@export var lucy : NPC3D
 @export_file_path("*.tscn") var garden_map : String
  
 @export_subgroup("Incremental Fog")

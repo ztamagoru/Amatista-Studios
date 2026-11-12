@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://6t8vh21bspra"]
+
+[ext_resource type="Script" uid="uid://bekj481qkmixn" path="res://scripts/behavior tree/behavior_tree.gd" id="1_diuj6"]
+[ext_resource type="Script" uid="uid://clwtum3tidnac" path="res://scripts/behavior tree/composite_selector.gd" id="2_x58wb"]
+[ext_resource type="Script" uid="uid://cngo8lv5njg42" path="res://scripts/behavior tree/composite_sequence.gd" id="3_i2rve"]
+[ext_resource type="Script" uid="uid://cw6rbl2qgvt2s" path="res://scripts/behavior tree/leafs/leaf_is_player_inside_area_3d.gd" id="4_slhgk"]
+[ext_resource type="Script" uid="uid://dgi3fuytrorts" path="res://scripts/behavior tree/leafs/leaf_look_at.gd" id="5_jt8xn"]
+
+[node name="BehaviorTree" type="Node" unique_id=1248779585]
+script = ExtResource("1_diuj6")
+metadata/_custom_type_script = "uid://bekj481qkmixn"
+
+[node name="CompositeSelector" type="Node" parent="." unique_id=403512428]
+script = ExtResource("2_x58wb")
+metadata/_custom_type_script = "uid://clwtum3tidnac"
+
+[node name="CompositeSequence" type="Node" parent="CompositeSelector" unique_id=2065327300]
+script = ExtResource("3_i2rve")
+metadata/_custom_type_script = "uid://cngo8lv5njg42"
+
+[node name="LeafIsPlayerInsideArea3D" type="Node" parent="CompositeSelector/CompositeSequence" unique_id=448911014]
+script = ExtResource("4_slhgk")
+metadata/_custom_type_script = "uid://cw6rbl2qgvt2s"
+
+[node name="LeafLookAt" type="Node" parent="CompositeSelector/CompositeSequence" unique_id=1191410425]
+script = ExtResource("5_jt8xn")
+metadata/_custom_type_script = "uid://dgi3fuytrorts"

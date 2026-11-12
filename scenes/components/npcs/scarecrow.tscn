@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://5hpqayc4sgjw"]
 
-[ext_resource type="Script" uid="uid://jcqyuur4jml2" path="res://scripts/npc/npc_quest.gd" id="1_5nk8h"]
+[ext_resource type="Script" uid="uid://jcqyuur4jml2" path="res://scripts/npc/npc_quest_3d.gd" id="1_5nk8h"]
 [ext_resource type="SpriteFrames" uid="uid://dg4trx22gkx74" path="res://assets/ui/interaction icons/icons_orange_frames.tres" id="2_cks23"]
 [ext_resource type="Script" uid="uid://dbyh0ac8p2iqp" path="res://scripts/ui/interaction_marker.gd" id="3_7yb5f"]
 [ext_resource type="PackedScene" uid="uid://c8mjck411vn43" path="res://assets/models/npcs/scarecrow/espantapajaros.glb" id="4_5nk8h"]
