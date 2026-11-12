@@ -179,5 +179,5 @@ func _play_sfx(correct : bool):
 
 # --
 
-func _on_exit_puzzle_pressed() -> void:
+func _on_exit_button_pressed() -> void:
 	exit()
