@@ -26,7 +26,7 @@ albedo_texture_force_srgb = true
 [sub_resource type="QuadMesh" id="QuadMesh_5s0fj"]
 material = SubResource("StandardMaterial3D_33x8s")
 
-[node name="GPUParticles3D" type="GPUParticles3D" unique_id=206516545]
+[node name="ProjectileParticles" type="GPUParticles3D" unique_id=206516545]
 emitting = false
 amount = 100
 sub_emitter = NodePath(".")
