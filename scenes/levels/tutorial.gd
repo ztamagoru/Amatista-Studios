@@ -1,10 +1,9 @@
-extends Level
+extends Map3D
 class_name Tutorial
 
 # --
 
 @export_group("Tutorial")
-@export var player : Player
 @export var tutorial_text : DialogueResource
 @export var tutorial_half : Area3D 
 @export var tutorial_end : Area3D
@@ -37,7 +36,7 @@ var half_callable := _check_player.bind("half")
 
 # --
 
-func level_start() -> void:
+func map_start() -> void:
 	env = world_environment.environment
 	
 	boundary_furthest = player.global_position.z
@@ -50,7 +49,7 @@ func level_start() -> void:
 	
 	DialogueManager.show_dialogue_balloon(tutorial_text, "movement")
 	
-	super.level_start()
+	super.map_start()
 
 func _set_trees() -> bool:
 	if tree_layouts.is_empty():
@@ -75,7 +74,7 @@ func _check_player(body : Node3D, from : String) -> void:
 	if body is Player:
 		match from:
 			"end":
-				change_scene(garden_map)
+				change_map(garden_map)
 			"half":
 				lucy.run_away()
 				tutorial_half.body_entered.disconnect(half_callable)

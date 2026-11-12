@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://dvgmpb5y6ehsw"]
+
+[ext_resource type="Script" uid="uid://xqfthocmw71o" path="res://scripts/map_3d.gd" id="1_u6sr5"]
+[ext_resource type="PackedScene" uid="uid://cshhkyv0w8byc" path="res://scenes/components/player.tscn" id="2_b24sw"]
+[ext_resource type="PackedScene" uid="uid://1whrhty23vh4" path="res://scenes/ui/quest_hud.tscn" id="3_frsox"]
+[ext_resource type="Script" uid="uid://dc31467mgksbc" path="res://scenes/ui/interaction_prompt_hud.gd" id="4_3uw73"]
+[ext_resource type="Texture2D" uid="uid://b4e4vliudwlv4" path="res://assets/ui/hud/interaction_npc.png" id="5_axvqh"]
+[ext_resource type="Texture2D" uid="uid://trru0yinakvl" path="res://assets/ui/hud/interaction_interactable.png" id="6_x47db"]
+[ext_resource type="PackedScene" uid="uid://bfh8nsyv0y463" path="res://scenes/components/camera.tscn" id="7_b24sw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_v6nkf"]
+sky_top_color = Color(0.055368565, 0.46664757, 0.75038546, 1)
+sky_horizon_color = Color(0.46644443, 0.6756766, 0.8767503, 1)
+
+[sub_resource type="Sky" id="Sky_jdv7m"]
+sky_material = SubResource("ProceduralSkyMaterial_v6nkf")
+
+[sub_resource type="Environment" id="Environment_iscdg"]
+background_mode = 2
+sky = SubResource("Sky_jdv7m")
+glow_enabled = true
+
+[node name="MushroomCity" type="Node3D" unique_id=804840913 node_paths=PackedStringArray("player", "spawn_points")]
+script = ExtResource("1_u6sr5")
+adjacent_maps = Array[String](["res://scenes/levels/garden.tscn"])
+save_map = false
+player = NodePath("Player")
+spawn_points = NodePath("SpawnPoints")
+metadata/_custom_type_script = "uid://xqfthocmw71o"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1775262194]
+environment = SubResource("Environment_iscdg")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1264925126]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.89411765, 0.87058824, 0, 1)
+shadow_enabled = true
+directional_shadow_max_distance = 500.0
+
+[node name="Player" parent="." unique_id=242546826 node_paths=PackedStringArray("interactor_hud") instance=ExtResource("2_b24sw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+interactor_hud = NodePath("../HUD/Control/MarginContainer/InteractionPromptHUD")
+
+[node name="SpawnPoints" type="Node3D" parent="." unique_id=1814647358]
+
+[node name="FromGarden" type="Marker3D" parent="SpawnPoints" unique_id=451326714]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=627541483]
+
+[node name="Control" type="Control" parent="HUD" unique_id=1256847651]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Control" unique_id=960915857]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="QuestHUD" parent="HUD/Control/MarginContainer" unique_id=287424734 instance=ExtResource("3_frsox")]
+layout_mode = 2
+
+[node name="InteractionPromptHUD" type="Control" parent="HUD/Control/MarginContainer" unique_id=1938812364]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+script = ExtResource("4_3uw73")
+
+[node name="NPCPrompt" type="TextureRect" parent="HUD/Control/MarginContainer/InteractionPromptHUD" unique_id=602014823]
+custom_maximum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2000.0
+offset_top = -2000.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(200, 200)
+texture = ExtResource("5_axvqh")
+expand_mode = 2
+
+[node name="InteractablePrompt" type="TextureRect" parent="HUD/Control/MarginContainer/InteractionPromptHUD" unique_id=604494575]
+custom_maximum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2000.0
+offset_top = -2000.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(200, 200)
+texture = ExtResource("6_x47db")
+expand_mode = 2
+
+[node name="Camera" parent="." unique_id=672466676 node_paths=PackedStringArray("player") instance=ExtResource("7_b24sw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 57.36074, 23.484562, 0)
+player = NodePath("../Player")

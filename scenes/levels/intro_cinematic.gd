@@ -1,4 +1,4 @@
-extends Level
+extends Map3D
 class_name Intro
 
 # --
@@ -20,11 +20,11 @@ var can_skip : bool = false
 
 # --
 
-func level_start() -> void:
+func map_start() -> void:
 	skip_progress_bar.max_value = skip_held_time
-	intro_video.finished.connect(func(): change_scene(tutorial_scene))
+	intro_video.finished.connect(func(): change_map(tutorial_scene))
 	AudioManager.stop_music()
-	super.level_start()
+	super.map_start()
 
 func _process(delta: float) -> void:
 	if transitioning: return
@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 		
 		if skip_timer >= skip_held_time:
 			_transition()
-			change_scene(tutorial_scene)
+			change_map(tutorial_scene)
 		else: 
 			skip_timer += delta
 			skip_progress_bar.value = skip_timer

@@ -34,6 +34,7 @@
 [ext_resource type="Script" uid="uid://dc31467mgksbc" path="res://scenes/ui/interaction_prompt_hud.gd" id="32_t4f2t"]
 [ext_resource type="Texture2D" uid="uid://b4e4vliudwlv4" path="res://assets/ui/hud/interaction_npc.png" id="33_ae5ye"]
 [ext_resource type="Texture2D" uid="uid://trru0yinakvl" path="res://assets/ui/hud/interaction_interactable.png" id="34_c73ps"]
+[ext_resource type="Script" uid="uid://b5w86fvx28xgs" path="res://scripts/components/map_transition_3d.gd" id="35_c73ps"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2dny5"]
 sky_top_color = Color(0.055368565, 0.46664757, 0.75038546, 1)
@@ -109,10 +110,16 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 top_radius = 19.921387
 bottom_radius = 19.921387
 
-[node name="Garden" type="Node3D" unique_id=1571674238 node_paths=PackedStringArray("all_environment")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_57qmd"]
+size = Vector3(13.865128, 11.950317, 17.157349)
+
+[node name="Garden" type="Node3D" unique_id=1571674238 node_paths=PackedStringArray("all_environment", "player", "spawn_points")]
 script = ExtResource("1_qf7ro")
+adjacent_maps = Array[String](["res://scenes/levels/mushroom_city.tscn"])
 all_environment = [NodePath("Environment/Trees/Arrayan1/TreeArrayan2"), NodePath("Environment/Trees/Arrayan1/TreeArrayan3"), NodePath("Environment/Trees/Arrayan1/TreeArrayan4"), NodePath("Environment/Trees/Arrayan1/TreeArrayan5"), NodePath("Environment/Trees/Arrayan1/TreeArrayan6"), NodePath("Environment/Trees/Arrayan1/TreeArrayan7"), NodePath("Environment/Trees/Arrayan1/TreeArrayan8"), NodePath("Environment/Trees/Arrayan1/TreeArrayan9"), NodePath("Environment/Trees/Arrayan2/TreeArrayan2"), NodePath("Environment/Trees/Arrayan2/TreeArrayan3"), NodePath("Environment/Trees/Arrayan2/TreeArrayan4"), NodePath("Environment/Trees/Arrayan2/TreeArrayan5"), NodePath("Environment/Trees/Arrayan3/TreeArrayan3"), NodePath("Environment/Trees/Arrayan3/TreeArrayan4"), NodePath("Environment/Trees/Arrayan3/TreeArrayan5"), NodePath("Environment/Trees/Arrayan3/TreeArrayan6"), NodePath("Environment/Trees/Arrayan3/TreeArrayan7"), NodePath("Environment/Trees/Arrayan3/TreeArrayan8"), NodePath("Environment/Trees/Arrayan3/TreeArrayan9"), NodePath("Environment/Trees/Arrayan3/TreeArrayan10"), NodePath("Environment/Trees/Arrayan3/TreeArrayan11"), NodePath("Environment/Trees/Arrayan3/TreeArrayan12"), NodePath("Environment/Trees/Arrayan3/TreeArrayan13"), NodePath("Environment/Trees/Arrayan3/TreeArrayan14"), NodePath("Environment/Trees/Arrayan3/TreeArrayan15"), NodePath("Environment/Trees/Arrayan3/TreeArrayan16"), NodePath("Environment/Trees/Arrayan3/TreeArrayan17"), NodePath("Environment/Trees/Arrayan3/TreeArrayan18"), NodePath("Environment/Trees/Arrayan3/TreeArrayan19"), NodePath("Environment/Trees/Arrayan3/TreeArrayan20"), NodePath("Environment/Trees/Arrayan3/TreeArrayan21"), NodePath("Environment/Trees/Arrayan3/TreeArrayan22"), NodePath("Environment/Trees/Arrayan3/TreeArrayan23"), NodePath("Environment/Trees/Arrayan3/TreeArrayan24"), NodePath("Environment/Trees/Arrayan3/TreeArrayan25"), NodePath("Environment/Trees/Arrayan3/TreeArrayan26"), NodePath("Environment/Trees/Arrayan4/TreeArrayan4"), NodePath("Environment/Trees/Arrayan4/TreeArrayan5"), NodePath("Environment/Trees/Arrayan4/TreeArrayan6"), NodePath("Environment/Trees/Arrayan4/TreeArrayan7")]
 sick_quantity = 15
+player = NodePath("Player")
+spawn_points = NodePath("SpawnPoints")
 metadata/_custom_type_script = "uid://xqfthocmw71o"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2096877708]
@@ -1800,6 +1807,25 @@ grow_vertical = 0
 pivot_offset = Vector2(200, 200)
 texture = ExtResource("34_c73ps")
 expand_mode = 2
+
+[node name="SpawnPoints" type="Node3D" parent="." unique_id=704826245]
+
+[node name="FromMushroomCity" type="Marker3D" parent="SpawnPoints" unique_id=290861964]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128.72095, 4.289, -5.575736)
+
+[node name="MapTransition3D" type="Area3D" parent="." unique_id=2128786151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -139.24272, 0, 0)
+collision_layer = 17
+collision_mask = 17
+script = ExtResource("35_c73ps")
+new_map = "res://scenes/levels/mushroom_city.tscn"
+requires_finished_quests = true
+required_quests = Array[StringName]([&"heal_garden", &"chilla_garden_quest"])
+metadata/_custom_type_script = "uid://b5w86fvx28xgs"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MapTransition3D" unique_id=1520592714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.071823, 5.4751587, 4.7682266)
+shape = SubResource("BoxShape3D_57qmd")
 
 [editable path="Environment/garden_scene"]
 [editable path="Environment/CropsZone/PumpkinPuzzleTrigger/StaticBody3D/calabazas(shellgame)"]

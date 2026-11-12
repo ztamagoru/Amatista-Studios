@@ -30,12 +30,16 @@ var is_diary_open : bool = false
 
 var _previous_mouse_mode : Input.MouseMode = Input.MOUSE_MODE_CAPTURED
 
+var next_spawn_point : StringName
+
+# --
+
 enum fade_mode { FADE_IN, FADE_OUT }
 
 # --
 
 func _ready() -> void:
-	change_map(main_menu)
+	change_scene(main_menu)
 	
 	var t : Tween = create_tween()
 	t.set_loops()
@@ -47,7 +51,9 @@ func _ready() -> void:
 
 # --
 
-func change_map(path : String) -> void:
+func change_scene(path : String, spawn_point : StringName = &"") -> void:
+	next_spawn_point = spawn_point
+	
 	if is_paused: _resume_game()
 	current_map_path = path
 	
@@ -76,7 +82,7 @@ func change_map(path : String) -> void:
 	
 	await _fade_loading(fade_mode.FADE_OUT)
 	
-	await new_map.level_start()
+	await new_map.map_start()
 	
 	await _fade(fade_mode.FADE_OUT)
 

@@ -1,9 +1,9 @@
-extends Level
+extends Map3D
 class_name Garden
 
 # --
 
-func level_start() -> void:
+func map_start() -> void:
 	AudioManager.stop_music()
 	AudioManager.play_music("garden")
-	super.level_start()
+	super.map_start()

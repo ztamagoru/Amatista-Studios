@@ -1,4 +1,4 @@
-extends Level
+extends Map3D
 class_name MainMenu
 
 # --
@@ -15,11 +15,11 @@ class_name MainMenu
 
 # --r
 
-func level_start() -> void:
+func map_start() -> void:
 	continue_button.disabled = _check_for_save()
 	
 	AudioManager.play_music("menu")
-	super.level_start()
+	super.map_start()
 
 # --
 
@@ -35,11 +35,11 @@ func _check_for_save() -> bool:
 # --
 
 func _on_continue_button_pressed() -> void:
-	change_scene(continue_save)
+	change_map(continue_save)
 
 func _on_new_game_button_pressed() -> void:
 	SaveManager.new_game()
-	change_scene(new_save_scene)
+	change_map(new_save_scene)
 
 func _on_settings_button_pressed() -> void:
 	game_manager.settings_menu.visible = true

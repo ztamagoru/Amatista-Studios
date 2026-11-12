@@ -27,7 +27,7 @@ var shader_blend : float = 0.0
 
 var is_cured : bool
 
-var level : Level
+var level : Map3D
 
 var quest_id : StringName
 
