@@ -20,6 +20,7 @@
 [ext_resource type="Resource" uid="uid://3076rb6xddyu" path="res://resources/dialogs/garden/garden_jorge.dialogue" id="9_qf7ro"]
 [ext_resource type="PackedScene" uid="uid://ccy1cnrupwn6t" path="res://scenes/components/trees/tree_arrayan_4.tscn" id="10_sphon"]
 [ext_resource type="PackedScene" uid="uid://5hpqayc4sgjw" path="res://scenes/components/npcs/scarecrow.tscn" id="11_4kk17"]
+[ext_resource type="PackedScene" uid="uid://1ky4j7v5wk2o" path="res://scenes/components/npcs/behaviors/movement/wander_and_look_at_player.tscn" id="12_c73ps"]
 [ext_resource type="Resource" uid="uid://oc583hidbywk" path="res://resources/dialogs/garden/garden_scarecrow.dialogue" id="12_kswy4"]
 [ext_resource type="PackedScene" uid="uid://dxqim2mw0ctsj" path="res://scenes/components/npcs/chilla.tscn" id="13_ajom7"]
 [ext_resource type="Resource" uid="uid://dio50modyb475" path="res://resources/dialogs/garden/garden_chilla.dialogue" id="14_0vt6h"]
@@ -30,20 +31,21 @@
 [ext_resource type="PackedScene" uid="uid://c8ll5udwkv8tk" path="res://scenes/components/npcs/gagabriela.tscn" id="19_h4k2x"]
 [ext_resource type="Resource" uid="uid://fimcb747t2a4" path="res://resources/items/flower_mutisia.tres" id="19_kswy4"]
 [ext_resource type="Resource" uid="uid://djrgmm08kpf17" path="res://resources/dialogs/garden/garden_gagabriela.dialogue" id="20_hii61"]
+[ext_resource type="PackedScene" uid="uid://6t8vh21bspra" path="res://scenes/components/npcs/behaviors/interaction/look_at_player.tscn" id="22_241ex"]
 [ext_resource type="PackedScene" uid="uid://1whrhty23vh4" path="res://scenes/ui/quest_hud.tscn" id="31_hii61"]
 [ext_resource type="Script" uid="uid://dc31467mgksbc" path="res://scenes/ui/interaction_prompt_hud.gd" id="32_t4f2t"]
 [ext_resource type="Texture2D" uid="uid://b4e4vliudwlv4" path="res://assets/ui/hud/interaction_npc.png" id="33_ae5ye"]
 [ext_resource type="Texture2D" uid="uid://trru0yinakvl" path="res://assets/ui/hud/interaction_interactable.png" id="34_c73ps"]
-[ext_resource type="Script" uid="uid://b5w86fvx28xgs" path="res://scripts/components/map_transition_3d.gd" id="35_c73ps"]
+[ext_resource type="Script" uid="uid://dbh6cec5wsibn" path="res://scripts/components/map_transition_3d.gd" id="37_o1ijj"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2dny5"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_241ex"]
 sky_top_color = Color(0.055368565, 0.46664757, 0.75038546, 1)
 sky_horizon_color = Color(0.46644443, 0.6756766, 0.8767503, 1)
 
 [sub_resource type="Sky" id="Sky_jdv7m"]
-sky_material = SubResource("ProceduralSkyMaterial_2dny5")
+sky_material = SubResource("ProceduralSkyMaterial_241ex")
 
-[sub_resource type="Environment" id="Environment_2y7ey"]
+[sub_resource type="Environment" id="Environment_o1ijj"]
 background_mode = 2
 sky = SubResource("Sky_jdv7m")
 glow_enabled = true
@@ -110,8 +112,12 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 top_radius = 19.921387
 bottom_radius = 19.921387
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_241ex"]
+vertices = PackedVector3Array(-9.171387, 1.5, -17.421387, -11.921387, 1.5, -15.671387, -14.421387, 1.5, -13.421387, -17.421387, 1.5, -9.171387, -19.421387, 1.5, -2.9213867, -4.1713867, 1.5, -19.171387, -12.671387, 1.5, 15.078613, -10.171387, 1.5, 16.828613, -6.4213867, 1.5, 18.578613, 18.578613, 1.5, -6.4213867, 16.828613, 1.5, -10.171387, 15.078613, 1.5, -12.671387, 11.578613, 1.5, -15.921387, 19.328613, 1.5, 3.5786133, 19.328613, 1.5, -3.4213867, 16.578613, 1.5, 10.578613, 18.328613, 1.5, 7.0786133, 11.328613, 1.5, 16.078613, -19.171387, 1.5, 4.3286133, -17.921387, 1.5, 8.078613, -15.921387, 1.5, 11.578613, 8.078613, 1.5, -17.921387, 4.3286133, 1.5, -19.171387, 3.5786133, 1.5, 19.328613, 7.0786133, 1.5, 18.328613, -3.4213867, 1.5, 19.328613)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 5), PackedInt32Array(3, 5, 4), PackedInt32Array(8, 7, 6), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 14), PackedInt32Array(11, 14, 12), PackedInt32Array(12, 14, 13), PackedInt32Array(16, 15, 13), PackedInt32Array(13, 15, 17), PackedInt32Array(19, 18, 20), PackedInt32Array(20, 18, 6), PackedInt32Array(6, 18, 8), PackedInt32Array(8, 18, 4), PackedInt32Array(21, 12, 22), PackedInt32Array(22, 12, 5), PackedInt32Array(24, 23, 17), PackedInt32Array(17, 23, 25), PackedInt32Array(17, 25, 8), PackedInt32Array(17, 8, 13), PackedInt32Array(13, 8, 12), PackedInt32Array(12, 8, 5), PackedInt32Array(5, 8, 4)]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_57qmd"]
-size = Vector3(13.865128, 11.950317, 17.157349)
+size = Vector3(11.828552, 11.136017, 18.69629)
 
 [node name="Garden" type="Node3D" unique_id=1571674238 node_paths=PackedStringArray("all_environment", "player", "spawn_points")]
 script = ExtResource("1_qf7ro")
@@ -122,17 +128,17 @@ player = NodePath("Player")
 spawn_points = NodePath("SpawnPoints")
 metadata/_custom_type_script = "uid://xqfthocmw71o"
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2096877708]
-environment = SubResource("Environment_2y7ey")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=855353700]
+environment = SubResource("Environment_o1ijj")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2065045019]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=302344439]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 light_color = Color(0.89411765, 0.87058824, 0, 1)
 shadow_enabled = true
 directional_shadow_max_distance = 500.0
 
 [node name="Player" parent="." unique_id=242546826 node_paths=PackedStringArray("interactor_hud") instance=ExtResource("1_8i028")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 99.6125, 4.289241, 12.705101)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 99, 4.289, 12)
 interactor_hud = NodePath("../HUD/Control/MarginContainer/InteractionPromptHUD")
 
 [node name="Environment" type="Node3D" parent="." unique_id=228048704]
@@ -1486,52 +1492,92 @@ render_target_update_mode = 0
 
 [node name="NPCs" type="Node3D" parent="Environment" unique_id=339679470]
 
-[node name="LucyNavRegion" type="NavigationRegion3D" parent="Environment/NPCs" unique_id=2039987934]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.43282, 2.7913342, -13.511094)
-navigation_mesh = SubResource("NavigationMesh_57qmd")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/NPCs/LucyNavRegion" unique_id=1147676420]
-mesh = SubResource("CylinderMesh_yf5fn")
-
 [node name="JorgeNavRegion" type="NavigationRegion3D" parent="Environment/NPCs" unique_id=87585434]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.28501, 2.7913342, -87.174644)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94.45926, 2.7913342, -81.43201)
 navigation_mesh = SubResource("NavigationMesh_57qmd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/NPCs/JorgeNavRegion" unique_id=1652796362]
 mesh = SubResource("CylinderMesh_yf5fn")
 
-[node name="Lucy" parent="Environment/NPCs" unique_id=460240726 node_paths=PackedStringArray("dialogue_handler", "nav_region", "look_target") instance=ExtResource("4_32lya")]
+[node name="LucyNavRegion" type="NavigationRegion3D" parent="Environment/NPCs" unique_id=2039987934]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.26921, 2.7913342, -16.17942)
+navigation_mesh = SubResource("NavigationMesh_241ex")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/NPCs/LucyNavRegion" unique_id=1147676420]
+mesh = SubResource("CylinderMesh_yf5fn")
+
+[node name="Lucy" parent="Environment/NPCs" unique_id=460240726 node_paths=PackedStringArray("dialogue_handler", "nav_region", "target_look") instance=ExtResource("4_32lya")]
 transform = Transform3D(0.69110036, 0, -0.7227589, 0, 1, 0, 0.7227589, 0, 0.69110036, 75.11682, 3.4753456, -16.071283)
 quest_id = &"heal_garden"
+can_offer_quest = true
 event_id = &"talked_to_lucy"
 dialogue_handler = NodePath("DialogueHandler")
-diary_entry_id = &"lucy"
 nav_region = NodePath("../LucyNavRegion")
-look_target = NodePath("../../../Player")
+target_look = NodePath("../../../Player")
 
 [node name="DialogueHandler" type="Node" parent="Environment/NPCs/Lucy" unique_id=487469033]
 script = ExtResource("5_0qt43")
 dialogue = ExtResource("6_ne1lt")
 metadata/_custom_type_script = "uid://c1bj0q5evhiei"
 
-[node name="Jorge" parent="Environment/NPCs" unique_id=1709419815 node_paths=PackedStringArray("dialogue_handler", "nav_region", "look_target") instance=ExtResource("7_sphon")]
-transform = Transform3D(-0.061048593, 0, -0.9981348, 0, 1, 0, 0.9981348, 0, -0.061048593, -100, 4.2832656, -82)
+[node name="LucyIdleTimer" type="Timer" parent="Environment/NPCs/Lucy" unique_id=565132056]
+one_shot = true
+
+[node name="BehaviorTree" parent="Environment/NPCs/Lucy" unique_id=298881798 instance=ExtResource("12_c73ps")]
+
+[node name="LeafSetAnimationBlend" parent="Environment/NPCs/Lucy/BehaviorTree/CompositeSelector/CheckIfPlayerNear" parent_id_path=PackedInt32Array(298881798, 2038305676) index="2" unique_id=582348733]
+blend_value = 0.0
+
+[node name="LeafCheckTimer" parent="Environment/NPCs/Lucy/BehaviorTree/CompositeSelector/IdleMovement/IsWaiting" parent_id_path=PackedInt32Array(298881798, 2092738005) index="0" unique_id=508797869 node_paths=PackedStringArray("timer")]
+timer = NodePath("../../../../../LucyIdleTimer")
+
+[node name="LeafSetAnimationBlend" parent="Environment/NPCs/Lucy/BehaviorTree/CompositeSelector/IdleMovement/ReachedDestiny" parent_id_path=PackedInt32Array(298881798, 1325360489) index="1" unique_id=284695697]
+blend_value = 0.0
+
+[node name="LeafSetTimer" parent="Environment/NPCs/Lucy/BehaviorTree/CompositeSelector/IdleMovement/ReachedDestiny" parent_id_path=PackedInt32Array(298881798, 1325360489) index="3" unique_id=926116327 node_paths=PackedStringArray("timer")]
+timer = NodePath("../../../../../LucyIdleTimer")
+random_duration = true
+min_duration = 0.5
+max_duration = 3.0
+
+[node name="Jorge" parent="Environment/NPCs" unique_id=1709419815 node_paths=PackedStringArray("dialogue_handler", "nav_region", "target_look") instance=ExtResource("7_sphon")]
+transform = Transform3D(-0.061048593, 0, -0.9981348, 0, 1, 0, 0.9981348, 0, -0.061048593, -88.48565, 4.2832656, -77.9451)
 script = ExtResource("8_udanu")
 reward_collectible_id = &"diente_de_leon"
 quest_id = &"jorge_flowers"
+can_offer_quest = true
 event_id = &""
 puzzle_objective_id = &""
 deliver_objective_id = &""
 deliver_dialogue_title = ""
 dialogue_handler = NodePath("DialogueHandler")
-diary_entry_id = &"jorge"
 nav_region = NodePath("../JorgeNavRegion")
-look_target = NodePath("../../../Player")
+target_look = NodePath("../../../Player")
 
 [node name="DialogueHandler" type="Node" parent="Environment/NPCs/Jorge" unique_id=1248460029]
 script = ExtResource("5_0qt43")
 dialogue = ExtResource("9_qf7ro")
 metadata/_custom_type_script = "uid://c1bj0q5evhiei"
+
+[node name="JorgeIdleTimer" type="Timer" parent="Environment/NPCs/Jorge" unique_id=889291423]
+one_shot = true
+
+[node name="BehaviorTree" parent="Environment/NPCs/Jorge" unique_id=1897874228 instance=ExtResource("12_c73ps")]
+
+[node name="LeafSetAnimationBlend" parent="Environment/NPCs/Jorge/BehaviorTree/CompositeSelector/CheckIfPlayerNear" parent_id_path=PackedInt32Array(1897874228, 2038305676) index="2" unique_id=582348733]
+blend_value = 0.5
+
+[node name="LeafCheckTimer" parent="Environment/NPCs/Jorge/BehaviorTree/CompositeSelector/IdleMovement/IsWaiting" parent_id_path=PackedInt32Array(1897874228, 2092738005) index="0" unique_id=508797869 node_paths=PackedStringArray("timer")]
+timer = NodePath("../../../../../JorgeIdleTimer")
+
+[node name="LeafSetAnimationBlend" parent="Environment/NPCs/Jorge/BehaviorTree/CompositeSelector/IdleMovement/ReachedDestiny" parent_id_path=PackedInt32Array(1897874228, 1325360489) index="1" unique_id=284695697]
+blend_value = 0.0
+
+[node name="LeafSetTimer" parent="Environment/NPCs/Jorge/BehaviorTree/CompositeSelector/IdleMovement/ReachedDestiny" parent_id_path=PackedInt32Array(1897874228, 1325360489) index="3" unique_id=926116327 node_paths=PackedStringArray("timer")]
+timer = NodePath("../../../../../JorgeIdleTimer")
+random_duration = true
+min_duration = 0.5
+max_duration = 3.0
 
 [node name="Scarecrow" parent="Environment/NPCs" unique_id=1429716476 node_paths=PackedStringArray("dialogue_handler") instance=ExtResource("11_4kk17")]
 transform = Transform3D(0.99061763, 0, 0.13666287, 0, 1, 0, -0.13666287, 0, 0.99061763, 0.7025471, 3.3599176, 49.782635)
@@ -1545,30 +1591,34 @@ script = ExtResource("5_0qt43")
 dialogue = ExtResource("12_kswy4")
 metadata/_custom_type_script = "uid://c1bj0q5evhiei"
 
-[node name="Chilla" parent="Environment/NPCs" unique_id=1442050018 node_paths=PackedStringArray("dialogue_handler") instance=ExtResource("13_ajom7")]
+[node name="Chilla" parent="Environment/NPCs" unique_id=1442050018 node_paths=PackedStringArray("dialogue_handler", "target_look") instance=ExtResource("13_ajom7")]
 transform = Transform3D(0.13230374, 0, -0.99120945, 0, 1, 0, 0.99120945, 0, 0.13230374, -135.11078, 4.3860407, 19.065928)
 quest_id = &"chilla_garden_quest"
+can_offer_quest = true
 puzzle_objective_id = &"give_ring_back"
 deliver_objective_id = &"give_ring_back"
 deliver_dialogue_title = "ring_returned"
 dialogue_handler = NodePath("DialogueHandler")
-diary_entry_id = &"chilla"
-speed = 0.0
+target_look = NodePath("../../../Player")
 
 [node name="DialogueHandler" type="Node" parent="Environment/NPCs/Chilla" unique_id=1935580977]
 script = ExtResource("5_0qt43")
 dialogue = ExtResource("14_0vt6h")
 metadata/_custom_type_script = "uid://c1bj0q5evhiei"
 
-[node name="Gagabriela" parent="Environment/NPCs" unique_id=523237248 node_paths=PackedStringArray("dialogue_handler") instance=ExtResource("19_h4k2x")]
+[node name="BehaviorTree" parent="Environment/NPCs/Chilla" unique_id=1248779585 instance=ExtResource("22_241ex")]
+
+[node name="Gagabriela" parent="Environment/NPCs" unique_id=523237248 node_paths=PackedStringArray("dialogue_handler", "target_look") instance=ExtResource("19_h4k2x")]
 transform = Transform3D(-0.7637112, 0, 0.64555794, 0, 1, 0, -0.64555794, 0, -0.7637112, 90.34187, 4.2088203, -97.98233)
 dialogue_handler = NodePath("DialogueHandler")
-diary_entry_id = &"gagabriela"
+target_look = NodePath("../../../Player")
 
 [node name="DialogueHandler" type="Node" parent="Environment/NPCs/Gagabriela" unique_id=707875221]
 script = ExtResource("5_0qt43")
 dialogue = ExtResource("20_hii61")
 metadata/_custom_type_script = "uid://c1bj0q5evhiei"
+
+[node name="BehaviorTree" parent="Environment/NPCs/Gagabriela" unique_id=2004313799 instance=ExtResource("22_241ex")]
 
 [node name="Trees" type="Node3D" parent="Environment" unique_id=1121390256]
 metadata/_edit_lock_ = true
@@ -1679,13 +1729,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114.66147, 0, -107.20829)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -129.8848, 0, -90.12844)
 
 [node name="TreeArrayan24" parent="Environment/Trees/Arrayan3" unique_id=528021836 instance=ExtResource("9_64guk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.38788, 0, -98.668365)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.27098, 0, -100.41521)
 
 [node name="TreeArrayan25" parent="Environment/Trees/Arrayan3" unique_id=1712973730 instance=ExtResource("9_64guk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.31166, 0, -38.1463)
 
 [node name="TreeArrayan26" parent="Environment/Trees/Arrayan3" unique_id=78519002 instance=ExtResource("9_64guk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105.39041, 0, -64.95526)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.82155, 0, -61.417946)
 
 [node name="Arrayan4" type="Node3D" parent="Environment/Trees" unique_id=2054568586]
 
@@ -1808,26 +1858,27 @@ pivot_offset = Vector2(200, 200)
 texture = ExtResource("34_c73ps")
 expand_mode = 2
 
-[node name="SpawnPoints" type="Node3D" parent="." unique_id=704826245]
+[node name="SpawnPoints" type="Node3D" parent="." unique_id=1566995540]
 
-[node name="FromMushroomCity" type="Marker3D" parent="SpawnPoints" unique_id=290861964]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128.72095, 4.289, -5.575736)
+[node name="FromMushroomCity" type="Marker3D" parent="SpawnPoints" unique_id=484816304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -124.278595, 4.289, -8.875062)
 
-[node name="MapTransition3D" type="Area3D" parent="." unique_id=2128786151]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -139.24272, 0, 0)
-collision_layer = 17
+[node name="MapTransition3D" type="Area3D" parent="." unique_id=1943876262]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149.43756, 0, 6.014394)
 collision_mask = 17
-script = ExtResource("35_c73ps")
+script = ExtResource("37_o1ijj")
 new_map = "res://scenes/levels/mushroom_city.tscn"
 requires_finished_quests = true
 required_quests = Array[StringName]([&"heal_garden", &"chilla_garden_quest"])
-metadata/_custom_type_script = "uid://b5w86fvx28xgs"
+metadata/_custom_type_script = "uid://dbh6cec5wsibn"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MapTransition3D" unique_id=1520592714]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.071823, 5.4751587, 4.7682266)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MapTransition3D" unique_id=981151926]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.769104, 9.111282, -1.3821115)
 shape = SubResource("BoxShape3D_57qmd")
 
 [editable path="Environment/garden_scene"]
 [editable path="Environment/CropsZone/PumpkinPuzzleTrigger/StaticBody3D/calabazas(shellgame)"]
 [editable path="Environment/CropsZone/PumpkinPuzzleTrigger/StaticBody3D/calabazas(shellgame)2"]
 [editable path="Environment/CropsZone/PumpkinPuzzleTrigger/StaticBody3D/calabazas(shellgame)3"]
+[editable path="Environment/NPCs/Lucy/BehaviorTree"]
+[editable path="Environment/NPCs/Jorge/BehaviorTree"]
