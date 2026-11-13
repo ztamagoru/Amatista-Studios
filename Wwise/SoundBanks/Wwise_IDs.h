@@ -27,6 +27,7 @@ namespace AK
         static const AkUniqueID OPEN_DIARY = 1351238925U;
         static const AkUniqueID PAGES_TURN = 1666598327U;
         static const AkUniqueID PICK_UP = 467838998U;
+        static const AkUniqueID PLAY_BIRDS = 3025897706U;
         static const AkUniqueID PLAY_MUSIC = 2932040671U;
         static const AkUniqueID PLAY_MUSIC_PUZZLE = 2649777630U;
         static const AkUniqueID SHOOT = 3038207054U;
@@ -57,8 +58,10 @@ namespace AK
 
             namespace SWITCH
             {
+                static const AkUniqueID CONCRETE = 841620460U;
                 static const AkUniqueID DIRT = 2195636714U;
                 static const AkUniqueID GRASS = 4248645337U;
+                static const AkUniqueID TILE = 2637588553U;
                 static const AkUniqueID WOOD = 2058049674U;
             } // namespace SWITCH
         } // namespace MATERIAL

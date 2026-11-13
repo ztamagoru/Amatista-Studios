@@ -156,3 +156,8 @@ func unpaused():
 #func off_transition():
 	#Wwise.set_state("Transition", "Normal_Volume")
 	#print("Transicion desactivada")
+
+func birds() -> void:
+	if _audio_ready == null:
+		return
+	Wwise.post_event("Play_Birds", self)

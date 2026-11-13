@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{D6191AA2-CA45-D098-DAF7-8FACC4D2F682}",
+    "Hash": "{9CD2BA2F-E77A-C07F-B2B8-24B7184D7380}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -202,6 +202,12 @@
       "GUID": "{1F788AB2-445C-4157-A8FE-53FDF731F520}",
       "Switches": [
        {
+        "Id": "841620460",
+        "Name": "Concrete",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Material\\Concrete",
+        "GUID": "{171144B9-1F6B-4BFE-870D-28EB30A8F103}"
+       },
+       {
         "Id": "2058049674",
         "Name": "Wood",
         "ObjectPath": "\\Switches\\Default Work Unit\\Material\\Wood",
@@ -212,6 +218,12 @@
         "Name": "Dirt",
         "ObjectPath": "\\Switches\\Default Work Unit\\Material\\Dirt",
         "GUID": "{B51CCF14-62AC-4C92-8007-286D939784AC}"
+       },
+       {
+        "Id": "2637588553",
+        "Name": "Tile",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Material\\Tile",
+        "GUID": "{E540550F-315B-42AB-90EE-B7DC0DD1A4E3}"
        },
        {
         "Id": "4248645337",
@@ -701,6 +713,6 @@
     ]
    }
   ],
-  "FileHash": "{6D75F7F6-F823-64D2-9855-5FE78C823421}"
+  "FileHash": "{41D4E537-C8AF-BB99-2364-5753486C9714}"
  }
 }
