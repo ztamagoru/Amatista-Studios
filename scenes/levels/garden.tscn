@@ -37,7 +37,6 @@
 [ext_resource type="Texture2D" uid="uid://b4e4vliudwlv4" path="res://assets/ui/hud/interaction_npc.png" id="33_ae5ye"]
 [ext_resource type="Texture2D" uid="uid://trru0yinakvl" path="res://assets/ui/hud/interaction_interactable.png" id="34_c73ps"]
 [ext_resource type="Script" uid="uid://dbh6cec5wsibn" path="res://scripts/components/map_transition_3d.gd" id="37_o1ijj"]
-[ext_resource type="ArrayOccluder3D" uid="uid://cwsd2dotrak22" path="res://scenes/levels/occlussions/garden.occ" id="38_58hi4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_241ex"]
 sky_top_color = Color(0.055368565, 0.46664757, 0.75038546, 1)
@@ -1876,9 +1875,6 @@ metadata/_custom_type_script = "uid://dbh6cec5wsibn"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MapTransition3D" unique_id=981151926]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.769104, 9.111282, -1.3821115)
 shape = SubResource("BoxShape3D_57qmd")
-
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1954249746]
-occluder = ExtResource("38_58hi4")
 
 [editable path="Environment/garden_scene"]
 [editable path="Environment/CropsZone/PumpkinPuzzleTrigger/StaticBody3D/calabazas(shellgame)"]
