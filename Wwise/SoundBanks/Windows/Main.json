@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{B2AB37D9-0287-4B83-B475-5B48B6C26BCF}",
     "Language": "SFX",
-    "Hash": "{9DC8F0D3-B478-2837-B47F-D73651AEFCD6}",
+    "Hash": "{4120B8CE-EEC4-691C-EE98-A3D6D6B31435}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -22,6 +22,14 @@
       "Location": "Memory",
       "ShortName": "footsteps-wood.wav",
       "CachePath": "C5/{C5FD9B5E-0862-B6B3-BB6D-3D6C6FF96153}.wem"
+     },
+     {
+      "Id": "78032548",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Zona 2 Melodia 3 90 bpm.wav",
+      "CachePath": "AB/{ABECFE51-21E7-EA0D-09F1-DEAB0466E3DB}.wem"
      },
      {
       "Id": "79349208",
@@ -56,6 +64,14 @@
       "CachePath": "2C/{2C80376C-6336-4BE4-F0A6-23FC025D56A9}.wem"
      },
      {
+      "Id": "222443223",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "footstep tile.wav",
+      "CachePath": "B5/{B52E0A43-CF6F-1963-41FD-DBE92A63E2F4}.wem"
+     },
+     {
       "Id": "228327416",
       "Language": "SFX",
       "Streaming": "true",
@@ -79,6 +95,22 @@
       "Location": "Memory",
       "ShortName": "Jump_grass.wav",
       "CachePath": "5F/{5F2ED369-2D08-22D9-42D1-73388CA53676}.wem"
+     },
+     {
+      "Id": "274855314",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Zona 2 Melodia 1 90 bpm.wav",
+      "CachePath": "F6/{F69E95D5-63BE-26F4-BC6A-CF2E66C6CF37}.wem"
+     },
+     {
+      "Id": "292688952",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Zorzal_bird.wav",
+      "CachePath": "67/{67321B0A-480A-6214-0240-D754CA82EE59}.wem"
      },
      {
       "Id": "292948151",
@@ -121,6 +153,14 @@
       "CachePath": "E0/{E08E6D92-2C2A-8E30-C8E5-50FF0D98EF41}.wem"
      },
      {
+      "Id": "372735148",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Zona 2 Melodia 2 90 bpm.wav",
+      "CachePath": "B4/{B409C9AB-FAC1-243F-E5BF-28C924C975E4}.wem"
+     },
+     {
       "Id": "384257364",
       "Language": "SFX",
       "Streaming": "false",
@@ -153,12 +193,28 @@
       "CachePath": "15/{15005C85-5EE2-0E69-4314-34EEBB6087CA}.wem"
      },
      {
+      "Id": "510905034",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Hornero_bird.wav",
+      "CachePath": "58/{58ABD24C-4661-374E-D90B-82F69D406C36}.wem"
+     },
+     {
       "Id": "530536690",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Melodia 3 80bpm tutorial.wav",
       "CachePath": "5E/{5EAE7A77-BECD-CB06-976C-1F8F0D6E70CF}.wem"
+     },
+     {
+      "Id": "551441050",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "wind.wav",
+      "CachePath": "F2/{F28A2AE1-8F40-3F47-C569-E52AB07DDC57}.wem"
      },
      {
       "Id": "646357272",
@@ -209,6 +265,14 @@
       "CachePath": "DE/{DE73BF16-42F3-E804-8836-14E045D1FEFF}.wem"
      },
      {
+      "Id": "895315454",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Zona 2 Percusion 90 bpm.wav",
+      "CachePath": "7B/{7BCA9FD2-6859-3FC8-231D-4DAA46D134E0}.wem"
+     },
+     {
       "Id": "967699816",
       "Language": "SFX",
       "Streaming": "false",
@@ -225,6 +289,14 @@
       "CachePath": "D9/{D94963D7-44A4-DC82-A8D6-D7D599AB04D1}.wem"
      },
      {
+      "Id": "1003500303",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Benteveo_bird.wav",
+      "CachePath": "CD/{CD4877CB-557E-8747-B1C3-1400E86687D5}.wem"
+     },
+     {
       "Id": "1015484737",
       "Language": "SFX",
       "Streaming": "true",
@@ -234,6 +306,26 @@
       "CachePath": "73/{730E6AD4-0FBF-6D8D-F6CB-1284A90AD5D8}.wem"
      }
     ],
+    "Plugins": {
+     "Custom": [
+      {
+       "Id": "129798663",
+       "Name": "Silence",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Ambiente\\Birds\\New Silence\\Silence",
+       "GUID": "{032E3DB4-0FD0-425D-A641-DD03237C0CFC}",
+       "LibName": "Wwise Silence",
+       "LibId": "6619138"
+      },
+      {
+       "Id": "409369050",
+       "Name": "Silence",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Ambiente\\Birds\\New Silence_01\\Silence",
+       "GUID": "{FF453533-0581-42D6-8E68-8C40B82507C3}",
+       "LibName": "Wwise Silence",
+       "LibId": "6619138"
+      }
+     ]
+    },
     "Events": [
      {
       "Id": "207989427",
@@ -300,6 +392,19 @@
       "DurationMin": "0.28734693",
       "DurationMax": "0.40132",
       "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3865314626",
+         "Id": "2637588553",
+         "GUID": "{E540550F-315B-42AB-90EE-B7DC0DD1A4E3}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "222443223"
+         }
+        ]
+       },
        {
         "SwitchValue": {
          "GroupType": "Switch",
@@ -446,7 +551,7 @@
      {
       "Id": "474894035",
       "Name": "Off_Pause",
-      "ObjectPath": "\\Events\\Default Work Unit\\Off_Pause",
+      "ObjectPath": "\\Events\\Default Work Unit\\Settings\\Off_Pause",
       "GUID": "{E53F3A69-9731-4C24-ACEB-1E14CD79CDB2}",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
@@ -465,7 +570,7 @@
      {
       "Id": "4046835429",
       "Name": "On_Pause",
-      "ObjectPath": "\\Events\\Default Work Unit\\On_Pause",
+      "ObjectPath": "\\Events\\Default Work Unit\\Settings\\On_Pause",
       "GUID": "{8B965AA8-10D0-4605-8FE8-9B10CC2BAB7F}",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
@@ -522,6 +627,37 @@
         "Id": "384257364"
        }
       ]
+     },
+     {
+      "Id": "3025897706",
+      "Name": "Play_Birds",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Birds",
+      "GUID": "{F631C07B-4151-4C39-A72B-E6A666C84331}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "292688952"
+       },
+       {
+        "Id": "510905034"
+       },
+       {
+        "Id": "551441050"
+       },
+       {
+        "Id": "1003500303"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "129798663"
+        },
+        {
+         "Id": "409369050"
+        }
+       ]
+      }
      },
      {
       "Id": "2932040671",
@@ -597,6 +733,28 @@
          },
          {
           "Id": "306895049"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "2963455281",
+         "Id": "1941802987",
+         "GUID": "{91BD4907-141F-416E-8350-273A670ED83A}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "78032548"
+         },
+         {
+          "Id": "274855314"
+         },
+         {
+          "Id": "372735148"
+         },
+         {
+          "Id": "895315454"
          }
         ]
        }
@@ -730,6 +888,12 @@
         "GUID": "{198ED24F-3AB6-40D3-A295-C39D809EDBBF}"
        },
        {
+        "Id": "1941802987",
+        "Name": "Mushroom",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Switch_Music\\Mushroom",
+        "GUID": "{91BD4907-141F-416E-8350-273A670ED83A}"
+       },
+       {
         "Id": "2607556080",
         "Name": "Menu",
         "ObjectPath": "\\Switches\\Default Work Unit\\Switch_Music\\Menu",
@@ -762,6 +926,12 @@
         "GUID": "{B51CCF14-62AC-4C92-8007-286D939784AC}"
        },
        {
+        "Id": "2637588553",
+        "Name": "Tile",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Material\\Tile",
+        "GUID": "{E540550F-315B-42AB-90EE-B7DC0DD1A4E3}"
+       },
+       {
         "Id": "4248645337",
         "Name": "Grass",
         "ObjectPath": "\\Switches\\Default Work Unit\\Material\\Grass",
@@ -772,6 +942,6 @@
     ]
    }
   ],
-  "FileHash": "{48B1130B-7B0C-19DA-9DAB-77EB948F7377}"
+  "FileHash": "{BCF2BFC9-BC8A-D4D1-8EFE-A88E460E68C9}"
  }
 }

@@ -59,4 +59,6 @@ func detect_surface() -> String:
 		return "Dirt"
 	if collider.is_in_group("Wood"):
 		return "Wood"
+	if collider.is_in_group("Tile"):
+		return "Tile"
 	return "Grass"

@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://bp7wum855ldeh"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "Play_Birds"
+id = 3025897706
+guid = "{F631C07B-4151-4C39-A72B-E6A666C84331}"
+dummy = true

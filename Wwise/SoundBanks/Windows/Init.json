@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{D6191AA2-CA45-D098-DAF7-8FACC4D2F682}",
+    "Hash": "{9CD2BA2F-E77A-C07F-B2B8-24B7184D7380}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -182,6 +182,12 @@
         "GUID": "{198ED24F-3AB6-40D3-A295-C39D809EDBBF}"
        },
        {
+        "Id": "1941802987",
+        "Name": "Mushroom",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Switch_Music\\Mushroom",
+        "GUID": "{91BD4907-141F-416E-8350-273A670ED83A}"
+       },
+       {
         "Id": "2607556080",
         "Name": "Menu",
         "ObjectPath": "\\Switches\\Default Work Unit\\Switch_Music\\Menu",
@@ -212,6 +218,12 @@
         "Name": "Dirt",
         "ObjectPath": "\\Switches\\Default Work Unit\\Material\\Dirt",
         "GUID": "{B51CCF14-62AC-4C92-8007-286D939784AC}"
+       },
+       {
+        "Id": "2637588553",
+        "Name": "Tile",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Material\\Tile",
+        "GUID": "{E540550F-315B-42AB-90EE-B7DC0DD1A4E3}"
        },
        {
         "Id": "4248645337",
@@ -701,6 +713,6 @@
     ]
    }
   ],
-  "FileHash": "{6D75F7F6-F823-64D2-9855-5FE78C823421}"
+  "FileHash": "{A90B6F7D-873B-F827-A326-290564778EE2}"
  }
 }

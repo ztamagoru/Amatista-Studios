@@ -111,6 +111,7 @@ const music_switchs := {
 	"tutorial": "Tutorial",
 	"garden": "Garden",
 	"puzzle_pumpkin": "Puzzle_pumpkin",
+	"mushroom": "Mushroom",
 }
 
 var _music_playing := false
@@ -156,3 +157,8 @@ func unpaused():
 #func off_transition():
 	#Wwise.set_state("Transition", "Normal_Volume")
 	#print("Transicion desactivada")
+
+func birds() -> void:
+	if _audio_ready == null:
+		return
+	Wwise.post_event("Play_Birds", self)
