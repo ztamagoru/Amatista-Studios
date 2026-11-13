@@ -58,7 +58,6 @@ namespace AK
 
             namespace SWITCH
             {
-                static const AkUniqueID CONCRETE = 841620460U;
                 static const AkUniqueID DIRT = 2195636714U;
                 static const AkUniqueID GRASS = 4248645337U;
                 static const AkUniqueID TILE = 2637588553U;
@@ -74,6 +73,7 @@ namespace AK
             {
                 static const AkUniqueID GARDEN = 278887670U;
                 static const AkUniqueID MENU = 2607556080U;
+                static const AkUniqueID MUSHROOM = 1941802987U;
                 static const AkUniqueID PUZZLE_PUMPKIN = 1660104240U;
                 static const AkUniqueID TUTORIAL = 3762955427U;
             } // namespace SWITCH
