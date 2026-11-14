@@ -21,7 +21,7 @@ texture_sick = Array[Texture]([ExtResource("4_akt6w"), ExtResource("5_4tc53")])
 metadata/_custom_type_script = "uid://c3q2ehkn7jdg5"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2116187680]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.046912193, 2.413394, -0.55311966)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.047, 2.413, -0.12551033)
 shape = SubResource("CylinderShape3D_ppyta")
 
 [node name="arbolarrayan22" parent="." unique_id=948649414 instance=ExtResource("6_c12gf")]
