@@ -60,6 +60,10 @@ player=""
 interactable=""
 sick_environment=""
 
+[gui]
+
+theme/custom="uid://padr04j7eqn3"
+
 [input]
 
 move_left={
