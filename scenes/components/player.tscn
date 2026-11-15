@@ -95,7 +95,7 @@ max_speed = 15.0
 metadata/_custom_type_script = "uid://c6mwmaryafgmy"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_fbwj1"]
-radius = 15.0
+radius = 10.0
 
 [node name="Player" type="CharacterBody3D" unique_id=242546826 groups=["player"]]
 collision_layer = 16

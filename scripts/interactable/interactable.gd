@@ -17,7 +17,7 @@ var is_closest : bool = false:
 		if value == is_closest: return
 		
 		is_closest = value
-		_toggle_outline()
+		#_toggle_outline()
 
 var outline_material : StandardMaterial3D = load("res://resources/outline_material_3d.tres")
 var override_materials : Array[StandardMaterial3D]
