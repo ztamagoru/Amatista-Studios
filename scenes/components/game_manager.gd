@@ -91,7 +91,6 @@ func change_scene(path : String, spawn_point : StringName = &"") -> void:
 func _unhandled_input(event : InputEvent) -> void:
 	if event.is_action_pressed("toggle_pause") and not event.is_echo():
 		if is_diary_open:
-			AudioManager.on_open_diary()
 			toggle_diary()
 		elif is_paused:
 			AudioManager.unpaused()
@@ -120,6 +119,7 @@ func toggle_diary() -> void:
 	diary_menu.visible = is_diary_open
 	
 	if not diary_menu.visible: AudioManager.on_close_diary()
+	else: AudioManager.on_open_diary()
 	
 	get_tree().paused = is_diary_open
 	
