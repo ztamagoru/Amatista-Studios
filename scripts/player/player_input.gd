@@ -14,10 +14,10 @@ var input_enabled : bool = true
 # --
 
 func _ready() -> void:
-	DialogueManager.dialogue_started.connect(_change_input_mode.bind(false))
-	DialogueManager.dialogue_ended.connect(_change_input_mode.bind(true))
+	DialogueManager.dialogue_started.connect(change_input_mode.bind(false))
+	DialogueManager.dialogue_ended.connect(change_input_mode.bind(true))
 
-func _change_input_mode(_resource : DialogueResource, is_talking : bool) -> void:
+func change_input_mode(_resource : DialogueResource, is_talking : bool) -> void:
 	input_enabled = is_talking
 	move_dir = Vector2.ZERO
 

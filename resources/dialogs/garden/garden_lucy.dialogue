@@ -22,12 +22,13 @@ Lucy: Tenemos que ir a curar el bosque y todas sus criaturas... [wait=0.5] el [w
 ¡Lo sabía! [shake]¡Sabía que existía![/shake] Nadie me creyó, oh, pero cuando llegue a mi casa... [wait=0.5] ¡ya verán!
 Lucy: Te prometo que podrás verlo al final.
 Lucy: Intenta usar esa tirachinas que tienes... ponle un poco de magia e intenta curar algo.
+Lucy: Ese panel de información debería decirte cómo usarlo.
 do give_quest()
-do Globals.player.unlock_skill(&"slingshot")
 => END
 
 ~ idle_tutorial
 % Lucy: Intenta usar esa tirachinas que tienes... intenta curar algo.
+% Lucy: Ese panel de información debería decirte cómo usar ese tirachinas.
 % Lucy: Creo que si usas esa tirachinas con un árbol... [wait=0.5] o algo enfermo, se curará.
 => END
 

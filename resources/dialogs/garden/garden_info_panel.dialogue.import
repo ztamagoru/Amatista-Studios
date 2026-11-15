@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://cmlosyxkw6hhw"
+path="res://.godot/imported/garden_info_panel.dialogue-438b37fb8c3473794ebe627e700118cd.tres"
+
+[deps]
+
+source_file="res://resources/dialogs/garden/garden_info_panel.dialogue"
+dest_files=["res://.godot/imported/garden_info_panel.dialogue-438b37fb8c3473794ebe627e700118cd.tres"]
+
+[params]
+
+defaults=true

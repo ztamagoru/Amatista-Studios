@@ -36,7 +36,11 @@
 [ext_resource type="Script" uid="uid://dc31467mgksbc" path="res://scenes/ui/interaction_prompt_hud.gd" id="32_t4f2t"]
 [ext_resource type="Texture2D" uid="uid://b4e4vliudwlv4" path="res://assets/ui/hud/interaction_npc.png" id="33_ae5ye"]
 [ext_resource type="Texture2D" uid="uid://trru0yinakvl" path="res://assets/ui/hud/interaction_interactable.png" id="34_c73ps"]
+[ext_resource type="Texture2D" uid="uid://i2l6gc7tyhq6" path="res://assets/ui/tutorials/tutorial_info_panel.png" id="37_7qvd4"]
 [ext_resource type="Script" uid="uid://dbh6cec5wsibn" path="res://scripts/components/map_transition_3d.gd" id="37_o1ijj"]
+[ext_resource type="Script" uid="uid://chiom1kkylfhp" path="res://scenes/components/items/info_panel.gd" id="38_6707f"]
+[ext_resource type="PackedScene" uid="uid://dj886yey4wiwe" path="res://assets/models/levels/garden/info panel/info_panel.glb" id="39_lj7pv"]
+[ext_resource type="Resource" uid="uid://cmlosyxkw6hhw" path="res://resources/dialogs/garden/garden_info_panel.dialogue" id="40_lj7pv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_241ex"]
 sky_top_color = Color(0.055368565, 0.46664757, 0.75038546, 1)
@@ -118,6 +122,12 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_57qmd"]
 size = Vector3(11.828552, 11.136017, 18.69629)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2ei1o"]
+size = Vector3(4.163822, 8.102325, 7.5648193)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3vnsf"]
+size = Vector3(2.269287, 17.27893, 9.7734375)
 
 [node name="Garden" type="Node3D" unique_id=1571674238 node_paths=PackedStringArray("all_environment", "player", "spawn_points")]
 script = ExtResource("1_qf7ro")
@@ -1858,10 +1868,25 @@ pivot_offset = Vector2(200, 200)
 texture = ExtResource("34_c73ps")
 expand_mode = 2
 
+[node name="InfoPanelHUD" type="MarginContainer" parent="HUD/Control/MarginContainer" unique_id=1997161094]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Control/MarginContainer/InfoPanelHUD" unique_id=1765413493]
+layout_mode = 2
+texture = ExtResource("37_7qvd4")
+expand_mode = 2
+stretch_mode = 5
+
 [node name="SpawnPoints" type="Node3D" parent="." unique_id=1566995540]
 
 [node name="FromMushroomCity" type="Marker3D" parent="SpawnPoints" unique_id=484816304]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -124.278595, 4.289, -8.875062)
+
+[node name="FromTutorial" type="Marker3D" parent="SpawnPoints" unique_id=1846441396]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.75919, 0, 11.294325)
 
 [node name="MapTransition3D" type="Area3D" parent="." unique_id=1943876262]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149.43756, 0, 6.014394)
@@ -1876,9 +1901,40 @@ metadata/_custom_type_script = "uid://dbh6cec5wsibn"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.769104, 9.111282, -1.3821115)
 shape = SubResource("BoxShape3D_57qmd")
 
+[node name="InfoPanel" type="Area3D" parent="." unique_id=798820426 node_paths=PackedStringArray("quest_hud", "interaction_prompt_hud", "info_panel_hud", "dialogue_handler", "object_meshes")]
+transform = Transform3D(0.80873114, 0, 0.5881786, 0, 1, 0, -0.5881786, 0, 0.80873114, 72.17764, 3.8146973e-06, 24.953548)
+script = ExtResource("38_6707f")
+event_id = &"inspect_info_panel"
+quest_hud = NodePath("../HUD/Control/MarginContainer/QuestHUD")
+interaction_prompt_hud = NodePath("../HUD/Control/MarginContainer/InteractionPromptHUD")
+info_panel_hud = NodePath("../HUD/Control/MarginContainer/InfoPanelHUD")
+quest_id = &"heal_garden"
+dialogue_handler = NodePath("DialogueHandler")
+object_meshes = [NodePath("info_panel/Plane_004")]
+metadata/_custom_type_script = "uid://bry8pb26dpxym"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InfoPanel" unique_id=1281161875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.946991, 8.158157, 0.62615967)
+shape = SubResource("BoxShape3D_2ei1o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="InfoPanel" unique_id=1179553643]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InfoPanel/StaticBody3D" unique_id=152730072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.139465, 0.29589844)
+shape = SubResource("BoxShape3D_3vnsf")
+
+[node name="info_panel" parent="InfoPanel" unique_id=1770491446 instance=ExtResource("39_lj7pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.955376, 0)
+
+[node name="DialogueHandler" type="Node" parent="InfoPanel" unique_id=724581036]
+script = ExtResource("5_0qt43")
+dialogue = ExtResource("40_lj7pv")
+metadata/_custom_type_script = "uid://c1bj0q5evhiei"
+
 [editable path="Environment/garden_scene"]
 [editable path="Environment/CropsZone/PumpkinPuzzleTrigger/StaticBody3D/calabazas(shellgame)"]
 [editable path="Environment/CropsZone/PumpkinPuzzleTrigger/StaticBody3D/calabazas(shellgame)2"]
 [editable path="Environment/CropsZone/PumpkinPuzzleTrigger/StaticBody3D/calabazas(shellgame)3"]
 [editable path="Environment/NPCs/Lucy/BehaviorTree"]
 [editable path="Environment/NPCs/Jorge/BehaviorTree"]
+[editable path="InfoPanel/info_panel"]
