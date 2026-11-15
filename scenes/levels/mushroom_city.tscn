@@ -118,3 +118,7 @@ player = NodePath("../Player")
 [node name="Environment" type="Node3D" parent="." unique_id=1932868375]
 
 [node name="mushroom_city_ground" parent="Environment" unique_id=1547497609 instance=ExtResource("8_frsox")]
+
+[node name="StaticBody3D" parent="Environment/mushroom_city_ground/pisoz2" parent_id_path=PackedInt32Array(1547497609, 1411624004) index="0" unique_id=419481296 groups=["Mold"]]
+
+[editable path="Environment/mushroom_city_ground"]
