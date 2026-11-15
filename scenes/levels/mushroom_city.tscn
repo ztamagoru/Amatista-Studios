@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dvgmpb5y6ehsw"]
 
-[ext_resource type="Script" uid="uid://xqfthocmw71o" path="res://scripts/map_3d.gd" id="1_u6sr5"]
+[ext_resource type="Script" uid="uid://85x0rwnf0r85" path="res://scenes/levels/mushroom_city.gd" id="1_frsox"]
 [ext_resource type="PackedScene" uid="uid://cshhkyv0w8byc" path="res://scenes/components/player.tscn" id="2_b24sw"]
 [ext_resource type="PackedScene" uid="uid://1whrhty23vh4" path="res://scenes/ui/quest_hud.tscn" id="3_frsox"]
 [ext_resource type="Script" uid="uid://dc31467mgksbc" path="res://scenes/ui/interaction_prompt_hud.gd" id="4_3uw73"]
@@ -22,7 +22,7 @@ sky = SubResource("Sky_jdv7m")
 glow_enabled = true
 
 [node name="MushroomCity" type="Node3D" unique_id=804840913 node_paths=PackedStringArray("player", "spawn_points")]
-script = ExtResource("1_u6sr5")
+script = ExtResource("1_frsox")
 adjacent_maps = Array[String](["res://scenes/levels/garden.tscn"])
 save_map = false
 player = NodePath("Player")
