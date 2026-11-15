@@ -33,6 +33,10 @@ ItemDatabase="*uid://1sl68q5xniw"
 WwiseRuntimeManager="*uid://c5vri24p1why5"
 AudioManager="*uid://ckv8i05uydwlb"
 
+[dialogue_manager]
+
+runtime/balloon_path="uid://bx7s2myijerth"
+
 [display]
 
 window/size/viewport_width=1920
