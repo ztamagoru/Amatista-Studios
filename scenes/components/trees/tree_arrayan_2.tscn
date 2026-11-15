@@ -29,6 +29,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.00097078085, -1.59922
 
 [node name="arbolarrayan2" parent="arbol_arrayan_2" index="0" unique_id=1858640047]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.9232385, 21.558535, -0.46161962)
+lod_bias = 0.25
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1999863866]
 

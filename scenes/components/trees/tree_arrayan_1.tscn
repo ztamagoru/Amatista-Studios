@@ -27,6 +27,9 @@ shape = SubResource("CylinderShape3D_ppyta")
 [node name="arbolarrayan1" parent="." unique_id=1201085142 instance=ExtResource("6_3j0p5")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 13.9021845, 0)
 
+[node name="arbolarrayan1" parent="arbolarrayan1" index="0" unique_id=217097907]
+lod_bias = 0.25
+
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1778838393]
 
 [editable path="arbolarrayan1"]
