@@ -60,6 +60,9 @@ namespace AK
             {
                 static const AkUniqueID DIRT = 2195636714U;
                 static const AkUniqueID GRASS = 4248645337U;
+                static const AkUniqueID MOLD = 3178980849U;
+                static const AkUniqueID PUDDLE = 2003927601U;
+                static const AkUniqueID ROCK = 2144363834U;
                 static const AkUniqueID TILE = 2637588553U;
                 static const AkUniqueID WOOD = 2058049674U;
             } // namespace SWITCH

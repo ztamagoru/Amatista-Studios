@@ -208,10 +208,22 @@
       "GUID": "{1F788AB2-445C-4157-A8FE-53FDF731F520}",
       "Switches": [
        {
+        "Id": "2003927601",
+        "Name": "Puddle",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Material\\Puddle",
+        "GUID": "{00CA5283-F3E8-4DDB-9F53-D313C1FB0ED8}"
+       },
+       {
         "Id": "2058049674",
         "Name": "Wood",
         "ObjectPath": "\\Switches\\Default Work Unit\\Material\\Wood",
         "GUID": "{937BD9C1-BD6B-4C5C-88EA-B3E3F4F677CF}"
+       },
+       {
+        "Id": "2144363834",
+        "Name": "Rock",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Material\\Rock",
+        "GUID": "{E7FAE8CC-437F-4C60-A98C-8E4380F1B6F1}"
        },
        {
         "Id": "2195636714",
@@ -224,6 +236,12 @@
         "Name": "Tile",
         "ObjectPath": "\\Switches\\Default Work Unit\\Material\\Tile",
         "GUID": "{E540550F-315B-42AB-90EE-B7DC0DD1A4E3}"
+       },
+       {
+        "Id": "3178980849",
+        "Name": "Mold",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Material\\Mold",
+        "GUID": "{25AF150F-4524-4681-95AC-C933FB437D36}"
        },
        {
         "Id": "4248645337",
@@ -713,6 +731,6 @@
     ]
    }
   ],
-  "FileHash": "{A90B6F7D-873B-F827-A326-290564778EE2}"
+  "FileHash": "{EA87C1D5-C842-EA29-B91D-329FA6B2A762}"
  }
 }
