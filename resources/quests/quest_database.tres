@@ -5,8 +5,9 @@
 [ext_resource type="Resource" uid="uid://dcjmn7rqicwfd" path="res://resources/quests/characters/jorge_flowers.tres" id="2_fi6rn"]
 [ext_resource type="Script" uid="uid://mac1ifawajoo" path="res://scripts/quests/quest_database.gd" id="2_n2a0v"]
 [ext_resource type="Resource" uid="uid://ddgreroxslrvk" path="res://resources/quests/characters/chilla_garden_quest.tres" id="3_fi6rn"]
+[ext_resource type="Resource" uid="uid://dwnbpo4xs3q1t" path="res://resources/quests/zones/heal_mushroom_city.tres" id="5_pcmqj"]
 
 [resource]
 script = ExtResource("2_n2a0v")
-quests = Array[ExtResource("1_cgxlv")]([ExtResource("2_cp43x"), ExtResource("3_fi6rn"), ExtResource("2_fi6rn")])
+quests = Array[ExtResource("1_cgxlv")]([ExtResource("2_cp43x"), ExtResource("3_fi6rn"), ExtResource("2_fi6rn"), ExtResource("5_pcmqj")])
 metadata/_custom_type_script = "uid://mac1ifawajoo"

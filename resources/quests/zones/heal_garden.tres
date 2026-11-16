@@ -29,6 +29,6 @@ metadata/_custom_type_script = "uid://irg1osbq3q4l"
 script = ExtResource("2_v2y6s")
 id = &"heal_garden"
 title = "Sanar el jardín"
-description = "Explora y restaura el bosque."
+description = "Explora y restaura el jardín."
 objectives = Array[ExtResource("1_pk4x3")]([SubResource("Resource_vtoeu"), SubResource("Resource_7b18i"), SubResource("Resource_pk4x3")])
 metadata/_custom_type_script = "uid://rau5swn7y6cm"

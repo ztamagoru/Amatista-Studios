@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="QuestResource" format=3 uid="uid://dwnbpo4xs3q1t"]
+
+[ext_resource type="Script" uid="uid://irg1osbq3q4l" path="res://scripts/quests/quest_objective.gd" id="1_cge7b"]
+[ext_resource type="Script" uid="uid://rau5swn7y6cm" path="res://scripts/quests/quest_resource.gd" id="2_p4eig"]
+
+[resource]
+script = ExtResource("2_p4eig")
+id = &"heal_mushroom_city"
+title = "Sanar la ciudad"
+description = "Explora y restaura el bosque."
+metadata/_custom_type_script = "uid://rau5swn7y6cm"
