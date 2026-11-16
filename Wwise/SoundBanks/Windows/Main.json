@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{B2AB37D9-0287-4B83-B475-5B48B6C26BCF}",
     "Language": "SFX",
-    "Hash": "{1050235A-0C00-A3E4-7812-159D68394BDD}",
+    "Hash": "{C9FBBEE6-382A-E1DA-E294-F71C26F4F56F}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -186,6 +186,14 @@
       "CachePath": "E6/{E6E8AE6A-D9FC-7359-E413-19ACC67FDC10}.wem"
      },
      {
+      "Id": "427769592",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "footsteps-mold.wav",
+      "CachePath": "E6/{E63F8CDB-A8AA-B649-E064-8AFB450DC58C}.wem"
+     },
+     {
       "Id": "432846656",
       "Language": "SFX",
       "Streaming": "false",
@@ -223,7 +231,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "wind.wav",
-      "CachePath": "F2/{F28A2AE1-8F40-3F47-C569-E52AB07DDC57}.wem"
+      "CachePath": "6C/{6C135D46-D2CA-C5EC-B911-E463300CF256}.wem"
      },
      {
       "Id": "625418573",
@@ -320,15 +328,6 @@
       "Location": "Memory",
       "ShortName": "Benteveo_bird.wav",
       "CachePath": "CD/{CD4877CB-557E-8747-B1C3-1400E86687D5}.wem"
-     },
-     {
-      "Id": "1015484737",
-      "Language": "SFX",
-      "Streaming": "true",
-      "Location": "Loose",
-      "ShortName": "footsteps-grass.wav",
-      "Path": "Media/1015484737.wem",
-      "CachePath": "73/{730E6AD4-0FBF-6D8D-F6CB-1284A90AD5D8}.wem"
      }
     ],
     "Plugins": {
@@ -414,8 +413,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Player\\Footstep",
       "GUID": "{154542E0-B3FE-4217-8D30-E5ABC0A39016}",
       "DurationType": "OneShot",
-      "DurationMin": "0.2723125",
-      "DurationMax": "1.14168",
+      "DurationMin": "0.26612",
+      "DurationMax": "0.40132",
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -426,7 +425,7 @@
         },
         "MediaRefs": [
          {
-          "Id": "250695755"
+          "Id": "427769592"
          }
         ]
        },
@@ -465,7 +464,7 @@
         },
         "MediaRefs": [
          {
-          "Id": "1015484737"
+          "Id": "250695755"
          }
         ]
        },
@@ -1024,6 +1023,6 @@
     ]
    }
   ],
-  "FileHash": "{C9D65B09-0A5F-457E-2369-79645571F49F}"
+  "FileHash": "{AD69D058-B530-E5CC-274C-2C6773410795}"
  }
 }

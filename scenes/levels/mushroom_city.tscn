@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dvgmpb5y6ehsw"]
 
-[ext_resource type="Script" uid="uid://xqfthocmw71o" path="res://scripts/map_3d.gd" id="1_u6sr5"]
+[ext_resource type="Script" uid="uid://85x0rwnf0r85" path="res://scenes/levels/mushroom_city.gd" id="1_frsox"]
 [ext_resource type="PackedScene" uid="uid://cshhkyv0w8byc" path="res://scenes/components/player.tscn" id="2_b24sw"]
 [ext_resource type="PackedScene" uid="uid://1whrhty23vh4" path="res://scenes/ui/quest_hud.tscn" id="3_frsox"]
 [ext_resource type="Script" uid="uid://dc31467mgksbc" path="res://scenes/ui/interaction_prompt_hud.gd" id="4_3uw73"]
@@ -90,7 +90,7 @@ radius = 2.5151367
 size = Vector3(1.391, 4, 14.736)
 
 [node name="MushroomCity" type="Node3D" unique_id=804840913 node_paths=PackedStringArray("player", "spawn_points")]
-script = ExtResource("1_u6sr5")
+script = ExtResource("1_frsox")
 adjacent_maps = Array[String](["res://scenes/levels/garden.tscn"])
 save_map = false
 player = NodePath("Player")
@@ -562,3 +562,7 @@ transform = Transform3D(-0.9999931, 0, -0.0037308633, 0, 1, 0, 0.0037308633, 0, 
 shape = SubResource("BoxShape3D_g4v7s")
 
 [editable path="Environment/City/pueblo"]
+
+[node name="StaticBody3D" parent="Environment/mushroom_city_ground/pisoz2" parent_id_path=PackedInt32Array(1547497609, 1411624004) index="0" unique_id=419481296 groups=["Mold"]]
+
+[editable path="Environment/mushroom_city_ground"]
