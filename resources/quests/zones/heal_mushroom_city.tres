@@ -3,9 +3,16 @@
 [ext_resource type="Script" uid="uid://irg1osbq3q4l" path="res://scripts/quests/quest_objective.gd" id="1_cge7b"]
 [ext_resource type="Script" uid="uid://rau5swn7y6cm" path="res://scripts/quests/quest_resource.gd" id="2_p4eig"]
 
+[sub_resource type="Resource" id="Resource_ydlox"]
+script = ExtResource("1_cge7b")
+id = &"a"
+event_id = &"a"
+metadata/_custom_type_script = "uid://irg1osbq3q4l"
+
 [resource]
 script = ExtResource("2_p4eig")
 id = &"heal_mushroom_city"
 title = "Sanar la ciudad"
 description = "Explora y restaura el bosque."
+objectives = Array[ExtResource("1_cge7b")]([SubResource("Resource_ydlox")])
 metadata/_custom_type_script = "uid://rau5swn7y6cm"

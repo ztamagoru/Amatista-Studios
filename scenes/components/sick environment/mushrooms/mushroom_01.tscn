@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ciitpgte0l8rf"]
+
+[ext_resource type="Script" uid="uid://c3q2ehkn7jdg5" path="res://scripts/components/interactable/sick_environment.gd" id="1_licl3"]
+[ext_resource type="PackedScene" uid="uid://dv4pl11on77mn" path="res://assets/models/levels/mushroom city/mushrooms/mushroom_02.glb" id="2_kij48"]
+[ext_resource type="Texture2D" uid="uid://udekoay17pdx" path="res://assets/models/levels/mushroom city/mushrooms/mushroom_02_hongo texture.png" id="2_lb5sd"]
+[ext_resource type="Texture2D" uid="uid://b4i4lbru74u4c" path="res://assets/models/levels/mushroom city/mushrooms/mushroom_02_sick_hongo texture_ sick.png" id="3_u2bby"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ppyta"]
+height = 5.2348795
+radius = 2.003418
+
+[node name="Mushroom1" type="StaticBody3D" unique_id=1442680852 node_paths=PackedStringArray("meshes") groups=["sick_environment"]]
+script = ExtResource("1_licl3")
+meshes = [NodePath("mushroom_02/Cube_002"), NodePath("mushroom_02/Cube_003")]
+texture_healthy = Array[Texture]([ExtResource("2_lb5sd")])
+texture_sick = Array[Texture]([ExtResource("3_u2bby")])
+metadata/_custom_type_script = "uid://c3q2ehkn7jdg5"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1715950630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011663914, 2.5649781, 0.35671425)
+shape = SubResource("CylinderShape3D_ppyta")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1778838393]
+
+[node name="mushroom_02" parent="." unique_id=973540454 instance=ExtResource("2_kij48")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9295382, 0.84534955)
+
+[editable path="mushroom_02"]

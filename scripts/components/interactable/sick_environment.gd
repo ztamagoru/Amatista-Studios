@@ -10,7 +10,8 @@ var heal_sfx : String = "res://assets/sounds/sfx/sfx_heal_magic.mp3"
 
 var tree_instance : int 
 
-@export var mesh : MeshInstance3D 
+@export var mesh : MeshInstance3D
+@export var meshes : Array[MeshInstance3D] = []
 
 @export var has_leaves : bool
 @export var leaves_surface : int = 0
@@ -42,26 +43,24 @@ func _ready() -> void:
 	var p = get_tree().get_first_node_in_group("player")
 	if p is CharacterBody3D: player = p
 	camera = get_viewport().get_camera_3d()
-	
-	var object_mesh : Mesh = mesh.mesh 
-	for i in range(object_mesh.get_surface_count()):
-		if object_mesh.surface_get_material(i) is StandardMaterial3D:
-			var shader_mat : ShaderMaterial = ShaderMaterial.new()
-			
-			shader_mat.shader = leaves_shader if has_leaves and leaves_surface == i else tree_shader
-			
-			shader_mat.set_shader_parameter(
-				"texture_a",
-				texture_sick[i]
-			)
-			
-			shader_mat.set_shader_parameter(
-				"texture_b",
-				texture_healthy[i]
-			)
-			
-			mesh.set_surface_override_material(i, shader_mat)
-			shader_passes.append(shader_mat)
+
+	if mesh:
+		meshes.append(mesh)
+
+	for mesh_instance in meshes:
+		var object_mesh : Mesh = mesh_instance.mesh
+
+		for i in range(object_mesh.get_surface_count()):
+			if object_mesh.surface_get_material(i) is StandardMaterial3D:
+				var shader_mat : ShaderMaterial = ShaderMaterial.new()
+
+				shader_mat.shader = leaves_shader if has_leaves and leaves_surface == i else tree_shader
+
+				shader_mat.set_shader_parameter("texture_a", texture_sick[i])
+				shader_mat.set_shader_parameter("texture_b", texture_healthy[i])
+
+				mesh_instance.set_surface_override_material(i, shader_mat)
+				shader_passes.append(shader_mat)
 
 # --
 
