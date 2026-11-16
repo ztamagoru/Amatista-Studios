@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{B2AB37D9-0287-4B83-B475-5B48B6C26BCF}",
     "Language": "SFX",
-    "Hash": "{C9FBBEE6-382A-E1DA-E294-F71C26F4F56F}",
+    "Hash": "{18110B06-21C5-B891-D651-214CE3C111C3}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -531,8 +531,21 @@
       "GUID": "{BF22F850-3B9D-472A-A7F5-1E7BBB1F9415}",
       "DurationType": "OneShot",
       "DurationMin": "0.63236",
-      "DurationMax": "0.64298",
+      "DurationMax": "0.97457546",
       "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3865314626",
+         "Id": "3178980849",
+         "GUID": "{25AF150F-4524-4681-95AC-C933FB437D36}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "646357272"
+         }
+        ]
+       },
        {
         "SwitchValue": {
          "GroupType": "Switch",
@@ -570,6 +583,19 @@
       "DurationMin": "0.59295",
       "DurationMax": "0.7651042",
       "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3865314626",
+         "Id": "3178980849",
+         "GUID": "{25AF150F-4524-4681-95AC-C933FB437D36}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "270729911"
+         }
+        ]
+       },
        {
         "SwitchValue": {
          "GroupType": "Switch",
@@ -1023,6 +1049,6 @@
     ]
    }
   ],
-  "FileHash": "{AD69D058-B530-E5CC-274C-2C6773410795}"
+  "FileHash": "{44315AB7-8028-2506-CC5D-36D890B6BE89}"
  }
 }

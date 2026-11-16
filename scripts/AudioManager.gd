@@ -34,11 +34,11 @@ func set_value(value_name : String, value : float) -> void:
 func on_footstep(surface: String) -> void:
 	if _audio_ready == null:
 		return
-	#print("FOOTSTEP -> Superficie: ", surface)
+	print("FOOTSTEP -> Superficie: ", surface)
 	Wwise.set_switch("Material", surface, self)
-	#print("FOOTSTEP -> Switch enviado: Material / ", surface)
+	print("FOOTSTEP -> Switch enviado: Material / ", surface)
 	Wwise.post_event("Footstep", self)
-	#print("FOOTSTEP -> Evento enviado: Footstep")
+	print("FOOTSTEP -> Evento enviado: Footstep")
 
 func on_shoot() -> void:
 	if _audio_ready == null:
