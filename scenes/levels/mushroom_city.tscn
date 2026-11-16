@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://trru0yinakvl" path="res://assets/ui/hud/interaction_interactable.png" id="6_x47db"]
 [ext_resource type="PackedScene" uid="uid://bfh8nsyv0y463" path="res://scenes/components/camera.tscn" id="7_b24sw"]
 [ext_resource type="PackedScene" uid="uid://da1pyvkwvtvgn" path="res://assets/models/levels/mushroom city/mushroom_city_ground.blend" id="8_frsox"]
+[ext_resource type="PackedScene" uid="uid://8afobjl343my" path="res://assets/models/levels/mushroom city/pueblo.blend" id="9_3uw73"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_v6nkf"]
 sky_top_color = Color(0.055368565, 0.46664757, 0.75038546, 1)
@@ -20,6 +21,73 @@ sky_material = SubResource("ProceduralSkyMaterial_v6nkf")
 background_mode = 2
 sky = SubResource("Sky_jdv7m")
 glow_enabled = true
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_axvqh"]
+height = 9.706055
+radius = 5.024
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_x47db"]
+height = 14.09375
+radius = 5.024
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_v6nkf"]
+height = 14.09375
+radius = 5.024
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_iscdg"]
+height = 9.935791
+radius = 5.024
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_f2vs7"]
+height = 11.716309
+radius = 5.024
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_m2p5p"]
+height = 12.107422
+radius = 5.024
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wqprt"]
+height = 14.09375
+radius = 5.024
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_suvmh"]
+height = 7.9160156
+radius = 5.024
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_n6ofk"]
+height = 14.09375
+radius = 5.024
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wnf4e"]
+height = 8.759766
+radius = 5.024
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3rne4"]
+height = 8.646973
+radius = 5.024
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_grbxn"]
+height = 9.722168
+radius = 5.024
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_heay6"]
+height = 9.779297
+radius = 5.024
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_25unk"]
+height = 9.643555
+radius = 5.024
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pi4pk"]
+height = 9.776855
+radius = 5.024
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yf5fn"]
+height = 14.287109
+radius = 2.5151367
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1.391, 4, 14.736)
 
 [node name="MushroomCity" type="Node3D" unique_id=804840913 node_paths=PackedStringArray("player", "spawn_points")]
 script = ExtResource("1_u6sr5")
@@ -39,7 +107,7 @@ shadow_enabled = true
 directional_shadow_max_distance = 500.0
 
 [node name="Player" parent="." unique_id=242546826 node_paths=PackedStringArray("interactor_hud") instance=ExtResource("2_b24sw")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -2.818, 0)
 interactor_hud = NodePath("../HUD/Control/MarginContainer/InteractionPromptHUD")
 
 [node name="SpawnPoints" type="Node3D" parent="." unique_id=1814647358]
@@ -118,3 +186,379 @@ player = NodePath("../Player")
 [node name="Environment" type="Node3D" parent="." unique_id=1932868375]
 
 [node name="mushroom_city_ground" parent="Environment" unique_id=1547497609 instance=ExtResource("8_frsox")]
+
+[node name="City" type="Node3D" parent="Environment" unique_id=572478630]
+
+[node name="pueblo" parent="Environment/City" unique_id=541051305 instance=ExtResource("9_3uw73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.8776817, 0)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Cube_001" parent="Environment/City/pueblo" index="0" unique_id=1144314002]
+transform = Transform3D(-0.8037653, 0, -0.5949464, 0, 1, 0, 0.5949464, 0, -0.8037653, 22.671677, 5.2643485, -47.48931)
+
+[node name="Cube_002" parent="Environment/City/pueblo" index="1" unique_id=1380623926]
+transform = Transform3D(-0.29892018, 0, 0.45971236, 0, 0.5483508, 0, -0.45971236, 0, -0.29892018, 34.103592, 11.800289, 43.630127)
+
+[node name="Cube_003" parent="Environment/City/pueblo" index="2" unique_id=626758540]
+transform = Transform3D(0.16898327, 0, 0, 0, 0.055810925, 0, 0, 0, 0.17999293, 63.020103, 3.3106065, -21.843765)
+
+[node name="Cube_004" parent="Environment/City/pueblo" index="3" unique_id=460274854]
+transform = Transform3D(0.12660803, 0.004264209, -0.118414395, -0.014534645, 0.055595286, 0.0031917447, 0.11097073, 0.0024166252, 0.13551864, 55.979244, 4.3882265, 30.073458)
+
+[node name="Cube_005" parent="Environment/City/pueblo" index="4" unique_id=2138866927]
+transform = Transform3D(0.084491655, 0, 0.15587844, 0, 0.055810925, 0, -0.14634378, 0, 0.08999649, 56.365112, 3.4311612, -34.6853)
+
+[node name="Cube_006" parent="Environment/City/pueblo" index="5" unique_id=1357727089]
+transform = Transform3D(0.24346794, 0, 0, 0, 0.12582782, 0, 0, 0, 0.24346794, 54.25763, 2.6337113, 8.479164)
+
+[node name="Cube_007" parent="Environment/City/pueblo" index="6" unique_id=2011452528]
+transform = Transform3D(0.1182223, 0, 0.8117752, 0, 0.82033855, 0, -0.8117752, 0, 0.1182223, 24.730808, 7.136632, 27.231491)
+
+[node name="Cube_008" parent="Environment/City/pueblo" index="7" unique_id=1226784726]
+transform = Transform3D(0.29901102, 0, 0, 0, 0.16577667, 0, 0, 0, 0.3681576, 46.87908, 3.144535, 25.640388)
+
+[node name="Cube_009" parent="Environment/City/pueblo" index="8" unique_id=1071536748]
+transform = Transform3D(0.24346794, 0, 0, 0, 0.12582782, 0, 0, 0, 0.24346794, 46.73771, 3.1370869, 22.025826)
+
+[node name="Cube_010" parent="Environment/City/pueblo" index="9" unique_id=1114420719]
+transform = Transform3D(0.24346794, 0, 0, 0, 0.12582782, 0, 0, 0, 0.24346794, 54.25763, 2.4810257, -21.264889)
+
+[node name="Cube_011" parent="Environment/City/pueblo" index="10" unique_id=1967768987]
+transform = Transform3D(0.29901102, 0, 0, 0, 0.16577667, 0, 0, 0, 0.3681576, 54.399002, 2.389062, -24.865116)
+
+[node name="Cube_012" parent="Environment/City/pueblo" index="11" unique_id=1896224698]
+transform = Transform3D(0.24346794, 0, 0, 0, 0.12582782, 0, 0, 0, 0.24346794, 54.25763, 2.4952826, -28.479675)
+
+[node name="Cube_013" parent="Environment/City/pueblo" index="12" unique_id=953868592]
+transform = Transform3D(0.24346794, 0, 0, 0, 0.12582782, 0, 0, 0, 0.24346794, 57.514874, 2.4405017, -24.733965)
+
+[node name="Cube_014" parent="Environment/City/pueblo" index="13" unique_id=319228753]
+transform = Transform3D(0.24346794, 0, 0, 0, 0.12582782, 0, 0, 0, 0.24346794, 50.686054, 2.539832, -24.733965)
+
+[node name="Cube_015" parent="Environment/City/pueblo" index="14" unique_id=1862239930]
+transform = Transform3D(0.29901102, 0, 0, 0, 0.16577667, 0, 0, 0, 0.3681576, 46.87908, 2.5108767, -31.156445)
+
+[node name="Cube_016" parent="Environment/City/pueblo" index="15" unique_id=1448853106]
+transform = Transform3D(0.24346794, 0, 0, 0, 0.12582782, 0, 0, 0, 0.24346794, 46.73771, 2.617097, -34.771008)
+
+[node name="Cube_017" parent="Environment/City/pueblo" index="16" unique_id=144788997]
+transform = Transform3D(0.11097075, 0.0024166256, 0.13551863, -0.014534644, 0.055595286, 0.0031917456, -0.12660798, -0.0042642085, 0.11841442, -26.659473, 5.6210012, 82.04107)
+
+[node name="Cube_018" parent="Environment/City/pueblo" index="17" unique_id=1818483795]
+transform = Transform3D(0.105414666, 0.0037797834, -0.14014798, -0.014534641, 0.05559529, 0.0031917458, 0.13127008, 0.003120383, 0.11289734, 30.29802, 6.325635, 83.77181)
+
+[node name="Cube_019" parent="Environment/City/pueblo" index="18" unique_id=923397592]
+transform = Transform3D(-0.0046103224, -0.0011244175, 0.17988938, -0.014534644, 0.055595286, 0.0031917456, -0.16829388, -0.0047706654, -0.005203629, 14.2716, 6.6755667, 88.24636)
+
+[node name="Cube_020" parent="Environment/City/pueblo" index="19" unique_id=68573754]
+transform = Transform3D(-0.0046103224, -0.0011244175, 0.17988938, -0.014534644, 0.055595286, 0.0031917456, -0.16829388, -0.0047706654, -0.005203629, -7.399144, 6.5601397, 88.24636)
+
+[node name="Cube_021" parent="Environment/City/pueblo" index="20" unique_id=1437706270]
+transform = Transform3D(0.11097073, 0.002416626, 0.13551863, -0.014534645, 0.055595286, 0.0031917456, 0.12660798, 0.00426421, -0.1184144, -26.659473, 0.4137478, -104.273964)
+
+[node name="Cube_022" parent="Environment/City/pueblo" index="21" unique_id=1148386710]
+transform = Transform3D(0.105414696, 0.0037797838, -0.14014797, -0.014534644, 0.05559529, 0.0031917435, -0.13127008, -0.0031203835, -0.11289738, 30.29802, 1.5895176, -106.00471)
+
+[node name="Cube_023" parent="Environment/City/pueblo" index="22" unique_id=2045761768]
+transform = Transform3D(-0.004610332, -0.0011244182, 0.17988938, -0.014534645, 0.055595286, 0.0031917463, 0.16829388, 0.004770666, 0.0052036396, 14.2716, 1.1568565, -110.479256)
+
+[node name="Cube_024" parent="Environment/City/pueblo" index="23" unique_id=392611399]
+transform = Transform3D(-0.004610332, -0.0011244182, 0.17988938, -0.014534645, 0.055595286, 0.0031917463, 0.16829388, 0.004770666, 0.0052036396, -7.399144, 0.7062111, -110.479256)
+
+[node name="Cube_025" parent="Environment/City/pueblo" index="24" unique_id=1937364791]
+transform = Transform3D(-0.12660798, -0.00426421, 0.118414424, -0.014534645, 0.05559529, 0.003191748, 0.110970736, 0.0024166254, 0.13551864, -81.50067, 2.4930916, 14.957302)
+
+[node name="Cube_026" parent="Environment/City/pueblo" index="25" unique_id=150858629]
+transform = Transform3D(-0.084491655, 0, -0.15587844, 0, 0.055810925, 0, -0.14634378, 0, 0.08999649, -81.63565, 1.2783699, -25.92331)
+
+[node name="Cube_027" parent="Environment/City/pueblo" index="26" unique_id=1458478663]
+transform = Transform3D(-0.12660798, -0.00426421, 0.118414424, -0.014534645, 0.05559529, 0.003191748, 0.110970736, 0.0024166254, 0.13551864, -66.54169, 3.0830173, 30.215645)
+
+[node name="Cube_028" parent="Environment/City/pueblo" index="27" unique_id=222623471]
+transform = Transform3D(-0.084491655, 0, -0.15587844, 0, 0.055810925, 0, -0.14634378, 0, 0.08999649, -66.67667, 1.3804665, -34.6853)
+
+[node name="Cube_031" parent="Environment/City/pueblo" index="28" unique_id=1690580962]
+transform = Transform3D(0.07157774, 0.2324298, 0.04741175, 1.7454912e-09, 0.5794147, -0.030352188, -0.092724964, 0.17942096, 0.03659884, 1.3345459, 7.0034485, 22.349709)
+
+[node name="Cube_046" parent="Environment/City/pueblo" index="29" unique_id=1669804900]
+transform = Transform3D(0.101054326, 0.14849311, 0.030290082, 8.727455e-10, 0.5794148, -0.030352185, -0.059239466, 0.25330868, 0.051670693, -32.809715, 6.0319157, 32.167137)
+
+[node name="Cube_047" parent="Environment/City/pueblo" index="30" unique_id=166621526]
+transform = Transform3D(0.101054326, 0.14849311, 0.030290082, 8.727455e-10, 0.5794148, -0.030352185, -0.059239466, 0.25330868, 0.051670693, 10.606197, 8.379854, 73.5595)
+
+[node name="Cube_048" parent="Environment/City/pueblo" index="31" unique_id=913734929]
+transform = Transform3D(0.07157774, 0.2324298, 0.04741175, 1.7454912e-09, 0.5794147, -0.030352188, -0.092724964, 0.17942096, 0.03659884, 30.624529, 7.3517885, 48.001755)
+
+[node name="Cube_049" parent="Environment/City/pueblo" index="32" unique_id=251858000]
+transform = Transform3D(0.0033689793, -0.29350328, -0.059869714, -3.4909822e-09, 0.5794147, -0.030352188, 0.11708947, 0.008444897, 0.001722612, -9.476301, 4.5562406, -51.164383)
+
+[node name="Cube_050" parent="Environment/City/pueblo" index="33" unique_id=1416503661]
+transform = Transform3D(-0.04851687, -0.267255, -0.0545155, 3.490982e-09, 0.5794147, -0.030352188, 0.10661804, -0.121615246, -0.024807448, -1.153702, 3.8010168, -82.569565)
+
+[node name="Cube_051" parent="Environment/City/pueblo" index="34" unique_id=963615229]
+transform = Transform3D(-0.09058054, -0.18617672, -0.037976906, 1.745491e-09, 0.5794147, -0.03035219, 0.07427288, -0.22705446, -0.046315275, 41.508633, 4.956616, -71.345695)
+
+[node name="Cube_052" parent="Environment/City/pueblo" index="35" unique_id=2120557174]
+transform = Transform3D(0.07657695, -0.22219324, -0.04532366, 0, 0.5794147, -0.030352192, 0.0886412, 0.19195229, 0.03915502, -40.311127, 3.784616, -51.164383)
+
+[node name="Cube_083" parent="Environment/City/pueblo" index="36" unique_id=406661291]
+transform = Transform3D(0.16898327, 0, 0, 0, 0.055810925, 0, 0, 0, 0.17999293, 63.020103, 3.6166725, 13.37994)
+
+[node name="Cube_086" parent="Environment/City/pueblo" index="37" unique_id=1251053593]
+transform = Transform3D(-0.82092613, 0, 0.2887226, 0, 0.8702185, 0, -0.2887226, 0, -0.82092613, -5.103321, 4.5921926, -33.62591)
+
+[node name="Cube_090" parent="Environment/City/pueblo" index="38" unique_id=2117404018]
+transform = Transform3D(1.4440626, 0, 0, 0, 1.4322672, 0, 0, 0, 2.123268, 64.52633, 15.430885, -3.4989586)
+
+[node name="Cube_091" parent="Environment/City/pueblo" index="39" unique_id=205109948]
+transform = Transform3D(0.24346794, 0, 0, 0, 0.12582782, 0, 0, 0, 0.24346794, 54.25763, 2.8461533, 15.693951)
+
+[node name="Cube_092" parent="Environment/City/pueblo" index="40" unique_id=1150161547]
+transform = Transform3D(0.29901102, 0, 0, 0, 0.16577667, 0, 0, 0, 0.3681576, 54.399002, 2.6411562, 12.093723)
+
+[node name="Cube_096" parent="Environment/City/pueblo" index="41" unique_id=1749058547]
+transform = Transform3D(0.19785523, 0, -0.9802312, 0, 1, 0, 0.9802312, 0, 0.19785523, -9.164465, 5.0872297, -93.71005)
+
+[node name="Cube_102" parent="Environment/City/pueblo" index="42" unique_id=211596367]
+transform = Transform3D(0.57207453, 0, 0.35491243, 0, 0.67322516, 0, -0.35491243, 0, 0.57207453, -20.456017, 13.567962, 45.14538)
+
+[node name="Cube_111" parent="Environment/City/pueblo" index="43" unique_id=1964178038]
+transform = Transform3D(0.9999789, 0, 0.006495951, 0, 1, 0, -0.006495951, 0, 0.9999789, -42.259182, 6.8958154, -25.717707)
+
+[node name="Cube_114" parent="Environment/City/pueblo" index="44" unique_id=1053251204]
+transform = Transform3D(-0.5538136, 0, 0.8326408, 0, 1, 0, -0.8326408, 0, -0.5538136, 13.361307, 7.1852884, 39.140625)
+
+[node name="Cube_149" parent="Environment/City/pueblo" index="45" unique_id=45385957]
+transform = Transform3D(0.36300063, 0, -0.9317889, 0, 1, 0, 0.9317889, 0, 0.36300063, -24.496988, 1.9882581, -73.88809)
+
+[node name="Cube_152" parent="Environment/City/pueblo" index="46" unique_id=705705836]
+transform = Transform3D(-0.0688442, 0, -0.99762744, 0, 1, 0, 0.99762744, 0, -0.0688442, 26.814013, 3.0890331, -19.527802)
+
+[node name="Cube_156" parent="Environment/City/pueblo" index="47" unique_id=296947875]
+transform = Transform3D(-0.12867597, 0.2760547, -0.23163742, 0, 0.24596146, 0.2931255, 0.36036387, 0.098571494, -0.08271131, 22.971573, 7.6993647, -65.75961)
+
+[node name="Cube_160" parent="Environment/City/pueblo" index="48" unique_id=829171606]
+transform = Transform3D(0.67322516, 0, 0, 0, 0.67322516, 0, 0, 0, 0.67322516, -41.61478, 12.769665, 46.430206)
+
+[node name="Cube_168" parent="Environment/City/pueblo" index="49" unique_id=889705132]
+transform = Transform3D(0.3559059, 0, 0.9345218, 0, 1, 0, -0.9345218, 0, 0.3559059, -6.2515564, 8.10931, 21.353477)
+
+[node name="Cube_169" parent="Environment/City/pueblo" index="50" unique_id=320079215]
+transform = Transform3D(0.48763245, 0, -0.5568932, 0, 0.7402131, 0, 0.5568932, 0, 0.48763245, -15.764044, 7.056896, -52.756)
+
+[node name="Cube_172" parent="Environment/City/pueblo" index="51" unique_id=187094702]
+transform = Transform3D(-0.5500866, -0.009385362, -0.83505476, -0.017059129, 0.9998545, 2.7939677e-09, 0.8349333, 0.014245309, -0.5501666, 10.797058, 5.674407, -71.23143)
+
+[node name="Cube_182" parent="Environment/City/pueblo" index="52" unique_id=418709732]
+transform = Transform3D(-0.69441545, 0, 0.7195743, 0, 1, 0, -0.7195743, 0, -0.69441545, 17.699333, 13.342398, 69.344795)
+
+[node name="Cube_184" parent="Environment/City/pueblo" index="53" unique_id=1764780316]
+transform = Transform3D(0.30666995, 0.17531063, -0.14710303, 1.7105704e-08, 0.24596141, 0.2931255, 0.22885174, -0.23492287, 0.19712362, -46.079376, 6.891586, -52.201378)
+
+[node name="Cube_188" parent="Environment/City/pueblo" index="54" unique_id=2058805683]
+transform = Transform3D(0.52214265, 0, 0.42496964, 0, 0.67322516, 0, -0.42496964, 0, 0.52214265, -2.716561, 14.615197, 57.18554)
+
+[node name="Cube_196" parent="Environment/City/pueblo" index="55" unique_id=42945162]
+transform = Transform3D(0.82033855, 0, 0, 0, 0.82033855, 0, 0, 0, 0.82033855, -37.366463, 6.1753073, 27.231491)
+
+[node name="Cube_197" parent="Environment/City/pueblo" index="56" unique_id=1611630192]
+transform = Transform3D(-0.88886726, 0, -0.458165, 0, 1, 0, 0.458165, 0, -0.88886726, 46.834297, 10.319138, -69.25204)
+
+[node name="Cube_199" parent="Environment/City/pueblo" index="57" unique_id=2145541604]
+transform = Transform3D(-0.4936998, 0, -0.8696324, 0, 1, 0, 0.8696324, 0, -0.4936998, 5.3407655, 0.8417845, -83.28365)
+
+[node name="Cylinder_001" parent="Environment/City/pueblo" index="58" unique_id=1571333701]
+transform = Transform3D(0.1386276, -0.023840154, 0.08897265, -2.4801414e-09, 0.1607682, 0.043077715, -0.09211126, -0.035879474, 0.13390398, -19.327019, 9.405154, 63.945873)
+
+[node name="Cylinder_031" parent="Environment/City/pueblo" index="59" unique_id=1382487893]
+transform = Transform3D(-0.14935979, -0.01900825, 0.07093975, -3.1001777e-09, 0.16076818, 0.04307773, -0.07344223, 0.038657162, -0.1442705, 26.934284, 9.362717, 57.092987)
+
+[node name="Cylinder_035" parent="Environment/City/pueblo" index="60" unique_id=974463788]
+transform = Transform3D(0.51578414, 0, -0.8567186, 0, 1, 0, 0.8567186, 0, 0.51578414, -42.209114, 3.2168245, -65.515465)
+
+[node name="CityCollisions" type="StaticBody3D" parent="Environment/City" unique_id=20623265]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=66100702]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2552567, 1.9113216, 21.21456)
+shape = SubResource("CylinderShape3D_axvqh")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=1162984631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.641235, 4.1051693, 46.44998)
+shape = SubResource("CylinderShape3D_x47db")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=1250464920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.635218, 4.1051693, 45.18116)
+shape = SubResource("CylinderShape3D_v6nkf")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=210581448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.481943, 2.0261898, 39.54196)
+shape = SubResource("CylinderShape3D_iscdg")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=967157211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6615, 2.9164486, 65.48227)
+shape = SubResource("CylinderShape3D_f2vs7")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=1882880863]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7307568, 4.1051693, 57.164455)
+shape = SubResource("CylinderShape3D_v6nkf")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=968599187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.711344, 4.1051693, 69.28873)
+shape = SubResource("CylinderShape3D_v6nkf")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=49219204]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.861895, 3.1120052, 55.331715)
+shape = SubResource("CylinderShape3D_m2p5p")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=252412257]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.452097, 2.9146118, -21.925327)
+shape = SubResource("CylinderShape3D_v6nkf")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=1594773979]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.628105, 0.874073, -25.73179)
+shape = SubResource("CylinderShape3D_v6nkf")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=914842887]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.972202, -3.1075993, -48.288593)
+shape = SubResource("CylinderShape3D_wqprt")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=1054313764]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.48712, -3.2488937, -66.05208)
+shape = SubResource("CylinderShape3D_v6nkf")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=1679564841]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8060417, -0.1331501, -94.1071)
+shape = SubResource("CylinderShape3D_v6nkf")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=1030187256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4329414, -3.0403452, -85.507324)
+shape = SubResource("CylinderShape3D_v6nkf")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=551709945]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.803318, -2.4352722, -71.40933)
+shape = SubResource("CylinderShape3D_v6nkf")
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=1193776973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.980152, -2.1323566, -67.32091)
+shape = SubResource("CylinderShape3D_v6nkf")
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=1466776517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.753216, 1.8389378, -69.43561)
+shape = SubResource("CylinderShape3D_v6nkf")
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=2012913710]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.841911, -2.0264168, -52.940956)
+shape = SubResource("CylinderShape3D_v6nkf")
+
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=1833928481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.54787, 0.052711487, 26.97644)
+shape = SubResource("CylinderShape3D_suvmh")
+
+[node name="CollisionShape3D20" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=460936323]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.6101, -1.753149, 27.140873)
+shape = SubResource("CylinderShape3D_n6ofk")
+
+[node name="CollisionShape3D21" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=1298887583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.983124, 2.1954327, 43.749218)
+shape = SubResource("CylinderShape3D_v6nkf")
+
+[node name="CollisionShape3D22" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=1103923386]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3178177, 0.034463882, -31.39944)
+shape = SubResource("CylinderShape3D_wnf4e")
+
+[node name="CollisionShape3D23" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=1672122326]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.83786, -0.16139984, -35.67486)
+shape = SubResource("CylinderShape3D_3rne4")
+
+[node name="CollisionShape3D24" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=1523661866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.774529, 0.36346912, -45.70564)
+shape = SubResource("CylinderShape3D_grbxn")
+
+[node name="CollisionShape3D25" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=100464692]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.321312, 0.03918457, -49.981052)
+shape = SubResource("CylinderShape3D_heay6")
+
+[node name="CollisionShape3D26" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=507768798]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.103966, -1.4004221, -79.251205)
+shape = SubResource("CylinderShape3D_25unk")
+
+[node name="CollisionShape3D27" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=781223647]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.8727, -1.436656, -77.27793)
+shape = SubResource("CylinderShape3D_pi4pk")
+
+[node name="CollisionShape3D28" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=2102341050]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.478195, 3.1806602, 3.5457458)
+shape = SubResource("CylinderShape3D_yf5fn")
+
+[node name="CollisionShape3D29" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=1799615447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.478195, 3.1806602, -10.279966)
+shape = SubResource("CylinderShape3D_yf5fn")
+
+[node name="CollisionShape3D30" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=303102677]
+transform = Transform3D(0.7428781, 0, -0.66942686, 0, 1, 0, 0.66942686, 0, 0.7428781, 55.8538, -0.8268819, 30.172497)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D31" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=1665058966]
+transform = Transform3D(0.62692654, 0, -0.7790785, 0, 1, 0, 0.7790785, 0, 0.62692654, 30.121826, 0, 83.823265)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D32" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=1714625406]
+transform = Transform3D(0.028011039, 0, -0.99960756, 0, 1, 0, 0.99960756, 0, 0.028011039, 14.485754, 0, 88.17649)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D33" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=1048883116]
+transform = Transform3D(0.028011039, 0, -0.99960756, 0, 1, 0, 0.99960756, 0, 0.028011039, -7.369215, 0, 88.17649)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D34" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=641899877]
+transform = Transform3D(-0.6418183, 0, -0.76685673, 0, 1, 0, 0.76685673, 0, -0.6418183, -26.381266, 0.41196156, 82.13527)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D35" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=2013022799]
+transform = Transform3D(-0.7347955, 0, -0.6782887, 0, 1, 0, 0.6782887, 0, -0.7347955, -66.35987, -2.1258345, 30.696133)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D36" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=893658623]
+transform = Transform3D(-0.7347955, 0, -0.6782887, 0, 1, 0, 0.6782887, 0, -0.7347955, -81.285225, -2.7164621, 15.326578)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D37" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=1208371549]
+transform = Transform3D(0.52375966, 0, -0.85186607, 0, 1, 0, 0.85186607, 0, 0.52375966, -81.90712, -3.759879, -25.895805)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D38" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=1024584692]
+transform = Transform3D(0.52375966, 0, -0.85186607, 0, 1, 0, 0.85186607, 0, 0.52375966, -66.80409, -3.6497602, -34.513416)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D39" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=1003550644]
+transform = Transform3D(0.6614118, 0, -0.75002295, 0, 1, 0, 0.75002295, 0, 0.6614118, -26.308752, -4.8002963, -104.59186)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D40" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=170698428]
+transform = Transform3D(-0.0500789, 0, -0.9987453, 0, 1, 0, 0.9987453, 0, -0.0500789, -7.419306, -4.513686, -110.5329)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D41" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=323420966]
+transform = Transform3D(-0.0500789, 0, -0.9987453, 0, 1, 0, 0.9987453, 0, -0.0500789, 14.669161, -4.054117, -110.5329)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D42" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=545323630]
+transform = Transform3D(-0.623261, 0, -0.782014, 0, 1, 0, 0.782014, 0, -0.623261, 30.13109, -3.6277585, -106.115204)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D43" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=1222567429]
+transform = Transform3D(-0.5054656, 0, -0.86284685, 0, 1, 0, 0.86284685, 0, -0.5054656, 56.37136, -1.6005728, -34.589504)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D44" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=135499590]
+transform = Transform3D(-0.9999931, 0, -0.0037308633, 0, 1, 0, 0.0037308633, 0, -0.9999931, 63.03207, -1.722877, -21.725195)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D45" type="CollisionShape3D" parent="Environment/City/CityCollisions" unique_id=2137784410]
+transform = Transform3D(-0.9999931, 0, -0.0037308633, 0, 1, 0, 0.0037308633, 0, -0.9999931, 63.03207, -1.4126067, 13.667974)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[editable path="Environment/City/pueblo"]
