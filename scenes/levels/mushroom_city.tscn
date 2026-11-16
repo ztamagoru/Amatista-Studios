@@ -231,14 +231,14 @@ theme_override_constants/margin_bottom = 50
 [node name="QuestHUD" parent="HUD/Control/MarginContainer" unique_id=287424734 instance=ExtResource("3_frsox")]
 layout_mode = 2
 
-[node name="InteractionPromptHUD" type="Control" parent="HUD/Control/MarginContainer" unique_id=1938812364]
+[node name="InteractionPromptHUD" type="Control" parent="HUD/Control/MarginContainer" unique_id=445640310]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 script = ExtResource("4_3uw73")
 
-[node name="NPCPrompt" type="TextureRect" parent="HUD/Control/MarginContainer/InteractionPromptHUD" unique_id=602014823]
+[node name="NPCPrompt" type="TextureRect" parent="HUD/Control/MarginContainer/InteractionPromptHUD" unique_id=56547191]
 custom_maximum_size = Vector2(200, 200)
 layout_mode = 1
 anchors_preset = 3
@@ -254,7 +254,28 @@ pivot_offset = Vector2(200, 200)
 texture = ExtResource("5_axvqh")
 expand_mode = 2
 
-[node name="InteractablePrompt" type="TextureRect" parent="HUD/Control/MarginContainer/InteractionPromptHUD" unique_id=604494575]
+[node name="InputKey" type="PanelContainer" parent="HUD/Control/MarginContainer/InteractionPromptHUD/NPCPrompt" unique_id=1559061606]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -55.0
+offset_top = -45.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="HUD/Control/MarginContainer/InteractionPromptHUD/NPCPrompt/InputKey" unique_id=636422342]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InteractablePrompt" type="TextureRect" parent="HUD/Control/MarginContainer/InteractionPromptHUD" unique_id=878405955]
 custom_maximum_size = Vector2(200, 200)
 layout_mode = 1
 anchors_preset = 3
@@ -269,6 +290,27 @@ grow_vertical = 0
 pivot_offset = Vector2(200, 200)
 texture = ExtResource("6_x47db")
 expand_mode = 2
+
+[node name="InputKey" type="PanelContainer" parent="HUD/Control/MarginContainer/InteractionPromptHUD/InteractablePrompt" unique_id=1611805860]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -55.0
+offset_top = -45.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="HUD/Control/MarginContainer/InteractionPromptHUD/InteractablePrompt/InputKey" unique_id=1016183741]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1775262194]
 environment = SubResource("Environment_iscdg")
