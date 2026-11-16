@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bsmemswk0bw2d"]
 
 [ext_resource type="Script" uid="uid://cp8oixxa7tt04" path="res://scenes/ui/main_menu.gd" id="1_fe2o3"]
-[ext_resource type="Texture2D" uid="uid://wy7lv28e4d22" path="res://assets/ui/tituloparainicio.png" id="2_1g8jr"]
+[ext_resource type="Texture2D" uid="uid://b1dw0d3e57go1" path="res://assets/ui/portada.png" id="2_1g8jr"]
 [ext_resource type="Theme" uid="uid://padr04j7eqn3" path="res://resources/faunesty_theme.tres" id="3_1g8jr"]
 
 [node name="MainMenu" type="Node3D" unique_id=400254085 node_paths=PackedStringArray("continue_button", "new_save_button")]
@@ -39,8 +39,8 @@ texture = ExtResource("2_1g8jr")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/AspectRatioContainer" unique_id=596025176]
 layout_mode = 2
-theme_override_constants/margin_right = 358
-theme_override_constants/margin_bottom = 145
+theme_override_constants/margin_right = 182
+theme_override_constants/margin_bottom = 187
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/AspectRatioContainer/MarginContainer" unique_id=1573463577]
 layout_mode = 2
