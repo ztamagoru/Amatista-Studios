@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cbfobuwmfg1rt"]
 
-[ext_resource type="Script" uid="uid://c3q2ehkn7jdg5" path="res://scripts/interactable/sick_environment.gd" id="1_4rk2d"]
+[ext_resource type="Script" uid="uid://c3q2ehkn7jdg5" path="res://scripts/components/interactable/sick_environment.gd" id="1_4rk2d"]
 [ext_resource type="Texture2D" uid="uid://ceaw1dqpe7id6" path="res://assets/models/levels/garden/trees/tree_arrayan_11_texturamadera1.png" id="2_4xesd"]
 [ext_resource type="Texture2D" uid="uid://caubab3axvk35" path="res://assets/models/levels/garden/trees/tree_arrayan_11_hoja1re.png" id="3_addo1"]
 [ext_resource type="Texture2D" uid="uid://dem408siqyov8" path="res://assets/models/levels/garden/trees/sick_leaves_texture.png" id="4_krwxt"]

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://d2bnupj0l0mwe"]
 
-[ext_resource type="Script" uid="uid://jcqyuur4jml2" path="res://scripts/npc/npc_quest_3d.gd" id="1_rst2l"]
+[ext_resource type="Script" uid="uid://jcqyuur4jml2" path="res://scripts/components/npc/npc_quest_3d.gd" id="1_rst2l"]
 [ext_resource type="SpriteFrames" uid="uid://dg4trx22gkx74" path="res://assets/ui/interaction icons/icons_orange_frames.tres" id="2_d3lo2"]
 [ext_resource type="Script" uid="uid://dbyh0ac8p2iqp" path="res://scripts/ui/interaction_marker.gd" id="3_t3q84"]
 [ext_resource type="PackedScene" uid="uid://b72wl2723nvy6" path="res://assets/models/levels/mushroom city/npc/armadillo_brothers.blend" id="4_rst2l"]
-[ext_resource type="Script" uid="uid://dpi8fnv26aayl" path="res://scripts/npc/hurt_box.gd" id="5_ge1bx"]
+[ext_resource type="Script" uid="uid://dpi8fnv26aayl" path="res://scripts/components/npc/hurt_box.gd" id="5_ge1bx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
 radius = 3.6425781

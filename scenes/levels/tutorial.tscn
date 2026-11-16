@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://dgkjw32rt614c" path="res://resources/dialogs/tutorial.dialogue" id="2_iig34"]
 [ext_resource type="PackedScene" uid="uid://bfh8nsyv0y463" path="res://scenes/components/camera.tscn" id="3_iig34"]
 [ext_resource type="PackedScene" uid="uid://bpxxhidrdm7vj" path="res://assets/models/levels/tutorial/tutorial_scene.glb" id="3_u4f7j"]
-[ext_resource type="Script" uid="uid://dgg6w0ph6mb2m" path="res://scripts/npc/npcs/tutorial_lucy.gd" id="5_7ac3l"]
+[ext_resource type="Script" uid="uid://dgg6w0ph6mb2m" path="res://scripts/components/npc/npcs/tutorial_lucy.gd" id="5_7ac3l"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1wklo"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

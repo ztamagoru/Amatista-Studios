@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cbbobbwusjhyv" path="res://scenes/components/puzzles/cup_puzzle.gd" id="1_7pyt5"]
 [ext_resource type="Resource" uid="uid://dfpri33bgi65b" path="res://resources/items/chilla_ring.tres" id="2_0pu2p"]
 [ext_resource type="Script" uid="uid://dcsha4he5dt0p" path="res://scenes/components/puzzles/path.gd" id="2_v3k2j"]
-[ext_resource type="Script" uid="uid://csjj3d0ipxt0q" path="res://scripts/puzzles/pumpkin shell game/cup.gd" id="2_vtlwb"]
+[ext_resource type="Script" uid="uid://csjj3d0ipxt0q" path="res://scripts/components/puzzles/pumpkin shell game/cup.gd" id="2_vtlwb"]
 [ext_resource type="PackedScene" uid="uid://16vq364ahfbr" path="res://scenes/components/puzzles/calabazas(shellgame).glb" id="3_vtlwb"]
 [ext_resource type="Texture2D" uid="uid://cc3y0jgw2dfjo" path="res://scenes/components/puzzles/calabazas(shellgame)_calabaza textura.png" id="4_7ks35"]
 [ext_resource type="PackedScene" uid="uid://r5jqbivn3fl0" path="res://assets/models/levels/garden/farm.blend" id="6_jft2p"]
