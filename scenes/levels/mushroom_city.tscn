@@ -9,6 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://bfh8nsyv0y463" path="res://scenes/components/camera.tscn" id="7_b24sw"]
 [ext_resource type="PackedScene" uid="uid://da1pyvkwvtvgn" path="res://assets/models/levels/mushroom city/mushroom_city_ground.blend" id="8_frsox"]
 [ext_resource type="PackedScene" uid="uid://8afobjl343my" path="res://assets/models/levels/mushroom city/pueblo.blend" id="9_3uw73"]
+[ext_resource type="PackedScene" uid="uid://b4u3mfh2kdyrp" path="res://scenes/components/npcs/pepe.tscn" id="10_f2vs7"]
+[ext_resource type="PackedScene" uid="uid://tj582qybx6lb" path="res://scenes/components/npcs/lucy.tscn" id="11_m2p5p"]
+[ext_resource type="PackedScene" uid="uid://bpm5u0kv3kxsm" path="res://scenes/components/npcs/mayor.tscn" id="12_wqprt"]
+[ext_resource type="PackedScene" uid="uid://dl164gue3a8ku" path="res://scenes/components/npcs/arma.tscn" id="13_suvmh"]
+[ext_resource type="PackedScene" uid="uid://d2bnupj0l0mwe" path="res://scenes/components/npcs/dillo.tscn" id="14_n6ofk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_v6nkf"]
 sky_top_color = Color(0.055368565, 0.46664757, 0.75038546, 1)
@@ -89,6 +94,8 @@ radius = 2.5151367
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
 size = Vector3(1.391, 4, 14.736)
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_3uw73"]
+
 [node name="MushroomCity" type="Node3D" unique_id=804840913 node_paths=PackedStringArray("player", "spawn_points")]
 script = ExtResource("1_frsox")
 adjacent_maps = Array[String](["res://scenes/levels/garden.tscn"])
@@ -96,23 +103,6 @@ save_map = false
 player = NodePath("Player")
 spawn_points = NodePath("SpawnPoints")
 metadata/_custom_type_script = "uid://xqfthocmw71o"
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1775262194]
-environment = SubResource("Environment_iscdg")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1264925126]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-light_color = Color(0.89411765, 0.87058824, 0, 1)
-shadow_enabled = true
-directional_shadow_max_distance = 500.0
-
-[node name="Player" parent="." unique_id=242546826 node_paths=PackedStringArray("interactor_hud") instance=ExtResource("2_b24sw")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -2.818, 0)
-interactor_hud = NodePath("../HUD/Control/MarginContainer/InteractionPromptHUD")
-
-[node name="SpawnPoints" type="Node3D" parent="." unique_id=1814647358]
-
-[node name="FromGarden" type="Marker3D" parent="SpawnPoints" unique_id=451326714]
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=627541483]
 
@@ -179,6 +169,24 @@ pivot_offset = Vector2(200, 200)
 texture = ExtResource("6_x47db")
 expand_mode = 2
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1775262194]
+environment = SubResource("Environment_iscdg")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1264925126]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.89411765, 0.87058824, 0, 1)
+shadow_enabled = true
+directional_shadow_max_distance = 500.0
+
+[node name="Player" parent="." unique_id=242546826 node_paths=PackedStringArray("interactor_hud") instance=ExtResource("2_b24sw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 91.35601, -4.039463, -3.5518599)
+interactor_hud = NodePath("../HUD/Control/MarginContainer/InteractionPromptHUD")
+
+[node name="SpawnPoints" type="Node3D" parent="." unique_id=1814647358]
+
+[node name="FromGarden" type="Marker3D" parent="SpawnPoints" unique_id=451326714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 244.46121, 0, 0)
+
 [node name="Camera" parent="." unique_id=672466676 node_paths=PackedStringArray("player") instance=ExtResource("7_b24sw")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 57.36074, 23.484562, 0)
 player = NodePath("../Player")
@@ -186,6 +194,8 @@ player = NodePath("../Player")
 [node name="Environment" type="Node3D" parent="." unique_id=1932868375]
 
 [node name="mushroom_city_ground" parent="Environment" unique_id=1547497609 instance=ExtResource("8_frsox")]
+
+[node name="StaticBody3D" parent="Environment/mushroom_city_ground/pisoz2" parent_id_path=PackedInt32Array(1547497609, 1864326623) index="0" unique_id=2140928742 groups=["Mold"]]
 
 [node name="City" type="Node3D" parent="Environment" unique_id=572478630]
 
@@ -561,8 +571,41 @@ shape = SubResource("BoxShape3D_g4v7s")
 transform = Transform3D(-0.9999931, 0, -0.0037308633, 0, 1, 0, 0.0037308633, 0, -0.9999931, 63.03207, -1.4126067, 13.667974)
 shape = SubResource("BoxShape3D_g4v7s")
 
-[editable path="Environment/City/pueblo"]
+[node name="WorldBoundaries" type="StaticBody3D" parent="Environment" unique_id=85242564]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 22.177689)
 
-[node name="StaticBody3D" parent="Environment/mushroom_city_ground/pisoz2" parent_id_path=PackedInt32Array(1547497609, 1411624004) index="0" unique_id=419481296 groups=["Mold"]]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Environment/WorldBoundaries" unique_id=1243858456]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 273.92862, 4.208829, 0)
+shape = SubResource("WorldBoundaryShape3D_3uw73")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Environment/WorldBoundaries" unique_id=2131338323]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -274.18152, 4.208829, 0)
+shape = SubResource("WorldBoundaryShape3D_3uw73")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment/WorldBoundaries" unique_id=1041636574]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 113.83308, 4.208829, 251.75945)
+shape = SubResource("WorldBoundaryShape3D_3uw73")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Environment/WorldBoundaries" unique_id=1348718161]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 113.83308, 4.208829, -289.63745)
+shape = SubResource("WorldBoundaryShape3D_3uw73")
+
+[node name="NPCs" type="Node3D" parent="." unique_id=63198289]
+
+[node name="Pepe" parent="NPCs" unique_id=947225545 instance=ExtResource("10_f2vs7")]
+transform = Transform3D(0.44626424, 0, -0.8949013, 0, 1, 0, 0.8949013, 0, 0.44626424, -118.77405, -5.220157, 11.182681)
+
+[node name="Lucy" parent="NPCs" unique_id=2062187427 instance=ExtResource("11_m2p5p")]
+transform = Transform3D(-0.59658045, 0, -0.80255324, 0, 1, 0, 0.80255324, 0, -0.59658045, 216.17966, -3.4246619, -18.917583)
+
+[node name="Mayor" parent="NPCs" unique_id=1136648616 instance=ExtResource("12_wqprt")]
+transform = Transform3D(-0.58545583, 0, -0.8107043, 0, 1, 0, 0.8107043, 0, -0.58545583, -27.200125, -4.189068, -35.284195)
+
+[node name="Arma" parent="NPCs" unique_id=974763538 instance=ExtResource("13_suvmh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.913208, -1.6918024, 219.64001)
+
+[node name="Dillo" parent="NPCs" unique_id=2094836041 instance=ExtResource("14_n6ofk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -257.6782, -4.3670917, -233.6091)
 
 [editable path="Environment/mushroom_city_ground"]
+[editable path="Environment/City/pueblo"]

@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://b4u3mfh2kdyrp"]
+
+[ext_resource type="Script" uid="uid://jcqyuur4jml2" path="res://scripts/npc/npc_quest_3d.gd" id="1_f277m"]
+[ext_resource type="PackedScene" uid="uid://by21xofbsla3b" path="res://assets/models/levels/mushroom city/npc/pepe.blend" id="2_f277m"]
+[ext_resource type="SpriteFrames" uid="uid://dg4trx22gkx74" path="res://assets/ui/interaction icons/icons_orange_frames.tres" id="2_g2h0w"]
+[ext_resource type="Script" uid="uid://dbyh0ac8p2iqp" path="res://scripts/ui/interaction_marker.gd" id="3_8kkbf"]
+[ext_resource type="Script" uid="uid://dpi8fnv26aayl" path="res://scripts/npc/hurt_box.gd" id="5_fq31f"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
+radius = 2.8842773
+height = 13.709106
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_g4v7s"]
+height = 15.0
+radius = 15.0
+
+[sub_resource type="AnimationRootNode" id="AnimationRootNode_2ecqx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a453d"]
+size = Vector3(7, 9.323963, 7)
+
+[node name="Pepe" type="CharacterBody3D" unique_id=947225545 node_paths=PackedStringArray("target_detection_area")]
+script = ExtResource("1_f277m")
+diary_entry_id = &"chilla"
+target_detection_area = NodePath("PlayerDetection")
+metadata/_custom_type_script = "uid://jcqyuur4jml2"
+
+[node name="pepe" parent="." unique_id=663400796 instance=ExtResource("2_f277m")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Cube" parent="pepe" index="0" unique_id=74824839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11573315, 5.418006, 0.039583772)
+
+[node name="Cube_001" parent="pepe" index="1" unique_id=1682609240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6289599, 5.457407, 0.029055446)
+
+[node name="Cube_004" parent="pepe" index="2" unique_id=1750643283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19382936, 5.5395703, 0.03958419)
+
+[node name="Cube_005" parent="pepe" index="3" unique_id=948430599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18062478, 6.57913, -0.030414775)
+
+[node name="Cube_006" parent="pepe" index="4" unique_id=423736291]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2828232, 2.7575636, -0.0002811253)
+
+[node name="Cube_007" parent="pepe" index="5" unique_id=350635726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.048706293, 0.83294415, 0.4263506)
+
+[node name="Cube_008" parent="pepe" index="6" unique_id=1138353585]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.048706293, 0.83294415, -0.3809653)
+
+[node name="InteractionMarker" type="AnimatedSprite3D" parent="." unique_id=1065127807]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 12.5, 0)
+sprite_frames = ExtResource("2_g2h0w")
+animation = &"dialogue"
+script = ExtResource("3_8kkbf")
+metadata/_custom_type_script = "uid://dbyh0ac8p2iqp"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1748639179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.857971, 0)
+shape = SubResource("CapsuleShape3D_g4v7s")
+
+[node name="PlayerDetection" type="Area3D" parent="." unique_id=256158338]
+collision_mask = 17
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetection" unique_id=1561435833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
+shape = SubResource("CylinderShape3D_g4v7s")
+debug_color = Color(0, 0.49803922, 0, 0.41960785)
+
+[node name="IdleTimer" type="Timer" parent="." unique_id=938067448]
+one_shot = true
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1370625233]
+tree_root = SubResource("AnimationRootNode_2ecqx")
+
+[node name="HurtBox" type="Area3D" parent="." unique_id=1424322186]
+script = ExtResource("5_fq31f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox" unique_id=884473539]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1618705, 0)
+shape = SubResource("BoxShape3D_a453d")
+
+[editable path="pepe"]

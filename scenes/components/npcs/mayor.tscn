@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://bpm5u0kv3kxsm"]
+
+[ext_resource type="Script" uid="uid://jcqyuur4jml2" path="res://scripts/npc/npc_quest_3d.gd" id="1_ftbox"]
+[ext_resource type="SpriteFrames" uid="uid://dg4trx22gkx74" path="res://assets/ui/interaction icons/icons_orange_frames.tres" id="2_8lqmv"]
+[ext_resource type="Script" uid="uid://dbyh0ac8p2iqp" path="res://scripts/ui/interaction_marker.gd" id="3_2ecqx"]
+[ext_resource type="PackedScene" uid="uid://okig4p2kgnm1" path="res://assets/models/levels/mushroom city/npc/mayor.blend" id="4_ftbox"]
+[ext_resource type="Script" uid="uid://dpi8fnv26aayl" path="res://scripts/npc/hurt_box.gd" id="5_j60vk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
+radius = 2.8842773
+height = 9.572327
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_g4v7s"]
+height = 15.0
+radius = 20.0
+
+[sub_resource type="AnimationRootNode" id="AnimationRootNode_f277m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fbwj1"]
+size = Vector3(7, 10.528986, 7)
+
+[node name="Mayor" type="CharacterBody3D" unique_id=2062187427 node_paths=PackedStringArray("nav_agent", "target_detection_area", "anim_tree")]
+script = ExtResource("1_ftbox")
+diary_entry_id = &"lucy"
+speed = 5.0
+nav_agent = NodePath("NavigationAgent3D")
+target_detection_area = NodePath("PlayerDetection")
+anim_tree = NodePath("AnimationTree")
+metadata/_custom_type_script = "uid://jcqyuur4jml2"
+
+[node name="InteractionMarker" type="AnimatedSprite3D" parent="." unique_id=1065127807]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 17.5, 0)
+sprite_frames = ExtResource("2_8lqmv")
+animation = &"dialogue"
+script = ExtResource("3_2ecqx")
+metadata/_custom_type_script = "uid://dbyh0ac8p2iqp"
+
+[node name="mayor" parent="." unique_id=489601962 instance=ExtResource("4_ftbox")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Cube_009" parent="mayor" index="0" unique_id=888603022]
+transform = Transform3D(0.1417166, -0.043644577, 0, 0.043644577, 0.1417166, 0, 0, 0, 0.14828502, 1.3930843, 4.5831585, -1.3005152)
+
+[node name="Cube_044" parent="mayor" index="1" unique_id=2095056825]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.037174575, 6.6870584, -0.16984367)
+
+[node name="Cube_045" parent="mayor" index="2" unique_id=704638528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16212372, 8.4027815, -0.16984367)
+
+[node name="Cube_046" parent="mayor" index="3" unique_id=2140399276]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1971857, 3.6180887, -0.15246391)
+
+[node name="Cube_049" parent="mayor" index="4" unique_id=1665921439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.033810113, 0.8332982, 0.75670815)
+
+[node name="Cube_050" parent="mayor" index="5" unique_id=2001516148]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.034516785, 3.9104137, -0.14656639)
+
+[node name="Cube_052" parent="mayor" index="6" unique_id=379463245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0179074, 3.2366295, 0.6320057)
+
+[node name="Cube_053" parent="mayor" index="7" unique_id=1035093434]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7807341, 7.3809032, -1.1441097)
+
+[node name="Cube_054" parent="mayor" index="8" unique_id=1854093562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7299139, 7.243964, -1.713728)
+
+[node name="Cube_055" parent="mayor" index="9" unique_id=1950451890]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.033635844, 0.8332982, -0.8880596)
+
+[node name="Cube_056" parent="mayor" index="10" unique_id=1761990801]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5243891, 4.4742327, -1.341238)
+
+[node name="Cube_057" parent="mayor" index="11" unique_id=215631634]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2926016, 6.31695, -0.16984367)
+
+[node name="Cube_058" parent="mayor" index="12" unique_id=834570994]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4024038, 6.6385, -0.1584301)
+
+[node name="Cube_059" parent="mayor" index="13" unique_id=1426881978]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4564548, 7.3783026, -0.16984367)
+
+[node name="Cube_060" parent="mayor" index="14" unique_id=542750986]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4225354, 6.023017, -1.9566555)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1748639179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.7895813, 0)
+shape = SubResource("CapsuleShape3D_g4v7s")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=935345919]
+
+[node name="PlayerDetection" type="Area3D" parent="." unique_id=256158338]
+collision_mask = 17
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetection" unique_id=1561435833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
+shape = SubResource("CylinderShape3D_g4v7s")
+debug_color = Color(0, 0.49803922, 0, 0.41960785)
+
+[node name="IdleTimer" type="Timer" parent="." unique_id=938067448]
+one_shot = true
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1370625233]
+tree_root = SubResource("AnimationRootNode_f277m")
+
+[node name="HurtBox" type="Area3D" parent="." unique_id=1698624291]
+script = ExtResource("5_j60vk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox" unique_id=422613094]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.764382, 0)
+shape = SubResource("BoxShape3D_fbwj1")
+
+[editable path="mayor"]

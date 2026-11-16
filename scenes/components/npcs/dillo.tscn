@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://d2bnupj0l0mwe"]
+
+[ext_resource type="Script" uid="uid://jcqyuur4jml2" path="res://scripts/npc/npc_quest_3d.gd" id="1_rst2l"]
+[ext_resource type="SpriteFrames" uid="uid://dg4trx22gkx74" path="res://assets/ui/interaction icons/icons_orange_frames.tres" id="2_d3lo2"]
+[ext_resource type="Script" uid="uid://dbyh0ac8p2iqp" path="res://scripts/ui/interaction_marker.gd" id="3_t3q84"]
+[ext_resource type="PackedScene" uid="uid://b72wl2723nvy6" path="res://assets/models/levels/mushroom city/npc/armadillo_brothers.blend" id="4_rst2l"]
+[ext_resource type="Script" uid="uid://dpi8fnv26aayl" path="res://scripts/npc/hurt_box.gd" id="5_ge1bx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
+radius = 3.6425781
+height = 14.923859
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_g4v7s"]
+height = 15.0
+radius = 20.0
+
+[sub_resource type="AnimationRootNode" id="AnimationRootNode_j60vk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fbwj1"]
+size = Vector3(8.0407715, 16.161098, 8.595703)
+
+[node name="Dillo" type="CharacterBody3D" unique_id=2062187427 node_paths=PackedStringArray("nav_agent", "target_detection_area", "anim_tree")]
+script = ExtResource("1_rst2l")
+diary_entry_id = &"lucy"
+speed = 5.0
+nav_agent = NodePath("NavigationAgent3D")
+target_detection_area = NodePath("PlayerDetection")
+anim_tree = NodePath("AnimationTree")
+metadata/_custom_type_script = "uid://jcqyuur4jml2"
+
+[node name="InteractionMarker" type="AnimatedSprite3D" parent="." unique_id=1065127807]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 20, 0)
+sprite_frames = ExtResource("2_d3lo2")
+animation = &"dialogue"
+script = ExtResource("3_t3q84")
+metadata/_custom_type_script = "uid://dbyh0ac8p2iqp"
+
+[node name="armadillo_brothers" parent="." unique_id=109583947 instance=ExtResource("4_rst2l")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Cube_175" parent="armadillo_brothers" index="0" unique_id=1996984909]
+transform = Transform3D(0, 0, -1.3651373, 0, 1.3651373, 0, 1.3651373, 0, 0, -2.4082706, 1.1047628, -0.17397021)
+
+[node name="Cube_194" parent="armadillo_brothers" index="1" unique_id=2136047558]
+transform = Transform3D(0.23246783, -0.117584296, 0.325891, 0.038241223, 0.45996737, 0.11196474, -0.24326411, -0.040058732, 0.32902855, -0.2044741, 11.867131, -2.248784)
+
+[node name="Cube_195" parent="armadillo_brothers" index="2" unique_id=1548999897]
+transform = Transform3D(-0.015575409, 0.24077699, -1.7951995, 0.0020890357, 1.7952396, 0.24077164, 2.3611295, -5.050217e-08, -0.012055226, -0.4094913, 10.8638315, -0.102551356)
+
+[node name="Cube_196" parent="armadillo_brothers" index="3" unique_id=294542514]
+transform = Transform3D(0.29294196, -0.2371449, -0.10175968, 0.23132245, 0.30955002, -0.055465598, -0.11437946, 0.018676233, -0.37279525, 1.4469693, 11.258649, -1.2898147)
+
+[node name="Cube_197" parent="armadillo_brothers" index="4" unique_id=1352358211]
+transform = Transform3D(-0.055696048, -0.0024016793, -0.026155122, 0.031917006, -0.002402755, 0.17966503, 0.03335665, -0.0017110619, -0.21558239, 1.3862851, 11.245507, 1.1364777)
+
+[node name="Cube_198" parent="armadillo_brothers" index="5" unique_id=2115414686]
+transform = Transform3D(0.0040744403, 0.0035454591, 0.17456172, -0.0021042314, 0.22835898, -0.002685332, -0.24250112, -0.0019219473, 0.0029562416, 3.0624938, 10.244693, -0.09052728)
+
+[node name="Cube_199" parent="armadillo_brothers" index="6" unique_id=1547974081]
+transform = Transform3D(0.28187278, 0.029489947, 0.36110747, -0.20159969, -0.36738494, 0.187367, 0.30104122, -0.27364057, -0.21263944, 0.9347622, 4.956889, 1.453456)
+
+[node name="Cube_200" parent="armadillo_brothers" index="7" unique_id=2075937218]
+transform = Transform3D(1.0228025, 0, 0, 0, 1.4379433, -0.26081434, 0, -0.4063545, -0.9229288, -0.5461948, 6.5023556, -2.554181)
+
+[node name="Cube_201" parent="armadillo_brothers" index="8" unique_id=1316928964]
+transform = Transform3D(1.3006676, 0.05689423, 0, -0.7708935, 0.09599313, 0, 0, 0, 1.4767574, 0.258157, 13.014075, -0.17212377)
+
+[node name="Cube_202" parent="armadillo_brothers" index="9" unique_id=1337452954]
+transform = Transform3D(2.1613932, 0, 0, 0, 2.6984084, 0, 0, 0, 1.9589782, -0.45297706, 5.3224015, 13.950229)
+visible = false
+
+[node name="Cube_203" parent="armadillo_brothers" index="10" unique_id=1218658841]
+transform = Transform3D(0.13815165, 0, -0.64099985, 0, 1, 0, 0.8357748, 0, 0.105955794, -0.30284584, 1.4503863, 15.194194)
+visible = false
+
+[node name="Cube_204" parent="armadillo_brothers" index="11" unique_id=1617455043]
+transform = Transform3D(0.8010583, 0, 0, 0, 1.453984, 0, 0, 0, 1.6128111, -1.7598923, 6.308139, 13.90731)
+visible = false
+
+[node name="Cube_205" parent="armadillo_brothers" index="12" unique_id=1803357556]
+transform = Transform3D(-5.967205e-08, 0, -1.3651373, 0, 1.3651373, 0, 1.3651373, 0, -5.967205e-08, -2.2131395, 1.0606534, 13.838176)
+visible = false
+
+[node name="Cube_206" parent="armadillo_brothers" index="13" unique_id=1893149939]
+transform = Transform3D(-0.12812622, -0.37440002, -0.23308972, 0.19770522, -0.29192597, 0.25379163, -0.24326411, -0.040058635, 0.32902858, 0.262828, 11.328628, 11.745982)
+visible = false
+
+[node name="Cube_207" parent="armadillo_brothers" index="14" unique_id=560204149]
+transform = Transform3D(-0.015575283, 0.24077696, -1.7951995, 0.0020890357, 1.7952396, 0.2407716, 2.3611293, -6.347028e-08, -0.012055131, -0.21436013, 10.819722, 13.909595)
+visible = false
+
+[node name="Cube_208" parent="armadillo_brothers" index="15" unique_id=443772291]
+transform = Transform3D(0.29294196, -0.23714493, -0.101759754, 0.23132251, 0.30955, -0.05546558, 0.11437951, -0.018676309, 0.37279525, 1.6421003, 11.254119, 15.212329)
+visible = false
+
+[node name="Cube_209" parent="armadillo_brothers" index="16" unique_id=127072807]
+transform = Transform3D(-0.051022105, -0.0026123233, -0.04956548, 0.035025053, -0.0024641952, 0.1657697, -0.037462007, 0.0012540084, 0.22249283, 1.5938064, 11.201398, 12.722331)
+visible = false
+
+[node name="Cube_210" parent="armadillo_brothers" index="17" unique_id=798532220]
+transform = Transform3D(0.0026635425, -0.02065558, 0.23572896, 0.00090167706, 0.30835393, 0.01578637, -0.3281802, 0.0006795617, 0.0019565728, 3.2576246, 10.20862, 13.921618)
+visible = false
+
+[node name="Cube_211" parent="armadillo_brothers" index="18" unique_id=572676844]
+transform = Transform3D(-0.20056492, 0, -0.6312255, 0, 1, 0, 0.8230303, 0, -0.15382385, -0.30284587, 1.4503863, 12.912906)
+visible = false
+
+[node name="Cube_212" parent="armadillo_brothers" index="19" unique_id=1461868057]
+transform = Transform3D(1.4335529, -0.05643571, 0, 0.35681292, 0.22673948, 0, 0, 0, 1.4772912, -1.1199082, 13.171622, 13.897342)
+visible = false
+
+[node name="Cube_213" parent="armadillo_brothers" index="20" unique_id=826437500]
+transform = Transform3D(0.45904303, 0, 0, 0, -0.4417431, 0.124834165, 0, -0.124834165, -0.4417431, -0.36664283, 5.106144, 16.565205)
+visible = false
+
+[node name="Cube_214" parent="armadillo_brothers" index="21" unique_id=560302937]
+transform = Transform3D(0.45904303, -1.09133484e-08, -3.861841e-08, 0, -0.44174308, 0.124834165, 4.0130814e-08, 0.12483416, 0.4417431, -0.42821208, 5.2009, 11.438243)
+visible = false
+
+[node name="Cube_215" parent="armadillo_brothers" index="22" unique_id=1080055938]
+transform = Transform3D(0.13815166, 0, -0.64099985, 0, 1, 0, 0.8357747, 0, 0.105955824, -0.49797696, 1.4944956, 1.0390426)
+
+[node name="Cube_216" parent="armadillo_brothers" index="23" unique_id=666185160]
+transform = Transform3D(-0.20056489, 0, -0.6312255, 0, 1, 0, 0.82303035, 0, -0.15382382, -0.49797696, 1.4944956, -1.2422456)
+
+[node name="Cube_217" parent="armadillo_brothers" index="24" unique_id=796425329]
+transform = Transform3D(2.1613932, 0, 0, 0, 2.6984084, 0, 0, 0, 1.9589782, -0.64810824, 5.366511, 0.04663381)
+
+[node name="Cube_218" parent="armadillo_brothers" index="25" unique_id=1395630845]
+transform = Transform3D(0.8010583, 0, 0, 0, 1.453984, 0, 0, 0, 1.6128111, -1.9550235, 6.352248, -0.10878464)
+
+[node name="Cube_219" parent="armadillo_brothers" index="26" unique_id=194161646]
+transform = Transform3D(-0.12812616, -0.3744, -0.23308983, 0.19770521, -0.29192597, 0.2537916, 0.24326415, 0.04005875, -0.32902843, 0.26282796, 11.328628, 16.057537)
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1748639179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.4653473, 0)
+shape = SubResource("CapsuleShape3D_g4v7s")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=935345919]
+
+[node name="PlayerDetection" type="Area3D" parent="." unique_id=256158338]
+collision_mask = 17
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetection" unique_id=1561435833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
+shape = SubResource("CylinderShape3D_g4v7s")
+debug_color = Color(0, 0.49803922, 0, 0.41960785)
+
+[node name="IdleTimer" type="Timer" parent="." unique_id=938067448]
+one_shot = true
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1370625233]
+tree_root = SubResource("AnimationRootNode_j60vk")
+
+[node name="HurtBox" type="Area3D" parent="." unique_id=1698624291]
+script = ExtResource("5_ge1bx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox" unique_id=422613094]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.580438, 0)
+shape = SubResource("BoxShape3D_fbwj1")
+
+[editable path="armadillo_brothers"]
