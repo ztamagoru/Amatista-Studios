@@ -10,9 +10,14 @@ func _ready() -> void:
 		Wwise.load_bank("Main")
 		Wwise.add_default_listener(self)
 	
-		Wwise.set_rtpc_value("Master", 100, self)
-		Wwise.set_rtpc_value("Music", 100, self)
-		Wwise.set_rtpc_value("SFX", 100, self)
+		#Wwise.set_rtpc_value("Master", 100, self)
+		#Wwise.set_rtpc_value("Music", 100, self)
+		#Wwise.set_rtpc_value("SFX", 100, self)
+
+		var saved : Dictionary = ConfigHandler.load_audio_settings()
+		for bus_name in ["Master", "Music", "SFX"]:
+			Wwise.set_rtpc_value(bus_name, saved.get(bus_name + "_volume", 100), self)
+
 		bank_loaded = true
 		_audio_ready = true
 		

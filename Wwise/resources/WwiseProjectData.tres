@@ -135,8 +135,11 @@ guid = "{CDD68098-87CF-45E3-9900-98F646FC003C}"
 id = 393239870
 
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_5n8hf"]
+path = "\\Busses\\Default Work Unit\\Master"
 children = [SubResource("WwiseTreeObject_yyrou"), SubResource("WwiseTreeObject_geu6g")]
+type = 2
 name = "Master"
+guid = "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
 id = 4056684167
 
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_tnib1"]
@@ -269,7 +272,7 @@ id = 1730564753
 
 [sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_0hqp2"]
 max_duration = 0.40132
-min_duration = 0.26612
+min_duration = 0.24332933
 path = "\\Events\\Default Work Unit\\Player\\Footstep"
 type = 3
 name = "Footstep"

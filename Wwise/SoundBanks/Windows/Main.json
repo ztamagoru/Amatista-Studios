@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{B2AB37D9-0287-4B83-B475-5B48B6C26BCF}",
     "Language": "SFX",
-    "Hash": "{18110B06-21C5-B891-D651-214CE3C111C3}",
+    "Hash": "{1B25C13B-2884-C1BB-DF93-7A6276131054}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -40,20 +40,20 @@
       "CachePath": "66/{6660B10C-395D-6F5D-0701-7703AAB697DA}.wem"
      },
      {
+      "Id": "90260654",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Melodia 1 bpm 85 menu.wav",
+      "CachePath": "EC/{ECF7F68C-2767-54A5-CA61-122429F11081}.wem"
+     },
+     {
       "Id": "126474508",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Shoot.wav",
       "CachePath": "DB/{DB92B09F-A485-F9FE-A5A9-FCB1E48D1600}.wem"
-     },
-     {
-      "Id": "168680199",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Percusion 80bpm tutorial.wav",
-      "CachePath": "9B/{9B91AB91-405A-D5CB-206F-A58F63D9EC88}.wem"
      },
      {
       "Id": "193042708",
@@ -81,6 +81,14 @@
       "CachePath": "9E/{9E9865A3-BDF6-1023-882D-F6D39D7E5015}.wem"
      },
      {
+      "Id": "241297335",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Efecto melodia 1 bpm 85 menu.wav",
+      "CachePath": "F4/{F4CB21C9-C4CE-E143-852B-47621CB3FF6D}.wem"
+     },
+     {
       "Id": "250695755",
       "Language": "SFX",
       "Streaming": "true",
@@ -96,6 +104,14 @@
       "Location": "Memory",
       "ShortName": "close_diary.wav",
       "CachePath": "D3/{D3D7E25A-23F9-9547-2E8A-7161AFE3EF70}.wem"
+     },
+     {
+      "Id": "269797534",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Melodia 2 bpm 85 menu.wav",
+      "CachePath": "B4/{B4B7BF1E-0610-8E0C-278B-09C78E74031D}.wem"
      },
      {
       "Id": "270729911",
@@ -138,12 +154,20 @@
       "CachePath": "A6/{A6297BA8-DA7A-F0AF-7B91-2B3606FCD47E}.wem"
      },
      {
-      "Id": "325813703",
+      "Id": "318840232",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Menu-music.wav",
-      "CachePath": "C8/{C8D5D80A-CFC3-2C74-22D1-9B7307E47B24}.wem"
+      "ShortName": "Melodia 1 85bpm tutorial.wav",
+      "CachePath": "CB/{CBFC4EC7-CAC6-9689-EE18-D3C1113558A2}.wem"
+     },
+     {
+      "Id": "321910507",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Acordes 1 bpm 85 menu.wav",
+      "CachePath": "B6/{B66FD0BB-6D93-4803-91F3-C6AD28EE0D03}.wem"
      },
      {
       "Id": "353595088",
@@ -152,14 +176,6 @@
       "Location": "Memory",
       "ShortName": "Jump_dirt.wav",
       "CachePath": "EF/{EF98B9E5-17AE-3649-D60F-1FBA7E2487AC}.wem"
-     },
-     {
-      "Id": "371608449",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Melodia 1 80bpm tutorial.wav",
-      "CachePath": "E0/{E08E6D92-2C2A-8E30-C8E5-50FF0D98EF41}.wem"
      },
      {
       "Id": "372735148",
@@ -202,12 +218,28 @@
       "CachePath": "CF/{CF3EDF3D-019A-DDBE-D491-05E99C95FCC4}.wem"
      },
      {
+      "Id": "462068178",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Percusion 1 85bpm tutorial.wav",
+      "CachePath": "66/{66E4D70D-C1C4-D598-AFEC-1DF8871038C1}.wem"
+     },
+     {
       "Id": "476459709",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "discovery.wav",
       "CachePath": "15/{15005C85-5EE2-0E69-4314-34EEBB6087CA}.wem"
+     },
+     {
+      "Id": "480018471",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Bajo 1 85bpm tutorial.wav",
+      "CachePath": "C3/{C3AF5293-F09F-1809-A491-B6A857A1FF96}.wem"
      },
      {
       "Id": "510905034",
@@ -218,20 +250,20 @@
       "CachePath": "58/{58ABD24C-4661-374E-D90B-82F69D406C36}.wem"
      },
      {
-      "Id": "530536690",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Melodia 3 80bpm tutorial.wav",
-      "CachePath": "5E/{5EAE7A77-BECD-CB06-976C-1F8F0D6E70CF}.wem"
-     },
-     {
       "Id": "551441050",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "wind.wav",
       "CachePath": "6C/{6C135D46-D2CA-C5EC-B911-E463300CF256}.wem"
+     },
+     {
+      "Id": "624090607",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Melodia 3 85bpm tutorial.wav",
+      "CachePath": "E8/{E8DCFF91-35A0-4023-BF3D-7FC243EFDC89}.wem"
      },
      {
       "Id": "625418573",
@@ -258,6 +290,14 @@
       "CachePath": "23/{23A174E2-D1CB-E241-F73F-C4DBC5002F19}.wem"
      },
      {
+      "Id": "718658735",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Percusion 1 bpm 85 menu.wav",
+      "CachePath": "4C/{4CD35E74-D0CB-0CC4-83BB-B6A6928E4D66}.wem"
+     },
+     {
       "Id": "774489380",
       "Language": "SFX",
       "Streaming": "false",
@@ -274,20 +314,28 @@
       "CachePath": "32/{32258BCE-1556-7B24-1042-C88FCA4AD977}.wem"
      },
      {
-      "Id": "799179510",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Melodia 2 80bpm tutorial.wav",
-      "CachePath": "14/{14AA75E1-0971-DAB8-6E7B-0415F7087329}.wem"
-     },
-     {
       "Id": "854920791",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Melodia 82bpm.wav",
       "CachePath": "DE/{DE73BF16-42F3-E804-8836-14E045D1FEFF}.wem"
+     },
+     {
+      "Id": "872105718",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Melodia 2 85bpm tutorial.wav",
+      "CachePath": "44/{44D1DE6A-3C73-E62B-1889-E4AB4DD04C66}.wem"
+     },
+     {
+      "Id": "881865932",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "footstep-rocks.wav",
+      "CachePath": "45/{45FED548-841D-31C8-58A3-90D9961442D2}.wem"
      },
      {
       "Id": "895315454",
@@ -328,6 +376,14 @@
       "Location": "Memory",
       "ShortName": "Benteveo_bird.wav",
       "CachePath": "CD/{CD4877CB-557E-8747-B1C3-1400E86687D5}.wem"
+     },
+     {
+      "Id": "1012382633",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Bajo 1 bpm 85 menu.wav",
+      "CachePath": "A2/{A284910A-B178-FA39-1655-BDD7E28EED5A}.wem"
      }
     ],
     "Plugins": {
@@ -345,6 +401,14 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\Ambiente\\Birds\\New Silence_01\\Silence",
        "GUID": "{FF453533-0581-42D6-8E68-8C40B82507C3}",
+       "LibName": "Wwise Silence",
+       "LibId": "6619138"
+      },
+      {
+       "Id": "890695917",
+       "Name": "Silence",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Ambiente\\Birds\\New Silence_02\\Silence",
+       "GUID": "{19CFCADD-C12F-4C12-837E-612411494967}",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       }
@@ -413,7 +477,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Player\\Footstep",
       "GUID": "{154542E0-B3FE-4217-8D30-E5ABC0A39016}",
       "DurationType": "OneShot",
-      "DurationMin": "0.26612",
+      "DurationMin": "0.24332933",
       "DurationMax": "0.40132",
       "SwitchContainers": [
        {
@@ -491,6 +555,19 @@
         "MediaRefs": [
          {
           "Id": "7115285"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "3865314626",
+         "Id": "2144363834",
+         "GUID": "{E7FAE8CC-437F-4C60-A98C-8E4380F1B6F1}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "881865932"
          }
         ]
        }
@@ -744,6 +821,9 @@
         },
         {
          "Id": "409369050"
+        },
+        {
+         "Id": "890695917"
         }
        ]
       }
@@ -783,7 +863,22 @@
         },
         "MediaRefs": [
          {
-          "Id": "325813703"
+          "Id": "90260654"
+         },
+         {
+          "Id": "241297335"
+         },
+         {
+          "Id": "269797534"
+         },
+         {
+          "Id": "321910507"
+         },
+         {
+          "Id": "718658735"
+         },
+         {
+          "Id": "1012382633"
          }
         ]
        },
@@ -796,16 +891,19 @@
         },
         "MediaRefs": [
          {
-          "Id": "168680199"
+          "Id": "318840232"
          },
          {
-          "Id": "371608449"
+          "Id": "462068178"
          },
          {
-          "Id": "530536690"
+          "Id": "480018471"
          },
          {
-          "Id": "799179510"
+          "Id": "624090607"
+         },
+         {
+          "Id": "872105718"
          }
         ]
        },
@@ -1049,6 +1147,6 @@
     ]
    }
   ],
-  "FileHash": "{44315AB7-8028-2506-CC5D-36D890B6BE89}"
+  "FileHash": "{AF4382ED-83FD-5E8A-2959-0CDB744186C2}"
  }
 }
