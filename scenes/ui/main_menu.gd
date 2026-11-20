@@ -17,7 +17,7 @@ class_name MainMenu
 
 func map_start() -> void:
 	continue_button.disabled = _check_for_save()
-	
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	AudioManager.play_music("menu")
 	super.map_start()
 
